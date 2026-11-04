@@ -10,7 +10,10 @@
       "anterior_thigh",
       "lateral_thigh",
       "medial_thigh",
-      "shin_anterior"
+      "shin_anterior",
+      "knee_front",
+      "knee_medial",
+      "ankle_medial"
     ],
     "prior": null,
     "context": [
@@ -45,7 +48,12 @@
       "shin_anterior",
       "foot_dorsum",
       "foot_sole_lateral",
-      "forefoot"
+      "forefoot",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "achilles",
+      "heel"
     ],
     "prior": null,
     "context": [
@@ -93,7 +101,15 @@
       "shin_anterior",
       "foot_dorsum",
       "foot_sole_lateral",
-      "forefoot"
+      "forefoot",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel"
     ],
     "prior": null,
     "mechanism": {
@@ -624,7 +640,9 @@
     "regions": [
       "anterior_thigh",
       "groin",
-      "shin_anterior"
+      "shin_anterior",
+      "knee_front",
+      "knee_medial"
     ],
     "prior": null,
     "logic": [
@@ -1936,7 +1954,8 @@
       "chest_front",
       "chest_side",
       "upper_back",
-      "mid_back"
+      "mid_back",
+      "abdomen"
     ],
     "prior": null,
     "name": "Thoracic nerve root (a nerve leaving the middle of the spine)",
@@ -1972,7 +1991,8 @@
     "category": "nerve",
     "regions": [
       "chest_front",
-      "chest_side"
+      "chest_side",
+      "abdomen"
     ],
     "prior": null,
     "name": "Intercostal nerve (the nerve under a rib), after surgery or injury",
@@ -2005,7 +2025,8 @@
       "chest_front",
       "chest_side",
       "upper_back",
-      "mid_back"
+      "mid_back",
+      "abdomen"
     ],
     "prior": null,
     "name": "Shingles (herpes zoster) or nerve pain after shingles",
@@ -2097,7 +2118,8 @@
     "category": "nerve",
     "regions": [
       "chest_front",
-      "chest_side"
+      "chest_side",
+      "abdomen"
     ],
     "prior": null,
     "name": "Slipping rib syndrome (loose lower rib tip)",
@@ -2489,7 +2511,9 @@
     "category": "nerve",
     "regions": [
       "foot_sole_lateral",
-      "forefoot"
+      "forefoot",
+      "ankle_medial",
+      "heel"
     ],
     "prior": null,
     "logic": [
@@ -2502,6 +2526,2097 @@
         "finding": "h_sole_wide",
         "type": "usual",
         "reason": "Its branches supply most of the sole and the toes, so symptoms usually spread across the sole rather than staying in one gap between two toes."
+      }
+    ]
+  },
+  {
+    "id": "pad",
+    "name": "Narrowed leg arteries (vascular claudication, peripheral artery disease)",
+    "shortName": "Leg arteries (PAD)",
+    "description": "Narrowed arteries can't bring enough blood to the leg muscles while you walk, so the calf (sometimes the thigh or buttock) aches or cramps after a fairly predictable distance and eases within a few minutes of stopping, even when standing still.",
+    "category": "mimic",
+    "regions": [
+      "buttock",
+      "posterior_thigh",
+      "anterior_thigh",
+      "lateral_thigh",
+      "calf"
+    ],
+    "prior": null,
+    "context": [
+      {
+        "text": "In a study of 53 people whose leg symptoms came on with walking, 78% of those with narrowed leg arteries felt them in the calves, against 27% of those with spinal stenosis. Calf symptoms that eased on standing still pointed strongly to the arteries (LR+ 20).",
+        "sourceId": "nadeau2013",
+        "locator": "Table 4, 'Location: calves (6)' and the constellation row"
+      }
+    ],
+    "mechanism": {
+      "text": "Narrowing of the leg arteries restricts blood flow below what the working leg muscles need. In the study it was confirmed by a lower blood pressure at the ankle than at the arm (ankle-brachial index below 0.9).",
+      "sourceId": "nadeau2013",
+      "locator": "Introduction; Methods (selection of participants)"
+    },
+    "logic": [
+      {
+        "finding": "h_cough_sneeze",
+        "type": "unexplained",
+        "reason": "Coughing or straining raises pressure inside the spine; it doesn't change blood flow to the leg muscles."
+      },
+      {
+        "finding": "st_slr_helper",
+        "type": "unexplained",
+        "reason": "The straight-leg raise stretches the sciatic nerve roots, not the arteries."
+      }
+    ]
+  },
+  {
+    "id": "peroneal",
+    "name": "Common peroneal (fibular) nerve at the knee",
+    "shortName": "Peroneal nerve",
+    "description": "The common peroneal (fibular) nerve wraps around the bony knob on the outside of the knee just under the skin. Pressure or injury there can cause foot drop (the front of the foot catches or slaps) and numbness on the outer shin and top of the foot. It is the classic look-alike of an L5 nerve root problem.",
+    "category": "nerve",
+    "regions": [
+      "shin_anterior",
+      "foot_dorsum",
+      "knee_lateral",
+      "ankle_lateral"
+    ],
+    "prior": null,
+    "mechanism": {
+      "text": "The nerve lies just under the skin at the head of the fibula, where outside pressure or injury can damage it. Associated settings include habitual leg crossing, long periods in one position, substantial weight loss, knee or fibular head injury, and cysts.",
+      "sourceId": "saber2026",
+      "locator": "Section 3b, Common Fibular Neuropathy at the Fibular Head"
+    },
+    "logic": [
+      {
+        "finding": "st_heel_walk",
+        "type": "supports",
+        "reason": "Weakness lifting the front of the foot and toes (foot drop) is the classic sign of this nerve.",
+        "sourceId": "saber2026",
+        "locator": "Section 3b, Common Fibular Neuropathy at the Fibular Head"
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "supports",
+        "reason": "The nerve carries feeling from the outer lower leg and the top of the foot.",
+        "sourceId": "saber2026",
+        "locator": "Section 3b, Common Fibular Neuropathy at the Fibular Head"
+      },
+      {
+        "finding": "h_peroneal_setting",
+        "type": "supports",
+        "reason": "Leg crossing, long periods in one position, marked weight loss and knee injury are the usual settings in which this nerve is squeezed or hurt.",
+        "sourceId": "saber2026",
+        "locator": "Section 3b, Common Fibular Neuropathy at the Fibular Head"
+      },
+      {
+        "finding": "st_heel_raise",
+        "type": "unexplained",
+        "reason": "Rising on tiptoe uses the calf muscles, supplied by the tibial nerve; an isolated peroneal nerve problem spares them.",
+        "sourceId": "saber2026",
+        "locator": "Section 4, Clinical Examination Differentiators"
+      },
+      {
+        "finding": "h_bilateral_sole_numbness",
+        "type": "unexplained",
+        "reason": "The nerve doesn't supply the sole, which is typically spared.",
+        "sourceId": "saber2026",
+        "locator": "Section 3b, Common Fibular Neuropathy at the Fibular Head"
+      },
+      {
+        "finding": "st_slr_helper",
+        "type": "unexplained",
+        "reason": "Nerve-stretch tests like the straight-leg raise point to a nerve root in the spine rather than this nerve.",
+        "sourceId": "saber2026",
+        "locator": "Section 3a, L5 Radiculopathy"
+      },
+      {
+        "finding": "h_cough_sneeze",
+        "type": "unexplained",
+        "reason": "Coughing or straining raises pressure inside the spine; a nerve trapped at the knee isn't affected by it."
+      }
+    ]
+  },
+  {
+    "id": "polyneuropathy",
+    "name": "Peripheral neuropathy (many nerves affected, longest first, e.g. from diabetes)",
+    "shortName": "Polyneuropathy",
+    "description": "Damage to many nerves at once. The longest nerves are affected first, so symptoms usually begin in the toes and soles of both feet and slowly spread upward ('stocking' pattern): numbness, tingling, burning or pain. Diabetes is a common cause.",
+    "category": "nerve",
+    "regions": [
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot",
+      "shin_anterior",
+      "calf",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_poly_toes_up",
+        "type": "usual",
+        "reason": "Because the longest nerves are affected first, symptoms usually start in the toes or soles of both feet and creep upward over months."
+      },
+      {
+        "finding": "h_bilateral_sole_numbness",
+        "type": "supports",
+        "reason": "Numbness in both soles fits a problem that affects the nerves of both feet evenly."
+      },
+      {
+        "finding": "h_leg_burning",
+        "type": "supports",
+        "reason": "Burning feet are a common description of a neuropathy affecting small nerve fibres."
+      },
+      {
+        "finding": "h_diabetes",
+        "type": "supports",
+        "reason": "Diabetes is a common cause of this kind of nerve damage."
+      },
+      {
+        "finding": "h_cough_sneeze",
+        "type": "unexplained",
+        "reason": "Coughing or straining raises pressure inside the spine; nerve damage in the feet isn't affected by it."
+      },
+      {
+        "finding": "st_slr_helper",
+        "type": "unexplained",
+        "reason": "The straight-leg raise stretches the sciatic nerve roots; a neuropathy of the feet isn't provoked by it."
+      }
+    ]
+  },
+  {
+    "id": "knee_oa",
+    "name": "Knee osteoarthritis (wear of the knee joint)",
+    "shortName": "Knee OA",
+    "description": "Gradual wear of the cartilage and bone of the knee joint. It typically causes aching with standing, walking and stairs in people over 45, with short morning stiffness, sometimes creaking or a bony, swollen-looking knee.",
+    "category": "mimic",
+    "regions": [
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back"
+    ],
+    "prior": null,
+    "context": [
+      {
+        "text": "A review summarises that knee OA is the most likely diagnosis in people aged 45 or older with activity-related knee pain and no, or under 30 minutes of, morning stiffness (sensitivity 95%, specificity 69%).",
+        "sourceId": "duong2023",
+        "locator": "Abstract, Observations"
+      },
+      {
+        "text": "In 788 general-practice patients over 50 with knee pain, the older American College of Rheumatology clinical criteria (crepitus, bony enlargement, stiffness) picked up only 41% of symptomatic X-ray OA, with specificity 71%.",
+        "sourceId": "peat2006",
+        "locator": "Results, 'ACR clinical criteria versus symptomatic radiographic knee osteoarthritis'"
+      }
+    ],
+    "criteria": {
+      "title": "NICE clinical criteria for knee osteoarthritis (all three; no X-ray needed)",
+      "sourceId": "king2025",
+      "locator": "Introduction and Methods (wording of the index questionnaire)",
+      "items": [
+        {
+          "id": "nice_age",
+          "prompt": "Aged 45 or older",
+          "matchIf": "yes",
+          "linkedFinding": "h_age_45"
+        },
+        {
+          "id": "nice_activity",
+          "prompt": "Knee pain or aching brought on or worsened by activity (standing, walking, stairs)",
+          "matchIf": "yes",
+          "linkedFinding": "h_knee_activity_pain"
+        },
+        {
+          "id": "nice_stiffness",
+          "prompt": "No morning stiffness, or stiffness lasting 30 minutes or less",
+          "matchIf": "yes",
+          "linkedFinding": "h_knee_morning_stiff_short"
+        }
+      ],
+      "clinicianOnly": []
+    },
+    "logic": [
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A joint, tendon or bursa problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "pfp",
+    "name": "Kneecap pain (patellofemoral pain)",
+    "shortName": "Kneecap pain",
+    "description": "Pain around or behind the kneecap from the joint between the kneecap and the thigh bone, typically in active people under 40. It is brought on by squatting, kneeling, stairs and long sitting with the knees bent.",
+    "category": "mimic",
+    "regions": [
+      "knee_front",
+      "knee_medial",
+      "knee_lateral"
+    ],
+    "prior": null,
+    "context": [
+      {
+        "text": "Patellofemoral pain typically affects physically active people younger than 40.",
+        "sourceId": "duong2023",
+        "locator": "Abstract, Observations"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A joint, tendon or bursa problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "meniscus",
+    "name": "Meniscal tear (torn knee cartilage)",
+    "shortName": "Meniscal tear",
+    "description": "A tear in one of the two rubbery cartilage pads inside the knee, either from a twisting injury (usually under 40) or wearing through with age. Pain is usually on the inner or outer joint line, worse with twisting and deep squatting.",
+    "category": "mimic",
+    "regions": [
+      "knee_medial",
+      "knee_lateral",
+      "knee_back"
+    ],
+    "prior": null,
+    "context": [
+      {
+        "text": "In 279 people with a new knee complaint, a twisting (pivot) injury plus inner-knee pain plus a tender inner joint line pointed strongly to a traumatic meniscal tear (LR+ 8.9); a gradual onset with inner-knee pain on pivoting pointed to a degenerative tear (LR+ 6.4).",
+        "sourceId": "decary2018meniscus",
+        "locator": "Abstract, Results"
+      },
+      {
+        "text": "Locking and catching ('mechanical symptoms') are only weakly linked to a meniscal tear: sensitivity 0.32-0.69 and specificity 0.45-0.74 across studies.",
+        "sourceId": "mchugh2022",
+        "locator": "Abstract, Results"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_knee_pivot_injury",
+        "type": "supports",
+        "reason": "A twisting injury on a planted foot is the usual way a meniscus tears in younger people.",
+        "sourceId": "decary2018meniscus",
+        "locator": "Abstract, Results (traumatic tear cluster)"
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A joint, tendon or bursa problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "acl",
+    "name": "Anterior cruciate ligament (ACL) tear",
+    "shortName": "ACL tear",
+    "description": "A tear of the main ligament that stops the shin sliding forward and twisting under the thigh bone, usually from a twisting injury in sport. People often feel a pop, the knee swells within hours, and it may later give way when turning.",
+    "category": "mimic",
+    "regions": [
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_knee_swelled_fast",
+        "type": "supports",
+        "reason": "Swelling within hours of the injury is bleeding into the joint, typical of a torn ligament (in the study, 68% of complete ACL tears against 6% of the other knee problems).",
+        "sourceId": "decary2018acl",
+        "locator": "Table 5, 'Immediate effusion after trauma' (complete tears only)"
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A joint, tendon or bursa problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "patellar_tendinopathy",
+    "name": "Patellar tendinopathy (jumper's knee)",
+    "shortName": "Jumper's knee",
+    "description": "Overload of the tendon that runs from the bottom of the kneecap to the shin, typically in jumping and running sports. The pain is in a small spot just below the kneecap and comes with loading: jumping, landing, squatting.",
+    "category": "mimic",
+    "regions": [
+      "knee_front"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_knee_below_kneecap",
+        "type": "usual",
+        "reason": "The tendon just below the kneecap is tender in nearly everyone with this problem (98% on palpation in one study).",
+        "sourceId": "maffulli2017",
+        "locator": "Abstract, Results (palpation test)"
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A joint, tendon or bursa problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "itbs",
+    "name": "Iliotibial band syndrome (outer knee pain in runners)",
+    "shortName": "IT band",
+    "description": "Irritation where the tight band of tissue on the outside of the thigh crosses the outer knee, typically in runners and cyclists. Sharp outer-knee pain comes on at a predictable point in a run and settles with rest.",
+    "category": "mimic",
+    "regions": [
+      "knee_lateral"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_knee_outer_running",
+        "type": "usual",
+        "reason": "The pain is set off by repeated knee bending under load, so it typically starts at about the same time or distance into a run or ride."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A joint, tendon or bursa problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "pes_anserine",
+    "name": "Pes anserine bursitis or tendinopathy (inner knee, below the joint)",
+    "shortName": "Pes anserine",
+    "description": "Irritation of the tendons or the small fluid sac where three thigh muscles attach on the inner side of the shin, just below the knee joint. It is common alongside knee OA and with overweight.",
+    "category": "mimic",
+    "regions": [
+      "knee_medial"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_knee_inner_below_joint",
+        "type": "usual",
+        "reason": "The tender spot sits on the inner shin a few finger-widths below the joint line, not on the joint line itself."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A joint, tendon or bursa problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "bakers_cyst",
+    "name": "Baker's cyst (fluid swelling behind the knee)",
+    "shortName": "Baker's cyst",
+    "description": "A fluid-filled swelling behind the knee, usually fed by another knee problem such as osteoarthritis or a meniscal tear. Many cause no symptoms; larger ones cause fullness or tightness behind the knee, worse bending fully.",
+    "category": "mimic",
+    "regions": [
+      "knee_back"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_knee_back_swelling",
+        "type": "usual",
+        "reason": "When a cyst causes symptoms, a swelling or mass behind the knee is the usual sign.",
+        "sourceId": "tang2026",
+        "locator": "Introduction"
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A joint, tendon or bursa problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "saphenous",
+    "name": "Saphenous nerve or its knee branch (inner knee and shin)",
+    "shortName": "Saphenous nerve",
+    "description": "The saphenous nerve carries feeling from the inner knee and inner shin; its small branch below the kneecap is easily injured by knee operations or a blow. It causes burning, tingling or numbness on the inner or front-inner knee and shin.",
+    "category": "nerve",
+    "regions": [
+      "knee_medial",
+      "knee_front",
+      "shin_anterior",
+      "ankle_medial"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_leg_numbness",
+        "type": "usual",
+        "reason": "A problem with this skin nerve usually brings numbness, tingling or burning over the inner knee or shin."
+      },
+      {
+        "finding": "h_recent_surgery",
+        "type": "supports",
+        "reason": "Knee operations (arthroscopy, replacement) and vein harvesting from the inner leg are common ways this nerve or its knee branch is injured."
+      },
+      {
+        "finding": "h_cough_sneeze",
+        "type": "unexplained",
+        "reason": "Coughing or straining raises pressure inside the spine; a nerve injured at the knee isn't affected by it."
+      }
+    ]
+  },
+  {
+    "id": "plantar_fasciitis",
+    "name": "Plantar heel pain (plantar fasciitis)",
+    "shortName": "Plantar heel pain",
+    "description": "Overload of the thick band of tissue under the sole where it attaches to the heel bone. The pain is under the heel, typically sharpest with the first steps in the morning or after sitting, easing as you get going and returning after long standing.",
+    "category": "mimic",
+    "regions": [
+      "heel",
+      "foot_sole_lateral"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_heel_first_steps",
+        "type": "usual",
+        "reason": "The band stiffens at rest and is stretched suddenly when you stand, so the first steps after rest usually hurt most."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A tendon, ligament, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "achilles_tendinopathy",
+    "name": "Achilles tendinopathy",
+    "shortName": "Achilles tendinopathy",
+    "description": "Overload of the Achilles tendon at the back of the ankle, either in its middle section a few centimetres above the heel or where it attaches to the heel bone. It is stiff and sore first thing in the morning and with running or hopping.",
+    "category": "mimic",
+    "regions": [
+      "achilles",
+      "calf"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_achilles_morning",
+        "type": "usual",
+        "reason": "Pain or stiffness in the tendon for the first few steps in the morning was reported by most people with tendinopathy in a small study (89%).",
+        "sourceId": "hutchison2013",
+        "locator": "Reiman 2014, Table 4, 'Self-report of morning stiffness' (Hutchison 2013)"
+      },
+      {
+        "finding": "h_achilles_spot",
+        "type": "supports",
+        "reason": "Mid-portion tendinopathy hurts in the tendon itself, about 2 to 6 cm above the heel bone (78% of cases in a small study). Insertional tendinopathy hurts lower, at the heel bone, so a 'no' doesn't count against it.",
+        "sourceId": "hutchison2013",
+        "locator": "Abstract, Results (pain 2-6 cm above the insertion)"
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A tendon, ligament, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "achilles_rupture",
+    "name": "Achilles tendon rupture",
+    "shortName": "Achilles rupture",
+    "description": "A complete tear of the Achilles tendon, usually while pushing off or landing in sport in people aged 30 to 50. People often feel as if they were kicked in the back of the ankle, then can't push off properly. It needs prompt assessment by a clinician.",
+    "category": "mimic",
+    "regions": [
+      "achilles",
+      "calf"
+    ],
+    "prior": null,
+    "context": [
+      {
+        "text": "In 66 surgically confirmed acute ruptures, all had all three clinical signs before the operation: an abnormal calf-squeeze (Thompson) test, reduced resting tension and a palpable gap.",
+        "sourceId": "garras2012",
+        "locator": "Abstract, Results"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_ankle_injury",
+        "type": "usual",
+        "reason": "A rupture happens at a moment, usually while pushing off, landing or stumbling, so it starts with a sudden event."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A tendon, ligament, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "ankle_fracture",
+    "name": "Ankle or midfoot fracture after an injury",
+    "shortName": "Ankle/foot fracture",
+    "description": "A broken bone at the ankle (the ends of the shin bones) or in the middle of the foot, usually from rolling the ankle or a fall. Bone tenderness at specific spots and being unable to take weight point to it; an X-ray confirms it.",
+    "category": "mimic",
+    "regions": [
+      "ankle_lateral",
+      "ankle_medial",
+      "foot_dorsum",
+      "foot_sole_lateral"
+    ],
+    "prior": null,
+    "context": [
+      {
+        "text": "Across 15 studies of 8560 adults with acute ankle injuries, the Ottawa ankle rules picked up 91% of fractures but were also positive in 75% of people without one.",
+        "sourceId": "gomes2022",
+        "locator": "Abstract, Results"
+      }
+    ],
+    "criteria": {
+      "title": "Ottawa ankle rules (an X-ray is advised if any one applies)",
+      "sourceId": "makiev2025",
+      "locator": "Patients and Methods, 'Ottawa Ankle Rules (OAR)'",
+      "items": [
+        {
+          "id": "oar_weight",
+          "prompt": "Unable to take four steps, both straight after the injury and now",
+          "matchIf": "yes",
+          "linkedFinding": "h_ankle_cant_weight"
+        },
+        {
+          "id": "oar_bone",
+          "prompt": "Bone tenderness at the back edge or tip of either ankle bone, the navicular (inner midfoot) or the base of the fifth metatarsal (outer midfoot)",
+          "matchIf": "yes",
+          "linkedFinding": "st_ottawa_bone_self"
+        }
+      ],
+      "clinicianOnly": []
+    },
+    "logic": [
+      {
+        "finding": "h_ankle_injury",
+        "type": "usual",
+        "reason": "A fracture of the ankle or midfoot comes from a twist, fall or blow, so it starts with an injury."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A tendon, ligament, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "ankle_sprain",
+    "name": "Ankle sprain (outer ankle ligaments)",
+    "shortName": "Ankle sprain",
+    "description": "Stretching or tearing of the ligaments on the outside of the ankle when the foot rolls inward. It causes pain, swelling and bruising in front of and below the outer ankle bone; repeated sprains can leave the ankle unstable.",
+    "category": "mimic",
+    "regions": [
+      "ankle_lateral"
+    ],
+    "prior": null,
+    "context": [
+      {
+        "text": "Among adults attending the emergency department with a foot or ankle injury, 82-84% had rolled the foot inward (inversion); 13-17% had a fracture.",
+        "sourceId": "pires2014",
+        "locator": "Subjects and Methods; Results (Makiev 2025, Table 1, reports 82% and 17%)"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_ankle_injury",
+        "type": "usual",
+        "reason": "A sprain happens when the ankle is suddenly forced, so it starts with an injury."
+      },
+      {
+        "finding": "h_ankle_rolled_in",
+        "type": "usual",
+        "reason": "The outer ligaments are torn when the foot rolls inward onto its outer edge."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A tendon, ligament, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "ptt",
+    "name": "Tibialis posterior tendon problem (inner ankle, flattening arch)",
+    "shortName": "Tibialis posterior",
+    "description": "Overload or gradual failure of the tendon that runs behind the inner ankle bone and holds up the arch, most often in women over 40. It causes pain and swelling along the inner ankle, and the arch may slowly flatten.",
+    "category": "mimic",
+    "regions": [
+      "ankle_medial",
+      "foot_sole_lateral"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_arch_flattening",
+        "type": "usual",
+        "reason": "The tendon holds up the arch, so as it fails the arch on that side usually becomes flatter than the other."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A tendon, ligament, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "peroneal_tendon",
+    "name": "Peroneal tendon problem (outer ankle, behind the ankle bone)",
+    "shortName": "Peroneal tendons",
+    "description": "Overload, splitting or slipping of the two tendons that run behind the outer ankle bone, often after repeated ankle sprains. It causes pain and swelling behind and below the outer ankle bone.",
+    "category": "mimic",
+    "regions": [
+      "ankle_lateral",
+      "foot_sole_lateral"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_ankle_behind_outer",
+        "type": "usual",
+        "reason": "These tendons run in a groove behind and below the outer ankle bone, so that is where they hurt."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A tendon, ligament, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "mtss",
+    "name": "Shin splints (medial tibial stress syndrome)",
+    "shortName": "Shin splints",
+    "description": "Overload of the inner border of the shin bone in runners and military recruits. Exercise brings on pain along a stretch of the inner shin edge, which is tender over several centimetres.",
+    "category": "mimic",
+    "regions": [
+      "shin_anterior"
+    ],
+    "prior": null,
+    "context": [
+      {
+        "text": "In 46 athletes with lower leg pain not caused by an injury, two clinicians agreed on shin splints 96% of the time from history and examination alone; 74% had it, and other lower-leg problems often occurred alongside it.",
+        "sourceId": "winters2018",
+        "locator": "Abstract, Results and Conclusion"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_shin_long_stretch",
+        "type": "usual",
+        "reason": "The sore area runs along the inner edge of the shin bone over several centimetres, unlike the single spot of a stress fracture."
+      },
+      {
+        "finding": "h_ff_load_increase",
+        "type": "supports",
+        "reason": "Shin splints develop when running or marching increases faster than the bone can adapt."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A tendon, ligament, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "tibial_stress_fracture",
+    "name": "Tibial stress fracture",
+    "shortName": "Tibial stress fracture",
+    "description": "A small crack in the shin bone from repeated loading, typically after a rise in running or marching. The pain is in one spot on the bone, comes on earlier and earlier in exercise, and may ache at rest or at night.",
+    "category": "mimic",
+    "regions": [
+      "shin_anterior"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_ff_load_increase",
+        "type": "usual",
+        "reason": "A stress fracture develops when repeated loading outpaces the bone's repair, so it usually follows a recent rise in activity."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A tendon, ligament, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ],
+    "context": [
+      {
+        "text": "In 67 painful legs of military trainees, no bedside test was reliable: a short tender spot on the bone was as common without a stress fracture as with one, and the best test (bending the shin over the examiner's hand) picked up fewer than half.",
+        "sourceId": "rosenthal2022",
+        "locator": "Results and Table 1"
+      }
+    ]
+  },
+  {
+    "id": "cecs",
+    "name": "Chronic exertional compartment syndrome",
+    "shortName": "Compartment syndrome",
+    "description": "During exercise a muscle compartment of the lower leg swells inside its tight casing, so the pressure rises and squeezes the blood supply and nerves. A tight, cramping or bursting pain builds after a predictable time or distance and settles soon after stopping; tingling and weakness of the foot can come with it.",
+    "category": "mimic",
+    "regions": [
+      "shin_anterior",
+      "calf"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_leg_exercise_tight",
+        "type": "usual",
+        "reason": "Pain and tightness during exercise are the main symptoms (with cramps, weakness and pins and needles).",
+        "sourceId": "tarabishi2023",
+        "locator": "Abstract"
+      },
+      {
+        "finding": "h_bilateral",
+        "type": "supports",
+        "reason": "Symptoms in both legs were an independent predictor of compartment syndrome among 1411 people referred with exercise-induced leg pain.",
+        "sourceId": "debruijn2018",
+        "locator": "Abstract"
+      }
+    ]
+  },
+  {
+    "id": "calf_strain",
+    "name": "Calf muscle strain (torn calf muscle)",
+    "shortName": "Calf strain",
+    "description": "A tear in one of the calf muscles, typically a sudden sharp pain in the calf while pushing off or changing direction, in middle-aged players of racket sports or runners. There is a tender spot in the muscle and it hurts to rise onto the toes.",
+    "category": "mimic",
+    "regions": [
+      "calf"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_ankle_injury",
+        "type": "usual",
+        "reason": "A muscle tears at a moment of effort, so the pain starts suddenly."
+      },
+      {
+        "finding": "h_calf_muscle_spot",
+        "type": "usual",
+        "reason": "The tear is in the muscle bulk, so a tender spot is usually felt in the calf muscle rather than in the tendon above the heel."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A tendon, ligament, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "sural",
+    "name": "Sural nerve (outer ankle and outer edge of the foot)",
+    "shortName": "Sural nerve",
+    "description": "The sural nerve carries feeling from the lower outer calf, the outer ankle and the outer edge of the foot. It can be squeezed by tight boots or scar tissue, or injured by an ankle sprain, fracture or operation, causing burning, tingling or numbness there.",
+    "category": "nerve",
+    "regions": [
+      "calf",
+      "ankle_lateral",
+      "foot_sole_lateral"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_leg_numbness",
+        "type": "usual",
+        "reason": "A problem with this skin nerve usually brings numbness, tingling or burning along the outer ankle or the outer edge of the foot."
+      },
+      {
+        "finding": "st_sens_lateral_foot",
+        "type": "usual",
+        "reason": "The outer edge of the foot is the sural nerve's own skin area, so a sural problem that causes numbness usually reduces feeling there."
+      },
+      {
+        "finding": "h_cough_sneeze",
+        "type": "unexplained",
+        "reason": "Coughing or straining raises pressure inside the spine; a nerve squeezed at the ankle isn't affected by it."
+      }
+    ]
+  },
+  {
+    "id": "tmd",
+    "name": "Jaw joint and chewing muscle pain (temporomandibular disorder)",
+    "shortName": "Jaw (TMD)",
+    "description": "Pain from the jaw joint in front of the ear or the chewing muscles of the cheek and temple. It is changed by chewing, opening wide, clenching or grinding, and is often stiff or sore on waking.",
+    "category": "mimic",
+    "regions": [
+      "jaw",
+      "temple"
+    ],
+    "prior": null
+  },
+  {
+    "id": "trigeminal",
+    "name": "Trigeminal neuralgia (face nerve)",
+    "shortName": "Trigeminal neuralgia",
+    "description": "Sudden, severe, electric-shock-like attacks of pain on one side of the face, each lasting from a split second to two minutes, set off by light touch, washing, shaving, eating or talking. Usually caused by a blood vessel pressing on the nerve where it leaves the brainstem.",
+    "category": "nerve",
+    "regions": [
+      "face",
+      "jaw",
+      "temple"
+    ],
+    "prior": null,
+    "criteria": {
+      "title": "ICHD-3 criteria for trigeminal neuralgia",
+      "sourceId": "ichd3",
+      "locator": "13.1 Trigeminal neuralgia, Diagnostic criteria A-C",
+      "items": [
+        {
+          "id": "tn_one_side",
+          "prompt": "Attacks of pain on one side of the face",
+          "matchIf": "yes",
+          "linkedFinding": "h_face_one_side"
+        },
+        {
+          "id": "tn_brief",
+          "prompt": "Each attack lasts from a fraction of a second to 2 minutes",
+          "matchIf": "yes",
+          "linkedFinding": "h_head_attacks_brief"
+        },
+        {
+          "id": "tn_severe",
+          "prompt": "Severe intensity",
+          "matchIf": "yes",
+          "linkedFinding": "h_head_attacks_severe"
+        },
+        {
+          "id": "tn_quality",
+          "prompt": "Electric shock-like, shooting, stabbing or sharp",
+          "matchIf": "yes",
+          "linkedFinding": "h_head_electric"
+        },
+        {
+          "id": "tn_trigger",
+          "prompt": "Set off by harmless touches or movements in that area (washing, shaving, eating, talking)",
+          "matchIf": "yes",
+          "linkedFinding": "h_face_light_trigger"
+        }
+      ],
+      "clinicianOnly": [
+        "Not better accounted for by another diagnosis (examination and usually an MRI)"
+      ]
+    }
+  },
+  {
+    "id": "occipital_neuralgia",
+    "name": "Occipital neuralgia (nerves at the back of the head)",
+    "shortName": "Occipital neuralgia",
+    "description": "Brief, shooting or stabbing attacks of pain at the back of the head, over the scalp where the occipital nerves run, often with a tender spot at the base of the skull and a scalp that is sore to touch or brush.",
+    "category": "nerve",
+    "regions": [
+      "head_back"
+    ],
+    "prior": null,
+    "criteria": {
+      "title": "ICHD-3 criteria for occipital neuralgia (at least two of the first three)",
+      "sourceId": "ichd3",
+      "locator": "13.4 Occipital neuralgia, Diagnostic criteria A-E",
+      "items": [
+        {
+          "id": "on_brief",
+          "prompt": "Recurring attacks lasting from a few seconds to minutes",
+          "matchIf": "yes",
+          "linkedFinding": "h_head_attacks_brief"
+        },
+        {
+          "id": "on_severe",
+          "prompt": "Severe intensity",
+          "matchIf": "yes",
+          "linkedFinding": "h_head_attacks_severe"
+        },
+        {
+          "id": "on_quality",
+          "prompt": "Shooting, stabbing or sharp",
+          "matchIf": "yes",
+          "linkedFinding": "h_head_electric"
+        },
+        {
+          "id": "on_scalp",
+          "prompt": "Light touch on the scalp or hair is unpleasant or painful",
+          "matchIf": "yes",
+          "linkedFinding": "h_scalp_touch_pain"
+        },
+        {
+          "id": "on_tender",
+          "prompt": "Tender over the nerve at the base of the skull",
+          "matchIf": "yes",
+          "linkedFinding": "st_gon_tender_self"
+        }
+      ],
+      "clinicianOnly": [
+        "Pain eased temporarily by a local anaesthetic block of the nerve",
+        "Not better accounted for by another diagnosis"
+      ]
+    }
+  },
+  {
+    "id": "cervicogenic_headache",
+    "name": "Cervicogenic headache (headache coming from the neck)",
+    "shortName": "Neck headache",
+    "description": "A headache caused by a problem in the upper neck joints or muscles. It usually starts at the back of the head on one side and may spread forward to the temple or eye; neck movements or postures bring it on, and the neck is stiff.",
+    "category": "mimic",
+    "regions": [
+      "head_back",
+      "temple",
+      "face"
+    ],
+    "prior": null,
+    "context": [
+      {
+        "text": "Compared with 112 people with migraine at the same headache centre, none of 112 people with cervicogenic headache described throbbing (pulsating) pain, against 79% with migraine.",
+        "sourceId": "nowaczewska2026",
+        "locator": "Table 1, 'Pulsating pain'"
+      }
+    ],
+    "criteria": {
+      "title": "ICHD-3 criteria for cervicogenic headache: evidence that the neck causes it (at least two)",
+      "sourceId": "ichd3",
+      "locator": "11.2.1 Cervicogenic headache, Diagnostic criteria A-D",
+      "items": [
+        {
+          "id": "cgh_onset",
+          "prompt": "The headache began together with a neck disorder or injury",
+          "matchIf": "yes",
+          "linkedFinding": "h_ha_neck_onset"
+        },
+        {
+          "id": "cgh_parallel",
+          "prompt": "The headache improves when the neck problem improves",
+          "matchIf": "yes",
+          "linkedFinding": "h_ha_neck_parallel"
+        },
+        {
+          "id": "cgh_movement",
+          "prompt": "Neck movement is reduced and neck movements or positions make the headache clearly worse",
+          "matchIf": "yes",
+          "linkedFinding": "h_ha_neck_movement"
+        }
+      ],
+      "clinicianOnly": [
+        "Clinical or imaging evidence of a neck disorder known to cause headache",
+        "Headache abolished by a diagnostic block of a neck structure or its nerve"
+      ]
+    }
+  },
+  {
+    "id": "acnes",
+    "name": "Abdominal wall nerve entrapment (ACNES)",
+    "shortName": "Abdominal wall nerve (ACNES)",
+    "description": "A small branch of a lower rib nerve is pinched where it passes through the edge of the straight belly muscle, a few centimetres from the midline. It causes a sharp, fixed pain in a spot you can cover with a fingertip, worse with tensing the belly muscles, and is often mistaken for a bowel problem.",
+    "category": "nerve",
+    "regions": [
+      "abdomen"
+    ],
+    "prior": null
+  },
+  {
+    "id": "abdominal_hernia",
+    "name": "Hernia of the belly wall or groin",
+    "shortName": "Hernia",
+    "description": "A weak spot in the belly wall or groin lets fat or bowel bulge through, causing an aching or dragging pain and a lump that comes out when standing, coughing or straining and goes back when lying down. A hard, very painful lump that won't go back needs urgent care.",
+    "category": "mimic",
+    "regions": [
+      "abdomen",
+      "groin"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_abd_bulge",
+        "type": "usual",
+        "reason": "A hernia is a bulge through the wall, so a lump that appears on standing or straining and goes down lying flat is the usual sign."
+      }
+    ]
+  },
+  {
+    "id": "coccydynia",
+    "name": "Tailbone pain (coccydynia)",
+    "shortName": "Tailbone",
+    "description": "Pain in the tailbone (coccyx), the small bone at the very bottom of the spine, often after a fall onto the bottom, childbirth or long sitting on a hard seat. It is felt at the top of the buttock crease and is worst sitting or getting up from a chair.",
+    "category": "mimic",
+    "regions": [
+      "buttock",
+      "low_back"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_tailbone_point",
+        "type": "usual",
+        "reason": "The pain comes from the tailbone itself, so it is felt on it."
+      },
+      {
+        "finding": "h_tailbone_sitting",
+        "type": "usual",
+        "reason": "Sitting, especially leaning back, puts weight on the tailbone, and standing up moves it."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A joint, tendon, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "spondylolysis",
+    "name": "Stress fracture or slip of a lower back vertebra (spondylolysis, spondylolisthesis)",
+    "shortName": "Pars stress fracture",
+    "description": "A stress fracture in the bony arch at the back of a lower vertebra (spondylolysis), sometimes letting the vertebra slip forward (spondylolisthesis). It is a common cause of lasting low back pain in young athletes whose sport repeatedly arches the back; arching backwards brings the pain on.",
+    "category": "mimic",
+    "regions": [
+      "low_back",
+      "buttock",
+      "posterior_thigh"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_back_extension_pain",
+        "type": "usual",
+        "reason": "Arching the back loads the cracked bony arch directly."
+      },
+      {
+        "finding": "h_back_arching_sport",
+        "type": "supports",
+        "reason": "Repeated arching and twisting is what overloads the bony arch until it cracks."
+      }
+    ]
+  },
+  {
+    "id": "axial_spa",
+    "name": "Inflammatory back pain (axial spondyloarthritis, ankylosing spondylitis)",
+    "shortName": "Axial SpA",
+    "description": "A long-term inflammatory disease of the spine and the joints at the back of the pelvis. It usually starts before 40, creeps up gradually, is worst in the second half of the night and in the morning, and eases with exercise rather than rest. It needs a rheumatologist and blood tests or scans to confirm.",
+    "category": "mimic",
+    "regions": [
+      "low_back",
+      "buttock",
+      "mid_back",
+      "upper_back",
+      "neck"
+    ],
+    "prior": null,
+    "context": [
+      {
+        "text": "Among 403 people referred to rheumatologists with long-lasting back pain, the classic 'inflammatory' features (gradual onset, morning stiffness, better with exercise, night pain) were reported nearly as often by those without axial spondyloarthritis as by those with it, so they can only fit or count against it, not confirm it.",
+        "sourceId": "poddubnyy2018",
+        "locator": "Abstract (Results); Table 4"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_back_onset_young",
+        "type": "usual",
+        "reason": "The disease almost always begins in young adults."
+      },
+      {
+        "finding": "h_back_gradual_onset",
+        "type": "usual",
+        "reason": "Inflammation builds up slowly; it doesn't start with an injury. 76% of patients with axial SpA reported a gradual (insidious) onset.",
+        "sourceId": "poddubnyy2018",
+        "locator": "Table 4, 'Insidious onset', patient-reported"
+      },
+      {
+        "finding": "h_back_exercise_better",
+        "type": "usual",
+        "reason": "Inflammatory stiffness loosens with movement. 83% of patients with axial SpA reported their back pain improving with exercise.",
+        "sourceId": "poddubnyy2018",
+        "locator": "Table 4, 'Improvement with exercise', patient-reported"
+      },
+      {
+        "finding": "h_back_night_wakes",
+        "type": "supports",
+        "reason": "Inflammation builds up during the night's rest, so the pain wakes people late in the night and eases once they move."
+      }
+    ]
+  },
+  {
+    "id": "whiplash",
+    "name": "Whiplash (neck sprain after a jolt)",
+    "shortName": "Whiplash",
+    "description": "Strain of the neck's muscles, ligaments and small joints when the head is thrown forward and back, most often in a car crash. Neck pain and stiffness, sometimes with headache or pain between the shoulder blades, start within hours to days.",
+    "category": "mimic",
+    "regions": [
+      "neck",
+      "scapula",
+      "head_back",
+      "upper_back",
+      "shoulder"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_neck_car_accident",
+        "type": "usual",
+        "reason": "By definition, whiplash follows a sudden jolt of the head."
+      },
+      {
+        "finding": "h_neck_movement_pain",
+        "type": "supports",
+        "reason": "The strained neck tissues hurt when the neck moves."
+      }
+    ]
+  },
+  {
+    "id": "pelvic_girdle",
+    "name": "Pregnancy-related pelvic girdle pain",
+    "shortName": "Pelvic girdle pain",
+    "description": "Pain at the back of the pelvis (around the sacroiliac joints) or over the pubic bone at the front, during or after pregnancy, when pregnancy hormones and the growing load strain the pelvic joints. It is set off by walking, standing on one leg, stairs and turning in bed.",
+    "category": "mimic",
+    "regions": [
+      "buttock",
+      "low_back",
+      "groin",
+      "posterior_thigh"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_pregnancy",
+        "type": "usual",
+        "reason": "This pain is linked to the joint and load changes of pregnancy."
+      },
+      {
+        "finding": "h_pelvis_walk_turn",
+        "type": "usual",
+        "reason": "These movements shear the pelvic joints, which is what makes them hurt."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A joint, tendon, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "osteitis_pubis",
+    "name": "Pubic bone overload (osteitis pubis, pubic bone stress)",
+    "shortName": "Pubic bone stress",
+    "description": "Overload of the joint and bone at the front middle of the pelvis (the pubic symphysis), mostly in kicking and running sports. The pain is over the pubic bone and can spread into the groin, inner thighs or lower belly.",
+    "category": "mimic",
+    "regions": [
+      "groin",
+      "medial_thigh",
+      "abdomen"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_pubic_bone",
+        "type": "usual",
+        "reason": "The overloaded bone and joint are at the pubic bone, so that is where it hurts."
+      },
+      {
+        "finding": "h_groin_adductor",
+        "type": "supports",
+        "reason": "Kicking and sprinting pull hard on the pubic bone through the inner-thigh muscles."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A joint, tendon, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "hip_stress_fracture",
+    "name": "Stress fracture of the hip or pelvis (femoral neck, sacrum or pubic bone)",
+    "shortName": "Hip stress fracture",
+    "description": "A crack that builds up in the neck of the thigh bone, the sacrum or a pelvic bone from repeated loading, mostly in runners and military recruits, or in thinned bone. Deep groin, hip or buttock pain comes on with weight-bearing and eases with rest. A femoral neck stress fracture needs urgent medical review because it can break through.",
+    "category": "mimic",
+    "regions": [
+      "groin",
+      "anterior_thigh",
+      "buttock",
+      "low_back"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_hip_weight_pain",
+        "type": "usual",
+        "reason": "A cracked bone hurts when it carries weight and settles with rest."
+      },
+      {
+        "finding": "h_hip_load_increase",
+        "type": "usual",
+        "reason": "A stress fracture follows more loading than the bone can repair, usually a recent rise in running, marching or walking."
+      },
+      {
+        "finding": "h_bone_health",
+        "type": "supports",
+        "reason": "Thin bone, or the low hormone levels that stop periods, cracks under normal loads."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A joint, tendon, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "hip_avn",
+    "name": "Loss of blood supply to the hip bone (avascular necrosis of the femoral head)",
+    "shortName": "Hip AVN",
+    "description": "Part of the ball of the hip joint dies because its blood supply is cut off, then slowly collapses. It is linked to long-term steroid use, heavy drinking, sickle cell disease and hip injuries. Deep groin pain on walking, later also at rest and at night; it needs an MRI to diagnose early.",
+    "category": "mimic",
+    "regions": [
+      "groin",
+      "anterior_thigh",
+      "buttock",
+      "knee_front"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_avn_risk",
+        "type": "supports",
+        "reason": "These are the usual causes of the cut-off blood supply."
+      },
+      {
+        "finding": "h_hip_weight_pain",
+        "type": "usual",
+        "reason": "The weakened bone hurts when it carries weight."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A joint, tendon, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "iliopsoas",
+    "name": "Hip flexor tendon problem or snapping hip (iliopsoas)",
+    "shortName": "Iliopsoas",
+    "description": "Irritation of the big hip-flexor tendon (iliopsoas) or its bursa where it crosses the front of the hip, sometimes with a clunk as the tendon flicks over the bone (snapping hip). Pain at the front of the hip or groin comes on lifting the knee toward the chest.",
+    "category": "mimic",
+    "regions": [
+      "groin",
+      "anterior_thigh"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_hip_flexor_lift",
+        "type": "usual",
+        "reason": "Lifting the knee is the iliopsoas's job, so it loads the tendon."
+      },
+      {
+        "finding": "h_hip_snap",
+        "type": "supports",
+        "reason": "A clunk at the front of the hip is the tendon flicking over the bone."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A joint, tendon, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "thigh_strain",
+    "name": "Thigh muscle strain (hamstring or quadriceps)",
+    "shortName": "Thigh strain",
+    "description": "A tear in the hamstring muscles at the back of the thigh or the quadriceps at the front, usually during sprinting, kicking or a sudden stretch. Sharp pain and a tender spot in the muscle, sometimes with bruising.",
+    "category": "mimic",
+    "regions": [
+      "posterior_thigh",
+      "anterior_thigh"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_thigh_sudden_pull",
+        "type": "usual",
+        "reason": "A strain is a muscle tear, which happens at a definite moment under load."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A joint, tendon, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "shoulder_instability",
+    "name": "Shoulder instability or dislocation",
+    "shortName": "Shoulder instability",
+    "description": "The ball of the shoulder slips partly or fully out of its socket, usually forward, first after a fall or a forceful twist and then more easily. People avoid positions with the arm raised and turned back because the shoulder feels as if it will slip.",
+    "category": "mimic",
+    "regions": [
+      "shoulder",
+      "upper_arm_lateral"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_shoulder_dislocated",
+        "type": "supports",
+        "reason": "A shoulder that has dislocated once is likely to slip again."
+      },
+      {
+        "finding": "h_shoulder_apprehension",
+        "type": "usual",
+        "reason": "An unstable shoulder feels as if it will slip in the raised, turned-back position."
+      },
+      {
+        "finding": "h_arm_numbness",
+        "type": "unexplained",
+        "reason": "A joint, tendon, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "slap_tear",
+    "name": "Tear of the shoulder socket rim (SLAP or labral tear)",
+    "shortName": "Labral tear",
+    "description": "A tear of the rim of cartilage around the shoulder socket (the labrum), often at the top where the biceps tendon attaches (SLAP). It follows overhead sport such as throwing, a fall on an outstretched arm or a sudden pull, and causes deep pain with clicking or catching.",
+    "category": "mimic",
+    "regions": [
+      "shoulder",
+      "upper_arm_lateral"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_shoulder_overhead_or_fall",
+        "type": "usual",
+        "reason": "The rim tears under the pull of repeated throwing or a sudden force on the arm."
+      },
+      {
+        "finding": "h_shoulder_deep_click",
+        "type": "supports",
+        "reason": "A loose flap of the rim can catch inside the joint."
+      },
+      {
+        "finding": "h_arm_numbness",
+        "type": "unexplained",
+        "reason": "A joint, tendon, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "calcific_tendinitis",
+    "name": "Calcium deposit in a shoulder tendon (calcific tendinitis)",
+    "shortName": "Calcific tendinitis",
+    "description": "A chalky calcium deposit in a rotator cuff tendon. It may cause little trouble for years, then, as the body starts to clear it, a sudden spell of severe shoulder pain that can stop sleep and almost all movement. An X-ray or ultrasound shows the deposit.",
+    "category": "mimic",
+    "regions": [
+      "shoulder",
+      "upper_arm_lateral"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_sudden_severe_arm_pain",
+        "type": "supports",
+        "reason": "As the body clears the deposit, the tendon becomes acutely inflamed, so the pain can build to a severe peak within hours."
+      },
+      {
+        "finding": "st_painful_arc_self",
+        "type": "supports",
+        "reason": "The deposit sits in a rotator cuff tendon, which is pinched in the middle of raising the arm."
+      },
+      {
+        "finding": "h_arm_numbness",
+        "type": "unexplained",
+        "reason": "A joint, tendon, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "olecranon_bursitis",
+    "name": "Swollen bursa on the point of the elbow (olecranon bursitis)",
+    "shortName": "Elbow bursitis",
+    "description": "The small fluid sac over the point of the elbow fills with fluid after leaning on the elbow, a knock, gout or infection, making a soft swelling like a small balloon. If it is red, hot and painful, or you feel unwell, see a doctor promptly because it can be infected.",
+    "category": "mimic",
+    "regions": [
+      "elbow_lateral",
+      "elbow_medial"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_elbow_point_swelling",
+        "type": "usual",
+        "reason": "The swollen bursa is the soft lump on the point of the elbow."
+      },
+      {
+        "finding": "h_arm_numbness",
+        "type": "unexplained",
+        "reason": "A joint, tendon, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "scaphoid_fracture",
+    "name": "Broken wrist bone at the base of the thumb (scaphoid fracture)",
+    "shortName": "Scaphoid fracture",
+    "description": "A break in the small scaphoid bone at the thumb side of the wrist, usually from a fall onto an outstretched hand. It can look like a sprain and is often invisible on the first X-ray, but an untreated one may fail to heal, so a wrist that stays sore at the base of the thumb after a fall needs checking.",
+    "category": "mimic",
+    "regions": [
+      "wrist_radial",
+      "hand_dorsal_radial",
+      "forearm_lateral"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_fall_on_hand",
+        "type": "usual",
+        "reason": "A scaphoid fracture is caused by a fall or blow, almost always onto an outstretched hand."
+      },
+      {
+        "finding": "h_snuffbox_tender",
+        "type": "usual",
+        "reason": "The scaphoid lies at the bottom of the hollow at the base of the thumb, so a fracture makes it tender."
+      },
+      {
+        "finding": "h_arm_numbness",
+        "type": "unexplained",
+        "reason": "A joint, tendon, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "wrist_ganglion",
+    "name": "Wrist ganglion (fluid-filled lump)",
+    "shortName": "Ganglion",
+    "description": "A smooth, jelly-filled lump growing from a wrist joint or tendon sheath, most often on the back of the wrist. It may ache, especially when the wrist is bent back, and can grow or shrink. It is harmless, and many go away on their own.",
+    "category": "mimic",
+    "regions": [
+      "wrist_radial",
+      "wrist_ulnar",
+      "hand_dorsal_radial",
+      "forearm_dorsal"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_wrist_lump",
+        "type": "usual",
+        "reason": "A ganglion is the lump itself."
+      },
+      {
+        "finding": "h_arm_numbness",
+        "type": "unexplained",
+        "reason": "A joint, tendon, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "hand_oa",
+    "name": "Finger joint osteoarthritis (hand osteoarthritis)",
+    "shortName": "Hand OA",
+    "description": "Wear of the small finger joints, especially those nearest the fingertips and the middle finger joints, from middle age onward. The joints ache with use, stiffen briefly, and grow hard, knobbly bony swellings.",
+    "category": "mimic",
+    "regions": [
+      "hand_median",
+      "hand_ulnar",
+      "hand_dorsal_radial"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_finger_knobbly",
+        "type": "usual",
+        "reason": "Osteoarthritis grows new bone at the edges of the joint, which makes the knobs."
+      },
+      {
+        "finding": "h_age_45",
+        "type": "usual",
+        "reason": "Joint wear builds up over decades."
+      },
+      {
+        "finding": "h_morning_stiff_long",
+        "type": "unexplained",
+        "reason": "Osteoarthritis stiffness usually wears off within half an hour; longer stiffness points to an inflammatory arthritis."
+      }
+    ]
+  },
+  {
+    "id": "mallet_finger",
+    "name": "Mallet finger (torn tendon at the fingertip)",
+    "shortName": "Mallet finger",
+    "description": "The tendon that straightens the fingertip tears or pulls off a flake of bone when the tip is struck, for example by a ball. The fingertip droops and can't be straightened on its own. It needs a splint early, so see a clinician soon.",
+    "category": "mimic",
+    "regions": [
+      "hand_median",
+      "hand_ulnar"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_fingertip_droop",
+        "type": "usual",
+        "reason": "With the tendon torn, nothing straightens the last joint, so the tip droops."
+      },
+      {
+        "finding": "h_arm_numbness",
+        "type": "unexplained",
+        "reason": "A joint, tendon, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "dupuytren",
+    "name": "Dupuytren's disease (thickened cords in the palm)",
+    "shortName": "Dupuytren's",
+    "description": "The tissue under the skin of the palm thickens into lumps and cords that slowly pull the ring and little fingers (sometimes others) down into the palm. It is often painless; the lumps can be tender early on.",
+    "category": "mimic",
+    "regions": [
+      "hand_ulnar",
+      "hand_median"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_palm_cord",
+        "type": "usual",
+        "reason": "The cords are the disease, and they stop the fingers straightening fully."
+      },
+      {
+        "finding": "h_arm_numbness",
+        "type": "unexplained",
+        "reason": "A joint, tendon, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "knee_collateral",
+    "name": "Knee side ligament sprain (medial or lateral collateral ligament)",
+    "shortName": "Collateral ligament",
+    "description": "A sprain or tear of a ligament on the inner side (medial collateral) or outer side (lateral collateral) of the knee when the knee is forced sideways. Pain and tenderness along the side of the knee, sometimes with a feeling of it giving way sideways.",
+    "category": "mimic",
+    "regions": [
+      "knee_medial",
+      "knee_lateral"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_knee_injury",
+        "type": "usual",
+        "reason": "A ligament tear follows an injury."
+      },
+      {
+        "finding": "h_knee_side_force",
+        "type": "usual",
+        "reason": "The side ligaments tear when the knee is bent sideways beyond its range."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A joint, tendon, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "pcl",
+    "name": "Posterior cruciate ligament (PCL) tear",
+    "shortName": "PCL tear",
+    "description": "A tear of the ligament that stops the shin sliding backwards under the thigh bone, usually from a blow to the front of the shin with the knee bent, as on a car dashboard or a fall onto a bent knee. Pain at the back of the knee, often less swelling than an ACL tear.",
+    "category": "mimic",
+    "regions": [
+      "knee_back",
+      "knee_front"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_knee_injury",
+        "type": "usual",
+        "reason": "A ligament tear follows an injury."
+      },
+      {
+        "finding": "h_knee_front_blow",
+        "type": "usual",
+        "reason": "The PCL tears when the shin is pushed backwards with the knee bent."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A joint, tendon, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "patellar_dislocation",
+    "name": "Kneecap dislocation or instability",
+    "shortName": "Kneecap instability",
+    "description": "The kneecap slips out of its groove, almost always to the outer side, usually on a twist with the foot planted. It may go back by itself. Afterwards the knee is swollen and sore on the inner side of the kneecap, and it can happen again.",
+    "category": "mimic",
+    "regions": [
+      "knee_front",
+      "knee_medial"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_kneecap_slipped",
+        "type": "usual",
+        "reason": "This is the kneecap slipping out of place."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A joint, tendon, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "osgood",
+    "name": "Osgood-Schlatter disease (growing knee pain)",
+    "shortName": "Osgood-Schlatter",
+    "description": "In children and young teenagers who play running and jumping sports, the kneecap tendon pulls on the still-growing top of the shin bone. A tender bony bump forms just below the kneecap. It settles once growth stops.",
+    "category": "mimic",
+    "regions": [
+      "knee_front"
+    ],
+    "prior": null,
+    "context": [
+      {
+        "text": "Of 16 children seen at podiatry and physiotherapy clinics with pain at the front of the knee, 12 were diagnosed with this condition; the other 4 had other knee problems, including suspected juvenile arthritis and kneecap pain.",
+        "sourceId": "brooks2024",
+        "locator": "Results (Study 2)"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_age_growing",
+        "type": "usual",
+        "reason": "It affects the growth plate at the top of the shin, which closes when growth stops."
+      },
+      {
+        "finding": "h_shin_top_bump",
+        "type": "usual",
+        "reason": "The pulled-on growth plate forms a tender bump below the kneecap."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A joint, tendon, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "knee_ocd",
+    "name": "Loose or damaged piece of joint surface in the knee (osteochondritis dissecans)",
+    "shortName": "Knee OCD",
+    "description": "A small area of bone and cartilage under the knee's joint surface loses its blood supply and loosens, mostly in active children and young adults. It causes a vague ache with activity, swelling, and catching or locking if a piece comes loose.",
+    "category": "mimic",
+    "regions": [
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_knee_locking",
+        "type": "supports",
+        "reason": "A loose fragment can catch between the joint surfaces."
+      },
+      {
+        "finding": "h_age_growing",
+        "type": "supports",
+        "reason": "It is most common in children and teenagers who are still growing."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A joint, tendon, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "ankle_oa",
+    "name": "Ankle osteoarthritis",
+    "shortName": "Ankle OA",
+    "description": "Wear of the ankle joint, usually years after a bad ankle fracture or repeated sprains. A stiff, aching ankle that is worse after walking and better with rest, sometimes with swelling.",
+    "category": "mimic",
+    "regions": [
+      "ankle_lateral",
+      "ankle_medial",
+      "foot_dorsum"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_ankle_old_injury",
+        "type": "usual",
+        "reason": "Most ankle osteoarthritis follows an old injury that damaged the joint surface."
+      },
+      {
+        "finding": "h_ankle_stiff_ache",
+        "type": "usual",
+        "reason": "A worn joint stiffens and aches with use, without a new injury."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A joint, tendon, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "high_ankle_sprain",
+    "name": "High ankle sprain (syndesmosis injury)",
+    "shortName": "High ankle sprain",
+    "description": "A sprain of the ligaments that hold the two lower-leg bones together just above the ankle, when the foot is twisted outward. It hurts higher up than an ordinary sprain, at the front of the ankle and lower shin, and takes longer to heal.",
+    "category": "mimic",
+    "regions": [
+      "ankle_lateral",
+      "shin_anterior"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_ankle_injury",
+        "type": "usual",
+        "reason": "This sprain is caused by a twisting injury."
+      },
+      {
+        "finding": "h_ankle_twist_out",
+        "type": "usual",
+        "reason": "These ligaments are torn when the foot twists outward, pushing the two leg bones apart."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A joint, tendon, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "hallux_valgus",
+    "name": "Bunion (hallux valgus)",
+    "shortName": "Bunion",
+    "description": "The big toe drifts toward the other toes and a bony bump forms at its base on the inner side of the foot. Shoes rub on the bump, and the joint and the ball of the foot can ache.",
+    "category": "mimic",
+    "regions": [
+      "foot_dorsum",
+      "forefoot"
+    ],
+    "prior": null,
+    "context": [
+      {
+        "text": "Older people comparing their own feet with four standard photographs recognised 85% of the bunions an examiner found, and rated 88% of feet without one correctly.",
+        "sourceId": "menz2010",
+        "locator": "Abstract (Results)"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_bunion",
+        "type": "usual",
+        "reason": "This is what a bunion is: the toe drifts and the bump appears."
+      },
+      {
+        "finding": "h_ff_tight_shoes",
+        "type": "supports",
+        "reason": "Narrow shoes press on the bump."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A joint, tendon, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "sesamoiditis",
+    "name": "Sesamoid pain under the big toe (sesamoiditis or sesamoid fracture)",
+    "shortName": "Sesamoids",
+    "description": "Overload, a stress fracture or wear of the two small bones in the tendon under the big toe joint, mostly in runners, dancers and people in high heels. Pain is right under the big toe joint and worse pushing off.",
+    "category": "mimic",
+    "regions": [
+      "forefoot"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_under_big_toe",
+        "type": "usual",
+        "reason": "The sesamoids lie directly beneath the big toe joint and take the load of pushing off."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A joint, tendon, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "insertional_achilles",
+    "name": "Back of heel pain: insertional Achilles tendinopathy, heel bursitis or Haglund's bump",
+    "shortName": "Back of heel",
+    "description": "Pain where the Achilles tendon attaches to the heel bone, from wear of the tendon at its attachment, an inflamed bursa just in front of it, or a bony bump (Haglund's deformity) that shoes rub on.",
+    "category": "mimic",
+    "regions": [
+      "achilles",
+      "heel"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_heel_back_bump",
+        "type": "usual",
+        "reason": "These problems sit at the tendon's attachment, where shoes press."
+      },
+      {
+        "finding": "h_achilles_spot",
+        "type": "unexplained",
+        "reason": "Pain 2 to 6 cm above the heel is in the middle of the tendon, not at its attachment."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A joint, tendon, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "sever",
+    "name": "Sever's disease (growing heel pain)",
+    "shortName": "Sever's",
+    "description": "In active children, usually 8 to 14, the Achilles tendon pulls on the still-growing back of the heel bone. The heel hurts with running and jumping and is sore when squeezed from both sides. It settles once growth stops.",
+    "category": "mimic",
+    "regions": [
+      "heel",
+      "achilles"
+    ],
+    "prior": null,
+    "context": [
+      {
+        "text": "Of 47 children seen at podiatry and physiotherapy clinics with pain at the back of the heel, 33 were diagnosed with this condition (5 of them alongside another foot problem); the rest had tendon problems, a heel bursitis or joined foot bones (tarsal coalition).",
+        "sourceId": "brooks2024",
+        "locator": "Results (Study 2)"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_age_growing",
+        "type": "usual",
+        "reason": "It affects the heel's growth plate, which closes when growth stops."
+      },
+      {
+        "finding": "h_heel_squeeze_sport",
+        "type": "usual",
+        "reason": "Squeezing the sides of the heel presses on the irritated growth plate."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A joint, tendon, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "gout",
+    "name": "Gout (crystal arthritis)",
+    "shortName": "Gout",
+    "description": "Uric acid crystals form in a joint and set off attacks of severe pain, redness, heat and swelling that peak within a day and settle within one or two weeks. The base of the big toe is the classic place; the ankle, foot, knee, wrist, fingers and elbow are also common. A doctor confirms it with a blood test or by finding crystals in joint fluid.",
+    "category": "mimic",
+    "regions": [
+      "forefoot",
+      "foot_dorsum",
+      "ankle_lateral",
+      "ankle_medial",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "hand_median",
+      "hand_ulnar",
+      "hand_dorsal_radial",
+      "wrist_radial",
+      "wrist_ulnar",
+      "elbow_lateral",
+      "elbow_medial",
+      "heel",
+      "achilles"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_joint_attacks",
+        "type": "usual",
+        "reason": "Gout comes in attacks of a hot, red, swollen joint that build quickly and then settle."
+      }
+    ]
+  },
+  {
+    "id": "inflammatory_arthritis",
+    "name": "Inflammatory arthritis (such as rheumatoid arthritis)",
+    "shortName": "Inflammatory arthritis",
+    "description": "The immune system inflames the lining of several joints, often the small joints of both hands and feet on both sides. Joints are swollen, warm and stiff for well over half an hour in the morning. Early treatment by a rheumatologist protects the joints, so see a doctor if this sounds like you.",
+    "category": "mimic",
+    "regions": [
+      "hand_median",
+      "hand_ulnar",
+      "hand_dorsal_radial",
+      "wrist_radial",
+      "wrist_ulnar",
+      "forefoot",
+      "foot_dorsum",
+      "ankle_lateral",
+      "ankle_medial",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "elbow_lateral",
+      "elbow_medial",
+      "shoulder"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_many_places_both_sides",
+        "type": "usual",
+        "reason": "The disease usually affects several joints, often the same ones on both sides."
+      },
+      {
+        "finding": "h_morning_stiff_long",
+        "type": "usual",
+        "reason": "Inflamed joint linings stiffen overnight and take a long time to loosen."
+      },
+      {
+        "finding": "h_many_joints_swollen",
+        "type": "usual",
+        "reason": "Inflamed joint linings make the joints swell."
+      }
+    ]
+  },
+  {
+    "id": "pmr",
+    "name": "Polymyalgia rheumatica",
+    "shortName": "PMR",
+    "description": "An inflammatory condition of people over 50 that causes aching and marked stiffness of both shoulders, the neck and often both hips, worst in the morning. It responds quickly to steroid tablets prescribed by a doctor. It can come with giant cell arteritis: a new headache, scalp tenderness, jaw pain on chewing or any change in vision needs same-day medical care.",
+    "category": "mimic",
+    "regions": [
+      "shoulder",
+      "upper_arm_lateral",
+      "upper_arm_medial",
+      "neck",
+      "buttock",
+      "lateral_thigh",
+      "anterior_thigh",
+      "groin"
+    ],
+    "prior": null,
+    "context": [
+      {
+        "text": "In the study behind the classification criteria (people 50 or older with new pain in both shoulders), a score of 4 or more picked out 68% of those with polymyalgia rheumatica and wrongly included 22% of those with look-alike conditions: 12% of shoulder problems but 35% of rheumatoid arthritis. The authors state the criteria are not meant for diagnosis.",
+        "sourceId": "dasgupta2012",
+        "locator": "Abstract (Results)"
+      }
+    ],
+    "criteria": {
+      "title": "2012 EULAR/ACR classification criteria for polymyalgia rheumatica (needs age 50 or older, both shoulders aching and raised inflammation blood tests; then 4 or more points)",
+      "sourceId": "dasgupta2012",
+      "locator": "Table 6",
+      "items": [
+        {
+          "id": "pmr_age",
+          "prompt": "Aged 50 or older (required)",
+          "matchIf": "yes",
+          "linkedFinding": "h_age_50"
+        },
+        {
+          "id": "pmr_shoulders",
+          "prompt": "Aching in both shoulders (required)",
+          "matchIf": "yes",
+          "linkedFinding": "h_both_shoulders_ache"
+        },
+        {
+          "id": "pmr_stiffness",
+          "prompt": "Morning stiffness lasting more than 45 minutes (2 points)",
+          "matchIf": "yes",
+          "linkedFinding": "h_morning_stiff_45"
+        },
+        {
+          "id": "pmr_hip",
+          "prompt": "Hip pain or limited hip movement (1 point)",
+          "matchIf": "yes",
+          "linkedFinding": "h_hip_pain_too"
+        },
+        {
+          "id": "pmr_no_other_joints",
+          "prompt": "No pain in other joints (1 point)",
+          "matchIf": "no",
+          "linkedFinding": "h_other_joints_pain"
+        }
+      ],
+      "clinicianOnly": [
+        "Raised CRP and/or ESR (blood tests; required)",
+        "Rheumatoid factor and ACPA both negative (blood tests; 2 points)"
+      ]
+    },
+    "logic": [
+      {
+        "finding": "h_many_places_both_sides",
+        "type": "usual",
+        "reason": "The aching and stiffness affect both shoulders, and often the neck and both hips."
+      }
+    ]
+  },
+  {
+    "id": "fibromyalgia",
+    "name": "Fibromyalgia (widespread pain from an oversensitive pain system)",
+    "shortName": "Fibromyalgia",
+    "description": "Long-lasting widespread pain on both sides of the body, above and below the waist, with tiredness, unrefreshing sleep and poor concentration. No joint or muscle is damaged; the nervous system turns up pain signals. It is diagnosed from the pattern of symptoms after other causes are excluded.",
+    "category": "mimic",
+    "regions": [
+      "neck",
+      "shoulder",
+      "scapula",
+      "upper_back",
+      "mid_back",
+      "low_back",
+      "buttock",
+      "upper_arm_lateral",
+      "upper_arm_medial",
+      "forearm_dorsal",
+      "lateral_thigh",
+      "anterior_thigh",
+      "posterior_thigh",
+      "chest_front",
+      "chest_side",
+      "calf"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_many_places_both_sides",
+        "type": "usual",
+        "reason": "The pain affects many parts of the body on both sides."
+      },
+      {
+        "finding": "h_widespread_pain",
+        "type": "usual",
+        "reason": "The fibromyalgia survey criteria count how many body areas are painful, so the pain is widespread by definition.",
+        "sourceId": "fitzcharles2012",
+        "locator": "Abstract (Background)"
+      },
+      {
+        "finding": "h_fatigue_sleep",
+        "type": "usual",
+        "reason": "The same criteria score tiredness, unrefreshing sleep and thinking problems alongside the pain.",
+        "sourceId": "fitzcharles2012",
+        "locator": "Abstract (Background)"
       }
     ]
   }

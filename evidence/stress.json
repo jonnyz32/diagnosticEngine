@@ -180,6 +180,32 @@
       {
         "hypothesis": "tarsal_tunnel",
         "reason": "The nerve runs through a narrow tunnel behind the inner ankle bone, under a band of tissue."
+      },
+      {
+        "hypothesis": "peroneal",
+        "reason": "The nerve lies just under the skin at the outside of the knee, where leg crossing or long positioning presses it against bone.",
+        "sourceId": "saber2026",
+        "locator": "Section 3b, Common Fibular Neuropathy at the Fibular Head"
+      },
+      {
+        "hypothesis": "saphenous",
+        "reason": "It can be squeezed where it leaves the thigh muscles above the inner knee."
+      },
+      {
+        "hypothesis": "sural",
+        "reason": "It lies just under the skin behind the outer ankle, where tight boots, strapping or scar tissue can press on it."
+      },
+      {
+        "hypothesis": "trigeminal",
+        "reason": "Most often an artery pressing on the nerve where it leaves the brainstem wears away its insulation."
+      },
+      {
+        "hypothesis": "occipital_neuralgia",
+        "reason": "The nerve can be squeezed where it passes through the tight muscles at the base of the skull."
+      },
+      {
+        "hypothesis": "acnes",
+        "reason": "The nerve branch turns sharply through a narrow opening in the sheath of the straight belly muscle, where tensing the muscle pinches it."
       }
     ]
   },
@@ -341,6 +367,16 @@
       {
         "hypothesis": "tos",
         "reason": "Arm-raised work can squeeze the nerves and vessels at the base of the neck together."
+      },
+      {
+        "hypothesis": "pad",
+        "reason": "Here it is the leg muscles, not a nerve, that run short of blood: narrowed arteries can't keep up with walking, and the pain settles with rest.",
+        "sourceId": "nadeau2013",
+        "locator": "Introduction"
+      },
+      {
+        "hypothesis": "cecs",
+        "reason": "Pressure building inside the tight muscle compartment during exercise squeezes the small blood vessels, starving the muscle and nerves of blood until you stop."
       }
     ]
   },
@@ -446,6 +482,43 @@
     ]
   },
   {
+    "id": "metabolic",
+    "name": "Damage from within (metabolic or toxic)",
+    "description": "Some nerve damage comes from inside the body rather than from pressure: high blood sugar in diabetes, heavy alcohol use, a lack of vitamin B12, or some medicines such as chemotherapy. The longest nerves suffer first, so it usually starts in the toes of both feet and creeps upward, with numbness, tingling or burning.",
+    "clues": [
+      {
+        "anyOf": [
+          "h_poly_toes_up"
+        ],
+        "answer": "yes",
+        "type": "usual",
+        "reason": "Damage that starts with the longest nerves shows first in the toes or soles of both feet and spreads upward. If it started elsewhere or on one side, this is a less likely cause."
+      },
+      {
+        "anyOf": [
+          "h_bilateral_sole_numbness"
+        ],
+        "answer": "yes",
+        "type": "supports",
+        "reason": "Both soles going numb together fits a cause that affects all the nerves evenly rather than one squeezed nerve."
+      },
+      {
+        "anyOf": [
+          "h_diabetes"
+        ],
+        "answer": "yes",
+        "type": "supports",
+        "reason": "Diabetes is a common cause of this kind of nerve damage."
+      }
+    ],
+    "conditions": [
+      {
+        "hypothesis": "polyneuropathy",
+        "reason": "The nerves are damaged along their length by a body-wide cause, longest nerves first."
+      }
+    ]
+  },
+  {
     "id": "injury",
     "name": "Direct injury (trauma or an operation)",
     "description": "A nerve can be bruised, stretched or cut by an injury, or damaged during an operation near it. Symptoms start at or soon after the event, in the area that nerve supplies.",
@@ -502,6 +575,14 @@
       {
         "hypothesis": "intercostal",
         "reason": "Most often damaged during chest, lung or breast surgery or by a rib injury."
+      },
+      {
+        "hypothesis": "saphenous",
+        "reason": "Its small branch below the kneecap lies just under the skin and is easily cut or bruised during knee operations."
+      },
+      {
+        "hypothesis": "sural",
+        "reason": "It is easily stretched or bruised by an ankle sprain or fracture and can be cut in operations around the outer ankle."
       }
     ]
   },
@@ -537,7 +618,11 @@
         "reason": "Burning is common when the nervous system is sensitised."
       }
     ],
-    "conditions": []
+    "conditions": [
+      {
+        "hypothesis": "fibromyalgia"
+      }
+    ]
   },
   {
     "id": "tissue",
@@ -729,6 +814,212 @@
       },
       {
         "hypothesis": "hallux_rigidus"
+      },
+      {
+        "hypothesis": "knee_oa"
+      },
+      {
+        "hypothesis": "pfp"
+      },
+      {
+        "hypothesis": "meniscus"
+      },
+      {
+        "hypothesis": "acl"
+      },
+      {
+        "hypothesis": "patellar_tendinopathy"
+      },
+      {
+        "hypothesis": "itbs"
+      },
+      {
+        "hypothesis": "pes_anserine"
+      },
+      {
+        "hypothesis": "bakers_cyst"
+      },
+      {
+        "hypothesis": "plantar_fasciitis"
+      },
+      {
+        "hypothesis": "achilles_tendinopathy"
+      },
+      {
+        "hypothesis": "achilles_rupture"
+      },
+      {
+        "hypothesis": "ankle_fracture"
+      },
+      {
+        "hypothesis": "ankle_sprain"
+      },
+      {
+        "hypothesis": "ptt"
+      },
+      {
+        "hypothesis": "peroneal_tendon"
+      },
+      {
+        "hypothesis": "mtss"
+      },
+      {
+        "hypothesis": "tibial_stress_fracture"
+      },
+      {
+        "hypothesis": "calf_strain"
+      },
+      {
+        "hypothesis": "tmd"
+      },
+      {
+        "hypothesis": "cervicogenic_headache"
+      },
+      {
+        "hypothesis": "abdominal_hernia"
+      },
+      {
+        "hypothesis": "coccydynia"
+      },
+      {
+        "hypothesis": "spondylolysis"
+      },
+      {
+        "hypothesis": "whiplash"
+      },
+      {
+        "hypothesis": "pelvic_girdle"
+      },
+      {
+        "hypothesis": "osteitis_pubis"
+      },
+      {
+        "hypothesis": "hip_stress_fracture"
+      },
+      {
+        "hypothesis": "hip_avn"
+      },
+      {
+        "hypothesis": "iliopsoas"
+      },
+      {
+        "hypothesis": "thigh_strain"
+      },
+      {
+        "hypothesis": "shoulder_instability"
+      },
+      {
+        "hypothesis": "slap_tear"
+      },
+      {
+        "hypothesis": "calcific_tendinitis"
+      },
+      {
+        "hypothesis": "olecranon_bursitis"
+      },
+      {
+        "hypothesis": "scaphoid_fracture"
+      },
+      {
+        "hypothesis": "wrist_ganglion"
+      },
+      {
+        "hypothesis": "hand_oa"
+      },
+      {
+        "hypothesis": "mallet_finger"
+      },
+      {
+        "hypothesis": "dupuytren"
+      },
+      {
+        "hypothesis": "knee_collateral"
+      },
+      {
+        "hypothesis": "pcl"
+      },
+      {
+        "hypothesis": "patellar_dislocation"
+      },
+      {
+        "hypothesis": "osgood"
+      },
+      {
+        "hypothesis": "knee_ocd"
+      },
+      {
+        "hypothesis": "ankle_oa"
+      },
+      {
+        "hypothesis": "high_ankle_sprain"
+      },
+      {
+        "hypothesis": "hallux_valgus"
+      },
+      {
+        "hypothesis": "sesamoiditis"
+      },
+      {
+        "hypothesis": "insertional_achilles"
+      },
+      {
+        "hypothesis": "sever"
+      }
+    ]
+  },
+  {
+    "id": "joint_inflammation",
+    "name": "Inflamed joints or tendons (inflammatory disease)",
+    "description": "Here the body's own inflammation, from an immune disease or from crystals, attacks the lining of joints, tendon attachments or the spine. Unlike wear or overload, the pain is often worst after rest, with long morning stiffness, swelling, warmth or redness, and it can affect several places at once.",
+    "clues": [
+      {
+        "anyOf": [
+          "h_morning_stiff_long",
+          "h_morning_stiff_45"
+        ],
+        "answer": "yes",
+        "type": "supports",
+        "reason": "Inflammation builds up overnight, so the stiffness after waking lasts well over half an hour."
+      },
+      {
+        "anyOf": [
+          "h_joint_attacks",
+          "h_many_joints_swollen"
+        ],
+        "answer": "yes",
+        "type": "supports",
+        "reason": "Inflamed joints swell, and crystal attacks make them red and hot."
+      },
+      {
+        "anyOf": [
+          "p_night_rest"
+        ],
+        "answer": "yes",
+        "type": "supports",
+        "reason": "Inflammation hurts at rest too, unlike pain from overload."
+      },
+      {
+        "anyOf": [
+          "h_back_exercise_better",
+          "p_movement_eases"
+        ],
+        "answer": "yes",
+        "type": "supports",
+        "reason": "Inflammatory stiffness loosens with movement."
+      }
+    ],
+    "conditions": [
+      {
+        "hypothesis": "axial_spa"
+      },
+      {
+        "hypothesis": "gout"
+      },
+      {
+        "hypothesis": "inflammatory_arthritis"
+      },
+      {
+        "hypothesis": "pmr"
       }
     ]
   }

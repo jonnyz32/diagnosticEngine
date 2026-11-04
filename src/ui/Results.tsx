@@ -19,6 +19,8 @@ import { bestGuess, type BestGuess } from "../engine/verdict";
 import { REGION_LABELS } from "./regions";
 import { isThesis, SourceLink } from "./SourceLink";
 import { ChestNotice, touchesChest } from "./ChestNotice";
+import { HeadNotice, touchesHead } from "./HeadNotice";
+import { AbdomenNotice, touchesAbdomen } from "./AbdomenNotice";
 
 const pct = (p: number) => (p < 0.01 ? "<1%" : `${Math.round(p * 100)}%`);
 const ANSWER_LABEL: Record<Answer, string> = { yes: "Yes", no: "No", unsure: "Not sure / skipped" };
@@ -62,6 +64,8 @@ export function Results({ db, regions, given, implied, doneReason, onBack, onRes
         <h1>Your results</h1>
         {doneReason && <p className="muted">The questions stopped because {doneReason}.</p>}
         {touchesChest(regions) && <ChestNotice db={db} />}
+        {touchesHead(regions) && <HeadNotice />}
+        {touchesAbdomen(regions) && <AbdomenNotice />}
         <p className="note">
           These are estimates from published studies, adjusted for your answers. They are not a diagnosis. Many of the
           tests were studied when performed by clinicians, so treat these numbers as a rough guide to discuss with one.
@@ -897,13 +901,15 @@ function Method() {
             nerves are listed but not scored. The arm history questions only feed the logical fit, not the probabilities.
           </li>
           <li>
-            Tendon, joint, disc and muscle causes are scored where a study supports a self-test: hip arthritis, the
-            sacroiliac joint, outer-hip tendons, the hamstring tendon, a painful disc, the rotator cuff, De Quervain's,
-            thumb-base arthritis and the wrist cartilage (TFCC). Facet joints, hip impingement, adductor groin pain, the AC
-            joint, shoulder arthritis, neck joint pain, tennis and golfer's elbow, frozen shoulder, the biceps tendon, trigger
-            finger, intersection syndrome and non-specific work-related arm pain have no usable test data, so they are
-            listed with a logical fit only. The knee, ankle and foot,
-            and circulation problems in the legs, are not yet modelled.
+            Tendon, joint, disc, bone and muscle causes are scored where a study supports a question or self-test: hip
+            arthritis, the sacroiliac joint, outer-hip tendons, the hamstring tendon, a painful disc, the rotator cuff, the
+            AC joint, frozen shoulder, De Quervain's, thumb-base arthritis, the wrist cartilage (TFCC), narrowed leg
+            arteries, kneecap pain, ACL and meniscal tears, ankle and midfoot fractures, Achilles rupture, plantar heel pain
+            and tibial stress fractures, jaw (TMD) pain, headache from the neck and the abdominal wall nerve (ACNES).
+            Many others (for example facet joints, hip impingement, shoulder arthritis, tennis elbow, knee osteoarthritis,
+            Achilles tendinopathy, ankle sprains, shin splints, compartment syndrome, and trigeminal and occipital
+            neuralgia) have no usable test data, so they are listed with a logical fit only. Migraine, tension-type
+            headache and problems of the organs inside the chest and belly are not modelled.
           </li>
         </ul>
       </details>

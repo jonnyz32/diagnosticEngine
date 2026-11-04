@@ -522,6 +522,40 @@ const D: Record<string, [() => ReactNode, string]> = {
   ),
     "Round both shoulders forward; feel where the collarbone meets the breastbone",
   ],
+  st_coracoid_self: [
+    () => (
+    <>
+      <Floor />
+      <Chair />
+      <Fig {...SITTING} leg={[[138, 88], [140, 124]]} arm={[[122, 66], [112, 54]]} />
+      <Spot at={[110, 52]} />
+    </>
+  ),
+    "Press into the hollow at the front of the shoulder, below the outer collarbone",
+  ],
+  st_ac_swelling_self: [
+    () => (
+    <>
+      <Floor />
+      <Wall x={200} />
+      <Fig {...STANDING} leg={[[120, 100], [120, 126]]} arm={[[118, 56], [118, 74]]} />
+      <Spot at={[124, 34]} />
+      <Arrow d="M 140 30 L 192 30" />
+    </>
+  ),
+    "Facing a mirror: compare the bumps on top of both shoulders",
+  ],
+  st_knee_deep_squat: [
+    () => (
+    <>
+      <Floor />
+      <Table x={150} y={70} w={70} />
+      <Fig head={[120, 58]} neck={[122, 68]} hip={[104, 104]} arm={[[138, 72], [152, 70]]} leg={[[136, 112], [118, 126]]} />
+      <Arrow d="M 90 70 L 90 104" />
+    </>
+  ),
+    "Holding on, squat as low as is comfortable, then stand up",
+  ],
   st_adductor_squeeze_self: [
     () => (
     <>
@@ -604,6 +638,91 @@ const D: Record<string, [() => ReactNode, string]> = {
     </>
   ),
     "Pinch the gap behind two toes: thumb under the sole, index finger on top",
+  ],
+  st_shetty_helper: [
+    () => (
+    <>
+      <Chair />
+      <Fig {...SITTING} leg={[[138, 88], [140, 116], [152, 118]]} leg2={[[132, 80], [134, 112]]} arm={[[116, 70], [126, 86]]} />
+      <Helper at={[146, 124]} />
+      <Arrow d="M 164 96 L 164 116" />
+    </>
+  ),
+    "Sitting, foot off the floor: press down into your helper's hand as if stepping",
+  ],
+  // Lower leg and foot from the side, outer ankle bone at (186, 60).
+  st_ottawa_bone_self: [
+    () => (
+    <>
+      <Seg a={[30, 48]} b={[180, 58]} w={16} />
+      <Seg a={[172, 66]} b={[226, 74]} w={10} />
+      <circle cx={186} cy={60} r={5} className="dg-hand" />
+      <Spot at={[180, 54]} />
+      <Spot at={[206, 74]} />
+    </>
+  ),
+    "Press the back edge and tip of each ankle bone, the bony bump on the inner midfoot and the knob halfway along the outer edge of the foot",
+  ],
+  st_calf_squeeze_helper: [
+    () => (
+    <>
+      <Bed />
+      <Fig {...LYING_FRONT} leg2={[[150, 91], [204, 92]]} leg={[[150, 89], [204, 90], [214, 104]]} />
+      <Helper at={[172, 82]} />
+      <Arrow d="M 172 56 L 172 74" />
+      <Arrow d="M 226 96 Q 230 110 216 114" />
+    </>
+  ),
+    "Face down, feet over the end of the bed: your helper squeezes the calf; watch whether the foot points down",
+  ],
+  st_windlass_helper: [
+    () => (
+    <>
+      <Floor />
+      <rect x={96} y={116} width={48} height={10} className="dg-furniture" />
+      <Fig {...STANDING} leg={[[122, 98], [124, 114], [150, 112]]} leg2={[[116, 98], [112, 114]]} arm={[[140, 50], [158, 56]]} />
+      <Helper at={[156, 116]} />
+      <Arrow d="M 168 126 L 156 104" />
+    </>
+  ),
+    "Standing, toes over the edge of a step: your helper bends your big toe upward",
+  ],
+  st_shin_focal_self: [
+    () => (
+    <>
+      <Floor />
+      <Chair />
+      <Fig {...SITTING} leg={[[138, 88], [140, 124]]} arm={[[120, 70], [136, 104]]} />
+      <Spot at={[138, 106]} />
+      <Arrow d="M 150 92 L 150 120" />
+    </>
+  ),
+    "Press along the inner back edge of the shin bone; is the tender part an inch or less?",
+  ],
+  st_heel_percussion_helper: [
+    () => (
+    <>
+      <Bed />
+      <Fig {...LYING_BACK} leg2={[[140, 91], [182, 92]]} leg={[[140, 86], [190, 78]]} />
+      <Helper at={[180, 70]} />
+      <Helper at={[206, 78]} />
+      <Arrow d="M 226 78 L 212 78" />
+    </>
+  ),
+    "Your helper lifts the straight leg a little and strikes the bottom of the heel with a flat palm",
+  ],
+  // Head seen from behind, skull base at y 76.
+  st_gon_tender_self: [
+    () => (
+    <>
+      <ellipse cx={120} cy={50} rx={36} ry={42} className="dg-hand" />
+      <Seg a={[120, 92]} b={[120, 126]} w={26} />
+      <line x1={92} y1={76} x2={148} y2={76} className="dg-furniture" />
+      <Spot at={[134, 82]} />
+      <Spot at={[106, 82]} />
+    </>
+  ),
+    "From behind: press two finger-widths out from the middle, just below the skull, on each side",
   ],
 };
 

@@ -42,7 +42,15 @@
       "calf",
       "foot_dorsum",
       "foot_sole_lateral",
-      "forefoot"
+      "forefoot",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel"
     ]
   },
   {
@@ -68,6 +76,28 @@
         "performedBy": "patient",
         "adapted": false,
         "population": "Consecutive patients with leg pain or numbness, specialty and primary care, Japan"
+      },
+      {
+        "hypothesis": "pad",
+        "sens": 0.48,
+        "spec": 0.92,
+        "sensCI": [
+          0.27,
+          0.69
+        ],
+        "specCI": [
+          0.88,
+          0.95
+        ],
+        "sourceId": "nadeau2013",
+        "locator": "Table 3, 'Shopping cart sign (4)': specificity 0.52 (0.31-0.73) with stenosis as target, so 48% of the vascular group",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "53 people with walking-induced leg symptoms at spine or vascular clinics, Canada: 23 with narrowed leg arteries (ABI < 0.9) vs 30 with spinal stenosis on MRI",
+        "specFrom": {
+          "sourceId": "suri2010",
+          "locator": "Table 3, 'Improvement when bending forward' (primary study: Konno 2007)"
+        }
       }
     ],
     "summary": {
@@ -87,7 +117,69 @@
       "calf",
       "foot_dorsum",
       "foot_sole_lateral",
-      "forefoot"
+      "forefoot",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel"
+    ]
+  },
+  {
+    "id": "h_walk_stand_still_ease",
+    "kind": "history",
+    "prompt": "When walking brings on pain, cramp or aching in your leg, does it ease within a few minutes if you simply stop and stand still, without sitting down or bending forward?",
+    "help": "Leg pain from narrowed arteries ('vascular claudication') usually settles with rest in any position.",
+    "dependenceGroup": "flexion_walking",
+    "evidence": [
+      {
+        "hypothesis": "pad",
+        "sens": 0.78,
+        "spec": 0.9,
+        "sensCI": [
+          0.56,
+          0.92
+        ],
+        "specCI": [
+          0.72,
+          0.97
+        ],
+        "sourceId": "nadeau2013",
+        "locator": "Table 4, 'Alleviator: standing (3)' (standing still, no walking)",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "53 people with walking-induced leg symptoms at spine or vascular clinics, Canada: 23 with narrowed leg arteries (ABI < 0.9) vs 30 with spinal stenosis on MRI; the comparison group is stenosis only"
+      }
+    ],
+    "summary": {
+      "yes": "walking pain eases on standing still",
+      "no": "walking pain doesn't ease just by standing still"
+    },
+    "gateRegions": [
+      "low_back",
+      "buttock",
+      "posterior_thigh",
+      "anterior_thigh",
+      "lateral_thigh",
+      "medial_thigh",
+      "groin",
+      "perineum",
+      "shin_anterior",
+      "calf",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel"
     ]
   },
   {
@@ -144,7 +236,15 @@
       "calf",
       "foot_dorsum",
       "foot_sole_lateral",
-      "forefoot"
+      "forefoot",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel"
     ]
   },
   {
@@ -196,7 +296,15 @@
       "calf",
       "foot_dorsum",
       "foot_sole_lateral",
-      "forefoot"
+      "forefoot",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel"
     ]
   },
   {
@@ -222,6 +330,28 @@
         "performedBy": "patient",
         "adapted": false,
         "population": "Consecutive patients with leg pain or numbness, specialty and primary care, Japan"
+      },
+      {
+        "hypothesis": "pad",
+        "sens": 0.3,
+        "spec": 0.7,
+        "sensCI": [
+          0.14,
+          0.53
+        ],
+        "specCI": [
+          0.65,
+          0.76
+        ],
+        "sourceId": "nadeau2013",
+        "locator": "Table 3, 'Trigger: standing (1)': specificity 0.70 (0.47-0.86) with stenosis as target, so 30% of the vascular group",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "53 people with walking-induced leg symptoms at spine or vascular clinics, Canada: 23 with narrowed leg arteries (ABI < 0.9) vs 30 with spinal stenosis on MRI",
+        "specFrom": {
+          "sourceId": "suri2010",
+          "locator": "Table 3, 'Exacerbation when standing up' (primary study: Konno 2007)"
+        }
       }
     ],
     "summary": {
@@ -241,7 +371,15 @@
       "calf",
       "foot_dorsum",
       "foot_sole_lateral",
-      "forefoot"
+      "forefoot",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel"
     ]
   },
   {
@@ -285,7 +423,15 @@
       "calf",
       "foot_dorsum",
       "foot_sole_lateral",
-      "forefoot"
+      "forefoot",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel"
     ]
   },
   {
@@ -329,7 +475,15 @@
       "calf",
       "foot_dorsum",
       "foot_sole_lateral",
-      "forefoot"
+      "forefoot",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel"
     ]
   },
   {
@@ -380,7 +534,15 @@
       "calf",
       "foot_dorsum",
       "foot_sole_lateral",
-      "forefoot"
+      "forefoot",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel"
     ]
   },
   {
@@ -406,7 +568,15 @@
       "shin_anterior",
       "foot_dorsum",
       "foot_sole_lateral",
-      "forefoot"
+      "forefoot",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel"
     ],
     "evidence": [
       {
@@ -481,7 +651,10 @@
       "shin_anterior",
       "buttock",
       "posterior_thigh",
-      "calf"
+      "calf",
+      "knee_front",
+      "knee_medial",
+      "ankle_medial"
     ],
     "evidence": [
       {
@@ -546,7 +719,12 @@
       "shin_anterior",
       "foot_dorsum",
       "foot_sole_lateral",
-      "forefoot"
+      "forefoot",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "achilles",
+      "heel"
     ],
     "evidence": [
       {
@@ -611,7 +789,12 @@
       "shin_anterior",
       "foot_dorsum",
       "foot_sole_lateral",
-      "forefoot"
+      "forefoot",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "achilles",
+      "heel"
     ],
     "evidence": [
       {
@@ -727,7 +910,10 @@
       "anterior_thigh",
       "medial_thigh",
       "shin_anterior",
-      "lateral_thigh"
+      "lateral_thigh",
+      "knee_front",
+      "knee_medial",
+      "ankle_medial"
     ],
     "evidence": [
       {
@@ -789,7 +975,12 @@
       "foot_dorsum",
       "foot_sole_lateral",
       "posterior_thigh",
-      "forefoot"
+      "forefoot",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_medial"
     ],
     "evidence": [
       {
@@ -845,7 +1036,12 @@
       "shin_anterior",
       "foot_dorsum",
       "foot_sole_lateral",
-      "forefoot"
+      "forefoot",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "achilles",
+      "heel"
     ],
     "evidence": [
       {
@@ -904,7 +1100,12 @@
       "foot_dorsum",
       "foot_sole_lateral",
       "lateral_thigh",
-      "forefoot"
+      "forefoot",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "achilles",
+      "heel"
     ],
     "evidence": [
       {
@@ -1041,7 +1242,10 @@
       "anterior_thigh",
       "lateral_thigh",
       "medial_thigh",
-      "shin_anterior"
+      "shin_anterior",
+      "knee_front",
+      "knee_medial",
+      "ankle_medial"
     ],
     "evidence": [
       {
@@ -1141,7 +1345,15 @@
       "calf",
       "foot_dorsum",
       "foot_sole_lateral",
-      "forefoot"
+      "forefoot",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel"
     ]
   },
   {
@@ -1203,7 +1415,15 @@
       "calf",
       "foot_dorsum",
       "foot_sole_lateral",
-      "forefoot"
+      "forefoot",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel"
     ]
   },
   {
@@ -1267,7 +1487,15 @@
       "shin_anterior",
       "foot_dorsum",
       "foot_sole_lateral",
-      "forefoot"
+      "forefoot",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel"
     ],
     "dependenceGroup": "neural_tension",
     "evidence": [
@@ -1466,7 +1694,15 @@
       "shin_anterior",
       "foot_dorsum",
       "foot_sole_lateral",
-      "forefoot"
+      "forefoot",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel"
     ],
     "evidence": [
       {
@@ -1525,7 +1761,15 @@
       "shin_anterior",
       "foot_dorsum",
       "foot_sole_lateral",
-      "forefoot"
+      "forefoot",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel"
     ],
     "impliedBy": [
       {
@@ -1594,7 +1838,15 @@
       "shin_anterior",
       "foot_dorsum",
       "foot_sole_lateral",
-      "forefoot"
+      "forefoot",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel"
     ],
     "evidence": [
       {
@@ -1906,7 +2158,15 @@
       "calf",
       "foot_dorsum",
       "foot_sole_lateral",
-      "forefoot"
+      "forefoot",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel"
     ]
   },
   {
@@ -1966,7 +2226,15 @@
       "calf",
       "foot_dorsum",
       "foot_sole_lateral",
-      "forefoot"
+      "forefoot",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel"
     ],
     "impliedBy": [
       {
@@ -2158,7 +2426,15 @@
       "shin_anterior",
       "foot_dorsum",
       "foot_sole_lateral",
-      "forefoot"
+      "forefoot",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel"
     ],
     "dependenceGroup": "paraesthesia",
     "impliedBy": [
@@ -2230,7 +2506,15 @@
       "shin_anterior",
       "foot_dorsum",
       "foot_sole_lateral",
-      "forefoot"
+      "forefoot",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel"
     ],
     "impliedBy": [
       {
@@ -2296,7 +2580,15 @@
       "shin_anterior",
       "foot_dorsum",
       "foot_sole_lateral",
-      "forefoot"
+      "forefoot",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel"
     ],
     "impliedBy": [
       {
@@ -2498,7 +2790,11 @@
     "prompt": "Are you pregnant, or did the symptoms start during or shortly after a pregnancy?",
     "gateRegions": [
       "lateral_thigh",
-      "anterior_thigh"
+      "anterior_thigh",
+      "buttock",
+      "low_back",
+      "groin",
+      "posterior_thigh"
     ],
     "followUp": {
       "hypothesis": "lfcn",
@@ -2551,7 +2847,15 @@
       "calf",
       "foot_dorsum",
       "foot_sole_lateral",
-      "forefoot"
+      "forefoot",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel"
     ]
   },
   {
@@ -2580,7 +2884,15 @@
       "calf",
       "foot_dorsum",
       "foot_sole_lateral",
-      "forefoot"
+      "forefoot",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel"
     ]
   },
   {
@@ -2609,7 +2921,15 @@
       "calf",
       "foot_dorsum",
       "foot_sole_lateral",
-      "forefoot"
+      "forefoot",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel"
     ]
   },
   {
@@ -2638,7 +2958,15 @@
       "calf",
       "foot_dorsum",
       "foot_sole_lateral",
-      "forefoot"
+      "forefoot",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel"
     ]
   },
   {
@@ -2667,7 +2995,15 @@
       "calf",
       "foot_dorsum",
       "foot_sole_lateral",
-      "forefoot"
+      "forefoot",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel"
     ]
   },
   {
@@ -3210,6 +3546,46 @@
     }
   },
   {
+    "id": "st_coracoid_self",
+    "kind": "selftest",
+    "prompt": "Pressing firmly at the front of the shoulder, just below the outer part of the collarbone, was it clearly more painful than pressing on top of the shoulder or on its outer side?",
+    "instructions": [
+      "Sit with the painful arm relaxed in your lap.",
+      "With two fingers of the other hand, press firmly into the hollow at the front of the shoulder, just below the outer third of the collarbone, where you feel a bony knob deep down (the coracoid).",
+      "Then press with the same force on the bony bump on top of the shoulder, and on the outer side of the shoulder just below its bony edge.",
+      "Answer yes only if the front point is clearly the most painful of the three."
+    ],
+    "evidence": [
+      {
+        "hypothesis": "frozen_shoulder",
+        "sens": 0.96,
+        "spec": 0.887,
+        "sensCI": [
+          0.9,
+          0.99
+        ],
+        "specCI": [
+          0.859,
+          0.91
+        ],
+        "sourceId": "carbone2010",
+        "locator": "Results: positive in 82/85 with adhesive capsulitis (Table 1 sensitivity 0.96, 0.90-0.99) and 67/595 with the four other conditions (52/465, 7/48, 1/16, 7/66; specificity 528/595, Wilson CI; Table 1 reports 0.87-0.89 per condition)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "Shoulder clinic, Rome: 85 with adhesive capsulitis vs 595 with rotator cuff tear, calcifying tendinitis, glenohumeral or AC arthritis"
+      }
+    ],
+    "summary": {
+      "yes": "the front of the shoulder (coracoid) is the most tender point",
+      "no": "the front of the shoulder isn't the most tender point"
+    },
+    "gateRegions": [
+      "shoulder",
+      "upper_arm_lateral",
+      "scapula"
+    ]
+  },
+  {
     "kind": "history",
     "alwaysAsk": true,
     "evidence": [],
@@ -3432,7 +3808,8 @@
     "prompt": "Is your groin or inner-thigh pain brought on by squeezing your knees together, kicking or sprinting?",
     "gateRegions": [
       "groin",
-      "medial_thigh"
+      "medial_thigh",
+      "abdomen"
     ],
     "summary": {
       "yes": "groin pain on squeezing the knees, kicking or sprinting",
@@ -3454,6 +3831,108 @@
     }
   },
   {
+    "id": "h_shoulder_repetitive_onset",
+    "kind": "history",
+    "prompt": "Did your shoulder pain start during, or within two days of, a repetitive activity, rather than after a fall, a blow or a single lift or stretch?",
+    "help": "For example painting a ceiling, lifting weights, or repeated overhead work, with no other cause.",
+    "evidence": [
+      {
+        "hypothesis": "ac_joint",
+        "sens": 0.27,
+        "spec": 0.9,
+        "sensCI": [
+          0.13,
+          0.48
+        ],
+        "specCI": [
+          0.84,
+          0.94
+        ],
+        "sourceId": "cadogan2013",
+        "locator": "Table 5, 'Onset: repetitive activity' (6/16/13/118); definition in Methods, Index tests",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "153 primary-care patients with a new episode of shoulder pain; 22 with AC joint pain by anaesthetic block, compared with the other 131"
+      }
+    ],
+    "summary": {
+      "yes": "shoulder pain began with repetitive activity",
+      "no": "shoulder pain didn't begin with repetitive activity"
+    },
+    "gateRegions": [
+      "shoulder"
+    ]
+  },
+  {
+    "id": "h_shoulder_above_elbow",
+    "kind": "history",
+    "prompt": "Does your shoulder pain stay at or above the elbow, never spreading down into the forearm or hand?",
+    "evidence": [
+      {
+        "hypothesis": "ac_joint",
+        "sens": 1,
+        "spec": 0.18,
+        "sensCI": [
+          0.84,
+          1
+        ],
+        "specCI": [
+          0.12,
+          0.26
+        ],
+        "sourceId": "cadogan2013",
+        "locator": "Table 5, 'No pain referred below elbow' (20/0/105/23)",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "153 primary-care patients with a new episode of shoulder pain; 22 with AC joint pain by anaesthetic block, compared with the other 131"
+      }
+    ],
+    "summary": {
+      "yes": "pain stays above the elbow",
+      "no": "pain spreads below the elbow"
+    },
+    "gateRegions": [
+      "shoulder"
+    ]
+  },
+  {
+    "id": "st_ac_swelling_self",
+    "kind": "selftest",
+    "prompt": "Looking in a mirror, is the bony bump on top of your painful shoulder, where the collarbone ends, clearly bigger or more swollen than on the other side?",
+    "instructions": [
+      "Stand facing a mirror with both shoulders bare and relaxed.",
+      "Find the end of each collarbone on top of the shoulder: a small bony bump about a hand's width in from the outer edge.",
+      "Compare the two sides by eye, and gently with your fingertips."
+    ],
+    "evidence": [
+      {
+        "hypothesis": "ac_joint",
+        "sens": 0.75,
+        "spec": 0.62,
+        "sensCI": [
+          0.53,
+          0.89
+        ],
+        "specCI": [
+          0.53,
+          0.7
+        ],
+        "sourceId": "cadogan2013",
+        "locator": "Table 5, 'ACJ thickened or swollen' (15/5/47/77), visual inspection by the examiner",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "153 primary-care patients with a new episode of shoulder pain; 22 with AC joint pain by anaesthetic block, compared with the other 131"
+      }
+    ],
+    "summary": {
+      "yes": "the AC joint looks swollen or thickened",
+      "no": "the AC joint doesn't look swollen"
+    },
+    "gateRegions": [
+      "shoulder"
+    ]
+  },
+  {
     "kind": "history",
     "alwaysAsk": true,
     "evidence": [],
@@ -3462,7 +3941,9 @@
     "gateRegions": [
       "neck",
       "scapula",
-      "shoulder"
+      "shoulder",
+      "head_back",
+      "upper_back"
     ],
     "summary": {
       "yes": "neck pain that changes with head movement",
@@ -3984,7 +4465,15 @@
       "calf",
       "foot_dorsum",
       "foot_sole_lateral",
-      "forefoot"
+      "forefoot",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel"
     ],
     "prompt": "Does bending forward make it worse, such as putting on socks or shoes, or sitting slumped?",
     "summary": {
@@ -4274,7 +4763,8 @@
       "chest_front",
       "chest_side",
       "upper_back",
-      "mid_back"
+      "mid_back",
+      "abdomen"
     ],
     "summary": {
       "yes": "pain runs along a strip on one side, following a rib",
@@ -4291,7 +4781,8 @@
       "chest_front",
       "chest_side",
       "upper_back",
-      "mid_back"
+      "mid_back",
+      "abdomen"
     ],
     "summary": {
       "yes": "a blistering rash where the pain is",
@@ -4303,12 +4794,13 @@
     "id": "h_trunk_numbness",
     "alwaysAsk": true,
     "evidence": [],
-    "prompt": "Do you have numbness, pins and needles or a burning feeling in the skin of your chest, side or back?",
+    "prompt": "Do you have numbness, pins and needles or a burning feeling in the skin of your chest, belly, side or back?",
     "gateRegions": [
       "chest_front",
       "chest_side",
       "upper_back",
-      "mid_back"
+      "mid_back",
+      "abdomen"
     ],
     "summary": {
       "yes": "numbness, pins and needles or burning skin on the chest or back",
@@ -4368,7 +4860,8 @@
     "prompt": "Do you feel a click, pop or slipping at the lower edge of your ribs, along with the pain?",
     "gateRegions": [
       "chest_front",
-      "chest_side"
+      "chest_side",
+      "abdomen"
     ],
     "summary": {
       "yes": "a painful click or slip at the lower ribs",
@@ -4412,7 +4905,7 @@
         ],
         "specCI": [
           0.78,
-          1.0
+          1
         ],
         "sourceId": "pitcher2024",
         "locator": "Table 3, 'Clicking', Dando row (primary study: Dando 2018 thesis)",
@@ -4440,7 +4933,7 @@
         "spec": 0.57,
         "sensCI": [
           0.42,
-          1.0
+          1
         ],
         "specCI": [
           0.35,
@@ -4512,7 +5005,7 @@
         "spec": 0.43,
         "sensCI": [
           0.42,
-          1.0
+          1
         ],
         "specCI": [
           0.23,
@@ -4663,7 +5156,8 @@
     "prompt": "Did the pain start after a recent rise in walking, running, marching or standing, or a change to harder shoes or surfaces?",
     "gateRegions": [
       "forefoot",
-      "foot_dorsum"
+      "foot_dorsum",
+      "shin_anterior"
     ],
     "summary": {
       "yes": "started after a rise in walking, running or standing",
@@ -4968,5 +5462,2270 @@
       "yes": "one tender spot inside and below the front hip bone sets off the pain",
       "no": "no tender spot inside and below the front hip bone"
     }
+  },
+  {
+    "id": "h_peroneal_setting",
+    "kind": "history",
+    "prompt": "Before this started, did you often sit with your legs crossed, lose a lot of weight, spend long periods squatting, kneeling or in bed, or injure the outside of your knee?",
+    "summary": {
+      "yes": "leg crossing, weight loss, long positioning or outer-knee injury before it started",
+      "no": "no leg crossing, weight loss or outer-knee injury"
+    },
+    "gateRegions": [
+      "shin_anterior",
+      "foot_dorsum",
+      "knee_lateral",
+      "ankle_lateral"
+    ]
+  },
+  {
+    "id": "h_poly_toes_up",
+    "kind": "history",
+    "prompt": "Did it start in the toes or soles of BOTH feet and slowly spread upward over months?",
+    "summary": {
+      "yes": "started in both feet and crept upward",
+      "no": "didn't start in both feet"
+    },
+    "gateRegions": [
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot",
+      "shin_anterior",
+      "calf",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel"
+    ]
+  },
+  {
+    "id": "h_knee_pivot_injury",
+    "kind": "history",
+    "prompt": "Did your knee problem start with an injury where the knee twisted or pivoted, for example turning sharply with your foot planted?",
+    "dependenceGroup": "knee_injury",
+    "evidence": [
+      {
+        "hypothesis": "acl",
+        "sens": 0.79,
+        "spec": 0.84,
+        "sensCI": [
+          0.64,
+          0.9
+        ],
+        "specCI": [
+          0.79,
+          0.89
+        ],
+        "sourceId": "decary2018acl",
+        "locator": "Table 5, 'Pivoting traumatic mechanism' (partial or complete tears)",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "279 consecutive adults consulting for a new knee complaint (orthopaedic and family medicine clinics, Montreal); 43 partial or complete ACL tears vs the other knee disorders"
+      }
+    ],
+    "summary": {
+      "yes": "began with a twisting (pivot) injury",
+      "no": "didn't begin with a twisting injury"
+    },
+    "gateRegions": [
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back"
+    ]
+  },
+  {
+    "id": "h_knee_pop",
+    "kind": "history",
+    "prompt": "At the moment the knee was injured, did you feel or hear a 'pop'?",
+    "dependenceGroup": "knee_injury",
+    "evidence": [
+      {
+        "hypothesis": "acl",
+        "sens": 0.58,
+        "spec": 0.92,
+        "sensCI": [
+          0.42,
+          0.73
+        ],
+        "specCI": [
+          0.88,
+          0.95
+        ],
+        "sourceId": "decary2018acl",
+        "locator": "Table 5, '\"Popping\" sensation' (partial or complete tears)",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "279 consecutive adults consulting for a new knee complaint (orthopaedic and family medicine clinics, Montreal); 43 partial or complete ACL tears vs the other knee disorders"
+      }
+    ],
+    "summary": {
+      "yes": "felt or heard a pop at the injury",
+      "no": "no pop at the injury"
+    },
+    "gateRegions": [
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back"
+    ]
+  },
+  {
+    "id": "h_knee_swelled_fast",
+    "kind": "history",
+    "prompt": "After the injury, did the knee swell up quickly, within about two hours?",
+    "summary": {
+      "yes": "the knee swelled within hours of the injury",
+      "no": "no quick swelling after the injury"
+    },
+    "gateRegions": [
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back"
+    ]
+  },
+  {
+    "id": "h_knee_weightbearing_injury",
+    "kind": "history",
+    "prompt": "When the knee was injured, was that foot on the ground carrying your weight?",
+    "evidence": [
+      {
+        "hypothesis": "meniscus",
+        "sens": 0.471,
+        "sensCI": [
+          0.341,
+          0.605
+        ],
+        "spec": 0.758,
+        "specCI": [
+          0.642,
+          0.845
+        ],
+        "sourceId": "snoeker2015cpr",
+        "locator": "Table 1, 'Weight-bearing during trauma' (24/51 with a tear vs 16/66 without; Wilson CIs)",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "117 primary-care patients aged 18-65 with knee complaints under 6 months and suspected meniscal tear (Netherlands): 51 tears on MRI vs 66 without"
+      }
+    ],
+    "summary": {
+      "yes": "injured while standing on that leg",
+      "no": "not injured while bearing weight"
+    },
+    "gateRegions": [
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back"
+    ]
+  },
+  {
+    "id": "st_knee_deep_squat",
+    "kind": "selftest",
+    "prompt": "Squatting down as far as you comfortably could and standing up again, did it bring on your usual knee pain?",
+    "instructions": [
+      "Stand facing a worktop or sturdy table and hold on lightly with both hands.",
+      "With feet hip-width apart, bend both knees slowly and go down as far as is comfortable. Don't force it.",
+      "Stand up again.",
+      "Answer yes only if it brought on your usual knee pain."
+    ],
+    "safety": "Hold on throughout. Stop if the knee gives way or the pain is sharp.",
+    "dependenceGroup": "knee_flexion_load",
+    "evidence": [
+      {
+        "hypothesis": "pfp",
+        "sens": 0.91,
+        "spec": 0.5,
+        "sourceId": "cook2010",
+        "locator": "Table 2, 'Pain during squatting'",
+        "population": "76 consecutive adults with anterior knee pain over 3 months at a sports medicine practice: 52 patellofemoral pain vs 24 other diagnoses on imaging (OA, chondral lesions, meniscal tears, others)",
+        "performedBy": "clinician",
+        "adapted": true
+      },
+      {
+        "hypothesis": "meniscus",
+        "sens": 0.745,
+        "spec": 0.424,
+        "sensCI": [
+          0.611,
+          0.845
+        ],
+        "specCI": [
+          0.312,
+          0.544
+        ],
+        "sourceId": "snoeker2015jospt",
+        "locator": "Abstract, Results (deep squat test, examiner 1)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "121 primary-care patients aged 18-65 with suspected internal derangement of the knee under 6 months (Netherlands); MRI reference"
+      }
+    ],
+    "summary": {
+      "yes": "deep squatting brings on the knee pain",
+      "no": "deep squatting doesn't bring on the knee pain"
+    },
+    "gateRegions": [
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back"
+    ]
+  },
+  {
+    "id": "h_knee_kneel_pain",
+    "kind": "history",
+    "prompt": "Does kneeling bring on your knee pain?",
+    "dependenceGroup": "knee_flexion_load",
+    "evidence": [
+      {
+        "hypothesis": "pfp",
+        "sens": 0.84,
+        "spec": 0.5,
+        "sourceId": "cook2010",
+        "locator": "Table 2, 'Pain during kneeling'",
+        "population": "76 consecutive adults with anterior knee pain over 3 months at a sports medicine practice: 52 patellofemoral pain vs 24 other diagnoses on imaging (OA, chondral lesions, meniscal tears, others)",
+        "performedBy": "patient",
+        "adapted": false
+      }
+    ],
+    "summary": {
+      "yes": "kneeling hurts",
+      "no": "kneeling doesn't hurt"
+    },
+    "gateRegions": [
+      "knee_front",
+      "knee_medial",
+      "knee_lateral"
+    ]
+  },
+  {
+    "id": "h_knee_sitting_pain",
+    "kind": "history",
+    "prompt": "Does sitting for a long time with your knees bent (for example in a car or cinema) bring on your knee pain?",
+    "evidence": [
+      {
+        "hypothesis": "pfp",
+        "sens": 0.72,
+        "spec": 0.57,
+        "sourceId": "cook2010",
+        "locator": "Table 2, 'Pain during prolonged sitting'",
+        "population": "76 consecutive adults with anterior knee pain over 3 months at a sports medicine practice: 52 patellofemoral pain vs 24 other diagnoses on imaging (OA, chondral lesions, meniscal tears, others)",
+        "performedBy": "patient",
+        "adapted": false
+      }
+    ],
+    "summary": {
+      "yes": "long sitting with bent knees hurts",
+      "no": "long sitting doesn't hurt the knee"
+    },
+    "gateRegions": [
+      "knee_front",
+      "knee_medial",
+      "knee_lateral"
+    ]
+  },
+  {
+    "id": "h_knee_stairs_pain",
+    "kind": "history",
+    "prompt": "Do stairs, going up or down, bring on your knee pain?",
+    "evidence": [
+      {
+        "hypothesis": "pfp",
+        "sens": 0.75,
+        "spec": 0.43,
+        "sourceId": "cook2010",
+        "locator": "Table 2, 'Pain during stair climbing'",
+        "population": "76 consecutive adults with anterior knee pain over 3 months at a sports medicine practice: 52 patellofemoral pain vs 24 other diagnoses on imaging (OA, chondral lesions, meniscal tears, others)",
+        "performedBy": "patient",
+        "adapted": false
+      }
+    ],
+    "summary": {
+      "yes": "stairs hurt the knee",
+      "no": "stairs don't hurt the knee"
+    },
+    "gateRegions": [
+      "knee_front",
+      "knee_medial",
+      "knee_lateral"
+    ]
+  },
+  {
+    "id": "h_age_45",
+    "kind": "history",
+    "prompt": "Are you 45 or older?",
+    "impliedBy": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "yes",
+        "implies": "yes"
+      },
+      {
+        "finding": "h_age_50",
+        "answer": "yes",
+        "implies": "yes"
+      },
+      {
+        "finding": "h_age_growing",
+        "answer": "yes",
+        "implies": "no"
+      }
+    ],
+    "summary": {
+      "yes": "aged 45 or over",
+      "no": "under 45"
+    },
+    "gateRegions": [
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "hand_median",
+      "hand_ulnar",
+      "hand_dorsal_radial"
+    ]
+  },
+  {
+    "id": "h_knee_activity_pain",
+    "kind": "history",
+    "prompt": "Does pain or aching in your knee come on, or get worse, with activities such as standing, walking or climbing stairs?",
+    "summary": {
+      "yes": "knee pain with activity",
+      "no": "knee pain not linked to activity"
+    },
+    "gateRegions": [
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back"
+    ]
+  },
+  {
+    "id": "h_knee_morning_stiff_short",
+    "kind": "history",
+    "prompt": "In the morning, is your knee either not stiff at all, or stiff for 30 minutes or less?",
+    "summary": {
+      "yes": "no morning stiffness, or 30 minutes or less",
+      "no": "morning stiffness over 30 minutes"
+    },
+    "gateRegions": [
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back"
+    ]
+  },
+  {
+    "id": "h_knee_below_kneecap",
+    "kind": "history",
+    "prompt": "Is the pain in a spot just below the kneecap, on the tendon there, and brought on by jumping, running or squatting?",
+    "summary": {
+      "yes": "pain just below the kneecap with loading",
+      "no": "pain not just below the kneecap"
+    },
+    "gateRegions": [
+      "knee_front"
+    ]
+  },
+  {
+    "id": "h_knee_outer_running",
+    "kind": "history",
+    "prompt": "Does pain on the outer side of the knee come on during running or cycling, at about the same time or distance each time?",
+    "summary": {
+      "yes": "outer knee pain at a set point in a run or ride",
+      "no": "outer knee pain not tied to running or cycling"
+    },
+    "gateRegions": [
+      "knee_lateral"
+    ]
+  },
+  {
+    "id": "h_knee_inner_below_joint",
+    "kind": "history",
+    "prompt": "Is the sore spot on the inner side of the shin, a few finger-widths below the knee joint, rather than on the joint line itself?",
+    "summary": {
+      "yes": "tender below the inner joint line",
+      "no": "not tender below the inner joint line"
+    },
+    "gateRegions": [
+      "knee_medial"
+    ]
+  },
+  {
+    "id": "h_knee_back_swelling",
+    "kind": "history",
+    "prompt": "Can you see or feel a soft swelling at the back of the knee, most obvious when standing with the knee straight?",
+    "summary": {
+      "yes": "a swelling behind the knee",
+      "no": "no swelling behind the knee"
+    },
+    "gateRegions": [
+      "knee_back"
+    ]
+  },
+  {
+    "id": "h_ankle_injury",
+    "kind": "history",
+    "prompt": "Did this pain start suddenly with an injury: twisting or rolling the ankle, a fall, a blow, or a sudden sharp pain while pushing off or landing?",
+    "alwaysAsk": true,
+    "summary": {
+      "yes": "started with a sudden injury",
+      "no": "didn't start with an injury"
+    },
+    "gateRegions": [
+      "shin_anterior",
+      "calf",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel",
+      "foot_dorsum",
+      "foot_sole_lateral"
+    ]
+  },
+  {
+    "id": "h_ankle_cant_weight",
+    "kind": "history",
+    "prompt": "Straight after the injury, and still now, are you unable to take four steps on that foot, even limping?",
+    "askIf": {
+      "finding": "h_ankle_injury",
+      "answer": "yes"
+    },
+    "dependenceGroup": "fracture_load",
+    "evidence": [
+      {
+        "hypothesis": "ankle_fracture",
+        "sens": 0.526,
+        "spec": 0.925,
+        "sensCI": [
+          0.317,
+          0.727
+        ],
+        "specCI": [
+          0.853,
+          0.963
+        ],
+        "sourceId": "makiev2025",
+        "locator": "Results and Table 2, 'Inability to weight bear' (52.6% / 92.5%: 10/19 vs 7/93; Wilson CIs)",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "112 consecutive adults in an emergency department with an ankle or foot injury (Greece): 19 fractures vs 93 without on X-ray"
+      },
+      {
+        "hypothesis": "ankle_fracture",
+        "sens": 0.694,
+        "spec": 0.616,
+        "sensCI": [
+          0.531,
+          0.82
+        ],
+        "specCI": [
+          0.555,
+          0.677
+        ],
+        "sourceId": "pires2014",
+        "locator": "Abstract and Results, 'Weight-bearing inability' (69.4% / 61.6%; Wilson CIs)",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "274 adults in an emergency department after a foot or ankle sprain (Brazil): 36 fractures vs 238 without on X-ray"
+      }
+    ],
+    "summary": {
+      "yes": "couldn't take four steps after the injury",
+      "no": "could walk four steps after the injury"
+    },
+    "gateRegions": [
+      "ankle_lateral",
+      "ankle_medial",
+      "foot_dorsum",
+      "foot_sole_lateral"
+    ],
+    "impliedBy": [
+      {
+        "finding": "h_ankle_injury",
+        "answer": "no",
+        "implies": "no"
+      }
+    ]
+  },
+  {
+    "id": "st_shetty_helper",
+    "kind": "selftest",
+    "prompt": "When you pressed your foot down into your helper's hand as if stepping, did the pain clearly get worse, or was it too painful to press?",
+    "needsHelper": true,
+    "askIf": {
+      "finding": "h_ankle_injury",
+      "answer": "yes"
+    },
+    "instructions": [
+      "Sit on a high bed or table with the injured foot hanging, not touching the floor.",
+      "Your helper cups the whole sole of your foot in their palm.",
+      "Press your foot down into their hand, gently at first, as if you were stepping on it.",
+      "Answer yes if the pain clearly increases."
+    ],
+    "safety": "Press gently and stop at once if the pain is sharp. Don't stand on the foot to test it.",
+    "dependenceGroup": "fracture_load",
+    "evidence": [
+      {
+        "hypothesis": "ankle_fracture",
+        "sens": 0.684,
+        "spec": 0.763,
+        "sensCI": [
+          0.46,
+          0.846
+        ],
+        "specCI": [
+          0.668,
+          0.838
+        ],
+        "sourceId": "makiev2025",
+        "locator": "Patients and Methods, 'Shetty Test (ST)'; Results and Table 2 (68.4% / 76.3%: 13/19 vs 22/93; Wilson CIs)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "112 consecutive adults in an emergency department with an ankle or foot injury (Greece): 19 fractures vs 93 without on X-ray"
+      },
+      {
+        "hypothesis": "ankle_fracture",
+        "sens": 0.776,
+        "spec": 0.608,
+        "sensCI": [
+          0.653,
+          0.864
+        ],
+        "specCI": [
+          0.533,
+          0.678
+        ],
+        "sourceId": "dogan2025",
+        "locator": "Table 2 and 3.3 (77.6% / 60.8%: 45/58 vs 67/171; Wilson CIs)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "229 consecutive adults in an emergency department with isolated foot or ankle trauma (Turkey): 58 fractures vs 171 without on X-ray"
+      }
+    ],
+    "summary": {
+      "yes": "pressing the foot down as if stepping hurt more",
+      "no": "pressing the foot down didn't hurt more"
+    },
+    "gateRegions": [
+      "ankle_lateral",
+      "ankle_medial",
+      "foot_dorsum",
+      "foot_sole_lateral"
+    ]
+  },
+  {
+    "id": "st_ottawa_bone_self",
+    "kind": "selftest",
+    "prompt": "Pressing the spots described, was any of them tender on the bone?",
+    "askIf": {
+      "finding": "h_ankle_injury",
+      "answer": "yes"
+    },
+    "instructions": [
+      "Sit with the injured foot resting across your other knee or on a stool.",
+      "Press firmly with a fingertip along the back edge of the outer ankle bone, from about 6 cm above its tip down to the tip. Do the same on the inner ankle bone.",
+      "Press the bony bump on the inner side of the midfoot, about a thumb's width in front of and below the inner ankle bone (the navicular).",
+      "Press the bony knob halfway along the outer edge of the foot (the base of the fifth metatarsal).",
+      "Answer yes if pressing any of these spots on the bone is clearly tender."
+    ],
+    "safety": "Press firmly but don't dig in. Soft-tissue soreness around the ankle is common after a sprain; this is about the bone.",
+    "summary": {
+      "yes": "tender on the bone at an Ottawa spot",
+      "no": "no bone tenderness at the Ottawa spots"
+    },
+    "gateRegions": [
+      "ankle_lateral",
+      "ankle_medial",
+      "foot_dorsum",
+      "foot_sole_lateral"
+    ]
+  },
+  {
+    "id": "h_ankle_rolled_in",
+    "kind": "history",
+    "prompt": "When you hurt it, did your foot roll inward, so that you landed on the outer edge of the foot?",
+    "askIf": {
+      "finding": "h_ankle_injury",
+      "answer": "yes"
+    },
+    "summary": {
+      "yes": "the foot rolled inward",
+      "no": "the foot didn't roll inward"
+    },
+    "gateRegions": [
+      "ankle_lateral",
+      "foot_sole_lateral",
+      "foot_dorsum"
+    ]
+  },
+  {
+    "id": "st_calf_squeeze_helper",
+    "kind": "selftest",
+    "prompt": "When your helper squeezed the calf of the painful leg, did the foot stay still or barely move, unlike the other side?",
+    "needsHelper": true,
+    "instructions": [
+      "Lie face down on a bed with both feet hanging over the end (or kneel on a chair with your feet hanging off the seat).",
+      "Your helper squeezes the middle of the calf of your good leg firmly with one hand. Normally the foot points down as they squeeze.",
+      "Your helper then does the same on the painful leg while you both watch the foot.",
+      "Answer yes if, on the painful side, the foot stays still or moves much less."
+    ],
+    "safety": "A firm squeeze is enough. If the tendon is torn, avoid pushing off or standing on tiptoe on that leg until it has been checked.",
+    "evidence": [
+      {
+        "hypothesis": "achilles_rupture",
+        "sens": 0.96,
+        "spec": 0.93,
+        "sensCI": [
+          0.93,
+          0.99
+        ],
+        "specCI": [
+          0.75,
+          0.99
+        ],
+        "sourceId": "maffulli1998",
+        "locator": "Reiman 2014, Table 4, 'Calf-squeeze test' (Maffulli 1998: 133 operated ruptures vs 28 suspected tears with an intact tendon)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "174 patients with a complete Achilles tendon tear and 28 with a suspected tear but an intact tendon on imaging (UK)"
+      }
+    ],
+    "summary": {
+      "yes": "calf squeeze didn't move the foot",
+      "no": "calf squeeze moved the foot normally"
+    },
+    "gateRegions": [
+      "achilles",
+      "calf",
+      "heel"
+    ]
+  },
+  {
+    "id": "st_windlass_helper",
+    "kind": "selftest",
+    "prompt": "Standing, when your helper bent your big toe upward, did it bring on your usual heel pain?",
+    "needsHelper": true,
+    "instructions": [
+      "Stand on a step or a thick book with the toes of the painful foot just over the edge, weight on both feet, holding on to something.",
+      "Your helper bends your big toe upward as far as it comfortably goes and holds it for a moment.",
+      "Answer yes only if it brings on your usual pain under the heel or along the sole."
+    ],
+    "safety": "Hold on throughout. Your helper should stop if you ask.",
+    "evidence": [
+      {
+        "hypothesis": "plantar_fasciitis",
+        "sens": 0.318,
+        "spec": 1,
+        "sensCI": [
+          0.164,
+          0.527
+        ],
+        "specCI": [
+          0.857,
+          1
+        ],
+        "sourceId": "degarceau2003",
+        "locator": "Abstract (weight-bearing Windlass test: 7/22 with plantar fasciitis vs 0/23 with other foot pain; Wilson CIs)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "22 patients with plantar fasciitis vs 23 with other types of foot pain (USA)"
+      }
+    ],
+    "summary": {
+      "yes": "bending the big toe up brought on the heel pain",
+      "no": "bending the big toe up didn't bring on the heel pain"
+    },
+    "gateRegions": [
+      "heel",
+      "foot_sole_lateral"
+    ]
+  },
+  {
+    "id": "h_heel_first_steps",
+    "kind": "history",
+    "prompt": "Is the pain under your heel worst with your first steps in the morning or after sitting, then easing a little as you keep walking?",
+    "summary": {
+      "yes": "heel pain worst with the first steps",
+      "no": "heel pain not worst with the first steps"
+    },
+    "gateRegions": [
+      "heel",
+      "foot_sole_lateral"
+    ]
+  },
+  {
+    "id": "h_achilles_morning",
+    "kind": "history",
+    "prompt": "Is the back of your ankle stiff or painful for the first few steps when you get out of bed?",
+    "summary": {
+      "yes": "Achilles stiff or sore on the first steps in the morning",
+      "no": "no morning Achilles stiffness"
+    },
+    "gateRegions": [
+      "achilles",
+      "calf",
+      "heel"
+    ]
+  },
+  {
+    "id": "h_achilles_spot",
+    "kind": "history",
+    "prompt": "Is the pain in the tendon at the back of the ankle, about 2 to 6 cm (two to three finger-widths) above the heel bone?",
+    "summary": {
+      "yes": "pain in the tendon 2-6 cm above the heel",
+      "no": "pain not in the tendon above the heel"
+    },
+    "gateRegions": [
+      "achilles",
+      "calf",
+      "heel"
+    ]
+  },
+  {
+    "id": "h_arch_flattening",
+    "kind": "history",
+    "prompt": "Has the arch of the foot on the painful side become flatter than the other side?",
+    "summary": {
+      "yes": "the arch has flattened on that side",
+      "no": "the arch hasn't flattened"
+    },
+    "gateRegions": [
+      "ankle_medial",
+      "foot_sole_lateral"
+    ]
+  },
+  {
+    "id": "h_ankle_behind_outer",
+    "kind": "history",
+    "prompt": "Is the sore spot just behind or below the outer ankle bone, along the tendons there, rather than in front of it?",
+    "summary": {
+      "yes": "sore behind or below the outer ankle bone",
+      "no": "not sore behind the outer ankle bone"
+    },
+    "gateRegions": [
+      "ankle_lateral",
+      "foot_sole_lateral"
+    ]
+  },
+  {
+    "id": "h_shin_long_stretch",
+    "kind": "history",
+    "prompt": "Is the sore area along the inner edge of the shin bone over a length of at least 5 cm (about a hand's width), rather than in one small spot?",
+    "summary": {
+      "yes": "sore along a stretch of the inner shin",
+      "no": "not sore along a stretch of the inner shin"
+    },
+    "gateRegions": [
+      "shin_anterior"
+    ]
+  },
+  {
+    "id": "st_shin_focal_self",
+    "kind": "selftest",
+    "prompt": "Pressing along the inner edge of the shin bone, was the tender part short, no longer than about 2.5 cm (an inch)?",
+    "instructions": [
+      "Sit with the knee bent and the foot flat, so the calf muscles are relaxed.",
+      "With two fingertips, press firmly along the inner back edge of the shin bone, from just below the knee down to the ankle.",
+      "Note where it is tender and how long the tender part is.",
+      "Answer yes if it is tender over a short stretch, about 2.5 cm (an inch) or less. Answer no if it is tender over a longer stretch, or not tender at all."
+    ],
+    "safety": "Press firmly but don't dig in.",
+    "evidence": [
+      {
+        "hypothesis": "tibial_stress_fracture",
+        "sens": 0.486,
+        "spec": 0.406,
+        "sensCI": [
+          0.33,
+          0.644
+        ],
+        "specCI": [
+          0.255,
+          0.577
+        ],
+        "sourceId": "rosenthal2022",
+        "locator": "Methods, 'Focal Tenderness to Palpation'; Table 1, 'TTP' (48.6% / 40.6%: 17/35 vs 19/32 legs; Wilson CIs)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "50 male military trainees with tibial pain needing imaging (67 legs): 35 legs with a tibial stress fracture vs 32 without on bone scan"
+      }
+    ],
+    "summary": {
+      "yes": "tender over a short stretch of the shin bone",
+      "no": "not tender over a short stretch of the shin bone"
+    },
+    "gateRegions": [
+      "shin_anterior"
+    ],
+    "impliedBy": [
+      {
+        "finding": "h_shin_long_stretch",
+        "answer": "yes",
+        "implies": "no"
+      }
+    ]
+  },
+  {
+    "id": "st_heel_percussion_helper",
+    "kind": "selftest",
+    "prompt": "When your helper struck the bottom of your heel with the palm of their hand, did it bring on your shin pain?",
+    "needsHelper": true,
+    "instructions": [
+      "Lie on your back with the painful leg straight.",
+      "Your helper lifts the leg about 15 cm (6 inches) by holding it just above the ankle.",
+      "They strike the bottom of your heel firmly with the flat palm of their other hand, in line with the shin.",
+      "Answer yes only if it brings on, or clearly increases, your usual shin pain."
+    ],
+    "safety": "A firm tap is enough; your helper should start gently and stop if you ask.",
+    "evidence": [
+      {
+        "hypothesis": "tibial_stress_fracture",
+        "sens": 0.171,
+        "spec": 0.906,
+        "sensCI": [
+          0.081,
+          0.327
+        ],
+        "specCI": [
+          0.758,
+          0.968
+        ],
+        "sourceId": "rosenthal2022",
+        "locator": "Methods, 'Heel Percussion Test'; Table 1, 'Percussion' (17.1% / 90.6%: 6/35 vs 3/32 legs; Wilson CIs)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "50 male military trainees with tibial pain needing imaging (67 legs): 35 legs with a tibial stress fracture vs 32 without on bone scan"
+      }
+    ],
+    "summary": {
+      "yes": "a tap on the heel brought on the shin pain",
+      "no": "a tap on the heel didn't bring on the shin pain"
+    },
+    "gateRegions": [
+      "shin_anterior"
+    ]
+  },
+  {
+    "id": "h_leg_exercise_tight",
+    "kind": "history",
+    "prompt": "During exercise, does the lower leg build up a tight, cramping or bursting feeling at about the same time or distance each time, settling within minutes of stopping?",
+    "summary": {
+      "yes": "tight, bursting lower-leg pain building with exercise",
+      "no": "no tight build-up with exercise"
+    },
+    "gateRegions": [
+      "shin_anterior",
+      "calf"
+    ]
+  },
+  {
+    "id": "h_calf_muscle_spot",
+    "kind": "history",
+    "prompt": "Is there a tender spot in the bulk of the calf muscle itself, rather than in the tendon above the heel?",
+    "summary": {
+      "yes": "tender spot in the calf muscle",
+      "no": "no tender spot in the calf muscle"
+    },
+    "gateRegions": [
+      "calf"
+    ]
+  },
+  {
+    "id": "h_tmd_screener",
+    "kind": "history",
+    "prompt": "Did your total on the jaw pain questions above come to 3 or more points?",
+    "instructions": [
+      "Think about the last 30 days and add up your points.",
+      "On average, how long did any pain in your jaw or temple area on either side last? No pain: 0. From very brief to more than a week, but it does stop: 1. Continuous: 2.",
+      "Have you had pain or stiffness in your jaw on awakening? Yes: 1.",
+      "Did chewing hard or tough food change any pain (make it better or worse) in your jaw or temple area? Yes: 1.",
+      "Did opening your mouth, or moving your jaw forward or to the side, change it? Yes: 1.",
+      "Did jaw habits such as holding teeth together, clenching, grinding or chewing gum change it? Yes: 1.",
+      "Did other jaw activities such as talking, kissing or yawning change it? Yes: 1."
+    ],
+    "evidence": [
+      {
+        "hypothesis": "tmd",
+        "sens": 0.991,
+        "spec": 0.824,
+        "sensCI": [
+          0.966,
+          0.997
+        ],
+        "specCI": [
+          0.748,
+          0.881
+        ],
+        "sourceId": "gonzalez2011",
+        "locator": "Table 4 (long screener, threshold 3: 210/212 with pain-related TMD; 1/45 with tension-type headache in the temple) and Results (26% of 80 with toothache above threshold, taken as 21/80); combined comparison 22/125, Wilson CIs",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "212 adults with pain-related TMD vs 45 with tension-type headache in the temple and 80 with toothache (US academic centres)"
+      }
+    ],
+    "summary": {
+      "yes": "jaw pain screener 3 or more points",
+      "no": "jaw pain screener under 3 points"
+    },
+    "gateRegions": [
+      "jaw",
+      "temple",
+      "face"
+    ]
+  },
+  {
+    "id": "h_head_attacks_brief",
+    "kind": "history",
+    "prompt": "Does the pain come in sudden attacks, each lasting from a split second to a couple of minutes?",
+    "summary": {
+      "yes": "pain in brief sudden attacks",
+      "no": "pain not in brief attacks"
+    },
+    "gateRegions": [
+      "head_back",
+      "temple",
+      "face",
+      "jaw"
+    ]
+  },
+  {
+    "id": "h_head_attacks_severe",
+    "kind": "history",
+    "prompt": "Are those attacks severe, among the worst pain you have had?",
+    "summary": {
+      "yes": "severe attacks",
+      "no": "attacks not severe"
+    },
+    "gateRegions": [
+      "head_back",
+      "temple",
+      "face",
+      "jaw"
+    ]
+  },
+  {
+    "id": "h_head_electric",
+    "kind": "history",
+    "prompt": "Does the pain feel like an electric shock, or shooting or stabbing?",
+    "summary": {
+      "yes": "electric, shooting or stabbing pain",
+      "no": "not electric, shooting or stabbing"
+    },
+    "gateRegions": [
+      "head_back",
+      "temple",
+      "face",
+      "jaw"
+    ]
+  },
+  {
+    "id": "h_face_one_side",
+    "kind": "history",
+    "prompt": "Are the attacks always on the same one side of the face?",
+    "summary": {
+      "yes": "attacks on one side of the face",
+      "no": "not on one side of the face"
+    },
+    "gateRegions": [
+      "face",
+      "jaw",
+      "temple"
+    ]
+  },
+  {
+    "id": "h_face_light_trigger",
+    "kind": "history",
+    "prompt": "Can a light touch on the face, washing, shaving, a breeze, eating, talking or brushing your teeth set off an attack?",
+    "summary": {
+      "yes": "attacks set off by light touch or everyday face movements",
+      "no": "attacks not set off by light touch"
+    },
+    "gateRegions": [
+      "face",
+      "jaw",
+      "temple"
+    ]
+  },
+  {
+    "id": "h_scalp_touch_pain",
+    "kind": "history",
+    "prompt": "At the back of your head, does light touch on the scalp, or brushing or combing your hair, feel unpleasant or painful?",
+    "summary": {
+      "yes": "scalp sore to light touch",
+      "no": "scalp not sore to light touch"
+    },
+    "gateRegions": [
+      "head_back"
+    ]
+  },
+  {
+    "id": "st_gon_tender_self",
+    "kind": "selftest",
+    "prompt": "Pressing just below the base of the skull on the painful side, was it clearly more tender than the other side, or did it bring on your headache?",
+    "instructions": [
+      "Find the bony bump in the middle of the back of your head, at the base of the skull.",
+      "Move about two finger-widths (2-3 cm) to the side of the painful side, just below the bony ridge.",
+      "Press firmly with two fingertips for a few seconds, then do the same on the other side.",
+      "Answer yes if the painful side is clearly more tender, or pressing brings on your usual headache."
+    ],
+    "safety": "Press firmly but don't dig in.",
+    "scoreOn": "positive",
+    "evidence": [
+      {
+        "hypothesis": "cervicogenic_headache",
+        "sens": 0.854,
+        "spec": 0.698,
+        "sensCI": [
+          0.774,
+          0.91
+        ],
+        "specCI": [
+          0.6,
+          0.781
+        ],
+        "sourceId": "nowaczewska2026",
+        "locator": "Table 1, 'GON sensitivity on palpation' (88/103 vs 29/96; Wilson CIs). Part of the diagnosis in 76 cases, so only a positive answer counts",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "112 adults with cervicogenic headache vs 112 age- and sex-matched adults with migraine at a headache centre (Poland)"
+      }
+    ],
+    "summary": {
+      "yes": "tender at the base of the skull on the painful side",
+      "no": "not tender at the base of the skull"
+    },
+    "gateRegions": [
+      "head_back",
+      "temple",
+      "face"
+    ]
+  },
+  {
+    "id": "h_ha_neck_pain",
+    "kind": "history",
+    "prompt": "Do you have neck pain along with your headaches?",
+    "evidence": [
+      {
+        "hypothesis": "cervicogenic_headache",
+        "sens": 0.786,
+        "spec": 0.625,
+        "sensCI": [
+          0.701,
+          0.852
+        ],
+        "specCI": [
+          0.533,
+          0.709
+        ],
+        "sourceId": "nowaczewska2026",
+        "locator": "Table 1, 'Neck pain accompanying headache' (88/112 vs 42/112; Wilson CIs)",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "112 adults with cervicogenic headache vs 112 age- and sex-matched adults with migraine at a headache centre (Poland)"
+      }
+    ],
+    "summary": {
+      "yes": "neck pain with the headaches",
+      "no": "no neck pain with the headaches"
+    },
+    "gateRegions": [
+      "head_back",
+      "temple",
+      "face"
+    ]
+  },
+  {
+    "id": "h_ha_neck_onset",
+    "kind": "history",
+    "prompt": "Did the headaches begin around the time a neck problem started, for example after a neck injury or when neck pain began?",
+    "summary": {
+      "yes": "headaches began with a neck problem",
+      "no": "headaches didn't begin with a neck problem"
+    },
+    "gateRegions": [
+      "head_back",
+      "temple",
+      "face"
+    ],
+    "followUp": {
+      "hypothesis": "cervicogenic_headache",
+      "minP": 0.25
+    }
+  },
+  {
+    "id": "h_ha_neck_parallel",
+    "kind": "history",
+    "prompt": "When your neck has been better, have the headaches been better too?",
+    "summary": {
+      "yes": "headaches improve when the neck improves",
+      "no": "headaches don't follow the neck"
+    },
+    "gateRegions": [
+      "head_back",
+      "temple",
+      "face"
+    ],
+    "followUp": {
+      "hypothesis": "cervicogenic_headache",
+      "minP": 0.25
+    }
+  },
+  {
+    "id": "h_ha_neck_movement",
+    "kind": "history",
+    "prompt": "Is your neck stiff, and do certain neck movements or positions clearly bring on or worsen the headache?",
+    "summary": {
+      "yes": "neck stiff, and neck movements worsen the headache",
+      "no": "neck movements don't worsen the headache"
+    },
+    "gateRegions": [
+      "head_back",
+      "temple",
+      "face"
+    ],
+    "followUp": {
+      "hypothesis": "cervicogenic_headache",
+      "minP": 0.25
+    }
+  },
+  {
+    "id": "h_acnes_questionnaire",
+    "kind": "history",
+    "prompt": "Did your total on the belly pain questions above come to 10 or more points?",
+    "instructions": [
+      "Give yourself 1 point for each of these that is true always or regularly:",
+      "The pain is sharp (cutting). · For me the pain matters more than the discomfort. · The pain is always in the same spot(s). · The pain is just to the side of the midline of the belly. · I can point to the most intense pain with one fingertip. · I believe the pain comes from just beneath the skin.",
+      "The pain is brought on by daily activities (walking, sitting, cycling, bending). · Lying on the painful side makes it worse. · Pressing on the painful spot makes it worse. · Coughing, sneezing or squeezing makes it worse. · The painful spot feels strange, different or dull.",
+      "Then give yourself 1 point for each of these that is NOT true, or only sometimes true:",
+      "I believe the problem comes from my gut. · The pain is in different spots all over the belly. · The problem is linked to a change in my bowel habit. · Stress brings it on. · I have bloating or a feeling of gas in my gut. · My stool has an abnormal consistency (hard and small, pencil-thin, loose or watery). · I feel an urgent need to open my bowels without passing anything."
+    ],
+    "evidence": [
+      {
+        "hypothesis": "acnes",
+        "sens": 0.851,
+        "spec": 0.922,
+        "sensCI": [
+          0.723,
+          0.926
+        ],
+        "specCI": [
+          0.83,
+          0.966
+        ],
+        "sourceId": "vanassen2012",
+        "locator": "Table 3, cut-off 10 (prospective ACNES 0.85 of 47; IBS 0.92 of 64, taken as 40/47 and 59/64); items from Table 2; Wilson CIs",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "47 newly diagnosed ACNES patients at a surgical clinic vs 64 consecutive gastroenterology outpatients with IBS (Netherlands)"
+      }
+    ],
+    "summary": {
+      "yes": "abdominal wall questionnaire 10 or more points",
+      "no": "abdominal wall questionnaire under 10 points"
+    },
+    "gateRegions": [
+      "abdomen"
+    ]
+  },
+  {
+    "id": "h_abd_bulge",
+    "kind": "history",
+    "prompt": "Is there a soft lump or bulge where it hurts that comes out when you stand, cough or strain, and goes down when you lie flat?",
+    "summary": {
+      "yes": "a bulge that comes and goes with straining",
+      "no": "no bulge with straining"
+    },
+    "gateRegions": [
+      "abdomen",
+      "groin"
+    ]
+  },
+  {
+    "id": "h_age_50",
+    "kind": "history",
+    "prompt": "Are you 50 or older?",
+    "summary": {
+      "yes": "aged 50 or older",
+      "no": "under 50"
+    },
+    "gateRegions": [
+      "shoulder",
+      "upper_arm_lateral",
+      "upper_arm_medial",
+      "neck",
+      "buttock",
+      "lateral_thigh",
+      "anterior_thigh",
+      "groin"
+    ],
+    "askIf": {
+      "finding": "h_both_shoulders_ache",
+      "answer": "yes"
+    },
+    "impliedBy": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "yes",
+        "implies": "yes"
+      },
+      {
+        "finding": "h_age_45",
+        "answer": "no",
+        "implies": "no"
+      },
+      {
+        "finding": "h_age_growing",
+        "answer": "yes",
+        "implies": "no"
+      }
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_age_growing",
+    "kind": "history",
+    "prompt": "Are you aged 16 or younger (still growing)?",
+    "summary": {
+      "yes": "aged 16 or younger",
+      "no": "older than 16"
+    },
+    "gateRegions": [
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "heel",
+      "achilles"
+    ],
+    "impliedBy": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "yes",
+        "implies": "no"
+      },
+      {
+        "finding": "h_age_45",
+        "answer": "yes",
+        "implies": "no"
+      },
+      {
+        "finding": "h_age_50",
+        "answer": "yes",
+        "implies": "no"
+      }
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_tailbone_point",
+    "kind": "history",
+    "prompt": "Is the pain at the very bottom of your spine, on the tailbone at the top of the buttock crease?",
+    "summary": {
+      "yes": "pain on the tailbone",
+      "no": "pain not on the tailbone"
+    },
+    "gateRegions": [
+      "buttock",
+      "low_back"
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_tailbone_sitting",
+    "kind": "history",
+    "prompt": "Is the tailbone pain worst when sitting, especially leaning back, or at the moment you get up from sitting?",
+    "summary": {
+      "yes": "tailbone pain sitting or getting up",
+      "no": "tailbone pain not linked to sitting"
+    },
+    "gateRegions": [
+      "buttock",
+      "low_back"
+    ],
+    "askIf": {
+      "finding": "h_tailbone_point",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_back_extension_pain",
+    "kind": "history",
+    "prompt": "Does bending backwards (arching your lower back), especially standing on one leg, bring on your low back pain?",
+    "summary": {
+      "yes": "arching the back brings on the pain",
+      "no": "arching the back doesn't bring on the pain"
+    },
+    "gateRegions": [
+      "low_back",
+      "buttock",
+      "posterior_thigh"
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_back_arching_sport",
+    "kind": "history",
+    "prompt": "Do you play a sport with a lot of repeated back arching or twisting, such as gymnastics, dance, fast bowling, diving, rowing, tennis or football?",
+    "summary": {
+      "yes": "sport with repeated back arching",
+      "no": "no back-arching sport"
+    },
+    "gateRegions": [
+      "low_back",
+      "buttock",
+      "posterior_thigh"
+    ],
+    "askIf": {
+      "finding": "h_back_extension_pain",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_back_onset_young",
+    "kind": "history",
+    "prompt": "Did your back pain first begin before you were 40?",
+    "summary": {
+      "yes": "back pain began before 40",
+      "no": "back pain began at 40 or later"
+    },
+    "gateRegions": [
+      "low_back",
+      "buttock",
+      "mid_back",
+      "upper_back",
+      "neck"
+    ],
+    "askIf": {
+      "finding": "h_back_gradual_onset",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_back_gradual_onset",
+    "kind": "history",
+    "prompt": "Did your back pain begin gradually, creeping up without an injury, rather than suddenly?",
+    "summary": {
+      "yes": "back pain began gradually",
+      "no": "back pain began suddenly or with an injury"
+    },
+    "gateRegions": [
+      "low_back",
+      "buttock",
+      "mid_back",
+      "upper_back",
+      "neck"
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_back_exercise_better",
+    "kind": "history",
+    "prompt": "Does your back pain get better with exercise or moving about?",
+    "summary": {
+      "yes": "back pain better with exercise",
+      "no": "back pain not eased by exercise"
+    },
+    "gateRegions": [
+      "low_back",
+      "buttock",
+      "mid_back",
+      "upper_back",
+      "neck"
+    ],
+    "askIf": {
+      "finding": "h_back_gradual_onset",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_back_night_wakes",
+    "kind": "history",
+    "prompt": "Does the back pain wake you in the second half of the night, and ease once you get up and move?",
+    "summary": {
+      "yes": "back pain wakes in the night, eases on getting up",
+      "no": "no night waking with back pain"
+    },
+    "gateRegions": [
+      "low_back",
+      "buttock",
+      "mid_back",
+      "upper_back",
+      "neck"
+    ],
+    "askIf": {
+      "finding": "h_back_gradual_onset",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_neck_car_accident",
+    "kind": "history",
+    "prompt": "Did the pain start after a car crash or another sudden jolt that threw your head forward and back?",
+    "summary": {
+      "yes": "started after a car crash or jolt to the head",
+      "no": "no car crash or jolt"
+    },
+    "gateRegions": [
+      "neck",
+      "scapula",
+      "head_back",
+      "upper_back",
+      "shoulder"
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_pelvis_walk_turn",
+    "kind": "history",
+    "prompt": "Is the pain in your pelvis brought on by walking, standing on one leg, climbing stairs or turning over in bed?",
+    "summary": {
+      "yes": "pelvic pain with walking, one-leg standing or turning in bed",
+      "no": "pelvic pain not brought on by these"
+    },
+    "gateRegions": [
+      "buttock",
+      "low_back",
+      "groin",
+      "posterior_thigh"
+    ],
+    "askIf": {
+      "finding": "h_pregnancy",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_pubic_bone",
+    "kind": "history",
+    "prompt": "Is the pain right over the bone at the front middle of the pelvis (the pubic bone), just above the genitals?",
+    "summary": {
+      "yes": "pain over the pubic bone",
+      "no": "pain not over the pubic bone"
+    },
+    "gateRegions": [
+      "groin",
+      "medial_thigh",
+      "abdomen"
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_hip_load_increase",
+    "kind": "history",
+    "prompt": "Did the pain start after a recent rise in running, marching or walking, or a change in training?",
+    "summary": {
+      "yes": "started after more running, marching or walking",
+      "no": "no recent rise in loading"
+    },
+    "gateRegions": [
+      "groin",
+      "anterior_thigh",
+      "buttock",
+      "low_back"
+    ],
+    "askIf": {
+      "finding": "h_hip_weight_pain",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_hip_weight_pain",
+    "kind": "history",
+    "prompt": "Does putting your weight on the leg (walking, running, standing on it, hopping) bring on a deep pain in the groin, hip or buttock that eases with rest?",
+    "summary": {
+      "yes": "deep hip pain on weight-bearing, easing with rest",
+      "no": "no deep pain on weight-bearing"
+    },
+    "gateRegions": [
+      "groin",
+      "anterior_thigh",
+      "buttock",
+      "low_back",
+      "knee_front"
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_bone_health",
+    "kind": "history",
+    "prompt": "Have you been told your bones are thin (osteoporosis or low bone density), or have your periods stopped or become irregular for months while training hard or eating little?",
+    "summary": {
+      "yes": "thin bones or missed periods",
+      "no": "no thin bones or missed periods"
+    },
+    "gateRegions": [
+      "groin",
+      "anterior_thigh",
+      "buttock",
+      "low_back"
+    ],
+    "askIf": {
+      "finding": "h_hip_weight_pain",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_avn_risk",
+    "kind": "history",
+    "prompt": "Have you taken steroid tablets or injections for a long time, drunk heavily for years, or had sickle cell disease, a hip dislocation or a hip fracture?",
+    "summary": {
+      "yes": "a risk for loss of blood supply to the hip bone",
+      "no": "none of these hip-bone risks"
+    },
+    "gateRegions": [
+      "groin",
+      "anterior_thigh",
+      "buttock",
+      "knee_front"
+    ],
+    "askIf": {
+      "finding": "h_hip_weight_pain",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_hip_snap",
+    "kind": "history",
+    "prompt": "Do you feel or hear a clunk or snap deep in the front of the hip when you move it, for example lifting your leg up and lowering it?",
+    "summary": {
+      "yes": "clunk or snap at the front of the hip",
+      "no": "no snapping at the front of the hip"
+    },
+    "gateRegions": [
+      "groin",
+      "anterior_thigh"
+    ],
+    "askIf": {
+      "finding": "h_hip_flexor_lift",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_hip_flexor_lift",
+    "kind": "history",
+    "prompt": "Is the pain at the front of the hip brought on by lifting your knee toward your chest, for example getting into a car, climbing stairs or putting on socks?",
+    "summary": {
+      "yes": "front-of-hip pain lifting the knee",
+      "no": "lifting the knee doesn't bring it on"
+    },
+    "gateRegions": [
+      "groin",
+      "anterior_thigh"
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_thigh_sudden_pull",
+    "kind": "history",
+    "prompt": "Did the thigh pain start suddenly while sprinting, kicking, jumping or stretching, with a sharp pulling feeling in the muscle?",
+    "summary": {
+      "yes": "sudden pull in the thigh muscle during sport",
+      "no": "no sudden pull in the thigh muscle"
+    },
+    "gateRegions": [
+      "posterior_thigh",
+      "anterior_thigh"
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_shoulder_dislocated",
+    "kind": "history",
+    "prompt": "Has your shoulder ever come out of its socket (dislocated) or partly slipped out?",
+    "summary": {
+      "yes": "shoulder has dislocated or slipped out",
+      "no": "shoulder has never slipped out"
+    },
+    "gateRegions": [
+      "shoulder",
+      "upper_arm_lateral"
+    ],
+    "askIf": {
+      "finding": "h_shoulder_apprehension",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_shoulder_apprehension",
+    "kind": "history",
+    "prompt": "Do you feel the shoulder might slip out, so that you avoid positions with the arm raised and turned back (like throwing, or reaching back to the back seat of a car)?",
+    "summary": {
+      "yes": "feels the shoulder might slip out",
+      "no": "no feeling the shoulder might slip out"
+    },
+    "gateRegions": [
+      "shoulder",
+      "upper_arm_lateral"
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_shoulder_deep_click",
+    "kind": "history",
+    "prompt": "Do you feel a deep click, catch or clunk inside the shoulder with overhead movements, such as throwing or serving?",
+    "summary": {
+      "yes": "deep click or catch in the shoulder",
+      "no": "no deep click in the shoulder"
+    },
+    "gateRegions": [
+      "shoulder",
+      "upper_arm_lateral"
+    ],
+    "askIf": {
+      "finding": "h_shoulder_overhead_or_fall",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_shoulder_overhead_or_fall",
+    "kind": "history",
+    "prompt": "Did the shoulder pain start with overhead sport or work (throwing, serving, lifting overhead), a fall on an outstretched arm, or a sudden pull on the arm?",
+    "summary": {
+      "yes": "started with overhead activity, a fall or a sudden pull",
+      "no": "no overhead activity, fall or pull at the start"
+    },
+    "gateRegions": [
+      "shoulder",
+      "upper_arm_lateral"
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_elbow_point_swelling",
+    "kind": "history",
+    "prompt": "Is there a soft, squashy swelling on the point of the elbow, like a small balloon?",
+    "summary": {
+      "yes": "soft swelling on the point of the elbow",
+      "no": "no swelling on the point of the elbow"
+    },
+    "gateRegions": [
+      "elbow_lateral",
+      "elbow_medial"
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_fall_on_hand",
+    "kind": "history",
+    "prompt": "Did the pain start after a fall onto your outstretched hand?",
+    "summary": {
+      "yes": "started after a fall on the hand",
+      "no": "no fall on the hand"
+    },
+    "gateRegions": [
+      "wrist_radial",
+      "hand_dorsal_radial",
+      "forearm_lateral"
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_snuffbox_tender",
+    "kind": "history",
+    "prompt": "With your thumb stretched out, a hollow appears on the back of the wrist at the base of the thumb. Is pressing in that hollow clearly painful compared with the other wrist?",
+    "summary": {
+      "yes": "tender in the hollow at the base of the thumb",
+      "no": "not tender at the base of the thumb"
+    },
+    "gateRegions": [
+      "wrist_radial",
+      "hand_dorsal_radial",
+      "forearm_lateral"
+    ],
+    "askIf": {
+      "finding": "h_fall_on_hand",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_wrist_lump",
+    "kind": "history",
+    "prompt": "Is there a smooth, rounded lump on the wrist (often on the back, or on the thumb side of the palm) that can change in size?",
+    "summary": {
+      "yes": "a smooth lump on the wrist",
+      "no": "no lump on the wrist"
+    },
+    "gateRegions": [
+      "wrist_radial",
+      "wrist_ulnar",
+      "hand_dorsal_radial",
+      "forearm_dorsal"
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_finger_knobbly",
+    "kind": "history",
+    "prompt": "Are some of your finger joints knobbly or enlarged with hard, bony swellings, especially the joints nearest the fingertips?",
+    "summary": {
+      "yes": "hard bony swellings on finger joints",
+      "no": "no bony swellings on finger joints"
+    },
+    "gateRegions": [
+      "hand_median",
+      "hand_ulnar",
+      "hand_dorsal_radial"
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_fingertip_droop",
+    "kind": "history",
+    "prompt": "After a knock to the end of a finger (for example catching a ball), does the fingertip droop, so you can't straighten its last joint on its own?",
+    "summary": {
+      "yes": "fingertip droops after a knock",
+      "no": "fingertip straightens normally"
+    },
+    "gateRegions": [
+      "hand_median",
+      "hand_ulnar"
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_palm_cord",
+    "kind": "history",
+    "prompt": "Is there a firm lump or cord in your palm, so that you can no longer lay your hand completely flat on a table?",
+    "summary": {
+      "yes": "a cord in the palm, hand won't lie flat",
+      "no": "no cord in the palm"
+    },
+    "gateRegions": [
+      "hand_ulnar",
+      "hand_median"
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_knee_injury",
+    "kind": "history",
+    "prompt": "Did your knee problem start with an injury (a twist, a fall, a blow or a tackle)?",
+    "summary": {
+      "yes": "knee problem started with an injury",
+      "no": "no knee injury at the start"
+    },
+    "gateRegions": [
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "knee_front"
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_knee_side_force",
+    "kind": "history",
+    "prompt": "Did the knee injury happen when the knee was forced sideways, for example a blow to the side of the knee or the knee buckling inward or outward?",
+    "summary": {
+      "yes": "knee forced sideways at injury",
+      "no": "knee not forced sideways"
+    },
+    "gateRegions": [
+      "knee_medial",
+      "knee_lateral"
+    ],
+    "askIf": {
+      "finding": "h_knee_injury",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_knee_front_blow",
+    "kind": "history",
+    "prompt": "Did the injury happen from a blow to the front of the shin with the knee bent (for example on a car dashboard), or from falling onto a bent knee?",
+    "summary": {
+      "yes": "blow to the front of the bent knee",
+      "no": "no blow to the front of the bent knee"
+    },
+    "gateRegions": [
+      "knee_back",
+      "knee_front"
+    ],
+    "askIf": {
+      "finding": "h_knee_injury",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_kneecap_slipped",
+    "kind": "history",
+    "prompt": "Has your kneecap ever slipped out of place to the outer side, or does it feel as if it is about to?",
+    "summary": {
+      "yes": "kneecap has slipped or feels about to",
+      "no": "kneecap has never slipped"
+    },
+    "gateRegions": [
+      "knee_front",
+      "knee_medial"
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_shin_top_bump",
+    "kind": "history",
+    "prompt": "Is there a tender bony bump at the top of the shin, just below the kneecap, that hurts with running, jumping or kneeling?",
+    "summary": {
+      "yes": "tender bump just below the kneecap",
+      "no": "no tender bump below the kneecap"
+    },
+    "gateRegions": [
+      "knee_front"
+    ],
+    "askIf": {
+      "finding": "h_age_growing",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_knee_locking",
+    "kind": "history",
+    "prompt": "Does your knee lock or catch, or give a feeling of something loose moving inside it?",
+    "summary": {
+      "yes": "knee locks or catches",
+      "no": "no locking or catching"
+    },
+    "gateRegions": [
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back"
+    ],
+    "askIf": {
+      "finding": "h_age_growing",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_ankle_old_injury",
+    "kind": "history",
+    "prompt": "Years ago, did you break that ankle or sprain it badly or many times?",
+    "summary": {
+      "yes": "old ankle fracture or repeated sprains",
+      "no": "no old ankle injury"
+    },
+    "gateRegions": [
+      "ankle_lateral",
+      "ankle_medial",
+      "foot_dorsum"
+    ],
+    "askIf": {
+      "finding": "h_ankle_stiff_ache",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_ankle_stiff_ache",
+    "kind": "history",
+    "prompt": "Is the ankle stiff and aching, worse after walking and better with rest, without a recent injury?",
+    "summary": {
+      "yes": "stiff, aching ankle without a recent injury",
+      "no": "ankle not stiff and aching"
+    },
+    "gateRegions": [
+      "ankle_lateral",
+      "ankle_medial",
+      "foot_dorsum"
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_ankle_twist_out",
+    "kind": "history",
+    "prompt": "When you hurt it, was the foot twisted outward, or did your leg turn over a foot planted on the ground?",
+    "summary": {
+      "yes": "foot twisted outward at injury",
+      "no": "foot not twisted outward"
+    },
+    "gateRegions": [
+      "ankle_lateral",
+      "shin_anterior"
+    ],
+    "askIf": {
+      "finding": "h_ankle_injury",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_bunion",
+    "kind": "history",
+    "prompt": "Does your big toe point toward the other toes, with a bony bump on the inner side of the foot at its base?",
+    "summary": {
+      "yes": "big toe drifts in, with a bump at its base",
+      "no": "no bunion"
+    },
+    "gateRegions": [
+      "foot_dorsum",
+      "forefoot"
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_under_big_toe",
+    "kind": "history",
+    "prompt": "Is the pain under the ball of the foot directly beneath the big toe joint, and worse pushing off or going up on tiptoe?",
+    "summary": {
+      "yes": "pain beneath the big toe joint",
+      "no": "pain not beneath the big toe joint"
+    },
+    "gateRegions": [
+      "forefoot"
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_heel_back_bump",
+    "kind": "history",
+    "prompt": "Is the pain at the back of the heel where the tendon attaches, with a bump there that rubs on the back of your shoes?",
+    "summary": {
+      "yes": "pain and a bump at the back of the heel",
+      "no": "no bump at the back of the heel"
+    },
+    "gateRegions": [
+      "achilles",
+      "heel"
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_heel_squeeze_sport",
+    "kind": "history",
+    "prompt": "Is the heel sore when squeezed from both sides, and worse with running and jumping sports?",
+    "summary": {
+      "yes": "heel sore when squeezed, worse with sport",
+      "no": "heel not sore when squeezed"
+    },
+    "gateRegions": [
+      "heel",
+      "achilles"
+    ],
+    "askIf": {
+      "finding": "h_age_growing",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_many_places_both_sides",
+    "kind": "history",
+    "prompt": "Apart from the areas you marked, do you also have pain, stiffness or swelling in several other places on both sides of your body?",
+    "summary": {
+      "yes": "pain or stiffness in many places on both sides",
+      "no": "no pain in many other places"
+    },
+    "gateRegions": [
+      "hand_median",
+      "hand_ulnar",
+      "hand_dorsal_radial",
+      "wrist_radial",
+      "wrist_ulnar",
+      "forefoot",
+      "foot_dorsum",
+      "ankle_lateral",
+      "ankle_medial",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "elbow_lateral",
+      "elbow_medial",
+      "shoulder",
+      "upper_arm_lateral",
+      "upper_arm_medial",
+      "neck",
+      "buttock",
+      "lateral_thigh",
+      "anterior_thigh",
+      "groin",
+      "scapula",
+      "upper_back",
+      "mid_back",
+      "low_back",
+      "forearm_dorsal",
+      "posterior_thigh",
+      "chest_front",
+      "chest_side",
+      "calf"
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_joint_attacks",
+    "kind": "history",
+    "prompt": "Have you had attacks in which a joint became very painful, red, hot and swollen within a day, then settled completely within one or two weeks?",
+    "summary": {
+      "yes": "attacks of a red, hot, swollen joint",
+      "no": "no attacks of a red, hot joint"
+    },
+    "gateRegions": [
+      "forefoot",
+      "foot_dorsum",
+      "ankle_lateral",
+      "ankle_medial",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "hand_median",
+      "hand_ulnar",
+      "hand_dorsal_radial",
+      "wrist_radial",
+      "wrist_ulnar",
+      "elbow_lateral",
+      "elbow_medial",
+      "heel",
+      "achilles"
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_morning_stiff_long",
+    "kind": "history",
+    "prompt": "In the morning, are your joints stiff for more than 30 minutes before they loosen up?",
+    "summary": {
+      "yes": "morning stiffness over 30 minutes",
+      "no": "morning stiffness 30 minutes or less"
+    },
+    "gateRegions": [
+      "hand_median",
+      "hand_ulnar",
+      "hand_dorsal_radial",
+      "wrist_radial",
+      "wrist_ulnar",
+      "forefoot",
+      "foot_dorsum",
+      "ankle_lateral",
+      "ankle_medial",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "elbow_lateral",
+      "elbow_medial",
+      "shoulder"
+    ],
+    "askIf": {
+      "finding": "h_many_joints_swollen",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_many_joints_swollen",
+    "kind": "history",
+    "prompt": "Are several joints swollen or puffy on both sides of the body, such as the knuckles or wrists of both hands, or the balls of both feet?",
+    "summary": {
+      "yes": "several swollen joints on both sides",
+      "no": "no swelling of several joints"
+    },
+    "gateRegions": [
+      "hand_median",
+      "hand_ulnar",
+      "hand_dorsal_radial",
+      "wrist_radial",
+      "wrist_ulnar",
+      "forefoot",
+      "foot_dorsum",
+      "ankle_lateral",
+      "ankle_medial",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "elbow_lateral",
+      "elbow_medial",
+      "shoulder"
+    ],
+    "askIf": {
+      "finding": "h_many_places_both_sides",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_widespread_pain",
+    "kind": "history",
+    "prompt": "For 3 months or more, have you had pain in many parts of your body, on both sides and above and below the waist?",
+    "summary": {
+      "yes": "widespread pain for 3 months or more",
+      "no": "pain not widespread"
+    },
+    "gateRegions": [
+      "neck",
+      "shoulder",
+      "scapula",
+      "upper_back",
+      "mid_back",
+      "low_back",
+      "buttock",
+      "upper_arm_lateral",
+      "upper_arm_medial",
+      "forearm_dorsal",
+      "lateral_thigh",
+      "anterior_thigh",
+      "posterior_thigh",
+      "chest_front",
+      "chest_side",
+      "calf"
+    ],
+    "askIf": {
+      "finding": "h_many_places_both_sides",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_fatigue_sleep",
+    "kind": "history",
+    "prompt": "Along with the pain, do you have marked tiredness, wake up unrefreshed, or have trouble thinking clearly?",
+    "summary": {
+      "yes": "tiredness, unrefreshing sleep or poor concentration",
+      "no": "no marked tiredness or poor sleep"
+    },
+    "gateRegions": [
+      "neck",
+      "shoulder",
+      "scapula",
+      "upper_back",
+      "mid_back",
+      "low_back",
+      "buttock",
+      "upper_arm_lateral",
+      "upper_arm_medial",
+      "forearm_dorsal",
+      "lateral_thigh",
+      "anterior_thigh",
+      "posterior_thigh",
+      "chest_front",
+      "chest_side",
+      "calf"
+    ],
+    "askIf": {
+      "finding": "h_widespread_pain",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_both_shoulders_ache",
+    "kind": "history",
+    "prompt": "Do both of your shoulders ache?",
+    "summary": {
+      "yes": "both shoulders ache",
+      "no": "not both shoulders"
+    },
+    "gateRegions": [
+      "shoulder",
+      "upper_arm_lateral",
+      "upper_arm_medial",
+      "neck",
+      "buttock",
+      "lateral_thigh",
+      "anterior_thigh",
+      "groin"
+    ],
+    "askIf": {
+      "finding": "h_many_places_both_sides",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_morning_stiff_45",
+    "kind": "history",
+    "prompt": "In the morning, does stiffness in your shoulders (or hips) last more than 45 minutes?",
+    "summary": {
+      "yes": "morning stiffness over 45 minutes",
+      "no": "morning stiffness 45 minutes or less"
+    },
+    "gateRegions": [
+      "shoulder",
+      "upper_arm_lateral",
+      "upper_arm_medial",
+      "neck",
+      "buttock",
+      "lateral_thigh",
+      "anterior_thigh",
+      "groin"
+    ],
+    "askIf": {
+      "finding": "h_both_shoulders_ache",
+      "answer": "yes"
+    },
+    "impliedBy": [
+      {
+        "finding": "h_morning_stiff_long",
+        "answer": "no",
+        "implies": "no"
+      }
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_hip_pain_too",
+    "kind": "history",
+    "prompt": "Do you also have pain in one or both hips, or find them hard to move?",
+    "summary": {
+      "yes": "hip pain or stiffness too",
+      "no": "no hip pain"
+    },
+    "gateRegions": [
+      "shoulder",
+      "upper_arm_lateral",
+      "upper_arm_medial",
+      "neck",
+      "buttock",
+      "lateral_thigh",
+      "anterior_thigh",
+      "groin"
+    ],
+    "askIf": {
+      "finding": "h_both_shoulders_ache",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_other_joints_pain",
+    "kind": "history",
+    "prompt": "Do other joints hurt as well, such as your hands, wrists, knees or feet?",
+    "summary": {
+      "yes": "other joints hurt too",
+      "no": "no other joints hurt"
+    },
+    "gateRegions": [
+      "shoulder",
+      "upper_arm_lateral",
+      "upper_arm_medial",
+      "neck",
+      "buttock",
+      "lateral_thigh",
+      "anterior_thigh",
+      "groin"
+    ],
+    "askIf": {
+      "finding": "h_both_shoulders_ache",
+      "answer": "yes"
+    },
+    "evidence": []
   }
 ]

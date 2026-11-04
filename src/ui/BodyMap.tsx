@@ -8,7 +8,14 @@ const FRONT: { region: Region; d: string }[] = [
   { region: "lateral_thigh", d: "M40 50 L58 46 L60 150 L46 150 Z" },
   { region: "anterior_thigh", d: "M58 46 L68 72 L76 86 L74 150 L60 150 Z" },
   { region: "medial_thigh", d: "M76 86 L84 86 L82 150 L74 150 Z" },
-  { region: "shin_anterior", d: "M50 160 L80 160 L74 250 L58 250 Z" },
+  // Knee: the outer side is on the left of the front view.
+  { region: "knee_lateral", d: "M46 152 L54 152 L54 176 L50 176 Z" },
+  { region: "knee_front", d: "M54 152 L74 152 L74 176 L54 176 Z" },
+  { region: "knee_medial", d: "M74 152 L82 152 L80 176 L74 176 Z" },
+  { region: "shin_anterior", d: "M50 178 L80 178 L75 240 L57 240 Z" },
+  // Ankle: outer side on the left, as for the knee.
+  { region: "ankle_lateral", d: "M57 242 L66 242 L66 256 L55 256 Z" },
+  { region: "ankle_medial", d: "M66 242 L75 242 L77 256 L66 256 Z" },
   { region: "foot_dorsum", d: "M56 258 L76 258 L84 274 L54 274 Z" },
   { region: "forefoot", d: "M54 274 L84 274 L88 287 L54 287 Z" },
 ];
@@ -16,9 +23,12 @@ const BACK: { region: Region; d: string }[] = [
   { region: "low_back", d: "M44 10 L116 10 L112 40 L48 40 Z" },
   { region: "buttock", d: "M44 40 L80 40 L80 84 L42 80 Z" },
   { region: "posterior_thigh", d: "M42 84 L80 88 L78 150 L48 150 Z" },
-  { region: "calf", d: "M50 160 L80 160 L76 250 L58 250 Z" },
-  { region: "foot_sole_lateral", d: "M56 258 L76 258 L79 274 L53 274 Z" },
-  { region: "forefoot", d: "M53 274 L79 274 L80 287 L52 287 Z" },
+  { region: "knee_back", d: "M48 152 L78 152 L80 176 L50 176 Z" },
+  { region: "calf", d: "M50 178 L80 178 L75 240 L57 240 Z" },
+  { region: "achilles", d: "M60 242 L72 242 L73 256 L59 256 Z" },
+  { region: "heel", d: "M57 258 L75 258 L77 266 L55 266 Z" },
+  { region: "foot_sole_lateral", d: "M55 266 L77 266 L79 276 L53 276 Z" },
+  { region: "forefoot", d: "M53 276 L79 276 L80 287 L52 287 Z" },
 ];
 // Right arm hanging palm forward: the thumb side is on the left of the front view, the right of the back view.
 const ARM_FRONT: { region: Region; d: string }[] = [
@@ -57,11 +67,20 @@ const ARM_BACK: { region: Region; d: string }[] = [
 const CHEST_FRONT: { region: Region; d: string }[] = [
   { region: "chest_front", d: "M64 20 L96 20 L96 100 L64 100 Z" },
   { region: "chest_side", d: "M40 26 L64 20 L64 100 L44 108 Z" },
+  { region: "abdomen", d: "M44 110 L64 102 L96 102 L98 160 L48 160 Z" },
 ];
 const CHEST_BACK: { region: Region; d: string }[] = [
   { region: "upper_back", d: "M60 20 L100 20 L100 66 L60 66 Z" },
   { region: "mid_back", d: "M60 66 L100 66 L100 110 L60 110 Z" },
 ];
+
+// Head from the front and from behind (temple drawn on the left of the front view).
+const HEAD_FRONT: { region: Region; d: string }[] = [
+  { region: "temple", d: "M50 24 L60 20 L60 50 L52 52 Z" },
+  { region: "face", d: "M60 14 L100 14 L104 60 L56 60 Z" },
+  { region: "jaw", d: "M56 60 L104 60 L96 92 L64 92 Z" },
+];
+const HEAD_BACK: { region: Region; d: string }[] = [{ region: "head_back", d: "M56 14 L104 14 L106 80 L54 80 Z" }];
 
 interface Props {
   selected: Region[];
@@ -99,11 +118,13 @@ export function BodyMap({ selected, onToggle }: Props) {
   return (
     <div className="bodymap">
       <div className="bodymap-figures" aria-hidden="true">
+        <Figure title="Head" shapes={HEAD_FRONT} selected={selected} onToggle={onToggle} viewBox="30 0 100 110" />
+        <Figure title="Back of head" shapes={HEAD_BACK} selected={selected} onToggle={onToggle} viewBox="30 0 100 110" />
         <Figure title="Front" shapes={FRONT} selected={selected} onToggle={onToggle} />
         <Figure title="Back" shapes={BACK} selected={selected} onToggle={onToggle} />
         <Figure title="Arm, front" shapes={ARM_FRONT} selected={selected} onToggle={onToggle} viewBox="30 0 100 270" />
         <Figure title="Arm, back" shapes={ARM_BACK} selected={selected} onToggle={onToggle} viewBox="30 0 100 270" />
-        <Figure title="Chest" shapes={CHEST_FRONT} selected={selected} onToggle={onToggle} viewBox="30 0 100 130" />
+        <Figure title="Chest and belly" shapes={CHEST_FRONT} selected={selected} onToggle={onToggle} viewBox="30 0 100 165" />
         <Figure title="Upper back" shapes={CHEST_BACK} selected={selected} onToggle={onToggle} viewBox="30 0 100 130" />
       </div>
       <div className="bodymap-chips">

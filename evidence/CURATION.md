@@ -760,3 +760,270 @@ User question: does the tool cover Morton's neuroma? It didn't: there was no for
 - **Added from it:** `h_ff_met_spread` for `morton`, "pads, a metatarsal dome or insoles that spread the bones apart ease it". Table 14 reports 86% / 70%; the counts 6/7 and 16/23 are derived from the percentages (16/23 = 69.6%, the only count that rounds to 70%), and the CIs are Wilson intervals: 0.86 (0.49–0.97) / 0.70 (0.49–0.84). Pitcher doesn't tabulate this item. It is linked to the Delphi checklist item `ms_spread`.
 - **Not entered:** the whole-protocol result (7/7 and 22/23 against ultrasound, 5.7.3), because it is a podiatrist's overall judgement, not a question; and the near-useless items (paraesthesia into the toes, burning, pebble, LR about 1).
 - Dev case reports unchanged (top-3 19/23, logical fit 32/46).
+
+## Leg look-alikes: narrowed arteries, peroneal nerve, polyneuropathy (user request, 2026-11-04)
+User request: start on the coverage gaps, beginning with the three conditions that compete directly with the lumbar roots and stenosis. New miner terms `peroneal`, `polyneuropathy`, `pad`; run with `npm run mine-literature -- peroneal polyneuropathy pad` (18, 171 and 175 candidates). The previous `wanted.md` (forefoot) was copied to `wanted-before-leg-mimics.md`; `wanted.md` is now the leg-mimics list. Nothing was entered from memory.
+
+**Scored: `pad` (narrowed leg arteries, vascular claudication; category mimic).** Nadeau 2013 (PMID 24284143, PMC3859778), Tables 3–4, re-read in the PMC full text: 53 claudicants, 30 with stenosis on MRI and 23 with ABI < 0.9; concurrent disease, neuropathy, hip/knee OA and previous surgery excluded. Table 3 has stenosis as the target and Table 4 vascular claudication, so the rate in the vascular group for a Table 3 item is 1 − its specificity (CI likewise).
+| Finding | PAD rate | Comparison rate | Source of comparison |
+|---|---|---|---|
+| new `h_walk_stand_still_ease` (walking pain eases within minutes on standing still, without sitting or bending) | 0.78 (0.56–0.92) | spec 0.90 (0.72–0.97) | same study: stenosis patients only |
+| `h_worse_standing` | 0.30 (0.14–0.53), from 'Trigger: standing (1)' spec 0.70 | spec 0.70 (0.65–0.76) | `specFrom` Suri 2010, Table 3 |
+| `h_bend_forward` | 0.48 (0.27–0.69), from 'Shopping cart sign (4)' spec 0.52 | spec 0.92 (0.88–0.95) | `specFrom` Suri 2010, Table 3 |
+
+- `h_walk_stand_still_ease` is Nadeau's 'Alleviator: standing (3)', "standing still/no walking" (Results). Its comparison group is stenosis only, so every other leg option gets the stenosis rate (0.10) as its false-positive rate: a spectrum mismatch, as with Morton's. No stenosis entry was added from Table 4, because a stenosis entry with the vascular group as comparator would pull the non-target average to 0.44. The prompt names the walking trigger, so a "no" also covers people without walking pain; in Nadeau every patient had walking pain. It is in the `flexion_walking` dependence group, because a yes almost always comes with walking pain (the same patients as `h_walking_claudication`).
+- The two `specFrom` entries borrow Suri's leg-pain patients without stenosis as "comparable people without PAD". Low certainty, labelled. They only set the PAD rate; borrowed rates don't vote in the non-target average.
+- **Not mapped:**
+  - `h_walking_claudication`: its prompt says the symptoms ease "when you stop and sit or bend forward", the neurogenic definition. A PAD patient may fairly answer no, so Nadeau's walking-trigger rate (0.96) doesn't apply to that wording. Rewording would change what Suri/Konno's figure means, so it was left alone.
+  - `h_improve_seated`: Nadeau's 'Alleviator: sitting (3a)' has only 22% of the vascular group "yes". The questionnaire wording (appendix) is not online, and the item probably means sitting is *needed* for relief, so mapping it to "better when you sit" could understate PAD.
+  - Numbness, cramping, burning, weakness, uphill, time to relief: LR about 1. Calf location (context only): the body map already gates by region.
+- Regions: buttock, back/front/outer thigh, calf. Context: calves 78% vs 27% (Table 4); the calf + standing-still constellation LR+ 20. Mechanism: Nadeau Introduction and Methods.
+
+**Unscored, cited reasoning: `peroneal` (common peroneal/fibular nerve at the fibular head).** Saber 2026 (PMID 42769875, PMC13591402), narrative review, sections 3a, 3b and 4. Regions: front of shin, top of foot.
+- `supports`: `st_heel_walk` (foot drop), `h_leg_numbness` (outer leg, top of foot), new `h_peroneal_setting` (leg crossing, weight loss, long positioning, outer-knee injury).
+- `unexplained`: `st_heel_raise` (plantar flexion spared), `h_bilateral_sole_numbness` (sole spared), `st_slr_helper` (nerve-tension signs point to the root), `h_cough_sneeze` (uncited, as for the other nerves outside the spine).
+- Confirmatory: nerve ultrasound 0.90 (0.797–0.973) / 0.92 (0.7745–0.961) (Bignotti 2017, PMID 27668978, Abstract; healthy controls, so specificity is overstated); nerve conduction and EMG recommended by Saber, section 5, without accuracy figures.
+- **Read, not used:** Jeon 2013 (PMID 22805342, Abstract). Hip abductor weakness in 85.7% of L5 radiculopathy vs 3.6% of peroneal neuropathy (61 foot-drop patients, sens 85.7 / spec 96.4 for radiculopathy). It's a clinician strength test, and there's no self-test for hip abduction yet; it's a candidate for a `root_low` vs `peroneal` question if one is designed. Gillenwater 2011 (scratch collapse / Tinel, clinician, paywalled). The rest of the peroneal hits are imaging or trauma.
+
+**Unscored, uncited reasoning: `polyneuropathy`.** Regions: top of foot, sole, forefoot, shin, calf. Every accuracy study found screens people with diabetes against people with diabetes without neuropathy, and none compares patient-answerable items against radiculopathy or stenosis (targeted Europe PMC search, 39 hits). The one item table (Abuzinadah 2021 MNSI) has "legs and/or feet numb" at sensitivity 27.5%, too low for a cited `usual`. So all items are reasoning, uncited:
+- `usual`: new `h_poly_toes_up` (started in the toes or soles of both feet and spread upward).
+- `supports`: `h_bilateral_sole_numbness`, `h_leg_burning`, `h_diabetes` (an existing meralgia follow-up question, now also a polyneuropathy check).
+- `unexplained`: `h_cough_sneeze`, `st_slr_helper`.
+
+**Stress view.** `pad` → ischaemia (cited, Nadeau Introduction; the condition text says it is the muscles, not a nerve, that run short of blood). `peroneal` → compression (cited, Saber 3b). New type `metabolic` ("Damage from within", uncited): clues `h_poly_toes_up` (usual), `h_bilateral_sole_numbness`, `h_diabetes` (supports); condition `polyneuropathy`. Every option must link to a stress type (vignette test).
+
+**Confirmatory for `pad`:** oscillometric ABI 0.65 (0.57–0.74) / 0.96 (0.93–0.99) against Doppler ABI (Herráiz-Adillo 2017, PMID 28851093, Abstract; recommendation: Doppler ABI is the non-invasive gold standard). Absent foot pulse (nurse) 0.868 (0.748–0.989) / 0.827 (0.780–0.873) (Herráiz-Adillo 2018, PMID 30222240, Abstract; mainly symptom-free primary-care patients).
+
+**Read, not used (PAD):** the Edinburgh Claudication Questionnaire has poor sensitivity in symptomatic and screening samples: Ibeggazene 2023 (PMID 35143731) 47%/63% in claudicants; Boylan 2021 (PMID 33401955) 52.5/87.1 in general practice; MacLean 2024 (PMID 39525342) 6.7/97.6 in a community screen. None asks about relief by posture, so they add nothing beyond Nadeau. Most PAD hits are ABI/Doppler variants or populations with diabetic foot ulcers.
+
+**Effect.** Scorable options 22 → 23. Dev case reports unchanged (top-3 19/23, interview 18/23, logical fit 32/46). Holdout aggregate: interview top-3 7/11, unchanged. There are no PAD, peroneal or polyneuropathy cases yet. Vignettes: calf pain easing on standing still ranks `pad` first; classic neurogenic claudication keeps stenosis above `pad`.
+
+**Worth getting:** Nadeau 2013 appendix (exact questionnaire wording, to settle items 3 and 3a); Jeon 2013 full text; any study of patient-reported items for polyneuropathy vs lumbar root or stenosis.
+
+**DOI audit.** `npm run audit-sources`: all 138 DOIs match their PMIDs.
+
+## Tissue options without accuracy data: second mining pass (user request, 2026-11-04)
+New miner terms for the listed-only tissue options that had none: `hip_fai`, `adductor_groin`, `ac_joint`, `facet_lbp`, `neck_joint`, `shoulder_oa`, `frozen_shoulder`, `biceps` (84, 4, 23, 10, 36, 7, 50 and 107 candidates). The leg-mimics `wanted.md` was copied to `wanted-leg-mimics.md`; `wanted.md` is now this pass's list.
+
+**Scored: `ac_joint`.** Cadogan 2013 (PMID 23634871, PMC3646690), Table 5. 153 consecutive primary-care patients with a new episode of shoulder pain; reference = at least 80% relief from a fluoroscopic AC joint block (22 positive). The comparison group is other primary-care shoulder pain, which matches what the engine computes against `rotator_cuff` and `frozen_shoulder`.
+| Finding | Counts (TP/FN/FP/TN) | Sens / spec |
+|---|---|---|
+| new `h_shoulder_repetitive_onset` (began during or within 48 h of repetitive activity, no other cause; Methods definition) | 6/16/13/118 | 0.27 (0.13–0.48) / 0.90 (0.84–0.94) |
+| new `h_shoulder_above_elbow` ("no pain referred below elbow") | 20/0/105/23 | 1.00 (0.84–1.00) / 0.18 (0.12–0.26) |
+| new `st_ac_swelling_self` (mirror check; the study's item is the examiner's visual inspection, so `performedBy: "clinician"`, `adapted: true`) | 15/5/47/77 | 0.75 (0.53–0.89) / 0.62 (0.53–0.70) |
+
+- Caveat: the five Table 5 variables were picked for their association with the block response in the same data (P ≤ 0.05), so their accuracy is likely optimistic.
+- A "no" to `h_shoulder_above_elbow` gives sens 0, clamped to 0.005, a strong rule-out. Its CI lower bound is 0.84, so a single patient with AC pain below the elbow would change it. This is the data, but the item rests on 20 cases.
+- **Not entered:**
+  - the two passive-movement items (helper-performed passive abduction and 90/90 external rotation without pain: 0.36/0.86, 0.50/0.82);
+  - localised AC tenderness (0.36/0.73, LR+ 1.37; `h_ac_point` stays the uncited `usual` check, since pointing is not pressing);
+  - the traditional tests (cross-body adduction 0.64/0.26, O'Brien 0.14/0.92, Hawkins 0.70/0.36; none associated with the block, Table 4).
+- The higher figures in Table 1 (O'Brien 1998, Chronopoulos 2004) come from surgical waiting lists and are context only.
+
+**Scored: `frozen_shoulder`.** Carbone 2010 (PMID 19418052, PMC2899298), Methods, Results and Table 1. New `st_coracoid_self`: firm pressure in the hollow below the outer collarbone (coracoid) is clearly more painful than on the AC joint or the outer (subacromial) shoulder. The study's threshold was VAS ≥ 3 more at the coracoid than at the other two spots; it was examiner-performed, so `adapted: true`.
+- Positive in 82/85 with adhesive capsulitis: sens 0.96 (0.90–0.99), Table 1.
+- Positive in 67/595 with the four other conditions (rotator cuff tear 52/465, calcifying tendinitis 7/48, glenohumeral arthritis 1/16, AC arthritis 7/66; Results): spec 528/595 = 0.887, Wilson CI 0.859–0.910. Table 1 gives 0.87–0.89 per condition.
+- The healthy-control figures (Table 2: 0.99/0.98) are not used.
+- Caveats: known-diagnosis groups; one examiner who knew the diagnosis; the capsulitis diagnosis used stiffness and MRI, not the test; very obese patients excluded (the coracoid is hard to reach).
+- Diagrams added for both new self-tests.
+
+**Read, not used:**
+- **Hip impingement.** Caliesch 2020 (PMID 32411383, PMC7213881), Table 1: every test against cam/pincer *morphology* has specificity 0.11–0.56 and LR+ 0.75–1.39. That includes Nogier's patient-reported "pain predominantly in flexion/internal rotation", 0.70/0.44. Pålsson 2020 (PMID 32335699): FADIR 0.80/0.25. Dhillon 2025 review (PMID 40692936): highly variable, mostly imaging references. Morphology is common without symptoms, so these don't map onto symptomatic FAI. `hip_fai` stays logical fit only.
+- **Biceps.** Rosas 2017 (PMID 28479256) and the SLAP literature: clinician test clusters in surgical populations. Bélanger 2019 review (PMID 31243466) is paywalled.
+- **Facet / neck joint.** Nothing open access with patient-answerable items. Maas 2017 (PMID 27723170, facet history and exam review), Mizer 2017 (PMID 28644963, self-report for painful neck conditions) and Schneider 2014 (PMID 24662813, cervical facet decision guide) are paywalled and worth getting. Hancock 2007 is already in the log (no informative test).
+- **Adductor groin.** Drew 2014 review (PMID 24529632) only: no new data beyond Weir 2015.
+- **Shoulder OA.** No accuracy study of a bedside item.
+
+**Effect.** Scorable options 23 → 25. Dev case reports unchanged (top-3 19/23, interview 18/23, logical fit 32/46). Holdout aggregate: scored 11 → 12, interview top-3 8/12 (was 7/11). New vignettes: a coracoid-positive patient ranks frozen shoulder first; repetitive onset + above-elbow + swollen joint ranks the AC joint first; pain below the elbow puts the AC joint under 2%.
+
+**Worth getting:** Maas 2017, Mizer 2017, Schneider 2014, Wright 2021 (PMID 33930328, patient history for hip-related pain), Bélanger 2019, Walton 2004 full text.
+
+**DOI audit.** `npm run audit-sources`: all 140 DOIs match their PMIDs.
+
+## Knee (user request, 2026-11-04)
+User decision: add the knee with the full proposed scope, worked autonomously overnight. Sources were found with `npm run mine-literature -- knee_oa pfp meniscus knee_ligament patellar_tendinopathy knee_lateral knee_medial knee_posterior multi_knee` (new terms). The previous `wanted.md` was copied to `wanted-tissue-pass2.md`; `wanted.md` is now the knee list. Nothing was entered from memory.
+
+**Regions.** New `knee_front` ("Front of knee / kneecap"), `knee_medial`, `knee_lateral` and `knee_back`, drawn in a band between thigh and shin on the front and back outlines (the shin and calf shapes now start lower), and a "Knee" chip group. `shin_anterior` was "Front of shin / knee" and is now "Front of shin". Because its old meaning included the knee:
+- Territories: `root_mid` and `femoral` + front/inner knee; `root_low` + outer/back knee; `stenosis` + all four; `peroneal` + outer knee (fibular head).
+- Question gates: every whole-leg gate (a thigh region plus shin or calf) + all four knee regions. Root-specific checks get their sides of the knee: L2–L4 checks (`st_sit_to_stand`, `st_prone_knee_bend`, `st_sens_medial_knee`) front/inner; L5/S1 checks (`st_heel_raise`, `st_heel_walk`, `st_sens_great_toe`, `st_sens_lateral_foot`) outer/back. `h_peroneal_setting` + outer knee. Not changed: the buttock-only piriformis tests, centralisation, `h_poly_toes_up`.
+- **Not added:** knee pain referred from hip OA, and the obturator nerve's classic referral to the inner knee. `hip_oa` is scorable but all its questions are gated to the hip, so it would sit in every knee interview at its prior without being asked about. Revisit with a knee-gated hip question (e.g. hip rotation pain).
+- Dev cases checked: the two dev cases with `shin_anterior` describe the shin (anteromedial leg; L5 dermatome), so no recoding. Holdout cases were not inspected.
+
+**Scored:**
+| Hypothesis | Finding | Values | Source |
+|---|---|---|---|
+| `acl` | new `h_knee_pivot_injury` | 0.79 (0.64–0.90) / 0.84 (0.79–0.89) | Décary 2018 (PMID 29894492, PMC5997333), Table 5, partial or complete tears |
+| `acl` | new `h_knee_pop` | 0.58 (0.42–0.73) / 0.92 (0.88–0.95) | same |
+| `pfp` | new `st_knee_deep_squat` (adapted) | 0.91 / 0.50 (no CIs) | Cook 2010 (PMID 21197175, PMC2841549), Table 2 |
+| `pfp` | new `h_knee_kneel_pain` | 0.84 / 0.50 | same |
+| `pfp` | new `h_knee_sitting_pain` | 0.72 / 0.57 | same |
+| `pfp` | new `h_knee_stairs_pain` | 0.75 / 0.43 | same |
+| `meniscus` | `st_knee_deep_squat` (adapted) | 0.745 (0.611–0.845) / 0.424 (0.312–0.544) | Snoeker 2015 JOSPT (PMID 26161628), Abstract, examiner 1 |
+| `meniscus` | new `h_knee_weightbearing_injury` | 24/51 vs 16/66: 0.471 / 0.758, Wilson CIs | Snoeker 2015 BJGP (PMID 26212848, PMC4513740), Table 1 |
+
+- **Décary** is the Montreal cohort: 279 consecutive new knee complaints from orthopaedic and family clinics, 43 ACL tears, composite reference with MRI, and index items collected independently by a physiotherapist. Its comparison group is the other knee disorders, which matches the engine. The items were chosen by LASSO from 131 candidates (optimistic). The pivot and the pop share the dependence group `knee_injury`: Table 6 shows the pop occurs almost only with a pivot (cluster 0.58/0.94), so multiplying both would double count.
+- **Cook**: 76 consecutive anterior knee pain patients, 52 patellofemoral pain (a diagnosis of exclusion) vs 24 other diagnoses on imaging. Whole percentages, no CIs. Squat and kneeling share `knee_flexion_load` (both deep-flexion loading). Sitting and stairs stay separate (moderate double counting accepted, LR+ 1.3–1.7 each). The squat entry is `adapted` (the physician did the squat or asked about it).
+- **Snoeker**: the BJGP Table 1 rows "effusion" and "origin of complaints" don't add up across groups and are not used. "Locking" was less common with a tear (8/51 vs 22/66); the authors call it not interpretable, and McHugh 2022 (PMID 34600120) finds mechanical symptoms only weakly linked to tears, so locking is context only.
+- **Known distortion:** the pivot injury is scored for `acl` only. Traumatic meniscal tears also pivot (Décary's meniscal cluster), but no source read gives the pivot rate in meniscal tears, so `meniscus` gets the 16% non-target rate. A twisting injury therefore favours ACL over meniscus more than it should. `meniscus` has a cited `supports` check on the pivot (Décary meniscus abstract). Fix: Décary 2018 meniscus full text (PMID 29111463).
+
+**Logical fit only:**
+- `knee_oa`: NICE criteria checklist (age ≥ 45, activity-related pain, morning stiffness ≤ 30 min). Wording from King 2025 (PMID 39542837, PMC12038217, Methods), linked to new `h_age_45` (implied by `h_age_over_65` yes), `h_knee_activity_pain`, `h_knee_morning_stiff_short`.
+  - King's 0.84/0.85 is not used for a probability: its comparison group includes people without knee pain, and everyone using the tool has knee pain.
+  - Context: Duong 2023 JAMA review (PMID 37874571, Abstract: 95/69 for the same criteria); Peat 2006 (PMID 16627539, PMC1798313: the ACR clinical criteria picked up 41% with specificity 71% in general-practice patients over 50).
+  - No single-item accuracy study in a knee-pain population was found open access. Décary 2018 OA clusters (PMID 29781110) are paywalled.
+- `patellar_tendinopathy`: `h_knee_below_kneecap` usual, cited to Maffulli 2017 (PMID 29264343, Abstract: tendon tenderness 98%). The controls had Achilles tendinopathy, so there is no probability.
+- `bakers_cyst`: `h_knee_back_swelling` usual, cited to Tang 2026 (PMID 41939773, PMC13044020, Introduction).
+- `itbs`, `pes_anserine`: one uncited `usual` check each (`h_knee_outer_running`, `h_knee_inner_below_joint`).
+- `saphenous` (nerve; inner/front knee and shin): uncited `usual` numbness, `supports` recent surgery, cough note.
+- Every knee tissue option has the numbness note.
+- Stress: knee tissue options → tissue; `saphenous` → injury, compression (uncited).
+
+**Confirmatory:** Lachman 0.81 (0.67–0.92) / 0.98 (0.95–0.99) (Décary Table 5); joint line tenderness 83/83 and McMurray 61/84 (Duong 2023 abstract, review summary); examination for a popliteal swelling 0.74 (0.49–0.89) / 0.88 (0.65–0.97) (Tang 2026, pooled, mixed populations).
+
+**Read, not used:** Décary 2018 patellofemoral pain and OA clusters (abstracts: clusters only); King 2025 (see above); Chamorro-Moriana 2024 (PMC11023591: patellofemoral pain only, no comparison group); Leibbrandt 2017 checklist (PMC6093140; its Table 1 is Cook 2010, used directly); Harrison 2009 Thessaly (retrospective surgical series, LR+ 39) against Snoeker's primary-care Thessaly LR ≈ 1; the duck walk test (Van der Post 2017: verification bias, the authors say sensitivity is inflated); Owoeye 2018 OSTRC-P (youth basketball screening, mostly uninjured comparison group); Wagemakers 2008 meniscal history in general practice and Lukas 2022 ACL interview score (paywalled; worth getting); the lever sign and Lachman meta-analyses (clinician tests, acute settings).
+
+**Effect.** Scorable options 25 → 28; 6 knee options listed with logical fit. Dev case reports unchanged (top-3 19/23, interview 18/23, logical fit 32/46); there are no knee cases yet. Holdout aggregate unchanged (interview top-3 8/12).
+- Simulated interviews: kneecap pain (squat/kneel/sit yes) → `pfp` 65% in 12 questions; pivot + pop + fast swelling → `acl` 76%; knee OA pattern → "other" 40%, with `knee_oa` on the checklist.
+- Knee patients are also asked the stenosis and root questions (walking, sitting, bending), because stenosis and the roots are in the knee territories.
+
+**Worth getting:** Décary 2018 meniscus, patellofemoral pain and OA full texts (single-item tables would score knee OA and fix the pivot distortion); Wagemakers 2008 (PMID 18185035); Lukas 2022 (PMID 35219887); Nunes 2013 (PMID 23232069).
+
+**DOI audit.** `npm run audit-sources`: all 151 DOIs match their PMIDs.
+
+## Ankle, heel and lower leg (user request, 2026-11-04)
+User decision: continue to the next coverage gap after the knee. Sources were found with `npm run mine-literature -- plantar_heel achilles ankle_sprain ankle_fracture ankle_medial ankle_lateral shin compartment calf ankle_oa multi_ankle` (new terms) and targeted Europe PMC searches. The previous `wanted.md` was copied to `wanted-knee.md`. Nothing was entered from memory.
+
+**Regions.** New `ankle_lateral` ("Outer ankle"), `ankle_medial` ("Inner ankle"), `achilles` ("Back of ankle / Achilles tendon") and `heel` ("Underside of heel"). The shin and calf shapes now end higher, with an ankle band on the front view and Achilles and heel shapes on the back view. The chips are split into "Lower leg and ankle" and "Foot". `foot_sole_lateral` was "Sole (arch or heel) or outer edge of foot" and is now "Arch or outer edge of foot". Because its old meaning included the heel:
+- Territories: `root_low` + outer ankle, Achilles, heel; `root_mid` + inner ankle (L4); `stenosis` and `polyneuropathy` + all four; `tarsal_tunnel` + inner ankle, heel; `peroneal` + outer ankle; `saphenous` + inner ankle.
+- Question gates: every whole-leg gate (a thigh region plus shin, calf or sole) + all four new regions; gates that had the sole + heel. Root checks get their side: L2–L4 checks inner ankle; L5/S1 checks (`st_heel_raise`, `st_heel_walk`, `st_sens_great_toe`, `st_sens_lateral_foot`) outer ankle, Achilles, heel. `h_peroneal_setting` + outer ankle; `h_poly_toes_up` + all four; `h_ff_load_increase` + shin (it is now a check for the shin options). Not changed: the buttock-only piriformis tests and centralisation.
+- Dev cases checked: the one dev case with `foot_sole_lateral` describes the outer sole, so no recoding. Holdout cases were not inspected.
+
+**Injury gate.** New information-only `h_ankle_injury` (asked for every lower-leg, ankle and foot region except the forefoot). The fracture questions are asked only after a "yes" (`askIf`). With a "no", `h_ankle_cant_weight` is implied "no" (`impliedBy`: no injury, so the patient wasn't left unable to walk by one).
+
+**Scored:**
+| Hypothesis | Finding | Values | Source |
+|---|---|---|---|
+| `ankle_fracture` | new `h_ankle_cant_weight` | 10/19 vs 7/93: 0.526 / 0.925, Wilson CIs | Makiev 2025 (PMID 40303651, PMC12036505), Results and Table 2 |
+| `ankle_fracture` | `h_ankle_cant_weight` | 0.694 / 0.616 (Wilson CIs at n = 36, 238) | Pires 2014 (PMID 24971221, PMC4071746), Abstract and Results |
+| `ankle_fracture` | new `st_shetty_helper` (adapted, helper) | 13/19 vs 22/93: 0.684 / 0.763 | Makiev 2025, Table 2 |
+| `ankle_fracture` | `st_shetty_helper` | 45/58 vs 67/171: 0.776 / 0.608 | Doğan 2025 (PMID 40933976, PMC12419047), Table 2 |
+| `achilles_rupture` | new `st_calf_squeeze_helper` (adapted, helper) | 0.96 (0.93–0.99) / 0.93 (0.75–0.99) | Maffulli 1998 (PMID 9548122) via Reiman 2014 (PMID 25243736), Table 4 |
+| `plantar_fasciitis` | new `st_windlass_helper` (adapted, helper) | 7/22 vs 0/23: 0.318 / 1.00 (Wilson 0.857–1.00) | De Garceau 2003 (PMID 12793489), Abstract |
+| `tibial_stress_fracture` | new `st_shin_focal_self` (adapted) | 17/35 vs 19/32 legs: 0.486 / 0.406 | Rosenthal 2022 (PMID 36147792, PMC9486277), Table 1 |
+| `tibial_stress_fracture` | new `st_heel_percussion_helper` (adapted, helper) | 6/35 vs 3/32 legs: 0.171 / 0.906 | Rosenthal 2022, Table 1 |
+
+- **Fracture.** Both studies are consecutive emergency patients with a foot or ankle injury, compared with the injured patients without a fracture (mostly sprains), which matches the engine. Makiev's counts are reconstructed from 112 patients and 17% fractures; every percentage fits. Pires's weight-bearing specificity, PPV and accuracy don't fit one whole-number table, so the reported values are used. The two studies disagree on the weight-bearing specificity (0.925 vs 0.616; the validator warns on non-overlapping CIs); `pooled()` combines them. Doğan's positive Shetty test was "unable to press because of pain", Makiev's "pain clearly increases"; the prompt covers both. Weight-bearing and the Shetty test share `fracture_load`.
+- **Ottawa ankle rules** are a criteria checklist on `ankle_fracture` (wording from Makiev, Methods), linked to `h_ankle_cant_weight` and a new information-only `st_ottawa_bone_self` (the four bone spots in one self-check). The rule as a whole is too unspecific to score (pooled 0.91 / 0.25, Gomes 2022, PMID 36151550, Abstract; in Makiev 0.947 / 0.15).
+- **Achilles rupture.** Maffulli's comparison group was 28 people with a suspected tear and an intact tendon on imaging. The calf squeeze is not gated on the injury question: missed ruptures without a remembered injury occur, and a normal squeeze rules a rupture out (LR− ≈ 0.04). Matles test (0.88/0.85) and gap palpation (0.73/0.89) from the same study were not added (same dependence, weaker).
+- **Plantar fasciitis.** De Garceau's specificity uses only the 23 patients with other foot pain (none positive), not the 30 healthy controls. Zero false positives clamps the likelihood to 0.005, so a positive test is a strong rule-in resting on 23 people; the Wilson lower bound is 0.857.
+- **Tibial stress fracture.** Rosenthal's comparison group is the other painful legs needing imaging in the same trainees (bone scan reference), counted per leg (17 patients contributed both legs, so CIs are too narrow). A short tender spot (≤ 2.5 cm) was more common *without* a stress fracture (LR+ 0.82). This replaces an uncited "usual" check I had drafted for a single tender spot, which the data contradict. `h_shin_long_stretch` "yes" implies `st_shin_focal_self` "no" (tender over 5 cm or more is negative by the study's definition). The fulcrum test (0.457 / 0.844, the best) needs about 11 kg of bending force on the bone and was not adapted for self-testing.
+
+**Logical fit only:**
+- `achilles_tendinopathy`: `h_achilles_morning` usual and `h_achilles_spot` supports, cited to Hutchison 2013 (PMID 23548453; Reiman 2014 Tables 2 and 4: morning stiffness 0.89/0.58, pain 2–6 cm above the insertion 0.78/0.77). No probability: 5 of Hutchison's 11 comparison participants had no ankle pain (same reasoning as King 2025 for knee OA). Maffulli 2003 (palpation, arc sign, Royal London test) used Achilles-surgery waiting-list patients vs controls.
+- `ankle_sprain`: injury and rolled-inward checks (uncited); context from Pires and Makiev (82–84% inversion injuries).
+- `cecs`: `h_leg_exercise_tight` usual, cited to Tarabishi 2023 (PMID 38022185, Abstract); `h_bilateral` supports, cited to de Bruijn 2018 (PMID 29126337, Abstract: bilateral symptoms an independent predictor in 1411 referred patients; no accuracy figures). Stress type: ischaemia.
+- `mtss`: uncited `h_shin_long_stretch` usual and `h_ff_load_increase` supports; context from Winters 2018 (PMID 28179260: reliable clinical diagnosis, 74% of athletes with non-traumatic leg pain).
+- `tibial_stress_fracture` also keeps `h_ff_load_increase` usual (uncited).
+- `ptt` (`h_arch_flattening`), `peroneal_tendon` (`h_ankle_behind_outer`), `calf_strain` (injury, `h_calf_muscle_spot`), `sural` (numbness usual, cough note; stress compression and injury), `plantar_fasciitis` (`h_heel_first_steps` usual): uncited.
+- Every tissue option has the numbness note, except `cecs` (compartment pressure can cause pins and needles).
+
+**Confirmatory:** Ottawa rules then X-ray (Gomes 2022, pooled); clinician calf squeeze (Maffulli 1998 via Reiman; recommendation Garras 2012, PMID 22538958: all 66 operated ruptures had all three clinical signs); Achilles palpation then ultrasound (Reiman 2014 pooled palpation 0.64/0.81); anterior drawer for the outer ankle ligament (Netterström-Wedin 2022, PMID 34286639, pooled 0.54/0.87).
+
+**Read, not used:** Bachmann 2003 Ottawa review (PMID 12595378: pooled sensitivity and LR− only); Rodríguez-Sanz 2023 Kager's fat pad test (PMC10455944: healthy controls); van Zantvoort 2018 (lateral compartment syndrome only, case series); DeOrio 2011 tibialis posterior oedema sign (clinician sign, abstract only); Vignaud 2021 compartment syndrome models (scores, not single items); Matthews 2026 Achilles pilot (structural change, not diagnosis); imaging studies throughout. No accuracy study of history items was found for plantar heel pain, shin splints, compartment syndrome, calf strain, the tibialis posterior or peroneal tendons. The JOSPT heel pain guidelines (PMIDs 25361863, 40734587) are paywalled.
+
+**Effect.** Scorable options 28 → 32 (`ankle_fracture`, `achilles_rupture`, `plantar_fasciitis`, `tibial_stress_fracture`); 8 more listed with logical fit only.
+- Dev case reports: probabilities unchanged (top-3 19/23, interview 18/23). Logical-fit top-3 fell 32 → 31/46: in one dev stenosis case (low back, back of thigh, calf), the new calf options `cecs` (bilateral, cited) and `sural` (numbness) tie with stenosis on net fit, and stenosis has one "against" (age), so the tie-break puts them ahead. No principled change restores it; the baseline was not lowered (decision for the user). Holdout aggregate unchanged (interview top-3 8/12, logical fit 15/21).
+- Simulated interviews: heel pain with a positive windlass → `plantar_fasciitis` 98% in 11 questions; push-off injury with a positive calf squeeze → `achilles_rupture` 86%; rolled ankle, unable to walk, Shetty and bone tenderness positive → `ankle_fracture` first (53%); Achilles tendinopathy pattern → "other" 91%, rupture 4%.
+- **Known distortion (equal priors):** an injury-only option keeps a large share when its questions say little. A sprain with every fracture check negative still shows the fracture at about 25%; outer-ankle pain without an injury about 32% (the implied "no" halves it). Shin splints pattern → `tibial_stress_fracture` 51% because `mtss` has no probability. A deterministic "injury-only option" filter (like the territory gate) would fix the first; it needs a user decision.
+
+**Worth getting:** the JOSPT heel pain guideline (2014/2023), Maffulli 1998 full text (Matles and gap figures in context), DeOrio 2011, Hutchison 2013 full text (per-participant data might allow a comparison against the 6 ankle-pain controls only).
+
+**DOI audit.** `npm run audit-sources`: all 165 DOIs match their PMIDs.
+
+## Head, face and jaw; abdominal wall (user request, 2026-11-04)
+User request: "continue adding more body parts and conditions" after the ankle batch. Sources were found with `npm run mine-literature -- tmd trigeminal occipital multi_head acnes abdominal_wall` (new terms) and targeted Europe PMC searches. The previous `wanted.md` was copied to `wanted-ankle.md`. Nothing was entered from memory.
+
+**Regions.** New `head_back` ("Back of head / base of skull"), `temple`, `face` ("Face (forehead, around the eye, cheek)"), `jaw` ("Jaw, chewing muscle or in front of the ear") on two new head figures, and `abdomen` ("Belly (front or side of the abdomen)") below the chest. No existing region changed meaning, so no existing gate changed except the trunk questions below. `root_thoracic`, `intercostal`, `zoster` and `slipping_rib` + `abdomen` (the lower thoracic nerves and ribs reach the belly wall); `h_trunk_band`, `h_band_rash`, `h_trunk_numbness` (wording now includes "belly") and `h_rib_click` + `abdomen`.
+
+**Safety notices.** `HeadNotice` and `AbdomenNotice`, modelled on the chest notice: nothing is asked and nothing stops. They state what isn't covered (migraine, tension-type headache, teeth, sinuses, eyes; the organs inside the belly) and when to get urgent care (including jaw pain on chewing over 50, for giant cell arteritis, which can look like TMD). No numbers, so no citation.
+
+**Questionnaires.** The interview now shows `instructions` for any question that has them, not only self-tests, so a validated questionnaire can be asked as one scored question with its items and points listed.
+
+**Scored:**
+| Hypothesis | Finding | Values | Source |
+|---|---|---|---|
+| `tmd` | new `h_tmd_screener` (6-item TMD pain screener, 3 or more points) | 210/212 vs 22/125: 0.991 / 0.824 | Gonzalez 2011 (PMID 21965492, PMC4527600), Table 4, Results, Figure 2 |
+| `cervicogenic_headache` | new `h_ha_neck_pain` | 88/112 vs 42/112: 0.786 / 0.625 | Nowaczewska 2026 (PMID 42168854, PMC13292324), Table 1 |
+| `cervicogenic_headache` | new `st_gon_tender_self` (adapted, `scoreOn: positive`) | 88/103 vs 29/96: 0.854 / 0.698 | same |
+| `acnes` | new `h_acnes_questionnaire` (18 items, 10 or more points) | 40/47 vs 5/64: 0.851 / 0.922 | van Assen 2012 (PMID 23914291, PMC3730810), Tables 2-3 |
+
+- **TMD screener.** Items and scoring copied from Figure 2. The comparison group combines the 45 people with tension-type headache in the temple (1 above threshold, long version) and the 80 with toothache (26%, taken as 21/80), the realistic look-alikes for jaw and temple pain; the 96 healthy controls and 116 painless TMJ disorders are not used. The toothache group's TMD status was not checked, so its false-positive rate is an upper bound (the comparison is conservative).
+- **Cervicogenic headache.** Two diagnosed groups (112 vs 112 migraine, matched), a two-gate design, so the specificities are probably optimistic. Tenderness of the greater occipital nerve was part of the diagnostic evidence in 76 of 112 cases (incorporation bias), so only a positive answer counts. No throbbing pain in any of the 112 (79% with migraine) is context only: patients with coexisting migraine were excluded, so a "yes" would wrongly near-exclude the diagnosis. The three ICHD-3 checklist questions are `followUp`s at 25% (a scored option's checklist is not asked otherwise).
+- **ACNES.** The prospective (newly diagnosed) group is used, not the retrospective operated "gold standard" group (0.94), which had recall bias. Comparison: gastroenterology outpatients with IBS, the usual misdiagnosis. Items translated from Dutch by the authors (Table 2); the cut-off is reported as "10 points" (Table 3) and "at least the 10-point cutoff" (van Assen 2013, PMID 24204070, Abstract).
+
+**Logical fit only (ICHD-3 checklists, PMID 29368949, read at ichd-3.org):**
+- `trigeminal` (13.1): one side, attacks of a fraction of a second to 2 minutes, severe, electric/shooting/stabbing, set off by harmless touch or movement.
+- `occipital_neuralgia` (13.4): brief attacks, severe, shooting/stabbing (at least two of three), scalp allodynia, tenderness over the nerve (linked to `st_gon_tender_self`). Clinician-only: relief by nerve block.
+- `cervicogenic_headache` (11.2.1) as above, plus its scored items.
+- `abdominal_hernia`: uncited `h_abd_bulge` usual.
+- Stress: `tmd`, `cervicogenic_headache`, `abdominal_hernia` → tissue; `trigeminal`, `occipital_neuralgia`, `acnes` → compression (uncited reasons).
+
+**Confirmatory (no accuracy figures):** DC/TMD examination (Schiffman 2014, PMID 24482784: the abstract reports only bounds, sensitivity ≥ 0.86, specificity ≥ 0.98, so no figure is entered); occipital nerve block (ICHD-3 13.4 D); diagnostic block of a neck structure (ICHD-3 11.2.1 C4).
+
+**Read, not used:** Darracq 2020 (Carnett's sign in emergency abdominal pain: neither sensitive nor specific, PMID 32507573); Takada 2011 (Carnett's test for psychogenic pain); van der Meer 2019 review (flexion-rotation test 0.83/0.82, clinician test, very low evidence; PMID 30997838); Anarte-Lazo 2024 (flexion-rotation test in whiplash); Ertl 2025 (TMD clinical screening tests); headache red-flag tools (SNNOOP10) and giant cell arteritis models (not modelled).
+
+**Effect.** Scorable options 32 → 35 (`tmd`, `cervicogenic_headache`, `acnes`); `trigeminal`, `occipital_neuralgia`, `abdominal_hernia` listed with logical fit. Dev and holdout case results unchanged (no head or abdomen cases). Simulated interviews: jaw pain with a positive screener → `tmd` 85% (2 questions); back-of-head headache with neck pain and a tender skull base → `cervicogenic_headache` 85%; typical trigeminal neuralgia → `trigeminal` 5/0 on the checklist (probability in "other"); belly questionnaire positive → `acnes` 92%.
+
+**Worth getting:** Takada 2011 and Thomson 1991 (Carnett's sign in chronic abdominal pain); a validated self-report screen for trigeminal neuralgia; Hall 2008/2010 flexion-rotation test studies (could become a helper test).
+
+**DOI audit.** `npm run audit-sources`: all 170 DOIs match their PMIDs.
+
+**Follow-up (user decisions, 2026-11-04).** The user declined both lowering the dev logical-fit floor (32) and a deterministic injury-only filter. Added a `usual` check on `sural` for `st_sens_lateral_foot` (its own skin area, consistent with its `usual` numbness check), because a sural problem that causes numbness should reduce feeling on the outer foot. The dev stenosis case moved from 5th to 4th in logical fit (`cecs` still ties ahead on net fit with no "against"); dev logical-fit top-3 stays 31/46, so `tests/cases` keeps failing against the floor of 32. No further change was made only to restore that case.
+
+## Coverage pass: every remaining musculoskeletal gap (user request, 2026-11-04)
+User request: add every musculoskeletal condition listed as "not in the app" earlier the same day, working autonomously. 34 options were added (`category: "mimic"`), all **logical fit only**: none has an accuracy study usable for a probability, so scorable options stay at 35 and no probability changed. Sources were found with `npm run mine-literature -- coccyx spondylolysis axial_spa whiplash pelvic_girdle hip_bone iliopsoas thigh_strain shoulder_other elbow_wrist_other hand_other knee_other foot_other gout inflammatory_arthritis pmr fibromyalgia` (new terms) and targeted Europe PMC searches. The previous `wanted.md` was copied to `wanted-head-abdomen.md`. Nothing was entered from memory.
+
+**Options added (regions in brackets):**
+- Spine and pelvis: `coccydynia` (buttock, low back), `spondylolysis` (low back, buttock, back of thigh), `axial_spa` (low/mid/upper back, buttock, neck), `whiplash` (neck, shoulder blade, back of head, upper back, shoulder), `pelvic_girdle` (pregnancy; buttock, low back, groin, back of thigh), `osteitis_pubis` (groin, inner thigh, belly).
+- Hip and thigh: `hip_stress_fracture` (femoral neck, sacrum or pubic bone; groin, front of thigh, buttock, low back), `hip_avn` (groin, front of thigh, buttock, front of knee), `iliopsoas` (incl. snapping hip; groin, front of thigh), `thigh_strain` (hamstring or quadriceps).
+- Shoulder: `shoulder_instability`, `slap_tear`, `calcific_tendinitis`.
+- Elbow, wrist and hand: `olecranon_bursitis` (both elbow halves; the back view's elbow shapes sit over the point of the elbow, so no new region), `scaphoid_fracture`, `wrist_ganglion`, `hand_oa`, `mallet_finger`, `dupuytren`.
+- Knee: `knee_collateral` (MCL/LCL), `pcl`, `patellar_dislocation`, `osgood`, `knee_ocd`.
+- Ankle and foot: `ankle_oa`, `high_ankle_sprain`, `hallux_valgus`, `sesamoiditis`, `insertional_achilles` (insertional tendinopathy, retrocalcaneal bursitis, Haglund's), `sever`.
+- Whole body: `gout`, `inflammatory_arthritis`, `pmr`, `fibromyalgia`.
+
+**Question structure (interview length).** A first draft gave every option two or three standalone checks; the dev interview mean rose from 31.4 to 47.9 questions, because `nextAfterScored` asks every check of an unscored option still in play, and the case simulation answers "unsure" to anything a report doesn't state (so nothing is ruled out). Rebuilt so each option has one screening question and its other checks are `askIf` that screen's "yes":
+- one shared whole-body screen, `h_many_places_both_sides`, for `fibromyalgia`, `pmr` and `inflammatory_arthritis` (a "no" rules out all three);
+- `h_knee_injury` before the knee injury mechanisms; `h_ankle_injury` (existing) before `h_ankle_twist_out`; `h_age_growing` before the growth-plate checks; `h_hip_weight_pain` before the stress-fracture and AVN risk questions.
+- Checks that would have widened an existing question into unrelated regions were dropped (`h_big_toe_tender` for gout, `h_ff_load_increase` for the hip, `p_light_touch` for fibromyalgia, `h_morning_stiff_long` for PMR and axial SpA).
+- New age questions `h_age_50` and `h_age_growing` are tied to `h_age_45` and `h_age_over_65` by `impliedBy` (the validator's "both yes and no" warning is expected: the ranges can't overlap).
+- Result: dev interview mean 39.7 (was 31.4), max 70 (was 59). Most of the increase is one screen per new option in play.
+
+**Cited:**
+| Option | What | Source |
+|---|---|---|
+| `axial_spa` | `h_back_gradual_onset` usual (insidious onset 76.2%, patient-reported) and `h_back_exercise_better` usual (improvement with exercise 83.0%); context: every item LR+ 0.9-1.4 among referred chronic back pain | Poddubnyy 2018 (PMID 30713715, PMC6336095), Abstract, Table 4 |
+| `pmr` | Criteria checklist: age ≥ 50 and both shoulders aching (required), morning stiffness > 45 min (2), hip pain or limited movement (1), no other joint pain (1); clinician-only: raised CRP/ESR, RF and ACPA negative (2). New `h_both_shoulders_ache`, `h_morning_stiff_45` (implied "no" by `h_morning_stiff_long` "no"), `h_hip_pain_too`, `h_other_joints_pain`. Context: score ≥ 4 68/78 overall, specificity 88% vs shoulder conditions, 65% vs RA; "not meant for diagnostic purposes" | Dasgupta 2012 (PMID 22388996, PMC3298664), Abstract, Tables 4 and 6 |
+| `fibromyalgia` | Reasons for `h_widespread_pain` and `h_fatigue_sleep` (content of the survey criteria) | Fitzcharles 2012 (PMID 22994975), Abstract (Background); reliability study only |
+| `sever`, `osgood` | Context: case mix of children with heel (33/47) and front-of-knee (12/16) pain at podiatry and physiotherapy clinics | Brooks 2024 (PMID 39314841, PMC11418814), Results |
+| `hallux_valgus` | Context: self-assessment against standard photographs found 85% of bunions, specificity 88% | Menz 2010 (PMID 20854678), Abstract |
+
+Everything else is uncited reasoning (`usual`/`supports` with a `reason`), labelled so in the UI, plus the numbness note on every tissue option. Stress links: new type `joint_inflammation` ("Inflamed joints or tendons (inflammatory disease)", uncited clues: long morning stiffness, swelling or red hot attacks, pain at rest, eased by movement) for `axial_spa`, `gout`, `inflammatory_arthritis`, `pmr`; `fibromyalgia` → sensitisation; all others → tissue.
+
+**Read, not used:**
+- Poddubnyy 2018 items for a probability: LR ≈ 1 in referred patients; scoring `axial_spa` on them would mainly hand it an equal prior share. Rudwaleit 2006 (PMID 16447233; inflammatory vs mechanical back pain under 50, ≥ 2 of 4 items LR+ 3.7) is paywalled and would be the source to score it.
+- Vandeputte 2025 (PMID 40388705, PMC12517839), iliopsoas tendinopathy: seated resisted hip flexion 94/89 and seated resisted external rotation 96/81 against anaesthetic-injection response in 44 patients with groin pain. Promising for a helper-performed self-test, but the "optimal cutoff" column needs the full text read to define a positive test, and a new self-test needs a diagram. Next candidate to score `iliopsoas`.
+- Fagevik Olsén 2014 (PMID 24767628): agreement of home vs clinic pelvic girdle tests, no comparison group.
+- Brooks 2024 accuracy: sensitivity and specificity only in Figure 3 (ROC curves); knee group has 4 controls.
+- Haugen 2024 EULAR hand OA criteria (PMID 38821712): need examination and radiographs.
+- Kobayashi 2022 (PMC8889301): ultrasound additions to the PMR criteria.
+- PMR report: dominated by giant cell arteritis imaging. Fibromyalgia report: mostly noise (the term `FiRST` also matches the ordinary word "first"); FiRST (Perrot 2010, PMID 20488620) and the 2016 criteria (Wolfe, PMID 27916278) are paywalled.
+- No accuracy study of patient-answerable items was found for coccydynia, spondylolysis, thigh strain, gout (Netherlands rule not open access), scaphoid fracture (clinician signs only) or the knee ligament and kneecap options (clinician tests or imaging).
+
+**Tests.** The forefoot vignette's list of unscored options now includes `gout`, `hallux_valgus`, `inflammatory_arthritis` and `sesamoiditis`. New vignettes: tailbone pattern, the whole-body screen ruling out three options with one "no", the PMR checklist, a growing child fitting Osgood-Schlatter with knee OA implied against, injury details asked only after a knee injury, scaphoid pattern, and every new option having a check. Dev case results unchanged (top-3 19/23, interview 18/23, logical fit 31/46; the floor of 32 still fails as recorded above). Holdout aggregate unchanged (interview top-3 8/12, logical fit 15/21).
+
+**Known gaps left:** `median_proximal`, `guyon`, `radial_tunnel`, `tos`, `suprascapular`, `axillary` and `facet_lbp` still have no check of any kind (older options). No confirmatory tests were added for the 34 new options.
+
+**Worth getting:** Rudwaleit 2006, Perrot 2010 (FiRST), Janssens 2010 (Netherlands gout rule), Vandeputte 2025 full text (open), Walsworth 2008 (labral tear history and exam).
+
+**DOI audit.** `npm run audit-sources`: all 175 DOIs match their PMIDs.

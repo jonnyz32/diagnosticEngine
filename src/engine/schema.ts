@@ -33,12 +33,29 @@ export const RegionSchema = z.enum([
   "medial_thigh",
   "groin",
   "perineum",
+  // The knee, split by side (added 2026-11-04; before that the front of the knee was part of shin_anterior).
+  "knee_front",
+  "knee_medial",
+  "knee_lateral",
+  "knee_back",
   "shin_anterior",
   "calf",
+  // Ankle and heel (added 2026-11-04; before that the heel was part of foot_sole_lateral).
+  "ankle_lateral",
+  "ankle_medial",
+  "achilles",
+  "heel",
   "foot_dorsum",
   "foot_sole_lateral",
   // Ball of the foot and the gaps between the toes.
   "forefoot",
+  // Front and side of the belly (added 2026-11-04).
+  "abdomen",
+  // Head, face and jaw (added 2026-11-04).
+  "head_back",
+  "temple",
+  "face",
+  "jaw",
   // Upper limb (either side).
   "neck",
   "scapula",

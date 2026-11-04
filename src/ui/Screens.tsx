@@ -2,12 +2,14 @@ import { useState } from "react";
 import type { Answer, Finding, Region } from "../engine/schema";
 import { BodyMap } from "./BodyMap";
 import { ChestNotice, touchesChest } from "./ChestNotice";
+import { HeadNotice, touchesHead } from "./HeadNotice";
+import { AbdomenNotice, touchesAbdomen } from "./AbdomenNotice";
 import { TestDiagram } from "./TestDiagram";
 
 export function Intro({ onStart }: { onStart: () => void }) {
   return (
     <section className="card">
-      <h1>What might be causing your back, leg, neck, arm or chest pain?</h1>
+      <h1>What might be causing your back, leg, foot, neck, arm, chest, head or jaw pain?</h1>
       <p>
         This tool asks about your symptoms and guides you through a few simple self-tests. It then estimates where the
         problem most likely starts, and which tests a clinician could use to confirm it. That can be a nerve that is
@@ -39,6 +41,8 @@ export function RegionScreen({ initial, onDone }: { initial: Region[]; onDone: (
       <p>Select every area that applies, on either side. Nerves that don't supply any area you select are left out.</p>
       <BodyMap selected={sel} onToggle={toggle} />
       {touchesChest(sel) && <ChestNotice />}
+      {touchesHead(sel) && <HeadNotice />}
+      {touchesAbdomen(sel) && <AbdomenNotice />}
       <button className="primary" disabled={sel.length === 0} onClick={() => onDone(sel)}>
         Continue
       </button>
@@ -99,7 +103,7 @@ export function QuestionScreen({
         )}
       </div>
       {isTest && <TestDiagram findingId={finding.id} />}
-      {isTest && finding.instructions && (
+      {finding.instructions && (
         <ol className="instructions">
           {finding.instructions.map((s, i) => (
             <li key={i}>{s}</li>

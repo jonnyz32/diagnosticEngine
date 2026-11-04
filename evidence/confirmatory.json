@@ -1107,7 +1107,7 @@
         ],
         "specCI": [
           0.41,
-          1.0
+          1
         ],
         "sourceId": "bignotti2015",
         "locator": "Abstract, Results (pooled US)",
@@ -1129,14 +1129,14 @@
     "accuracy": [
       {
         "sens": 0.9,
-        "spec": 1.0,
+        "spec": 1,
         "sensCI": [
           0.82,
           0.96
         ],
         "specCI": [
           0.73,
-          1.0
+          1
         ],
         "sourceId": "bignotti2015",
         "locator": "Abstract, Results (pooled MRI)",
@@ -1291,11 +1291,349 @@
     "accuracy": [
       {
         "sens": 0.859,
-        "spec": 1.0,
+        "spec": 1,
         "sourceId": "abouelela2012",
         "locator": "Abstract, Results",
         "population": "50 patients with suspected tarsal tunnel syndrome vs 40 healthy volunteers; electrodiagnostic reference (healthy controls, so specificity is likely overstated)"
       }
     ]
+  },
+  {
+    "id": "abi",
+    "name": "Ankle-brachial index (ABI)",
+    "hypotheses": [
+      "pad"
+    ],
+    "description": "Blood pressure is measured at the ankle and the arm with a cuff; an ankle pressure clearly lower than the arm pressure (ratio below 0.9) shows narrowed leg arteries.",
+    "recommendation": {
+      "sourceId": "herraizadillo2017",
+      "locator": "Abstract, Introduction (Doppler ABI as the non-invasive gold standard)"
+    },
+    "accuracy": [
+      {
+        "sens": 0.65,
+        "spec": 0.96,
+        "sensCI": [
+          0.57,
+          0.74
+        ],
+        "specCI": [
+          0.93,
+          0.99
+        ],
+        "sourceId": "herraizadillo2017",
+        "locator": "Abstract, Results (oscillometric ABI, pooled)",
+        "population": "20 studies, 1263 subjects; automated (oscillometric) ABI against Doppler ABI"
+      }
+    ]
+  },
+  {
+    "id": "foot_pulses",
+    "name": "Foot pulse check (clinician)",
+    "hypotheses": [
+      "pad"
+    ],
+    "description": "The clinician feels for the two pulses on the top and the inner ankle side of each foot; an absent pulse suggests narrowed arteries.",
+    "recommendation": {
+      "sourceId": "herraizadillo2018",
+      "locator": "Abstract, Conclusions and relevance"
+    },
+    "accuracy": [
+      {
+        "sens": 0.868,
+        "spec": 0.827,
+        "sensCI": [
+          0.748,
+          0.989
+        ],
+        "specCI": [
+          0.78,
+          0.873
+        ],
+        "sourceId": "herraizadillo2018",
+        "locator": "Abstract, Results (nurse, either pedal pulse absent)",
+        "population": "315 legs of 158 mainly symptom-free primary-care patients at cardiovascular risk; Doppler ABI reference"
+      }
+    ]
+  },
+  {
+    "id": "peroneal_us",
+    "name": "Ultrasound of the peroneal nerve at the knee",
+    "hypotheses": [
+      "peroneal"
+    ],
+    "description": "High-resolution ultrasound of the nerve where it wraps around the fibular head, looking for swelling, a cyst or other compression.",
+    "recommendation": {
+      "sourceId": "saber2026",
+      "locator": "Section 5, Practical Localization Algorithm"
+    },
+    "accuracy": [
+      {
+        "sens": 0.9,
+        "spec": 0.92,
+        "sensCI": [
+          0.797,
+          0.973
+        ],
+        "specCI": [
+          0.7745,
+          0.961
+        ],
+        "sourceId": "bignotti2017",
+        "locator": "Abstract, Results",
+        "population": "40 patients with suspected common fibular neuropathy and 40 healthy controls (specificity likely overstated)"
+      }
+    ]
+  },
+  {
+    "id": "peroneal_ncs",
+    "name": "Nerve conduction studies and EMG (peroneal nerve, L5 muscles)",
+    "hypotheses": [
+      "peroneal"
+    ],
+    "description": "Electrical tests of conduction across the fibular head, with needle EMG of muscles that tell an L5 root or sciatic nerve problem apart from a peroneal nerve problem at the knee.",
+    "recommendation": {
+      "sourceId": "saber2026",
+      "locator": "Section 5, Practical Localization Algorithm"
+    },
+    "accuracy": []
+  },
+  {
+    "id": "lachman",
+    "name": "Lachman test (clinician)",
+    "hypotheses": [
+      "acl"
+    ],
+    "description": "With the knee slightly bent, the clinician pulls the shin forward on the thigh bone; extra movement or a soft end point suggests a torn ACL.",
+    "recommendation": {
+      "sourceId": "decary2018acl",
+      "locator": "Results, Table 5 and Conclusion"
+    },
+    "accuracy": [
+      {
+        "sens": 0.81,
+        "spec": 0.98,
+        "sensCI": [
+          0.67,
+          0.92
+        ],
+        "specCI": [
+          0.95,
+          0.99
+        ],
+        "sourceId": "decary2018acl",
+        "locator": "Table 5, 'Lachman' (partial or complete tears)",
+        "population": "279 consecutive adults consulting for a new knee complaint (orthopaedic and family medicine clinics, Montreal); 43 partial or complete ACL tears vs the other knee disorders"
+      }
+    ]
+  },
+  {
+    "id": "meniscal_exam",
+    "name": "Joint line tenderness and McMurray test (clinician)",
+    "hypotheses": [
+      "meniscus"
+    ],
+    "description": "The clinician presses along the joint line and bends and rotates the knee to provoke pain or a click from a torn meniscus.",
+    "recommendation": {
+      "sourceId": "duong2023",
+      "locator": "Abstract, Observations"
+    },
+    "accuracy": [
+      {
+        "sens": 0.83,
+        "spec": 0.83,
+        "sourceId": "duong2023",
+        "locator": "Abstract, Observations (joint line tenderness)",
+        "population": "Review summary of primary studies"
+      },
+      {
+        "sens": 0.61,
+        "spec": 0.84,
+        "sourceId": "duong2023",
+        "locator": "Abstract, Observations (McMurray test)",
+        "population": "Review summary of primary studies"
+      }
+    ]
+  },
+  {
+    "id": "popliteal_exam",
+    "name": "Examination for a swelling behind the knee (clinician), then ultrasound",
+    "hypotheses": [
+      "bakers_cyst"
+    ],
+    "description": "The clinician feels behind the knee, straight and bent, for a smooth, soft swelling; ultrasound confirms a cyst.",
+    "recommendation": {
+      "sourceId": "tang2026",
+      "locator": "Conclusion"
+    },
+    "accuracy": [
+      {
+        "sens": 0.74,
+        "spec": 0.88,
+        "sensCI": [
+          0.49,
+          0.89
+        ],
+        "specCI": [
+          0.65,
+          0.97
+        ],
+        "sourceId": "tang2026",
+        "locator": "Abstract, Results (pooled physical examination)",
+        "population": "10 studies, 542 patients (720 knees); mostly ultrasound reference; mixed populations including children and rheumatoid arthritis"
+      }
+    ]
+  },
+  {
+    "id": "ottawa_xray",
+    "name": "Ottawa ankle rules (clinician), then X-ray",
+    "hypotheses": [
+      "ankle_fracture"
+    ],
+    "description": "The clinician checks the four bone spots and whether you can take four steps; if any is positive, an X-ray shows whether a bone is broken.",
+    "recommendation": {
+      "sourceId": "gomes2022",
+      "locator": "Abstract, Conclusions"
+    },
+    "accuracy": [
+      {
+        "sens": 0.91,
+        "spec": 0.25,
+        "sensCI": [
+          0.89,
+          0.92
+        ],
+        "specCI": [
+          0.24,
+          0.26
+        ],
+        "sourceId": "gomes2022",
+        "locator": "Abstract, Results (pooled)",
+        "population": "15 studies, 8560 adults with acute ankle injuries"
+      }
+    ]
+  },
+  {
+    "id": "thompson",
+    "name": "Calf-squeeze (Thompson) test and tendon examination (clinician)",
+    "hypotheses": [
+      "achilles_rupture"
+    ],
+    "description": "With you lying face down, the clinician squeezes the calf (the foot should point down), feels for a gap in the tendon and checks its resting tension.",
+    "recommendation": {
+      "sourceId": "garras2012",
+      "locator": "Abstract, Conclusions"
+    },
+    "accuracy": [
+      {
+        "sens": 0.96,
+        "spec": 0.93,
+        "sensCI": [
+          0.93,
+          0.99
+        ],
+        "specCI": [
+          0.75,
+          0.99
+        ],
+        "sourceId": "maffulli1998",
+        "locator": "Reiman 2014, Table 4, 'Calf-squeeze test'",
+        "population": "174 complete Achilles tears vs 28 suspected tears with an intact tendon"
+      }
+    ]
+  },
+  {
+    "id": "achilles_palpation",
+    "name": "Achilles tendon palpation (clinician), then ultrasound",
+    "hypotheses": [
+      "achilles_tendinopathy"
+    ],
+    "description": "The clinician feels along the tendon for a tender or thickened area; ultrasound shows the tendon's structure.",
+    "recommendation": {
+      "sourceId": "reiman2014",
+      "locator": "Abstract, Conclusions"
+    },
+    "accuracy": [
+      {
+        "sens": 0.64,
+        "spec": 0.81,
+        "sensCI": [
+          0.44,
+          0.81
+        ],
+        "specCI": [
+          0.65,
+          0.91
+        ],
+        "sourceId": "reiman2014",
+        "locator": "Abstract, Data synthesis (pooled palpation)",
+        "population": "2 small studies (Maffulli 2003, Hutchison 2013); ultrasound reference"
+      }
+    ]
+  },
+  {
+    "id": "anterior_drawer",
+    "name": "Ankle anterior drawer test (clinician)",
+    "hypotheses": [
+      "ankle_sprain"
+    ],
+    "description": "The clinician pulls the heel forward under the shin to test the main outer ankle ligament; extra movement points to a tear.",
+    "recommendation": {
+      "sourceId": "netterstromwedin2022",
+      "locator": "Abstract, Conclusion"
+    },
+    "accuracy": [
+      {
+        "sens": 0.54,
+        "spec": 0.87,
+        "sensCI": [
+          0.35,
+          0.71
+        ],
+        "specCI": [
+          0.63,
+          0.96
+        ],
+        "sourceId": "netterstromwedin2022",
+        "locator": "Abstract, Results (pooled, 6 studies, 885 observations)",
+        "population": "Patients after an ankle sprain; imaging or surgical reference"
+      }
+    ]
+  },
+  {
+    "id": "dc_tmd_exam",
+    "name": "DC/TMD examination (dentist or orofacial pain clinician)",
+    "hypotheses": [
+      "tmd"
+    ],
+    "description": "The clinician measures jaw opening and presses on the jaw joint and chewing muscles to see whether this reproduces your familiar pain.",
+    "recommendation": {
+      "sourceId": "schiffman2014",
+      "locator": "Abstract, Results"
+    }
+  },
+  {
+    "id": "occipital_block",
+    "name": "Occipital nerve block (clinician)",
+    "hypotheses": [
+      "occipital_neuralgia"
+    ],
+    "description": "Local anaesthetic is injected next to the occipital nerve; if the pain eases for a while, the nerve is the source.",
+    "recommendation": {
+      "sourceId": "ichd3",
+      "locator": "13.4 Occipital neuralgia, criterion D"
+    }
+  },
+  {
+    "id": "cervical_block",
+    "name": "Diagnostic block of a neck joint or nerve (clinician)",
+    "hypotheses": [
+      "cervicogenic_headache"
+    ],
+    "description": "Local anaesthetic is placed at a suspected neck joint or its nerve; if the headache goes away, the neck is the source.",
+    "recommendation": {
+      "sourceId": "ichd3",
+      "locator": "11.2.1 Cervicogenic headache, criterion C4"
+    }
   }
 ]

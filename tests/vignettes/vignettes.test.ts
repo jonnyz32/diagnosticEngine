@@ -21,18 +21,29 @@ describe("evidence database", () => {
   it("loads and passes integrity checks", () => {
     expect(scorableHypotheses(db).map((h) => h.id).sort()).toEqual(
       [
+        "ac_joint",
+        "achilles_rupture",
+        "acl",
+        "acnes",
+        "ankle_fracture",
+        "cervicogenic_headache",
         "chest_wall",
         "cts",
         "cubital",
         "de_quervain",
         "deep_gluteal",
         "disc_pain",
+        "frozen_shoulder",
         "gtps",
         "hip_oa",
         "ifi",
         "lfcn",
+        "meniscus",
         "morton",
+        "pad",
         "pfcn",
+        "pfp",
+        "plantar_fasciitis",
         "proximal_hamstring",
         "root_cervical",
         "root_low",
@@ -42,6 +53,8 @@ describe("evidence database", () => {
         "stenosis",
         "tfcc",
         "thumb_cmc_oa",
+        "tibial_stress_fracture",
+        "tmd",
         "vertebral_fracture",
       ],
     );
@@ -115,7 +128,7 @@ describe("forefoot: the alternatives to Morton's neuroma", () => {
   it("lists the tissue and nerve alternatives, unscored", () => {
     const view = restrictToRegions(db, ["forefoot"]);
     expect(unscorableHypotheses(view).map((h) => h.id).sort()).toEqual(
-      ["hallux_rigidus", "mt_stress_fracture", "plantar_plate", "tarsal_tunnel"],
+      ["gout", "hallux_rigidus", "hallux_valgus", "inflammatory_arthritis", "mt_stress_fracture", "plantar_plate", "polyneuropathy", "sesamoiditis", "tarsal_tunnel"],
     );
     expect(scorableHypotheses(view).map((h) => h.id).sort()).toEqual(["morton", "root_low", "stenosis"]);
   });
@@ -308,6 +321,202 @@ describe("ruling out an option by logical fit", () => {
   });
 });
 
+describe("knee", () => {
+  it("twisting injury with a pop -> ACL tear", () => {
+    const r = top(["knee_front", "knee_medial", "knee_lateral"], { h_knee_pivot_injury: "yes", h_knee_pop: "yes" });
+    expect(r[0].id).toBe("acl");
+  });
+
+  it("front-of-knee pain on squatting, kneeling, sitting and stairs, no injury -> kneecap pain", () => {
+    const r = top(["knee_front"], {
+      st_knee_deep_squat: "yes",
+      h_knee_kneel_pain: "yes",
+      h_knee_sitting_pain: "yes",
+      h_knee_stairs_pain: "yes",
+      h_knee_pivot_injury: "no",
+    });
+    expect(r[0].id).toBe("pfp");
+  });
+
+  it("inner knee pain after a weight-bearing injury, painful deep squat, no pivot, no kneecap triggers -> meniscal tear", () => {
+    const r = top(["knee_medial"], {
+      h_knee_weightbearing_injury: "yes",
+      st_knee_deep_squat: "yes",
+      h_knee_pivot_injury: "no",
+      h_knee_kneel_pain: "no",
+      h_knee_sitting_pain: "no",
+    });
+    expect(r[0].id).toBe("meniscus");
+  });
+
+  it("knee OA has no probability but fits on the NICE checklist", () => {
+    const regions: Region[] = ["knee_medial"];
+    const fit = logicalFit(restrictToRegions(db, regions), regions, {
+      h_age_45: "yes",
+      h_knee_activity_pain: "yes",
+      h_knee_morning_stiff_short: "yes",
+    });
+    const oa = fit.find((l) => l.id === "knee_oa")!;
+    expect(oa.fit).toBe(3);
+    expect(oa.against).toBe(0);
+    expect(scorableHypotheses(restrictToRegions(db, regions)).map((h) => h.id)).not.toContain("knee_oa");
+  });
+
+  it("back of the knee brings in the Baker's cyst, the L5/S1 roots and stenosis, not the kneecap", () => {
+    const ids = restrictToRegions(db, ["knee_back"]).hypotheses.map((h) => h.id);
+    for (const id of ["bakers_cyst", "root_low", "stenosis", "acl", "meniscus"]) expect(ids).toContain(id);
+    expect(ids).not.toContain("pfp");
+  });
+});
+
+describe("head, face, jaw and belly", () => {
+  it("jaw pain with a high screener score -> TMD", () => {
+    const r = top(["jaw", "temple"], { h_tmd_screener: "yes" });
+    expect(r[0].id).toBe("tmd");
+  });
+
+  it("brief electric attacks on one side of the face set off by touch fit trigeminal neuralgia on the ICHD-3 checklist", () => {
+    const regions: Region[] = ["face", "jaw"];
+    const fit = logicalFit(restrictToRegions(db, regions), regions, {
+      h_face_one_side: "yes",
+      h_head_attacks_brief: "yes",
+      h_head_attacks_severe: "yes",
+      h_head_electric: "yes",
+      h_face_light_trigger: "yes",
+      h_tmd_screener: "no",
+    });
+    expect(fit[0].id).toBe("trigeminal");
+    expect(fit[0].fit).toBe(5);
+  });
+
+  it("back-of-head headache with neck pain and a tender skull base -> neck headache; a 'no' on the tender spot doesn't count", () => {
+    const regions: Region[] = ["head_back"];
+    const r = top(regions, { h_ha_neck_pain: "yes", st_gon_tender_self: "yes" });
+    expect(r[0].id).toBe("cervicogenic_headache");
+    const p = (a: Record<string, Answer>) => top(regions, a).find((e) => e.id === "cervicogenic_headache")!.p;
+    expect(p({ st_gon_tender_self: "no" })).toBeCloseTo(p({}), 12);
+  });
+
+  it("fixed fingertip belly pain with a high questionnaire score -> abdominal wall nerve; the trunk nerves are listed too", () => {
+    const r = top(["abdomen"], { h_acnes_questionnaire: "yes" });
+    expect(r[0].id).toBe("acnes");
+    const ids = restrictToRegions(db, ["abdomen"]).hypotheses.map((h) => h.id);
+    for (const id of ["acnes", "abdominal_hernia", "root_thoracic", "intercostal", "zoster"]) expect(ids).toContain(id);
+  });
+});
+
+describe("ankle, heel and lower leg", () => {
+  const injured = { h_ankle_injury: "yes" } as const;
+
+  it("rolled ankle, can't take four steps, pressing down hurts, bone tender -> fracture first", () => {
+    const r = top(["ankle_lateral"], {
+      ...injured,
+      h_ankle_rolled_in: "yes",
+      h_ankle_cant_weight: "yes",
+      st_shetty_helper: "yes",
+      st_ottawa_bone_self: "yes",
+    });
+    expect(r[0].id).toBe("ankle_fracture");
+  });
+
+  it("rolled ankle, walking and pressing down fine: fracture less likely, the sprain fits", () => {
+    const regions: Region[] = ["ankle_lateral"];
+    const answers = { ...injured, h_ankle_rolled_in: "yes", h_ankle_cant_weight: "no", st_shetty_helper: "no", st_ottawa_bone_self: "no" } as const;
+    const p = (a: Record<string, Answer>) => top(regions, a).find((e) => e.id === "ankle_fracture")!.p;
+    expect(p(answers)).toBeLessThan(p(injured));
+    const fit = logicalFit(restrictToRegions(db, regions), regions, answers);
+    const sprain = fit.find((l) => l.id === "ankle_sprain")!;
+    expect(sprain.fit).toBe(2);
+    expect(sprain.against).toBe(0);
+    const fracture = fit.find((l) => l.id === "ankle_fracture")!;
+    expect(fracture.against).toBeGreaterThan(fracture.fit);
+  });
+
+  it("without an injury the fracture checks are never asked, and the weight-bearing answer is implied", () => {
+    const regions: Region[] = ["ankle_lateral", "achilles", "heel"];
+    const answers: Record<string, Answer> = { h_ankle_injury: "no" };
+    const asked: string[] = [];
+    for (let i = 0; i < 40; i++) {
+      const n = nextFinding(db, answers, regions);
+      if (n.done) break;
+      asked.push(n.finding.id);
+      answers[n.finding.id] = "no";
+    }
+    for (const id of ["h_ankle_cant_weight", "st_shetty_helper", "st_ottawa_bone_self", "h_ankle_rolled_in"]) expect(asked).not.toContain(id);
+    expect(withImplied(db, { h_ankle_injury: "no" }, regions).h_ankle_cant_weight).toBe("no");
+  });
+
+  it("back-of-ankle pain without an injury: a normal calf squeeze makes a rupture unlikely", () => {
+    const r = top(["achilles"], { h_ankle_injury: "no", st_calf_squeeze_helper: "no" });
+    expect(r.find((e) => e.id === "achilles_rupture")!.p).toBeLessThan(0.1);
+  });
+
+  it("after a push-off injury, a calf squeeze that doesn't move the foot -> Achilles rupture", () => {
+    const r = top(["achilles", "calf"], { ...injured, st_calf_squeeze_helper: "yes" });
+    expect(r[0].id).toBe("achilles_rupture");
+  });
+
+  it("heel pain brought on by bending the big toe up -> plantar heel pain", () => {
+    const r = top(["heel"], { st_windlass_helper: "yes", h_heel_first_steps: "yes" });
+    expect(r[0].id).toBe("plantar_fasciitis");
+  });
+
+  it("a short tender spot on the shin doesn't favour a stress fracture (as in the study); a painful heel tap does", () => {
+    const regions: Region[] = ["shin_anterior"];
+    const p = (a: Record<string, Answer>) => top(regions, a).find((e) => e.id === "tibial_stress_fracture")!.p;
+    expect(p({ st_shin_focal_self: "yes" })).toBeLessThan(p({}));
+    expect(p({ st_heel_percussion_helper: "yes" })).toBeGreaterThan(p({}));
+  });
+
+  it("the heel brings in plantar heel pain, the S1 root, stenosis and the tarsal tunnel; the outer ankle brings in the sural and peroneal nerves", () => {
+    const heel = restrictToRegions(db, ["heel"]).hypotheses.map((h) => h.id);
+    for (const id of ["plantar_fasciitis", "root_low", "stenosis", "tarsal_tunnel", "polyneuropathy"]) expect(heel).toContain(id);
+    expect(heel).not.toContain("ankle_sprain");
+    const outer = restrictToRegions(db, ["ankle_lateral"]).hypotheses.map((h) => h.id);
+    for (const id of ["ankle_sprain", "ankle_fracture", "peroneal_tendon", "sural", "peroneal", "root_low"]) expect(outer).toContain(id);
+  });
+});
+
+describe("leg look-alikes: arteries, peroneal nerve, polyneuropathy", () => {
+  it("calf pain on walking that eases on standing still ranks narrowed arteries first", () => {
+    const r = top(["calf"], {
+      h_walk_stand_still_ease: "yes",
+      h_worse_standing: "no",
+      h_bend_forward: "no",
+      h_no_pain_seated: "no",
+    });
+    expect(r[0].id).toBe("pad");
+  });
+
+  it("classic neurogenic claudication still ranks stenosis above the arteries", () => {
+    const r = top(["low_back", "buttock", "calf"], {
+      h_walking_claudication: "yes",
+      h_walk_stand_still_ease: "no",
+      h_worse_standing: "yes",
+      h_bend_forward: "yes",
+    });
+    const rank = (id: string) => r.findIndex((x) => x.id === id);
+    expect(rank("stenosis")).toBeLessThan(rank("pad"));
+  });
+
+  it("foot drop after leg crossing fits the peroneal nerve; numb soles are a note, not against it", () => {
+    const fit = logicalFit(db, ["shin_anterior", "foot_dorsum"], {
+      st_heel_walk: "yes",
+      h_peroneal_setting: "yes",
+      h_bilateral_sole_numbness: "yes",
+    });
+    const pn = fit.find((l) => l.id === "peroneal")!;
+    expect(pn.fit).toBe(2);
+    expect(pn.against).toBe(0);
+  });
+
+  it("symptoms that didn't start in both feet count against polyneuropathy", () => {
+    const fit = logicalFit(db, ["foot_dorsum"], { h_poly_toes_up: "no" });
+    const poly = fit.find((l) => l.id === "polyneuropathy")!;
+    expect(poly.against).toBe(1);
+  });
+});
+
 describe("checks for options without accuracy data", () => {
   const OBTURATOR = ["h_worst_medial_thigh", "h_obt_exercise", "h_obt_origin", "h_obt_radiate", "st_obt_stretch_self", "st_obt_skin_self"];
   const interview = (regions: Region[], answerFor: (id: string) => Answer) => {
@@ -472,6 +681,28 @@ describe("upper limb tendon and joint mimics", () => {
   it("shoulder impingement: Hawkins and painful arc positive, arm squeeze negative -> rotator cuff", () => {
     const r = top(["shoulder"], { st_hawkins_helper: "yes", st_painful_arc_self: "yes", st_arm_squeeze: "no" });
     expect(r[0].id).toBe("rotator_cuff");
+  });
+
+  it("frozen shoulder: front-of-shoulder (coracoid) point most tender, no painful arc -> frozen shoulder", () => {
+    const r = top(["shoulder"], { st_coracoid_self: "yes", st_painful_arc_self: "no", st_arm_squeeze: "no" });
+    expect(r[0].id).toBe("frozen_shoulder");
+  });
+
+  it("AC joint: began with repetitive work, stays above the elbow, swollen bump -> AC joint", () => {
+    const r = top(["shoulder"], {
+      h_shoulder_repetitive_onset: "yes",
+      h_shoulder_above_elbow: "yes",
+      st_ac_swelling_self: "yes",
+      st_coracoid_self: "no",
+      st_arm_squeeze: "no",
+    });
+    expect(r[0].id).toBe("ac_joint");
+  });
+
+  it("pain spreading below the elbow counts strongly against the AC joint", () => {
+    const r = top(["shoulder"], { h_shoulder_above_elbow: "no" });
+    const ac = r.find((x) => x.id === "ac_joint")!;
+    expect(ac.p).toBeLessThan(0.02);
   });
 
   it("thumb-side wrist pain: WHAT test positive, grind test negative -> De Quervain's", () => {
@@ -842,5 +1073,68 @@ describe("stress view citations", () => {
   it("the sources cited directly in the stress section exist", () => {
     // Results.tsx cites these by id in the section's caveats.
     for (const id of ["scholz2009", "forster2013"]) expect(db.sources.some((s) => s.id === id)).toBe(true);
+  });
+});
+
+describe("coverage pass: options without accuracy data (logical fit only)", () => {
+  const fitOf = (regions: Region[], given: Record<string, Answer>, id: string) =>
+    logicalFit(restrictToRegions(db, regions), regions, withImplied(db, given, regions)).find((l) => l.id === id)!;
+  const interview = (regions: Region[], given: Record<string, Answer>, answer: Answer = "no") => {
+    const answers = { ...given };
+    const asked: string[] = [];
+    for (let i = 0; i < 120; i++) {
+      const n = nextFinding(db, answers, regions);
+      if (n.done) break;
+      asked.push(n.finding.id);
+      answers[n.finding.id] = answer;
+    }
+    return asked;
+  };
+
+  it("tailbone pain on sitting fits coccydynia", () => {
+    expect(fitOf(["buttock"], { h_tailbone_point: "yes", h_tailbone_sitting: "yes" }, "coccydynia")).toMatchObject({ fit: 2, against: 0 });
+  });
+
+  it("one 'no' to the whole-body screen rules out fibromyalgia, PMR and inflammatory arthritis, and their detail questions aren't asked", () => {
+    const regions: Region[] = ["shoulder", "neck"];
+    const asked = interview(regions, {});
+    expect(asked).toContain("h_many_places_both_sides");
+    for (const id of ["h_widespread_pain", "h_fatigue_sleep", "h_both_shoulders_ache", "h_morning_stiff_45", "h_age_50", "h_many_joints_swollen", "h_morning_stiff_long"])
+      expect(asked).not.toContain(id);
+    for (const id of ["fibromyalgia", "pmr", "inflammatory_arthritis"])
+      expect(fitOf(regions, { h_many_places_both_sides: "no" }, id).against).toBeGreaterThan(0);
+  });
+
+  it("both shoulders aching with long morning stiffness over 50 fits the polymyalgia rheumatica checklist", () => {
+    const given: Record<string, Answer> = { h_many_places_both_sides: "yes", h_both_shoulders_ache: "yes", h_morning_stiff_45: "yes", h_age_over_65: "yes" };
+    expect(withImplied(db, given, ["shoulder"]).h_age_50).toBe("yes");
+    expect(fitOf(["shoulder"], given, "pmr")).toMatchObject({ fit: 4, against: 0 });
+    // Short morning stiffness implies the 45-minute item is not met.
+    expect(withImplied(db, { h_morning_stiff_long: "no" }, ["shoulder"]).h_morning_stiff_45).toBe("no");
+  });
+
+  it("a growing child with a tender bump below the kneecap fits Osgood-Schlatter, and knee OA is implied against", () => {
+    const given: Record<string, Answer> = { h_age_growing: "yes", h_shin_top_bump: "yes" };
+    expect(withImplied(db, given, ["knee_front"]).h_age_45).toBe("no");
+    expect(fitOf(["knee_front"], given, "osgood")).toMatchObject({ fit: 2, against: 0 });
+    expect(fitOf(["knee_front"], given, "knee_oa").against).toBeGreaterThan(0);
+  });
+
+  it("injury details are asked only after a knee injury", () => {
+    const asked = interview(["knee_medial", "knee_back"], { h_knee_injury: "no" });
+    for (const id of ["h_knee_side_force", "h_knee_front_blow"]) expect(asked).not.toContain(id);
+  });
+
+  it("a fall on the hand with a tender hollow at the base of the thumb fits a scaphoid fracture", () => {
+    expect(fitOf(["wrist_radial"], { h_fall_on_hand: "yes", h_snuffbox_tender: "yes" }, "scaphoid_fracture")).toMatchObject({ fit: 2, against: 0 });
+  });
+
+  it("every option added in this pass has at least one check", () => {
+    const added = ["coccydynia", "spondylolysis", "axial_spa", "whiplash", "pelvic_girdle", "osteitis_pubis", "hip_stress_fracture", "hip_avn", "iliopsoas", "thigh_strain", "shoulder_instability", "slap_tear", "calcific_tendinitis", "olecranon_bursitis", "scaphoid_fracture", "wrist_ganglion", "hand_oa", "mallet_finger", "dupuytren", "knee_collateral", "pcl", "patellar_dislocation", "osgood", "knee_ocd", "ankle_oa", "high_ankle_sprain", "hallux_valgus", "sesamoiditis", "insertional_achilles", "sever", "gout", "inflammatory_arthritis", "pmr", "fibromyalgia"];
+    for (const h of db.hypotheses.filter((x) => added.includes(x.id))) {
+      const checks = h.logic.filter((l) => l.type !== "unexplained").length + (h.criteria?.items.length ?? 0);
+      const scored = db.findings.some((f) => f.evidence.some((e) => e.hypothesis === h.id));
+      expect(scored || checks > 0, h.id).toBe(true);
+    }
   });
 });
