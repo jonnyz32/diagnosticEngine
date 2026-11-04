@@ -1,0 +1,1349 @@
+[
+  {
+    "id": "suri2011",
+    "citation": "Suri P, Rainville J, Katz JN, et al. The accuracy of the physical examination for the diagnosis of midlumbar and low lumbar nerve root impingement. Spine (Phila Pa 1976). 2011;36(1):63-73.",
+    "pmid": "20543768",
+    "doi": "10.1097/BRS.0b013e3181c953cc",
+    "design": "Cross-sectional diagnostic accuracy study, prospective consecutive recruitment, examiners blinded to MRI",
+    "population": "Adults at a hospital spine centre with radicular leg pain < 12 weeks (L2-S1 dermatome); 25 midlumbar and 29 low lumbar impingements",
+    "referenceStandard": "Nerve root impingement on MRI",
+    "notes": "Tests performed by board-certified physiatrists. Values transcribed from Table 3 of the PMC full text (PMC2978791). Small sample; wide CIs.",
+    "verifiedOn": "2026-11-01"
+  },
+  {
+    "id": "suri2010",
+    "citation": "Suri P, Rainville J, Kalichman L, Katz JN. Does this older adult with lower extremity pain have the clinical syndrome of lumbar spinal stenosis? JAMA. 2010;304(23):2628-36.",
+    "pmid": "21156951",
+    "doi": "10.1001/jama.2010.1833",
+    "design": "Systematic review (JAMA Rational Clinical Examination), 4 studies, 741 patients",
+    "population": "Patients (mostly older adults) with lower extremity pain, specialty and primary care",
+    "referenceStandard": "Expert clinical diagnosis with radiographic or anatomic confirmation",
+    "notes": "Values transcribed from Table 3 of the PMC full text (PMC3260477); the primary study behind each item is named in each locator.",
+    "verifiedOn": "2026-11-01"
+  },
+  {
+    "id": "vanderwindt2010",
+    "citation": "van der Windt DA, Simons E, Riphagen II, et al. Physical examination for lumbar radiculopathy due to disc herniation in patients with low-back pain. Cochrane Database Syst Rev. 2010;(2):CD007431.",
+    "pmid": "20166095",
+    "doi": "10.1002/14651858.CD007431.pub2",
+    "design": "Cochrane systematic review of diagnostic accuracy, 16 cohort + 3 case-control studies",
+    "population": "Patients with low back pain and sciatica, mostly surgical populations (disc herniation prevalence 58-98%)",
+    "referenceStandard": "Imaging (MRI, CT, myelography) or surgical findings",
+    "notes": "Used for context only: its pooled values come from surgical populations whose prevalence differs greatly from a self-referred population.",
+    "verifiedOn": "2026-11-01"
+  },
+  {
+    "id": "martin2014",
+    "citation": "Martin HD, Kivlan BR, Palmer IJ, Martin RL. Diagnostic accuracy of clinical tests for sciatic nerve entrapment in the gluteal region. Knee Surg Sports Traumatol Arthrosc. 2014;22(4):882-8.",
+    "pmid": "24217716",
+    "doi": "10.1007/s00167-013-2758-7",
+    "design": "Retrospective diagnostic accuracy study",
+    "population": "33 patients with posterior hip pain undergoing endoscopy (23 with sciatic nerve entrapment, 10 without)",
+    "referenceStandard": "Endoscopic finding of sciatic nerve entrapment",
+    "notes": "Very small, highly selected surgical sample; CIs not reported in the abstract.",
+    "verifiedOn": "2026-11-01"
+  },
+  {
+    "id": "paneyala2024",
+    "citation": "Paneyala S, S Chandrashekhar N, Sundaramurthy H, Prashant A, Krishna L. Efficacy of Clinical Tests in the Diagnosis of Meralgia Paresthetica: A Case Control Study. Case Rep Med. 2024;2024:5191280.",
+    "pmid": "39687528",
+    "doi": "10.1155/carm/5191280",
+    "design": "Hospital-based case-control study",
+    "population": "30 electrophysiologically proven meralgia paresthetica cases vs age/sex-matched controls with anterolateral thigh symptoms from other causes and normal LFCN conduction",
+    "referenceStandard": "Lateral femoral cutaneous nerve conduction studies",
+    "notes": "Case-control design tends to overestimate accuracy. CIs not reported.",
+    "verifiedOn": "2026-11-01"
+  },
+  {
+    "id": "nouraei2007",
+    "citation": "Nouraei SA, Anand B, Spink G, O'Neill KS. A novel approach to the diagnosis and management of meralgia paresthetica. Neurosurgery. 2007;60(4):696-700.",
+    "pmid": "17415207",
+    "doi": "10.1227/01.NEU.0000255392.69914.F7",
+    "design": "Retrospective case series with diagnostic accuracy estimate",
+    "population": "45 patients diagnosed with meralgia paresthetica, 2000-2005",
+    "notes": "Reports pelvic compression test sensitivity 95%, specificity 93.3% (clinician-performed).",
+    "verifiedOn": "2026-11-01"
+  },
+  {
+    "id": "vanslobbe2004",
+    "citation": "van Slobbe AM, Bohnen AM, Bernsen RM, Koes BW, Bierma-Zeinstra SM. Incidence rates and determinants in meralgia paresthetica in general practice. J Neurol. 2004;251(3):294-7.",
+    "pmid": "15015008",
+    "doi": "10.1007/s00415-004-0310-x",
+    "design": "Primary-care registry cohort with nested case-control study",
+    "population": "Registered general-practice patients, Rotterdam area, 1990-1998 (173,375 person-years)",
+    "verifiedOn": "2026-11-01"
+  },
+  {
+    "id": "kuniya2014",
+    "citation": "Kuniya H, Aota Y, Kawai T, Kaneko K, Konno T, Saito T. Prospective study of superior cluneal nerve disorder as a potential cause of low back pain and leg symptoms. J Orthop Surg Res. 2014;9:139.",
+    "pmid": "25551470",
+    "doi": "10.1186/s13018-014-0139-7",
+    "design": "Prospective cohort",
+    "population": "834 patients with low back pain and/or leg symptoms",
+    "referenceStandard": "Response to superior cluneal nerve block (no independent reference standard)",
+    "notes": "Reports how often patients met the criteria (14%), not diagnostic accuracy, so it cannot be used to score.",
+    "verifiedOn": "2026-11-01"
+  },
+  {
+    "id": "labat2008",
+    "citation": "Labat JJ, Riant T, Robert R, Amarenco G, Lefaucheur JP, Rigaud J. Diagnostic criteria for pudendal neuralgia by pudendal nerve entrapment (Nantes criteria). Neurourol Urodyn. 2008;27(4):306-10.",
+    "pmid": "17828787",
+    "doi": "10.1002/nau.20505",
+    "design": "Expert working-party consensus criteria",
+    "population": "Not applicable (consensus)",
+    "notes": "No sensitivity/specificity reported, so it cannot be used to score.",
+    "verifiedOn": "2026-11-01"
+  },
+  {
+    "id": "levesque2022",
+    "citation": "Levesque A, Bautrant E, Quistrebert V, et al. Recommendations on the management of pudendal nerve entrapment syndrome: A formalised expert consensus. Eur J Pain. 2022;26(1):7-17.",
+    "pmid": "34643963",
+    "doi": "10.1002/ejp.1861",
+    "design": "Formalised expert consensus with literature review",
+    "population": "Not applicable (consensus)",
+    "verifiedOn": "2026-11-01"
+  },
+  {
+    "id": "dionne2019",
+    "citation": "Dionne N, Adefolarin A, Kunzelman D, et al. What is the diagnostic accuracy of red flags related to cauda equina syndrome (CES), when compared to Magnetic Resonance Imaging (MRI)? A systematic review. Musculoskelet Sci Pract. 2019;42:125-133.",
+    "pmid": "31132655",
+    "doi": "10.1016/j.msksp.2019.05.004",
+    "design": "Systematic review and meta-analysis, 7 studies, 569 participants",
+    "population": "Adults assessed for suspected cauda equina syndrome",
+    "referenceStandard": "MRI",
+    "notes": "Pooled sensitivity 0.19-0.43, specificity 0.62-0.88. Concludes red flags, when present, justify prompt diagnostic workup.",
+    "verifiedOn": "2026-11-01"
+  },
+  {
+    "id": "chou2007",
+    "citation": "Chou R, Qaseem A, Snow V, et al. Diagnosis and treatment of low back pain: a joint clinical practice guideline from the American College of Physicians and the American Pain Society. Ann Intern Med. 2007;147(7):478-91.",
+    "pmid": "17909209",
+    "doi": "10.7326/0003-4819-147-7-200710020-00006",
+    "design": "Clinical practice guideline",
+    "population": "Adults with low back pain",
+    "verifiedOn": "2026-11-01"
+  },
+  {
+    "id": "draghici2023",
+    "citation": "Draghici NC, Vacaras V, Bolchis R, et al. Diagnostic Approach to Lower Limb Entrapment Neuropathies: A Narrative Literature Review. Diagnostics (Basel). 2023;13(21):3385.",
+    "pmid": "37958280",
+    "doi": "10.3390/diagnostics13213385",
+    "design": "Narrative review",
+    "population": "Not applicable (review)",
+    "notes": "Recommends history, examination and electrodiagnostic studies, then MR neurography, MRI or ultrasound when unclear.",
+    "verifiedOn": "2026-11-01"
+  },
+  {
+    "id": "kiral2024",
+    "citation": "Kiral BS, Misirlioglu TO, Terlemez R, et al. The frequency of superior cluneal nerve entrapment diagnosed with ultrasound-guided nerve block in patients with low back pain: A prospective, cross-sectional study. Pain Pract. 2024;24(8):989-996.",
+    "pmid": "38849322",
+    "doi": "10.1111/papr.13391",
+    "design": "Prospective cross-sectional diagnostic study",
+    "population": "200 patients with mechanical low back pain > 3 months; 24 confirmed SCN entrapment",
+    "referenceStandard": "Ultrasound-guided SCN block with >= 70% pain relief at 1 h",
+    "notes": "Hip-Knee Flexion Test sens 41.67%, spec 88.64% (abstract). Full text not on PMC, so the test procedure could not be verified; used as a clinician test only.",
+    "verifiedOn": "2026-11-01"
+  },
+  {
+    "id": "fernandes2025",
+    "citation": "Fernandes C, Viegas V, Saavedra M, et al. Advancing the diagnosis and management of pudendal nerve entrapment: The role of neurophysiological studies and imaging-guided infiltrations. Neuroradiology. 2025;67(8):2239-2245.",
+    "pmid": "40387915",
+    "doi": "10.1007/s00234-025-03645-7",
+    "design": "Retrospective multicentre study, no control group",
+    "population": "88 patients with pudendal nerve entrapment refractory to conservative treatment",
+    "referenceStandard": "Improvement after pudendal nerve decompression surgery",
+    "verifiedOn": "2026-11-01"
+  },
+  {
+    "id": "ahmed2026",
+    "citation": "Ahmed M, Zavridis P, Hadjiconstanti D, Zis P. The Diagnosis and Management of Pudendal Neuralgia. Pain Ther. 2026;15(1):97-129.",
+    "pmid": "41389120",
+    "doi": "10.1007/s40122-025-00803-w",
+    "design": "Systematic review (35 studies, 9 diagnostic)",
+    "population": "Patients with pudendal neuralgia",
+    "notes": "Read in PMC full text (PMC12804544). Imaging figures are as summarised by the review from primary studies (Mollo; Piloni), measured in Nantes-positive patients.",
+    "verifiedOn": "2026-11-01"
+  },
+  {
+    "id": "bradshaw1997",
+    "citation": "Bradshaw C, McCrory P, Bell S, Brukner P. Obturator nerve entrapment. A cause of groin pain in athletes. Am J Sports Med. 1997;25(3):402-8.",
+    "pmid": "9167824",
+    "doi": "10.1177/036354659702500322",
+    "design": "Case series",
+    "population": "32 athletes with surgically confirmed obturator nerve entrapment",
+    "notes": "Describes a characteristic pattern; no comparison group, so no accuracy figures.",
+    "verifiedOn": "2026-11-01"
+  },
+  {
+    "id": "michel2013",
+    "citation": "Michel F, Decavel P, Toussirot E, et al. Piriformis muscle syndrome: diagnostic criteria and treatment of a monocentric series of 250 patients. Ann Phys Rehabil Med. 2013;56(5):371-83.",
+    "pmid": "23684470",
+    "doi": "10.1016/j.rehab.2013.04.003",
+    "design": "Case-control derivation of a 12-point clinical score",
+    "population": "250 piriformis syndrome patients vs 30 patients with disc-related root compression and 30 healthy controls",
+    "referenceStandard": "Clinical diagnosis (score derivation)",
+    "notes": "Read in full text (PDF supplied by user). Table 2 = score items; Table 3 = score results (>= 8: 241/250 cases, 0/60 controls); Table 1 = per-maneuver positivity: every maneuver positive in 250/250 cases (suggests incorporation bias), and in 7, 12, 12, 2 of 30 L5/S1 disc patients (Freiberg, FAIR, heel-contralateral-knee, Beatty); needle EMG neurogenic signs 0/250 cases vs 26/30 disc patients; FAIR H-reflex delay not significant (p = 0.06).",
+    "verifiedOn": "2026-11-01"
+  },
+  {
+    "id": "fishman2002",
+    "citation": "Fishman LM, Dombi GW, Michaelsen C, et al. Piriformis syndrome: diagnosis, treatment, and outcome--a 10-year study. Arch Phys Med Rehabil. 2002;83(3):295-301.",
+    "pmid": "11887107",
+    "doi": "10.1053/apmr.2002.30622",
+    "design": "Consecutive cohort with before-after treatment follow-up",
+    "population": "918 consecutive patients (1014 legs) evaluated for piriformis syndrome",
+    "referenceStandard": "Clinical working definition of piriformis syndrome",
+    "notes": "The 'FAIR test' here is an electrodiagnostic test (H-reflex delay >= 3 SD in flexion-adduction-internal rotation), NOT the bedside maneuver.",
+    "verifiedOn": "2026-11-01"
+  },
+  {
+    "id": "fritz2017",
+    "citation": "Fritz J, Dellon AL, Williams EH, Rosson GD, Belzberg AJ, Eckhauser FE. Diagnostic Accuracy of Selective 3-T MR Neurography-guided Retroperitoneal Genitofemoral Nerve Blocks for the Diagnosis of Genitofemoral Neuralgia. Radiology. 2017;285(1):176-185.",
+    "pmid": "28453433",
+    "doi": "10.1148/radiol.2017161415",
+    "design": "Prospective case series",
+    "population": "26 patients with intractable groin pain",
+    "referenceStandard": "Outcome of subsequent targeted intervention",
+    "notes": "Reports intervention success after positive (88%) and negative (71%, alternative target) blocks; no sens/spec.",
+    "verifiedOn": "2026-11-01"
+  },
+  {
+    "id": "albert2019",
+    "citation": "Albert HB, Hansen JK, Søgaard H, Kent P. Where do patients with MRI-confirmed single-level radiculopathy experience pain, and what is the clinical interpretability of these pain patterns? A cross-sectional diagnostic accuracy study. Chiropr Man Therap. 2019;27:50.",
+    "pmid": "31608144",
+    "doi": "10.1186/s12998-019-0273-8",
+    "design": "Cross-sectional diagnostic accuracy study",
+    "population": "93 patients with MRI-confirmed single-level L5 or S1 root compression; 53 classified by 18 clinicians",
+    "referenceStandard": "MRI plus clinical confirmation",
+    "notes": "Clinicians classified L5 vs S1 from pain drawings at about 54% (chance). Table 1 (PMC6778979).",
+    "verifiedOn": "2026-11-01"
+  },
+  {
+    "id": "seror2004",
+    "citation": "Seror P. Somatosensory evoked potentials for the electrodiagnosis of meralgia paresthetica. Muscle Nerve. 2004;29(2):309-12.",
+    "pmid": "14755498",
+    "doi": "10.1002/mus.10536",
+    "design": "Case-control diagnostic study",
+    "population": "21 patients with unilateral meralgia paresthetica vs 21 controls",
+    "referenceStandard": "Clinical + abnormal sensory nerve conduction",
+    "verifiedOn": "2026-11-01"
+  },
+  {
+    "id": "mostofi2018",
+    "citation": "Mostofi K, Gharaie Moghaddam B, Karimi Khouzan R, Daryabin M. The reliability of LERI's sign in L4 and L3 radiculalgia. J Clin Neurosci. 2018;50:102-104.",
+    "pmid": "29993363",
+    "doi": "10.1016/j.jocn.2018.01.025",
+    "design": "Retrospective diagnostic accuracy study",
+    "population": "1545 neurosurgery patients with L4 ('cruralgia') or L3 ('meralgia' in the authors' usage = L3 radicular pain, not lateral femoral cutaneous neuropathy) root pain with imaging-confirmed compression; specificity from 153 patients with similar pain but no compression",
+    "notes": "Read in full text (publisher site, free access). Sens 1442/1545 = 0.9333. Spec reported 0.7974 from 122 true negatives / 32 false positives (counts sum to 154 vs 153 stated). Retrospective chart review; context only.",
+    "verifiedOn": "2026-11-01"
+  },
+  {
+    "id": "filler2005",
+    "citation": "Filler AG, Haynes J, Jordan SE, et al. Sciatica of nondisc origin and piriformis syndrome: diagnosis by magnetic resonance neurography and interventional magnetic resonance imaging with outcome study of resulting treatment. J Neurosurg Spine. 2005;2(2):99-115.",
+    "pmid": "15739520",
+    "doi": "10.3171/spi.2005.2.2.0099",
+    "design": "Consecutive cohort with imaging and outcome follow-up",
+    "population": "239 consecutive patients with sciatica not improved by standard diagnosis and treatment",
+    "verifiedOn": "2026-11-01"
+  },
+  {
+    "id": "siahaan2021",
+    "citation": "Siahaan YMT, Tiffani P, Tanasia A. Ultrasound-Guided Measurement of Piriformis Muscle Thickness to Diagnose Piriformis Syndrome. Front Neurol. 2021;12:721966.",
+    "pmid": "34557150",
+    "doi": "10.3389/fneur.2021.721966",
+    "design": "Case-control study",
+    "population": "58 clinically diagnosed piriformis syndrome patients vs 58 healthy controls",
+    "notes": "Healthy controls inflate specificity relative to patients with other causes of sciatica.",
+    "verifiedOn": "2026-11-01"
+  },
+  {
+    "id": "seror2006",
+    "citation": "Seror P, Seror R. Meralgia paresthetica: clinical and electrophysiological diagnosis in 120 cases. Muscle Nerve. 2006;33(5):650-4.",
+    "pmid": "16421883",
+    "doi": "10.1002/mus.20507",
+    "design": "Case series with electrodiagnostic criteria",
+    "population": "120 unselected patients (131 cases) with meralgia paresthetica",
+    "verifiedOn": "2026-11-01"
+  },
+  {
+    "id": "knockaert1989",
+    "citation": "Knockaert DC, D'Heygere FG, Bobbaers HJ. Ilioinguinal nerve entrapment: a little-known cause of iliac fossa pain. Postgrad Med J. 1989;65(767):632-5.",
+    "pmid": "2608591",
+    "doi": "10.1136/pgmj.65.767.632",
+    "design": "Retrospective case series",
+    "population": "32 mainly non-surgical patients (14 definite, 18 probable)",
+    "notes": "Defines the clinical triad; no comparison group.",
+    "verifiedOn": "2026-11-01"
+  },
+  {
+    "id": "knockaert1996",
+    "citation": "Knockaert DC, Boonen AL, Bruyninckx FL, Bobbaers HJ. Electromyographic findings in ilioinguinal-iliohypogastric nerve entrapment syndrome. Acta Clin Belg. 1996;51(3):156-60.",
+    "pmid": "8766215",
+    "doi": "10.1080/17843286.1996.11718504",
+    "design": "Case series",
+    "population": "41 patients with suspected ilioinguinal-iliohypogastric entrapment (25 definite)",
+    "verifiedOn": "2026-11-01"
+  },
+  {
+    "id": "iudicelli2026",
+    "citation": "Iudicelli G, Agostini F, Altarocca A, et al. The Role of Musculoskeletal Ultrasound in Detecting Superior Cluneal Nerve Entrapment: Biomechanical Insights in Chronic Low Back Pain-A Pilot Study. Diagnostics (Basel). 2026;16(3):469.",
+    "pmid": "41681788",
+    "doi": "10.3390/diagnostics16030469",
+    "design": "Cross-sectional pilot, patients vs healthy controls",
+    "population": "12 chronic LBP patients with SCN-distribution pain vs 12 healthy controls",
+    "verifiedOn": "2026-11-01"
+  },
+  {
+    "id": "mollo2009",
+    "citation": "Mollo M, Bautrant E, Rossi-Seignert AK, Collet S, Boyer R, Thiers-Bautrant D. Evaluation of diagnostic accuracy of Colour Duplex Scanning, compared to electroneuromyography, diagnostic score and surgical outcomes, in Pudendal Neuralgia by entrapment: a prospective study on 96 patients. Pain. 2009;142(1-2):159-63.",
+    "pmid": "19195783",
+    "doi": "10.1016/j.pain.2009.01.019",
+    "design": "Prospective consecutive diagnostic study, blinded readers",
+    "population": "96 unselected patients evaluated for pudendal neuralgia (166 arteries)",
+    "referenceStandard": "Neurological criteria (diagnostic score + ENMG)",
+    "verifiedOn": "2026-11-01"
+  },
+  {
+    "id": "vroomen2002",
+    "citation": "Vroomen PC, de Krom MC, Wilmink JT, Kester AD, Knottnerus JA. Diagnostic value of history and physical examination in patients suspected of lumbosacral nerve root compression. J Neurol Neurosurg Psychiatry. 2002;72(5):630-4.",
+    "pmid": "11971050",
+    "doi": "10.1136/jnnp.72.5.630",
+    "design": "Cross-sectional diagnostic study, investigator blinded to MRI, neuroradiologist blinded to clinical findings",
+    "population": "274 primary-care patients referred by 50 GPs with severe pain radiating below the gluteal fold; 152 with root compression on MRI",
+    "referenceStandard": "Nerve root compression on MRI (any level)",
+    "notes": "Read in full text (PDF supplied by user). Sens/spec and Wilson 95% CIs computed from Table 2 and Table 3 counts (MRI+ n=152, MRI- n=122). Target is root compression at any level, entered for both root hypotheses.",
+    "verifiedOn": "2026-11-02"
+  },
+  {
+    "id": "beatty1994",
+    "citation": "Beatty RA. The piriformis muscle syndrome: a simple diagnostic maneuver. Neurosurgery. 1994;34(3):512-4.",
+    "pmid": "8190228",
+    "doi": "10.1227/00006123-199403000-00018",
+    "design": "Case report with comparison observations",
+    "population": "3 piriformis syndrome patients; 100 consecutive surgically documented disc herniations; 27 primary hip disorders",
+    "notes": "Abstract describes the patient-performed maneuver and that disc patients got back/leg pain and hip patients trochanteric pain rather than deep buttock pain. No sensitivity reported.",
+    "verifiedOn": "2026-11-02"
+  },
+  {
+    "id": "hopayian2010",
+    "citation": "Hopayian K, Song F, Riera R, Sambandan S. The clinical features of the piriformis syndrome: a systematic review. Eur Spine J. 2010;19(12):2095-109.",
+    "pmid": "20596735",
+    "doi": "10.1007/s00586-010-1504-9",
+    "design": "Systematic review of case reports and case series (55 studies, 126 patients with usable data)",
+    "population": "Published cases of piriformis syndrome, mostly secondary/tertiary care",
+    "notes": "Read in full text (Europe PMC HTML, PMC2997212). Frequencies only, no comparison group. States Beatty sign data are too sparse for reliable estimates; criticises Fishman 2002 (asymptomatic controls) and Filler 2005 (reference standard).",
+    "verifiedOn": "2026-11-02"
+  },
+  {
+    "id": "konstantinou2012",
+    "citation": "Konstantinou K, Lewis M, Dunn KM. Agreement of self-reported items and clinically assessed nerve root involvement (or sciatica) in a primary care setting. Eur Spine J. 2012;21(11):2306-15.",
+    "pmid": "22752591",
+    "doi": "10.1007/s00586-012-2398-5",
+    "design": "Diagnostic accuracy analysis of RCT baseline data",
+    "population": "511 UK primary-care adults with low back pain with or without leg pain",
+    "referenceStandard": "Standardised clinical diagnosis of nerve root involvement (not imaging)",
+    "notes": "Read in PMC full text (PMC3481089). Values from Table 4, classification 1 (neural vs non-neural + inconclusive).",
+    "verifiedOn": "2026-11-02"
+  },
+  {
+    "id": "scholz2009",
+    "citation": "Scholz J, Mannion RJ, Hord DE, et al. A novel tool for the assessment of pain: validation in low back pain. PLoS Med. 2009;6(4):e1000047.",
+    "pmid": "19360087",
+    "doi": "10.1371/journal.pmed.1000047",
+    "design": "Derivation + independent validation (137 patients)",
+    "population": "Patients with radicular vs axial (non-neuropathic) low back pain",
+    "verifiedOn": "2026-11-02"
+  },
+  {
+    "id": "forster2013",
+    "citation": "Förster M, Mahn F, Gockel U, Brosz M, Freynhagen R, Tölle TR, Baron R. Axial low back pain: one painful area--many perceptions and mechanisms. PLoS One. 2013;8(7):e68273.",
+    "pmid": "23844179",
+    "doi": "10.1371/journal.pone.0068273",
+    "design": "Cross-sectional survey (painDETECT registry), cluster analysis",
+    "population": "1083 patients with axial (non-radiating) low back pain",
+    "notes": "Read in PMC full text (PMC3699535). Table 2: share rating each sensory symptom as clinically relevant (>3 of 5). Used only for display clues in the stress view, never for a probability.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "rondas2022",
+    "citation": "Rondas GA, Macri EM, Oei EH, Bierma-Zeinstra SM, Rijkels-Otters HB, Runhaar J. Association between hip pain and radiographic hip osteoarthritis in primary care: the CHECK cohort. Br J Gen Pract. 2022.",
+    "pmid": "36127152",
+    "doi": "10.3399/BJGP.2021.0547",
+    "design": "Cross-sectional analysis of a prospective cohort (CHECK)",
+    "population": "1002 people aged 45-65 with hip and/or knee pain at or near first GP consultation; 1982 hips",
+    "referenceStandard": "Weight-bearing AP pelvis radiograph, Kellgren-Lawrence grade >= 2 (definite) or >= 1 (early-stage)",
+    "notes": "Read in PMC full text (PMC9512408). Context only (no single-feature accuracy reported). Our own count from the open CHECK release (DANS 10.17026/dans-xex-hzww) reproduced 105 painful hips with KL >= 2.",
+    "verifiedOn": "2026-11-04"
+  },
+  {
+    "id": "metcalfe2019",
+    "citation": "Metcalfe D, Perry DC, Claireaux HA, Simel DL, Zogg CK, Costa ML. Does This Patient Have Hip Osteoarthritis?: The Rational Clinical Examination Systematic Review. JAMA. 2019;322(23):2323-2333.",
+    "pmid": "31846019",
+    "doi": "10.1001/jama.2019.19413",
+    "design": "Systematic review (JAMA Rational Clinical Examination), 6 studies, 1110 patients / 1324 hips",
+    "population": "Patients with hip or groin pain, largely primary care (34% had radiographic OA)",
+    "referenceStandard": "Plain radiographs",
+    "notes": "Read in PMC full text (PMC7583647), Tables 1-2. Rows 'Age >60' and 'Pain relieved by sitting' skipped because their CIs do not contain the point estimate. Radiographic OA is not proof the hip is the pain source.",
+    "verifiedOn": "2026-11-02"
+  },
+  {
+    "id": "grimaldi2017",
+    "citation": "Grimaldi A, Mellor R, Nicolson P, Hodges P, Bennell K, Vicenzino B. Utility of clinical tests to diagnose MRI-confirmed gluteal tendinopathy in patients presenting with lateral hip pain. Br J Sports Med. 2017;51(6):519-524.",
+    "pmid": "27633027",
+    "doi": "10.1136/bjsports-2016-096175",
+    "design": "Diagnostic accuracy study, radiologist blinded",
+    "population": "65 participants with lateral hip pain (50 with gluteal tendinopathy on MRI, 15 without)",
+    "referenceStandard": "MRI (increased intratendinous T2 signal)",
+    "notes": "Abstract: SLS specificity 100%, LR+ ~12; palpation sensitivity 80%. Full-text values (SLS sens 38%, i.e. 19/50; palpation 40/50 TP and 8 FP of 15) read from a third-party reproduction of the article and consistent with the abstract.",
+    "verifiedOn": "2026-11-02"
+  },
+  {
+    "id": "tonosu2018",
+    "citation": "Tonosu J, Oka H, Watanabe K, et al. Validation study of a diagnostic scoring system for sacroiliac joint-related pain. J Pain Res. 2018;11:1659-1663.",
+    "pmid": "30214275",
+    "doi": "10.2147/jpr.s167033",
+    "design": "Validation study, SIJ-pain group vs other LBP",
+    "population": "31 patients with SIJ-related pain vs 123 with low back pain from other causes",
+    "referenceStandard": "History, physical findings and response to periarticular SIJ injection (incorporation bias likely)",
+    "notes": "Read in PMC full text (PMC6118337), Table 2 counts.",
+    "verifiedOn": "2026-11-02"
+  },
+  {
+    "id": "laslett2005",
+    "citation": "Laslett M, Aprill CN, McDonald B, Young SB. Diagnosis of sacroiliac joint pain: validity of individual provocation tests and composites of tests. Man Ther. 2005;10(3):207-18.",
+    "pmid": "16038856",
+    "doi": "10.1016/j.math.2005.01.003",
+    "design": "Blinded criterion-related validity study",
+    "population": "48 patients with low back pain",
+    "referenceStandard": "Intra-articular SIJ anaesthetic injection",
+    "verifiedOn": "2026-11-02"
+  },
+  {
+    "id": "altman1991",
+    "citation": "Altman R, Alarcón G, Appelrouth D, et al. The American College of Rheumatology criteria for the classification and reporting of osteoarthritis of the hip. Arthritis Rheum. 1991;34(5):505-14.",
+    "pmid": "2025304",
+    "doi": "10.1002/art.1780340502",
+    "design": "Multicentre classification criteria development",
+    "population": "201 patients with hip pain; comparison group with other causes of hip pain (e.g. RA, spondyloarthropathy)",
+    "verifiedOn": "2026-11-02"
+  },
+  {
+    "id": "martin2015",
+    "citation": "Martin HD, Reddy M, Gómez-Hoyos J. Deep gluteal syndrome. J Hip Preserv Surg. 2015;2(2):99-107.",
+    "pmid": "27011826",
+    "doi": "10.1093/jhps/hnv029",
+    "design": "Narrative review",
+    "population": "Not applicable (review)",
+    "notes": "Read in PMC full text (PMC4718497), including Table II (differential diagnosis of deep gluteal syndrome).",
+    "verifiedOn": "2026-11-02"
+  },
+  {
+    "id": "gomezhoyos2016",
+    "citation": "Gómez-Hoyos J, Martin RL, Schröder R, Palmer IJ, Martin HD. Accuracy of 2 Clinical Tests for Ischiofemoral Impingement in Patients With Posterior Hip Pain and Endoscopically Confirmed Diagnosis. Arthroscopy. 2016;32(7):1279-84.",
+    "pmid": "27020393",
+    "doi": "10.1016/j.arthro.2016.01.024",
+    "design": "Retrospective diagnostic accuracy study",
+    "population": "30 patients with posterior hip pain and negative spine work-up (17 IFI, 13 not)",
+    "referenceStandard": "Imaging, injection and endoscopic findings with treatment response",
+    "notes": "Sens/spec from abstract; CIs computed from 16/17, 11/13 (LSW) and 14/17, 11/13 (IFI test).",
+    "verifiedOn": "2026-11-02"
+  },
+  {
+    "id": "meng2015",
+    "citation": "Meng S, Lieba-Samal D, Reissig LF, et al. High-resolution ultrasound of the posterior femoral cutaneous nerve: visualization and initial experience with patients. Skeletal Radiol. 2015;44(10):1421-6.",
+    "pmid": "26105014",
+    "doi": "10.1007/s00256-015-2177-6",
+    "design": "Cadaver feasibility study + case series",
+    "population": "26 cadaver limbs; 6 patients with suspected PFCN neuropathy",
+    "verifiedOn": "2026-11-02"
+  },
+  {
+    "id": "joshi2017",
+    "citation": "Joshi DH, Thawait GK, Del Grande F, Fritz J. MRI-guided cryoablation of the posterior femoral cutaneous nerve for the treatment of neuropathy-mediated sitting pain. Skeletal Radiol. 2017;46(7):983-987.",
+    "pmid": "28299433",
+    "doi": "10.1007/s00256-017-2617-6",
+    "design": "Technical report / case",
+    "population": "Patient with PFCN-mediated sitting pain",
+    "verifiedOn": "2026-11-02"
+  },
+  {
+    "id": "dellon2015",
+    "citation": "Dellon AL. Pain with sitting related to injury of the posterior femoral cutaneous nerve. Microsurgery. 2015;35(6):463-8.",
+    "pmid": "25917688",
+    "doi": "10.1002/micr.22422",
+    "design": "Retrospective surgical case series",
+    "population": "17 patients (15 women) with sitting pain who had PFCN resection, 2010-2013",
+    "notes": "All had pain with sitting, spent much of the day standing or lying, and had posterior thigh and buttock symptoms. No comparison group.",
+    "verifiedOn": "2026-11-02"
+  },
+  {
+    "id": "kachniarz2021",
+    "citation": "Kachniarz B, Dellon AL. Relief of Sitting Pain by Resecting Posterior Femoral Cutaneous Nerve, and Elucidation of Its Anatomical Branching Pattern. J Reconstr Microsurg. 2021;37(8):687-693.",
+    "pmid": "33757132",
+    "doi": "10.1055/s-0041-1726027",
+    "design": "Retrospective surgical case series",
+    "population": "52 patients with sitting pain who had PFCN resection, 2012-2019",
+    "notes": "Sitting pain in buttock, posterior thigh and/or ischial tuberosity; MRI evidence of hamstring injury in 50%. No comparison group.",
+    "verifiedOn": "2026-11-02"
+  },
+  {
+    "id": "jottard2022",
+    "citation": "Jottard K, Bonnet P, Thill V, Ploteau S, de Wachter S. Diagnosis and treatment of pudendal and inferior cluneal nerve entrapment syndrome: a narrative review. Acta Chir Belg. 2022;122(6):379-389.",
+    "pmid": "36074049",
+    "doi": "10.1080/00015458.2022.2123138",
+    "design": "Narrative review",
+    "population": "Not applicable (review)",
+    "verifiedOn": "2026-11-02"
+  },
+  {
+    "id": "sorenson2002",
+    "citation": "Sorenson EJ, Chen JJ, Daube JR. Obturator neuropathy: causes and outcome. Muscle Nerve. 2002;25(4):605-7.",
+    "pmid": "11932980",
+    "doi": "10.1002/mus.10065",
+    "design": "Retrospective case series (EMG laboratory)",
+    "population": "22 patients with obturator neuropathy, Mayo Clinic 1975-1999",
+    "verifiedOn": "2026-11-02"
+  },
+  {
+    "id": "brukner1999",
+    "citation": "Brukner P, Bradshaw C, McCrory P. Obturator neuropathy: a cause of exercise-related groin pain. Phys Sportsmed. 1999;27(5):62-73.",
+    "pmid": "20086719",
+    "doi": "10.3810/psm.1999.05.844",
+    "design": "Clinical review based on the authors' athlete series",
+    "population": "Athletes with exercise-related groin pain",
+    "verifiedOn": "2026-11-02"
+  },
+  {
+    "id": "chalk2024",
+    "citation": "Chalk C, Namiranian D. Meralgia paresthetica. Handb Clin Neurol. 2024;201:195-201.",
+    "pmid": "38697741",
+    "doi": "10.1016/b978-0-323-90108-6.00013-2",
+    "design": "Handbook chapter (review)",
+    "population": "Not applicable (review)",
+    "notes": "Abstract: 'Risk factors for meralgia paresthetica include obesity, tight clothing, and diabetes mellitus.' No frequencies vs comparison groups.",
+    "verifiedOn": "2026-11-02"
+  },
+  {
+    "id": "parisi2011",
+    "citation": "Parisi TJ, Mandrekar J, Dyck PJ, Klein CJ. Meralgia paresthetica: relation to obesity, advanced age, and diabetes mellitus. Neurology. 2011;77(16):1538-42.",
+    "pmid": "21975198",
+    "doi": "10.1212/wnl.0b013e318233b356",
+    "design": "Population-based case-control study",
+    "population": "262 MP patients vs 262 normal and 262 BMI-matched controls, Olmsted County 1990-1999",
+    "notes": "Controls had no leg symptoms, so not usable for scoring. Diabetes in 28% of MP vs 17% of BMI-matched controls; mean BMI 30.1 vs 27.3.",
+    "verifiedOn": "2026-11-02"
+  },
+  {
+    "id": "goulding2010",
+    "citation": "Goulding K, Beaulé PE, Kim PR, Fazekas A. Incidence of lateral femoral cutaneous nerve neuropraxia after anterior approach hip arthroplasty. Clin Orthop Relat Res. 2010;468(9):2397-404.",
+    "pmid": "20532717",
+    "doi": "10.1007/s11999-010-1406-5",
+    "design": "Prospective cohort",
+    "population": "132 patients after anterior-approach hip surgery (55 THA, 77 resurfacing)",
+    "notes": "81% reported LFCN neuropraxia at 1 year (THA 67%, resurfacing 91%).",
+    "verifiedOn": "2026-11-02"
+  },
+  {
+    "id": "ergonenc2017",
+    "citation": "Ergönenç T, Beyaz SG, Özocak H, Palabıyık O, Altıntoprak F. Persistent postherniorrhaphy pain following inguinal hernia repair: A cross-sectional study of prevalence, pain characteristics, and effects on quality of life. Int J Surg. 2017;46:126-132.",
+    "pmid": "28890413",
+    "doi": "10.1016/j.ijsu.2017.08.588",
+    "design": "Cross-sectional study",
+    "population": "264 patients at least 3 months after unilateral inguinal hernia repair",
+    "notes": "Chronic groin pain in 23.5%.",
+    "verifiedOn": "2026-11-02"
+  },
+  {
+    "id": "kitagawa2009",
+    "citation": "Kitagawa R, Kim D, Reid N, Kline D. Surgical management of obturator nerve lesions. Neurosurgery. 2009;65(4 Suppl):A24-8.",
+    "pmid": "19927074",
+    "doi": "10.1227/01.neu.0000335652.61676.cc",
+    "design": "Retrospective surgical case series",
+    "population": "6 patients with obturator nerve lesions",
+    "verifiedOn": "2026-11-02"
+  },
+  {
+    "id": "thoomes2026",
+    "citation": "Thoomes EJ, Arvanitidis M, van Geest S, et al. Diagnostic accuracy of physical examination tests for painful cervical radiculopathy: update of a systematic review and meta-analysis. BMC Musculoskelet Disord. 2026;27(1):338.",
+    "pmid": "41680685",
+    "doi": "10.1186/s12891-026-09551-0",
+    "design": "Systematic review and bivariate meta-analysis, 8 diagnostic accuracy studies (update of Thoomes 2018)",
+    "population": "Patients suspected of cervical radiculopathy, primary and secondary care",
+    "referenceStandard": "MRI, CT, myelography or surgical findings (EMG-only reference excluded)",
+    "notes": "Read in Europe PMC full text (PMC13088722). Pooled values from Table 4 (bivariate fixed-effect GLMM); the per-study Table 3 is an image and was not transcribed. GRADE certainty very low for all tests.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "lin2025",
+    "citation": "Lin LH, Lin TY, Chang KV, et al. Diagnostic Performance of Spurling's Test for the Assessment Subacute and Chronic Cervical Radiculopathy: A Systematic Review and Meta-analysis. Am J Phys Med Rehabil. 2025;104(8):717-723.",
+    "pmid": "39938056",
+    "doi": "10.1097/phm.0000000000002707",
+    "design": "Systematic review and bivariate random-effects meta-analysis, 8 studies",
+    "population": "Patients with suspected subacute or chronic cervical radiculopathy",
+    "referenceStandard": "Imaging or electrodiagnostic testing",
+    "notes": "Abstract only (paywalled). Pooled across Spurling variants; sensitivity was 0.67 with imaging and 0.31 with electrodiagnosis as reference.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "gumina2013",
+    "citation": "Gumina S, Carbone S, Albino P, et al. Arm Squeeze Test: a new clinical test to distinguish neck from shoulder pain. Eur Spine J. 2013;22(7):1558-1563.",
+    "pmid": "23604976",
+    "doi": "10.1007/s00586-013-2788-3",
+    "design": "Diagnostic accuracy study; diagnosis established clinically and by imaging before the test (Thoomes 2026 rated it close to a case-control design)",
+    "population": "1,567 shoulder-pain patients: 305 with C5-T1 nerve root compression, 1,262 with shoulder disease (903 rotator cuff tear, 155 adhesive capsulitis, 101 AC joint, 55 calcifying tendonitis, 48 glenohumeral arthritis); 350 healthy volunteers",
+    "referenceStandard": "Clinical diagnosis confirmed with imaging",
+    "notes": "Counts from the abstract. Specificity used here is against shoulder-disease patients only (43/1,262 positive), not healthy volunteers.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "dabbagh2023",
+    "citation": "Dabbagh A, MacDermid JC, Yong J, et al. Diagnostic Test Accuracy of Provocative Maneuvers for the Diagnosis of Carpal Tunnel Syndrome: A Systematic Review and Meta-Analysis. Phys Ther. 2023;103(6):pzad029.",
+    "pmid": "37366626",
+    "doi": "10.1093/ptj/pzad029",
+    "design": "Systematic review and random-effects meta-analysis (31 studies; Phalen pooled from 7 studies, 604 patients)",
+    "population": "Patients assessed for carpal tunnel syndrome",
+    "notes": "Abstract only. Risk of bias unclear or high in many included studies; wide range of single-study values (Phalen sens 0.12-0.92).",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "hill2026",
+    "citation": "Hill OS, Jee EY. Diagnostic accuracy of the Hoffmann-Tinel sign for carpal tunnel syndrome: A systematic review and meta-analysis with comparison of techniques. J Clin Orthop Trauma. 2026;78:103469.",
+    "pmid": "42254332",
+    "doi": "10.1016/j.jcot.2026.103469",
+    "design": "Systematic review and bivariate random-effects meta-analysis, 16 studies (2,471 participants), grouped by percussion technique",
+    "population": "Patients assessed for carpal tunnel syndrome",
+    "notes": "Abstract and Europe PMC full text (PMC13242039). Fingertip percussion (8 studies, 1,196 participants) is used for the self-test because that is what a patient can do; tendon hammer percussion was more accurate.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "beekman2009",
+    "citation": "Beekman R, Schreuder AH, Rozeman CA, et al. The diagnostic value of provocative clinical tests in ulnar neuropathy at the elbow is marginal. J Neurol Neurosurg Psychiatry. 2009;80(12):1369-1374.",
+    "pmid": "19553231",
+    "doi": "10.1136/jnnp.2009.180844",
+    "design": "Prospective cohort of consecutive patients, independent reference standard",
+    "population": "192 patients clinically suspected of ulnar neuropathy at the elbow: 137 confirmed, 55 with an alternative diagnosis",
+    "referenceStandard": "Electrophysiological studies plus neurosonography",
+    "notes": "Abstract only. Counts derived from percentages and group sizes (Tinel 85/137 and 29/55).",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "ochi2012",
+    "citation": "Ochi K, Horiuchi Y, Tanabe A, et al. Shoulder internal rotation elbow flexion test for diagnosing cubital tunnel syndrome. J Shoulder Elbow Surg. 2012;21(6):777-781.",
+    "pmid": "22217643",
+    "doi": "10.1016/j.jse.2011.10.015",
+    "design": "Diagnostic study, patients vs controls (case-control)",
+    "population": "55 ulnar nerves in cubital tunnel syndrome patients vs 123 ulnar nerves in controls (control type not stated in the abstract)",
+    "notes": "Abstract only. Counts derived from percentages (48/55, 121/123). Case-control spectrum likely inflates accuracy.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "hermans2013",
+    "citation": "Hermans J, Luime JJ, Meuffels DE, et al. Does this patient with shoulder pain have rotator cuff disease?: The Rational Clinical Examination systematic review. JAMA. 2013;310(8):837-847.",
+    "pmid": "23982370",
+    "doi": "10.1001/jama.2013.276187",
+    "design": "Systematic review (JAMA Rational Clinical Examination); 5 high-quality studies of 30-203 shoulders",
+    "population": "Referred patients with shoulder pain examined by specialists (rotator cuff disease prevalence 33-81%)",
+    "notes": "Abstract only (paywalled). Reports likelihood ratios, not sens/spec. Generalisability to non-referred patients unknown.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "kerasnoudis2024",
+    "citation": "Kerasnoudis A, Venouziou A, Vasiliadis AV. Neuromuscular ultrasound for the differential diagnosis of radial tunnel syndrome and lateral epicondylitis. J Neuroimaging. 2024;34(6):799-803.",
+    "pmid": "39397287",
+    "doi": "10.1111/jon.13244",
+    "design": "Prospective double-blinded pilot study",
+    "population": "68 elbows in 34 patients with lateral elbow pain",
+    "notes": "Abstract only. The abstract is internally inconsistent (it also describes the 34 participants as healthy controls), so its palpation figures (75.7/50) are not scored.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "seror2013",
+    "citation": "Seror P. Electrophysiological pattern of 53 cases of ulnar nerve lesion at the wrist. Neurophysiol Clin. 2013;43(2):95-103.",
+    "pmid": "23540258",
+    "doi": "10.1016/j.neucli.2012.11.037",
+    "design": "Prospective case series with controls",
+    "population": "53 ulnar neuropathy at the wrist vs 100 ulnar neuropathy at the elbow and controls",
+    "notes": "Abstract only.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "machanic2008",
+    "citation": "Machanic BI, Sanders RJ. Medial antebrachial cutaneous nerve measurements to diagnose neurogenic thoracic outlet syndrome. Ann Vasc Surg. 2008;22(2):248-254.",
+    "pmid": "18346579",
+    "doi": "10.1016/j.avsg.2007.09.009",
+    "design": "Case-control",
+    "population": "41 surgically treated neurogenic TOS patients vs 19 asymptomatic volunteers (79 control sides)",
+    "referenceStandard": "Clinical diagnosis with surgical decompression",
+    "notes": "Abstract only. Healthy controls inflate specificity.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "nord2008",
+    "citation": "Nord KM, Kapoor P, Fisher J, et al. False positive rate of thoracic outlet syndrome diagnostic maneuvers. Electromyogr Clin Neurophysiol. 2008;48(2):67-74.",
+    "pmid": "18435210",
+    "design": "Prospective study of false-positive rates, blinded examiner",
+    "population": "Patients with clinically and electrophysiologically confirmed carpal tunnel syndrome, and normal subjects",
+    "notes": "Abstract only. False-positive rates only (no TOS patients), so no sensitivity: context only.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "ludig2001",
+    "citation": "Ludig T, Walter F, Chapuis D, et al. MR imaging evaluation of suprascapular nerve entrapment. Eur Radiol. 2001;11(11):2161-2169.",
+    "pmid": "11702155",
+    "doi": "10.1007/s003300100968",
+    "design": "Retrospective study",
+    "population": "18 patients with suprascapular nerve entrapment",
+    "referenceStandard": "Electromyography",
+    "notes": "Abstract only. Small, retrospective.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "silkjaerbak2022",
+    "citation": "Silkjær Bak S, Johnsen B, Fuglsang-Frederiksen A, et al. Comparison of ultrasound with electrodiagnosis of scapular winging: A prospective case control study. Clin Neurophysiol. 2022;133:48-57.",
+    "pmid": "34801963",
+    "doi": "10.1016/j.clinph.2021.09.021",
+    "design": "Prospective case-control",
+    "population": "27 patients with scapular winging (20 medial) vs 41 healthy subjects",
+    "notes": "Abstract only. Figures for the medial-winging (long thoracic nerve / serratus anterior) group.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "aranyi2017",
+    "citation": "Arányi Z, Csillik A, Dévay K, et al. Ultrasonography in neuralgic amyotrophy: Sensitivity, spectrum of findings, and clinical correlations. Muscle Nerve. 2017;56(6):1054-1062.",
+    "pmid": "28556181",
+    "doi": "10.1002/mus.25708",
+    "design": "Case series",
+    "population": "53 patients with neuralgic amyotrophy, 70 affected nerves",
+    "notes": "Abstract only. Sensitivity only (no controls).",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "zaki2022",
+    "citation": "Zaki HA, Shaban E, Salem W, et al. A Comparative Analysis Between Ultrasound and Electromyographic and Nerve Conduction Studies in Diagnosing Carpal Tunnel Syndrome (CTS): A Systematic Review and Meta-Analysis. Cureus. 2022;14(10):e30476.",
+    "pmid": "36415360",
+    "doi": "10.7759/cureus.30476",
+    "design": "Systematic review and meta-analysis, 12 studies (2000-2022)",
+    "population": "Patients assessed for carpal tunnel syndrome",
+    "notes": "Abstract (open access). Reference standards vary across included studies.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "omejec2015",
+    "citation": "Omejec G, Žgur T, Podnar S. Diagnostic accuracy of ultrasonographic and nerve conduction studies in ulnar neuropathy at the elbow. Clin Neurophysiol. 2015;126(9):1797-1804.",
+    "pmid": "25541522",
+    "doi": "10.1016/j.clinph.2014.12.001",
+    "design": "Prospective blinded study of consecutive patients",
+    "population": "113 arms in 109 patients with suspected ulnar neuropathy at the elbow (81 definite); specificity from asymptomatic controls",
+    "notes": "Abstract only.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "pham2014",
+    "citation": "Pham M, Bäumer P, Meinck HM, et al. Anterior interosseous nerve syndrome: fascicular motor lesions of median nerve trunk. Neurology. 2014;82(7):598-606.",
+    "pmid": "24415574",
+    "doi": "10.1212/wnl.0000000000000128",
+    "design": "Case-control imaging study",
+    "population": "20 patients with anterior interosseous nerve syndrome vs 20 age- and sex-matched controls",
+    "referenceStandard": "Clinical diagnosis",
+    "notes": "Abstract (open access, PMC3963415).",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "kobayashi2010",
+    "citation": "Kobayashi H, Kikuchi S, Otani K, et al. Development of a self-administered questionnaire to screen patients for cervical myelopathy. BMC Musculoskelet Disord. 2010;11:268.",
+    "pmid": "21092213",
+    "doi": "10.1186/1471-2474-11-268",
+    "design": "Case-control questionnaire development",
+    "population": "62 operated cervical myelopathy patients vs 49 patients with other upper-limb symptoms (mostly carpal and cubital tunnel syndrome)",
+    "notes": "Read in Europe PMC full text (PMC3002898). Used for the red-flag wording only.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "panju1998",
+    "citation": "Panju AA, Hemmelgarn BR, Guyatt GH, et al. The rational clinical examination. Is this patient having a myocardial infarction? JAMA. 1998;280(14):1256-1263.",
+    "pmid": "9786377",
+    "doi": "10.1001/jama.280.14.1256",
+    "design": "Systematic review (JAMA Rational Clinical Examination)",
+    "population": "Patients presenting with chest pain",
+    "notes": "Abstract only. Used for the red-flag question only.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "hegedus2012",
+    "citation": "Hegedus EJ, Goode AP, Cook CE, et al. Which physical examination tests provide clinicians with the most value when examining the shoulder? Update of a systematic review with meta-analysis of individual tests. Br J Sports Med. 2012;46(14):964-978.",
+    "pmid": "22773322",
+    "doi": "10.1136/bjsports-2012-091066",
+    "design": "Systematic review with bivariate meta-analysis (update of Hegedus 2008)",
+    "population": "Patients with shoulder complaints in diagnostic accuracy studies of shoulder examination tests",
+    "notes": "Abstract only (paywalled); pooled values without CIs in the abstract. Target condition is subacromial impingement, not the rotator cuff disease of Hermans 2013.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "goubau2014",
+    "citation": "Goubau JF, Goubau L, Van Tongel A, et al. The wrist hyperflexion and abduction of the thumb (WHAT) test: a more specific and sensitive test to diagnose de Quervain tenosynovitis than the Eichhoff's Test. J Hand Surg Eur Vol. 2014;39(3):286-292.",
+    "pmid": "23340762",
+    "doi": "10.1177/1753193412475043",
+    "design": "Prospective cohort",
+    "population": "100 patients with spontaneous pain over the radial styloid",
+    "referenceStandard": "Ultrasound",
+    "notes": "Abstract only. PPV 0.95 implies few patients without the condition, so the specificity (0.29) rests on a small group and no CI is reported.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "merritt2010",
+    "citation": "Merritt MM, Roddey TS, Costello C, et al. Diagnostic value of clinical grind test for carpometacarpal osteoarthritis of the thumb. J Hand Ther. 2010;23(3):261-7; quiz 268.",
+    "pmid": "20452743",
+    "doi": "10.1016/j.jht.2010.02.001",
+    "design": "Diagnostic accuracy study, two blinded physical therapists",
+    "population": "70 thumbs of 54 people with various hand disorders",
+    "referenceStandard": "Radiographs rated by a hand surgeon",
+    "notes": "Abstract only. Two testers: 0.53/0.80 (LR+ 2.65) and 0.42/0.93 (LR+ 6.00). The more conservative tester is used.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "zwerus2018",
+    "citation": "Zwerus EL, Somford MP, Maissan F, et al. Physical examination of the elbow, what is the evidence? A systematic literature review. Br J Sports Med. 2018;52(19):1253-1260.",
+    "pmid": "28249855",
+    "doi": "10.1136/bjsports-2016-096712",
+    "design": "Systematic review (PRISMA, QUADAS-2)",
+    "population": "Studies of clinical elbow tests (10 included)",
+    "notes": "Abstract only. One study for lateral epicondylitis, none for medial epicondylitis; context only.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "holtby2004",
+    "citation": "Holtby R, Razmjou H. Accuracy of the Speed's and Yergason's tests in detecting biceps pathology and SLAP lesions: comparison with arthroscopic findings. Arthroscopy. 2004;20(3):231-236.",
+    "pmid": "15007311",
+    "doi": "10.1016/j.arthro.2004.01.008",
+    "design": "Prospective blinded study of consecutive surgical patients",
+    "population": "50 shoulder-pain patients undergoing arthroscopy",
+    "referenceStandard": "Arthroscopy",
+    "notes": "Abstract only. Target combines biceps pathology and SLAP lesions, so it is context only.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "martin2018",
+    "citation": "Martin RL, Schröder RG, Gomez-Hoyos J, et al. Accuracy of 3 Clinical Tests to Diagnose Proximal Hamstrings Tears With and Without Sciatic Nerve Involvement in Patients With Posterior Hip Pain. Arthroscopy. 2018;34(1):114-121.",
+    "pmid": "29203381",
+    "doi": "10.1016/j.arthro.2017.06.048",
+    "design": "Retrospective diagnostic accuracy study (consecutive records)",
+    "population": "42 patients with posterior hip pain: 27 with proximal hamstring tendon tears, 15 without",
+    "referenceStandard": "MRI and/or diagnostic injection",
+    "notes": "Abstract only. The test position is not described in the abstract; the self-test describes resisted knee bending at about 30 degrees.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "laslett2005disc",
+    "citation": "Laslett M, Oberg B, Aprill CN, et al. Centralization as a predictor of provocation discography results in chronic low back pain, and the influence of disability and distress on diagnostic power. Spine J. 2005;5(4):370-380.",
+    "pmid": "15996606",
+    "doi": "10.1016/j.spinee.2004.11.007",
+    "design": "Prospective blinded concurrent reference-standard study",
+    "population": "69 analysed of 107 consecutive specialist-referred chronic low back pain patients (radiology clinic); high disability and distress",
+    "referenceStandard": "Provocation discography",
+    "notes": "Abstract only. Centralization was observed by a physical therapist during repeated movement testing; specificity fell to 80% with severe disability.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "hancock2007",
+    "citation": "Hancock MJ, Maher CG, Latimer J, et al. Systematic review of tests to identify the disc, SIJ or facet joint as the source of low back pain. Eur Spine J. 2007;16(10):1539-1550.",
+    "pmid": "17566796",
+    "doi": "10.1007/s00586-007-0391-1",
+    "design": "Systematic review of diagnostic accuracy",
+    "population": "Patients with low back pain; reference discography, facet or SIJ blocks",
+    "notes": "Abstract only. Context only.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "reiman2015",
+    "citation": "Reiman MP, Goode AP, Cook CE, et al. Diagnostic accuracy of clinical tests for the diagnosis of hip femoroacetabular impingement/labral tear: a systematic review with meta-analysis. Br J Sports Med. 2015;49(12):811.",
+    "pmid": "25515771",
+    "doi": "10.1136/bjsports-2014-094302",
+    "design": "Systematic review with meta-analysis (9 studies pooled)",
+    "population": "Patients assessed for hip femoroacetabular impingement / labral tear",
+    "notes": "Abstract only. Reports pooled sensitivity and DOR but no specificity, so nothing is scored. Context only.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "walton2004",
+    "citation": "Walton J, Mahajan S, Paxinos A, et al. Diagnostic values of tests for acromioclavicular joint pain. J Bone Joint Surg Am. 2004;86(4):807-812.",
+    "pmid": "15069148",
+    "doi": "10.2106/00004623-200404000-00021",
+    "design": "Prospective diagnostic study",
+    "population": "38 shoulder-pain patients who mapped pain between the mid-clavicle and deltoid insertion",
+    "referenceStandard": "50% or greater pain relief after AC joint injection",
+    "notes": "Abstract only. Specificities not reported in the abstract, so context only.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "ouyang2021",
+    "citation": "Ou Yang O, McCombe DB, Keating C, et al. Ulnar-sided wrist pain: a prospective analysis of diagnostic clinical tests. ANZ J Surg. 2021;91(10):2159-2162.",
+    "pmid": "34459533",
+    "doi": "10.1111/ans.17169",
+    "design": "Prospective evaluation",
+    "population": "110 patients presenting with ulnar-sided wrist pain (17 different final diagnoses)",
+    "referenceStandard": "Clinical evaluation with MRI or CT confirmation",
+    "notes": "Abstract only. Fovea sign procedure taken from Tay 2007.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "tay2007",
+    "citation": "Tay SC, Tomita K, Berger RA. The \"ulnar fovea sign\" for defining ulnar wrist pain: an analysis of sensitivity and specificity. J Hand Surg Am. 2007;32(4):438-444.",
+    "pmid": "17398352",
+    "doi": "10.1016/j.jhsa.2007.01.022",
+    "design": "Retrospective review of consecutive arthroscopies",
+    "population": "272 patients undergoing wrist arthroscopy",
+    "referenceStandard": "Wrist arthroscopy",
+    "notes": "Abstract only. Used for the test procedure and as context (95.2/86.5 for foveal and ulnotriquetral ligament injuries, a narrower target in a surgical population); not pooled with Ou Yang 2021.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "grundberg1985",
+    "citation": "Grundberg AB, Reagan DS. Pathologic anatomy of the forearm: intersection syndrome. J Hand Surg Am. 1985;10(2):299-302.",
+    "pmid": "3980951",
+    "doi": "10.1016/s0363-5023(85)80129-5",
+    "design": "Surgical case series",
+    "population": "13 patients operated for intersection syndrome",
+    "notes": "Abstract only. Description and mechanism; no accuracy data.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "ihm2008",
+    "citation": "Ihm J. Proximal wrist extensor tendinopathy. Curr Rev Musculoskelet Med. 2008;1(1):48-52.",
+    "pmid": "19468898",
+    "doi": "10.1007/s12178-007-9005-0",
+    "design": "Narrative review",
+    "population": "Proximal wrist extensor tendinopathy (tennis elbow)",
+    "notes": "Abstract (open access). Context only.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "moloney2010",
+    "citation": "Moloney N, Hall T, Doody C. An investigation of somatosensory profiles in work related upper limb disorders: a case-control observational study protocol. BMC Musculoskelet Disord. 2010;11:22.",
+    "pmid": "20113518",
+    "doi": "10.1186/1471-2474-11-22",
+    "design": "Study protocol",
+    "population": "Office workers with non-specific arm pain",
+    "notes": "Abstract (open access), Background. Context only.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "moloney2013",
+    "citation": "Moloney N, Hall T, Doody C. Sensory hyperalgesia is characteristic of nonspecific arm pain: a comparison with cervical radiculopathy and pain-free controls. Clin J Pain. 2013;29(11):948-956.",
+    "pmid": "23370077",
+    "doi": "10.1097/ajp.0b013e31827c7ae8",
+    "design": "Case-control (quantitative sensory testing)",
+    "population": "40 office workers with non-specific arm pain, 17 with cervical radiculopathy, 40 pain-free controls",
+    "notes": "Abstract only. Context only.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "walkerbone2003",
+    "citation": "Walker-Bone KE, Palmer KT, Reading I, et al. Criteria for assessing pain and nonarticular soft-tissue rheumatic disorders of the neck and upper limb. Semin Arthritis Rheum. 2003;33(3):168-184.",
+    "pmid": "14671727",
+    "doi": "10.1016/s0049-0172(03)00129-x",
+    "design": "Critical literature review (117 articles)",
+    "population": "Diagnostic criteria for soft-tissue disorders of the neck and upper limb",
+    "notes": "Abstract only. Context only.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "weir2015",
+    "citation": "Weir A, Brukner P, Delahunt E, et al. Doha agreement meeting on terminology and definitions in groin pain in athletes. Br J Sports Med. 2015;49(12):768-774.",
+    "pmid": "26031643",
+    "doi": "10.1136/bjsports-2015-094869",
+    "design": "International expert consensus (Doha agreement)",
+    "population": "Athletes with groin pain",
+    "notes": "Read in Europe PMC full text (PMC4484366). Clinical entity definitions; no accuracy data.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "makkouk2008",
+    "citation": "Makkouk AH, Oetgen ME, Swigart CR, et al. Trigger finger: etiology, evaluation, and treatment. Curr Rev Musculoskelet Med. 2008;1(2):92-96.",
+    "pmid": "19468879",
+    "doi": "10.1007/s12178-007-9012-1",
+    "design": "Narrative review",
+    "population": "Trigger finger",
+    "notes": "Read in Europe PMC full text (PMC2684207), Presentation.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "vanalfen2007",
+    "citation": "van Alfen N. The neuralgic amyotrophy consultation. J Neurol. 2007;254(6):695-704.",
+    "pmid": "17446996",
+    "doi": "10.1007/s00415-006-0246-4",
+    "design": "Clinical review based on a specialist cohort",
+    "population": "Patients with neuralgic amyotrophy seen at a dedicated consultation",
+    "notes": "Read in Europe PMC full text (PMC2780663). Frequencies are from the author's patient series.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "martinrm2008",
+    "citation": "Martin RM, Fish DE. Scapular winging: anatomical review, diagnosis, and treatments. Curr Rev Musculoskelet Med. 2008;1(1):1-11.",
+    "pmid": "19468892",
+    "doi": "10.1007/s12178-007-9000-5",
+    "design": "Narrative review",
+    "population": "Scapular winging",
+    "notes": "Read in Europe PMC full text (PMC2684151).",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "mcgurk2023",
+    "citation": "McGurk K, Tracey JA, Daley DN, et al. Diagnostic Considerations in Compressive Neuropathies. J Hand Surg Glob Online. 2023;5(4):525-535.",
+    "pmid": "37521550",
+    "doi": "10.1016/j.jhsg.2022.10.010",
+    "design": "Narrative review",
+    "population": "Upper-limb compressive neuropathies",
+    "notes": "Read in Europe PMC full text (PMC10382896), cubital and ulnar tunnel section.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "balcerzak2022",
+    "citation": "Balcerzak AA, Ruzik K, Tubbs RS, et al. How to Differentiate Pronator Syndrome from Carpal Tunnel Syndrome: A Comprehensive Clinical Comparison. Diagnostics (Basel). 2022;12(10):2433.",
+    "pmid": "36292122",
+    "doi": "10.3390/diagnostics12102433",
+    "design": "Narrative review",
+    "population": "Pronator syndrome vs carpal tunnel syndrome",
+    "notes": "Read in Europe PMC full text (PMC9600501).",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "memon2022",
+    "citation": "Memon AB, Mahmood S, Waseem F, et al. Lateral Antebrachial Cutaneous Neuropathy: A Review of 15 Cases. Cureus. 2022;14(5):e25203.",
+    "pmid": "35747042",
+    "doi": "10.7759/cureus.25203",
+    "design": "Retrospective case series",
+    "population": "15 patients with lateral antebrachial cutaneous neuropathy over 16 years",
+    "notes": "Read in Europe PMC full text (PMC9213327).",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "perolat2018",
+    "citation": "Perolat R, Kastler A, Nicot B, et al. Facet joint syndrome: from diagnosis to interventional management. Insights Imaging. 2018;9(5):773-789.",
+    "pmid": "30090998",
+    "doi": "10.1007/s13244-018-0638-x",
+    "design": "Narrative review",
+    "population": "Lumbar facet joint syndrome",
+    "notes": "Read in Europe PMC full text (PMC6206372). Context only.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "li2021",
+    "citation": "Li N, Dierks G, Vervaeke HE, et al. Thoracic Outlet Syndrome: A Narrative Review. J Clin Med. 2021;10(5):962.",
+    "pmid": "33804565",
+    "doi": "10.3390/jcm10050962",
+    "design": "Narrative review",
+    "population": "Thoracic outlet syndrome",
+    "notes": "Read in Europe PMC full text (PMC7957681). Context only.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "kostretzis2017",
+    "citation": "Kostretzis L, Theodoroudis I, Boutsiadis A, et al. Suprascapular Nerve Pathology: A Review of the Literature. Open Orthop J. 2017;11:140-153.",
+    "pmid": "28400882",
+    "doi": "10.2174/1874325001711010140",
+    "design": "Narrative review",
+    "population": "Suprascapular nerve pathology",
+    "notes": "Read in Europe PMC full text (PMC5366386). Context only.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "engin2023",
+    "citation": "Engin MÇ, Demirel M, Kahraman A, et al. Orthopedic Management of Radial Tunnel Syndrome: A Diagnostic and Treatment Dilemma. Eurasian J Med. 2023;55(1):59-63.",
+    "pmid": "36861868",
+    "doi": "10.5152/eurasianjmed.2023.22274",
+    "design": "Retrospective case series",
+    "population": "18 patients with radial tunnel syndrome at a tertiary centre",
+    "notes": "Read in Europe PMC full text (PMC10081130). Context only.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "fakoya2023",
+    "citation": "Fakoya AO, Tarzian M, Sabater EL, et al. De Quervain's Disease: A Discourse on Etiology, Diagnosis, and Treatment. Cureus. 2023;15(4):e38079.",
+    "pmid": "37252462",
+    "doi": "10.7759/cureus.38079",
+    "design": "Narrative review",
+    "population": "De Quervain's tenosynovitis",
+    "notes": "Read in Europe PMC full text (PMC10208847), Introduction.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "bosner2010",
+    "citation": "Bösner S, Becker A, Hani MA, et al. Chest wall syndrome in primary care patients with chest pain: presentation, associated features and diagnosis. Fam Pract. 2010;27(4):363-369.",
+    "pmid": "20406787",
+    "doi": "10.1093/fampra/cmq024",
+    "design": "Prospective diagnostic cohort with 6-month follow-up",
+    "population": "1,212 consecutive patients aged 35 or over with chest pain at 74 German GPs; 565 had chest wall syndrome",
+    "referenceStandard": "Independent interdisciplinary reference panel (cardiologist, GP, research associate) using baseline and 6-week/6-month follow-up data",
+    "notes": "Paywalled; abstract read. Per-finding 2×2 counts are taken from Wertli 2013, Table 7, which tabulates this study.",
+    "verifiedOn": "2026-11-04"
+  },
+  {
+    "id": "wertli2013",
+    "citation": "Wertli MM, Ruchti KB, Steurer J, Held U. Diagnostic indicators of non-cardiovascular chest pain: a systematic review and meta-analysis. BMC Med. 2013;11:239.",
+    "pmid": "24207111",
+    "doi": "10.1186/1741-7015-11-239",
+    "design": "Systematic review and meta-analysis",
+    "population": "28 studies of non-cardiovascular chest pain (3 on musculoskeletal chest pain)",
+    "notes": "Read in Europe PMC full text (PMC4226211). Table 7 gives TP/FP/FN/TN for each finding of Bösner 2010 and Stochkendahl 2012.",
+    "verifiedOn": "2026-11-04"
+  },
+  {
+    "id": "verdon2007",
+    "citation": "Verdon F, Burnand B, Herzig L, et al. Chest wall syndrome among primary care patients: a cohort study. BMC Fam Pract. 2007;8:51.",
+    "pmid": "17850647",
+    "doi": "10.1186/1471-2296-8-51",
+    "design": "Prospective observational cohort, 1-year follow-up",
+    "population": "672 patients with chest pain at 58 Swiss primary care practices; 300 chest wall syndrome",
+    "verifiedOn": "2026-11-04"
+  },
+  {
+    "id": "ronga2012",
+    "citation": "Ronga A, Vaucher P, Haasenritter J, et al. Development and validation of a clinical prediction rule for chest wall syndrome in primary care. BMC Fam Pract. 2012;13:74.",
+    "pmid": "22866824",
+    "doi": "10.1186/1471-2296-13-74",
+    "design": "Prediction rule derivation (Swiss cohort, n=644) and external validation (Bösner cohort, n=1,212)",
+    "population": "Primary care patients with chest pain",
+    "notes": "Read in Europe PMC full text (PMC3444903). Reports odds ratios, not per-finding sens/spec; context only.",
+    "verifiedOn": "2026-11-04"
+  },
+  {
+    "id": "fam1985",
+    "citation": "Fam AG, Smythe HA. Musculoskeletal chest wall pain. CMAJ. 1985;133(5):379-389.",
+    "pmid": "4027804",
+    "design": "Narrative review",
+    "population": "Musculoskeletal chest wall pain",
+    "verifiedOn": "2026-11-04"
+  },
+  {
+    "id": "vantongel2014",
+    "citation": "Van Tongel A, Karelse A, Berghs B, Van Isacker T, De Wilde L. Diagnostic value of active protraction and retraction for sternoclavicular joint pain. BMC Musculoskelet Disord. 2014;15:421.",
+    "pmid": "25496003",
+    "doi": "10.1186/1471-2474-15-421",
+    "design": "Prospective diagnostic study",
+    "population": "48 orthopaedic patients with atraumatic pain at the sternoclavicular joint; 44 confirmed",
+    "referenceStandard": "≥50% pain relief after sternoclavicular joint injection",
+    "notes": "Read in Europe PMC full text (PMC4295279). Only 4 patients without the condition, so specificity is not usable; frequencies used for cited reasoning only.",
+    "verifiedOn": "2026-11-04"
+  },
+  {
+    "id": "jeon2015",
+    "citation": "Jeon YH. Herpes Zoster and Postherpetic Neuralgia: Practical Consideration for Prevention and Treatment. Korean J Pain. 2015;28(3):177-184.",
+    "pmid": "26175877",
+    "doi": "10.3344/kjp.2015.28.3.177",
+    "design": "Narrative review",
+    "population": "Herpes zoster and postherpetic neuralgia",
+    "notes": "Read in Europe PMC full text (PMC4500781).",
+    "verifiedOn": "2026-11-04"
+  },
+  {
+    "id": "sinha2023",
+    "citation": "Sinha R, Kumari P, Pallavi UK, Sarkar S. Clinical and Epidemiological Profile of Herpes Zoster and Its Complications in a Tertiary Care Center of Bihar: A Prospective Study. Cureus. 2023;15(8):e43560.",
+    "pmid": "37719532",
+    "doi": "10.7759/cureus.43560",
+    "design": "Single-centre cross-sectional study",
+    "population": "72 dermatology outpatients with herpes zoster or post-herpetic complications",
+    "verifiedOn": "2026-11-04"
+  },
+  {
+    "id": "zhou2020",
+    "citation": "Zhou J, Li J, Ma L, Cao S. Zoster sine herpete: a review. Korean J Pain. 2020;33(3):208-215.",
+    "pmid": "32606265",
+    "doi": "10.3344/kjp.2020.33.3.208",
+    "design": "Narrative review",
+    "population": "Zoster sine herpete (shingles without rash)",
+    "verifiedOn": "2026-11-04"
+  },
+  {
+    "id": "robinson2023",
+    "citation": "Robinson C, Downs E, De la Caridad Gomez Y, et al. Notalgia Paresthetica Review: Update on Presentation, Pathophysiology, and Treatment. Clin Pract. 2023;13(1):315-325.",
+    "pmid": "36826171",
+    "doi": "10.3390/clinpract13010029",
+    "design": "Narrative review",
+    "population": "Notalgia paresthetica",
+    "notes": "Read in Europe PMC full text (PMC9955802).",
+    "verifiedOn": "2026-11-04"
+  },
+  {
+    "id": "arends2020",
+    "citation": "Arends S, Böhmer AB, Poels M, et al. Post-thoracotomy pain syndrome: seldom severe, often neuropathic, treated unspecific, and insufficient. Pain Rep. 2020;5(2):e810.",
+    "pmid": "32440607",
+    "doi": "10.1097/pr9.0000000000000810",
+    "design": "Cross-sectional structured telephone interview study",
+    "population": "488 patients 6 to 30 months after open or video-assisted thoracic surgery",
+    "verifiedOn": "2026-11-04"
+  },
+  {
+    "id": "mcmahon2018",
+    "citation": "McMahon LE. Slipping Rib Syndrome: A review of evaluation, diagnosis and treatment. Semin Pediatr Surg. 2018;27(3):183-188.",
+    "pmid": "30078490",
+    "doi": "10.1053/j.sempedsurg.2018.05.009",
+    "design": "Narrative review",
+    "population": "Slipping rib syndrome",
+    "verifiedOn": "2026-11-04"
+  },
+  {
+    "id": "foley2019",
+    "citation": "Foley CM, Sugimoto D, Mooney DP, Meehan WP, Stracciolini A. Diagnosis and Treatment of Slipping Rib Syndrome. Clin J Sport Med. 2019;29(1):18-23.",
+    "pmid": "29023277",
+    "doi": "10.1097/jsm.0000000000000506",
+    "design": "Retrospective chart review",
+    "population": "54 athletes with slipping rib syndrome among 362 with rib pain at a paediatric sports medicine clinic",
+    "verifiedOn": "2026-11-04"
+  },
+  {
+    "id": "stewart1989",
+    "citation": "Stewart JD. Diabetic truncal neuropathy: topography of the sensory deficit. Ann Neurol. 1989;25(3):233-238.",
+    "pmid": "2729914",
+    "doi": "10.1002/ana.410250305",
+    "design": "Case series",
+    "population": "17 episodes of diabetic truncal neuropathy in 7 patients",
+    "verifiedOn": "2026-11-04"
+  },
+  {
+    "id": "brown1992",
+    "citation": "Brown CW, Deffer PA, Akmakjian J, Donaldson DH, Brugman JL. The natural history of thoracic disc herniation. Spine. 1992;17(6 Suppl):S97-102.",
+    "pmid": "1631725",
+    "doi": "10.1097/00007632-199206001-00006",
+    "design": "Retrospective case series",
+    "population": "55 patients with 72 thoracic disc herniations",
+    "verifiedOn": "2026-11-04"
+  },
+  {
+    "id": "quint2012",
+    "citation": "Quint U, Bordon G, Preissl I, Sanner C, Rosenthal D. Thoracoscopic treatment for single level symptomatic thoracic disc herniation: a prospective followed cohort study in a group of 167 consecutive cases. Eur Spine J. 2012;21(4):637-645.",
+    "pmid": "22160099",
+    "doi": "10.1007/s00586-011-2103-0",
+    "design": "Prospective surgical cohort",
+    "population": "167 consecutive patients with single-level symptomatic thoracic disc herniation",
+    "verifiedOn": "2026-11-04"
+  },
+  {
+    "id": "young2008",
+    "citation": "Young BA, Gill HE, Wainner RS, Flynn TW. Thoracic costotransverse joint pain patterns: a study in normal volunteers. BMC Musculoskelet Disord. 2008;9:140.",
+    "pmid": "18922181",
+    "doi": "10.1186/1471-2474-9-140",
+    "design": "Experimental provocation study",
+    "population": "8 asymptomatic male volunteers, 21 costotransverse joint injections",
+    "verifiedOn": "2026-11-04"
+  },
+  {
+    "id": "briggs2009",
+    "citation": "Briggs AM, Smith AJ, Straker LM, Bragge P. Thoracic spine pain in the general population: prevalence, incidence and associated factors in children, adolescents and adults. A systematic review. BMC Musculoskelet Disord. 2009;10:77.",
+    "pmid": "19563667",
+    "doi": "10.1186/1471-2474-10-77",
+    "design": "Systematic review",
+    "population": "33 population studies of thoracic spine pain",
+    "verifiedOn": "2026-11-04"
+  },
+  {
+    "id": "sawicki2021",
+    "citation": "Sawicki P, Tałałaj M, Życińska K, Zgliczyński WS, Wierzba W. Comparison of the Characteristics of Back Pain in Women with Postmenopausal Osteoporosis with and without Vertebral Compression Fracture: A Retrospective Study at a Single Osteoporosis Center in Poland. Med Sci Monit. 2021;27:e929853.",
+    "pmid": "33597390",
+    "doi": "10.12659/msm.929853",
+    "design": "Retrospective comparative study (questionnaire vs densitometric vertebral fracture assessment)",
+    "population": "334 women with postmenopausal osteoporosis and back pain; 150 with vertebral fracture",
+    "referenceStandard": "Densitometric vertebral fracture assessment (prevalent fracture, not necessarily the current pain's cause)",
+    "notes": "Read in Europe PMC full text (PMC7901154), Table 3.",
+    "verifiedOn": "2026-11-04"
+  },
+  {
+    "id": "tonosu2016",
+    "citation": "Tonosu J, Inanami H, Oka H, et al. Diagnosing discogenic low back pain associated with degenerative disc disease using a medical interview. PLoS One. 2016;11(11):e0166031.",
+    "pmid": "27820861",
+    "doi": "10.1371/journal.pone.0166031",
+    "design": "Case-control, medical interview items",
+    "population": "42 patients with discogenic LBP from degenerative disc disease vs 30 consecutive patients with LBP from lumbar spinal stenosis relieved by decompression (mean age 53 vs 71)",
+    "referenceStandard": "Discogenic: MRI disc degeneration plus at least 50% relief on discoblock. Controls: LBP improved by at least 3 NRS points after decompression.",
+    "notes": "Read in PMC full text (PMC5098755), Table 1 counts. Comparison group is older stenosis patients, in whom bending forward tends to ease symptoms, so specificity is likely inflated.",
+    "verifiedOn": "2026-11-03"
+  },
+  {
+    "id": "pitcher2024",
+    "citation": "Pitcher M, Moulson A, Pitcher D, Herbland A, Cairns MC. Diagnostic accuracy of subjective features and physical examination tests for Morton neuroma: a systematic review. Foot Ankle Orthop. 2024;9(4):24730114241291055.",
+    "pmid": "39564390",
+    "doi": "10.1177/24730114241291055",
+    "design": "Systematic review (9 studies, QUADAS-2) with per-study 2x2 tables",
+    "population": "Adults with suspected Morton neuroma. Only Dando 2018 (prospective, 30 adults with forefoot pain, rearfoot and midfoot pain excluded; 7 with a neuroma on ultrasound, 23 without) had enough people without a neuroma to estimate specificity",
+    "referenceStandard": "Per study: MRI, ultrasound, surgery or injection response. Dando: ultrasound",
+    "notes": "Read in PMC full text (PMC11574893), Tables 2-4. Dando's primary data is a doctoral thesis (University of Southampton, 2018, eprints 427315) with no PMID or DOI, so it is cited through this review's tables (as Bösner via Wertli). Thesis read 2026-11-04 (user-supplied PDF): the Dando rows used match its Table 14, which also resolves the two merged paraesthesia rows.",
+    "verifiedOn": "2026-11-04"
+  },
+  {
+    "id": "dando2017",
+    "citation": "Dando C, Cherry L, Jones L, Bowen C. The clinical diagnosis of symptomatic forefoot neuroma in the general population: a Delphi consensus study. J Foot Ankle Res. 2017;10:59.",
+    "pmid": "29299065",
+    "doi": "10.1186/s13047-017-0241-2",
+    "design": "Four-round Delphi consensus (16 experts)",
+    "population": "Health professionals each diagnosing at least 35 forefoot neuromas a year",
+    "notes": "Read in PMC full text (PMC5745595), Table 1 (the expert-derived clinical assessment protocol, with votes out of 16). No cut-off or scoring rule is defined.",
+    "verifiedOn": "2026-11-04"
+  },
+  {
+    "id": "bignotti2015",
+    "citation": "Bignotti B, Signori A, Sormani MP, Molfetta L, Martinoli C, Tagliafico A. Ultrasound versus magnetic resonance imaging for Morton neuroma: systematic review and meta-analysis. Eur Radiol. 2015;25(8):2254-2262.",
+    "pmid": "25809742",
+    "doi": "10.1007/s00330-015-3633-3",
+    "design": "Systematic review and meta-analysis (14 studies)",
+    "population": "Studies of ultrasound and/or MRI for Morton neuroma",
+    "referenceStandard": "Surgery (all studies)",
+    "notes": "Abstract only (paywalled).",
+    "verifiedOn": "2026-11-04"
+  },
+  {
+    "id": "klein2013",
+    "citation": "Klein EE, Weil L Jr, Weil LS Sr, Coughlin MJ, Knight J. Clinical examination of plantar plate abnormality: a diagnostic perspective. Foot Ankle Int. 2013;34(6):800-804.",
+    "pmid": "23696184",
+    "doi": "10.1177/1071100712471825",
+    "design": "Retrospective diagnostic review of medical records",
+    "population": "90 patients (109 feet) who underwent plantar plate repair",
+    "referenceStandard": "Intraoperative findings",
+    "notes": "Abstract only (paywalled). Everyone had surgery for a suspected tear, so the specificities rest on joints found intact at surgery; used for sensitivities (cited reasoning) and confirmatory display only.",
+    "verifiedOn": "2026-11-04"
+  },
+  {
+    "id": "albright2022",
+    "citation": "Albright RH, Brooks BM, Chingre M, Klein EE, Weil LS, Fleischer AE. Diagnostic accuracy of magnetic resonance imaging (MRI) versus dynamic ultrasound for plantar plate injuries: a systematic review and meta-analysis. Eur J Radiol. 2022;152:110315.",
+    "pmid": "35533558",
+    "doi": "10.1016/j.ejrad.2022.110315",
+    "design": "Systematic review and meta-analysis (11 studies, QUADAS-2)",
+    "population": "227 plantar plates imaged with MRI and 238 with ultrasound",
+    "referenceStandard": "Intraoperative confirmation",
+    "notes": "Abstract only (paywalled).",
+    "verifiedOn": "2026-11-04"
+  },
+  {
+    "id": "abouelela2012",
+    "citation": "Abouelela AA, Zohiery AK. The triple compression stress test for diagnosis of tarsal tunnel syndrome. Foot (Edinb). 2012;22(3):146-149.",
+    "pmid": "22405941",
+    "doi": "10.1016/j.foot.2012.02.002",
+    "design": "Case-control diagnostic study",
+    "population": "50 patients with symptoms suggesting tarsal tunnel syndrome vs 40 healthy volunteers (80 feet)",
+    "referenceStandard": "Electrodiagnostic studies",
+    "notes": "Abstract only (paywalled). Healthy controls, so specificity is likely overstated: confirmatory display only.",
+    "verifiedOn": "2026-11-04"
+  },
+  {
+    "id": "menz2023",
+    "citation": "Menz HB, Allan JJ, Buldt AK, Landorf KB, Cicuttini FM, Roddy E, Munteanu SE. Neuropathic pain associated with first metatarsophalangeal joint osteoarthritis: frequency and associated factors. Arthritis Care Res (Hoboken). 2023;75(10):2127-2133.",
+    "pmid": "37013633",
+    "doi": "10.1002/acr.25125",
+    "design": "Cross-sectional study (cases only)",
+    "population": "98 people with painful radiographic first MTP joint osteoarthritis",
+    "notes": "Read in PMC full text (PMC10952225), Tables 1-2. No comparison group: frequencies feed cited reasoning and context only.",
+    "verifiedOn": "2026-11-04"
+  },
+  {
+    "id": "dando2018",
+    "citation": "Dando C. The diagnosis of symptomatic forefoot neuroma from a clinical diagnostic protocol for podiatric assessment [PhD thesis]. University of Southampton; 2018; eprints 427315.",
+    "design": "Prospective diagnostic accuracy study (doctoral thesis, study three)",
+    "population": "30 adults with forefoot pain recruited from NHS podiatry (Solent NHS Trust), rearfoot and midfoot pain excluded; 7 with a neuroma on ultrasound, 23 without (bursitis, capsulitis, synovitis, degenerative joint changes, ganglion, tendonitis, fat pad atrophy, fibroma or no pathology)",
+    "referenceStandard": "Diagnostic musculoskeletal ultrasound",
+    "notes": "User-supplied PDF, read 2026-11-04 (Tables 12-15, sections 5.4 and 5.7). No PMID or DOI; accepted as a thesis source by user decision (2026-11-04). Table 14 reports percentages only: counts are derived (6/7, 16/23), and CIs are Wilson intervals from those counts.",
+    "thesis": {
+      "institution": "University of Southampton",
+      "url": "https://eprints.soton.ac.uk/427315/"
+    },
+    "verifiedOn": "2026-11-04"
+  }
+]

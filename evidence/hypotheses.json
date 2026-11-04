@@ -1,0 +1,2508 @@
+[
+  {
+    "id": "root_mid",
+    "name": "Mid-lumbar nerve root (L2, L3 or L4)",
+    "shortName": "L2–L4 root",
+    "description": "Irritation or compression of an upper/mid lumbar nerve root as it leaves the spine, typically causing pain or numbness in the front of the thigh, knee or inner shin.",
+    "regions": [
+      "low_back",
+      "groin",
+      "anterior_thigh",
+      "lateral_thigh",
+      "medial_thigh",
+      "shin_anterior"
+    ],
+    "prior": null,
+    "context": [
+      {
+        "text": "In a spine-centre study, every patient with L2 or L3 impingement had front-of-thigh pain; L4 impingement more often caused outer-thigh and front-of-shin pain.",
+        "sourceId": "suri2011",
+        "locator": "Table 2"
+      },
+      {
+        "text": "In a retrospective neurosurgery series of 1,545 patients with L3/L4 root pain, the prone leg-lift sign (Léri's sign: lying face down, knee bent, leg lifted) reproduced the pain in 93%. Among 153 patients with similar pain but no root compression on imaging, it was negative in about 80%.",
+        "sourceId": "mostofi2018",
+        "locator": "Full text: Material and methods; Discussion"
+      }
+    ],
+    "mechanism": {
+      "text": "Compression of an L2–L4 nerve root as it leaves the spine, most often by a disc herniation or narrowing of the exit canal (foraminal stenosis), rarely a tumour.",
+      "sourceId": "mostofi2018",
+      "locator": "Material and methods (causes of root compression)"
+    }
+  },
+  {
+    "id": "root_low",
+    "name": "Low lumbar nerve root (L5 or S1)",
+    "shortName": "L5/S1 root",
+    "description": "Irritation or compression of the L5 or S1 nerve root — the classic cause of 'sciatica' running down the back or side of the leg below the knee. The tests that separate L5 from S1 are clinician examinations, so this tool reports them together.",
+    "regions": [
+      "low_back",
+      "buttock",
+      "posterior_thigh",
+      "lateral_thigh",
+      "calf",
+      "shin_anterior",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ],
+    "prior": null,
+    "context": [
+      {
+        "text": "A Cochrane review found most single physical tests perform poorly at detecting disc-related radiculopathy when used alone.",
+        "sourceId": "vanderwindt2010",
+        "locator": "Abstract, Authors' conclusions"
+      },
+      {
+        "text": "Pain location can't tell L5 from S1: clinicians shown patients' pain drawings identified the correct root only about 54% of the time, no better than chance.",
+        "sourceId": "albert2019",
+        "locator": "Abstract, Results; Table 1"
+      },
+      {
+        "text": "In primary care, the history alone predicted nerve root compression on MRI about as well as history plus examination (area under the curve 0.80 vs 0.83).",
+        "sourceId": "vroomen2002",
+        "locator": "Abstract; Figure 1"
+      }
+    ],
+    "mechanism": {
+      "text": "Compression of the L5 or S1 nerve root, most often by a herniated lumbar disc pressing on the root.",
+      "sourceId": "vanderwindt2010",
+      "locator": "Abstract, Background"
+    },
+    "logic": [
+      {
+        "finding": "p_flexion_worse",
+        "type": "supports",
+        "reason": "Bending forward raises the pressure in the disc and pulls on the lower roots (the same stretch as the straight-leg raise), so a root pressed by a disc is often worse with it."
+      }
+    ]
+  },
+  {
+    "id": "stenosis",
+    "name": "Lumbar spinal stenosis (narrowed spinal canal affecting several roots)",
+    "shortName": "Spinal stenosis",
+    "description": "Narrowing of the spinal canal that squeezes several nerve roots at once, typically causing leg pain, heaviness or numbness on walking or standing that eases with sitting or bending forward. Most common in older adults.",
+    "regions": [
+      "low_back",
+      "buttock",
+      "posterior_thigh",
+      "anterior_thigh",
+      "lateral_thigh",
+      "calf",
+      "shin_anterior",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ],
+    "prior": null,
+    "mechanism": {
+      "text": "Narrowing of the spinal canal that squeezes several nerve roots at once (the cauda equina), typically worse when standing or walking upright.",
+      "sourceId": "suri2010",
+      "locator": "Abstract; Table 1"
+    },
+    "logic": []
+  },
+  {
+    "id": "deep_gluteal",
+    "name": "Sciatic nerve entrapment in the buttock (deep gluteal syndrome)",
+    "shortName": "Deep gluteal (sciatic)",
+    "description": "The sciatic nerve is trapped or irritated in the buttock (for example by the piriformis muscle) rather than at the spine. Often called 'piriformis syndrome'.",
+    "regions": [
+      "buttock",
+      "posterior_thigh",
+      "calf"
+    ],
+    "prior": null,
+    "criteria": {
+      "title": "Michel clinical score for piriformis syndrome (12 points; 8 or more = probable). You can check 6 points here, plus the Beatty self-test in the questions; the other 5 need a clinician.",
+      "sourceId": "michel2013",
+      "locator": "Table 2",
+      "items": [
+        {
+          "id": "pms_buttock_fluct",
+          "prompt": "Do you have buttock pain (one or both sides) that comes and goes, with pain-free periods during the day?",
+          "matchIf": "yes"
+        },
+        {
+          "id": "pms_no_lbp",
+          "prompt": "Do you have lower back pain?",
+          "matchIf": "no"
+        },
+        {
+          "id": "pms_sitting",
+          "prompt": "Does sitting, especially for a long time, bring on your buttock or sciatic pain?",
+          "matchIf": "yes",
+          "linkedFinding": "h_pain_sitting_chair"
+        },
+        {
+          "id": "pms_sciatic_fluct",
+          "prompt": "Does your sciatic (leg) pain come and go, with pain-free periods during the day?",
+          "matchIf": "yes"
+        },
+        {
+          "id": "pms_perineal",
+          "prompt": "Does the pain spread into the perineum (between the legs)?",
+          "matchIf": "no"
+        },
+        {
+          "id": "pms_slr",
+          "prompt": "Did the helper straight-leg raise reproduce your leg pain?",
+          "matchIf": "no",
+          "linkedFinding": "st_slr_helper"
+        }
+      ],
+      "clinicianOnly": [
+        "Painless pressure along the spine (L2-S1)",
+        "Buttock pain reproduced by piriformis stretches (FAIR, Freiberg, heel-to-opposite-knee)",
+        "Buttock pain reproduced by palpation over the piriformis",
+        "Sciatic pain reproduced by sustained stretching",
+        "Sciatic pain reproduced by sustained resisted contraction"
+      ]
+    },
+    "context": [
+      {
+        "text": "Across published case reports, the most common features were buttock pain (50–95% depending on how cases are counted), pain made worse by sitting (39–97%), tenderness over the sciatic notch and pain on piriformis-stretching tests. No study has compared these features against people whose sciatica comes from the spine.",
+        "sourceId": "hopayian2010",
+        "locator": "Results: frequencies; Implications for research"
+      },
+      {
+        "text": "Estimates of how common piriformis syndrome is relative to disc herniation vary widely by setting and definition: under 1%, 6% and about 15% in different series.",
+        "sourceId": "hopayian2010",
+        "locator": "Introduction"
+      },
+      {
+        "text": "The Beatty test was designed to be done by the patient. Where it hurts matters: in the original report, 100 people with disc herniation often felt back and leg pain but not deep buttock pain, and 27 people with hip problems felt pain over the outer hip bone instead.",
+        "sourceId": "beatty1994",
+        "locator": "Abstract"
+      },
+      {
+        "text": "Expert reviewers note that pain on sitting is usually associated with sciatic entrapment beneath the piriformis, while pain on walking just outside the sitting bone suggests ischiofemoral impingement. No study has yet measured how well sitting pain separates these from spinal sciatica.",
+        "sourceId": "martin2015",
+        "locator": "Clinical presentation; Table II"
+      }
+    ],
+    "mechanism": {
+      "text": "The sciatic nerve is trapped in the buttock outside the spine, most often beneath the piriformis muscle (68% of cases in one large series), less often at the sciatic foramen or ischial tunnel.",
+      "sourceId": "filler2005",
+      "locator": "Abstract, Methods (final rediagnoses)"
+    },
+    "logic": [
+      {
+        "finding": "h_cough_sneeze",
+        "type": "unexplained",
+        "reason": "Coughing or straining raises pressure inside the spine; a nerve trapped outside the spine isn't affected by it."
+      }
+    ]
+  },
+  {
+    "id": "lfcn",
+    "name": "Lateral femoral cutaneous nerve (meralgia paresthetica)",
+    "shortName": "Lateral thigh nerve",
+    "description": "A purely sensory nerve compressed near the front of the hip bone, causing burning, tingling or numbness on the outer front of the thigh, without weakness.",
+    "regions": [
+      "lateral_thigh",
+      "anterior_thigh"
+    ],
+    "prior": null,
+    "context": [
+      {
+        "text": "In Dutch general practice, meralgia paresthetica was diagnosed at a rate of 4.3 per 10,000 person-years; it was associated with pregnancy and carpal tunnel syndrome.",
+        "sourceId": "vanslobbe2004",
+        "locator": "Abstract, Results"
+      }
+    ],
+    "mechanism": {
+      "text": "The nerve is pinched where it passes into the thigh through the tunnel formed by the inguinal ligament and the bony point at the front of the hip.",
+      "sourceId": "paneyala2024",
+      "locator": "Introduction"
+    },
+    "sensoryOnly": {
+      "sourceId": "paneyala2024",
+      "locator": "Introduction ('The LFCN is a sensory branch of the lumbar plexus')"
+    },
+    "criteria": {
+      "title": "Recognised risk factors and triggers for meralgia paresthetica (reviews and case-control data; not scored)",
+      "sourceId": "chalk2024",
+      "locator": "Abstract",
+      "items": [
+        {
+          "id": "mp_tight",
+          "prompt": "Tight clothing or belts bring on or worsen the symptoms",
+          "matchIf": "yes",
+          "linkedFinding": "h_tight_clothing",
+          "sourceId": "chalk2024",
+          "locator": "Abstract"
+        },
+        {
+          "id": "mp_pregnancy",
+          "prompt": "Symptoms linked to pregnancy",
+          "matchIf": "yes",
+          "linkedFinding": "h_pregnancy",
+          "sourceId": "vanslobbe2004",
+          "locator": "Abstract, Results (OR 12.0 for pregnancy)"
+        },
+        {
+          "id": "mp_diabetes",
+          "prompt": "Diabetes",
+          "matchIf": "yes",
+          "linkedFinding": "h_diabetes",
+          "sourceId": "parisi2011",
+          "locator": "Abstract, Results (28% vs 17% of BMI-matched controls)"
+        }
+      ],
+      "clinicianOnly": [
+        "Abnormal lateral femoral cutaneous nerve conduction study"
+      ]
+    },
+    "contextFlags": [
+      {
+        "finding": "h_surgery_hip_anterior",
+        "answer": "yes",
+        "text": "After front-approach hip surgery, 81% of patients in one study reported symptoms from this nerve a year later (67% after hip replacement, 91% after resurfacing). Your operation makes this nerve a strong suspect.",
+        "sourceId": "goulding2010",
+        "locator": "Abstract, Results"
+      },
+      {
+        "finding": "h_surgery_spine",
+        "answer": "yes",
+        "text": "Some cases of meralgia paresthetica are complications of hip or lower-back surgery.",
+        "sourceId": "chalk2024",
+        "locator": "Abstract"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_leg_numbness",
+        "type": "usual",
+        "reason": "Meralgia presents with pain, pins and needles and sometimes numbness on the outer front of the thigh.",
+        "sourceId": "paneyala2024",
+        "locator": "Introduction"
+      },
+      {
+        "finding": "h_leg_burning",
+        "type": "usual",
+        "reason": "Burning in the outer thigh is a classic description of this condition."
+      },
+      {
+        "finding": "h_pain_below_knee",
+        "type": "unexplained",
+        "reason": "The nerve's skin area ends above the knee."
+      },
+      {
+        "finding": "h_cough_sneeze",
+        "type": "unexplained",
+        "reason": "Coughing or straining raises pressure inside the spine; a nerve trapped outside the spine isn't affected by it."
+      },
+      {
+        "finding": "st_slr_helper",
+        "type": "unexplained",
+        "reason": "The straight-leg raise stretches the sciatic nerve roots, not this nerve."
+      }
+    ]
+  },
+  {
+    "id": "pudendal",
+    "name": "Pudendal nerve (pudendal neuralgia)",
+    "shortName": "Pudendal nerve",
+    "description": "Pain in the genitals, perineum or around the anus caused by irritation of the pudendal nerve.",
+    "regions": [
+      "perineum"
+    ],
+    "prior": null,
+    "context": [
+      {
+        "text": "A 2026 systematic review notes that the Nantes criteria have never been tested for sensitivity or specificity, which is why this tool shows them as a checklist rather than a probability.",
+        "sourceId": "ahmed2026",
+        "locator": "Discussion"
+      }
+    ],
+    "criteria": {
+      "title": "Nantes criteria for pudendal neuralgia (expert consensus)",
+      "sourceId": "labat2008",
+      "locator": "Abstract, Results (essential and exclusion criteria)",
+      "items": [
+        {
+          "id": "pn_territory",
+          "prompt": "Is the pain in the area between the anus and the penis or clitoris (genitals, perineum, around the anus)?",
+          "matchIf": "yes",
+          "linkedFinding": "h_pn_territory"
+        },
+        {
+          "id": "pn_sitting",
+          "prompt": "Is the pain worse when sitting?",
+          "matchIf": "yes",
+          "linkedFinding": "h_pain_sitting_chair"
+        },
+        {
+          "id": "pn_night",
+          "prompt": "Does the pain wake you up at night?",
+          "matchIf": "no",
+          "linkedFinding": "h_pn_night"
+        },
+        {
+          "id": "pn_excl_only",
+          "prompt": "Is the pain ONLY in the tailbone, buttock, pubic bone or lower belly (and nowhere between the anus and genitals)?",
+          "matchIf": "no",
+          "linkedFinding": "h_pn_excl_only"
+        },
+        {
+          "id": "pn_excl_itch",
+          "prompt": "Is the main sensation itching?",
+          "matchIf": "no",
+          "linkedFinding": "h_pn_excl_itch"
+        },
+        {
+          "id": "pn_excl_attacks",
+          "prompt": "Does the pain come ONLY in sudden short attacks, with nothing in between?",
+          "matchIf": "no",
+          "linkedFinding": "h_pn_excl_attacks"
+        }
+      ],
+      "clinicianOnly": [
+        "No objective numbness on examination",
+        "Pain relief after a diagnostic pudendal nerve block",
+        "No imaging abnormality that explains the pain"
+      ]
+    },
+    "mechanism": {
+      "text": "The nerve is trapped along its course through the pelvis: below the piriformis, between the sacrospinous and sacrotuberous ligaments, in Alcock's canal, or at its end branches.",
+      "sourceId": "ahmed2026",
+      "locator": "Introduction (four categories of entrapment)"
+    },
+    "logic": [
+      {
+        "finding": "h_improve_seated",
+        "type": "unexplained",
+        "reason": "Pudendal pain is made worse by sitting, so symptoms that ease when sitting need another explanation."
+      },
+      {
+        "finding": "h_pain_below_knee",
+        "type": "unexplained",
+        "reason": "The pudendal nerve supplies the genitals and the area around the anus, not the leg."
+      }
+    ]
+  },
+  {
+    "id": "cluneal",
+    "name": "Superior cluneal nerve",
+    "shortName": "Superior cluneal",
+    "description": "Small sensory nerves crossing the top of the pelvic bone at the back; entrapment can cause low back and buttock pain, sometimes with leg symptoms.",
+    "regions": [
+      "low_back",
+      "buttock"
+    ],
+    "prior": null,
+    "context": [
+      {
+        "text": "Among 834 patients with low back and/or leg symptoms, 14% had a maximally tender point on the back of the pelvic rim about 7 cm from the midline that reproduced their pain; about half of these also had leg symptoms.",
+        "sourceId": "kuniya2014",
+        "locator": "Abstract, Methods and Results"
+      },
+      {
+        "text": "In a prospective study of 200 people with chronic mechanical low back pain, 12% were confirmed by ultrasound-guided nerve block to have superior cluneal entrapment. Their history and symptoms were similar to other low back pain, which is why questions alone can't single it out.",
+        "sourceId": "kiral2024",
+        "locator": "Abstract, Results and Conclusions"
+      }
+    ],
+    "criteria": {
+      "title": "Kuniya criteria for suspected superior cluneal nerve disorder",
+      "sourceId": "kuniya2014",
+      "locator": "Abstract, Methods",
+      "items": [
+        {
+          "id": "scn_tender",
+          "prompt": "Pressing along the top of the back of your pelvic bone (the rim you rest your hands on at the back), is the most tender spot about a hand-width (≈7 cm) out from your spine?",
+          "matchIf": "yes",
+          "linkedFinding": "st_scn_tender_self"
+        },
+        {
+          "id": "scn_reproduce",
+          "prompt": "Does pressing that spot reproduce your main pain?",
+          "matchIf": "yes",
+          "linkedFinding": "st_scn_reproduce_self"
+        }
+      ],
+      "clinicianOnly": [
+        "Pain relief after a superior cluneal nerve block"
+      ]
+    },
+    "mechanism": {
+      "text": "The nerve is trapped in a tunnel of bone and tough tissue where it crosses the back of the pelvic rim.",
+      "sourceId": "kuniya2014",
+      "locator": "Abstract, Background"
+    },
+    "logic": [
+      {
+        "finding": "h_leg_worse_than_back",
+        "type": "unexplained",
+        "reason": "These nerves supply the skin over the upper buttock, so the pain is felt in the low back and buttock rather than the leg."
+      },
+      {
+        "finding": "h_cough_sneeze",
+        "type": "unexplained",
+        "reason": "Coughing or straining raises pressure inside the spine; a nerve trapped outside the spine isn't affected by it."
+      }
+    ]
+  },
+  {
+    "id": "obturator",
+    "name": "Obturator nerve",
+    "shortName": "Obturator nerve",
+    "description": "Nerve supplying the inner thigh; irritation can cause inner-thigh pain or numbness and groin pain.",
+    "regions": [
+      "medial_thigh",
+      "groin"
+    ],
+    "prior": null,
+    "criteria": {
+      "title": "Clinical pattern described in 32 athletes with obturator nerve entrapment (case series, no comparison group)",
+      "sourceId": "bradshaw1997",
+      "locator": "Abstract",
+      "items": [
+        {
+          "id": "obt_exercise",
+          "prompt": "Is the pain brought on by exercise?",
+          "matchIf": "yes",
+          "linkedFinding": "h_obt_exercise"
+        },
+        {
+          "id": "obt_origin",
+          "prompt": "Does it start high on the inner thigh, near the groin crease where the inner-thigh muscles attach?",
+          "matchIf": "yes",
+          "linkedFinding": "h_obt_origin"
+        },
+        {
+          "id": "obt_radiate",
+          "prompt": "Does it spread down along the inner thigh?",
+          "matchIf": "yes",
+          "linkedFinding": "h_obt_radiate"
+        },
+        {
+          "id": "obt_pectineus_stretch",
+          "prompt": "Self-version of a clinician test. Straight after exercise, kneel on the knee of the painful side with the other foot forward, let that knee drift slightly out to the side, and gently push your hips forward to stretch the top of the inner thigh. Stop if it is sharp. Does it bring on your usual groin or inner-thigh pain?",
+          "matchIf": "yes",
+          "sourceId": "brukner1999",
+          "locator": "Abstract (reproduction of pain by stretching the pectineus muscle after exercise; clinician-performed)",
+          "linkedFinding": "st_obt_stretch_self"
+        },
+        {
+          "id": "obt_skin",
+          "prompt": "Lightly stroke the skin of the inner thigh on both sides with your fingertips, from the groin down to just above the knee. Does the painful side feel clearly duller or numb?",
+          "matchIf": "yes",
+          "sourceId": "kitagawa2009",
+          "locator": "Abstract (numbness among the symptoms that resolved after surgery; location not stated, inner thigh is the nerve's territory)",
+          "linkedFinding": "st_obt_skin_self"
+        }
+      ],
+      "clinicianOnly": [
+        "Needle EMG showing denervation of the adductor muscles",
+        "Pain reproduced by stretching the pectineus muscle after exercise",
+        "Relief after a local anaesthetic obturator nerve block"
+      ]
+    },
+    "mechanism": {
+      "text": "The nerve is trapped by thick fascia over the short adductor muscle where it enters the inner thigh.",
+      "sourceId": "bradshaw1997",
+      "locator": "Abstract"
+    },
+    "context": [
+      {
+        "text": "In a Mayo Clinic EMG-laboratory series of 22 patients, people with acute obturator neuropathy treated without surgery generally did well, whatever the cause.",
+        "sourceId": "sorenson2002",
+        "locator": "Abstract"
+      },
+      {
+        "text": "In athletes, the pain typically starts gradually at the inner-thigh muscle attachment on the pubic bone and worsens with exercise; it is confirmed by EMG and a local anaesthetic obturator nerve block.",
+        "sourceId": "brukner1999",
+        "locator": "Abstract"
+      }
+    ],
+    "contextFlags": [
+      {
+        "finding": "h_surgery_pelvic",
+        "answer": "yes",
+        "text": "Obturator nerve injury is a recognised complication of orthopaedic, gynaecological and urological operations.",
+        "sourceId": "kitagawa2009",
+        "locator": "Abstract, Objective"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_worst_medial_thigh",
+        "type": "usual",
+        "reason": "The characteristic pattern is exercise-induced inner-thigh pain starting near the adductor origin and spreading down the inner thigh.",
+        "sourceId": "bradshaw1997",
+        "locator": "Abstract"
+      },
+      {
+        "finding": "h_pain_below_knee",
+        "type": "unexplained",
+        "reason": "Its skin area ends at about the level of the knee."
+      },
+      {
+        "finding": "h_cough_sneeze",
+        "type": "unexplained",
+        "reason": "Coughing or straining raises pressure inside the spine; a nerve trapped outside the spine isn't affected by it."
+      }
+    ]
+  },
+  {
+    "id": "ilio_genito",
+    "name": "Ilioinguinal, iliohypogastric or genitofemoral nerve",
+    "shortName": "Groin nerves",
+    "description": "Small nerves of the lower abdominal wall and groin, sometimes irritated after hernia repair or abdominal/pelvic surgery.",
+    "regions": [
+      "groin"
+    ],
+    "prior": null,
+    "criteria": {
+      "title": "Clinical triad of ilioinguinal nerve entrapment (case series, no comparison group)",
+      "sourceId": "knockaert1989",
+      "locator": "Abstract",
+      "items": [
+        {
+          "id": "ii_pain",
+          "prompt": "Is the pain a muscular-type ache low on one side of the belly, just above the groin, spreading from there in a consistent way?",
+          "matchIf": "yes",
+          "linkedFinding": "h_ii_pain"
+        },
+        {
+          "id": "ii_sensory",
+          "prompt": "Does the skin of your groin on that side (toward the upper inner thigh or genitals) feel different: numb, tingling or oversensitive?",
+          "matchIf": "yes",
+          "linkedFinding": "h_ii_sensory"
+        },
+        {
+          "id": "ii_trigger",
+          "prompt": "Is there one small, clearly tender spot just inside and below the bony point at the front of your hip that sets off the pain when pressed?",
+          "matchIf": "yes",
+          "linkedFinding": "st_ii_trigger_self"
+        }
+      ],
+      "clinicianOnly": [
+        "Pain relief after a local anaesthetic injection at that point"
+      ]
+    },
+    "mechanism": {
+      "text": "The ilioinguinal nerve is trapped as it passes through the abdominal wall muscles near the front of the hip bone, producing a trigger point just inside and below it.",
+      "sourceId": "knockaert1989",
+      "locator": "Abstract"
+    },
+    "contextFlags": [
+      {
+        "finding": "h_surgery_hernia",
+        "answer": "yes",
+        "text": "About 1 in 4 people (23.5%) in one study still had groin pain three or more months after inguinal hernia repair, typically at or near the scar and in some men spreading into the scrotum.",
+        "sourceId": "ergonenc2017",
+        "locator": "Abstract, Results"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_recent_surgery",
+        "type": "usual",
+        "reason": "Most cases follow an operation in the groin or lower abdomen that injured or trapped the nerve."
+      },
+      {
+        "finding": "h_surgery_hernia",
+        "type": "usual",
+        "reason": "Inguinal hernia repair is the operation most often linked to these nerves."
+      },
+      {
+        "finding": "h_pain_below_knee",
+        "type": "unexplained",
+        "reason": "These nerves supply the groin and the top of the inner thigh, not the lower leg."
+      }
+    ]
+  },
+  {
+    "id": "femoral",
+    "name": "Femoral nerve (outside the spine)",
+    "shortName": "Femoral nerve",
+    "description": "The main nerve to the front of the thigh, which can be compressed in the pelvis or groin, causing front-of-thigh numbness and knee weakness.",
+    "regions": [
+      "anterior_thigh",
+      "groin",
+      "shin_anterior"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "st_sit_to_stand",
+        "type": "usual",
+        "reason": "The femoral nerve powers the quadriceps, the front-of-thigh muscle used to stand up from a chair."
+      },
+      {
+        "finding": "st_sens_anterior_thigh",
+        "type": "usual",
+        "reason": "Its branches supply the skin of the front of the thigh."
+      },
+      {
+        "finding": "st_sens_medial_knee",
+        "type": "usual",
+        "reason": "Its saphenous branch supplies the skin of the inner knee and lower leg."
+      },
+      {
+        "finding": "st_prone_knee_bend",
+        "type": "usual",
+        "reason": "Bending the knee while lying face down stretches the femoral nerve."
+      },
+      {
+        "finding": "st_heel_raise",
+        "type": "unexplained",
+        "reason": "The calf muscles are supplied by the sciatic nerve, not the femoral nerve."
+      },
+      {
+        "finding": "st_heel_walk",
+        "type": "unexplained",
+        "reason": "The muscles that lift the front of the foot are supplied by the sciatic nerve, not the femoral nerve."
+      },
+      {
+        "finding": "h_cough_sneeze",
+        "type": "unexplained",
+        "reason": "Coughing or straining raises pressure inside the spine; a nerve trapped outside the spine isn't affected by it."
+      }
+    ]
+  },
+  {
+    "id": "hip_oa",
+    "name": "Hip joint osteoarthritis",
+    "shortName": "Hip arthritis",
+    "category": "mimic",
+    "description": "Wear of the hip joint itself, which can cause groin, buttock and thigh pain that is easily mistaken for a nerve problem.",
+    "regions": [
+      "groin",
+      "anterior_thigh",
+      "medial_thigh",
+      "buttock",
+      "lateral_thigh"
+    ],
+    "prior": null,
+    "context": [
+      {
+        "text": "Hip joint pain typically causes groin or buttock pain, sometimes referred below the knee, often worse with weight bearing.",
+        "sourceId": "suri2010",
+        "locator": "Table 1 (differential diagnosis)"
+      },
+      {
+        "text": "In people aged 45 to 65 seeing their GP with new hip or knee complaints, only about 1 in 8 painful hips (105 of 789) showed definite osteoarthritis on X-ray, so hip pain at this age is often something else.",
+        "sourceId": "rondas2022",
+        "locator": "Abstract, Results"
+      },
+      {
+        "text": "Among people seeing a primary care doctor for hip or groin pain, about a third had osteoarthritis on X-ray.",
+        "sourceId": "metcalfe2019",
+        "locator": "Abstract, Results"
+      }
+    ],
+    "mechanism": {
+      "text": "Not nerve compression: wear of the hip joint, with bone spurs and joint-space narrowing on X-ray.",
+      "sourceId": "altman1991",
+      "locator": "Abstract"
+    },
+    "logic": [
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "Hip arthritis is joint pain and doesn't affect a nerve, so numbness or pins and needles points elsewhere."
+      },
+      {
+        "finding": "h_cough_sneeze",
+        "type": "unexplained",
+        "reason": "Coughing or sneezing doesn't load the hip joint."
+      }
+    ]
+  },
+  {
+    "id": "sij",
+    "name": "Sacroiliac joint pain",
+    "shortName": "Sacroiliac joint",
+    "category": "mimic",
+    "description": "Pain from the joint between the spine's base (sacrum) and the pelvis, felt low in the back and buttock and sometimes spreading down the leg.",
+    "regions": [
+      "low_back",
+      "buttock",
+      "posterior_thigh",
+      "groin"
+    ],
+    "prior": null,
+    "context": [
+      {
+        "text": "Sacroiliac joint pain is typically felt over the bony bump at the back of the pelvis, sometimes radiating into the buttock and leg.",
+        "sourceId": "suri2010",
+        "locator": "Table 1 (differential diagnosis)"
+      }
+    ],
+    "mechanism": {
+      "text": "Not nerve compression: pain arising from the sacroiliac joint, confirmed by numbing the joint with an injection.",
+      "sourceId": "laslett2005",
+      "locator": "Abstract"
+    },
+    "logic": [
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "Sacroiliac joint pain comes from the joint, not a nerve, so it doesn't cause numbness or pins and needles."
+      }
+    ]
+  },
+  {
+    "id": "gtps",
+    "name": "Gluteal tendinopathy (greater trochanteric pain syndrome)",
+    "shortName": "Outer hip tendon",
+    "category": "mimic",
+    "description": "Irritation of the tendons attaching to the bony point on the outside of the hip, causing outer hip and thigh pain, often worse lying on that side or standing on one leg.",
+    "regions": [
+      "lateral_thigh",
+      "buttock"
+    ],
+    "prior": null,
+    "context": [
+      {
+        "text": "Trochanteric pain causes lateral hip and thigh pain with tenderness over the bony point at the side of the hip.",
+        "sourceId": "suri2010",
+        "locator": "Table 1 (differential diagnosis)"
+      }
+    ],
+    "mechanism": {
+      "text": "Not nerve compression: damage or irritation of the gluteal tendons at the bony point of the hip, seen on MRI.",
+      "sourceId": "grimaldi2017",
+      "locator": "Abstract, Methods"
+    },
+    "logic": [
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "These are tendon and bursa problems at the side of the hip; they don't cause numbness or pins and needles."
+      },
+      {
+        "finding": "h_pain_below_knee",
+        "type": "unexplained",
+        "reason": "Pain from the side of the hip may spread down the outer thigh, but rarely below the knee."
+      }
+    ]
+  },
+  {
+    "id": "pfcn",
+    "name": "Posterior femoral cutaneous nerve",
+    "shortName": "Posterior thigh nerve",
+    "category": "nerve",
+    "description": "A sensory nerve supplying the skin of the lower buttock, back of the thigh and back of the knee. Irritation causes pain or tingling there, often brought on by sitting.",
+    "regions": [
+      "buttock",
+      "posterior_thigh"
+    ],
+    "prior": null,
+    "mechanism": {
+      "text": "The nerve is irritated or compressed in the lower buttock region, typically producing pain when sitting.",
+      "sourceId": "joshi2017",
+      "locator": "Abstract"
+    },
+    "context": [
+      {
+        "text": "Neuropathy of this nerve causes pain and tingling over the lower buttock, back of the thigh and back of the knee; sitting pain is a recognised presentation.",
+        "sourceId": "joshi2017",
+        "locator": "Abstract"
+      },
+      {
+        "text": "Nerve conduction testing of this nerve is difficult, so diagnosis is mainly clinical; in a small series, all 6 suspected cases were confirmed by an ultrasound-guided nerve block.",
+        "sourceId": "meng2015",
+        "locator": "Abstract"
+      },
+      {
+        "text": "In two surgical series (17 and 52 patients), every patient had pain on sitting, felt in the buttock, back of the thigh or around the sitting bone; many spent much of the day standing or lying down to avoid it. Most were women.",
+        "sourceId": "kachniarz2021",
+        "locator": "Abstract, Background and Results"
+      },
+      {
+        "text": "Half of the patients in the larger series had MRI evidence of a previous hamstring injury.",
+        "sourceId": "kachniarz2021",
+        "locator": "Abstract, Results"
+      },
+      {
+        "text": "Its perineal (inferior cluneal) branches can cause sitting pain that overlaps with pudendal neuralgia; targeted nerve blocks are used to tell them apart.",
+        "sourceId": "jottard2022",
+        "locator": "Abstract"
+      }
+    ],
+    "criteria": {
+      "title": "Clinical pattern in surgical series of posterior femoral cutaneous nerve sitting pain (case series, no comparison group)",
+      "sourceId": "dellon2015",
+      "locator": "Abstract, Patients and Methods",
+      "items": [
+        {
+          "id": "pf_sitting",
+          "prompt": "Does sitting bring on or worsen your pain?",
+          "matchIf": "yes",
+          "linkedFinding": "h_pain_sitting_chair"
+        },
+        {
+          "id": "pf_location",
+          "prompt": "Is the pain in the lower buttock, the back of the thigh, or around the bone you sit on?",
+          "matchIf": "yes",
+          "linkedFinding": "h_pfcn_location"
+        },
+        {
+          "id": "pf_avoid",
+          "prompt": "Do you spend much of the day standing or lying down because sitting is painful?",
+          "matchIf": "yes",
+          "linkedFinding": "h_pfcn_avoid_sitting"
+        },
+        {
+          "id": "pf_hamstring",
+          "prompt": "Have you previously injured the hamstring (back of the thigh) on that side?",
+          "matchIf": "yes",
+          "linkedFinding": "h_hamstring_injury"
+        },
+        {
+          "id": "pf_skin",
+          "prompt": "Lightly stroke the skin of the lower buttock and the back of the thigh on both sides with your fingertips. Does the painful side feel different: numb, tingling, or unusually sensitive?",
+          "matchIf": "yes",
+          "sourceId": "joshi2017",
+          "locator": "Abstract (pain and paresthesia in the skin over the inferior buttocks, posterior thigh and popliteal region)",
+          "linkedFinding": "st_pfcn_skin"
+        }
+      ],
+      "clinicianOnly": [
+        "Pain relief after a targeted posterior femoral cutaneous nerve block"
+      ]
+    },
+    "sensoryOnly": {
+      "sourceId": "meng2015",
+      "locator": "Abstract, Objective ('a sensory nerve originating from the sacral plexus')"
+    },
+    "logic": [
+      {
+        "finding": "h_cough_sneeze",
+        "type": "unexplained",
+        "reason": "Coughing or straining raises pressure inside the spine; a nerve trapped outside the spine isn't affected by it."
+      }
+    ]
+  },
+  {
+    "id": "ifi",
+    "name": "Ischiofemoral impingement",
+    "shortName": "Ischiofemoral impingement",
+    "category": "mimic",
+    "description": "Narrowing of the space between the sitting bone (ischium) and the top of the thigh bone, which can pinch soft tissue near the sciatic nerve and cause deep buttock pain, sometimes with sciatic symptoms.",
+    "regions": [
+      "buttock",
+      "posterior_thigh"
+    ],
+    "prior": null,
+    "mechanism": {
+      "text": "Not primarily nerve compression: the small bony knob at the top of the thigh bone (lesser trochanter) rubs against the sitting bone, which can also irritate the nearby sciatic nerve.",
+      "sourceId": "martin2015",
+      "locator": "Clinical presentation"
+    },
+    "context": [
+      {
+        "text": "Typical features: sciatic-type complaints, limping, pain reproduced by walking with long strides, and tenderness just outside the sitting bone.",
+        "sourceId": "martin2015",
+        "locator": "Table II"
+      }
+    ]
+  },
+  {
+    "prior": null,
+    "id": "root_cervical",
+    "name": "Cervical nerve root (C5 to C8)",
+    "shortName": "Neck nerve root",
+    "description": "Irritation or compression of a nerve root as it leaves the neck, which can cause pain, numbness or weakness anywhere from the shoulder blade and shoulder down to the hand. The tests that tell one root level from another are clinician examinations, so this tool reports them together.",
+    "regions": [
+      "neck",
+      "scapula",
+      "shoulder",
+      "upper_arm_lateral",
+      "upper_arm_medial",
+      "elbow_lateral",
+      "elbow_medial",
+      "forearm_lateral",
+      "forearm_medial",
+      "forearm_anterior",
+      "hand_median",
+      "hand_ulnar",
+      "hand_dorsal_radial",
+      "wrist_radial",
+      "wrist_ulnar",
+      "forearm_dorsal",
+      "upper_back"
+    ],
+    "context": [
+      {
+        "text": "A 2026 review found the evidence for every physical test of neck nerve-root problems sparse and of very low certainty.",
+        "sourceId": "thoomes2026",
+        "locator": "Abstract, Conclusions"
+      },
+      {
+        "text": "Spurling's test (head tilted and pressed down) is specific but misses many cases, so it is better for confirming than for ruling out.",
+        "sourceId": "lin2025",
+        "locator": "Abstract, Conclusions"
+      }
+    ]
+  },
+  {
+    "prior": null,
+    "id": "cts",
+    "name": "Median nerve at the wrist (carpal tunnel syndrome)",
+    "shortName": "Carpal tunnel",
+    "description": "Compression of the median nerve in the tunnel at the front of the wrist, typically causing numbness and tingling in the thumb, index and middle fingers, often at night.",
+    "regions": [
+      "hand_median",
+      "forearm_anterior"
+    ],
+    "context": [
+      {
+        "text": "Tinel's tapping test is less accurate when done with a fingertip than with a reflex hammer, so a negative self-tap rules out little.",
+        "sourceId": "hill2026",
+        "locator": "Abstract, Results and Conclusion"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_arm_numbness",
+        "type": "usual",
+        "reason": "Carpal tunnel syndrome initially shows as pins and needles, numbness or tingling of the fingers.",
+        "sourceId": "zaki2022",
+        "locator": "Abstract"
+      }
+    ]
+  },
+  {
+    "prior": null,
+    "id": "median_proximal",
+    "name": "Median nerve at the elbow or forearm (pronator syndrome, anterior interosseous nerve)",
+    "shortName": "Median nerve, forearm",
+    "description": "Irritation of the median nerve above the wrist. Pronator syndrome causes aching in the front of the forearm with hand tingling; anterior interosseous nerve syndrome causes weakness of the thumb and index finger tip-pinch without numbness.",
+    "regions": [
+      "forearm_anterior",
+      "hand_median",
+      "elbow_medial"
+    ],
+    "mechanism": {
+      "text": "Anterior interosseous nerve syndrome is usually not a trapped nerve but a selective inflammation of the nerve fibres higher up in the upper arm.",
+      "sourceId": "pham2014",
+      "locator": "Abstract, Results and Conclusion"
+    },
+    "context": [
+      {
+        "text": "Pronator syndrome is most often misdiagnosed as carpal tunnel syndrome; it causes vague pain in the upper forearm with pins and needles in the median nerve fingers, worse with activity.",
+        "sourceId": "balcerzak2022",
+        "locator": "Introduction"
+      }
+    ]
+  },
+  {
+    "prior": null,
+    "id": "cubital",
+    "name": "Ulnar nerve at the elbow (cubital tunnel syndrome)",
+    "shortName": "Cubital tunnel",
+    "description": "Compression or stretching of the ulnar nerve behind the inner elbow (the funny bone), causing numbness and tingling in the ring and little fingers, and sometimes hand weakness.",
+    "regions": [
+      "elbow_medial",
+      "forearm_medial",
+      "hand_ulnar"
+    ],
+    "context": [
+      {
+        "text": "In patients suspected of this problem, elbow provocation tests added little to a routine clinical examination.",
+        "sourceId": "beekman2009",
+        "locator": "Abstract, Results and Conclusion"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_arm_numbness",
+        "type": "usual",
+        "reason": "Ulnar nerve compression presents with pain, abnormal sensation or pins and needles in the ring and little fingers and the little-finger side of the hand.",
+        "sourceId": "mcgurk2023",
+        "locator": "Cubital Tunnel and Ulnar Tunnel Syndrome"
+      }
+    ]
+  },
+  {
+    "prior": null,
+    "id": "guyon",
+    "name": "Ulnar nerve at the wrist (Guyon's canal)",
+    "shortName": "Guyon's canal",
+    "description": "Compression of the ulnar nerve at the little-finger side of the wrist, causing numbness of the ring and little fingers and/or weakness of the small hand muscles, without symptoms in the forearm.",
+    "regions": [
+      "hand_ulnar",
+      "wrist_ulnar"
+    ],
+    "logic": [],
+    "context": [
+      {
+        "text": "Compression in Guyon's canal can cause weakness only, numbness only, or both, depending on where in the canal the nerve is pressed.",
+        "sourceId": "mcgurk2023",
+        "locator": "Cubital Tunnel and Ulnar Tunnel Syndrome"
+      }
+    ]
+  },
+  {
+    "prior": null,
+    "id": "radial_tunnel",
+    "name": "Radial nerve at the elbow (radial tunnel, posterior interosseous nerve)",
+    "shortName": "Radial tunnel",
+    "description": "Compression of the deep branch of the radial nerve just below the outer elbow, causing aching in the outer forearm (radial tunnel syndrome) or weakness lifting the fingers (posterior interosseous nerve palsy).",
+    "regions": [
+      "elbow_lateral",
+      "forearm_lateral",
+      "forearm_dorsal"
+    ],
+    "context": [
+      {
+        "text": "Radial tunnel syndrome is often misdiagnosed as the more common tennis elbow.",
+        "sourceId": "engin2023",
+        "locator": "Abstract"
+      }
+    ]
+  },
+  {
+    "prior": null,
+    "id": "superficial_radial",
+    "name": "Superficial radial nerve (Wartenberg's syndrome)",
+    "shortName": "Superficial radial",
+    "description": "Irritation of the skin branch of the radial nerve at the thumb side of the forearm, often from a tight watch strap or cuff, causing numbness or burning over the back of the thumb and hand.",
+    "regions": [
+      "forearm_lateral",
+      "hand_dorsal_radial",
+      "wrist_radial"
+    ],
+    "logic": [
+      {
+        "finding": "h_arm_numbness",
+        "type": "usual",
+        "reason": "This is a skin nerve, so its typical symptoms are numbness, tingling or burning over the back of the thumb and hand."
+      }
+    ]
+  },
+  {
+    "prior": null,
+    "id": "tos",
+    "name": "Brachial plexus at the thoracic outlet (neurogenic thoracic outlet syndrome)",
+    "shortName": "Thoracic outlet",
+    "description": "Compression of the nerve bundle to the arm as it passes between the collarbone, first rib and neck muscles, typically causing pain and tingling on the little-finger side of the arm and hand that is worse with the arms raised.",
+    "regions": [
+      "neck",
+      "shoulder",
+      "scapula",
+      "upper_arm_medial",
+      "forearm_medial",
+      "hand_ulnar"
+    ],
+    "context": [
+      {
+        "text": "The common thoracic outlet arm-raising tests are often positive in people without the condition: the Roos test was positive in 47% of normal subjects and 77% of people with carpal tunnel syndrome.",
+        "sourceId": "nord2008",
+        "locator": "Abstract, Results"
+      },
+      {
+        "text": "About 95% of thoracic outlet syndrome is the nerve (neurogenic) type, and there is no agreed set of diagnostic criteria.",
+        "sourceId": "li2021",
+        "locator": "Epidemiology"
+      }
+    ]
+  },
+  {
+    "prior": null,
+    "id": "suprascapular",
+    "name": "Suprascapular nerve",
+    "shortName": "Suprascapular",
+    "description": "Compression of the nerve to the muscles on the back of the shoulder blade, causing a deep ache at the back of the shoulder and weakness turning the arm outward.",
+    "regions": [
+      "scapula",
+      "shoulder"
+    ],
+    "context": [
+      {
+        "text": "The nerve powers the two rotator cuff muscles on the shoulder blade and supplies feeling to the back of the shoulder joint, so it causes shoulder pain with weakness lifting and turning the arm outward.",
+        "sourceId": "kostretzis2017",
+        "locator": "Anatomy"
+      }
+    ]
+  },
+  {
+    "prior": null,
+    "id": "long_thoracic",
+    "name": "Long thoracic nerve",
+    "shortName": "Long thoracic",
+    "description": "Injury to the nerve of the serratus anterior muscle, which makes the inner edge of the shoulder blade stick out ('winging'), especially when pushing against a wall.",
+    "regions": [
+      "scapula"
+    ],
+    "logic": [
+      {
+        "finding": "h_scapula_winging",
+        "type": "usual",
+        "reason": "Paralysis of the serratus anterior makes the inner edge of the shoulder blade wing out; the diagnosis is usually made by looking.",
+        "sourceId": "martinrm2008",
+        "locator": "Abstract"
+      }
+    ]
+  },
+  {
+    "prior": null,
+    "id": "axillary",
+    "name": "Axillary nerve",
+    "shortName": "Axillary",
+    "description": "Injury to the nerve of the deltoid muscle, often after a shoulder dislocation, causing weakness lifting the arm out to the side and numbness over the outer upper arm.",
+    "regions": [
+      "shoulder",
+      "upper_arm_lateral"
+    ]
+  },
+  {
+    "prior": null,
+    "id": "musculocutaneous",
+    "name": "Musculocutaneous and lateral antebrachial cutaneous nerve",
+    "shortName": "Musculocutaneous",
+    "description": "Irritation of the nerve to the biceps or its skin branch at the front of the elbow, causing elbow-bending weakness and/or numbness along the thumb side of the forearm.",
+    "regions": [
+      "elbow_lateral",
+      "forearm_lateral",
+      "upper_arm_lateral"
+    ],
+    "logic": [
+      {
+        "finding": "h_arm_numbness",
+        "type": "usual",
+        "reason": "Its skin branch supplies the thumb side of the forearm; numbness or tingling there without weakness is the common presentation.",
+        "sourceId": "memon2022",
+        "locator": "Introduction"
+      }
+    ],
+    "context": [
+      {
+        "text": "In a series of 15 patients, the commonest causes were surgery and needles at the front of the elbow (blood tests or drips).",
+        "sourceId": "memon2022",
+        "locator": "Results"
+      }
+    ]
+  },
+  {
+    "prior": null,
+    "id": "neuralgic_amyotrophy",
+    "name": "Neuralgic amyotrophy (Parsonage-Turner syndrome)",
+    "shortName": "Neuralgic amyotrophy",
+    "description": "An inflammatory attack on one or more arm nerves, typically starting with sudden severe shoulder or arm pain that settles over days to weeks and is followed by weakness.",
+    "regions": [
+      "shoulder",
+      "scapula",
+      "upper_arm_lateral",
+      "forearm_anterior",
+      "hand_median"
+    ],
+    "context": [
+      {
+        "text": "In one ultrasound series of 53 patients, the most commonly affected nerve was the anterior interosseous nerve (23%).",
+        "sourceId": "aranyi2017",
+        "locator": "Abstract, Results"
+      },
+      {
+        "text": "It is often first mistaken for a shoulder joint problem or a trapped neck nerve root.",
+        "sourceId": "vanalfen2007",
+        "locator": "Diagnosis"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_sudden_severe_arm_pain",
+        "type": "usual",
+        "reason": "An acute onset of unusually severe, relentless neck, shoulder or arm pain occurs in 96% of patients.",
+        "sourceId": "vanalfen2007",
+        "locator": "Pain types"
+      },
+      {
+        "finding": "h_scapula_winging",
+        "type": "usual",
+        "reason": "Winging of the shoulder blade is the tell-tale sign for most physicians, present in about two-thirds of patients.",
+        "sourceId": "vanalfen2007",
+        "locator": "Introduction"
+      }
+    ]
+  },
+  {
+    "prior": null,
+    "id": "rotator_cuff",
+    "category": "mimic",
+    "name": "Rotator cuff or subacromial shoulder pain (shoulder tendons)",
+    "shortName": "Rotator cuff",
+    "description": "Not a nerve problem: tendinopathy or a tear of the shoulder's rotator cuff tendons, the most common cause of shoulder pain seen by doctors. Pain is usually at the outer shoulder and upper arm and comes on lifting the arm.",
+    "regions": [
+      "shoulder",
+      "upper_arm_lateral"
+    ],
+    "logic": [
+      {
+        "finding": "h_arm_numbness",
+        "type": "unexplained",
+        "reason": "A tendon or joint problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "category": "mimic",
+    "prior": null,
+    "id": "lateral_epicondylalgia",
+    "name": "Tennis elbow (lateral elbow tendinopathy)",
+    "shortName": "Tennis elbow",
+    "description": "Not a nerve problem: overload of the tendon that attaches the wrist-extending muscles to the outer elbow bone. Pain is at the outer elbow and comes on gripping and lifting.",
+    "regions": [
+      "elbow_lateral",
+      "forearm_lateral",
+      "forearm_dorsal"
+    ],
+    "context": [
+      {
+        "text": "A review of elbow examination found only one accuracy study for tennis elbow, and no elbow test accurate enough to rule it in or out.",
+        "sourceId": "zwerus2018",
+        "locator": "Abstract, Results and Conclusions"
+      },
+      {
+        "text": "Tennis elbow is tendinopathy of the wrist-extensor tendon; besides sport it occurs in jobs with repetitive hand and arm movements.",
+        "sourceId": "ihm2008",
+        "locator": "Abstract"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_grip_lateral_elbow",
+        "type": "usual",
+        "reason": "Symptoms are typically felt with gripping, shaking hands, turning doorknobs or lifting with the palm down.",
+        "sourceId": "ihm2008",
+        "locator": "Clinical presentation"
+      },
+      {
+        "finding": "h_arm_numbness",
+        "type": "unexplained",
+        "reason": "Tennis elbow usually causes no numbness or tingling; if present, a nerve cause (neck nerve root or radial nerve at the elbow) should be considered.",
+        "sourceId": "ihm2008",
+        "locator": "Clinical presentation"
+      }
+    ],
+    "criteria": {
+      "title": "Clinical criteria for tennis elbow (all three should be present)",
+      "sourceId": "ihm2008",
+      "locator": "Clinical presentation (criteria citing its reference 7)",
+      "items": [
+        {
+          "id": "le_pain",
+          "prompt": "Pain at the outer elbow",
+          "matchIf": "yes",
+          "linkedFinding": "h_outer_elbow_main"
+        },
+        {
+          "id": "le_tender",
+          "prompt": "Tenderness over the outer elbow bone",
+          "matchIf": "yes",
+          "linkedFinding": "st_epicondyle_tender_self"
+        },
+        {
+          "id": "le_resisted",
+          "prompt": "Pain on resisted wrist extension",
+          "matchIf": "yes",
+          "linkedFinding": "st_resisted_wrist_ext_self"
+        }
+      ],
+      "clinicianOnly": [
+        "Mill's test (clinician stretches the wrist extensors with the elbow straight)",
+        "Resisted middle-finger extension"
+      ]
+    }
+  },
+  {
+    "category": "mimic",
+    "prior": null,
+    "id": "medial_epicondylalgia",
+    "name": "Golfer's elbow (medial elbow tendinopathy)",
+    "shortName": "Golfer's elbow",
+    "description": "Not a nerve problem: overload of the tendon that attaches the wrist-bending muscles to the inner elbow bone. Pain is at the inner elbow and comes on gripping or bending the wrist.",
+    "regions": [
+      "elbow_medial",
+      "forearm_medial"
+    ],
+    "context": [
+      {
+        "text": "A review of elbow examination found no accuracy studies at all for golfer's elbow tests.",
+        "sourceId": "zwerus2018",
+        "locator": "Abstract, Results"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_grip_medial_elbow",
+        "type": "usual",
+        "reason": "Gripping and bending the wrist against resistance load the tendon at the inner elbow."
+      },
+      {
+        "finding": "h_arm_numbness",
+        "type": "unexplained",
+        "reason": "A tendon or joint problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "category": "mimic",
+    "prior": null,
+    "id": "frozen_shoulder",
+    "name": "Frozen shoulder (adhesive capsulitis)",
+    "shortName": "Frozen shoulder",
+    "description": "Not a nerve problem: thickening and tightening of the shoulder joint capsule, causing pain and a stiff shoulder that can't be moved fully in several directions, even by someone else.",
+    "regions": [
+      "shoulder",
+      "upper_arm_lateral"
+    ],
+    "context": [
+      {
+        "text": "One clinical sign (the shoulder shrug sign) may be sensitive for stiffness-related shoulder problems, but no single shoulder test is reliable on its own.",
+        "sourceId": "hegedus2012",
+        "locator": "Abstract, Results and Conclusion"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_shoulder_stiff",
+        "type": "usual",
+        "reason": "Loss of movement in several directions, including when someone else moves the arm, is the defining feature."
+      },
+      {
+        "finding": "h_arm_numbness",
+        "type": "unexplained",
+        "reason": "A tendon or joint problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "category": "mimic",
+    "prior": null,
+    "id": "biceps_tendinopathy",
+    "name": "Biceps tendon problem (front of the shoulder)",
+    "shortName": "Biceps tendon",
+    "description": "Not a nerve problem: irritation of the long head of the biceps tendon as it runs over the front of the shoulder, causing front-of-shoulder pain with lifting and carrying.",
+    "regions": [
+      "shoulder",
+      "upper_arm_lateral",
+      "upper_arm_medial"
+    ],
+    "context": [
+      {
+        "text": "The usual clinician tests for the biceps tendon (Speed's and Yergason's) change the probability very little.",
+        "sourceId": "holtby2004",
+        "locator": "Abstract, Conclusions"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_front_shoulder_pain",
+        "type": "usual",
+        "reason": "The tendon runs in a groove at the front of the shoulder, where its pain is felt."
+      },
+      {
+        "finding": "h_arm_numbness",
+        "type": "unexplained",
+        "reason": "A tendon or joint problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "category": "mimic",
+    "prior": null,
+    "id": "de_quervain",
+    "name": "De Quervain's tenosynovitis (thumb-side wrist tendons)",
+    "shortName": "De Quervain's",
+    "description": "Not a nerve problem: irritation of the two thumb tendons where they pass over the thumb side of the wrist, causing pain there on moving the thumb.",
+    "regions": [
+      "forearm_lateral",
+      "hand_dorsal_radial",
+      "wrist_radial"
+    ],
+    "logic": [
+      {
+        "finding": "h_wrist_thumb_motion",
+        "type": "usual",
+        "reason": "It typically causes pain and tenderness on the thumb side of the wrist, with difficulty moving the thumb or grasping.",
+        "sourceId": "fakoya2023",
+        "locator": "Introduction"
+      },
+      {
+        "finding": "h_arm_numbness",
+        "type": "unexplained",
+        "reason": "A tendon or joint problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "category": "mimic",
+    "prior": null,
+    "id": "thumb_cmc_oa",
+    "name": "Thumb-base arthritis (carpometacarpal osteoarthritis)",
+    "shortName": "Thumb-base arthritis",
+    "description": "Not a nerve problem: wear of the joint at the base of the thumb, causing pain there on pinching and gripping.",
+    "regions": [
+      "hand_median",
+      "hand_dorsal_radial",
+      "wrist_radial"
+    ],
+    "logic": [
+      {
+        "finding": "h_thumb_base_pinch",
+        "type": "usual",
+        "reason": "Pinching and gripping load the worn joint at the base of the thumb."
+      },
+      {
+        "finding": "h_arm_numbness",
+        "type": "unexplained",
+        "reason": "A tendon or joint problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "category": "mimic",
+    "prior": null,
+    "id": "trigger_finger",
+    "name": "Trigger finger (stenosing tenosynovitis)",
+    "shortName": "Trigger finger",
+    "description": "Not a nerve problem: a tight tendon sheath in the palm that makes a finger or thumb catch, click or lock when it bends and straightens.",
+    "regions": [
+      "hand_median",
+      "hand_ulnar"
+    ],
+    "logic": [
+      {
+        "finding": "h_finger_catching",
+        "type": "usual",
+        "reason": "The classic presentation of popping and locking is typically all that is needed for the diagnosis.",
+        "sourceId": "makkouk2008",
+        "locator": "Presentation"
+      },
+      {
+        "finding": "h_arm_numbness",
+        "type": "unexplained",
+        "reason": "A tendon or joint problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "category": "mimic",
+    "prior": null,
+    "id": "proximal_hamstring",
+    "name": "Hamstring tendon at the sit bone (tear or tendinopathy)",
+    "shortName": "Hamstring tendon",
+    "description": "A tendon, not a nerve: injury or overload of the hamstring tendons where they attach to the sit bone, causing deep buttock and upper back-of-thigh pain, often worse sitting and with running or bending forward.",
+    "regions": [
+      "buttock",
+      "posterior_thigh"
+    ],
+    "logic": [
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A tendon, joint or disc problem without a trapped nerve causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "category": "mimic",
+    "prior": null,
+    "id": "disc_pain",
+    "name": "Painful lumbar disc (discogenic back pain)",
+    "shortName": "Disc pain",
+    "description": "A disc, not a trapped nerve: pain coming from a worn or torn disc itself, felt in the lower back and sometimes referred into the buttock or thigh, without the nerve root being compressed.",
+    "regions": [
+      "low_back",
+      "buttock",
+      "posterior_thigh"
+    ],
+    "context": [
+      {
+        "text": "Of the bedside findings studied, only centralisation (pain retreating toward the spine with repeated movements) makes a painful disc more likely.",
+        "sourceId": "hancock2007",
+        "locator": "Abstract"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A tendon, joint or disc problem without a trapped nerve causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "category": "mimic",
+    "prior": null,
+    "id": "facet_lbp",
+    "name": "Lumbar facet joint pain",
+    "shortName": "Facet joint",
+    "description": "A joint, not a nerve: pain from the small joints at the back of the spine, felt in the lower back and sometimes the buttock. Only a numbing injection into the joint's nerve supply can confirm it.",
+    "regions": [
+      "low_back",
+      "buttock"
+    ],
+    "context": [
+      {
+        "text": "A systematic review found none of the clinical tests for facet joint pain informative.",
+        "sourceId": "hancock2007",
+        "locator": "Abstract"
+      },
+      {
+        "text": "Facet joints are thought to cause 15-45% of low back pain; history and examination may suggest it but can't confirm it.",
+        "sourceId": "perolat2018",
+        "locator": "Abstract"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A tendon, joint or disc problem without a trapped nerve causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "category": "mimic",
+    "prior": null,
+    "id": "muscle_lbp",
+    "name": "Muscle strain or tight back muscles",
+    "shortName": "Back muscles",
+    "description": "A muscle, not a nerve: pain from strained, overworked or tight muscles of the lower back and buttock. There is no test that confirms it; it is usually the explanation once other causes have been considered.",
+    "regions": [
+      "low_back",
+      "buttock"
+    ],
+    "logic": [
+      {
+        "finding": "p_heat_eases",
+        "type": "supports",
+        "reason": "Warmth relaxes tight, guarding muscle. It eases many other kinds of back pain too, so a 'yes' fits here without counting against anything else."
+      },
+      {
+        "finding": "p_tight",
+        "type": "supports",
+        "reason": "Overworked or guarding muscle feels tight or cramps."
+      },
+      {
+        "finding": "p_movement_eases",
+        "type": "supports",
+        "reason": "Muscles stiffen when kept still and loosen with gentle movement."
+      },
+      {
+        "finding": "p_one_spot",
+        "type": "usual",
+        "reason": "Muscle pain comes from the muscle itself, so pressing or using it usually sets the pain off. If nothing you press or load brings it on, a muscle is a less likely source."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      },
+      {
+        "finding": "h_pain_below_knee",
+        "type": "unexplained",
+        "reason": "Pain from the back muscles rarely travels below the knee; pain there points to a nerve root or another source."
+      }
+    ]
+  },
+  {
+    "category": "mimic",
+    "prior": null,
+    "id": "hip_fai",
+    "name": "Hip impingement or labral tear (FAI)",
+    "shortName": "Hip impingement",
+    "description": "A joint, not a nerve: an abnormal contact between the ball and socket of the hip, often with a tear of the cartilage rim (labrum), causing groin pain with deep hip bending, usually in younger, active adults.",
+    "regions": [
+      "groin",
+      "anterior_thigh",
+      "lateral_thigh",
+      "buttock"
+    ],
+    "context": [
+      {
+        "text": "The common hip impingement test (bending, crossing and turning the hip in) picks up most cases but is positive in many people without it, so it only screens.",
+        "sourceId": "reiman2015",
+        "locator": "Abstract, Results and Conclusions"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_groin_deep_flexion",
+        "type": "usual",
+        "reason": "Deep hip bending brings the ball and socket rim into contact, which is the typical trigger."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A tendon, joint or disc problem without a trapped nerve causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "category": "mimic",
+    "prior": null,
+    "id": "adductor_groin",
+    "name": "Adductor-related groin pain",
+    "shortName": "Adductor groin pain",
+    "description": "A muscle and tendon problem, not a nerve: overload of the inner-thigh (adductor) muscles where they attach near the pubic bone, common in kicking and sprinting sports.",
+    "regions": [
+      "groin",
+      "medial_thigh"
+    ],
+    "logic": [
+      {
+        "finding": "h_groin_adductor",
+        "type": "usual",
+        "reason": "Squeezing the knees together, kicking and sprinting load the adductor tendons."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A tendon, joint or disc problem without a trapped nerve causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ],
+    "criteria": {
+      "title": "Doha agreement definition of adductor-related groin pain (both required)",
+      "sourceId": "weir2015",
+      "locator": "Clinical entities (adductor-related groin pain)",
+      "items": [
+        {
+          "id": "ad_tender",
+          "prompt": "Adductor tenderness that you recognise as your pain",
+          "matchIf": "yes",
+          "linkedFinding": "st_adductor_tender_self"
+        },
+        {
+          "id": "ad_resisted",
+          "prompt": "Pain in the adductors on resisted adduction (squeezing the legs together)",
+          "matchIf": "yes",
+          "linkedFinding": "st_adductor_squeeze_self"
+        }
+      ],
+      "clinicianOnly": []
+    },
+    "context": [
+      {
+        "text": "The international Doha agreement defines adductor-related groin pain by tenderness of the adductors plus pain on resisted adduction, felt in the adductors rather than elsewhere in the groin.",
+        "sourceId": "weir2015",
+        "locator": "Clinical entities"
+      }
+    ]
+  },
+  {
+    "category": "mimic",
+    "prior": null,
+    "id": "ac_joint",
+    "name": "Acromioclavicular (AC) joint pain",
+    "shortName": "AC joint",
+    "description": "A joint, not a nerve: pain from the small joint at the top of the shoulder where the collarbone meets the shoulder blade, often worse reaching across the body.",
+    "regions": [
+      "shoulder"
+    ],
+    "context": [
+      {
+        "text": "Tenderness over the AC joint was found in 96% of people with AC joint pain, but the sensitive tests were not specific, so tenderness alone doesn't prove it.",
+        "sourceId": "walton2004",
+        "locator": "Abstract, Results"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_ac_point",
+        "type": "usual",
+        "reason": "AC joint pain is usually felt exactly over the bony bump where the collarbone ends."
+      },
+      {
+        "finding": "h_arm_numbness",
+        "type": "unexplained",
+        "reason": "A tendon, joint or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "category": "mimic",
+    "prior": null,
+    "id": "shoulder_oa",
+    "name": "Shoulder arthritis (glenohumeral osteoarthritis)",
+    "shortName": "Shoulder arthritis",
+    "description": "A joint, not a nerve: wear of the main ball-and-socket shoulder joint, usually in older adults, causing deep aching pain and stiffness.",
+    "regions": [
+      "shoulder",
+      "upper_arm_lateral"
+    ],
+    "logic": [
+      {
+        "finding": "h_shoulder_stiff",
+        "type": "usual",
+        "reason": "A worn joint loses movement in several directions, even when someone else moves the arm."
+      },
+      {
+        "finding": "h_arm_numbness",
+        "type": "unexplained",
+        "reason": "A tendon, joint or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "category": "mimic",
+    "prior": null,
+    "id": "neck_joint",
+    "name": "Neck joint or muscle pain (without a trapped nerve)",
+    "shortName": "Neck joint/muscle",
+    "description": "The neck's joints and muscles, not a nerve root: neck pain that can spread to the shoulder blade and top of the shoulder, without arm numbness or weakness.",
+    "regions": [
+      "neck",
+      "scapula",
+      "shoulder",
+      "upper_back"
+    ],
+    "logic": [
+      {
+        "finding": "h_neck_movement_pain",
+        "type": "usual",
+        "reason": "Pain from the neck's joints and muscles is usually felt in the neck and changes with head movement."
+      },
+      {
+        "finding": "h_arm_numbness",
+        "type": "unexplained",
+        "reason": "A tendon, joint or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "category": "mimic",
+    "prior": null,
+    "id": "tfcc",
+    "name": "Little-finger-side wrist cartilage injury (TFCC)",
+    "shortName": "TFCC",
+    "description": "Cartilage and ligaments, not a nerve: injury to the triangular fibrocartilage complex on the little-finger side of the wrist, often after a fall or twisting, causing pain on turning the forearm and gripping.",
+    "regions": [
+      "wrist_ulnar"
+    ],
+    "context": [
+      {
+        "text": "In a surgical series the fovea sign was 95% sensitive and 87% specific for ligament tears at this spot; in an unselected clinic study it was much less specific.",
+        "sourceId": "tay2007",
+        "locator": "Abstract, Results"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_arm_numbness",
+        "type": "unexplained",
+        "reason": "A tendon, joint or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "intersection_syndrome",
+    "category": "mimic",
+    "name": "Intersection syndrome (forearm tendon sheath)",
+    "shortName": "Intersection syndrome",
+    "description": "A tendon problem, not a nerve: painful, often swollen and creaking tendons on the back of the forearm a few finger-widths above the wrist on the thumb side, where the thumb muscles cross the wrist-extensor tendons. Typical after repetitive wrist work, rowing or lifting.",
+    "regions": [
+      "forearm_dorsal",
+      "forearm_lateral",
+      "wrist_radial"
+    ],
+    "prior": null,
+    "mechanism": {
+      "text": "A narrowed, inflamed sheath around the tendons that pull the wrist back on the thumb side (stenosing tenosynovitis), found at surgery.",
+      "sourceId": "grundberg1985",
+      "locator": "Abstract"
+    },
+    "context": [
+      {
+        "text": "Described as a common painful condition that is infrequently diagnosed.",
+        "sourceId": "grundberg1985",
+        "locator": "Abstract"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_forearm_creak",
+        "type": "usual",
+        "reason": "The condition presents with pain and swelling where the thumb muscles cross the wrist-extensor tendons, a few finger-widths above the wrist.",
+        "sourceId": "grundberg1985",
+        "locator": "Abstract"
+      },
+      {
+        "finding": "h_arm_numbness",
+        "type": "unexplained",
+        "reason": "A tendon, joint or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      },
+      {
+        "finding": "st_resisted_wrist_ext_self",
+        "type": "usual",
+        "reason": "The affected sheath surrounds the tendons that lift the wrist on the thumb side, so loading them should hurt."
+      },
+      {
+        "finding": "h_outer_elbow_main",
+        "type": "unexplained",
+        "reason": "Its pain is above the wrist, not at the elbow."
+      }
+    ]
+  },
+  {
+    "id": "nonspecific_arm_pain",
+    "category": "mimic",
+    "name": "Non-specific work-related arm pain (no specific cause found)",
+    "shortName": "Non-specific arm pain",
+    "description": "Forearm, wrist or hand pain linked to repetitive work, such as keyboard, mouse or assembly work, where no specific tendon, joint or nerve problem fits. 'RSI' (repetitive strain injury) is an umbrella term: it also covers specific conditions caused by repetitive use, such as intersection syndrome, De Quervain's, tennis elbow and carpal tunnel syndrome, which are listed as their own options. This option is for repetitive-use pain when none of those fits.",
+    "regions": [
+      "forearm_dorsal",
+      "forearm_anterior",
+      "forearm_lateral",
+      "forearm_medial",
+      "wrist_radial",
+      "wrist_ulnar",
+      "hand_median",
+      "hand_ulnar",
+      "hand_dorsal_radial",
+      "elbow_lateral",
+      "elbow_medial"
+    ],
+    "prior": null,
+    "context": [
+      {
+        "text": "Work-related upper limb disorders make up 45% of occupational diseases; non-specific arm pain is diagnosed by the absence of specific clinical findings.",
+        "sourceId": "moloney2010",
+        "locator": "Abstract, Background"
+      },
+      {
+        "text": "People with non-specific arm pain show widespread sensitivity to pressure and temperature without the numbness found in a trapped neck nerve root.",
+        "sourceId": "moloney2013",
+        "locator": "Abstract, Discussion"
+      },
+      {
+        "text": "Diagnostic criteria for most soft-tissue arm disorders rely on clinical opinion and have not been shown to be repeatable, sensitive or specific.",
+        "sourceId": "walkerbone2003",
+        "locator": "Abstract, Conclusion"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_repetitive_use",
+        "type": "usual",
+        "reason": "By definition the pain is linked to repetitive hand or arm use, and usually eases with rest."
+      }
+    ]
+  },
+  {
+    "id": "chest_wall",
+    "category": "mimic",
+    "regions": [
+      "chest_front",
+      "chest_side"
+    ],
+    "prior": null,
+    "name": "Chest wall pain (muscles, ribs or rib cartilage, including costochondritis)",
+    "shortName": "Chest wall pain",
+    "description": "Pain that comes from the muscles, bones, cartilage or joints of the chest wall rather than from the heart, lungs or gut. It is usually well localised, often tender when pressed and changed by moving the upper body. It can occur alongside heart disease, so a doctor still needs to rule that out.",
+    "mechanism": {
+      "text": "Common causes are inflamed rib cartilage (costochondritis), strained chest muscles, injury to the chest wall, and arthritis of the joints of the breastbone, ribs and thoracic spine; pain can also be referred from the neck.",
+      "sourceId": "fam1985",
+      "locator": "Abstract"
+    },
+    "context": [
+      {
+        "text": "Among 1,212 people aged 35 or over who saw their family doctor with chest pain, 565 (46.6%) had chest wall pain. Most often it was behind the breastbone (52.0%) and/or on the left (69.2%), the same places as heart pain.",
+        "sourceId": "bosner2010",
+        "locator": "Abstract, Results"
+      },
+      {
+        "text": "In Swiss family practices, 300 of 672 people with chest pain (44.6%) had chest wall pain, and in 19 of them it coexisted with coronary heart disease.",
+        "sourceId": "verdon2007",
+        "locator": "Abstract, Results"
+      },
+      {
+        "text": "Pain brought on by pressing is the most important sign of chest wall pain, but it is not proof: it also happens with other causes.",
+        "sourceId": "ronga2012",
+        "locator": "Abstract, Conclusions"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_trunk_numbness",
+        "type": "unexplained",
+        "reason": "A joint, bone or muscle problem causes pain, not numbness, pins and needles or burning skin; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "root_thoracic",
+    "category": "nerve",
+    "regions": [
+      "chest_front",
+      "chest_side",
+      "upper_back",
+      "mid_back"
+    ],
+    "prior": null,
+    "name": "Thoracic nerve root (a nerve leaving the middle of the spine)",
+    "shortName": "Thoracic nerve root",
+    "description": "A nerve root leaving the middle (thoracic) part of the spine is pressed or irritated, for example by a disc bulge, arthritis or diabetes. Each root supplies a strip of skin that wraps from the spine round the side to the front, so pain or altered feeling tends to follow all or part of that strip on one side.",
+    "mechanism": {
+      "text": "A thoracic disc herniation can cause pain along the nerve root (radicular pain) and, if it presses on the spinal cord, problems with leg strength and control (myelopathy).",
+      "sourceId": "quint2012",
+      "locator": "Abstract (Problem)"
+    },
+    "context": [
+      {
+        "text": "In 55 people with 72 thoracic disc herniations, 15 (27%) eventually needed surgery; most carried on their daily activities without nerve damage.",
+        "sourceId": "brown1992",
+        "locator": "Abstract"
+      },
+      {
+        "text": "When diabetes damages the nerves of the trunk, the pattern varies: sometimes a full band, but in almost two-thirds of episodes only the back or front part of it.",
+        "sourceId": "stewart1989",
+        "locator": "Abstract"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_trunk_band",
+        "type": "usual",
+        "reason": "Each thoracic nerve root supplies a strip of skin running from the spine round to the front, so its pain usually follows all or part of that strip on one side."
+      }
+    ]
+  },
+  {
+    "id": "intercostal",
+    "category": "nerve",
+    "regions": [
+      "chest_front",
+      "chest_side"
+    ],
+    "prior": null,
+    "name": "Intercostal nerve (the nerve under a rib), after surgery or injury",
+    "shortName": "Intercostal nerve",
+    "description": "The nerve that runs along the underside of a rib is damaged or trapped, most often after chest, lung or breast surgery, a chest drain or a rib fracture. Pain, burning or numbness follows the line of that rib, often around a scar.",
+    "context": [
+      {
+        "text": "Of 488 people interviewed 6 to 30 months after chest surgery, 28.6% still had pain (post-thoracotomy pain syndrome), and in 63% of them it was nerve pain.",
+        "sourceId": "arends2020",
+        "locator": "Abstract, Results"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_chest_surgery_injury",
+        "type": "usual",
+        "reason": "This nerve is usually damaged by an operation through the chest wall or an injury to the ribs; without such a history it is a less likely cause."
+      },
+      {
+        "finding": "h_trunk_band",
+        "type": "usual",
+        "reason": "The nerve runs along one rib, so its pain follows that rib's line."
+      }
+    ]
+  },
+  {
+    "id": "zoster",
+    "category": "nerve",
+    "regions": [
+      "chest_front",
+      "chest_side",
+      "upper_back",
+      "mid_back"
+    ],
+    "prior": null,
+    "name": "Shingles (herpes zoster) or nerve pain after shingles",
+    "shortName": "Shingles",
+    "description": "The chickenpox virus, dormant in a nerve root, reactivates and inflames the nerve. Pain, burning or itching on one side is followed within days by a blistering rash in a strip of skin. Pain can last for months after the rash heals (postherpetic neuralgia). See a doctor promptly if you have a rash: antiviral treatment needs to start early.",
+    "mechanism": {
+      "text": "The virus reactivates in a sensory nerve root ganglion and spreads along the nerve to the skin, causing a painful rash in that nerve's strip of skin.",
+      "sourceId": "jeon2015",
+      "locator": "Pathophysiology (VZV reactivation in the dorsal root ganglia)"
+    },
+    "context": [
+      {
+        "text": "About 75% of people with shingles have warning symptoms such as pain a few days before the rash appears.",
+        "sourceId": "jeon2015",
+        "locator": "Clinical manifestations and diagnosis (prodromal symptoms)"
+      },
+      {
+        "text": "Antiviral treatment should start within 72 hours of the rash appearing.",
+        "sourceId": "jeon2015",
+        "locator": "Treatment of HZ, Antiviral agents"
+      },
+      {
+        "text": "In 72 people with shingles or its after-effects, the chest and upper-back (thoracic) strips were affected most often (59.7%).",
+        "sourceId": "sinha2023",
+        "locator": "Abstract, Results"
+      },
+      {
+        "text": "Rarely, the virus causes nerve pain with no rash at all (zoster sine herpete), which makes it hard to recognise.",
+        "sourceId": "zhou2020",
+        "locator": "Abstract"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_band_rash",
+        "type": "usual",
+        "reason": "Shingles is characterised by a painful rash in the affected strip of skin (the pain can start a few days before the rash).",
+        "sourceId": "jeon2015",
+        "locator": "Abstract; Clinical manifestations and diagnosis"
+      },
+      {
+        "finding": "h_trunk_band",
+        "type": "usual",
+        "reason": "The virus affects one nerve root's strip of skin on one side, so the pain follows that strip.",
+        "sourceId": "jeon2015",
+        "locator": "Clinical manifestations and diagnosis (unilateral, affected dermatome)"
+      }
+    ]
+  },
+  {
+    "id": "notalgia",
+    "category": "nerve",
+    "regions": [
+      "upper_back",
+      "scapula"
+    ],
+    "prior": null,
+    "name": "Notalgia paresthetica (itchy or burning patch beside the shoulder blade)",
+    "shortName": "Notalgia paresthetica",
+    "description": "Small skin branches of the nerves of the upper and middle back (T2 to T6) are irritated, giving a long-lasting itch, often with burning, tingling or numbness, in a patch on one side next to or below the shoulder blade. Scratching can darken the skin there.",
+    "sensoryOnly": {
+      "sourceId": "robinson2023",
+      "locator": "Abstract (a sensory neuropathy)"
+    },
+    "mechanism": {
+      "text": "Damage to the back skin branches of the T2–T6 spinal nerves, thought to come from pressure by worn spinal joints or by the back muscles the branches pass through.",
+      "sourceId": "robinson2023",
+      "locator": "Pathophysiology"
+    },
+    "context": [
+      {
+        "text": "Symptoms usually last for years, with periods of remission and flare-ups.",
+        "sourceId": "robinson2023",
+        "locator": "Introduction"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_back_itch",
+        "type": "usual",
+        "reason": "The condition is mainly an itch in a patch of skin, usually on one side, beside or below the shoulder blade.",
+        "sourceId": "robinson2023",
+        "locator": "Abstract; Presentation and Diagnosis"
+      }
+    ]
+  },
+  {
+    "id": "slipping_rib",
+    "category": "nerve",
+    "regions": [
+      "chest_front",
+      "chest_side"
+    ],
+    "prior": null,
+    "name": "Slipping rib syndrome (loose lower rib tip)",
+    "shortName": "Slipping rib",
+    "description": "The cartilage tip of one of the lower ribs (8th to 10th) moves too much and slips or clicks under the rib above, pinching the nerve that runs beneath it. It gives intermittent, often sharp pain at the lower edge of the ribs or the upper belly, set off by certain movements.",
+    "mechanism": {
+      "text": "Too much movement of the front ends of the 8th to 10th ribs lets a rib tip slip under the rib above and press on the intercostal nerve running beneath it.",
+      "sourceId": "mcmahon2018",
+      "locator": "Abstract"
+    },
+    "context": [
+      {
+        "text": "In 54 athletes with slipping rib syndrome, symptoms were on one side in 90.7%, and diagnosis took 15.4 months on average.",
+        "sourceId": "foley2019",
+        "locator": "Abstract, Results"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_rib_click",
+        "type": "usual",
+        "reason": "The loose rib tip slips or clicks under the rib above.",
+        "sourceId": "mcmahon2018",
+        "locator": "Abstract"
+      }
+    ]
+  },
+  {
+    "id": "thoracic_joint",
+    "category": "mimic",
+    "regions": [
+      "upper_back",
+      "mid_back"
+    ],
+    "prior": null,
+    "name": "Thoracic spine joint or muscle pain (upper or middle back, without a trapped nerve)",
+    "shortName": "Thoracic joint or muscle pain",
+    "description": "Pain from the small joints of the thoracic spine, the joints where the ribs meet the spine, or the back muscles. Usually a deep, dull ache close to the spine that changes with posture and movement.",
+    "context": [
+      {
+        "text": "When the rib-to-spine joints of healthy volunteers were injected to provoke pain, it was a deep, dull ache felt over the joint itself, with no chest wall or arm pain.",
+        "sourceId": "young2008",
+        "locator": "Abstract, Results"
+      },
+      {
+        "text": "Thoracic spine pain is common: 15% to 27.5% of people report some over a year.",
+        "sourceId": "briggs2009",
+        "locator": "Abstract, Results (any thoracic spine pain, 1-year prevalence)"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_back_movement",
+        "type": "usual",
+        "reason": "Joint and muscle pain usually changes with posture and movement."
+      },
+      {
+        "finding": "h_trunk_numbness",
+        "type": "unexplained",
+        "reason": "A joint, bone or muscle problem causes pain, not numbness, pins and needles or burning skin; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "vertebral_fracture",
+    "category": "mimic",
+    "regions": [
+      "upper_back",
+      "mid_back"
+    ],
+    "prior": null,
+    "name": "Spinal compression fracture (often from thin bones, osteoporosis)",
+    "shortName": "Compression fracture",
+    "description": "A vertebra in the spine partly collapses, often with little or no injury in someone with thin bones (osteoporosis). Typical is a sudden, severe back pain that limits ordinary activity. An X-ray shows it, so see a doctor if this seems possible.",
+    "context": [
+      {
+        "text": "Many compression fractures happen without a clear injury, which makes them hard to recognise.",
+        "sourceId": "sawicki2021",
+        "locator": "Background"
+      },
+      {
+        "text": "Women with osteoporosis and a fracture had more severe back pain than those without (6.1 vs 4.3 out of 10).",
+        "sourceId": "sawicki2021",
+        "locator": "Abstract, Results"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_trunk_numbness",
+        "type": "unexplained",
+        "reason": "A joint, bone or muscle problem causes pain, not numbness, pins and needles or burning skin; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "sc_joint",
+    "category": "mimic",
+    "regions": [
+      "chest_front"
+    ],
+    "prior": null,
+    "name": "Sternoclavicular joint pain (where the collarbone meets the breastbone)",
+    "shortName": "Sternoclavicular joint",
+    "description": "Pain from the joint between the inner end of the collarbone and the top of the breastbone, most often from wear-and-tear arthritis. The joint is tender, may look prominent, and hurts when the shoulders are pushed forward.",
+    "context": [
+      {
+        "text": "In 44 people with confirmed sternoclavicular joint pain, the joint was tender in 93% and pushing the shoulders forward hurt in 86%; 33 had wear-and-tear arthritis.",
+        "sourceId": "vantongel2014",
+        "locator": "Table 1; Table 2"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "st_sc_protraction_self",
+        "type": "usual",
+        "reason": "Most people with this joint problem feel pain at the joint when they push their shoulders forward.",
+        "sourceId": "vantongel2014",
+        "locator": "Table 1 (pain on active protraction)"
+      },
+      {
+        "finding": "h_trunk_numbness",
+        "type": "unexplained",
+        "reason": "A joint, bone or muscle problem causes pain, not numbness, pins and needles or burning skin; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "morton",
+    "name": "Morton's neuroma (interdigital nerve in the forefoot)",
+    "shortName": "Morton's neuroma",
+    "description": "An irritated, thickened nerve in the gap between two of the long foot bones, usually behind the 2nd-3rd or 3rd-4th toes. It causes pain in the ball of the foot that can spread into the toes.",
+    "category": "nerve",
+    "regions": [
+      "forefoot"
+    ],
+    "prior": null,
+    "context": [
+      {
+        "text": "Clinical diagnosis is difficult: reported accuracy ranges from 58% to 93%. Ultrasound, MRI or the response to an anaesthetic or steroid injection are used to confirm it or to exclude other problems.",
+        "sourceId": "pitcher2024",
+        "locator": "Introduction"
+      },
+      {
+        "text": "The probabilities here rest on one small prospective study (Dando: 30 people with forefoot pain, 7 with a neuroma on ultrasound). Only 1 of the review's 9 studies was at low risk of bias, and most included few or no people without a neuroma.",
+        "sourceId": "pitcher2024",
+        "locator": "Abstract; Table 1 (QUADAS-2); Table 3"
+      },
+      {
+        "text": "Pinching the gap between thumb and index finger brought on the pain in 95-100% of people with a neuroma in three studies (68% in a fourth, retrospective one), so a painless pinch argues against a neuroma.",
+        "sourceId": "pitcher2024",
+        "locator": "Table 4, 'Modified webspace tenderness test'; Conclusion"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "p_activity_rest",
+        "type": "usual",
+        "reason": "91-92% of people with a neuroma reported pain worse on walking and 81-89% reported relief with rest (three studies, no comparison group).",
+        "sourceId": "pitcher2024",
+        "locator": "Table 3, 'Pain aggravated by walking' and 'Rest' rows"
+      },
+      {
+        "finding": "h_ff_shoes_off_eases",
+        "type": "usual",
+        "reason": "Taking shoes off eased the pain in 57-71% of people with a neuroma (two studies, no comparison group).",
+        "sourceId": "pitcher2024",
+        "locator": "Table 3, 'Removing shoes' rows"
+      }
+    ],
+    "criteria": {
+      "title": "Expert-consensus clinical protocol for forefoot (Morton's) neuroma (Delphi; no cut-off defined)",
+      "sourceId": "dando2017",
+      "locator": "Table 1",
+      "items": [
+        {
+          "id": "ms_location",
+          "prompt": "Pain in the 2nd or 3rd gap between the long foot bones (behind the 2nd-3rd or 3rd-4th toes)",
+          "matchIf": "yes",
+          "linkedFinding": "h_ff_im_space"
+        },
+        {
+          "id": "ms_paraesthesia",
+          "prompt": "Tingling that spreads out into the toes",
+          "matchIf": "yes"
+        },
+        {
+          "id": "ms_pins",
+          "prompt": "Pins and needles",
+          "matchIf": "yes",
+          "linkedFinding": "h_ff_pins_needles"
+        },
+        {
+          "id": "ms_shooting",
+          "prompt": "Shooting pain",
+          "matchIf": "yes"
+        },
+        {
+          "id": "ms_burning",
+          "prompt": "Burning",
+          "matchIf": "yes"
+        },
+        {
+          "id": "ms_click",
+          "prompt": "A clicking feeling",
+          "matchIf": "yes",
+          "linkedFinding": "h_ff_click"
+        },
+        {
+          "id": "ms_pebble",
+          "prompt": "Feels like walking on a pebble, lump or stone",
+          "matchIf": "yes"
+        },
+        {
+          "id": "ms_spread",
+          "prompt": "A pad, dome or insole that spreads the long foot bones apart eases it",
+          "matchIf": "yes",
+          "linkedFinding": "h_ff_met_spread"
+        },
+        {
+          "id": "ms_shoes",
+          "prompt": "Tight or narrow shoes make it worse",
+          "matchIf": "yes",
+          "linkedFinding": "h_ff_tight_shoes"
+        },
+        {
+          "id": "ms_gap_tender",
+          "prompt": "Pressing into the gap between the long foot bones is tender",
+          "matchIf": "yes",
+          "linkedFinding": "st_ff_squeeze_self"
+        },
+        {
+          "id": "ms_side_squeeze",
+          "prompt": "Squeezing the front of the foot from both sides brings on the pain",
+          "matchIf": "yes"
+        },
+        {
+          "id": "ms_joint_press",
+          "prompt": "Pressing around the edges of the toe joints is NOT painful",
+          "matchIf": "yes"
+        },
+        {
+          "id": "ms_joint_move",
+          "prompt": "Moving the toe joints is NOT painful",
+          "matchIf": "yes"
+        },
+        {
+          "id": "ms_no_swelling",
+          "prompt": "No swelling",
+          "matchIf": "yes"
+        }
+      ],
+      "clinicianOnly": [
+        "Mulder's click felt by the examiner",
+        "Relief after a diagnostic local anaesthetic (with or without steroid) injection",
+        "Ultrasound",
+        "X-ray to rule out other problems"
+      ]
+    }
+  },
+  {
+    "id": "plantar_plate",
+    "name": "Small toe joint overload (plantar plate tear or toe joint synovitis)",
+    "shortName": "Plantar plate / toe joint",
+    "description": "A joint problem, not a nerve: strain or tearing of the strong ligament under one of the small toe joints, most often the 2nd, with a sore, swollen joint at the ball of the foot. The toe may slowly drift or lift.",
+    "category": "mimic",
+    "regions": [
+      "forefoot"
+    ],
+    "prior": null,
+    "context": [
+      {
+        "text": "Plantar plate tears cause forefoot pain and deformity but are often missed on first examination. In one surgical series, 95% had gradual forefoot pain, swelling and a positive drawer test.",
+        "sourceId": "klein2013",
+        "locator": "Abstract (Background; Conclusion)"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_ff_gradual_onset",
+        "type": "usual",
+        "reason": "93% of people with a plantar plate tear at surgery had pain that came on gradually.",
+        "sourceId": "klein2013",
+        "locator": "Abstract, Results"
+      },
+      {
+        "finding": "h_ff_2nd_head",
+        "type": "usual",
+        "reason": "98% had pain at the 2nd metatarsal head (the ball of the foot under the 2nd toe joint).",
+        "sourceId": "klein2013",
+        "locator": "Abstract, Results"
+      },
+      {
+        "finding": "h_ff_swelling",
+        "type": "usual",
+        "reason": "95.8% had swelling at the 2nd metatarsal head.",
+        "sourceId": "klein2013",
+        "locator": "Abstract, Results"
+      },
+      {
+        "finding": "h_ff_toe_drift",
+        "type": "supports",
+        "reason": "A toe crossing over its neighbour was uncommon in joints without a tear (specificity 88.9%); its absence says little.",
+        "sourceId": "klein2013",
+        "locator": "Abstract, Results"
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A joint, ligament or bone problem without a trapped nerve causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "mt_stress_fracture",
+    "name": "Metatarsal stress fracture",
+    "shortName": "Metatarsal stress fracture",
+    "description": "A bone problem, not a nerve: a small crack in one of the long bones of the forefoot from repeated loading.",
+    "category": "mimic",
+    "regions": [
+      "forefoot",
+      "foot_dorsum"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_ff_load_increase",
+        "type": "usual",
+        "reason": "A stress fracture develops when repeated loading outpaces the bone's repair, so it usually follows a recent rise in activity or a change of shoes or surface."
+      },
+      {
+        "finding": "h_ff_bone_point",
+        "type": "usual",
+        "reason": "The pain comes from the bone itself, so one spot on the shaft of a metatarsal is usually sharply tender."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A joint, ligament or bone problem without a trapped nerve causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "hallux_rigidus",
+    "name": "Big toe joint arthritis (hallux rigidus)",
+    "shortName": "Big toe arthritis",
+    "description": "A joint problem, not a nerve: wear of the joint at the base of the big toe, often with a bony bump on top and pain when the toe bends.",
+    "category": "mimic",
+    "regions": [
+      "foot_dorsum",
+      "forefoot"
+    ],
+    "prior": null,
+    "context": [
+      {
+        "text": "Nerve-like symptoms are common with big toe joint arthritis. Of 98 people, 24.5% reported burning, 14.3% tingling, 12.2% numbness and 56.1% pressure sensitivity (moderate or more), and 30.6% scored as possible or likely neuropathic pain.",
+        "sourceId": "menz2023",
+        "locator": "Table 2"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_big_toe_tender",
+        "type": "usual",
+        "reason": "All 98 people with painful big toe joint arthritis were tender when the joint was pressed.",
+        "sourceId": "menz2023",
+        "locator": "Table 1, 'Pain on palpation'"
+      },
+      {
+        "finding": "h_big_toe_bump",
+        "type": "usual",
+        "reason": "97 of 98 had a bony lump that could be felt on top of the joint.",
+        "sourceId": "menz2023",
+        "locator": "Table 1, 'Palpable dorsal exostosis'"
+      },
+      {
+        "finding": "h_big_toe_bend",
+        "type": "usual",
+        "reason": "74 of 98 (75.5%) had pain when the joint was moved.",
+        "sourceId": "menz2023",
+        "locator": "Table 1, 'Pain on motion of first MTP joint'"
+      }
+    ]
+  },
+  {
+    "id": "tarsal_tunnel",
+    "name": "Tarsal tunnel syndrome (tibial nerve at the inner ankle)",
+    "shortName": "Tarsal tunnel",
+    "description": "The tibial nerve or its branches to the sole are squeezed in the tunnel behind the bony bump on the inside of the ankle, causing burning, tingling or numbness in the sole and toes.",
+    "category": "nerve",
+    "regions": [
+      "foot_sole_lateral",
+      "forefoot"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_leg_numbness",
+        "type": "usual",
+        "reason": "The nerve carries feeling from the sole, so pressure on it usually brings numbness or pins and needles there."
+      },
+      {
+        "finding": "h_sole_wide",
+        "type": "usual",
+        "reason": "Its branches supply most of the sole and the toes, so symptoms usually spread across the sole rather than staying in one gap between two toes."
+      }
+    ]
+  }
+]

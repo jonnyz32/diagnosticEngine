@@ -1,0 +1,58 @@
+[
+  {
+    "id": "rf_saddle",
+    "prompt": "Do you have new numbness or reduced feeling between your legs, around your genitals or anus, or where you would sit on a saddle?",
+    "urgency": "emergency",
+    "message": "Numbness in the saddle area can be a sign of cauda equina syndrome, a compression of the nerves at the base of the spine that needs emergency assessment and usually an urgent MRI. Go to an emergency department now.",
+    "sourceId": "dionne2019",
+    "locator": "Abstract, Results (saddle anaesthesia) and Conclusion"
+  },
+  {
+    "id": "rf_bladder",
+    "prompt": "Since your back or leg symptoms began, have you had new difficulty passing urine, been unable to pass urine, or lost control of your bladder?",
+    "urgency": "emergency",
+    "message": "New bladder problems with back or leg pain can be a sign of cauda equina syndrome, which needs emergency assessment and usually an urgent MRI. Go to an emergency department now.",
+    "sourceId": "dionne2019",
+    "locator": "Abstract, Results (urinary retention, urinary incontinence) and Conclusion"
+  },
+  {
+    "id": "rf_bowel",
+    "prompt": "Since your back or leg symptoms began, have you lost control of your bowels?",
+    "urgency": "emergency",
+    "message": "New loss of bowel control with back or leg pain can be a sign of cauda equina syndrome, which needs emergency assessment and usually an urgent MRI. Go to an emergency department now.",
+    "sourceId": "dionne2019",
+    "locator": "Abstract, Results (bowel incontinence) and Conclusion"
+  },
+  {
+    "id": "rf_progressive_weakness",
+    "prompt": "Is weakness in your leg or foot getting rapidly worse, or have you developed a foot that drops or slaps when you walk?",
+    "urgency": "urgent",
+    "message": "Severe or progressive weakness needs prompt medical assessment and usually imaging. Contact a doctor today or go to urgent care.",
+    "sourceId": "chou2007",
+    "locator": "Recommendation 3 (severe or progressive neurologic deficits)"
+  },
+  {
+    "id": "rf_serious_cause",
+    "prompt": "Do you have any of these with your pain: fever, a history of cancer, unexplained weight loss, a recent significant fall or injury, or a weakened immune system?",
+    "urgency": "urgent",
+    "message": "These can point to a serious underlying cause of back or leg pain that a clinician needs to rule out with an examination and possibly tests. Contact a doctor today or go to urgent care.",
+    "sourceId": "chou2007",
+    "locator": "Recommendation 3 (serious underlying conditions suspected on history)"
+  },
+  {
+    "id": "rf_chest_arm",
+    "prompt": "Is your arm, shoulder or neck pain coming with chest pain or pressure, shortness of breath, sweating or feeling sick?",
+    "urgency": "emergency",
+    "message": "Arm or shoulder pain together with chest pain can be a sign of a heart attack. Call an ambulance or go to an emergency department now.",
+    "sourceId": "panju1998",
+    "locator": "Abstract, Results (chest pain radiating to the arms increases the probability of myocardial infarction)"
+  },
+  {
+    "id": "rf_myelopathy",
+    "prompt": "Have you recently noticed clumsiness in both hands (for example with buttons, writing or dropping things) or new unsteadiness when walking?",
+    "urgency": "urgent",
+    "message": "Hand clumsiness with walking problems can be a sign of pressure on the spinal cord in the neck (cervical myelopathy). Delayed treatment can cause lasting damage, so see a doctor promptly, today if it is getting worse.",
+    "sourceId": "kobayashi2010",
+    "locator": "Background (Introduction): manual clumsiness and walking disturbance; delayed treatment may cause irreversible consequences"
+  }
+]

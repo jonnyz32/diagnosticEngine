@@ -1,0 +1,735 @@
+[
+  {
+    "id": "compression",
+    "name": "Pressure on the nerve (compression)",
+    "description": "The nerve is squeezed, for example by a disc, a narrowed canal or a tight tunnel. Pressure first blocks the larger fibres that carry touch, so it typically causes numbness and pins and needles, and with more pressure, weakness.",
+    "clues": [
+      {
+        "anyOf": [
+          "p_numb"
+        ],
+        "answer": "yes",
+        "type": "supports",
+        "reason": "Pressure blocks the fibres that carry touch, so the skin they supply goes numb."
+      },
+      {
+        "anyOf": [
+          "p_tingling",
+          "p_buzzing"
+        ],
+        "answer": "yes",
+        "type": "supports",
+        "reason": "Squeezed fibres fire on their own, which is felt as pins and needles or buzzing."
+      },
+      {
+        "anyOf": [
+          "p_heavy_weak",
+          "st_heel_walk",
+          "st_heel_raise",
+          "st_sit_to_stand"
+        ],
+        "answer": "yes",
+        "type": "supports",
+        "reason": "Pressure on the fibres to muscles weakens them."
+      },
+      {
+        "anyOf": [
+          "p_position"
+        ],
+        "answer": "yes",
+        "type": "supports",
+        "reason": "The pressure inside a tunnel rises in particular postures."
+      },
+      {
+        "anyOf": [
+          "st_phalen_self",
+          "st_spurling_self"
+        ],
+        "answer": "yes",
+        "type": "supports",
+        "reason": "These tests narrow the space around the nerve for a short time (the carpal tunnel, or the opening where a neck root leaves the spine)."
+      },
+      {
+        "anyOf": [
+          "st_tinel_wrist_self",
+          "st_tinel_elbow_self",
+          "st_tinel_asis"
+        ],
+        "answer": "yes",
+        "type": "supports",
+        "reason": "A nerve irritated at a pressure point sends tingling along its path when tapped there."
+      }
+    ],
+    "conditions": [
+      {
+        "hypothesis": "root_mid",
+        "sourceId": "mostofi2018",
+        "locator": "Material and methods (causes of root compression)"
+      },
+      {
+        "hypothesis": "root_low",
+        "sourceId": "vanderwindt2010",
+        "locator": "Abstract, Background"
+      },
+      {
+        "hypothesis": "stenosis",
+        "sourceId": "suri2010",
+        "locator": "Abstract; Table 1"
+      },
+      {
+        "hypothesis": "deep_gluteal",
+        "sourceId": "filler2005",
+        "locator": "Abstract, Methods (final rediagnoses)"
+      },
+      {
+        "hypothesis": "lfcn",
+        "sourceId": "paneyala2024",
+        "locator": "Introduction"
+      },
+      {
+        "hypothesis": "pudendal",
+        "sourceId": "ahmed2026",
+        "locator": "Introduction (four categories of entrapment)"
+      },
+      {
+        "hypothesis": "cluneal",
+        "sourceId": "kuniya2014",
+        "locator": "Abstract, Background"
+      },
+      {
+        "hypothesis": "obturator",
+        "sourceId": "bradshaw1997",
+        "locator": "Abstract"
+      },
+      {
+        "hypothesis": "ilio_genito",
+        "sourceId": "knockaert1989",
+        "locator": "Abstract"
+      },
+      {
+        "hypothesis": "pfcn",
+        "sourceId": "joshi2017",
+        "locator": "Abstract"
+      },
+      {
+        "hypothesis": "femoral",
+        "reason": "The femoral nerve can be pressed on in the pelvis or groin, for example by a bleed or a mass."
+      },
+      {
+        "hypothesis": "root_cervical",
+        "reason": "A neck nerve root is usually pressed on by a disc or bony narrowing where it leaves the spine."
+      },
+      {
+        "hypothesis": "cts",
+        "reason": "The median nerve is squeezed inside the carpal tunnel at the wrist."
+      },
+      {
+        "hypothesis": "cubital",
+        "reason": "The ulnar nerve is squeezed in the tunnel behind the inner elbow."
+      },
+      {
+        "hypothesis": "guyon",
+        "reason": "The ulnar nerve is squeezed in a tunnel on the little-finger side of the wrist."
+      },
+      {
+        "hypothesis": "radial_tunnel",
+        "reason": "A branch of the radial nerve is squeezed by muscle edges just below the outer elbow."
+      },
+      {
+        "hypothesis": "superficial_radial",
+        "reason": "This skin nerve lies just under the skin and is easily pressed on, for example by a tight watch strap or cuff."
+      },
+      {
+        "hypothesis": "tos",
+        "reason": "The nerves to the arm can be squeezed between the collarbone, first rib and neck muscles."
+      },
+      {
+        "hypothesis": "suprascapular",
+        "reason": "The nerve can be squeezed in a notch on the shoulder blade."
+      },
+      {
+        "hypothesis": "axillary",
+        "reason": "The nerve can be squeezed in a small space at the back of the shoulder."
+      },
+      {
+        "hypothesis": "musculocutaneous",
+        "reason": "The skin branch can be pressed on at the front of the elbow."
+      },
+      {
+        "hypothesis": "root_thoracic",
+        "sourceId": "quint2012",
+        "locator": "Abstract (Problem)"
+      },
+      {
+        "hypothesis": "notalgia",
+        "sourceId": "robinson2023",
+        "locator": "Pathophysiology"
+      },
+      {
+        "hypothesis": "slipping_rib",
+        "sourceId": "mcmahon2018",
+        "locator": "Abstract"
+      },
+      {
+        "hypothesis": "intercostal"
+      },
+      {
+        "hypothesis": "morton",
+        "reason": "The nerve is squeezed between the metatarsal heads and the ligament joining them, which fits pain in tight shoes and on squeezing the forefoot."
+      },
+      {
+        "hypothesis": "tarsal_tunnel",
+        "reason": "The nerve runs through a narrow tunnel behind the inner ankle bone, under a band of tissue."
+      }
+    ]
+  },
+  {
+    "id": "tension",
+    "name": "Stretch on the nerve (tension)",
+    "description": "Nerves have to slide and lengthen as the joints move. If a nerve is stuck or already irritated, putting the limb in a position that lengthens it hurts, often as a shooting or electric pain along its path.",
+    "clues": [
+      {
+        "anyOf": [
+          "p_stretch"
+        ],
+        "answer": "yes",
+        "type": "usual",
+        "reason": "A nerve sensitive to stretch hurts when the limb lengthens it. If stretching never brings it on, stretch is a less likely cause."
+      },
+      {
+        "anyOf": [
+          "p_shooting"
+        ],
+        "answer": "yes",
+        "type": "supports",
+        "reason": "A sudden shooting, electric pain along a line is typical of a nerve being pulled."
+      },
+      {
+        "anyOf": [
+          "st_slr_helper",
+          "st_prone_knee_bend",
+          "st_siref_self"
+        ],
+        "answer": "yes",
+        "type": "supports",
+        "reason": "These tests lengthen a nerve (the sciatic, femoral or ulnar). Reproducing your pain suggests that nerve is sensitive to stretch."
+      }
+    ],
+    "conditions": [
+      {
+        "hypothesis": "root_low",
+        "reason": "An irritated L5 or S1 root is pulled when the straight leg is raised."
+      },
+      {
+        "hypothesis": "root_mid",
+        "reason": "An irritated L2–L4 root is pulled when the hip is straightened and the knee bent."
+      },
+      {
+        "hypothesis": "root_cervical",
+        "reason": "An irritated neck root is pulled when the head tilts away and the arm is stretched out."
+      },
+      {
+        "hypothesis": "deep_gluteal",
+        "reason": "The sciatic nerve has to glide past the buttock muscles as the hip moves."
+      },
+      {
+        "hypothesis": "cubital",
+        "reason": "Bending the elbow fully stretches the ulnar nerve around the inner elbow."
+      },
+      {
+        "hypothesis": "tos",
+        "reason": "Raising or pulling down on the arm stretches the nerves at the base of the neck."
+      },
+      {
+        "hypothesis": "long_thoracic",
+        "reason": "This long, thin nerve is easily overstretched, for example by heavy lifting or carrying a load on the shoulder."
+      },
+      {
+        "hypothesis": "suprascapular",
+        "reason": "Repeated overhead movements stretch the nerve across the shoulder blade."
+      },
+      {
+        "hypothesis": "femoral",
+        "reason": "Lying with the hip stretched back lengthens the femoral nerve."
+      }
+    ]
+  },
+  {
+    "id": "friction",
+    "name": "Rubbing on the nerve (friction)",
+    "description": "A nerve that rubs over bone or a tight band with each movement is irritated by repetition rather than by one position.",
+    "clues": [
+      {
+        "anyOf": [
+          "p_repetitive"
+        ],
+        "answer": "yes",
+        "type": "usual",
+        "reason": "Friction builds with repeated movement. If repetition doesn't affect it, rubbing is a less likely cause."
+      },
+      {
+        "anyOf": [
+          "p_tingling",
+          "p_buzzing"
+        ],
+        "answer": "yes",
+        "type": "supports",
+        "reason": "A nerve irritated by rubbing gives tingling in the area it supplies."
+      }
+    ],
+    "conditions": [
+      {
+        "hypothesis": "ifi",
+        "sourceId": "martin2015",
+        "locator": "Clinical presentation"
+      },
+      {
+        "hypothesis": "cubital",
+        "reason": "In some people the ulnar nerve slips over the bony point of the inner elbow each time the elbow bends."
+      }
+    ]
+  },
+  {
+    "id": "ischaemia",
+    "name": "Reduced blood supply (ischaemia)",
+    "description": "Nerves need a steady blood supply. When their blood vessels are squeezed, for example nerve roots in a narrowed spinal canal while walking, symptoms build with activity and settle within minutes of rest, like a limb that has 'gone to sleep'.",
+    "clues": [
+      {
+        "anyOf": [
+          "p_activity_rest"
+        ],
+        "answer": "yes",
+        "type": "usual",
+        "reason": "Symptoms from a nerve short of blood build with use and settle quickly with rest. If they don't, this is a less likely cause."
+      },
+      {
+        "anyOf": [
+          "h_walking_claudication",
+          "h_bend_forward"
+        ],
+        "answer": "yes",
+        "type": "supports",
+        "reason": "Leg symptoms on walking that ease by sitting or bending forward are the classic pattern of nerve roots short of blood in a narrowed canal."
+      },
+      {
+        "anyOf": [
+          "p_tingling",
+          "p_buzzing"
+        ],
+        "answer": "yes",
+        "type": "supports",
+        "reason": "A nerve short of blood fires abnormally: the same pins and needles as a foot that has gone to sleep."
+      },
+      {
+        "anyOf": [
+          "p_heavy_weak"
+        ],
+        "answer": "yes",
+        "type": "supports",
+        "reason": "The limb feels heavy and tired as the nerve runs short of blood."
+      }
+    ],
+    "conditions": [
+      {
+        "hypothesis": "stenosis",
+        "reason": "Walking upright narrows the canal further and is thought to cut the blood flow to the squeezed roots, which recovers on sitting or bending forward."
+      },
+      {
+        "hypothesis": "cts",
+        "reason": "Night symptoms are thought to come partly from the nerve running short of blood while the wrist is bent during sleep."
+      },
+      {
+        "hypothesis": "tos",
+        "reason": "Arm-raised work can squeeze the nerves and vessels at the base of the neck together."
+      }
+    ]
+  },
+  {
+    "id": "inflammation",
+    "name": "Chemical irritation (inflammation)",
+    "description": "Inflammatory chemicals, for example from disc material that has leaked onto a nerve root, make a nerve sensitive even without much pressure. The pain tends to be burning or deep, present at rest and at night, and worse with coughing or straining.",
+    "clues": [
+      {
+        "anyOf": [
+          "p_night_rest"
+        ],
+        "answer": "yes",
+        "type": "usual",
+        "reason": "Chemical irritation doesn't switch off with rest. If the pain is never there at rest or at night, this is a less likely cause."
+      },
+      {
+        "anyOf": [
+          "p_burning"
+        ],
+        "answer": "yes",
+        "type": "supports",
+        "reason": "Burning is a common description of a chemically irritated nerve."
+      },
+      {
+        "anyOf": [
+          "p_throbbing"
+        ],
+        "answer": "yes",
+        "type": "supports",
+        "reason": "Throbbing is a common description of inflamed tissue."
+      },
+      {
+        "anyOf": [
+          "h_cough_sneeze"
+        ],
+        "answer": "yes",
+        "type": "supports",
+        "reason": "Coughing or sneezing briefly raises the pressure around an inflamed nerve root."
+      }
+    ],
+    "conditions": [
+      {
+        "hypothesis": "root_low",
+        "reason": "Disc material that has leaked onto a root inflames it as well as pressing on it."
+      },
+      {
+        "hypothesis": "root_mid",
+        "reason": "Disc material that has leaked onto a root inflames it as well as pressing on it."
+      },
+      {
+        "hypothesis": "root_cervical",
+        "reason": "Disc material that has leaked onto a root inflames it as well as pressing on it."
+      },
+      {
+        "hypothesis": "zoster",
+        "sourceId": "jeon2015",
+        "locator": "Pathophysiology (VZV reactivation in the dorsal root ganglia)"
+      }
+    ]
+  },
+  {
+    "id": "immune",
+    "name": "Immune attack on the nerve",
+    "description": "Occasionally the body's immune system inflames a nerve directly, with nothing pressing on it. It typically starts suddenly with severe pain lasting days to weeks, followed by weakness as the pain settles.",
+    "clues": [
+      {
+        "anyOf": [
+          "p_sudden_severe",
+          "h_sudden_severe_arm_pain"
+        ],
+        "answer": "yes",
+        "type": "usual",
+        "reason": "This kind of attack almost always starts with sudden, severe pain. Without that, it is unlikely."
+      },
+      {
+        "anyOf": [
+          "p_heavy_weak"
+        ],
+        "answer": "yes",
+        "type": "supports",
+        "reason": "Weakness follows as the pain eases."
+      },
+      {
+        "anyOf": [
+          "p_night_rest"
+        ],
+        "answer": "yes",
+        "type": "supports",
+        "reason": "The pain is constant at first, including at night."
+      }
+    ],
+    "conditions": [
+      {
+        "hypothesis": "neuralgic_amyotrophy",
+        "reason": "An immune attack on the nerves of the shoulder and arm."
+      },
+      {
+        "hypothesis": "median_proximal",
+        "sourceId": "pham2014",
+        "locator": "Abstract, Results and Conclusion"
+      }
+    ]
+  },
+  {
+    "id": "injury",
+    "name": "Direct injury (trauma or an operation)",
+    "description": "A nerve can be bruised, stretched or cut by an injury, or damaged during an operation near it. Symptoms start at or soon after the event, in the area that nerve supplies.",
+    "clues": [
+      {
+        "anyOf": [
+          "p_injury"
+        ],
+        "answer": "yes",
+        "type": "usual",
+        "reason": "An injured nerve gives symptoms from the time of the injury. Without one, this is unlikely."
+      },
+      {
+        "anyOf": [
+          "h_recent_surgery"
+        ],
+        "answer": "yes",
+        "type": "supports",
+        "reason": "Several nerves here are known to be injured during nearby operations."
+      },
+      {
+        "anyOf": [
+          "p_numb"
+        ],
+        "answer": "yes",
+        "type": "supports",
+        "reason": "A damaged nerve leaves the skin it supplies numb."
+      }
+    ],
+    "conditions": [
+      {
+        "hypothesis": "lfcn",
+        "sourceId": "goulding2010",
+        "locator": "Abstract, Results"
+      },
+      {
+        "hypothesis": "ilio_genito",
+        "sourceId": "ergonenc2017",
+        "locator": "Abstract, Results"
+      },
+      {
+        "hypothesis": "obturator",
+        "sourceId": "kitagawa2009",
+        "locator": "Abstract, Objective"
+      },
+      {
+        "hypothesis": "axillary",
+        "reason": "The axillary nerve can be stretched when the shoulder dislocates."
+      },
+      {
+        "hypothesis": "femoral",
+        "reason": "The femoral nerve can be injured during hip or pelvic operations."
+      },
+      {
+        "hypothesis": "intercostal",
+        "reason": "Most often damaged during chest, lung or breast surgery or by a rib injury."
+      }
+    ]
+  },
+  {
+    "id": "sensitisation",
+    "name": "Sensitised nervous system (sensitisation)",
+    "description": "When pain goes on for a long time, the nerves and spinal cord can become more sensitive and turn up the volume of every signal. Light touch can then hurt, and the pain can spread beyond the original area. This can come on top of any long-lasting problem, so it isn't linked to one condition.",
+    "clues": [
+      {
+        "anyOf": [
+          "p_light_touch"
+        ],
+        "answer": "yes",
+        "type": "supports",
+        "reason": "Pain from a light brush on the skin is thought to come from nerve cells in the spinal cord becoming more excitable, rather than from the injured nerve itself.",
+        "sourceId": "scholz2009",
+        "locator": "Discussion (dynamic tactile allodynia)"
+      },
+      {
+        "anyOf": [
+          "p_spreading"
+        ],
+        "answer": "yes",
+        "type": "supports",
+        "reason": "Pain that spreads well beyond the original area suggests the signals are being amplified."
+      },
+      {
+        "anyOf": [
+          "p_burning"
+        ],
+        "answer": "yes",
+        "type": "supports",
+        "reason": "Burning is common when the nervous system is sensitised."
+      }
+    ],
+    "conditions": []
+  },
+  {
+    "id": "tissue",
+    "name": "Tissue overload: the nerve only carries the pain",
+    "description": "Here the nerve itself is healthy. A tendon, joint, disc or muscle is overloaded or worn, and the nerves simply carry the pain signal from it. The pain tends to be dull, aching or tight, in an area you can point to, set off by using or pressing that structure, and without numbness.",
+    "clues": [
+      {
+        "anyOf": [
+          "p_one_spot"
+        ],
+        "answer": "yes",
+        "type": "usual",
+        "reason": "Tissue pain comes from the structure itself, so pressing or loading it usually sets the pain off. In back pain from the spine's own tissues, the muscles are typically tender to pressure.",
+        "sourceId": "forster2013",
+        "locator": "Discussion (nociceptive back pain)"
+      },
+      {
+        "anyOf": [
+          "p_dull_ache"
+        ],
+        "answer": "yes",
+        "type": "supports",
+        "reason": "Pain from the spine's own tissues is typically dull and aching.",
+        "sourceId": "forster2013",
+        "locator": "Discussion (nociceptive back pain)"
+      },
+      {
+        "anyOf": [
+          "p_tight"
+        ],
+        "answer": "yes",
+        "type": "supports",
+        "reason": "Overloaded or guarding muscles feel tight or cramp."
+      },
+      {
+        "anyOf": [
+          "p_stabbing"
+        ],
+        "answer": "yes",
+        "type": "supports",
+        "reason": "A sharp, catching pain with one movement often comes from a joint or tendon."
+      },
+      {
+        "anyOf": [
+          "p_repetitive"
+        ],
+        "answer": "yes",
+        "type": "supports",
+        "reason": "Tendons are overloaded by repeated movement."
+      },
+      {
+        "anyOf": [
+          "p_numb"
+        ],
+        "answer": "no",
+        "type": "supports",
+        "reason": "A tendon, joint or muscle problem doesn't damage nerve fibres, so it rarely makes the skin numb. Among 1,083 people with back pain that didn't spread down the leg, 4.9% reported marked numbness.",
+        "sourceId": "forster2013",
+        "locator": "Table 2 (numbness)"
+      },
+      {
+        "anyOf": [
+          "p_tingling",
+          "p_buzzing"
+        ],
+        "answer": "no",
+        "type": "supports",
+        "reason": "Pins and needles is uncommon without a nerve problem. In the same group, 10.9% reported marked prickling.",
+        "sourceId": "forster2013",
+        "locator": "Table 2 (prickling)"
+      },
+      {
+        "anyOf": [
+          "p_heat_eases"
+        ],
+        "answer": "yes",
+        "type": "supports",
+        "reason": "Warmth relaxes tight or guarding muscle and eases stiff joints. It can ease nerve pain too, so it only fits, never rules out."
+      },
+      {
+        "anyOf": [
+          "p_movement_eases"
+        ],
+        "answer": "yes",
+        "type": "supports",
+        "reason": "Joints and muscles stiffen when kept still and loosen once you get moving."
+      }
+    ],
+    "conditions": [
+      {
+        "hypothesis": "hip_oa",
+        "sourceId": "altman1991",
+        "locator": "Abstract"
+      },
+      {
+        "hypothesis": "sij",
+        "sourceId": "laslett2005",
+        "locator": "Abstract"
+      },
+      {
+        "hypothesis": "gtps",
+        "sourceId": "grimaldi2017",
+        "locator": "Abstract, Methods"
+      },
+      {
+        "hypothesis": "ifi",
+        "sourceId": "martin2015",
+        "locator": "Clinical presentation"
+      },
+      {
+        "hypothesis": "intersection_syndrome",
+        "sourceId": "grundberg1985",
+        "locator": "Abstract"
+      },
+      {
+        "hypothesis": "rotator_cuff"
+      },
+      {
+        "hypothesis": "lateral_epicondylalgia"
+      },
+      {
+        "hypothesis": "medial_epicondylalgia"
+      },
+      {
+        "hypothesis": "frozen_shoulder"
+      },
+      {
+        "hypothesis": "biceps_tendinopathy"
+      },
+      {
+        "hypothesis": "de_quervain"
+      },
+      {
+        "hypothesis": "thumb_cmc_oa"
+      },
+      {
+        "hypothesis": "trigger_finger"
+      },
+      {
+        "hypothesis": "proximal_hamstring"
+      },
+      {
+        "hypothesis": "disc_pain"
+      },
+      {
+        "hypothesis": "facet_lbp"
+      },
+      {
+        "hypothesis": "hip_fai"
+      },
+      {
+        "hypothesis": "adductor_groin"
+      },
+      {
+        "hypothesis": "ac_joint"
+      },
+      {
+        "hypothesis": "shoulder_oa"
+      },
+      {
+        "hypothesis": "neck_joint"
+      },
+      {
+        "hypothesis": "tfcc"
+      },
+      {
+        "hypothesis": "nonspecific_arm_pain"
+      },
+      {
+        "hypothesis": "chest_wall"
+      },
+      {
+        "hypothesis": "thoracic_joint"
+      },
+      {
+        "hypothesis": "vertebral_fracture"
+      },
+      {
+        "hypothesis": "sc_joint"
+      },
+      {
+        "hypothesis": "muscle_lbp"
+      },
+      {
+        "hypothesis": "plantar_plate"
+      },
+      {
+        "hypothesis": "mt_stress_fracture"
+      },
+      {
+        "hypothesis": "hallux_rigidus"
+      }
+    ]
+  }
+]

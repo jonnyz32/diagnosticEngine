@@ -1,0 +1,1301 @@
+[
+  {
+    "id": "mri_lumbar",
+    "name": "Lumbar spine MRI",
+    "hypotheses": [
+      "root_mid",
+      "root_low",
+      "stenosis"
+    ],
+    "description": "Shows disc herniations and narrowing that compress nerve roots. Guidelines reserve it for persistent symptoms in people who may be candidates for surgery or injection, or for severe or progressive neurological deficits.",
+    "recommendation": {
+      "sourceId": "chou2007",
+      "locator": "Recommendations 3 and 4"
+    },
+    "accuracy": []
+  },
+  {
+    "id": "femoral_stretch",
+    "name": "Femoral stretch test (clinician)",
+    "hypotheses": [
+      "root_mid"
+    ],
+    "description": "Lying face down, the clinician bends your knee; reproduction of your usual thigh pain is positive.",
+    "recommendation": {
+      "sourceId": "suri2011",
+      "locator": "Methods; Table 3"
+    },
+    "accuracy": [
+      {
+        "sens": 0.5,
+        "spec": 1,
+        "sensCI": [
+          0.31,
+          0.69
+        ],
+        "specCI": [
+          0.88,
+          1
+        ],
+        "sourceId": "suri2011",
+        "locator": "Table 3, 'Femoral Stretch Test', midlumbar",
+        "population": "Spine-centre patients with radicular leg pain < 12 weeks"
+      }
+    ]
+  },
+  {
+    "id": "patellar_reflex",
+    "name": "Knee-jerk (patellar) reflex (clinician)",
+    "hypotheses": [
+      "root_mid"
+    ],
+    "description": "A reduced knee-jerk on the painful side points toward an L3/L4 root.",
+    "recommendation": {
+      "sourceId": "suri2011",
+      "locator": "Table 3"
+    },
+    "accuracy": [
+      {
+        "sens": 0.28,
+        "spec": 1,
+        "sensCI": [
+          0.14,
+          0.48
+        ],
+        "specCI": [
+          0.88,
+          1
+        ],
+        "sourceId": "suri2011",
+        "locator": "Table 3, 'Patella' reflex, midlumbar",
+        "population": "Spine-centre patients with radicular leg pain < 12 weeks"
+      }
+    ]
+  },
+  {
+    "id": "achilles_reflex",
+    "name": "Ankle-jerk (Achilles) reflex (clinician)",
+    "hypotheses": [
+      "root_low"
+    ],
+    "description": "A reduced ankle-jerk on the painful side points toward an S1 (or L5) root.",
+    "recommendation": {
+      "sourceId": "suri2011",
+      "locator": "Table 3"
+    },
+    "accuracy": [
+      {
+        "sens": 0.29,
+        "spec": 0.96,
+        "sensCI": [
+          0.15,
+          0.47
+        ],
+        "specCI": [
+          0.81,
+          0.99
+        ],
+        "sourceId": "suri2011",
+        "locator": "Table 3, 'Ankle' reflex, low lumbar",
+        "population": "Spine-centre patients with radicular leg pain < 12 weeks"
+      }
+    ]
+  },
+  {
+    "id": "stenosis_gait_romberg",
+    "name": "Gait and balance examination: wide-based gait, Romberg test (clinician)",
+    "hypotheses": [
+      "stenosis"
+    ],
+    "description": "A clinician watches you walk and checks your balance with feet together and eyes closed.",
+    "recommendation": {
+      "sourceId": "suri2010",
+      "locator": "Table 3, Physical examination"
+    },
+    "accuracy": [
+      {
+        "sens": 0.42,
+        "spec": 0.97,
+        "sensCI": [
+          0.27,
+          0.57
+        ],
+        "specCI": [
+          0.91,
+          1
+        ],
+        "sourceId": "suri2010",
+        "locator": "Table 3, 'Wide-based gait' (primary study: Katz 1995)",
+        "population": "Specialty-clinic patients with low back pain"
+      },
+      {
+        "sens": 0.4,
+        "spec": 0.91,
+        "sensCI": [
+          0.25,
+          0.54
+        ],
+        "specCI": [
+          0.81,
+          1
+        ],
+        "sourceId": "suri2010",
+        "locator": "Table 3, 'Abnormal Romberg test result' (primary study: Katz 1995)",
+        "population": "Specialty-clinic patients with low back pain"
+      }
+    ]
+  },
+  {
+    "id": "piriformis_tests",
+    "name": "Active piriformis test + seated piriformis stretch test (clinician)",
+    "hypotheses": [
+      "deep_gluteal"
+    ],
+    "description": "Two examination maneuvers that load the piriformis region while the clinician feels for tenderness. Combined, they were the most accurate findings in the source study.",
+    "recommendation": {
+      "sourceId": "martin2014",
+      "locator": "Abstract, Conclusions"
+    },
+    "accuracy": [
+      {
+        "sens": 0.91,
+        "spec": 0.8,
+        "sourceId": "martin2014",
+        "locator": "Abstract, Results (active piriformis + seated piriformis stretch combined)",
+        "population": "Posterior hip pain patients undergoing endoscopy"
+      }
+    ]
+  },
+  {
+    "id": "entrapment_edx_imaging",
+    "name": "Nerve conduction / EMG, then MR neurography or ultrasound if unclear",
+    "hypotheses": [
+      "deep_gluteal",
+      "lfcn"
+    ],
+    "description": "Electrodiagnostic studies help confirm a nerve entrapment outside the spine; MR neurography, MRI or ultrasound clarify the cause when the diagnosis is still unclear.",
+    "recommendation": {
+      "sourceId": "draghici2023",
+      "locator": "Abstract"
+    },
+    "accuracy": []
+  },
+  {
+    "id": "pelvic_compression_clinician",
+    "name": "Pelvic compression test (clinician)",
+    "hypotheses": [
+      "lfcn"
+    ],
+    "description": "A clinician performs the same compression test this tool guided you through, under standard conditions.",
+    "recommendation": {
+      "sourceId": "nouraei2007",
+      "locator": "Abstract, Conclusion"
+    },
+    "accuracy": [
+      {
+        "sens": 0.95,
+        "spec": 0.933,
+        "sourceId": "nouraei2007",
+        "locator": "Abstract, Results",
+        "population": "Patients diagnosed with meralgia paresthetica, retrospective series"
+      }
+    ]
+  },
+  {
+    "id": "pudendal_block",
+    "name": "Diagnostic pudendal nerve block",
+    "hypotheses": [
+      "pudendal"
+    ],
+    "description": "Pain relief after an anaesthetic injection around the pudendal nerve is one of the five Nantes diagnostic criteria; expert consensus endorses these criteria for diagnosis.",
+    "recommendation": {
+      "sourceId": "labat2008",
+      "locator": "Abstract, Results (criterion 5)"
+    },
+    "accuracy": []
+  },
+  {
+    "id": "nantes_assessment",
+    "name": "Specialist assessment against the Nantes criteria",
+    "hypotheses": [
+      "pudendal"
+    ],
+    "description": "A pelvic pain specialist assesses you against the 4+1 Nantes criteria.",
+    "recommendation": {
+      "sourceId": "levesque2022",
+      "locator": "Abstract, Results (i)"
+    },
+    "accuracy": []
+  },
+  {
+    "id": "cluneal_block",
+    "name": "Superior cluneal nerve block",
+    "hypotheses": [
+      "cluneal"
+    ],
+    "description": "If pressing a point on the back of the pelvic rim about 7 cm from the midline reproduces your pain, a clinician can inject local anaesthetic there to test whether the superior cluneal nerve is the source.",
+    "recommendation": {
+      "sourceId": "kuniya2014",
+      "locator": "Abstract, Methods"
+    },
+    "accuracy": []
+  },
+  {
+    "id": "pudendal_nfs_block",
+    "name": "Pudendal neurophysiology study + image-guided pudendal nerve block",
+    "hypotheses": [
+      "pudendal"
+    ],
+    "description": "Nerve conduction testing of the pudendal nerve combined with an image-guided anaesthetic injection; together they helped identify patients who improved after decompression surgery.",
+    "recommendation": {
+      "sourceId": "fernandes2025",
+      "locator": "Abstract, Conclusions"
+    },
+    "accuracy": [
+      {
+        "sens": 0.79,
+        "spec": 0.857,
+        "sourceId": "fernandes2025",
+        "locator": "Abstract, Results (NFS + ImPNI combined)",
+        "population": "Refractory pudendal entrapment patients; reference = improvement after surgery; no control group"
+      }
+    ]
+  },
+  {
+    "id": "pudendal_imaging",
+    "name": "Pelvic imaging: colour duplex ultrasound or MRI of the pudendal nerve",
+    "hypotheses": [
+      "pudendal"
+    ],
+    "description": "Imaging can show entrapment or rule out other causes; its role is still limited and figures come from patients already meeting the Nantes criteria.",
+    "recommendation": {
+      "sourceId": "ahmed2026",
+      "locator": "Results, Imaging"
+    },
+    "accuracy": [
+      {
+        "sens": 0.896,
+        "spec": 0.674,
+        "sourceId": "mollo2009",
+        "locator": "Abstract (colour duplex scanning)",
+        "population": "96 consecutive patients evaluated for pudendal neuralgia; reference = neurological criteria"
+      },
+      {
+        "sens": 0.78,
+        "sourceId": "ahmed2026",
+        "locator": "Results, MRI (primary study: Piloni et al.)",
+        "population": "580 patients meeting Nantes criteria"
+      }
+    ]
+  },
+  {
+    "id": "scn_hip_knee_flexion",
+    "name": "Hip-knee flexion test (clinician)",
+    "hypotheses": [
+      "cluneal"
+    ],
+    "description": "An examination maneuver that was more specific for superior cluneal entrapment than for other causes of chronic low back pain.",
+    "recommendation": {
+      "sourceId": "kiral2024",
+      "locator": "Abstract, Results"
+    },
+    "accuracy": [
+      {
+        "sens": 0.4167,
+        "spec": 0.8864,
+        "sourceId": "kiral2024",
+        "locator": "Abstract, Results",
+        "population": "200 patients with chronic mechanical low back pain; reference = US-guided SCN block"
+      }
+    ]
+  },
+  {
+    "id": "obturator_emg",
+    "name": "Needle EMG of the inner-thigh (adductor) muscles",
+    "hypotheses": [
+      "obturator"
+    ],
+    "description": "In the source case series, needle EMG showed denervation of the adductor muscles in obturator entrapment.",
+    "recommendation": {
+      "sourceId": "bradshaw1997",
+      "locator": "Abstract"
+    },
+    "accuracy": []
+  },
+  {
+    "id": "michel_score",
+    "name": "Michel clinical score for piriformis syndrome (clinician)",
+    "hypotheses": [
+      "deep_gluteal"
+    ],
+    "description": "A 12-point score combining history with piriformis stretch, resisted-contraction and palpation tests; 8 or more is 'probable'. It was derived against patients with disc-related nerve root compression, the main alternative.",
+    "recommendation": {
+      "sourceId": "michel2013",
+      "locator": "Table 2; Table 3"
+    },
+    "accuracy": [
+      {
+        "sens": 0.964,
+        "spec": 1,
+        "sourceId": "michel2013",
+        "locator": "Table 3 (score >= 8: 241/250 cases, 0/60 controls)",
+        "population": "250 cases vs 30 disc-root patients + 30 healthy controls (case-control; likely overestimates)"
+      }
+    ]
+  },
+  {
+    "id": "fair_hreflex",
+    "name": "FAIR-position H-reflex study (electrodiagnostic)",
+    "hypotheses": [
+      "deep_gluteal"
+    ],
+    "description": "Nerve testing that checks whether the H-reflex slows when the hip is held flexed, adducted and internally rotated. This is an electrodiagnostic test, not the bedside FAIR maneuver. Note: in a later study the FAIR-position delay did not significantly separate piriformis syndrome from disc-related root compression (0.7 vs 0.46 ms, p = 0.06; Michel 2013, Table 1). A systematic review notes the original study compared against people without symptoms rather than patients with other causes of sciatica, so it did not establish the test's accuracy (Hopayian 2010).",
+    "recommendation": {
+      "sourceId": "fishman2002",
+      "locator": "Abstract, Conclusions"
+    },
+    "accuracy": [
+      {
+        "sens": 0.881,
+        "spec": 0.832,
+        "sourceId": "fishman2002",
+        "locator": "Abstract, Results (3 SD criterion)",
+        "population": "918 consecutive patients; reference = clinical working definition"
+      }
+    ]
+  },
+  {
+    "id": "gfn_mrn_block",
+    "name": "MR-neurography-guided genitofemoral nerve block",
+    "hypotheses": [
+      "ilio_genito"
+    ],
+    "description": "A precisely targeted anaesthetic block of the genitofemoral nerve. In the source series, 88% (14/16) of patients with a positive block had a successful genitofemoral-targeted intervention, and 71% (5/7) with a negative block had a successful intervention on another target.",
+    "recommendation": {
+      "sourceId": "fritz2017",
+      "locator": "Abstract, Results and Conclusion"
+    },
+    "accuracy": []
+  },
+  {
+    "id": "lfcn_conduction",
+    "name": "Lateral femoral cutaneous nerve conduction study",
+    "hypotheses": [
+      "lfcn"
+    ],
+    "description": "Sensory nerve conduction is the standard electrodiagnostic test. Evoked potentials (SSEP) are a weaker fallback, mainly when conduction can't be recorded, e.g. in obesity.",
+    "recommendation": {
+      "sourceId": "seror2004",
+      "locator": "Abstract, Conclusion"
+    },
+    "accuracy": [
+      {
+        "sens": 0.983,
+        "sourceId": "seror2006",
+        "locator": "Abstract (side-to-side amplitude ratio > 2.3)",
+        "population": "120 patients with meralgia paresthetica"
+      },
+      {
+        "spec": 0.9875,
+        "sourceId": "seror2006",
+        "locator": "Abstract (ratio >= 2.3 and SNAP < 3 microV)",
+        "population": "120 patients with meralgia paresthetica"
+      },
+      {
+        "sens": 0.52,
+        "spec": 0.76,
+        "sourceId": "seror2004",
+        "locator": "Abstract, Results (SSEP, thigh stimulation)",
+        "population": "21 meralgia patients vs 21 controls"
+      }
+    ]
+  },
+  {
+    "id": "dgs_mrn",
+    "name": "MR neurography of the sciatic notch",
+    "hypotheses": [
+      "deep_gluteal"
+    ],
+    "description": "Specialised MRI of the nerve. Piriformis asymmetry plus a bright (irritated) sciatic nerve at the sciatic notch separated piriformis syndrome from similar-looking sciatica. Caveat: cases were partly defined by response to a piriformis injection, which is a weak reference standard (Hopayian 2010).",
+    "recommendation": {
+      "sourceId": "filler2005",
+      "locator": "Abstract, Conclusions"
+    },
+    "accuracy": [
+      {
+        "sens": 0.64,
+        "spec": 0.93,
+        "sourceId": "filler2005",
+        "locator": "Abstract, Conclusions",
+        "population": "239 consecutive patients with sciatica unexplained by standard work-up"
+      }
+    ]
+  },
+  {
+    "id": "dgs_us_thickness",
+    "name": "Ultrasound measurement of piriformis thickness",
+    "hypotheses": [
+      "deep_gluteal"
+    ],
+    "description": "A piriformis muscle thicker than about 1 cm on ultrasound was associated with piriformis syndrome (compared with healthy people, which overstates accuracy).",
+    "recommendation": {
+      "sourceId": "siahaan2021",
+      "locator": "Abstract, Conclusion"
+    },
+    "accuracy": [
+      {
+        "sens": 0.948,
+        "spec": 0.879,
+        "sourceId": "siahaan2021",
+        "locator": "Abstract, Conclusion (cut-off 0.995 cm)",
+        "population": "58 cases vs 58 healthy controls"
+      }
+    ]
+  },
+  {
+    "id": "ii_emg",
+    "name": "EMG of the lower abdominal wall muscles",
+    "hypotheses": [
+      "ilio_genito"
+    ],
+    "description": "Electromyography detected abnormalities in some but not all confirmed cases, so a normal result doesn't rule it out.",
+    "recommendation": {
+      "sourceId": "knockaert1996",
+      "locator": "Abstract"
+    },
+    "accuracy": [
+      {
+        "sens": 0.6,
+        "sourceId": "knockaert1996",
+        "locator": "Abstract (15/25 definite cases)",
+        "population": "Definite ilioinguinal-iliohypogastric entrapment"
+      }
+    ]
+  },
+  {
+    "id": "scn_ultrasound",
+    "name": "Musculoskeletal ultrasound of the back of the pelvic rim",
+    "hypotheses": [
+      "cluneal"
+    ],
+    "description": "Ultrasound can show tissue changes around the superior cluneal nerves (fascial nodules, thickening, bony spurs). Pilot data only.",
+    "recommendation": {
+      "sourceId": "iudicelli2026",
+      "locator": "Abstract, Conclusions"
+    },
+    "accuracy": [
+      {
+        "sens": 0.917,
+        "spec": 0.917,
+        "sourceId": "iudicelli2026",
+        "locator": "Abstract, Results (Copeman nodules: 91.7% of patients vs 8.3% of controls)",
+        "population": "12 patients vs 12 healthy controls"
+      }
+    ]
+  },
+  {
+    "id": "piriformis_maneuvers",
+    "name": "Piriformis provocation maneuvers held for up to a minute (clinician): Freiberg, FAIR, heel-to-opposite-knee, Beatty",
+    "hypotheses": [
+      "deep_gluteal"
+    ],
+    "description": "Each maneuver stretches or contracts the piriformis while the clinician watches for your usual buttock pain. They must be held for several tens of seconds. Compared against patients with L5/S1 disc-related root compression, the Beatty test was positive least often in disc patients.",
+    "recommendation": {
+      "sourceId": "michel2013",
+      "locator": "Table 1; Discussion"
+    },
+    "accuracy": [
+      {
+        "spec": 0.933,
+        "specCI": [
+          0.787,
+          0.982
+        ],
+        "sourceId": "michel2013",
+        "locator": "Table 1, Beatty (2/30 disc patients positive)",
+        "population": "250 piriformis cases (all positive; likely incorporation bias) vs 30 L5/S1 disc patients"
+      },
+      {
+        "spec": 0.767,
+        "specCI": [
+          0.591,
+          0.882
+        ],
+        "sourceId": "michel2013",
+        "locator": "Table 1, Freiberg (7/30)",
+        "population": "vs 30 L5/S1 disc patients"
+      },
+      {
+        "spec": 0.6,
+        "specCI": [
+          0.423,
+          0.754
+        ],
+        "sourceId": "michel2013",
+        "locator": "Table 1, FAIR (12/30)",
+        "population": "vs 30 L5/S1 disc patients"
+      },
+      {
+        "spec": 0.6,
+        "specCI": [
+          0.423,
+          0.754
+        ],
+        "sourceId": "michel2013",
+        "locator": "Table 1, heel-contralateral-knee (12/30)",
+        "population": "vs 30 L5/S1 disc patients"
+      }
+    ]
+  },
+  {
+    "id": "needle_emg_root_vs_piriformis",
+    "name": "Needle EMG of the leg muscles",
+    "hypotheses": [
+      "root_low",
+      "deep_gluteal"
+    ],
+    "description": "Looks for signs of nerve damage in the leg muscles. These were found in most patients with L5/S1 disc-related root compression and in none with piriformis syndrome, so it helps tell the two apart.",
+    "recommendation": {
+      "sourceId": "michel2013",
+      "locator": "Table 1; Results (electro-neuro-myography)"
+    },
+    "accuracy": [
+      {
+        "sens": 0.867,
+        "spec": 1,
+        "sensCI": [
+          0.703,
+          0.947
+        ],
+        "specCI": [
+          0.985,
+          1
+        ],
+        "sourceId": "michel2013",
+        "locator": "Table 1 (neurogenic patterns 26/30 disc patients vs 0/250 piriformis)",
+        "population": "Root compression (L5/S1) vs piriformis syndrome"
+      }
+    ]
+  },
+  {
+    "id": "step_tool",
+    "name": "Standardized Evaluation of Pain (StEP): structured interview + bedside exam (clinician)",
+    "hypotheses": [
+      "root_low",
+      "root_mid"
+    ],
+    "description": "Six interview questions and ten bedside tests that separate nerve-root (radicular) pain from back pain without nerve involvement.",
+    "recommendation": {
+      "sourceId": "scholz2009",
+      "locator": "Abstract, Conclusions"
+    },
+    "accuracy": [
+      {
+        "sens": 0.92,
+        "spec": 0.97,
+        "sensCI": [
+          0.83,
+          0.97
+        ],
+        "specCI": [
+          0.89,
+          1
+        ],
+        "sourceId": "scholz2009",
+        "locator": "Abstract, Methods and Findings (validation group)",
+        "population": "137 patients, radicular vs axial low back pain"
+      }
+    ]
+  },
+  {
+    "id": "hip_rom_exam",
+    "name": "Hip range-of-motion examination (clinician)",
+    "hypotheses": [
+      "hip_oa"
+    ],
+    "description": "A clinician checks how far the hip moves compared with the other side. Normal inward movement (adduction) makes hip osteoarthritis much less likely.",
+    "recommendation": {
+      "sourceId": "metcalfe2019",
+      "locator": "Conclusions; Table 2"
+    },
+    "accuracy": [
+      {
+        "sens": 0.8,
+        "spec": 0.81,
+        "sensCI": [
+          0.59,
+          0.93
+        ],
+        "specCI": [
+          0.75,
+          0.86
+        ],
+        "sourceId": "metcalfe2019",
+        "locator": "Table 2, 'Decreased hip adduction'",
+        "population": "Hip/groin pain, reference = X-ray"
+      },
+      {
+        "sens": 0.66,
+        "spec": 0.79,
+        "sensCI": [
+          0.47,
+          0.81
+        ],
+        "specCI": [
+          0.57,
+          0.92
+        ],
+        "sourceId": "metcalfe2019",
+        "locator": "Table 2, 'Decreased hip internal rotation' (pooled)",
+        "population": "Hip/groin pain, reference = X-ray"
+      }
+    ]
+  },
+  {
+    "id": "hip_xray",
+    "name": "Hip X-ray",
+    "hypotheses": [
+      "hip_oa"
+    ],
+    "description": "Shows joint narrowing and bone spurs. Bone spurs (osteophytes) best separated hip osteoarthritis from other causes of hip pain.",
+    "recommendation": {
+      "sourceId": "altman1991",
+      "locator": "Abstract"
+    },
+    "accuracy": [
+      {
+        "sens": 0.89,
+        "spec": 0.91,
+        "sourceId": "altman1991",
+        "locator": "Abstract (radiographic osteophytes)",
+        "population": "201 patients with hip pain vs other causes of hip pain"
+      }
+    ]
+  },
+  {
+    "id": "sij_provocation",
+    "name": "Sacroiliac provocation test cluster (clinician)",
+    "hypotheses": [
+      "sij"
+    ],
+    "description": "Six pain-provocation tests; three or more positive suggests the sacroiliac joint, and all six negative makes it unlikely.",
+    "recommendation": {
+      "sourceId": "laslett2005",
+      "locator": "Abstract, Conclusion"
+    },
+    "accuracy": [
+      {
+        "sens": 0.94,
+        "spec": 0.78,
+        "sourceId": "laslett2005",
+        "locator": "Abstract (3 or more of 6 tests)",
+        "population": "48 LBP patients; reference = SIJ anaesthetic injection"
+      }
+    ]
+  },
+  {
+    "id": "gt_clinical_exam",
+    "name": "Lateral hip clinical examination (palpation plus provocation tests)",
+    "hypotheses": [
+      "gtps"
+    ],
+    "description": "A clinician presses on the outer hip and performs tendon-loading tests; MRI can confirm.",
+    "recommendation": {
+      "sourceId": "grimaldi2017",
+      "locator": "Conclusions"
+    },
+    "accuracy": [
+      {
+        "sens": 0.6,
+        "spec": 0.73,
+        "sourceId": "grimaldi2017",
+        "locator": "Results (palpation + 1 or more other test)",
+        "population": "65 patients with lateral hip pain; reference = MRI"
+      }
+    ]
+  },
+  {
+    "id": "pfcn_block",
+    "name": "Ultrasound-guided posterior femoral cutaneous nerve block",
+    "hypotheses": [
+      "pfcn"
+    ],
+    "description": "An anaesthetic injection around the nerve, guided by high-resolution ultrasound; relief supports the diagnosis.",
+    "recommendation": {
+      "sourceId": "meng2015",
+      "locator": "Abstract, Results and Conclusion"
+    },
+    "accuracy": []
+  },
+  {
+    "id": "ifi_test",
+    "name": "Ischiofemoral impingement test (clinician)",
+    "hypotheses": [
+      "ifi"
+    ],
+    "description": "A clinician moves the hip into extension and adduction to see whether it reproduces the pain; MRI can show the narrowed space.",
+    "recommendation": {
+      "sourceId": "gomezhoyos2016",
+      "locator": "Abstract, Conclusions"
+    },
+    "accuracy": [
+      {
+        "sens": 0.824,
+        "spec": 0.846,
+        "sensCI": [
+          0.59,
+          0.938
+        ],
+        "specCI": [
+          0.578,
+          0.957
+        ],
+        "sourceId": "gomezhoyos2016",
+        "locator": "Abstract, Results (IFI test)",
+        "population": "30 patients with posterior hip pain, spine excluded"
+      }
+    ]
+  },
+  {
+    "id": "obturator_block",
+    "name": "Local anaesthetic obturator nerve block",
+    "hypotheses": [
+      "obturator"
+    ],
+    "description": "An anaesthetic injection around the obturator nerve; relief of the exercise-related groin pain supports the diagnosis.",
+    "recommendation": {
+      "sourceId": "brukner1999",
+      "locator": "Abstract"
+    },
+    "accuracy": []
+  },
+  {
+    "accuracy": [
+      {
+        "sens": 0.53,
+        "spec": 0.92,
+        "sensCI": [
+          0.29,
+          0.78
+        ],
+        "specCI": [
+          0.88,
+          0.96
+        ],
+        "sourceId": "lin2025",
+        "locator": "Abstract, Results",
+        "population": "8 pooled studies, imaging or electrodiagnostic reference"
+      }
+    ],
+    "id": "spurling_clinician",
+    "name": "Spurling's test (clinician)",
+    "hypotheses": [
+      "root_cervical"
+    ],
+    "description": "The clinician tilts and extends your neck toward the painful side and presses down on your head; reproduction of your arm symptoms is positive. Highly specific, so a positive result supports a nerve root problem.",
+    "recommendation": {
+      "sourceId": "lin2025",
+      "locator": "Abstract, Conclusions"
+    }
+  },
+  {
+    "accuracy": [
+      {
+        "sens": 0.97,
+        "spec": 0.51,
+        "sensCI": [
+          0.88,
+          0.99
+        ],
+        "specCI": [
+          0.4,
+          0.62
+        ],
+        "sourceId": "thoomes2026",
+        "locator": "Table 4, combined ULNTs (1 positive)",
+        "population": "Patients suspected of cervical radiculopathy"
+      }
+    ],
+    "id": "ulnt_cluster",
+    "name": "Upper limb neurodynamic tests, set of four (clinician)",
+    "hypotheses": [
+      "root_cervical"
+    ],
+    "description": "The clinician moves your arm, wrist and neck in four set sequences that stretch the arm nerves. If all four are negative, a nerve root problem is unlikely.",
+    "recommendation": {
+      "sourceId": "thoomes2026",
+      "locator": "Discussion (best evidence synthesis)"
+    }
+  },
+  {
+    "accuracy": [
+      {
+        "sens": 0.89,
+        "spec": 0.77,
+        "sensCI": [
+          0.84,
+          0.95
+        ],
+        "specCI": [
+          0.64,
+          0.9
+        ],
+        "sourceId": "zaki2022",
+        "locator": "Abstract (pooled NCS + EMG)",
+        "population": "12 studies of patients assessed for carpal tunnel syndrome"
+      }
+    ],
+    "id": "ncs_cts",
+    "name": "Nerve conduction studies and EMG (wrist)",
+    "hypotheses": [
+      "cts"
+    ],
+    "description": "Electrical tests of how fast and how well the median nerve conducts across the wrist.",
+    "recommendation": {
+      "sourceId": "zaki2022",
+      "locator": "Abstract"
+    }
+  },
+  {
+    "accuracy": [
+      {
+        "sens": 0.8,
+        "spec": 0.9,
+        "sensCI": [
+          0.73,
+          0.88
+        ],
+        "specCI": [
+          0.83,
+          0.96
+        ],
+        "sourceId": "zaki2022",
+        "locator": "Abstract (pooled ultrasound)",
+        "population": "12 studies of patients assessed for carpal tunnel syndrome"
+      }
+    ],
+    "id": "us_cts",
+    "name": "Ultrasound of the median nerve (wrist)",
+    "hypotheses": [
+      "cts"
+    ],
+    "description": "Measures the swelling of the median nerve at the carpal tunnel.",
+    "recommendation": {
+      "sourceId": "zaki2022",
+      "locator": "Abstract"
+    }
+  },
+  {
+    "accuracy": [
+      {
+        "sens": 0.89,
+        "spec": 0.8,
+        "sourceId": "omejec2015",
+        "locator": "Abstract, Results (specificity in asymptomatic controls)",
+        "population": "81 definite ulnar neuropathy at the elbow arms; asymptomatic controls"
+      }
+    ],
+    "id": "ncs_cubital",
+    "name": "Nerve conduction studies across the elbow (short-segment)",
+    "hypotheses": [
+      "cubital"
+    ],
+    "description": "Electrical tests of the ulnar nerve in short steps across the elbow, which locate the slowing more precisely than standard testing.",
+    "recommendation": {
+      "sourceId": "omejec2015",
+      "locator": "Abstract, Conclusion"
+    }
+  },
+  {
+    "accuracy": [
+      {
+        "sens": 0.71,
+        "spec": 0.82,
+        "sourceId": "omejec2015",
+        "locator": "Abstract, Results (specificity in asymptomatic controls)",
+        "population": "81 definite ulnar neuropathy at the elbow arms; asymptomatic controls"
+      }
+    ],
+    "id": "us_cubital",
+    "name": "Ultrasound of the ulnar nerve (elbow)",
+    "hypotheses": [
+      "cubital"
+    ],
+    "description": "Shows swelling of the ulnar nerve at the elbow; most useful when the nerve fibres themselves are damaged.",
+    "recommendation": {
+      "sourceId": "omejec2015",
+      "locator": "Abstract, Significance"
+    }
+  },
+  {
+    "accuracy": [
+      {
+        "sens": 0.9,
+        "spec": 1,
+        "sourceId": "seror2013",
+        "locator": "Abstract, Results (conduction to first dorsal interosseous including conduction block)",
+        "population": "53 ulnar neuropathy at the wrist cases; specificity against controls"
+      }
+    ],
+    "id": "ncs_guyon",
+    "name": "Ulnar motor conduction across the wrist",
+    "hypotheses": [
+      "guyon"
+    ],
+    "description": "Electrical testing of the ulnar nerve branch to the hand muscles, recorded across the wrist to look for a conduction block.",
+    "recommendation": {
+      "sourceId": "seror2013",
+      "locator": "Abstract, Conclusions"
+    }
+  },
+  {
+    "accuracy": [
+      {
+        "sens": 0.73,
+        "spec": 0.99,
+        "sourceId": "machanic2008",
+        "locator": "Abstract (latency 2.5 ms or more)",
+        "population": "41 surgically treated neurogenic TOS vs 19 healthy volunteers"
+      }
+    ],
+    "id": "mac_tos",
+    "name": "Medial antebrachial cutaneous nerve conduction",
+    "hypotheses": [
+      "tos"
+    ],
+    "description": "Electrical testing of the skin nerve of the inner forearm, which comes from the lowest part of the nerve bundle compressed in thoracic outlet syndrome.",
+    "recommendation": {
+      "sourceId": "machanic2008",
+      "locator": "Abstract, conclusion"
+    }
+  },
+  {
+    "accuracy": [
+      {
+        "sens": 0.926,
+        "spec": 0.8,
+        "sourceId": "kerasnoudis2024",
+        "locator": "Abstract, Results",
+        "population": "34 patients (68 elbows) with lateral elbow pain; pilot"
+      }
+    ],
+    "id": "us_radial_tunnel",
+    "name": "Neuromuscular ultrasound (radial nerve at the elbow)",
+    "hypotheses": [
+      "radial_tunnel"
+    ],
+    "description": "Looks for compression of the radial nerve below the elbow and helps tell radial tunnel syndrome from tennis elbow. Pilot data only; the study abstract is internally inconsistent.",
+    "recommendation": {
+      "sourceId": "kerasnoudis2024",
+      "locator": "Abstract, Conclusions"
+    }
+  },
+  {
+    "accuracy": [
+      {
+        "sens": 0.945,
+        "spec": 1,
+        "sourceId": "ludig2001",
+        "locator": "Abstract (muscular oedema vs EMG)",
+        "population": "18 patients with suprascapular nerve entrapment (retrospective)"
+      }
+    ],
+    "id": "mri_suprascapular",
+    "name": "Shoulder MRI (muscle oedema)",
+    "hypotheses": [
+      "suprascapular"
+    ],
+    "description": "MRI shows swelling (oedema) in the muscles the suprascapular nerve supplies, and where along the nerve the compression is.",
+    "recommendation": {
+      "sourceId": "ludig2001",
+      "locator": "Abstract, conclusion"
+    }
+  },
+  {
+    "accuracy": [
+      {
+        "sens": 0.65,
+        "spec": 1,
+        "sourceId": "silkjaerbak2022",
+        "locator": "Abstract, Results (medial winging group)",
+        "population": "20 patients with medial scapular winging vs 41 healthy subjects"
+      }
+    ],
+    "id": "edx_long_thoracic",
+    "name": "Electrodiagnostic testing (serratus anterior)",
+    "hypotheses": [
+      "long_thoracic"
+    ],
+    "description": "Nerve conduction and EMG of the long thoracic nerve and the serratus anterior muscle.",
+    "recommendation": {
+      "sourceId": "silkjaerbak2022",
+      "locator": "Abstract, Conclusion"
+    }
+  },
+  {
+    "accuracy": [
+      {
+        "sens": 0.74,
+        "sourceId": "aranyi2017",
+        "locator": "Abstract, Results",
+        "population": "53 patients, 70 affected nerves (no controls)"
+      }
+    ],
+    "id": "us_neuralgic",
+    "name": "Nerve ultrasound (neuralgic amyotrophy)",
+    "hypotheses": [
+      "neuralgic_amyotrophy"
+    ],
+    "description": "High-resolution ultrasound of the affected nerves can show swelling, narrowing or twisting, and helps identify the few cases that need surgery.",
+    "recommendation": {
+      "sourceId": "aranyi2017",
+      "locator": "Abstract, Discussion"
+    }
+  },
+  {
+    "accuracy": [
+      {
+        "sens": 1,
+        "spec": 1,
+        "sourceId": "pham2014",
+        "locator": "Abstract, Results",
+        "population": "20 anterior interosseous nerve syndrome patients vs 20 matched controls"
+      }
+    ],
+    "id": "mrn_ain",
+    "name": "MR neurography of the median nerve (upper arm)",
+    "hypotheses": [
+      "median_proximal"
+    ],
+    "description": "High-resolution MRI of the median nerve, which shows the affected nerve fibres in the upper arm in anterior interosseous nerve syndrome.",
+    "recommendation": {
+      "sourceId": "pham2014",
+      "locator": "Abstract, Conclusion"
+    }
+  },
+  {
+    "accuracy": [],
+    "id": "lag_rotator_cuff",
+    "name": "Rotator cuff lag and strength tests (clinician)",
+    "hypotheses": [
+      "rotator_cuff"
+    ],
+    "description": "The clinician places your arm in a position and checks whether you can hold it there (external and internal rotation lag tests); these were the most accurate findings for a full-thickness tear.",
+    "recommendation": {
+      "sourceId": "hermans2013",
+      "locator": "Abstract, Results and Conclusions"
+    }
+  },
+  {
+    "id": "us_morton",
+    "name": "Forefoot ultrasound",
+    "hypotheses": [
+      "morton"
+    ],
+    "description": "Shows the thickened nerve between the long foot bones. The expert protocol rated it the most useful single step.",
+    "recommendation": {
+      "sourceId": "dando2017",
+      "locator": "Table 1 (Imaging: ultrasound, 16 of 16 votes)"
+    },
+    "accuracy": [
+      {
+        "sens": 0.91,
+        "spec": 0.854,
+        "sensCI": [
+          0.83,
+          0.96
+        ],
+        "specCI": [
+          0.41,
+          1.0
+        ],
+        "sourceId": "bignotti2015",
+        "locator": "Abstract, Results (pooled US)",
+        "population": "Meta-analysis of 14 studies; surgery as reference standard"
+      }
+    ]
+  },
+  {
+    "id": "mri_morton",
+    "name": "Forefoot MRI",
+    "hypotheses": [
+      "morton"
+    ],
+    "description": "An alternative to ultrasound for confirming a neuroma or showing another cause.",
+    "recommendation": {
+      "sourceId": "pitcher2024",
+      "locator": "Introduction"
+    },
+    "accuracy": [
+      {
+        "sens": 0.9,
+        "spec": 1.0,
+        "sensCI": [
+          0.82,
+          0.96
+        ],
+        "specCI": [
+          0.73,
+          1.0
+        ],
+        "sourceId": "bignotti2015",
+        "locator": "Abstract, Results (pooled MRI)",
+        "population": "Meta-analysis of 14 studies; surgery as reference standard"
+      }
+    ]
+  },
+  {
+    "id": "mulder_click",
+    "name": "Mulder's click (clinician)",
+    "hypotheses": [
+      "morton"
+    ],
+    "description": "The clinician squeezes the forefoot from the sides with one hand while pressing a thumb into the sole at the suspected gap; a click that can be felt is positive. The studies disagree widely on its accuracy.",
+    "recommendation": {
+      "sourceId": "dando2017",
+      "locator": "Table 1 (Tests: Mulder's click, 15 of 16 votes)"
+    },
+    "accuracy": [
+      {
+        "sens": 0.29,
+        "spec": 0.87,
+        "sensCI": [
+          0.08,
+          0.64
+        ],
+        "specCI": [
+          0.68,
+          0.95
+        ],
+        "sourceId": "pitcher2024",
+        "locator": "Table 4, 'Positive Mulder's sign', Dando row",
+        "population": "30 adults with forefoot pain (rearfoot and midfoot pain excluded), podiatry assessment, UK; 7 with a neuroma on ultrasound (Dando 2018)"
+      },
+      {
+        "sens": 0.94,
+        "spec": 0.17,
+        "sensCI": [
+          0.72,
+          0.99
+        ],
+        "specCI": [
+          0.03,
+          0.56
+        ],
+        "sourceId": "pitcher2024",
+        "locator": "Table 4, 'Positive Mulder's sign', Cloke row",
+        "population": "22 people assessed before surgery, UK (16 neuromas at surgery)"
+      },
+      {
+        "sens": 0.64,
+        "sensCI": [
+          0.51,
+          0.76
+        ],
+        "sourceId": "pitcher2024",
+        "locator": "Table 4, 'Positive Mulder's sign', Mahadevan row",
+        "population": "40 people (54 neuromas) on ultrasound, UK; only 1 foot without a neuroma, so no specificity"
+      }
+    ]
+  },
+  {
+    "id": "mri_plantar_plate",
+    "name": "Forefoot MRI (plantar plate)",
+    "hypotheses": [
+      "plantar_plate"
+    ],
+    "description": "Shows tears of the ligament under the small toe joints.",
+    "recommendation": {
+      "sourceId": "albright2022",
+      "locator": "Abstract, Conclusion"
+    },
+    "accuracy": [
+      {
+        "sens": 0.89,
+        "spec": 0.83,
+        "sensCI": [
+          0.84,
+          0.93
+        ],
+        "specCI": [
+          0.64,
+          0.94
+        ],
+        "sourceId": "albright2022",
+        "locator": "Abstract, Results (pooled MRI)",
+        "population": "Meta-analysis of 11 studies (227 plantar plates); intraoperative reference"
+      }
+    ]
+  },
+  {
+    "id": "us_plantar_plate",
+    "name": "Dynamic ultrasound (plantar plate)",
+    "hypotheses": [
+      "plantar_plate"
+    ],
+    "description": "Ultrasound while the toe is moved. More sensitive but less specific than MRI, so a negative scan helps rule a tear out.",
+    "recommendation": {
+      "sourceId": "albright2022",
+      "locator": "Abstract, Conclusion"
+    },
+    "accuracy": [
+      {
+        "sens": 0.95,
+        "spec": 0.52,
+        "sensCI": [
+          0.91,
+          0.98
+        ],
+        "specCI": [
+          0.37,
+          0.68
+        ],
+        "sourceId": "albright2022",
+        "locator": "Abstract, Results (pooled ultrasound)",
+        "population": "Meta-analysis of 11 studies (238 plantar plates); intraoperative reference"
+      }
+    ]
+  },
+  {
+    "id": "drawer_mtp",
+    "name": "Drawer test of the 2nd toe joint (clinician)",
+    "hypotheses": [
+      "plantar_plate"
+    ],
+    "description": "The clinician checks the 2nd toe joint for instability (drawer sign).",
+    "recommendation": {
+      "sourceId": "klein2013",
+      "locator": "Abstract, Conclusion"
+    },
+    "accuracy": [
+      {
+        "sens": 0.806,
+        "spec": 0.998,
+        "sourceId": "klein2013",
+        "locator": "Abstract, Results",
+        "population": "90 patients (109 feet) who had plantar plate repair; intraoperative reference; retrospective"
+      }
+    ]
+  },
+  {
+    "id": "tcst",
+    "name": "Triple compression stress test (clinician)",
+    "hypotheses": [
+      "tarsal_tunnel"
+    ],
+    "description": "With the ankle fully pointed down and the foot turned in, the clinician presses evenly over the tibial nerve behind the inner ankle; bringing on the symptoms is positive.",
+    "recommendation": {
+      "sourceId": "abouelela2012",
+      "locator": "Abstract (Methodology; Conclusion)"
+    },
+    "accuracy": [
+      {
+        "sens": 0.859,
+        "spec": 1.0,
+        "sourceId": "abouelela2012",
+        "locator": "Abstract, Results",
+        "population": "50 patients with suspected tarsal tunnel syndrome vs 40 healthy volunteers; electrodiagnostic reference (healthy controls, so specificity is likely overstated)"
+      }
+    ]
+  }
+]

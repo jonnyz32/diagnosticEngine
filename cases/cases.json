@@ -1,0 +1,3507 @@
+[
+  {
+    "id": "c42793488",
+    "pmid": "42793488",
+    "pmcid": "PMC13606044",
+    "doi": "10.3390/healthcare14182949",
+    "citation": "Yoon YS et al. Integrative Korean medicine treatment ... for acute lumbar disc herniation with foot drop: a case report. Healthcare (Basel). 2026.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "root_low",
+    "confirmation": "reference",
+    "confirmedBy": "MRI: L5/S1 extrusion compressing the left L5 and S1 roots",
+    "age": 40,
+    "regions": [
+      "low_back",
+      "posterior_thigh",
+      "calf"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "no",
+        "locator": "2.1 Clinical features"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "2.1 Clinical features (left-sided)"
+      },
+      {
+        "finding": "p_shooting",
+        "answer": "yes",
+        "locator": "2.1 (sharp, electrifying pain)"
+      },
+      {
+        "finding": "p_heavy_weak",
+        "answer": "yes",
+        "locator": "2.1 (leg weakness, dragging)"
+      },
+      {
+        "finding": "st_heel_walk",
+        "answer": "yes",
+        "locator": "2.1 (foot drop)",
+        "clinician": true
+      },
+      {
+        "finding": "st_slr_helper",
+        "answer": "yes",
+        "locator": "2.3 Physical examination (SLR 30° left)",
+        "clinician": true
+      }
+    ],
+    "notes": "Leg pain location not given beyond 'left lower extremity': marked as back of thigh and calf by convention."
+  },
+  {
+    "id": "c42888534",
+    "pmid": "42888534",
+    "pmcid": "PMC13681105",
+    "doi": "10.1097/md.0000000000051107",
+    "citation": "Cao H et al. Arthroscopic-assisted uniportal spinal surgery with bone-anchored annular repair for far lateral lumbar disc herniation: a case report. Medicine (Baltimore). 2026.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "root_mid",
+    "confirmation": "reference",
+    "confirmedBy": "CT/MRI: right far-lateral L3-L4 herniation (exiting L3 root); surgery",
+    "age": 50,
+    "regions": [
+      "low_back",
+      "buttock",
+      "lateral_thigh",
+      "anterior_thigh"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "no",
+        "locator": "2. Case description"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "2. Case description (right)"
+      },
+      {
+        "finding": "h_severe_leg_pain",
+        "answer": "yes",
+        "locator": "2. Case description (leg VAS 7)"
+      },
+      {
+        "finding": "st_slr_helper",
+        "answer": "yes",
+        "locator": "2. Case description (SLR positive at 70°)",
+        "clinician": true
+      },
+      {
+        "finding": "st_sit_to_stand",
+        "answer": "no",
+        "locator": "2. (motor grade V)",
+        "clinician": true
+      },
+      {
+        "finding": "st_sens_anterior_thigh",
+        "answer": "no",
+        "locator": "2. (intact sensation)",
+        "clinician": true
+      },
+      {
+        "finding": "st_sens_medial_knee",
+        "answer": "no",
+        "locator": "2. (intact sensation)",
+        "clinician": true
+      },
+      {
+        "finding": "st_sens_medial_ankle",
+        "answer": "no",
+        "locator": "2. (intact sensation)",
+        "clinician": true
+      }
+    ]
+  },
+  {
+    "id": "c41988616",
+    "pmid": "41988616",
+    "pmcid": "PMC13078661",
+    "doi": "10.7759/cureus.105249",
+    "citation": "Mizuno H et al. Utility of ultrasound-based dynamic assessment in physical therapy for far-lateral lumbar disc herniation: a case report. Cureus. 2026.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "root_mid",
+    "confirmation": "reference",
+    "confirmedBy": "MRI: left L4/5 far-lateral herniation (exiting L4); L4 sensory loss and absent patellar reflex",
+    "regions": [
+      "anterior_thigh"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "no",
+        "locator": "Case presentation (50s)"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "Case presentation (left)"
+      },
+      {
+        "finding": "h_severe_leg_pain",
+        "answer": "yes",
+        "locator": "Case presentation (NRS 10/10)"
+      },
+      {
+        "finding": "h_worse_standing",
+        "answer": "yes",
+        "locator": "Case presentation (couldn't stand > 5 min)"
+      },
+      {
+        "finding": "st_sit_to_stand",
+        "answer": "yes",
+        "locator": "Case presentation (quadriceps 4/5)",
+        "clinician": true
+      },
+      {
+        "finding": "st_heel_walk",
+        "answer": "yes",
+        "locator": "Case presentation (tibialis anterior 4/5)",
+        "clinician": true
+      },
+      {
+        "finding": "st_sens_medial_ankle",
+        "answer": "yes",
+        "locator": "Case presentation (reduced sensation medial lower leg)",
+        "clinician": true
+      },
+      {
+        "finding": "st_sens_anterior_thigh",
+        "answer": "no",
+        "locator": "Case presentation (other dermatomes normal)",
+        "clinician": true
+      },
+      {
+        "finding": "st_sens_great_toe",
+        "answer": "no",
+        "locator": "Case presentation (other dermatomes normal)",
+        "clinician": true
+      },
+      {
+        "finding": "st_sens_lateral_foot",
+        "answer": "no",
+        "locator": "Case presentation (other dermatomes normal)",
+        "clinician": true
+      }
+    ]
+  },
+  {
+    "id": "c42473620",
+    "pmid": "42473620",
+    "pmcid": "PMC13380874",
+    "doi": "10.7759/cureus.112950",
+    "citation": "Alkatreeb H et al. Isolated gluteal (buttock) pain due to L2-3 degenerative disc disease: a case report. Cureus. 2026.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "root_mid",
+    "confirmation": "reference",
+    "confirmedBy": "MRI L2-3 severe foraminal stenosis; relief from selective L2-3 transforaminal injection",
+    "age": 48,
+    "regions": [
+      "buttock"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "no",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "h_pain_below_knee",
+        "answer": "no",
+        "locator": "Case presentation (no lower-extremity radiation)"
+      },
+      {
+        "finding": "h_leg_numbness",
+        "answer": "no",
+        "locator": "Case presentation (no sensory disturbance)"
+      },
+      {
+        "finding": "p_numb",
+        "answer": "no",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_tingling",
+        "answer": "no",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_one_spot",
+        "answer": "no",
+        "locator": "Case presentation (no focal point tenderness)"
+      },
+      {
+        "finding": "st_slr_helper",
+        "answer": "no",
+        "locator": "Case presentation (SLR negative)",
+        "clinician": true
+      },
+      {
+        "finding": "st_sit_to_stand",
+        "answer": "no",
+        "locator": "Case presentation (no weakness)",
+        "clinician": true
+      },
+      {
+        "finding": "st_heel_walk",
+        "answer": "no",
+        "locator": "Case presentation (no weakness)",
+        "clinician": true
+      },
+      {
+        "finding": "st_heel_raise",
+        "answer": "no",
+        "locator": "Case presentation (no weakness)",
+        "clinician": true
+      }
+    ],
+    "notes": "Found by a sacroiliac search; atypical presentation reported as such by the authors."
+  },
+  {
+    "id": "c41960213",
+    "pmid": "41960213",
+    "pmcid": "PMC13057273",
+    "doi": "10.3389/fsurg.2026.1781307",
+    "citation": "Wang Y et al. Modified unilateral biportal endoscopic transpedicular discectomy for highly migrated upper lumbar disc herniation: a case report. Front Surg. 2026.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "root_mid",
+    "confirmation": "reference",
+    "confirmedBy": "CT/MRI: down-migrated L1-L2 herniation; endoscopic discectomy",
+    "age": 69,
+    "regions": [
+      "low_back",
+      "anterior_thigh"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "yes",
+        "locator": "Case report"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "Case report (left; right leg normal)"
+      },
+      {
+        "finding": "h_leg_numbness",
+        "answer": "yes",
+        "locator": "Case report"
+      },
+      {
+        "finding": "p_numb",
+        "answer": "yes",
+        "locator": "Case report"
+      },
+      {
+        "finding": "h_worse_standing",
+        "answer": "yes",
+        "locator": "Case report (returns as soon as he stands)"
+      },
+      {
+        "finding": "p_position",
+        "answer": "yes",
+        "locator": "Case report"
+      },
+      {
+        "finding": "st_sens_anterior_thigh",
+        "answer": "yes",
+        "locator": "Case report (reduced feeling front of thigh)",
+        "clinician": true
+      },
+      {
+        "finding": "st_heel_walk",
+        "answer": "no",
+        "locator": "Case report (lower-leg strength normal)",
+        "clinician": true
+      },
+      {
+        "finding": "st_heel_raise",
+        "answer": "no",
+        "locator": "Case report (lower-leg strength normal)",
+        "clinician": true
+      }
+    ]
+  },
+  {
+    "id": "c41742946",
+    "pmid": "41742946",
+    "pmcid": "PMC12929369",
+    "doi": "10.3389/fsurg.2026.1770604",
+    "citation": "Fang Y et al. Lumbar spinal stenosis exacerbated by spinal epidural lipomatosis: a case report. Front Surg. 2026.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "stenosis",
+    "confirmation": "reference",
+    "confirmedBy": "MRI/CT: L4/5 central canal stenosis with epidural lipomatosis; decompression",
+    "age": 65,
+    "regions": [
+      "low_back",
+      "calf",
+      "foot_dorsum",
+      "foot_sole_lateral"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "no",
+        "locator": "Case presentation (65)"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "Case presentation (right)"
+      },
+      {
+        "finding": "h_walking_claudication",
+        "answer": "yes",
+        "locator": "Case presentation (claudication at 500 m)"
+      },
+      {
+        "finding": "h_leg_numbness",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_numb",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_tingling",
+        "answer": "yes",
+        "locator": "Case presentation (paresthesia of the foot)"
+      },
+      {
+        "finding": "p_activity_rest",
+        "answer": "yes",
+        "locator": "Case presentation (needs rest after 500 m)"
+      }
+    ]
+  },
+  {
+    "id": "c41281860",
+    "pmid": "41281860",
+    "pmcid": "PMC12636803",
+    "doi": "10.13107/jocr.2025.v15.i11.6300",
+    "citation": "Chakrawarthi D et al. Spinal stenosis in achondroplasia: a case report and review of the literature. J Orthop Case Rep. 2025.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "stenosis",
+    "confirmation": "reference",
+    "confirmedBy": "MRI: multilevel L1-L5 stenosis; laminectomy",
+    "age": 21,
+    "regions": [
+      "low_back",
+      "posterior_thigh",
+      "calf"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "no",
+        "locator": "Case report"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "yes",
+        "locator": "Case report (both legs)"
+      },
+      {
+        "finding": "h_leg_worse_than_back",
+        "answer": "yes",
+        "locator": "Case report (leg pain greater than back pain)"
+      },
+      {
+        "finding": "h_walking_claudication",
+        "answer": "yes",
+        "locator": "Case report (neurogenic claudication)"
+      },
+      {
+        "finding": "h_leg_numbness",
+        "answer": "yes",
+        "locator": "Case report"
+      },
+      {
+        "finding": "p_numb",
+        "answer": "yes",
+        "locator": "Case report"
+      },
+      {
+        "finding": "st_heel_walk",
+        "answer": "yes",
+        "locator": "Case report (EHL 2/5 bilaterally)",
+        "clinician": true
+      },
+      {
+        "finding": "st_sens_great_toe",
+        "answer": "no",
+        "locator": "Case report (intact light touch)",
+        "clinician": true
+      },
+      {
+        "finding": "st_sens_lateral_foot",
+        "answer": "no",
+        "locator": "Case report (intact light touch)",
+        "clinician": true
+      },
+      {
+        "finding": "st_sens_medial_ankle",
+        "answer": "no",
+        "locator": "Case report (intact light touch)",
+        "clinician": true
+      }
+    ],
+    "notes": "Leg pain location not given: back of thigh and calf by convention."
+  },
+  {
+    "id": "c41769595",
+    "pmid": "41769595",
+    "pmcid": "PMC12947956",
+    "doi": "10.7759/cureus.102370",
+    "citation": "Yoon Y et al. Deep gluteal syndrome secondary to piriformis enthesopathy treated with ultrasound-guided dextrose prolotherapy. Cureus. 2026.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "deep_gluteal",
+    "confirmation": "reference",
+    "confirmedBy": "CT and dynamic ultrasound: piriformis enthesopathy with bony spur",
+    "age": 45,
+    "regions": [
+      "buttock",
+      "posterior_thigh"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "no",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "Case presentation (left)"
+      },
+      {
+        "finding": "h_pain_sitting_chair",
+        "answer": "yes",
+        "locator": "Case presentation (aggravated by sitting > 10 min)"
+      },
+      {
+        "finding": "h_worse_standing",
+        "answer": "yes",
+        "locator": "Case presentation (and standing > 10 min)"
+      },
+      {
+        "finding": "h_leg_numbness",
+        "answer": "yes",
+        "locator": "Case presentation (paresthesia, posterior thigh)"
+      },
+      {
+        "finding": "p_tingling",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_position",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "st_slr_helper",
+        "answer": "no",
+        "locator": "Case presentation (SLR negative)",
+        "clinician": true
+      },
+      {
+        "finding": "st_seated_piriformis",
+        "answer": "yes",
+        "locator": "Case presentation",
+        "clinician": true
+      },
+      {
+        "finding": "st_active_piriformis",
+        "answer": "yes",
+        "locator": "Case presentation",
+        "clinician": true
+      },
+      {
+        "finding": "st_beatty_home",
+        "answer": "yes",
+        "locator": "Case presentation (modified Beatty)",
+        "clinician": true
+      },
+      {
+        "finding": "st_sit_to_stand",
+        "answer": "no",
+        "locator": "Case presentation (strength normal)",
+        "clinician": true
+      },
+      {
+        "finding": "st_heel_walk",
+        "answer": "no",
+        "locator": "Case presentation (strength normal)",
+        "clinician": true
+      },
+      {
+        "finding": "st_heel_raise",
+        "answer": "no",
+        "locator": "Case presentation (strength normal)",
+        "clinician": true
+      }
+    ]
+  },
+  {
+    "id": "c41010428",
+    "pmid": "41010428",
+    "pmcid": "PMC12471325",
+    "doi": "10.3390/life15091486",
+    "citation": "Yoon Y et al. Ultrasound-guided prolotherapy for sciatica secondary to sacrospinous ligament calcification ... deep gluteal syndrome. Life (Basel). 2025.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "deep_gluteal",
+    "confirmation": "reference",
+    "confirmedBy": "Imaging: sacrospinous ligament calcification adjacent to the sciatic nerve",
+    "age": 51,
+    "regions": [
+      "buttock",
+      "posterior_thigh"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "no",
+        "locator": "2.1 Patient information"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "2.1 (left)"
+      },
+      {
+        "finding": "p_dull_ache",
+        "answer": "yes",
+        "locator": "2.1 (dull ache at onset)"
+      },
+      {
+        "finding": "p_burning",
+        "answer": "yes",
+        "locator": "2.1"
+      },
+      {
+        "finding": "h_leg_burning",
+        "answer": "yes",
+        "locator": "2.1 (burning down the posterior thigh)"
+      },
+      {
+        "finding": "h_pain_sitting_chair",
+        "answer": "yes",
+        "locator": "2.1 (sitting > 10 min intolerable)"
+      },
+      {
+        "finding": "h_hip_stairs",
+        "answer": "yes",
+        "locator": "2.1 (stairs aggravate)"
+      },
+      {
+        "finding": "p_night_rest",
+        "answer": "yes",
+        "locator": "2.1 (night waking)"
+      }
+    ]
+  },
+  {
+    "id": "c41994833",
+    "pmid": "41994833",
+    "pmcid": "PMC13080947",
+    "doi": "10.7759/cureus.105059",
+    "citation": "Geller M et al. Right meralgia paresthetica after a laparoscopic ProGrip bilateral implant for inguinal hernia repair: a case report. Cureus. 2026.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "lfcn",
+    "confirmation": "reference",
+    "confirmedBy": "Positive Tinel sign, relief with ultrasound-guided LFCN injection, resolution after mesh removal",
+    "age": 67,
+    "regions": [
+      "anterior_thigh",
+      "lateral_thigh"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "Case presentation (right)"
+      },
+      {
+        "finding": "h_recent_surgery",
+        "answer": "yes",
+        "locator": "Case presentation (next day)"
+      },
+      {
+        "finding": "h_surgery_hernia",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "h_surgery_pelvic",
+        "answer": "yes",
+        "locator": "Case presentation (prostatectomy)"
+      },
+      {
+        "finding": "h_tight_clothing",
+        "answer": "no",
+        "locator": "Case presentation (denied)"
+      },
+      {
+        "finding": "p_numb",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_stabbing",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "h_worse_standing",
+        "answer": "yes",
+        "locator": "Case presentation (pain when upright)"
+      },
+      {
+        "finding": "st_tinel_asis",
+        "answer": "yes",
+        "locator": "Case presentation (Tinel positive)",
+        "clinician": true
+      }
+    ]
+  },
+  {
+    "id": "c42775333",
+    "pmid": "42775333",
+    "pmcid": "PMC13597002",
+    "doi": "10.7759/cureus.115027",
+    "citation": "Kavacheri Subramaniam S et al. A rare case of meralgia paresthetica: lateral femoral cutaneous nerve schwannoma mimicking appendicitis. Cureus. 2026.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "lfcn",
+    "confirmation": "reference",
+    "confirmedBy": "Imaging and excision: schwannoma of the LFCN",
+    "age": 50,
+    "regions": [
+      "anterior_thigh",
+      "lateral_thigh"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "no",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "h_tight_clothing",
+        "answer": "no",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "h_pregnancy",
+        "answer": "no",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "h_recent_surgery",
+        "answer": "no",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_numb",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_dull_ache",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_tight",
+        "answer": "yes",
+        "locator": "Case presentation (cramping)"
+      },
+      {
+        "finding": "p_burning",
+        "answer": "yes",
+        "locator": "Case presentation (burning soles)"
+      },
+      {
+        "finding": "st_sens_anterior_thigh",
+        "answer": "yes",
+        "locator": "Case presentation (sensory loss anterolateral thigh)",
+        "clinician": true
+      },
+      {
+        "finding": "st_sit_to_stand",
+        "answer": "no",
+        "locator": "Case presentation (power normal)",
+        "clinician": true
+      }
+    ]
+  },
+  {
+    "id": "c40895698",
+    "pmid": "40895698",
+    "pmcid": "PMC12398273",
+    "doi": "10.7759/cureus.91286",
+    "citation": "Lee SJ et al. Sacroiliac joint radiofrequency ablation therapy after sacroiliac joint fusion. Cureus. 2025.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "sij",
+    "confirmation": "reference",
+    "confirmedBy": "Diagnostic SIJ injection with bupivacaine: > 80% relief",
+    "age": 67,
+    "regions": [
+      "low_back",
+      "buttock"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "Case presentation (right)"
+      },
+      {
+        "finding": "h_pain_sitting_chair",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_position",
+        "answer": "yes",
+        "locator": "Case presentation (lying down or sitting)"
+      }
+    ],
+    "notes": "Previous lumbar fusion and SIJ fusion."
+  },
+  {
+    "id": "c42164454",
+    "pmid": "42164454",
+    "pmcid": "PMC13185760",
+    "doi": "10.1016/j.inpm.2026.100770",
+    "citation": "Odonkor CA et al. Peripheral nerve stimulation targeting the trochanteric branch of the femoral nerve for refractory greater trochanteric pain syndrome. Interv Pain Med. 2026.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "gtps",
+    "confirmation": "reference",
+    "confirmedBy": "MRI/ultrasound: gluteus medius and minimus tendinopathy at the trochanter",
+    "age": 40,
+    "regions": [
+      "lateral_thigh",
+      "low_back",
+      "buttock",
+      "posterior_thigh"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "no",
+        "locator": "Case report"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "Case report (right)"
+      },
+      {
+        "finding": "p_night_rest",
+        "answer": "yes",
+        "locator": "Case report (limits sleep)"
+      },
+      {
+        "finding": "h_severe_leg_pain",
+        "answer": "yes",
+        "locator": "Case report (NRS 8/10)"
+      }
+    ],
+    "notes": "Coexisting low back pain, labral tear and mild hip OA."
+  },
+  {
+    "id": "c38464578",
+    "pmid": "38464578",
+    "pmcid": "PMC10920315",
+    "doi": "10.1002/ccr3.8602",
+    "citation": "Pourahmadi M et al. Beyond the obvious: misdiagnosis of posterior femoral cutaneous nerve entrapment as semitendinosus muscle tear. Clin Case Rep. 2024.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "pfcn",
+    "confirmation": "clinical",
+    "confirmedBy": "Clinical evaluation identifying PFCN entrapment; response to targeted treatment",
+    "age": 42,
+    "regions": [
+      "posterior_thigh"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "no",
+        "locator": "Case history"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "Case history (right)"
+      },
+      {
+        "finding": "h_leg_numbness",
+        "answer": "yes",
+        "locator": "Case history (tingling)"
+      },
+      {
+        "finding": "p_tingling",
+        "answer": "yes",
+        "locator": "Case history"
+      },
+      {
+        "finding": "h_pain_sitting_chair",
+        "answer": "yes",
+        "locator": "Case history (worse with prolonged sitting)"
+      },
+      {
+        "finding": "p_night_rest",
+        "answer": "yes",
+        "locator": "Case history (worse at night)"
+      },
+      {
+        "finding": "h_hamstring_injury",
+        "answer": "yes",
+        "locator": "Case history (semitendinosus tear on MRI)"
+      }
+    ]
+  },
+  {
+    "id": "c42597769",
+    "pmid": "42597769",
+    "pmcid": "PMC13469419",
+    "doi": "10.13107/jocr.2026.v16.i08.7790",
+    "citation": "Reddy MVG et al. Lesser trochanter osteochondroma as an etiology for ischiofemoral impingement: a case report. J Orthop Case Rep. 2026.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "ifi",
+    "confirmation": "reference",
+    "confirmedBy": "Imaging: narrowed ischiofemoral space; resolution after resection",
+    "age": 33,
+    "regions": [
+      "buttock",
+      "posterior_thigh"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "no",
+        "locator": "Case report"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "Case report (left)"
+      },
+      {
+        "finding": "p_dull_ache",
+        "answer": "yes",
+        "locator": "Case report"
+      },
+      {
+        "finding": "h_pain_sitting_chair",
+        "answer": "yes",
+        "locator": "Case report (prolonged sitting)"
+      },
+      {
+        "finding": "h_hip_stairs",
+        "answer": "yes",
+        "locator": "Case report (stair climbing)"
+      },
+      {
+        "finding": "h_leg_numbness",
+        "answer": "no",
+        "locator": "Case report (no tingling or numbness)"
+      },
+      {
+        "finding": "p_numb",
+        "answer": "no",
+        "locator": "Case report"
+      },
+      {
+        "finding": "p_tingling",
+        "answer": "no",
+        "locator": "Case report"
+      },
+      {
+        "finding": "st_sit_to_stand",
+        "answer": "no",
+        "locator": "Case report (motor normal)",
+        "clinician": true
+      },
+      {
+        "finding": "st_heel_raise",
+        "answer": "no",
+        "locator": "Case report (motor normal)",
+        "clinician": true
+      },
+      {
+        "finding": "st_ifi_helper",
+        "answer": "yes",
+        "locator": "Case report (IFI test positive: pain with extension, adduction, external rotation)",
+        "clinician": true
+      }
+    ]
+  },
+  {
+    "id": "c40671739",
+    "pmid": "40671739",
+    "pmcid": "PMC12019084",
+    "doi": "10.12998/wjcc.v13.i20.105606",
+    "citation": "Mohammed FA et al. Physical therapy management of ischiofemoral impingement syndrome: a case report. World J Clin Cases. 2025.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "ifi",
+    "confirmation": "reference",
+    "confirmedBy": "MRI with clinical examination",
+    "regions": [
+      "buttock",
+      "posterior_thigh"
+    ],
+    "facts": [
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "History of present illness (right)"
+      },
+      {
+        "finding": "h_pain_below_knee",
+        "answer": "no",
+        "locator": "History (to the popliteal fossa)"
+      },
+      {
+        "finding": "h_improve_seated",
+        "answer": "yes",
+        "locator": "History (alleviated with sitting)"
+      },
+      {
+        "finding": "h_pain_sitting_chair",
+        "answer": "no",
+        "locator": "History (alleviated with sitting)"
+      },
+      {
+        "finding": "p_stabbing",
+        "answer": "yes",
+        "locator": "History (sharp, snapping)"
+      },
+      {
+        "finding": "p_injury",
+        "answer": "no",
+        "locator": "History (no prior trauma)"
+      }
+    ]
+  },
+  {
+    "id": "c42496501",
+    "pmid": "42496501",
+    "pmcid": "PMC13398187",
+    "doi": "10.3390/reports9030204",
+    "citation": "Watanabe K et al. Successful treatment of hamstring tendinopathy in a nonathlete with ultrasound-guided injection to the ischial tuberosity. Reports (MDPI). 2026.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "proximal_hamstring",
+    "confirmation": "reference",
+    "confirmedBy": "Ultrasound hypoechoic tendon insertion; relief from ischial tuberosity injection",
+    "regions": [
+      "buttock",
+      "posterior_thigh"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "no",
+        "locator": "2. Case presentation (twenties)"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "yes",
+        "locator": "2. (bilateral buttock pain)"
+      },
+      {
+        "finding": "h_pain_sitting_chair",
+        "answer": "yes",
+        "locator": "2. (prolonged sitting)"
+      },
+      {
+        "finding": "p_position",
+        "answer": "yes",
+        "locator": "Section 2"
+      },
+      {
+        "finding": "p_one_spot",
+        "answer": "yes",
+        "locator": "2. (ischial tuberosity tenderness)"
+      }
+    ]
+  },
+  {
+    "id": "c28507970",
+    "pmid": "28507970",
+    "pmcid": "PMC5404168",
+    "doi": "10.13107/jocr.2250-0685.638",
+    "citation": "Costa LP et al. A new technique for surgical treatment of proximal hamstring tendinopathy in a triathlon athlete. J Orthop Case Rep. 2016.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "proximal_hamstring",
+    "confirmation": "reference",
+    "confirmedBy": "MRI; surgical debridement",
+    "age": 48,
+    "regions": [
+      "buttock"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "no",
+        "locator": "Case report"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "Case report (left)"
+      },
+      {
+        "finding": "h_pain_sitting_chair",
+        "answer": "yes",
+        "locator": "Case report (sitting for long periods)"
+      },
+      {
+        "finding": "h_pain_below_knee",
+        "answer": "no",
+        "locator": "Case report (non-radiating)"
+      },
+      {
+        "finding": "h_leg_numbness",
+        "answer": "no",
+        "locator": "Case report (no neurovascular symptoms)"
+      },
+      {
+        "finding": "p_one_spot",
+        "answer": "yes",
+        "locator": "Case report (ischial tuberosity tender)"
+      },
+      {
+        "finding": "p_injury",
+        "answer": "no",
+        "locator": "Case report (no acute trauma)"
+      }
+    ]
+  },
+  {
+    "id": "c42375903",
+    "pmid": "42375903",
+    "pmcid": "PMC13312909",
+    "doi": "10.7759/cureus.109925",
+    "citation": "Lyrtzis C et al. Conservative treatment of symptomatic pudendal nerve entrapment secondary to sacrotuberous ligament ossification. Cureus. 2026.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "pudendal",
+    "confirmation": "reference",
+    "confirmedBy": "Perineal sensory loss; radiograph/3D-CT sacrotuberous ligament ossification",
+    "age": 50,
+    "regions": [
+      "groin",
+      "buttock",
+      "lateral_thigh"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "no",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "Case presentation (right)"
+      },
+      {
+        "finding": "p_burning",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "h_pain_sitting_chair",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "h_improve_seated",
+        "answer": "no",
+        "locator": "Case presentation (worse sitting, better standing)"
+      },
+      {
+        "finding": "h_recent_surgery",
+        "answer": "no",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_injury",
+        "answer": "no",
+        "locator": "Case presentation"
+      }
+    ],
+    "notes": "Described as 'right-sided hip pain': unlocated hip pain marked as groin, buttock and outer thigh by convention."
+  },
+  {
+    "id": "c39347260",
+    "pmid": "39347260",
+    "pmcid": "PMC11437591",
+    "doi": "10.7759/cureus.68096",
+    "citation": "Khanijow K et al. Diagnostic pain: a case of pudendal neuralgia. Cureus. 2024.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "pudendal",
+    "confirmation": "clinical",
+    "confirmedBy": "Nantes criteria",
+    "age": 40,
+    "regions": [
+      "perineum",
+      "posterior_thigh"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "no",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "Case presentation (left thigh)"
+      },
+      {
+        "finding": "p_dull_ache",
+        "answer": "yes",
+        "locator": "Case presentation (aching)"
+      },
+      {
+        "finding": "h_pain_sitting_chair",
+        "answer": "yes",
+        "locator": "Case presentation (unable to sit)"
+      },
+      {
+        "finding": "h_worse_standing",
+        "answer": "yes",
+        "locator": "Case presentation"
+      }
+    ]
+  },
+  {
+    "id": "c37645666",
+    "pmid": "37645666",
+    "pmcid": "PMC10462381",
+    "doi": "10.7759/cureus.44271",
+    "citation": "Hostetter JL et al. Superior cluneal nerve entrapment as a cause of low back pain refractory to sacroiliac joint fusion: a case report. Cureus. 2023.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "cluneal",
+    "confirmation": "clinical",
+    "confirmedBy": "Authors' diagnosis of superior cluneal nerve entrapment (tenderness over the iliac crest); treatment response",
+    "age": 61,
+    "regions": [
+      "low_back",
+      "buttock"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "no",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "Case presentation (left)"
+      },
+      {
+        "finding": "p_dull_ache",
+        "answer": "yes",
+        "locator": "Case presentation (aching)"
+      },
+      {
+        "finding": "p_stabbing",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_burning",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_one_spot",
+        "answer": "yes",
+        "locator": "Case presentation (tender over iliac crest)"
+      },
+      {
+        "finding": "h_worse_standing",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "h_diabetes",
+        "answer": "yes",
+        "locator": "Case presentation (type 2 diabetes)"
+      }
+    ]
+  },
+  {
+    "id": "c42733747",
+    "pmid": "42733747",
+    "pmcid": "PMC13571923",
+    "doi": "10.1016/j.radcr.2026.08.048",
+    "citation": "El Bqaq I et al. Obturator nerve schwannoma presenting as a laterovesical pelvic mass: a case report. Radiol Case Rep. 2026.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "obturator",
+    "confirmation": "reference",
+    "confirmedBy": "Imaging and histology: obturator nerve schwannoma",
+    "age": 36,
+    "regions": [
+      "groin",
+      "medial_thigh"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "no",
+        "locator": "Case report"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "Case report (left)"
+      },
+      {
+        "finding": "p_dull_ache",
+        "answer": "yes",
+        "locator": "Case report (deep ache)"
+      },
+      {
+        "finding": "p_shooting",
+        "answer": "yes",
+        "locator": "Case report (electric shock-like)"
+      },
+      {
+        "finding": "p_heavy_weak",
+        "answer": "yes",
+        "locator": "Case report (adductor weakness)"
+      },
+      {
+        "finding": "st_sens_anterior_thigh",
+        "answer": "no",
+        "locator": "Case report (no sensory deficit)",
+        "clinician": true
+      },
+      {
+        "finding": "st_sens_medial_knee",
+        "answer": "no",
+        "locator": "Case report (no sensory deficit)",
+        "clinician": true
+      }
+    ]
+  },
+  {
+    "id": "c37465764",
+    "pmid": "37465764",
+    "pmcid": "PMC10350489",
+    "doi": "10.3389/fneur.2023.1228098",
+    "citation": "Tereshko Y et al. Botulinum toxin type A for genitofemoral neuralgia: a case report. Front Neurol. 2023.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "ilio_genito",
+    "confirmation": "reference",
+    "confirmedBy": "Complete relief from L1-L2 paravertebral block; ilioinguinal block negative",
+    "age": 78,
+    "regions": [
+      "groin",
+      "medial_thigh",
+      "perineum"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "yes",
+        "locator": "Case report"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "Case report (right)"
+      },
+      {
+        "finding": "p_burning",
+        "answer": "yes",
+        "locator": "Case report"
+      },
+      {
+        "finding": "p_shooting",
+        "answer": "yes",
+        "locator": "Case report"
+      },
+      {
+        "finding": "p_stabbing",
+        "answer": "yes",
+        "locator": "Case report"
+      },
+      {
+        "finding": "p_injury",
+        "answer": "yes",
+        "locator": "Case report (after pelvic fractures)"
+      },
+      {
+        "finding": "p_one_spot",
+        "answer": "yes",
+        "locator": "Case report (palpation exacerbates)"
+      }
+    ]
+  },
+  {
+    "id": "c37596783",
+    "pmid": "37596783",
+    "pmcid": "PMC10445407",
+    "doi": "10.12659/ajcr.940343",
+    "citation": "Zuckerman DA et al. Intraoperative nerve stimulation as an approach for the surgical treatment of genitofemoral neuralgia. Am J Case Rep. 2023.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "ilio_genito",
+    "confirmation": "reference",
+    "confirmedBy": "Diagnostic nerve block; neurectomy with relief",
+    "age": 49,
+    "regions": [
+      "groin",
+      "medial_thigh"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "no",
+        "locator": "Case report"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "Case report (right)"
+      },
+      {
+        "finding": "p_numb",
+        "answer": "yes",
+        "locator": "Case report"
+      },
+      {
+        "finding": "h_recent_surgery",
+        "answer": "yes",
+        "locator": "Case report (after groin decannulation)"
+      },
+      {
+        "finding": "p_injury",
+        "answer": "yes",
+        "locator": "Case report"
+      }
+    ]
+  },
+  {
+    "id": "c40718308",
+    "pmid": "40718308",
+    "pmcid": "PMC12296888",
+    "doi": "10.7759/cureus.86799",
+    "citation": "Peacock TS et al. Femoral nerve palsy following direct anterior total hip arthroplasty in a patient with iliac venous stents. Cureus. 2025.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "femoral",
+    "confirmation": "clinical",
+    "confirmedBy": "Authors' diagnosis of femoral nerve palsy (absent quadriceps activation, sensory loss); confirmation method not in the section read",
+    "regions": [
+      "anterior_thigh",
+      "shin_anterior"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "no",
+        "locator": "Case presentation (50s)"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "Case presentation (right)"
+      },
+      {
+        "finding": "h_recent_surgery",
+        "answer": "yes",
+        "locator": "Case presentation (immediately postoperative)"
+      },
+      {
+        "finding": "h_surgery_hip_anterior",
+        "answer": "yes",
+        "locator": "Case presentation (direct anterior THA)"
+      },
+      {
+        "finding": "p_numb",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_heavy_weak",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "st_sit_to_stand",
+        "answer": "yes",
+        "locator": "Case presentation (poor quadriceps control)",
+        "clinician": true
+      },
+      {
+        "finding": "st_sens_medial_knee",
+        "answer": "yes",
+        "locator": "Case presentation (numb to the anteromedial leg)",
+        "clinician": true
+      }
+    ]
+  },
+  {
+    "id": "c38004045",
+    "pmid": "38004045",
+    "pmcid": "PMC10673542",
+    "doi": "10.3390/medicina59111996",
+    "citation": "Won HS et al. An unexpected complication resulting from radiofrequency ablation for treating facet joint syndrome: a case report. Medicina (Kaunas). 2023.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "facet_lbp",
+    "confirmation": "clinical",
+    "confirmedBy": "Authors' diagnosis of facet joint syndrome treated with medial branch RFA",
+    "age": 69,
+    "regions": [
+      "low_back",
+      "posterior_thigh"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "yes",
+        "locator": "2. Case presentation"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "2. (left)"
+      },
+      {
+        "finding": "h_recent_surgery",
+        "answer": "no",
+        "locator": "2. (surgery 3 and 6 years earlier)"
+      },
+      {
+        "finding": "st_sens_great_toe",
+        "answer": "no",
+        "locator": "2. (no neurological impairment)",
+        "clinician": true
+      },
+      {
+        "finding": "st_sens_lateral_foot",
+        "answer": "no",
+        "locator": "2. (no neurological impairment)",
+        "clinician": true
+      }
+    ]
+  },
+  {
+    "id": "c42359323",
+    "pmid": "42359323",
+    "pmcid": "PMC13293578",
+    "doi": "10.3389/fsurg.2026.1770189",
+    "citation": "Li G et al. Arthroscopic surgical treatment of complex femoroacetabular impingement with massive labral calcification. Front Surg. 2026.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "hip_fai",
+    "confirmation": "reference",
+    "confirmedBy": "Radiographs (alpha angle 70°) and MRI; arthroscopy",
+    "age": 48,
+    "regions": [
+      "groin",
+      "buttock",
+      "lateral_thigh"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "no",
+        "locator": "Case report"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "Case report (right)"
+      },
+      {
+        "finding": "h_pain_sitting_chair",
+        "answer": "yes",
+        "locator": "Case report (prolonged sitting)"
+      },
+      {
+        "finding": "p_injury",
+        "answer": "no",
+        "locator": "Case report (no trauma)"
+      }
+    ],
+    "notes": "Unlocated 'hip pain' marked as groin, buttock and outer thigh by convention."
+  },
+  {
+    "id": "c41846654",
+    "pmid": "41846654",
+    "pmcid": "PMC12989781",
+    "doi": "10.7759/cureus.103498",
+    "citation": "Meadows MC et al. Pelvic osteochondroma causing a painful anterior snapping hip with concomitant femoroacetabular impingement. Cureus. 2026.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "hip_fai",
+    "confirmation": "reference",
+    "confirmedBy": "Radiographs (cam, alpha 72°) and MR arthrogram with labral tear; arthroscopy",
+    "age": 19,
+    "regions": [
+      "groin"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "no",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "Case presentation (right)"
+      },
+      {
+        "finding": "p_one_spot",
+        "answer": "yes",
+        "locator": "Case presentation (palpation reproduced pain)"
+      }
+    ],
+    "notes": "Coexisting osteochondroma with internal snapping hip."
+  },
+  {
+    "id": "c38966832",
+    "pmid": "38966832",
+    "pmcid": "PMC11221341",
+    "doi": "10.26603/001c.120209",
+    "citation": "Zeppieri G et al. Nonsurgical management of adductor-related groin pain with ultrasound-guided PRP and physical therapy in a competitive soccer player. Int J Sports Phys Ther. 2024.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "adductor_groin",
+    "confirmation": "clinical",
+    "confirmedBy": "Doha-type clinical diagnosis: adductor tenderness and pain on resisted adduction; ultrasound",
+    "age": 17,
+    "regions": [
+      "groin"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "no",
+        "locator": "Case description"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "Case description (right)"
+      },
+      {
+        "finding": "p_stabbing",
+        "answer": "yes",
+        "locator": "Case description"
+      },
+      {
+        "finding": "p_injury",
+        "answer": "yes",
+        "locator": "Case description (kicking injury)"
+      },
+      {
+        "finding": "p_night_rest",
+        "answer": "no",
+        "locator": "Case description (0/10 at rest)"
+      },
+      {
+        "finding": "h_groin_adductor",
+        "answer": "yes",
+        "locator": "Case description (sprinting, kicking)"
+      },
+      {
+        "finding": "st_adductor_tender_self",
+        "answer": "yes",
+        "locator": "Case description",
+        "clinician": true
+      },
+      {
+        "finding": "st_adductor_squeeze_self",
+        "answer": "yes",
+        "locator": "Case description (resisted adduction)",
+        "clinician": true
+      }
+    ]
+  },
+  {
+    "id": "c42367430",
+    "pmid": "42367430",
+    "pmcid": "PMC13293645",
+    "doi": "10.7759/cureus.109641",
+    "citation": "Chantasirivisal A et al. A non-pharmacological approach to hip osteoarthritis-related pain: a case report. Cureus. 2026.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "hip_oa",
+    "confirmation": "clinical",
+    "confirmedBy": "Authors' diagnosis of hip osteoarthritis (pain on flexion and internal rotation)",
+    "age": 67,
+    "regions": [
+      "groin",
+      "buttock",
+      "lateral_thigh"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "Case presentation (right)"
+      },
+      {
+        "finding": "p_dull_ache",
+        "answer": "yes",
+        "locator": "Case presentation (aching)"
+      },
+      {
+        "finding": "p_tingling",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "h_worse_standing",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_night_rest",
+        "answer": "yes",
+        "locator": "Case presentation (disrupted sleep)"
+      },
+      {
+        "finding": "h_limp",
+        "answer": "yes",
+        "locator": "Case presentation (antalgic gait)"
+      }
+    ],
+    "notes": "Unlocated 'hip pain' marked as groin, buttock and outer thigh by convention."
+  },
+  {
+    "id": "c42899275",
+    "pmid": "42899275",
+    "pmcid": "PMC13679851",
+    "doi": "10.7759/cureus.116552",
+    "citation": "Khader G et al. Sequestered lumbar disc herniation mimicking a spinal tumor: a case report. Cureus. 2026.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "root_low",
+    "confirmation": "reference",
+    "confirmedBy": "MRI and surgery: sequestered L4/5 fragment, L5 radiculopathy",
+    "age": 75,
+    "regions": [
+      "low_back",
+      "lateral_thigh",
+      "shin_anterior",
+      "foot_dorsum"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "Case presentation (right)"
+      },
+      {
+        "finding": "h_leg_numbness",
+        "answer": "yes",
+        "locator": "Case presentation (paresthesia)"
+      },
+      {
+        "finding": "p_tingling",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "st_slr_helper",
+        "answer": "yes",
+        "locator": "Case presentation (Lasègue positive)",
+        "clinician": true
+      },
+      {
+        "finding": "st_heel_walk",
+        "answer": "no",
+        "locator": "Case presentation (strength 5/5)",
+        "clinician": true
+      },
+      {
+        "finding": "st_heel_raise",
+        "answer": "no",
+        "locator": "Case presentation (strength 5/5)",
+        "clinician": true
+      },
+      {
+        "finding": "st_sens_great_toe",
+        "answer": "no",
+        "locator": "Case presentation (no sensory deficit)",
+        "clinician": true
+      },
+      {
+        "finding": "st_sens_lateral_foot",
+        "answer": "no",
+        "locator": "Case presentation (no sensory deficit)",
+        "clinician": true
+      }
+    ],
+    "notes": "Pain described as L5 dermatomal: marked as outer thigh, front of shin, top of foot."
+  },
+  {
+    "id": "c41030409",
+    "pmid": "41030409",
+    "pmcid": "PMC12477979",
+    "doi": "10.25259/sni_571_2025",
+    "citation": "Ahmed N et al. Hugely dilated/partially calcified epidural varicose vein caused intraspinal neural compression/sciatica. Surg Neurol Int. 2025.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "root_low",
+    "confirmation": "reference",
+    "confirmedBy": "MRI and surgery: epidural varix compressing the left S1 root",
+    "age": 36,
+    "regions": [
+      "low_back",
+      "posterior_thigh",
+      "calf"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "no",
+        "locator": "Case report"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "Case report (left)"
+      },
+      {
+        "finding": "st_slr_helper",
+        "answer": "yes",
+        "locator": "Case report (SLR to 50°)",
+        "clinician": true
+      },
+      {
+        "finding": "st_heel_raise",
+        "answer": "no",
+        "locator": "Case report (only finding was SLR)",
+        "clinician": true
+      },
+      {
+        "finding": "st_sens_lateral_foot",
+        "answer": "no",
+        "locator": "Case report (only finding was SLR)",
+        "clinician": true
+      }
+    ],
+    "notes": "Sciatica location not given: back of thigh and calf by convention."
+  },
+  {
+    "id": "c42306013",
+    "pmid": "42306013",
+    "pmcid": "PMC13266600",
+    "doi": "10.5606/tftrd.2026.16727",
+    "citation": "Özer BM et al. A rare case of trifid median nerve with persistent median artery and vein in carpal tunnel syndrome. Turk J Phys Med Rehabil. 2026.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "cts",
+    "confirmation": "reference",
+    "confirmedBy": "Nerve conduction: moderate CTS",
+    "age": 64,
+    "regions": [
+      "hand_median"
+    ],
+    "facts": [
+      {
+        "finding": "h_arm_numbness",
+        "answer": "yes",
+        "locator": "Case report"
+      },
+      {
+        "finding": "p_numb",
+        "answer": "yes",
+        "locator": "Case report"
+      },
+      {
+        "finding": "p_heavy_weak",
+        "answer": "no",
+        "locator": "Case report (no motor deficit)"
+      },
+      {
+        "finding": "st_phalen_self",
+        "answer": "yes",
+        "locator": "Case report",
+        "clinician": true
+      },
+      {
+        "finding": "st_tinel_wrist_self",
+        "answer": "yes",
+        "locator": "Case report",
+        "clinician": true
+      }
+    ]
+  },
+  {
+    "id": "c42964920",
+    "pmid": "42964920",
+    "pmcid": "PMC13722271",
+    "doi": "10.7759/cureus.117239",
+    "citation": "Farooq Z et al. Ultrasound-guided ulnar nerve hydrodissection for post-brachioplasty cubital tunnel syndrome. Cureus. 2026.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "cubital",
+    "confirmation": "clinical",
+    "confirmedBy": "Authors' diagnosis (symptoms, Tinel at the cubital tunnel); confirmation method not in the section read",
+    "age": 31,
+    "regions": [
+      "elbow_medial",
+      "forearm_medial",
+      "hand_ulnar",
+      "upper_arm_medial"
+    ],
+    "facts": [
+      {
+        "finding": "h_arm_numbness",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_numb",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_burning",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_tingling",
+        "answer": "yes",
+        "locator": "Case presentation (pins and needles)"
+      },
+      {
+        "finding": "p_heavy_weak",
+        "answer": "no",
+        "locator": "Case presentation (denied weakness)"
+      },
+      {
+        "finding": "p_one_spot",
+        "answer": "yes",
+        "locator": "Case presentation (tender over cubital tunnel)"
+      },
+      {
+        "finding": "p_injury",
+        "answer": "yes",
+        "locator": "Case presentation (after brachioplasty)"
+      },
+      {
+        "finding": "st_tinel_elbow_self",
+        "answer": "yes",
+        "locator": "Case presentation",
+        "clinician": true
+      }
+    ]
+  },
+  {
+    "id": "c31198758",
+    "pmid": "31198758",
+    "pmcid": "PMC6559090",
+    "doi": "10.4103/jfmpc.jfmpc_230_19",
+    "citation": "Iwata K. Smartphone-induced tendinitis: a case report. J Family Med Prim Care. 2019.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "de_quervain",
+    "confirmation": "clinical",
+    "confirmedBy": "History and examination",
+    "age": 47,
+    "regions": [
+      "wrist_radial"
+    ],
+    "facts": [
+      {
+        "finding": "h_wrist_thumb_motion",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_one_spot",
+        "answer": "yes",
+        "locator": "Case presentation (APL/EPB tenderness)"
+      },
+      {
+        "finding": "p_repetitive",
+        "answer": "yes",
+        "locator": "Case presentation (thumb texting)"
+      },
+      {
+        "finding": "p_night_rest",
+        "answer": "no",
+        "locator": "Case presentation (no pain unless moving)"
+      },
+      {
+        "finding": "h_repetitive_use",
+        "answer": "yes",
+        "locator": "Case presentation"
+      }
+    ],
+    "notes": "Age given as 'late 40s'; 47 used."
+  },
+  {
+    "id": "c37301873",
+    "pmid": "37301873",
+    "pmcid": "PMC10257534",
+    "doi": "10.1186/s13256-023-03952-8",
+    "citation": "Ikumi A et al. Anterior interosseous nerve syndrome following infection with COVID-19: a case report. J Med Case Rep. 2023.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "median_proximal",
+    "confirmation": "reference",
+    "confirmedBy": "EMG: neurogenic changes in FPL and pronator quadratus",
+    "age": 62,
+    "regions": [
+      "upper_arm_lateral",
+      "forearm_lateral"
+    ],
+    "facts": [
+      {
+        "finding": "p_sudden_severe",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "h_sudden_severe_arm_pain",
+        "answer": "yes",
+        "locator": "Case presentation (sudden severe arm pain)"
+      },
+      {
+        "finding": "p_heavy_weak",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "h_arm_numbness",
+        "answer": "no",
+        "locator": "Case presentation (no sensory deficit)"
+      },
+      {
+        "finding": "p_numb",
+        "answer": "no",
+        "locator": "Case presentation"
+      }
+    ],
+    "notes": "Arm pain location not given: upper arm and forearm (outer side) by convention."
+  },
+  {
+    "id": "c41149790",
+    "pmid": "41149790",
+    "pmcid": "PMC12567523",
+    "doi": "10.3390/neurolint17100169",
+    "citation": "Rałowska-Gmoch W et al. The diagnostic pitfalls in the pronator teres syndrome: a case report. Neurol Int. 2025.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "median_proximal",
+    "confirmation": "clinical",
+    "confirmedBy": "Authors' diagnosis (pronator compression test positive, carpal tunnel tests negative); confirmation method not in the section read",
+    "age": 34,
+    "regions": [
+      "forearm_anterior",
+      "hand_median"
+    ],
+    "facts": [
+      {
+        "finding": "h_arm_numbness",
+        "answer": "yes",
+        "locator": "2. Case report (sensory disturbance)"
+      },
+      {
+        "finding": "p_repetitive",
+        "answer": "yes",
+        "locator": "2. (pronosupination at work)"
+      },
+      {
+        "finding": "p_one_spot",
+        "answer": "yes",
+        "locator": "2. (pain on pronator teres palpation)"
+      },
+      {
+        "finding": "p_heavy_weak",
+        "answer": "yes",
+        "locator": "2. (thenar atrophy, finger flexion 4/5)"
+      },
+      {
+        "finding": "st_phalen_self",
+        "answer": "no",
+        "locator": "Section 2",
+        "clinician": true
+      },
+      {
+        "finding": "st_tinel_wrist_self",
+        "answer": "no",
+        "locator": "Section 2",
+        "clinician": true
+      }
+    ]
+  },
+  {
+    "id": "c35128333",
+    "pmid": "35128333",
+    "pmcid": "PMC8802193",
+    "doi": "10.31138/mjr.32.4.373",
+    "citation": "Sureja NP. Radial tunnel syndrome in psoriatic enthesitis: complication or coincidence? Mediterr J Rheumatol. 2021.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "radial_tunnel",
+    "confirmation": "clinical",
+    "confirmedBy": "Clinical diagnosis; MRI lateral epicondyle enthesitis; NCS normal",
+    "age": 64,
+    "regions": [
+      "elbow_lateral",
+      "forearm_lateral",
+      "hand_dorsal_radial"
+    ],
+    "facts": [
+      {
+        "finding": "h_outer_elbow_main",
+        "answer": "yes",
+        "locator": "Case report"
+      },
+      {
+        "finding": "st_epicondyle_tender_self",
+        "answer": "yes",
+        "locator": "Case report",
+        "clinician": true
+      },
+      {
+        "finding": "h_arm_numbness",
+        "answer": "yes",
+        "locator": "Case report (decreased sensation)"
+      },
+      {
+        "finding": "p_numb",
+        "answer": "yes",
+        "locator": "Case report"
+      },
+      {
+        "finding": "p_heavy_weak",
+        "answer": "no",
+        "locator": "Case report (power normal)"
+      }
+    ],
+    "notes": "Coexisting lateral epicondyle enthesitis."
+  },
+  {
+    "id": "c38752214",
+    "pmid": "38752214",
+    "pmcid": "PMC11095961",
+    "doi": "10.1097/gox.0000000000005818",
+    "citation": "Berger O et al. Combat-related Wartenberg syndrome due to penetrating shrapnel injury: a case report. Plast Reconstr Surg Glob Open. 2024.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "superficial_radial",
+    "confirmation": "reference",
+    "confirmedBy": "CT: shrapnel along the superficial radial nerve; Tinel sign",
+    "age": 21,
+    "regions": [
+      "forearm_lateral",
+      "hand_dorsal_radial"
+    ],
+    "facts": [
+      {
+        "finding": "p_light_touch",
+        "answer": "yes",
+        "locator": "Case report (allodynia)"
+      },
+      {
+        "finding": "h_arm_numbness",
+        "answer": "yes",
+        "locator": "Case report (paresthesia)"
+      },
+      {
+        "finding": "p_tingling",
+        "answer": "yes",
+        "locator": "Case report"
+      },
+      {
+        "finding": "p_injury",
+        "answer": "yes",
+        "locator": "Case report (shrapnel)"
+      }
+    ]
+  },
+  {
+    "id": "c41515651",
+    "pmid": "41515651",
+    "pmcid": "PMC12785733",
+    "doi": "10.3390/diagnostics16010156",
+    "citation": "Yoon Y et al. Ultrasound-guided dextrose hydrodissection for mixed sensory-motor Wartenberg's syndrome following a healed scaphoid fracture. Diagnostics (Basel). 2026.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "superficial_radial",
+    "confirmation": "reference",
+    "confirmedBy": "Ultrasound of the superficial radial nerve; response to hydrodissection",
+    "age": 35,
+    "regions": [
+      "wrist_radial",
+      "hand_dorsal_radial"
+    ],
+    "facts": [
+      {
+        "finding": "p_burning",
+        "answer": "yes",
+        "locator": "2.2 Clinical findings"
+      },
+      {
+        "finding": "h_arm_numbness",
+        "answer": "yes",
+        "locator": "2.1"
+      },
+      {
+        "finding": "p_numb",
+        "answer": "yes",
+        "locator": "2.1"
+      },
+      {
+        "finding": "p_injury",
+        "answer": "yes",
+        "locator": "2.2 (after scaphoid fracture and cast)"
+      },
+      {
+        "finding": "p_heavy_weak",
+        "answer": "yes",
+        "locator": "2.2 (progressive weakness)"
+      }
+    ]
+  },
+  {
+    "id": "c42535157",
+    "pmid": "42535157",
+    "pmcid": "PMC13423205",
+    "doi": "10.7759/cureus.111832",
+    "citation": "Mansoury B et al. Thoracic outlet syndrome managed with botulinum toxin injection following multiple failed surgeries. Cureus. 2026.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "tos",
+    "confirmation": "reference",
+    "confirmedBy": "Diagnostic pectoralis minor block with temporary relief; prior decompression",
+    "regions": [
+      "shoulder",
+      "upper_arm_lateral",
+      "hand_median"
+    ],
+    "facts": [
+      {
+        "finding": "p_injury",
+        "answer": "yes",
+        "locator": "Case presentation (after motor vehicle accident)"
+      },
+      {
+        "finding": "h_arm_numbness",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_tingling",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_heavy_weak",
+        "answer": "yes",
+        "locator": "Case presentation (hand weakness)"
+      }
+    ],
+    "notes": "Fingers not specified: marked as the median-nerve fingers by convention."
+  },
+  {
+    "id": "c41602926",
+    "pmid": "41602926",
+    "pmcid": "PMC12833322",
+    "doi": "10.3389/fsurg.2025.1737191",
+    "citation": "Ma Z et al. Suprascapular nerve entrapment syndrome caused by a spinoglenoid notch cyst with a concomitant giant lipoma. Front Surg. 2025.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "suprascapular",
+    "confirmation": "reference",
+    "confirmedBy": "MRI: paralabral cyst in both notches; infraspinatus atrophy",
+    "age": 27,
+    "regions": [
+      "shoulder"
+    ],
+    "facts": [
+      {
+        "finding": "p_dull_ache",
+        "answer": "yes",
+        "locator": "Case report"
+      },
+      {
+        "finding": "p_heavy_weak",
+        "answer": "yes",
+        "locator": "Case report"
+      },
+      {
+        "finding": "p_injury",
+        "answer": "no",
+        "locator": "Case report (no obvious cause)"
+      },
+      {
+        "finding": "p_sudden_severe",
+        "answer": "no",
+        "locator": "Case report (insidious)"
+      }
+    ]
+  },
+  {
+    "id": "c39737318",
+    "pmid": "39737318",
+    "pmcid": "PMC11684901",
+    "doi": "10.7759/cureus.74863",
+    "citation": "Matsuzawa G et al. Intraosseous ganglion protruding into the spinoglenoid notch with suprascapular nerve entrapment: a case report. Cureus. 2024.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "suprascapular",
+    "confirmation": "reference",
+    "confirmedBy": "Imaging and surgery: ganglion at the spinoglenoid notch",
+    "age": 49,
+    "regions": [
+      "shoulder"
+    ],
+    "facts": [
+      {
+        "finding": "p_dull_ache",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_numb",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "h_arm_numbness",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_injury",
+        "answer": "no",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_heavy_weak",
+        "answer": "yes",
+        "locator": "Case presentation (slight external rotation weakness)"
+      },
+      {
+        "finding": "h_shoulder_stiff",
+        "answer": "no",
+        "locator": "Case presentation (full range of motion)",
+        "clinician": true
+      }
+    ]
+  },
+  {
+    "id": "c41630245",
+    "pmid": "41630245",
+    "pmcid": "PMC12863902",
+    "doi": "10.1097/md.0000000000047390",
+    "citation": "Kim HM et al. Transcatheter arterial embolization using a novel embolic agent for lateral epicondylitis in a diabetic patient: a case report. Medicine (Baltimore). 2026.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "lateral_epicondylalgia",
+    "confirmation": "reference",
+    "confirmedBy": "Ultrasound and MRI",
+    "age": 61,
+    "regions": [
+      "elbow_lateral"
+    ],
+    "facts": [
+      {
+        "finding": "h_outer_elbow_main",
+        "answer": "yes",
+        "locator": "2. Case description"
+      },
+      {
+        "finding": "st_epicondyle_tender_self",
+        "answer": "yes",
+        "locator": "2. (press intensifies pain)",
+        "clinician": true
+      },
+      {
+        "finding": "st_resisted_wrist_ext_self",
+        "answer": "yes",
+        "locator": "2. (worse with wrist extension)",
+        "clinician": true
+      },
+      {
+        "finding": "p_one_spot",
+        "answer": "yes",
+        "locator": "Section 2"
+      }
+    ]
+  },
+  {
+    "id": "c40747193",
+    "pmid": "40747193",
+    "pmcid": "PMC12312258",
+    "doi": "10.7759/cureus.87093",
+    "citation": "S S et al. Combining the effects of mobilization with movement and Cyriax physiotherapy in lateral epicondylitis: a case report. Cureus. 2025.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "lateral_epicondylalgia",
+    "confirmation": "clinical",
+    "confirmedBy": "Mill's and Cozen's tests",
+    "age": 48,
+    "regions": [
+      "elbow_lateral"
+    ],
+    "facts": [
+      {
+        "finding": "h_grip_lateral_elbow",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "h_outer_elbow_main",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "st_epicondyle_tender_self",
+        "answer": "yes",
+        "locator": "Case presentation",
+        "clinician": true
+      },
+      {
+        "finding": "st_resisted_wrist_ext_self",
+        "answer": "yes",
+        "locator": "Case presentation (Cozen's)",
+        "clinician": true
+      }
+    ]
+  },
+  {
+    "id": "c41773146",
+    "pmid": "41773146",
+    "pmcid": "PMC12949716",
+    "doi": "10.7759/cureus.102598",
+    "citation": "Wise TF et al. Adhesive capsulitis in a postmenopausal woman with thyroid dysfunction. Cureus. 2026.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "frozen_shoulder",
+    "confirmation": "clinical",
+    "confirmedBy": "Clinical diagnosis with MRI",
+    "age": 50,
+    "regions": [
+      "shoulder",
+      "upper_arm_lateral"
+    ],
+    "facts": [
+      {
+        "finding": "h_shoulder_stiff",
+        "answer": "yes",
+        "locator": "Case presentation (stiffness, can't reach behind back)"
+      },
+      {
+        "finding": "p_injury",
+        "answer": "no",
+        "locator": "Case presentation (denied trauma)"
+      },
+      {
+        "finding": "h_arm_numbness",
+        "answer": "no",
+        "locator": "Case presentation (no neurologic deficit)"
+      },
+      {
+        "finding": "p_sudden_severe",
+        "answer": "no",
+        "locator": "Case presentation (insidious)"
+      }
+    ]
+  },
+  {
+    "id": "c34745675",
+    "pmid": "34745675",
+    "pmcid": "PMC8564197",
+    "doi": "10.1155/2021/4511538",
+    "citation": "Ishizuka S et al. Scapular winging following sports-related injury in a rugby player. Case Rep Orthop. 2021.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "long_thoracic",
+    "confirmation": "clinical",
+    "confirmedBy": "Authors' diagnosis of long thoracic nerve palsy; confirmation method not in the section read",
+    "age": 16,
+    "regions": [
+      "neck",
+      "shoulder",
+      "scapula"
+    ],
+    "facts": [
+      {
+        "finding": "p_injury",
+        "answer": "yes",
+        "locator": "2. Case presentation (tackle)"
+      },
+      {
+        "finding": "h_scapula_winging",
+        "answer": "yes",
+        "locator": "Title and examination"
+      },
+      {
+        "finding": "p_heavy_weak",
+        "answer": "yes",
+        "locator": "2. (shoulder weakness)"
+      }
+    ]
+  },
+  {
+    "id": "c41510408",
+    "pmid": "41510408",
+    "pmcid": "PMC12777630",
+    "doi": "10.7759/cureus.98705",
+    "citation": "Wang X et al. Bilateral and multilevel vertebral artery loop formation causing cervical radiculopathy. Cureus. 2025.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "root_cervical",
+    "confirmation": "reference",
+    "confirmedBy": "MRI/CTA: vertebral artery loops compressing the C5-6 roots; decompression",
+    "age": 60,
+    "regions": [
+      "neck",
+      "scapula",
+      "upper_arm_lateral"
+    ],
+    "facts": [
+      {
+        "finding": "st_spurling_self",
+        "answer": "yes",
+        "locator": "Case presentation",
+        "clinician": true
+      },
+      {
+        "finding": "st_shoulder_abduction_relief",
+        "answer": "yes",
+        "locator": "Case presentation",
+        "clinician": true
+      },
+      {
+        "finding": "h_arm_numbness",
+        "answer": "no",
+        "locator": "Case presentation (no sensory deficit)"
+      },
+      {
+        "finding": "p_heavy_weak",
+        "answer": "no",
+        "locator": "Case presentation (no motor weakness)"
+      }
+    ]
+  },
+  {
+    "id": "c42703548",
+    "pmid": "42703548",
+    "pmcid": "PMC13546702",
+    "doi": "10.7759/cureus.114131",
+    "citation": "Saluja A et al. Bilateral Parsonage-Turner syndrome in a young adult man due to parvovirus B19 infection. Cureus. 2026.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "neuralgic_amyotrophy",
+    "confirmation": "clinical",
+    "confirmedBy": "Authors' diagnosis; confirmation method not in the section read",
+    "age": 20,
+    "regions": [
+      "shoulder",
+      "upper_arm_lateral",
+      "hand_median"
+    ],
+    "facts": [
+      {
+        "finding": "h_sudden_severe_arm_pain",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_sudden_severe",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_night_rest",
+        "answer": "yes",
+        "locator": "Case presentation (worse at night)"
+      },
+      {
+        "finding": "p_tingling",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "h_arm_numbness",
+        "answer": "yes",
+        "locator": "Case presentation (paresthesias)"
+      },
+      {
+        "finding": "p_heavy_weak",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_injury",
+        "answer": "no",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_shooting",
+        "answer": "no",
+        "locator": "Case presentation (no shooting pain)"
+      }
+    ],
+    "notes": "Hand area not specified: median-nerve fingers by convention."
+  },
+  {
+    "id": "c42668845",
+    "pmid": "42668845",
+    "pmcid": "PMC13525781",
+    "doi": "10.7759/cureus.113667",
+    "citation": "Jervis M et al. Rare presentation of Parsonage-Turner syndrome post Tdap vaccination: a case report. Cureus. 2026.",
+    "verifiedOn": "2026-11-03",
+    "diagnosis": "neuralgic_amyotrophy",
+    "confirmation": "clinical",
+    "confirmedBy": "Authors' diagnosis after neurology consultation; confirmation method not in the section read",
+    "age": 22,
+    "regions": [
+      "neck",
+      "shoulder",
+      "forearm_lateral",
+      "hand_median"
+    ],
+    "facts": [
+      {
+        "finding": "h_arm_numbness",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_tingling",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_numb",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_heavy_weak",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_shooting",
+        "answer": "yes",
+        "locator": "Case presentation (shooting up the neck)"
+      }
+    ]
+  },
+  {
+    "id": "c34745677",
+    "pmid": "34745677",
+    "pmcid": "PMC8566075",
+    "doi": "10.1155/2021/6881168",
+    "citation": "Mifsut-Miedes D et al. Percutaneous trapeziometacarpal arthrodesis in thumb carpometacarpal joint arthritis: a new surgical approach. Case Rep Orthop. 2021.",
+    "verifiedOn": "2026-11-04",
+    "diagnosis": "thumb_cmc_oa",
+    "confirmation": "reference",
+    "confirmedBy": "Radiographs: trapeziometacarpal arthritis; arthrodesis",
+    "age": 70,
+    "regions": [
+      "hand_dorsal_radial",
+      "wrist_radial"
+    ],
+    "facts": [
+      {
+        "finding": "p_injury",
+        "answer": "no",
+        "locator": "2. Clinical case (no trauma)"
+      },
+      {
+        "finding": "p_heavy_weak",
+        "answer": "yes",
+        "locator": "2. (weak holding objects)"
+      },
+      {
+        "finding": "st_grind_helper",
+        "answer": "yes",
+        "locator": "2. (grind and crank tests)",
+        "clinician": true
+      },
+      {
+        "finding": "p_repetitive",
+        "answer": "yes",
+        "locator": "2. (hairdresser)"
+      }
+    ],
+    "notes": "Pain at the first ray: marked as thumb side of the hand and wrist."
+  },
+  {
+    "id": "c42293479",
+    "pmid": "42293479",
+    "pmcid": "PMC13254944",
+    "doi": "10.1016/j.radcr.2026.05.015",
+    "citation": "Khabaz K et al. Calcific tendinitis with intraosseous migration mimicking malignancy. Radiol Case Rep. 2026.",
+    "verifiedOn": "2026-11-04",
+    "diagnosis": "rotator_cuff",
+    "confirmation": "reference",
+    "confirmedBy": "Radiographs, CT and MRI: calcific rotator cuff tendinitis with intraosseous migration",
+    "age": 26,
+    "regions": [
+      "shoulder"
+    ],
+    "facts": [
+      {
+        "finding": "p_sudden_severe",
+        "answer": "yes",
+        "locator": "Case presentation (acute, severe)"
+      },
+      {
+        "finding": "p_injury",
+        "answer": "no",
+        "locator": "Case presentation (no trauma)"
+      },
+      {
+        "finding": "p_one_spot",
+        "answer": "yes",
+        "locator": "Case presentation (tender over the greater tuberosity)"
+      }
+    ]
+  },
+  {
+    "id": "c39040779",
+    "pmid": "39040779",
+    "pmcid": "PMC11262752",
+    "doi": "10.7759/cureus.62887",
+    "citation": "Jaiswal PR et al. Rehabilitation with eccentric training ... in a young volleyball player with proximal biceps tendinopathy: a case report. Cureus. 2024.",
+    "verifiedOn": "2026-11-04",
+    "diagnosis": "biceps_tendinopathy",
+    "confirmation": "clinical",
+    "confirmedBy": "Physiotherapy examination",
+    "age": 17,
+    "regions": [
+      "shoulder"
+    ],
+    "facts": [
+      {
+        "finding": "h_front_shoulder_pain",
+        "answer": "yes",
+        "locator": "Case presentation (anterior shoulder pain)"
+      },
+      {
+        "finding": "p_repetitive",
+        "answer": "yes",
+        "locator": "Case presentation (overhead smashing)"
+      },
+      {
+        "finding": "p_injury",
+        "answer": "no",
+        "locator": "Case presentation (gradual onset)"
+      }
+    ]
+  },
+  {
+    "id": "c40785355",
+    "pmid": "40785355",
+    "pmcid": "PMC12766867",
+    "doi": "10.1002/jcu.70018",
+    "citation": "Stavros D et al. Dynamic ultrasound imaging of extensor pollicis brevis hypertrophy in proximal intersection syndrome. J Clin Ultrasound. 2026.",
+    "verifiedOn": "2026-11-04",
+    "diagnosis": "intersection_syndrome",
+    "confirmation": "reference",
+    "confirmedBy": "Dynamic ultrasound",
+    "age": 34,
+    "regions": [
+      "forearm_dorsal"
+    ],
+    "facts": [
+      {
+        "finding": "h_forearm_creak",
+        "answer": "yes",
+        "locator": "Patient presentation (clicking and crepitus)"
+      },
+      {
+        "finding": "p_repetitive",
+        "answer": "yes",
+        "locator": "Patient presentation (frequent lifting)"
+      },
+      {
+        "finding": "p_one_spot",
+        "answer": "yes",
+        "locator": "Patient presentation (pain 4 cm proximal to Lister's tubercle)"
+      }
+    ]
+  },
+  {
+    "id": "c42713382",
+    "pmid": "42713382",
+    "pmcid": "PMC13552084",
+    "doi": "10.13107/jocr.2026.v16.i09.8092",
+    "citation": "Mendez S et al. Direct endoscopic visualization of gas release in a lumbar disc herniation: a case report. J Orthop Case Rep. 2026.",
+    "verifiedOn": "2026-11-04",
+    "diagnosis": "root_low",
+    "confirmation": "reference",
+    "confirmedBy": "Imaging and endoscopy: L5-S1 gas-containing disc lesion compressing the S1 root",
+    "age": 62,
+    "regions": [
+      "low_back",
+      "posterior_thigh",
+      "calf",
+      "foot_dorsum",
+      "foot_sole_lateral"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "no",
+        "locator": "Case report"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "Case report (right)"
+      },
+      {
+        "finding": "p_shooting",
+        "answer": "yes",
+        "locator": "Case report (sharp and electrical)"
+      },
+      {
+        "finding": "h_leg_shooting",
+        "answer": "yes",
+        "locator": "Case report"
+      },
+      {
+        "finding": "h_leg_numbness",
+        "answer": "yes",
+        "locator": "Case report (sensory loss)"
+      },
+      {
+        "finding": "p_numb",
+        "answer": "yes",
+        "locator": "Case report"
+      },
+      {
+        "finding": "p_heavy_weak",
+        "answer": "yes",
+        "locator": "Case report"
+      },
+      {
+        "finding": "st_heel_raise",
+        "answer": "yes",
+        "locator": "Case report (gastrocnemius weakness)",
+        "clinician": true
+      }
+    ],
+    "notes": "Unlocated 'foot': marked as top of foot and outer sole."
+  },
+  {
+    "id": "c40644978",
+    "pmid": "40644978",
+    "pmcid": "PMC12275467",
+    "doi": "10.1016/j.ijscr.2025.111634",
+    "citation": "Yin R et al. Contralateral neurological symptoms after ACDF for radiculopathic cervical spondylosis: a case report. Int J Surg Case Rep. 2025.",
+    "verifiedOn": "2026-11-04",
+    "diagnosis": "root_cervical",
+    "confirmation": "reference",
+    "confirmedBy": "Imaging; ACDF",
+    "age": 67,
+    "regions": [
+      "neck",
+      "upper_arm_lateral",
+      "forearm_lateral",
+      "hand_median"
+    ],
+    "facts": [
+      {
+        "finding": "h_arm_numbness",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_numb",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_heavy_weak",
+        "answer": "no",
+        "locator": "Case presentation (strength grade 5)"
+      }
+    ]
+  },
+  {
+    "id": "c42194604",
+    "pmid": "42194604",
+    "pmcid": "PMC13207188",
+    "doi": "10.3390/jcm15103643",
+    "citation": "Yang TH et al. Endoscopic decompression of radiculopathy caused by vertebral artery loop formation: case report and literature review. J Clin Med. 2026.",
+    "verifiedOn": "2026-11-04",
+    "diagnosis": "root_cervical",
+    "confirmation": "reference",
+    "confirmedBy": "Imaging: vertebral artery loop at the C5 root; endoscopic decompression",
+    "age": 69,
+    "regions": [
+      "neck",
+      "shoulder",
+      "upper_arm_lateral"
+    ],
+    "facts": [
+      {
+        "finding": "st_spurling_self",
+        "answer": "yes",
+        "locator": "3. Case description",
+        "clinician": true
+      },
+      {
+        "finding": "st_shoulder_abduction_relief",
+        "answer": "yes",
+        "locator": "3. Case description",
+        "clinician": true
+      },
+      {
+        "finding": "p_tingling",
+        "answer": "yes",
+        "locator": "3. Case description"
+      },
+      {
+        "finding": "h_arm_numbness",
+        "answer": "yes",
+        "locator": "3. Case description (tingling)"
+      },
+      {
+        "finding": "p_heavy_weak",
+        "answer": "no",
+        "locator": "3. (MRC grade 5)"
+      }
+    ],
+    "notes": "Described as C5 dermatomal: marked as shoulder and outer upper arm."
+  },
+  {
+    "id": "c41601153",
+    "pmid": "41601153",
+    "pmcid": "PMC12863092",
+    "doi": "10.12659/ajcr.950290",
+    "citation": "Kapetanakis S et al. Multilevel laminectomy for lumbar spinal stenosis with low back pain in achondroplasia: a case report. Am J Case Rep. 2026.",
+    "verifiedOn": "2026-11-04",
+    "diagnosis": "stenosis",
+    "confirmation": "reference",
+    "confirmedBy": "MRI: critical stenosis L2-L5; laminectomy",
+    "age": 55,
+    "regions": [
+      "low_back",
+      "posterior_thigh",
+      "calf"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "no",
+        "locator": "Case report"
+      },
+      {
+        "finding": "h_walking_claudication",
+        "answer": "yes",
+        "locator": "Case report (neurogenic claudication)"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "yes",
+        "locator": "Case report (bilateral)"
+      },
+      {
+        "finding": "st_heel_walk",
+        "answer": "yes",
+        "locator": "Case report (bilateral foot drop)",
+        "clinician": true
+      },
+      {
+        "finding": "st_sit_to_stand",
+        "answer": "yes",
+        "locator": "Case report (quadriceps weakness)",
+        "clinician": true
+      }
+    ],
+    "notes": "Leg symptom location not given: back of thigh and calf by convention."
+  },
+  {
+    "id": "c41630970",
+    "pmid": "41630970",
+    "pmcid": "PMC12860708",
+    "doi": "10.1016/j.jhsg.2025.100889",
+    "citation": "Delahaije JJE et al. Perineural lipoma of the ulnar nerve within the cubital tunnel: a brief review of the literature. J Hand Surg Glob Online. 2026.",
+    "verifiedOn": "2026-11-04",
+    "diagnosis": "cubital",
+    "confirmation": "reference",
+    "confirmedBy": "Ultrasound and surgery: perineural lipoma compressing the ulnar nerve in the cubital tunnel",
+    "age": 54,
+    "regions": [
+      "hand_ulnar"
+    ],
+    "facts": [
+      {
+        "finding": "h_arm_numbness",
+        "answer": "yes",
+        "locator": "Case report"
+      },
+      {
+        "finding": "p_numb",
+        "answer": "yes",
+        "locator": "Case report"
+      },
+      {
+        "finding": "p_tingling",
+        "answer": "yes",
+        "locator": "Case report (paresthesia)"
+      },
+      {
+        "finding": "p_shooting",
+        "answer": "yes",
+        "locator": "Case report"
+      },
+      {
+        "finding": "p_heavy_weak",
+        "answer": "yes",
+        "locator": "Case report (grade 4 weakness)"
+      },
+      {
+        "finding": "st_tinel_elbow_self",
+        "answer": "yes",
+        "locator": "Case report",
+        "clinician": true
+      }
+    ]
+  },
+  {
+    "id": "c41658666",
+    "pmid": "41658666",
+    "pmcid": "PMC12880857",
+    "doi": "10.7759/cureus.101028",
+    "citation": "Janjua S et al. Subacute high-grade ulnar neuropathy without trauma: a case of cubital tunnel syndrome. Cureus. 2026.",
+    "verifiedOn": "2026-11-04",
+    "diagnosis": "cubital",
+    "confirmation": "clinical",
+    "confirmedBy": "Authors' diagnosis of cubital tunnel syndrome; confirmation method not in the section read",
+    "age": 46,
+    "regions": [
+      "hand_ulnar"
+    ],
+    "facts": [
+      {
+        "finding": "h_arm_numbness",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_numb",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_heavy_weak",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_injury",
+        "answer": "no",
+        "locator": "Case presentation (no trauma)"
+      }
+    ]
+  },
+  {
+    "id": "c42344838",
+    "pmid": "42344838",
+    "pmcid": "PMC13290015",
+    "doi": "10.7759/cureus.109551",
+    "citation": "Dahdouh P et al. Right lateral femoral cutaneous nerve neuropathy after surgery for perforated appendicitis: a case report. Cureus. 2026.",
+    "verifiedOn": "2026-11-04",
+    "diagnosis": "lfcn",
+    "confirmation": "clinical",
+    "confirmedBy": "Clinical diagnosis (numbness in the LFCN territory after surgery)",
+    "age": 70,
+    "regions": [
+      "anterior_thigh",
+      "lateral_thigh"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "Case presentation (right)"
+      },
+      {
+        "finding": "h_recent_surgery",
+        "answer": "yes",
+        "locator": "Case presentation (postoperative day 1)"
+      },
+      {
+        "finding": "h_diabetes",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_numb",
+        "answer": "yes",
+        "locator": "Case presentation"
+      },
+      {
+        "finding": "p_heavy_weak",
+        "answer": "no",
+        "locator": "Case presentation (no weakness)"
+      },
+      {
+        "finding": "st_sit_to_stand",
+        "answer": "no",
+        "locator": "Case presentation (motor intact)",
+        "clinician": true
+      }
+    ]
+  },
+  {
+    "id": "c42713028",
+    "pmid": "42713028",
+    "pmcid": "PMC13552143",
+    "doi": "10.13107/jocr.2026.v16.i09.8028",
+    "citation": "Sawaf A. Proximal hamstring-related sciatic nerve entrapment presenting as recurrent hamstring strain in a professional footballer. J Orthop Case Rep. 2026.",
+    "verifiedOn": "2026-11-04",
+    "diagnosis": "deep_gluteal",
+    "confirmation": "clinical",
+    "confirmedBy": "Clinical reassessment (neurodynamic provocation); response to targeted treatment",
+    "age": 33,
+    "regions": [
+      "buttock",
+      "posterior_thigh"
+    ],
+    "facts": [
+      {
+        "finding": "h_hamstring_injury",
+        "answer": "yes",
+        "locator": "Case report (recurrent strains)"
+      },
+      {
+        "finding": "p_injury",
+        "answer": "yes",
+        "locator": "Case report (after grade II injury)"
+      },
+      {
+        "finding": "st_slr_helper",
+        "answer": "yes",
+        "locator": "Case report (neurodynamic provocation reproduced symptoms)",
+        "clinician": true
+      },
+      {
+        "finding": "p_one_spot",
+        "answer": "yes",
+        "locator": "Case report (palpation reproduced symptoms)"
+      },
+      {
+        "finding": "h_age_over_65",
+        "answer": "no",
+        "locator": "Case report"
+      }
+    ]
+  },
+  {
+    "id": "c30206472-1",
+    "pmid": "30206472",
+    "pmcid": "PMC6126180",
+    "doi": "10.1093/jscr/rjy171",
+    "citation": "Patton RS et al. Femoral neuropathy following direct anterior total hip arthroplasty: an anatomic review and case series. J Surg Case Rep. 2018.",
+    "verifiedOn": "2026-11-04",
+    "diagnosis": "femoral",
+    "confirmation": "reference",
+    "confirmedBy": "EMG re-innervation of the quadriceps",
+    "age": 63,
+    "regions": [
+      "anterior_thigh"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "no",
+        "locator": "Table 1, patient 1"
+      },
+      {
+        "finding": "h_recent_surgery",
+        "answer": "yes",
+        "locator": "Table 1, patient 1"
+      },
+      {
+        "finding": "h_surgery_hip_anterior",
+        "answer": "yes",
+        "locator": "Table 1, patient 1"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "Table 1, patient 1 (one side)"
+      },
+      {
+        "finding": "st_sit_to_stand",
+        "answer": "yes",
+        "locator": "Table 1, patient 1 (quadriceps weakness)",
+        "clinician": true
+      },
+      {
+        "finding": "p_heavy_weak",
+        "answer": "yes",
+        "locator": "Table 1, patient 1"
+      },
+      {
+        "finding": "st_sens_anterior_thigh",
+        "answer": "yes",
+        "locator": "Table 1, patient 1 (distal anterior thigh deficit)",
+        "clinician": true
+      }
+    ],
+    "notes": "Case series; patient 2 excluded (weakness only, no pain or sensory symptoms)."
+  },
+  {
+    "id": "c30206472-3",
+    "pmid": "30206472",
+    "pmcid": "PMC6126180",
+    "doi": "10.1093/jscr/rjy171",
+    "citation": "Patton RS et al. Femoral neuropathy following direct anterior total hip arthroplasty: an anatomic review and case series. J Surg Case Rep. 2018.",
+    "verifiedOn": "2026-11-04",
+    "diagnosis": "femoral",
+    "confirmation": "reference",
+    "confirmedBy": "EMG: axonal femoral neuropathy",
+    "age": 41,
+    "regions": [
+      "anterior_thigh"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "no",
+        "locator": "Table 1, patient 3"
+      },
+      {
+        "finding": "h_recent_surgery",
+        "answer": "yes",
+        "locator": "Table 1, patient 3"
+      },
+      {
+        "finding": "h_surgery_hip_anterior",
+        "answer": "yes",
+        "locator": "Table 1, patient 3"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "Table 1, patient 3 (one side)"
+      },
+      {
+        "finding": "st_sit_to_stand",
+        "answer": "yes",
+        "locator": "Table 1, patient 3 (quadriceps weakness)",
+        "clinician": true
+      },
+      {
+        "finding": "p_heavy_weak",
+        "answer": "yes",
+        "locator": "Table 1, patient 3"
+      },
+      {
+        "finding": "p_light_touch",
+        "answer": "yes",
+        "locator": "Table 1, patient 3 (sensitive to touch over thigh and knee)"
+      },
+      {
+        "finding": "st_sens_anterior_thigh",
+        "answer": "yes",
+        "locator": "Table 1, patient 3",
+        "clinician": true
+      },
+      {
+        "finding": "st_sens_medial_knee",
+        "answer": "yes",
+        "locator": "Table 1, patient 3",
+        "clinician": true
+      }
+    ],
+    "notes": "Case series; patient 2 excluded (weakness only, no pain or sensory symptoms)."
+  },
+  {
+    "id": "c30206472-4",
+    "pmid": "30206472",
+    "pmcid": "PMC6126180",
+    "doi": "10.1093/jscr/rjy171",
+    "citation": "Patton RS et al. Femoral neuropathy following direct anterior total hip arthroplasty: an anatomic review and case series. J Surg Case Rep. 2018.",
+    "verifiedOn": "2026-11-04",
+    "diagnosis": "femoral",
+    "confirmation": "clinical",
+    "confirmedBy": "Clinical diagnosis (quadriceps palsy and numbness after surgery)",
+    "age": 78,
+    "regions": [
+      "anterior_thigh"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "yes",
+        "locator": "Table 1, patient 4"
+      },
+      {
+        "finding": "h_recent_surgery",
+        "answer": "yes",
+        "locator": "Table 1, patient 4"
+      },
+      {
+        "finding": "h_surgery_hip_anterior",
+        "answer": "yes",
+        "locator": "Table 1, patient 4"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "Table 1, patient 4 (one side)"
+      },
+      {
+        "finding": "st_sit_to_stand",
+        "answer": "yes",
+        "locator": "Table 1, patient 4 (quadriceps weakness)",
+        "clinician": true
+      },
+      {
+        "finding": "p_heavy_weak",
+        "answer": "yes",
+        "locator": "Table 1, patient 4"
+      },
+      {
+        "finding": "p_numb",
+        "answer": "yes",
+        "locator": "Table 1, patient 4 (numbness mid-thigh to knee)"
+      }
+    ],
+    "notes": "Case series; patient 2 excluded (weakness only, no pain or sensory symptoms)."
+  },
+  {
+    "id": "c30206472-5",
+    "pmid": "30206472",
+    "pmcid": "PMC6126180",
+    "doi": "10.1093/jscr/rjy171",
+    "citation": "Patton RS et al. Femoral neuropathy following direct anterior total hip arthroplasty: an anatomic review and case series. J Surg Case Rep. 2018.",
+    "verifiedOn": "2026-11-04",
+    "diagnosis": "femoral",
+    "confirmation": "clinical",
+    "confirmedBy": "Clinical diagnosis (quadriceps palsy after surgery)",
+    "age": 51,
+    "regions": [
+      "anterior_thigh"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "no",
+        "locator": "Table 1, patient 5"
+      },
+      {
+        "finding": "h_recent_surgery",
+        "answer": "yes",
+        "locator": "Table 1, patient 5"
+      },
+      {
+        "finding": "h_surgery_hip_anterior",
+        "answer": "yes",
+        "locator": "Table 1, patient 5"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "Table 1, patient 5 (one side)"
+      },
+      {
+        "finding": "st_sit_to_stand",
+        "answer": "yes",
+        "locator": "Table 1, patient 5 (quadriceps weakness)",
+        "clinician": true
+      },
+      {
+        "finding": "p_heavy_weak",
+        "answer": "yes",
+        "locator": "Table 1, patient 5"
+      },
+      {
+        "finding": "p_tingling",
+        "answer": "yes",
+        "locator": "Table 1, patient 5"
+      },
+      {
+        "finding": "st_sens_anterior_thigh",
+        "answer": "no",
+        "locator": "Table 1, patient 5 (intact sensation)",
+        "clinician": true
+      }
+    ],
+    "notes": "Case series; patient 2 excluded (weakness only, no pain or sensory symptoms)."
+  },
+  {
+    "id": "c30206472-6",
+    "pmid": "30206472",
+    "pmcid": "PMC6126180",
+    "doi": "10.1093/jscr/rjy171",
+    "citation": "Patton RS et al. Femoral neuropathy following direct anterior total hip arthroplasty: an anatomic review and case series. J Surg Case Rep. 2018.",
+    "verifiedOn": "2026-11-04",
+    "diagnosis": "femoral",
+    "confirmation": "clinical",
+    "confirmedBy": "Clinical diagnosis (quadriceps palsy and sensory deficit after surgery)",
+    "age": 62,
+    "regions": [
+      "anterior_thigh"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "no",
+        "locator": "Table 1, patient 6"
+      },
+      {
+        "finding": "h_recent_surgery",
+        "answer": "yes",
+        "locator": "Table 1, patient 6"
+      },
+      {
+        "finding": "h_surgery_hip_anterior",
+        "answer": "yes",
+        "locator": "Table 1, patient 6"
+      },
+      {
+        "finding": "h_bilateral",
+        "answer": "no",
+        "locator": "Table 1, patient 6 (one side)"
+      },
+      {
+        "finding": "st_sit_to_stand",
+        "answer": "yes",
+        "locator": "Table 1, patient 6 (quadriceps weakness)",
+        "clinician": true
+      },
+      {
+        "finding": "p_heavy_weak",
+        "answer": "yes",
+        "locator": "Table 1, patient 6"
+      },
+      {
+        "finding": "st_sens_anterior_thigh",
+        "answer": "yes",
+        "locator": "Table 1, patient 6",
+        "clinician": true
+      }
+    ],
+    "notes": "Case series; patient 2 excluded (weakness only, no pain or sensory symptoms)."
+  },
+  {
+    "id": "c35350287-4",
+    "pmid": "35350287",
+    "pmcid": "PMC8921964",
+    "doi": "10.1159/000521462",
+    "citation": "Shields LBE et al. Parsonage-Turner syndrome following COVID-19 vaccination: clinical and electromyographic findings in 6 patients. Case Rep Neurol. 2022.",
+    "verifiedOn": "2026-11-04",
+    "diagnosis": "neuralgic_amyotrophy",
+    "confirmation": "reference",
+    "confirmedBy": "EMG/NCV: left lower trunk brachial plexus",
+    "age": 53,
+    "regions": [
+      "shoulder",
+      "hand_ulnar"
+    ],
+    "facts": [
+      {
+        "finding": "h_arm_numbness",
+        "answer": "yes",
+        "locator": "Table 1, patient 4 (paresthesia ulnar three fingers)"
+      },
+      {
+        "finding": "p_tingling",
+        "answer": "yes",
+        "locator": "Table 1, patient 4"
+      },
+      {
+        "finding": "p_heavy_weak",
+        "answer": "yes",
+        "locator": "Table 1, patient 4 (hand weakness)"
+      }
+    ],
+    "notes": "Case series; patients 1, 2, 3, 5 and 6 excluded (fewer than 3 mappable facts)."
+  },
+  {
+    "id": "c42677326-6",
+    "pmid": "42677326",
+    "pmcid": "PMC13528786",
+    "doi": "10.2147/jpr.s635971",
+    "citation": "Yu M et al. Combined high-voltage long-duration pulsed radiofrequency and ozone therapy in the treatment of pudendal neuralgia: a retrospective case series. J Pain Res. 2026.",
+    "verifiedOn": "2026-11-04",
+    "diagnosis": "pudendal",
+    "confirmation": "clinical",
+    "confirmedBy": "Classic pudendal neuralgia per the series' diagnostic criteria",
+    "age": 70,
+    "regions": [
+      "perineum"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "yes",
+        "locator": "Table, patient 6"
+      },
+      {
+        "finding": "p_burning",
+        "answer": "yes",
+        "locator": "Table, patient 6"
+      },
+      {
+        "finding": "p_numb",
+        "answer": "yes",
+        "locator": "Table, patient 6"
+      }
+    ],
+    "notes": "Case series; region from the series' inclusion (pain in the pudendal territory). Post-herpetic patients excluded (second cause); patients 2 and 12 had fewer than 3 facts."
+  },
+  {
+    "id": "c42677326-10",
+    "pmid": "42677326",
+    "pmcid": "PMC13528786",
+    "doi": "10.2147/jpr.s635971",
+    "citation": "Yu M et al. Combined high-voltage long-duration pulsed radiofrequency and ozone therapy in the treatment of pudendal neuralgia: a retrospective case series. J Pain Res. 2026.",
+    "verifiedOn": "2026-11-04",
+    "diagnosis": "pudendal",
+    "confirmation": "clinical",
+    "confirmedBy": "Classic pudendal neuralgia per the series' diagnostic criteria",
+    "age": 79,
+    "regions": [
+      "perineum"
+    ],
+    "facts": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "yes",
+        "locator": "Table, patient 10"
+      },
+      {
+        "finding": "p_stabbing",
+        "answer": "yes",
+        "locator": "Table, patient 10"
+      },
+      {
+        "finding": "p_heavy_weak",
+        "answer": "yes",
+        "locator": "Table, patient 10 (heavy)"
+      }
+    ],
+    "notes": "Case series; region from the series' inclusion (pain in the pudendal territory). Post-herpetic patients excluded (second cause); patients 2 and 12 had fewer than 3 facts."
+  }
+]

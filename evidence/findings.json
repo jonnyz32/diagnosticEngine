@@ -1,0 +1,4972 @@
+[
+  {
+    "id": "h_walking_claudication",
+    "kind": "history",
+    "prompt": "Does walking bring on (or clearly worsen) pain, numbness, tingling or heaviness in your legs, which then eases when you stop and sit or bend forward?",
+    "help": "Doctors call this 'neurogenic claudication'.",
+    "dependenceGroup": "flexion_walking",
+    "evidence": [
+      {
+        "hypothesis": "stenosis",
+        "sens": 0.82,
+        "spec": 0.78,
+        "sensCI": [
+          0.77,
+          0.87
+        ],
+        "specCI": [
+          0.73,
+          0.83
+        ],
+        "sourceId": "suri2010",
+        "locator": "Table 3, 'Neurogenic claudication' (primary study: Konno 2007)",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "Consecutive patients with leg pain or numbness, specialty and primary care, Japan"
+      }
+    ],
+    "summary": {
+      "yes": "walking brings on leg symptoms that ease with rest",
+      "no": "walking doesn't bring on leg symptoms"
+    },
+    "gateRegions": [
+      "low_back",
+      "buttock",
+      "posterior_thigh",
+      "anterior_thigh",
+      "lateral_thigh",
+      "medial_thigh",
+      "groin",
+      "perineum",
+      "shin_anterior",
+      "calf",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ]
+  },
+  {
+    "id": "h_bend_forward",
+    "kind": "history",
+    "prompt": "Do your leg symptoms improve when you bend forward — for example leaning on a shopping cart or walking frame?",
+    "dependenceGroup": "flexion_walking",
+    "evidence": [
+      {
+        "hypothesis": "stenosis",
+        "sens": 0.52,
+        "spec": 0.92,
+        "sensCI": [
+          0.45,
+          0.58
+        ],
+        "specCI": [
+          0.88,
+          0.95
+        ],
+        "sourceId": "suri2010",
+        "locator": "Table 3, 'Improvement when bending forward' (primary study: Konno 2007)",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "Consecutive patients with leg pain or numbness, specialty and primary care, Japan"
+      }
+    ],
+    "summary": {
+      "yes": "leg symptoms ease when bending forward",
+      "no": "bending forward doesn't help"
+    },
+    "gateRegions": [
+      "low_back",
+      "buttock",
+      "posterior_thigh",
+      "anterior_thigh",
+      "lateral_thigh",
+      "medial_thigh",
+      "groin",
+      "perineum",
+      "shin_anterior",
+      "calf",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ]
+  },
+  {
+    "id": "h_no_pain_seated",
+    "kind": "history",
+    "prompt": "When you sit down, is your leg or buttock pain completely gone?",
+    "dependenceGroup": "posture_sitting",
+    "impliedBy": [
+      {
+        "finding": "h_improve_seated",
+        "answer": "no",
+        "implies": "no"
+      },
+      {
+        "finding": "h_pain_sitting_chair",
+        "answer": "yes",
+        "implies": "no"
+      }
+    ],
+    "evidence": [
+      {
+        "hypothesis": "stenosis",
+        "sens": 0.47,
+        "spec": 0.94,
+        "sensCI": [
+          0.32,
+          0.61
+        ],
+        "specCI": [
+          0.85,
+          1
+        ],
+        "sourceId": "suri2010",
+        "locator": "Table 3, 'No pain when seated' (primary study: Katz 1995)",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "Consecutive specialty-clinic patients with low back pain, mean age 65"
+      }
+    ],
+    "summary": {
+      "yes": "pain goes away completely when sitting",
+      "no": "pain doesn't go away when sitting"
+    },
+    "gateRegions": [
+      "low_back",
+      "buttock",
+      "posterior_thigh",
+      "anterior_thigh",
+      "lateral_thigh",
+      "medial_thigh",
+      "groin",
+      "perineum",
+      "shin_anterior",
+      "calf",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ]
+  },
+  {
+    "id": "h_improve_seated",
+    "kind": "history",
+    "prompt": "Do your leg or buttock symptoms get better when you sit?",
+    "dependenceGroup": "posture_sitting",
+    "impliedBy": [
+      {
+        "finding": "h_no_pain_seated",
+        "answer": "yes",
+        "implies": "yes"
+      }
+    ],
+    "evidence": [
+      {
+        "hypothesis": "stenosis",
+        "sens": 0.51,
+        "spec": 0.84,
+        "sensCI": [
+          0.36,
+          0.66
+        ],
+        "specCI": [
+          0.72,
+          0.97
+        ],
+        "sourceId": "suri2010",
+        "locator": "Table 3, 'Improve when seated' (primary study: Katz 1995)",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "Consecutive specialty-clinic patients with low back pain, mean age 65"
+      }
+    ],
+    "summary": {
+      "yes": "symptoms improve when sitting",
+      "no": "sitting doesn't improve symptoms"
+    },
+    "gateRegions": [
+      "low_back",
+      "buttock",
+      "posterior_thigh",
+      "anterior_thigh",
+      "lateral_thigh",
+      "medial_thigh",
+      "groin",
+      "perineum",
+      "shin_anterior",
+      "calf",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ]
+  },
+  {
+    "id": "h_worse_standing",
+    "kind": "history",
+    "prompt": "Do your leg symptoms get worse when you stand up and stay standing?",
+    "dependenceGroup": "posture_sitting",
+    "evidence": [
+      {
+        "hypothesis": "stenosis",
+        "sens": 0.68,
+        "spec": 0.7,
+        "sensCI": [
+          0.62,
+          0.74
+        ],
+        "specCI": [
+          0.65,
+          0.76
+        ],
+        "sourceId": "suri2010",
+        "locator": "Table 3, 'Exacerbation when standing up' (primary study: Konno 2007)",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "Consecutive patients with leg pain or numbness, specialty and primary care, Japan"
+      }
+    ],
+    "summary": {
+      "yes": "symptoms worsen with standing",
+      "no": "standing doesn't worsen symptoms"
+    },
+    "gateRegions": [
+      "low_back",
+      "buttock",
+      "posterior_thigh",
+      "anterior_thigh",
+      "lateral_thigh",
+      "medial_thigh",
+      "groin",
+      "perineum",
+      "shin_anterior",
+      "calf",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ]
+  },
+  {
+    "id": "h_bilateral",
+    "kind": "history",
+    "prompt": "Do you have pain in BOTH buttocks or BOTH legs?",
+    "evidence": [
+      {
+        "hypothesis": "stenosis",
+        "sens": 0.51,
+        "spec": 0.92,
+        "sensCI": [
+          0.4,
+          0.62
+        ],
+        "specCI": [
+          0.87,
+          0.97
+        ],
+        "sourceId": "suri2010",
+        "locator": "Table 3, 'Bilateral buttock or leg' (primary study: Ljunggren 1991)",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "Consecutive specialty patients with low back pain or sciatica"
+      }
+    ],
+    "summary": {
+      "yes": "pain in both buttocks or both legs",
+      "no": "pain on one side only"
+    },
+    "gateRegions": [
+      "low_back",
+      "buttock",
+      "posterior_thigh",
+      "anterior_thigh",
+      "lateral_thigh",
+      "medial_thigh",
+      "groin",
+      "perineum",
+      "shin_anterior",
+      "calf",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ]
+  },
+  {
+    "id": "h_age_over_65",
+    "kind": "history",
+    "prompt": "Are you older than 65?",
+    "evidence": [
+      {
+        "hypothesis": "stenosis",
+        "sens": 0.77,
+        "spec": 0.69,
+        "sensCI": [
+          0.64,
+          0.89
+        ],
+        "specCI": [
+          0.53,
+          0.85
+        ],
+        "sourceId": "suri2010",
+        "locator": "Table 3, 'Age >65 (vs ≤65)' (primary study: Katz 1995)",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "Consecutive specialty-clinic patients with low back pain, mean age 65"
+      }
+    ],
+    "summary": {
+      "yes": "age over 65",
+      "no": "age 65 or under"
+    },
+    "gateRegions": [
+      "low_back",
+      "buttock",
+      "posterior_thigh",
+      "anterior_thigh",
+      "lateral_thigh",
+      "medial_thigh",
+      "groin",
+      "perineum",
+      "shin_anterior",
+      "calf",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ]
+  },
+  {
+    "id": "h_bilateral_sole_numbness",
+    "kind": "history",
+    "prompt": "Are the soles of BOTH feet numb?",
+    "impliedBy": [
+      {
+        "finding": "h_leg_numbness",
+        "answer": "no",
+        "implies": "no"
+      }
+    ],
+    "evidence": [
+      {
+        "hypothesis": "stenosis",
+        "sens": 0.27,
+        "spec": 0.87,
+        "sensCI": [
+          0.21,
+          0.33
+        ],
+        "specCI": [
+          0.83,
+          0.92
+        ],
+        "sourceId": "suri2010",
+        "locator": "Table 3, 'Bilateral plantar numbness' (primary study: Konno 2007)",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "Consecutive patients with leg pain or numbness, specialty and primary care, Japan"
+      }
+    ],
+    "summary": {
+      "yes": "both soles numb",
+      "no": "soles not numb on both sides"
+    },
+    "gateRegions": [
+      "low_back",
+      "buttock",
+      "posterior_thigh",
+      "anterior_thigh",
+      "lateral_thigh",
+      "medial_thigh",
+      "groin",
+      "perineum",
+      "shin_anterior",
+      "calf",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ]
+  },
+  {
+    "id": "st_slr_helper",
+    "kind": "selftest",
+    "prompt": "Did lifting your straight leg reproduce your usual leg pain?",
+    "needsHelper": true,
+    "instructions": [
+      "Lie flat on your back on a bed or the floor, both legs straight.",
+      "Your helper places one hand under the heel of your painful leg and, keeping your knee straight, slowly lifts the leg upward.",
+      "Your helper stops as soon as you feel your usual leg pain — or at about 70°, or if you ask them to stop.",
+      "A tight feeling at the back of the knee alone does not count. Only your usual leg pain counts."
+    ],
+    "safety": "Your helper should lift slowly and stop immediately if you say so. Do not force the leg higher.",
+    "gateRegions": [
+      "low_back",
+      "buttock",
+      "posterior_thigh",
+      "anterior_thigh",
+      "lateral_thigh",
+      "medial_thigh",
+      "calf",
+      "shin_anterior",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "root_low",
+        "sens": 0.69,
+        "spec": 0.84,
+        "sensCI": [
+          0.51,
+          0.83
+        ],
+        "specCI": [
+          0.65,
+          0.94
+        ],
+        "sourceId": "suri2011",
+        "locator": "Table 3, 'Straight Leg Raise', low lumbar (L5, S1)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "Spine-centre patients with radicular leg pain < 12 weeks"
+      },
+      {
+        "hypothesis": "root_mid",
+        "sens": 0.16,
+        "spec": 0.31,
+        "sensCI": [
+          0.06,
+          0.35
+        ],
+        "specCI": [
+          0.17,
+          0.49
+        ],
+        "sourceId": "suri2011",
+        "locator": "Table 3, 'Straight Leg Raise', midlumbar (L2-L4)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "Spine-centre patients with radicular leg pain < 12 weeks"
+      },
+      {
+        "hypothesis": "deep_gluteal",
+        "sens": 0.15,
+        "spec": 0.95,
+        "sourceId": "martin2014",
+        "locator": "Abstract, Results (SLR)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "Posterior hip pain patients undergoing endoscopy"
+      }
+    ],
+    "dependenceGroup": "neural_tension",
+    "summary": {
+      "yes": "straight-leg raise reproduced leg pain",
+      "no": "straight-leg raise didn't reproduce leg pain"
+    }
+  },
+  {
+    "id": "st_sit_to_stand",
+    "kind": "selftest",
+    "prompt": "Was standing up on your painful leg alone clearly harder than on your other leg, or impossible?",
+    "instructions": [
+      "Sit on a firm chair of normal height, arms crossed or lightly touching a counter for balance.",
+      "Lift your GOOD leg off the floor and try to stand up using only that leg. Repeat on the painful leg.",
+      "Count it as positive if you cannot stand on the painful leg, or it is clearly weaker than the good one."
+    ],
+    "safety": "Have a counter or sturdy support within reach. Skip this test if you are unsteady on your feet or have fallen recently.",
+    "gateRegions": [
+      "low_back",
+      "groin",
+      "anterior_thigh",
+      "lateral_thigh",
+      "medial_thigh",
+      "shin_anterior",
+      "buttock",
+      "posterior_thigh",
+      "calf"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "root_mid",
+        "sens": 0.48,
+        "spec": 0.9,
+        "sensCI": [
+          0.3,
+          0.67
+        ],
+        "specCI": [
+          0.74,
+          0.96
+        ],
+        "sourceId": "suri2011",
+        "locator": "Table 3, 'Sit-to-stand test', midlumbar (L2-L4)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "Spine-centre patients with radicular leg pain < 12 weeks"
+      },
+      {
+        "hypothesis": "root_low",
+        "sens": 0.1,
+        "spec": 0.52,
+        "sensCI": [
+          0.04,
+          0.26
+        ],
+        "specCI": [
+          0.34,
+          0.7
+        ],
+        "sourceId": "suri2011",
+        "locator": "Table 3, 'Sit-to-stand test', low lumbar (L5, S1)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "Spine-centre patients with radicular leg pain < 12 weeks"
+      }
+    ],
+    "summary": {
+      "yes": "single-leg sit-to-stand weaker on painful side",
+      "no": "single-leg sit-to-stand normal"
+    },
+    "motor": true
+  },
+  {
+    "id": "st_heel_raise",
+    "kind": "selftest",
+    "prompt": "Were you unable to do 10 single-leg heel raises on your painful leg?",
+    "instructions": [
+      "Stand on your painful leg only, bending the other knee, holding a counter for balance.",
+      "Rise up onto your toes as high as you can, then lower. Repeat.",
+      "Count it as positive if you cannot complete 10 full raises in a row."
+    ],
+    "safety": "Hold onto a counter throughout. Stop if pain increases sharply.",
+    "gateRegions": [
+      "low_back",
+      "buttock",
+      "posterior_thigh",
+      "lateral_thigh",
+      "calf",
+      "shin_anterior",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "root_low",
+        "sens": 0.14,
+        "spec": 0.96,
+        "sensCI": [
+          0.06,
+          0.31
+        ],
+        "specCI": [
+          0.81,
+          0.99
+        ],
+        "sourceId": "suri2011",
+        "locator": "Table 3, 'Heel raise test', low lumbar (L5, S1)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "Spine-centre patients with radicular leg pain < 12 weeks"
+      },
+      {
+        "hypothesis": "root_mid",
+        "sens": 0.04,
+        "spec": 0.86,
+        "sensCI": [
+          0.01,
+          0.2
+        ],
+        "specCI": [
+          0.69,
+          0.95
+        ],
+        "sourceId": "suri2011",
+        "locator": "Table 3, 'Heel raise test', midlumbar (L2-L4)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "Spine-centre patients with radicular leg pain < 12 weeks"
+      }
+    ],
+    "summary": {
+      "yes": "couldn't do 10 single-leg heel raises",
+      "no": "could do 10 single-leg heel raises"
+    },
+    "motor": true
+  },
+  {
+    "id": "st_heel_walk",
+    "kind": "selftest",
+    "prompt": "When heel-walking, could you NOT keep the front of your painful-side foot off the floor?",
+    "instructions": [
+      "Stand next to a counter or wall you can hold.",
+      "Lift the fronts of both feet and walk a few steps on your heels only.",
+      "Count it as positive if the front of the painful-side foot keeps dropping to the floor."
+    ],
+    "safety": "Walk beside a counter or wall and hold on. Skip if you are unsteady.",
+    "gateRegions": [
+      "low_back",
+      "buttock",
+      "posterior_thigh",
+      "lateral_thigh",
+      "calf",
+      "shin_anterior",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "root_mid",
+        "sens": 0.2,
+        "spec": 0.86,
+        "sensCI": [
+          0.09,
+          0.39
+        ],
+        "specCI": [
+          0.69,
+          0.95
+        ],
+        "sourceId": "suri2011",
+        "locator": "Table 3, 'Heel walk test', midlumbar (L2-L4)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "Spine-centre patients with radicular leg pain < 12 weeks"
+      },
+      {
+        "hypothesis": "root_low",
+        "sens": 0.14,
+        "spec": 0.8,
+        "sensCI": [
+          0.06,
+          0.31
+        ],
+        "specCI": [
+          0.61,
+          0.91
+        ],
+        "sourceId": "suri2011",
+        "locator": "Table 3, 'Heel walk test', low lumbar (L5, S1)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "Spine-centre patients with radicular leg pain < 12 weeks"
+      }
+    ],
+    "summary": {
+      "yes": "couldn't heel-walk on painful side",
+      "no": "heel-walking normal"
+    },
+    "motor": true
+  },
+  {
+    "id": "st_sens_anterior_thigh",
+    "kind": "selftest",
+    "prompt": "Does the skin on the front of your thigh feel clearly duller or numb on the painful side compared with the other side?",
+    "instructions": [
+      "Sit with both thighs uncovered.",
+      "Lightly stroke the middle of the front of each thigh with a fingertip or tissue, one side then the other.",
+      "Count it as positive only if the painful side feels clearly duller or numb."
+    ],
+    "gateRegions": [
+      "groin",
+      "anterior_thigh",
+      "lateral_thigh",
+      "medial_thigh"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "root_mid",
+        "sens": 0.08,
+        "spec": 0.96,
+        "sensCI": [
+          0.02,
+          0.26
+        ],
+        "specCI": [
+          0.82,
+          0.99
+        ],
+        "sourceId": "suri2011",
+        "locator": "Table 3, 'Anterior thigh' sensation, midlumbar (L2-L4)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "Spine-centre patients with radicular leg pain < 12 weeks"
+      },
+      {
+        "hypothesis": "root_low",
+        "sens": 0.04,
+        "spec": 0.92,
+        "sensCI": [
+          0.01,
+          0.18
+        ],
+        "specCI": [
+          0.74,
+          0.98
+        ],
+        "sourceId": "suri2011",
+        "locator": "Table 3, 'Anterior thigh' sensation, low lumbar (L5, S1)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "Spine-centre patients with radicular leg pain < 12 weeks"
+      }
+    ],
+    "summary": {
+      "yes": "front of thigh feels numb",
+      "no": "front of thigh feels normal"
+    }
+  },
+  {
+    "id": "st_sens_medial_knee",
+    "kind": "selftest",
+    "prompt": "Does the skin on the inner side of your knee feel clearly duller or numb on the painful side compared with the other side?",
+    "instructions": [
+      "Lightly stroke the inner side of each knee with a fingertip or tissue, one side then the other.",
+      "Count it as positive only if the painful side feels clearly duller or numb."
+    ],
+    "gateRegions": [
+      "anterior_thigh",
+      "medial_thigh",
+      "shin_anterior",
+      "lateral_thigh"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "root_mid",
+        "sens": 0.17,
+        "spec": 0.96,
+        "sensCI": [
+          0.07,
+          0.36
+        ],
+        "specCI": [
+          0.82,
+          0.99
+        ],
+        "sourceId": "suri2011",
+        "locator": "Table 3, 'Medial knee' sensation, midlumbar (L2-L4)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "Spine-centre patients with radicular leg pain < 12 weeks"
+      },
+      {
+        "hypothesis": "root_low",
+        "sens": 0.04,
+        "spec": 0.83,
+        "sensCI": [
+          0.01,
+          0.19
+        ],
+        "specCI": [
+          0.64,
+          0.93
+        ],
+        "sourceId": "suri2011",
+        "locator": "Table 3, 'Medial knee' sensation, low lumbar (L5, S1)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "Spine-centre patients with radicular leg pain < 12 weeks"
+      }
+    ],
+    "summary": {
+      "yes": "inner knee feels numb",
+      "no": "inner knee feels normal"
+    }
+  },
+  {
+    "id": "st_sens_medial_ankle",
+    "kind": "selftest",
+    "prompt": "Does the skin over the inner ankle feel clearly duller or numb on the painful side compared with the other side?",
+    "instructions": [
+      "Lightly stroke the skin just above the inner ankle bone on each leg, one side then the other.",
+      "Count it as positive only if the painful side feels clearly duller or numb."
+    ],
+    "gateRegions": [
+      "anterior_thigh",
+      "lateral_thigh",
+      "medial_thigh",
+      "shin_anterior",
+      "calf",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "posterior_thigh",
+      "forefoot"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "root_mid",
+        "sens": 0.17,
+        "spec": 1,
+        "sensCI": [
+          0.07,
+          0.36
+        ],
+        "specCI": [
+          0.88,
+          1
+        ],
+        "sourceId": "suri2011",
+        "locator": "Table 3, 'Medial ankle' sensation, midlumbar (L2-L4)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "Spine-centre patients with radicular leg pain < 12 weeks"
+      },
+      {
+        "hypothesis": "root_low",
+        "sens": 0,
+        "spec": 0.83,
+        "specCI": [
+          0.64,
+          0.93
+        ],
+        "sourceId": "suri2011",
+        "locator": "Table 3, 'Medial ankle' sensation, low lumbar (L5, S1)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "Spine-centre patients with radicular leg pain < 12 weeks"
+      }
+    ],
+    "summary": {
+      "yes": "inner ankle feels numb",
+      "no": "inner ankle feels normal"
+    }
+  },
+  {
+    "id": "st_sens_great_toe",
+    "kind": "selftest",
+    "prompt": "Does the skin on top of your big toe feel clearly duller or numb on the painful side compared with the other side?",
+    "instructions": [
+      "Lightly stroke the top of each big toe with a fingertip or tissue, one side then the other.",
+      "Count it as positive only if the painful side feels clearly duller or numb."
+    ],
+    "gateRegions": [
+      "lateral_thigh",
+      "posterior_thigh",
+      "calf",
+      "shin_anterior",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "root_low",
+        "sens": 0.18,
+        "spec": 0.87,
+        "sensCI": [
+          0.08,
+          0.36
+        ],
+        "specCI": [
+          0.68,
+          0.96
+        ],
+        "sourceId": "suri2011",
+        "locator": "Table 3, 'Great toe' sensation, low lumbar (L5, S1)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "Spine-centre patients with radicular leg pain < 12 weeks"
+      },
+      {
+        "hypothesis": "root_mid",
+        "sens": 0.13,
+        "spec": 0.82,
+        "sensCI": [
+          0.05,
+          0.32
+        ],
+        "specCI": [
+          0.64,
+          0.92
+        ],
+        "sourceId": "suri2011",
+        "locator": "Table 3, 'Great toe' sensation, midlumbar (L2-L4)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "Spine-centre patients with radicular leg pain < 12 weeks"
+      }
+    ],
+    "summary": {
+      "yes": "top of big toe feels numb",
+      "no": "top of big toe feels normal"
+    }
+  },
+  {
+    "id": "st_sens_lateral_foot",
+    "kind": "selftest",
+    "prompt": "Does the skin along the outer edge of your foot feel clearly duller or numb on the painful side compared with the other side?",
+    "instructions": [
+      "Lightly stroke the outer edge of each foot (little-toe side) with a fingertip or tissue, one side then the other.",
+      "Count it as positive only if the painful side feels clearly duller or numb."
+    ],
+    "gateRegions": [
+      "posterior_thigh",
+      "calf",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "lateral_thigh",
+      "forefoot"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "root_low",
+        "sens": 0.21,
+        "spec": 0.92,
+        "sensCI": [
+          0.1,
+          0.4
+        ],
+        "specCI": [
+          0.74,
+          0.98
+        ],
+        "sourceId": "suri2011",
+        "locator": "Table 3, 'Lateral foot' sensation, low lumbar (L5, S1)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "Spine-centre patients with radicular leg pain < 12 weeks"
+      },
+      {
+        "hypothesis": "root_mid",
+        "sens": 0.08,
+        "spec": 0.79,
+        "sensCI": [
+          0.02,
+          0.26
+        ],
+        "specCI": [
+          0.61,
+          0.9
+        ],
+        "sourceId": "suri2011",
+        "locator": "Table 3, 'Lateral foot' sensation, midlumbar (L2-L4)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "Spine-centre patients with radicular leg pain < 12 weeks"
+      }
+    ],
+    "summary": {
+      "yes": "outer edge of foot feels numb",
+      "no": "outer edge of foot feels normal"
+    }
+  },
+  {
+    "id": "st_pelvic_compression",
+    "kind": "selftest",
+    "prompt": "Did the pelvic compression ease your outer-thigh symptoms?",
+    "help": "In this test a positive result means your symptoms got BETTER.",
+    "needsHelper": true,
+    "instructions": [
+      "Lie on your side with the painful side facing up, knees slightly bent.",
+      "Your helper places both hands on the top of your hip bone (the side of your pelvis) and presses steadily downward toward the bed.",
+      "Your helper holds the pressure for 45 seconds.",
+      "Notice whether the burning, tingling or numbness on your outer thigh eases during the pressure."
+    ],
+    "safety": "Your helper should use firm but comfortable pressure and stop if you feel pain in the hip or back.",
+    "gateRegions": [
+      "lateral_thigh",
+      "anterior_thigh"
+    ],
+    "dependenceGroup": "lfcn_provocation",
+    "evidence": [
+      {
+        "hypothesis": "lfcn",
+        "sens": 0.867,
+        "spec": 0.93,
+        "sourceId": "paneyala2024",
+        "locator": "Table 4 counts (26/30 cases positive, 28/30 controls negative); Table 5",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "EDX-proven meralgia cases vs controls with anterolateral thigh symptoms from other causes",
+        "sensCI": [
+          0.703,
+          0.947
+        ],
+        "specCI": [
+          0.787,
+          0.982
+        ]
+      }
+    ],
+    "summary": {
+      "yes": "pelvic compression eased outer-thigh symptoms",
+      "no": "pelvic compression didn't help"
+    }
+  },
+  {
+    "id": "st_tinel_asis",
+    "kind": "selftest",
+    "prompt": "Did tapping just below the bony point at the front of your hip send tingling into your outer thigh?",
+    "instructions": [
+      "Find the bony point at the front of your hip on the painful side (the front tip of your pelvis, where a belt rests).",
+      "Place two fingertips just below that bony point.",
+      "Tap firmly 5–6 times.",
+      "Count it as positive if tapping sends tingling or electric sensations into your outer thigh."
+    ],
+    "gateRegions": [
+      "lateral_thigh",
+      "anterior_thigh"
+    ],
+    "dependenceGroup": "lfcn_provocation",
+    "evidence": [
+      {
+        "hypothesis": "lfcn",
+        "sens": 0.851,
+        "spec": 0.875,
+        "sourceId": "paneyala2024",
+        "locator": "Abstract, Case Study (Tinel's sign)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "EDX-proven meralgia cases vs controls with anterolateral thigh symptoms from other causes"
+      }
+    ],
+    "summary": {
+      "yes": "tapping the front hip bone caused thigh tingling",
+      "no": "tapping the front hip bone did nothing"
+    }
+  },
+  {
+    "id": "st_prone_knee_bend",
+    "kind": "selftest",
+    "prompt": "Did bending your knee while lying face down reproduce your usual thigh pain?",
+    "needsHelper": true,
+    "instructions": [
+      "Lie face down on a bed or the floor, legs straight.",
+      "Your helper holds the ankle of your painful leg and gently bends your knee, bringing your heel toward your buttock.",
+      "Your helper stops as soon as you feel your usual thigh pain, or if you ask them to stop.",
+      "A stretch at the front of the thigh alone does not count. Only your usual pain counts."
+    ],
+    "safety": "Your helper should bend the knee slowly and stop immediately if you say so.",
+    "gateRegions": [
+      "groin",
+      "anterior_thigh",
+      "lateral_thigh",
+      "medial_thigh",
+      "shin_anterior"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "root_mid",
+        "sens": 0.5,
+        "spec": 1,
+        "sensCI": [
+          0.31,
+          0.69
+        ],
+        "specCI": [
+          0.88,
+          1
+        ],
+        "sourceId": "suri2011",
+        "locator": "Table 3, 'Femoral Stretch Test', midlumbar (L2-L4)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "Spine-centre patients with radicular leg pain < 12 weeks"
+      },
+      {
+        "hypothesis": "root_low",
+        "sens": 0,
+        "spec": 0.5,
+        "specCI": [
+          0.31,
+          0.69
+        ],
+        "sourceId": "suri2011",
+        "locator": "Table 3, 'Femoral Stretch Test', low lumbar (L5, S1)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "Spine-centre patients with radicular leg pain < 12 weeks"
+      }
+    ],
+    "summary": {
+      "yes": "prone knee bend reproduced thigh pain",
+      "no": "prone knee bend didn't reproduce thigh pain"
+    }
+  },
+  {
+    "id": "h_leg_worse_than_back",
+    "kind": "history",
+    "prompt": "Is the pain in your leg worse than the pain in your back?",
+    "evidence": [
+      {
+        "hypothesis": "root_low",
+        "sens": 0.822,
+        "spec": 0.541,
+        "sensCI": [
+          0.754,
+          0.875
+        ],
+        "specCI": [
+          0.453,
+          0.627
+        ],
+        "sourceId": "vroomen2002",
+        "locator": "Table 2, 'Pain worse in leg than in back' (125/152 vs 56/122)",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "Primary-care (GP-referred) adults with a new episode of severe pain radiating below the gluteal fold; MRI reference"
+      },
+      {
+        "hypothesis": "root_mid",
+        "sens": 0.822,
+        "spec": 0.541,
+        "sensCI": [
+          0.754,
+          0.875
+        ],
+        "specCI": [
+          0.453,
+          0.627
+        ],
+        "sourceId": "vroomen2002",
+        "locator": "Table 2, 'Pain worse in leg than in back' (125/152 vs 56/122)",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "Primary-care (GP-referred) adults with a new episode of severe pain radiating below the gluteal fold; MRI reference"
+      }
+    ],
+    "summary": {
+      "yes": "leg pain worse than back pain",
+      "no": "leg pain not worse than back pain"
+    },
+    "gateRegions": [
+      "low_back",
+      "buttock",
+      "posterior_thigh",
+      "anterior_thigh",
+      "lateral_thigh",
+      "medial_thigh",
+      "groin",
+      "perineum",
+      "shin_anterior",
+      "calf",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ]
+  },
+  {
+    "id": "h_cough_sneeze",
+    "kind": "history",
+    "prompt": "Does coughing, sneezing or straining make your leg pain worse?",
+    "evidence": [
+      {
+        "hypothesis": "root_low",
+        "sens": 0.5,
+        "spec": 0.672,
+        "sensCI": [
+          0.421,
+          0.579
+        ],
+        "specCI": [
+          0.585,
+          0.749
+        ],
+        "sourceId": "vroomen2002",
+        "locator": "Table 2, 'Pain worse on coughing/sneezing/straining' (76/152 vs 40/122)",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "Primary-care (GP-referred) adults with a new episode of severe pain radiating below the gluteal fold; MRI reference"
+      },
+      {
+        "hypothesis": "root_mid",
+        "sens": 0.5,
+        "spec": 0.672,
+        "sensCI": [
+          0.421,
+          0.579
+        ],
+        "specCI": [
+          0.585,
+          0.749
+        ],
+        "sourceId": "vroomen2002",
+        "locator": "Table 2, 'Pain worse on coughing/sneezing/straining' (76/152 vs 40/122)",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "Primary-care (GP-referred) adults with a new episode of severe pain radiating below the gluteal fold; MRI reference"
+      }
+    ],
+    "summary": {
+      "yes": "coughing or sneezing worsens leg pain",
+      "no": "coughing or sneezing doesn't affect it"
+    },
+    "gateRegions": [
+      "low_back",
+      "buttock",
+      "posterior_thigh",
+      "anterior_thigh",
+      "lateral_thigh",
+      "medial_thigh",
+      "groin",
+      "perineum",
+      "shin_anterior",
+      "calf",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ]
+  },
+  {
+    "id": "h_lbp_half_bent",
+    "kind": "history",
+    "prompt": "Do you get low back pain while half-bent forward, for example washing your face over a basin?",
+    "summary": {
+      "yes": "low back pain when half-bent forward",
+      "no": "no low back pain when half-bent forward"
+    },
+    "gateRegions": [
+      "low_back"
+    ],
+    "impliedBy": [
+      {
+        "finding": "p_flexion_worse",
+        "answer": "no",
+        "implies": "no"
+      }
+    ],
+    "evidence": [
+      {
+        "hypothesis": "disc_pain",
+        "sens": 0.738,
+        "spec": 0.8,
+        "sensCI": [
+          0.589,
+          0.847
+        ],
+        "specCI": [
+          0.627,
+          0.905
+        ],
+        "sourceId": "tonosu2016",
+        "locator": "Table 1 (LBP while washing one's face: 31/42 vs 6/30)",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "Discogenic LBP (discoblock-confirmed) vs older patients with LBP from lumbar stenosis"
+      }
+    ]
+  },
+  {
+    "id": "st_finger_floor",
+    "kind": "selftest",
+    "prompt": "When you bent forward with straight knees, were your fingertips still 25 cm (10 inches) or more from the floor?",
+    "needsHelper": true,
+    "instructions": [
+      "Stand with your feet together and your knees straight.",
+      "Slowly bend forward and reach your fingertips toward the floor, as far as you comfortably can.",
+      "Your helper measures the distance from your middle fingertip to the floor with a ruler or tape measure.",
+      "Count it as positive if the distance is 25 cm (about 10 inches) or more."
+    ],
+    "safety": "Bend slowly and stop if pain increases sharply. Stand next to something you can hold.",
+    "gateRegions": [
+      "low_back",
+      "buttock",
+      "posterior_thigh",
+      "lateral_thigh",
+      "anterior_thigh",
+      "calf",
+      "shin_anterior",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ],
+    "dependenceGroup": "neural_tension",
+    "evidence": [
+      {
+        "hypothesis": "root_low",
+        "sens": 0.447,
+        "spec": 0.738,
+        "sensCI": [
+          0.371,
+          0.527
+        ],
+        "specCI": [
+          0.653,
+          0.808
+        ],
+        "sourceId": "vroomen2002",
+        "locator": "Table 3, 'Finger-floor distance >= 25 cm' (68/152 vs 32/122)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "Primary-care (GP-referred) adults with a new episode of severe pain radiating below the gluteal fold; MRI reference"
+      },
+      {
+        "hypothesis": "root_mid",
+        "sens": 0.447,
+        "spec": 0.738,
+        "sensCI": [
+          0.371,
+          0.527
+        ],
+        "specCI": [
+          0.653,
+          0.808
+        ],
+        "sourceId": "vroomen2002",
+        "locator": "Table 3, 'Finger-floor distance >= 25 cm' (68/152 vs 32/122)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "Primary-care (GP-referred) adults with a new episode of severe pain radiating below the gluteal fold; MRI reference"
+      }
+    ],
+    "summary": {
+      "yes": "fingertips 25 cm or more from the floor when bending",
+      "no": "could reach within 25 cm of the floor"
+    }
+  },
+  {
+    "id": "st_beatty_home",
+    "kind": "selftest",
+    "prompt": "Did lifting and holding your bent knee bring on deep pain in the buttock?",
+    "help": "Only deep buttock pain counts. Back pain, leg pain, or pain over the outer hip bone does not.",
+    "instructions": [
+      "Lie on your good side on a bed, with the painful side facing up.",
+      "Bend the hip and knee of your top (painful) leg so the knee rests on the bed in front of you.",
+      "Lift that knee a few inches off the bed and hold it there for up to a minute.",
+      "Notice where any pain appears."
+    ],
+    "safety": "Stop if the pain becomes severe.",
+    "gateRegions": [
+      "buttock",
+      "posterior_thigh",
+      "calf",
+      "lateral_thigh"
+    ],
+    "scoreOn": "positive",
+    "dependenceGroup": "piriformis_provocation",
+    "evidence": [
+      {
+        "hypothesis": "deep_gluteal",
+        "sens": 1,
+        "spec": 0.933,
+        "sensCI": [
+          0.985,
+          1
+        ],
+        "specCI": [
+          0.787,
+          0.982
+        ],
+        "sourceId": "michel2013",
+        "locator": "Table 1, Beatty: 250/250 piriformis cases vs 2/30 L5/S1 disc patients positive",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "250 piriformis syndrome cases vs 30 L5/S1 disc-related root compression patients (case sensitivity likely inflated by incorporation bias)"
+      }
+    ],
+    "summary": {
+      "yes": "knee lift (Beatty test) caused deep buttock pain",
+      "no": "knee lift (Beatty test) didn't cause buttock pain"
+    }
+  },
+  {
+    "id": "st_active_piriformis",
+    "kind": "selftest",
+    "prompt": "Did pushing your top leg up and outward against your helper's hand bring on your usual deep buttock pain?",
+    "help": "Only your usual deep buttock pain counts. Pain over the outer hip bone or in the back does not.",
+    "needsHelper": true,
+    "instructions": [
+      "Lie on your good side on a bed, with the painful side facing up.",
+      "Press the heel of your top leg down into the bed.",
+      "At the same time, try to lift that leg up and turn it outward while your helper holds it down with a hand on the outside of your knee.",
+      "Push for a few seconds and notice where any pain appears."
+    ],
+    "safety": "Push gently at first. Stop if the pain becomes severe.",
+    "gateRegions": [
+      "buttock",
+      "posterior_thigh",
+      "calf",
+      "lateral_thigh"
+    ],
+    "followUp": {
+      "hypothesis": "deep_gluteal",
+      "minP": 0.1
+    },
+    "dependenceGroup": "piriformis_provocation",
+    "evidence": [
+      {
+        "hypothesis": "deep_gluteal",
+        "sens": 0.783,
+        "spec": 0.8,
+        "sensCI": [
+          0.581,
+          0.903
+        ],
+        "specCI": [
+          0.49,
+          0.943
+        ],
+        "sourceId": "martin2014",
+        "locator": "Abstract, active piriformis test (sens 0.78, spec 0.80; counts 18/23 and 8/10 derived from group sizes)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "33 posterior hip pain patients undergoing endoscopy: 23 with sciatic nerve entrapment vs 10 without"
+      }
+    ],
+    "summary": {
+      "yes": "resisted leg lift (active piriformis test) caused deep buttock pain",
+      "no": "resisted leg lift (active piriformis test) didn't cause buttock pain"
+    }
+  },
+  {
+    "id": "st_seated_piriformis",
+    "kind": "selftest",
+    "prompt": "When your helper moved your straightened leg across and turned it inward, did it bring on your usual deep buttock pain?",
+    "help": "Only your usual deep buttock pain counts. A stretch at the back of the knee or thigh does not.",
+    "needsHelper": true,
+    "instructions": [
+      "Sit on a firm chair or the edge of a bed, hips and knees bent at right angles.",
+      "Your helper holds the heel of your painful leg and slowly straightens your knee.",
+      "Keeping the knee straight, your helper slowly moves that leg across toward your other leg and rolls it inward (toes turning toward the other leg).",
+      "Notice whether this brings on your usual deep buttock pain."
+    ],
+    "safety": "Your helper should move slowly and stop immediately if you say so. Do not force the leg.",
+    "gateRegions": [
+      "buttock",
+      "posterior_thigh",
+      "calf",
+      "lateral_thigh"
+    ],
+    "dependenceGroup": "piriformis_provocation",
+    "evidence": [
+      {
+        "hypothesis": "deep_gluteal",
+        "sens": 0.522,
+        "spec": 0.9,
+        "sensCI": [
+          0.33,
+          0.708
+        ],
+        "specCI": [
+          0.596,
+          0.982
+        ],
+        "sourceId": "martin2014",
+        "locator": "Abstract, seated piriformis stretch test (sens 0.52, spec 0.90; counts 12/23 and 9/10 derived from group sizes)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "33 posterior hip pain patients undergoing endoscopy: 23 with sciatic nerve entrapment vs 10 without"
+      }
+    ],
+    "summary": {
+      "yes": "seated leg stretch (seated piriformis stretch test) caused deep buttock pain",
+      "no": "seated leg stretch (seated piriformis stretch test) didn't cause buttock pain"
+    }
+  },
+  {
+    "id": "h_pain_below_knee",
+    "kind": "history",
+    "prompt": "In the last week, has your pain spread below the knee?",
+    "gateRegions": [
+      "buttock",
+      "posterior_thigh",
+      "anterior_thigh",
+      "lateral_thigh",
+      "medial_thigh",
+      "calf",
+      "shin_anterior",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "root_low",
+        "sens": 0.73,
+        "spec": 0.61,
+        "sensCI": [
+          0.66,
+          0.78
+        ],
+        "specCI": [
+          0.55,
+          0.66
+        ],
+        "sourceId": "konstantinou2012",
+        "locator": "Table 4, 'Pain below knee', classification 1",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "Primary-care adults with low back pain ± leg pain (n=511); reference = clinical diagnosis of nerve root involvement"
+      },
+      {
+        "hypothesis": "root_mid",
+        "sens": 0.73,
+        "spec": 0.61,
+        "sensCI": [
+          0.66,
+          0.78
+        ],
+        "specCI": [
+          0.55,
+          0.66
+        ],
+        "sourceId": "konstantinou2012",
+        "locator": "Table 4, 'Pain below knee', classification 1",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "Primary-care adults with low back pain ± leg pain (n=511); reference = clinical diagnosis of nerve root involvement"
+      }
+    ],
+    "summary": {
+      "yes": "pain spreads below the knee",
+      "no": "pain doesn't spread below the knee"
+    }
+  },
+  {
+    "id": "h_leg_numbness",
+    "kind": "history",
+    "prompt": "In the last week, have you felt numbness or pins and needles in either leg or foot?",
+    "gateRegions": [
+      "buttock",
+      "posterior_thigh",
+      "anterior_thigh",
+      "lateral_thigh",
+      "medial_thigh",
+      "calf",
+      "shin_anterior",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ],
+    "impliedBy": [
+      {
+        "finding": "h_bilateral_sole_numbness",
+        "answer": "yes",
+        "implies": "yes"
+      }
+    ],
+    "evidence": [
+      {
+        "hypothesis": "root_low",
+        "sens": 0.64,
+        "spec": 0.6,
+        "sensCI": [
+          0.56,
+          0.7
+        ],
+        "specCI": [
+          0.55,
+          0.65
+        ],
+        "sourceId": "konstantinou2012",
+        "locator": "Table 4, 'Numbness, pins and needles', classification 1",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "Primary-care adults with low back pain ± leg pain (n=511); reference = clinical diagnosis of nerve root involvement"
+      },
+      {
+        "hypothesis": "root_mid",
+        "sens": 0.64,
+        "spec": 0.6,
+        "sensCI": [
+          0.56,
+          0.7
+        ],
+        "specCI": [
+          0.55,
+          0.65
+        ],
+        "sourceId": "konstantinou2012",
+        "locator": "Table 4, 'Numbness, pins and needles', classification 1",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "Primary-care adults with low back pain ± leg pain (n=511); reference = clinical diagnosis of nerve root involvement"
+      }
+    ],
+    "alwaysAsk": true,
+    "dependenceGroup": "paraesthesia",
+    "help": "'Pins and needles' includes a prickly, buzzing or tingling feeling in the skin.",
+    "summary": {
+      "yes": "numbness or pins and needles in the leg",
+      "no": "no numbness or pins and needles"
+    }
+  },
+  {
+    "id": "h_severe_leg_pain",
+    "kind": "history",
+    "prompt": "On a scale of 0 to 10, is your usual leg pain 7 or more?",
+    "gateRegions": [
+      "buttock",
+      "posterior_thigh",
+      "anterior_thigh",
+      "lateral_thigh",
+      "medial_thigh",
+      "calf",
+      "shin_anterior",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "root_low",
+        "sens": 0.48,
+        "spec": 0.73,
+        "sensCI": [
+          0.41,
+          0.55
+        ],
+        "specCI": [
+          0.68,
+          0.78
+        ],
+        "sourceId": "konstantinou2012",
+        "locator": "Table 4, 'Severity of pain (NRS) 7-10', classification 1",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "Primary-care adults with low back pain ± leg pain (n=511); reference = clinical diagnosis of nerve root involvement"
+      },
+      {
+        "hypothesis": "root_mid",
+        "sens": 0.48,
+        "spec": 0.73,
+        "sensCI": [
+          0.41,
+          0.55
+        ],
+        "specCI": [
+          0.68,
+          0.78
+        ],
+        "sourceId": "konstantinou2012",
+        "locator": "Table 4, 'Severity of pain (NRS) 7-10', classification 1",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "Primary-care adults with low back pain ± leg pain (n=511); reference = clinical diagnosis of nerve root involvement"
+      }
+    ],
+    "summary": {
+      "yes": "leg pain 7/10 or more",
+      "no": "leg pain below 7/10"
+    }
+  },
+  {
+    "id": "h_hip_stairs",
+    "kind": "history",
+    "prompt": "Is the pain worse when climbing stairs or walking down slopes?",
+    "gateRegions": [
+      "groin",
+      "anterior_thigh",
+      "medial_thigh",
+      "buttock",
+      "lateral_thigh"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "hip_oa",
+        "sens": 0.68,
+        "spec": 0.68,
+        "sensCI": [
+          0.59,
+          0.76
+        ],
+        "specCI": [
+          0.58,
+          0.76
+        ],
+        "sourceId": "metcalfe2019",
+        "locator": "Table 1, 'Climbing stairs or walking down slopes'",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "Patients with hip or groin pain, mainly primary care; reference = radiographic hip OA"
+      }
+    ],
+    "summary": {
+      "yes": "worse on stairs or slopes",
+      "no": "stairs and slopes don't worsen it"
+    }
+  },
+  {
+    "id": "h_worst_medial_thigh",
+    "kind": "history",
+    "prompt": "Is your worst pain on the inner side of the thigh?",
+    "gateRegions": [
+      "medial_thigh"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "hip_oa",
+        "sens": 0.12,
+        "spec": 0.98,
+        "sensCI": [
+          0.025,
+          0.31
+        ],
+        "specCI": [
+          0.96,
+          0.997
+        ],
+        "sourceId": "metcalfe2019",
+        "locator": "Table 1, 'Worst pain in medial thigh'",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "Patients with hip or groin pain, mainly primary care; reference = radiographic hip OA"
+      }
+    ],
+    "summary": {
+      "yes": "worst pain in the inner thigh",
+      "no": "worst pain not in the inner thigh"
+    }
+  },
+  {
+    "id": "h_knee_oa_history",
+    "kind": "history",
+    "prompt": "Have you been diagnosed with osteoarthritis of the knee?",
+    "gateRegions": [
+      "groin",
+      "anterior_thigh",
+      "medial_thigh",
+      "buttock",
+      "lateral_thigh"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "hip_oa",
+        "sens": 0.33,
+        "spec": 0.84,
+        "sensCI": [
+          0.24,
+          0.43
+        ],
+        "specCI": [
+          0.73,
+          0.92
+        ],
+        "sourceId": "metcalfe2019",
+        "locator": "Table 1, 'History of knee osteoarthritis'",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "Patients with hip or groin pain, mainly primary care; reference = radiographic hip OA"
+      }
+    ],
+    "summary": {
+      "yes": "known knee osteoarthritis",
+      "no": "no known knee osteoarthritis"
+    }
+  },
+  {
+    "id": "st_squat_posterior",
+    "kind": "selftest",
+    "prompt": "Did squatting down bring on pain at the back of your hip or buttock?",
+    "instructions": [
+      "Stand holding a counter or sturdy chair for balance.",
+      "Slowly squat down as far as is comfortable, then stand back up.",
+      "Notice whether this brings on pain at the back of the hip or in the buttock."
+    ],
+    "safety": "Hold on throughout and only go as low as is comfortable. Skip if you are unsteady.",
+    "gateRegions": [
+      "groin",
+      "anterior_thigh",
+      "medial_thigh",
+      "buttock",
+      "lateral_thigh"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "hip_oa",
+        "sens": 0.24,
+        "spec": 0.96,
+        "sensCI": [
+          0.082,
+          0.47
+        ],
+        "specCI": [
+          0.86,
+          0.995
+        ],
+        "sourceId": "metcalfe2019",
+        "locator": "Table 2, 'Squat causing posterior pain' (primary study: Sutlive 2008)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "72 patients with unilateral hip pain; reference = radiographic hip OA"
+      }
+    ],
+    "summary": {
+      "yes": "squatting caused pain at the back of the hip",
+      "no": "squatting didn't cause back-of-hip pain"
+    }
+  },
+  {
+    "id": "st_single_leg_stance",
+    "kind": "selftest",
+    "prompt": "Did standing on your painful leg bring on your outer hip pain within 30 seconds?",
+    "instructions": [
+      "Stand next to a wall or counter and rest one or two fingertips on it for balance only.",
+      "Lift your good leg so you're standing on the painful leg.",
+      "Hold for up to 30 seconds.",
+      "Count it as positive if your usual outer hip pain comes on within the 30 seconds."
+    ],
+    "safety": "Keep fingertips on the support the whole time. Skip if you're unsteady on your feet.",
+    "gateRegions": [
+      "lateral_thigh",
+      "buttock"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "gtps",
+        "lrPos": 12,
+        "lrNeg": 0.62,
+        "sourceId": "grimaldi2017",
+        "locator": "Abstract (LR+ ~12); Discussion (sens 38%, spec 100%; LR- derived as 0.62/1.0)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "65 patients with lateral hip pain; reference = MRI gluteal tendinopathy"
+      }
+    ],
+    "summary": {
+      "yes": "standing on the painful leg brought on outer hip pain",
+      "no": "standing on the painful leg didn't hurt"
+    }
+  },
+  {
+    "id": "st_trochanter_tender",
+    "kind": "selftest",
+    "prompt": "Was pressing on the bony point at the side of your hip clearly tender, or did it reproduce your pain?",
+    "instructions": [
+      "Find the bony point on the outside of your hip, about a hand-width below your waist (the top of the thigh bone).",
+      "Press firmly with your fingertips over and around it.",
+      "Compare with the same spot on the other side."
+    ],
+    "gateRegions": [
+      "lateral_thigh",
+      "buttock"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "gtps",
+        "sens": 0.8,
+        "spec": 0.467,
+        "sensCI": [
+          0.67,
+          0.888
+        ],
+        "specCI": [
+          0.248,
+          0.699
+        ],
+        "sourceId": "grimaldi2017",
+        "locator": "Abstract (sens 80%); Results (40 TP, 8 FP of 15 without GT)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "65 patients with lateral hip pain; reference = MRI gluteal tendinopathy"
+      }
+    ],
+    "summary": {
+      "yes": "bony point at the side of the hip is tender",
+      "no": "side of the hip isn't tender"
+    }
+  },
+  {
+    "id": "st_psis_tender",
+    "kind": "selftest",
+    "prompt": "Was pressing on the bony bump at the back of your pelvis tender on the painful side?",
+    "instructions": [
+      "Stand up and find the two small dimples low on your back, just above the buttocks. Under each is a bony bump (the PSIS).",
+      "Press firmly with your fingertips on and around the bump on your painful side.",
+      "Compare with the same spot on the other side. Count it as tender even if this isn't where your worst pain is."
+    ],
+    "followUp": {
+      "hypothesis": "sij",
+      "minP": 0.1
+    },
+    "dependenceGroup": "sij_psis",
+    "evidence": [
+      {
+        "hypothesis": "sij",
+        "sens": 0.774,
+        "spec": 0.626,
+        "sensCI": [
+          0.602,
+          0.886
+        ],
+        "specCI": [
+          0.538,
+          0.706
+        ],
+        "sourceId": "tonosu2018",
+        "locator": "Table 2, 'Tenderness of the PSIS' (24/31 vs 46/123)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "SIJ-related pain vs other low back pain (31 vs 123)"
+      }
+    ],
+    "summary": {
+      "yes": "bony bump at the back of the pelvis is tender",
+      "no": "bony bump at the back of the pelvis isn't tender"
+    },
+    "gateRegions": [
+      "low_back",
+      "buttock",
+      "posterior_thigh",
+      "anterior_thigh",
+      "lateral_thigh",
+      "medial_thigh",
+      "groin",
+      "perineum",
+      "shin_anterior",
+      "calf",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ]
+  },
+  {
+    "id": "st_one_finger_psis",
+    "kind": "selftest",
+    "prompt": "When you pointed to your worst pain with one finger, was it on or within about 2 cm of the bony bump at the back of your pelvis?",
+    "instructions": [
+      "Stand up and find the two small dimples low on your back, just above the buttocks. Under each is a bony bump (the PSIS).",
+      "Now point with one finger to the single spot where your pain is worst.",
+      "Count it as positive if that spot is on the bump or within about 2 cm (one finger-width) of it."
+    ],
+    "gateRegions": [
+      "low_back",
+      "buttock"
+    ],
+    "scoreOn": "positive",
+    "dependenceGroup": "sij_psis",
+    "evidence": [
+      {
+        "hypothesis": "sij",
+        "sens": 0.774,
+        "spec": 0.667,
+        "sensCI": [
+          0.602,
+          0.886
+        ],
+        "specCI": [
+          0.579,
+          0.744
+        ],
+        "sourceId": "tonosu2018",
+        "locator": "Table 2, 'One-finger test' (24/31 vs 41/123)",
+        "performedBy": "patient",
+        "adapted": true,
+        "population": "SIJ-related pain vs other low back pain (31 vs 123)"
+      }
+    ],
+    "summary": {
+      "yes": "worst pain at the bony bump at the back of the pelvis",
+      "no": "worst pain away from the back-of-pelvis bump"
+    }
+  },
+  {
+    "id": "h_pain_sitting_chair",
+    "kind": "history",
+    "prompt": "Does sitting on a chair bring on your pain or make it worse?",
+    "gateRegions": [
+      "low_back",
+      "buttock",
+      "posterior_thigh",
+      "anterior_thigh",
+      "lateral_thigh",
+      "medial_thigh",
+      "groin",
+      "perineum",
+      "shin_anterior",
+      "calf",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ],
+    "impliedBy": [
+      {
+        "finding": "h_no_pain_seated",
+        "answer": "yes",
+        "implies": "no"
+      }
+    ],
+    "evidence": [
+      {
+        "hypothesis": "sij",
+        "sens": 0.645,
+        "spec": 0.618,
+        "sensCI": [
+          0.469,
+          0.789
+        ],
+        "specCI": [
+          0.53,
+          0.699
+        ],
+        "sourceId": "tonosu2018",
+        "locator": "Table 2, 'Pain while sitting on a chair' (20/31 vs 47/123)",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "SIJ-related pain vs other low back pain (31 vs 123)"
+      },
+      {
+        "hypothesis": "root_low",
+        "sens": 0.539,
+        "spec": 0.434,
+        "sensCI": [
+          0.46,
+          0.617
+        ],
+        "specCI": [
+          0.35,
+          0.523
+        ],
+        "sourceId": "vroomen2002",
+        "locator": "Table 2, 'More pain on sitting' (82/152 vs 69/122; OR 0.9, not discriminative)",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "Primary-care adults with severe pain radiating below the gluteal fold; MRI reference"
+      },
+      {
+        "hypothesis": "root_mid",
+        "sens": 0.539,
+        "spec": 0.434,
+        "sensCI": [
+          0.46,
+          0.617
+        ],
+        "specCI": [
+          0.35,
+          0.523
+        ],
+        "sourceId": "vroomen2002",
+        "locator": "Table 2, 'More pain on sitting' (82/152 vs 69/122; OR 0.9, not discriminative)",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "Primary-care adults with severe pain radiating below the gluteal fold; MRI reference"
+      },
+      {
+        "hypothesis": "pfcn",
+        "sens": 1,
+        "spec": 0.434,
+        "sensCI": [
+          0.947,
+          1
+        ],
+        "specCI": [
+          0.35,
+          0.523
+        ],
+        "sourceId": "kachniarz2021",
+        "locator": "Abstract: sitting pain in all 52 patients (and all 17 in Dellon 2015); 69/69, but patients were selected for sitting pain",
+        "specFrom": {
+          "sourceId": "vroomen2002",
+          "locator": "Table 2, 'More pain on sitting' in patients without root compression (69/122)"
+        },
+        "scoreOn": "positive",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "Cases: surgical PFCN series (selected for sitting pain). Comparison: primary-care leg-pain patients without nerve root compression"
+      }
+    ],
+    "alwaysAsk": true,
+    "summary": {
+      "yes": "sitting brings on or worsens pain",
+      "no": "sitting doesn't worsen pain"
+    }
+  },
+  {
+    "id": "st_long_stride_walk",
+    "kind": "selftest",
+    "prompt": "Did walking with long strides bring on your buttock or back-of-thigh pain as your leg swung behind you?",
+    "instructions": [
+      "Find a hallway or room where you can walk safely in a straight line.",
+      "Walk taking deliberately long strides, so your painful leg reaches well behind you at the end of each step.",
+      "Then walk the same distance with short strides.",
+      "Count it as positive if long strides bring on your usual buttock or back-of-thigh pain."
+    ],
+    "safety": "Walk near a wall or with someone nearby. Stop if the pain becomes severe.",
+    "gateRegions": [
+      "buttock",
+      "posterior_thigh"
+    ],
+    "dependenceGroup": "ifi_provocation",
+    "evidence": [
+      {
+        "hypothesis": "ifi",
+        "sens": 0.941,
+        "spec": 0.846,
+        "sensCI": [
+          0.73,
+          0.99
+        ],
+        "specCI": [
+          0.578,
+          0.957
+        ],
+        "sourceId": "gomezhoyos2016",
+        "locator": "Abstract, Results (long-stride walking test)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "30 patients with posterior hip pain, spine excluded (17 IFI vs 13 other)"
+      }
+    ],
+    "summary": {
+      "yes": "long strides brought on buttock pain",
+      "no": "long strides didn't hurt"
+    }
+  },
+  {
+    "id": "st_ifi_helper",
+    "kind": "selftest",
+    "needsHelper": true,
+    "prompt": "When your helper took your painful leg backwards (straight, in line with your body), did it bring on your usual buttock pain?",
+    "help": "Only your usual deep buttock or back-of-hip pain counts. A stretch at the front of the hip does not.",
+    "instructions": [
+      "Lie on your side on a bed with the painful side on top and your bottom knee bent for balance.",
+      "Your helper holds your top leg straight at the knee and ankle and slowly takes it backwards behind your body, keeping it level with the bed (not lifted up or out).",
+      "Hold for a few seconds and notice whether your usual buttock pain comes on.",
+      "Then the helper repeats with the leg held slightly up and away from the bed. Count it as positive if the first movement brings on your usual pain."
+    ],
+    "safety": "The helper moves slowly and stops at the first sign of sharp pain. Don't do this test after a recent hip replacement.",
+    "gateRegions": [
+      "buttock",
+      "posterior_thigh"
+    ],
+    "dependenceGroup": "ifi_provocation",
+    "evidence": [
+      {
+        "hypothesis": "ifi",
+        "sens": 0.824,
+        "spec": 0.846,
+        "sensCI": [
+          0.59,
+          0.938
+        ],
+        "specCI": [
+          0.578,
+          0.957
+        ],
+        "sourceId": "gomezhoyos2016",
+        "locator": "Abstract, Results (IFI test)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "30 patients with posterior hip pain, spine excluded (17 IFI vs 13 other)"
+      }
+    ],
+    "summary": {
+      "yes": "taking the leg backwards brought on buttock pain",
+      "no": "taking the leg backwards didn't hurt"
+    }
+  },
+  {
+    "id": "h_leg_tingling",
+    "kind": "history",
+    "prompt": "Would you describe the feeling in your leg as tingling?",
+    "gateRegions": [
+      "buttock",
+      "posterior_thigh",
+      "anterior_thigh",
+      "lateral_thigh",
+      "medial_thigh",
+      "calf",
+      "shin_anterior",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ],
+    "dependenceGroup": "paraesthesia",
+    "impliedBy": [
+      {
+        "finding": "h_leg_numbness",
+        "answer": "no",
+        "implies": "no"
+      },
+      {
+        "finding": "p_tingling",
+        "answer": "no",
+        "implies": "no"
+      }
+    ],
+    "evidence": [
+      {
+        "hypothesis": "root_low",
+        "sens": 0.35,
+        "spec": 0.8,
+        "sensCI": [
+          0.29,
+          0.42
+        ],
+        "specCI": [
+          0.75,
+          0.84
+        ],
+        "sourceId": "konstantinou2012",
+        "locator": "Table 4, 'Tingling' (leg pain descriptor), classification 1",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "Primary-care adults with low back pain ± leg pain (n=511); reference = clinical diagnosis of nerve root involvement"
+      },
+      {
+        "hypothesis": "root_mid",
+        "sens": 0.35,
+        "spec": 0.8,
+        "sensCI": [
+          0.29,
+          0.42
+        ],
+        "specCI": [
+          0.75,
+          0.84
+        ],
+        "sourceId": "konstantinou2012",
+        "locator": "Table 4, 'Tingling' (leg pain descriptor), classification 1",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "Primary-care adults with low back pain ± leg pain (n=511); reference = clinical diagnosis of nerve root involvement"
+      }
+    ],
+    "summary": {
+      "yes": "tingling in the leg",
+      "no": "no tingling in the leg"
+    }
+  },
+  {
+    "id": "h_leg_burning",
+    "kind": "history",
+    "prompt": "Would you describe the feeling in your leg as burning?",
+    "gateRegions": [
+      "buttock",
+      "posterior_thigh",
+      "anterior_thigh",
+      "lateral_thigh",
+      "medial_thigh",
+      "calf",
+      "shin_anterior",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ],
+    "impliedBy": [
+      {
+        "finding": "p_burning",
+        "answer": "no",
+        "implies": "no"
+      }
+    ],
+    "evidence": [
+      {
+        "hypothesis": "root_low",
+        "sens": 0.27,
+        "spec": 0.84,
+        "sensCI": [
+          0.21,
+          0.33
+        ],
+        "specCI": [
+          0.79,
+          0.87
+        ],
+        "sourceId": "konstantinou2012",
+        "locator": "Table 4, 'Burning pain', classification 1",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "Primary-care adults with low back pain ± leg pain (n=511); reference = clinical diagnosis of nerve root involvement"
+      },
+      {
+        "hypothesis": "root_mid",
+        "sens": 0.27,
+        "spec": 0.84,
+        "sensCI": [
+          0.21,
+          0.33
+        ],
+        "specCI": [
+          0.79,
+          0.87
+        ],
+        "sourceId": "konstantinou2012",
+        "locator": "Table 4, 'Burning pain', classification 1",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "Primary-care adults with low back pain ± leg pain (n=511); reference = clinical diagnosis of nerve root involvement"
+      }
+    ],
+    "summary": {
+      "yes": "burning feeling in the leg",
+      "no": "no burning feeling in the leg"
+    }
+  },
+  {
+    "id": "h_leg_shooting",
+    "kind": "history",
+    "prompt": "Does the feeling in your leg shoot down it, like an electric shock?",
+    "gateRegions": [
+      "buttock",
+      "posterior_thigh",
+      "anterior_thigh",
+      "lateral_thigh",
+      "medial_thigh",
+      "calf",
+      "shin_anterior",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ],
+    "impliedBy": [
+      {
+        "finding": "p_shooting",
+        "answer": "no",
+        "implies": "no"
+      }
+    ],
+    "evidence": [
+      {
+        "hypothesis": "root_low",
+        "sens": 0.33,
+        "spec": 0.72,
+        "sensCI": [
+          0.27,
+          0.4
+        ],
+        "specCI": [
+          0.67,
+          0.76
+        ],
+        "sourceId": "konstantinou2012",
+        "locator": "Table 4, 'Shooting pain', classification 1",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "Primary-care adults with low back pain ± leg pain (n=511); reference = clinical diagnosis of nerve root involvement"
+      },
+      {
+        "hypothesis": "root_mid",
+        "sens": 0.33,
+        "spec": 0.72,
+        "sensCI": [
+          0.27,
+          0.4
+        ],
+        "specCI": [
+          0.67,
+          0.76
+        ],
+        "sourceId": "konstantinou2012",
+        "locator": "Table 4, 'Shooting pain', classification 1",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "Primary-care adults with low back pain ± leg pain (n=511); reference = clinical diagnosis of nerve root involvement"
+      }
+    ],
+    "summary": {
+      "yes": "shooting, electric-shock leg pain",
+      "no": "no shooting leg pain"
+    }
+  },
+  {
+    "id": "h_buttock_burning_walking",
+    "kind": "history",
+    "prompt": "When you walk, do you get a burning feeling around your buttocks?",
+    "gateRegions": [
+      "buttock",
+      "low_back",
+      "posterior_thigh"
+    ],
+    "impliedBy": [
+      {
+        "finding": "p_burning",
+        "answer": "no",
+        "implies": "no"
+      }
+    ],
+    "evidence": [
+      {
+        "hypothesis": "stenosis",
+        "sens": 0.06,
+        "spec": 0.99,
+        "sensCI": [
+          0.03,
+          0.09
+        ],
+        "specCI": [
+          0.98,
+          1
+        ],
+        "sourceId": "suri2010",
+        "locator": "Table 3, 'Burning sensation around the buttocks, intermittent priapism associated with walking, or both' (primary study: Konno 2007)",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "Consecutive patients with leg pain or numbness, specialty and primary care, Japan"
+      }
+    ],
+    "summary": {
+      "yes": "burning around the buttocks when walking",
+      "no": "no buttock burning when walking"
+    }
+  },
+  {
+    "id": "h_pfcn_location",
+    "kind": "history",
+    "prompt": "Is your pain mainly in the lower buttock, the back of the thigh, or around the bone you sit on?",
+    "gateRegions": [
+      "buttock",
+      "posterior_thigh"
+    ],
+    "followUp": {
+      "hypothesis": "pfcn",
+      "minP": 0.1
+    },
+    "summary": {
+      "yes": "pain in the lower buttock, back of thigh or sitting bone",
+      "no": "pain not centred on the lower buttock or sitting bone"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_pfcn_avoid_sitting",
+    "kind": "history",
+    "prompt": "Do you spend much of the day standing or lying down because sitting is painful?",
+    "gateRegions": [
+      "buttock",
+      "posterior_thigh"
+    ],
+    "followUp": {
+      "hypothesis": "pfcn",
+      "minP": 0.1
+    },
+    "summary": {
+      "yes": "avoids sitting because of the pain",
+      "no": "doesn't avoid sitting"
+    },
+    "impliedBy": [
+      {
+        "finding": "h_pain_sitting_chair",
+        "answer": "no",
+        "implies": "no"
+      }
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_hamstring_injury",
+    "kind": "history",
+    "prompt": "Have you ever injured the hamstring (the back of the thigh) on the painful side?",
+    "gateRegions": [
+      "buttock",
+      "posterior_thigh"
+    ],
+    "followUp": {
+      "hypothesis": "pfcn",
+      "minP": 0.1
+    },
+    "summary": {
+      "yes": "previous hamstring injury on that side",
+      "no": "no previous hamstring injury"
+    },
+    "evidence": []
+  },
+  {
+    "id": "st_pfcn_skin",
+    "kind": "selftest",
+    "prompt": "Did the skin on the painful side feel different: numb, tingling, or unusually sensitive?",
+    "gateRegions": [
+      "buttock",
+      "posterior_thigh"
+    ],
+    "followUp": {
+      "hypothesis": "pfcn",
+      "minP": 0.1
+    },
+    "instructions": [
+      "Sit or lie so you can reach the lower buttock and the back of the thigh on both sides.",
+      "Lightly stroke the skin with your fingertips, first on the painful side, then the same spot on the other side.",
+      "Work down from the crease under the buttock to just above the back of the knee.",
+      "Count it as positive if the painful side feels clearly different: numb, tingling, or unusually sensitive."
+    ],
+    "summary": {
+      "yes": "skin of lower buttock/back of thigh feels different",
+      "no": "skin of lower buttock/back of thigh feels normal"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_tight_clothing",
+    "kind": "history",
+    "prompt": "Do tight trousers or jeans, a tight belt, or a tool or utility belt around the hips bring on or worsen the thigh symptoms?",
+    "gateRegions": [
+      "lateral_thigh",
+      "anterior_thigh"
+    ],
+    "followUp": {
+      "hypothesis": "lfcn",
+      "minP": 0.1
+    },
+    "summary": {
+      "yes": "tight clothing or belts bring on the thigh symptoms",
+      "no": "tight clothing makes no difference"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_pregnancy",
+    "kind": "history",
+    "prompt": "Are you pregnant, or did the symptoms start during or shortly after a pregnancy?",
+    "gateRegions": [
+      "lateral_thigh",
+      "anterior_thigh"
+    ],
+    "followUp": {
+      "hypothesis": "lfcn",
+      "minP": 0.1
+    },
+    "summary": {
+      "yes": "symptoms linked to pregnancy",
+      "no": "not linked to pregnancy"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_diabetes",
+    "kind": "history",
+    "prompt": "Do you have diabetes?",
+    "gateRegions": [
+      "lateral_thigh",
+      "anterior_thigh"
+    ],
+    "followUp": {
+      "hypothesis": "lfcn",
+      "minP": 0.1
+    },
+    "summary": {
+      "yes": "has diabetes",
+      "no": "no diabetes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_recent_surgery",
+    "kind": "history",
+    "alwaysAsk": true,
+    "prompt": "Did these symptoms start within about 3 months after an operation on your hip, groin, abdomen, pelvis or lower back?",
+    "summary": {
+      "yes": "symptoms started after an operation",
+      "no": "no recent operation before the symptoms"
+    },
+    "evidence": [],
+    "gateRegions": [
+      "low_back",
+      "buttock",
+      "posterior_thigh",
+      "anterior_thigh",
+      "lateral_thigh",
+      "medial_thigh",
+      "groin",
+      "perineum",
+      "shin_anterior",
+      "calf",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ]
+  },
+  {
+    "id": "h_surgery_hip_anterior",
+    "kind": "history",
+    "askIf": {
+      "finding": "h_recent_surgery",
+      "answer": "yes"
+    },
+    "prompt": "Was it a hip replacement or hip resurfacing done from the front of the hip (anterior approach)?",
+    "summary": {
+      "yes": "after front-approach hip replacement or resurfacing",
+      "no": "not a front-approach hip operation"
+    },
+    "evidence": [],
+    "gateRegions": [
+      "low_back",
+      "buttock",
+      "posterior_thigh",
+      "anterior_thigh",
+      "lateral_thigh",
+      "medial_thigh",
+      "groin",
+      "perineum",
+      "shin_anterior",
+      "calf",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ]
+  },
+  {
+    "id": "h_surgery_hernia",
+    "kind": "history",
+    "askIf": {
+      "finding": "h_recent_surgery",
+      "answer": "yes"
+    },
+    "prompt": "Was it an inguinal (groin) hernia repair?",
+    "summary": {
+      "yes": "after inguinal hernia repair",
+      "no": "not a hernia repair"
+    },
+    "evidence": [],
+    "gateRegions": [
+      "low_back",
+      "buttock",
+      "posterior_thigh",
+      "anterior_thigh",
+      "lateral_thigh",
+      "medial_thigh",
+      "groin",
+      "perineum",
+      "shin_anterior",
+      "calf",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ]
+  },
+  {
+    "id": "h_surgery_pelvic",
+    "kind": "history",
+    "askIf": {
+      "finding": "h_recent_surgery",
+      "answer": "yes"
+    },
+    "prompt": "Was it gynaecological, urological or other pelvic surgery?",
+    "summary": {
+      "yes": "after pelvic, gynaecological or urological surgery",
+      "no": "not pelvic surgery"
+    },
+    "evidence": [],
+    "gateRegions": [
+      "low_back",
+      "buttock",
+      "posterior_thigh",
+      "anterior_thigh",
+      "lateral_thigh",
+      "medial_thigh",
+      "groin",
+      "perineum",
+      "shin_anterior",
+      "calf",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ]
+  },
+  {
+    "id": "h_surgery_spine",
+    "kind": "history",
+    "askIf": {
+      "finding": "h_recent_surgery",
+      "answer": "yes"
+    },
+    "prompt": "Was it surgery on the lower back (spine)?",
+    "summary": {
+      "yes": "after lower-back surgery",
+      "no": "not spine surgery"
+    },
+    "evidence": [],
+    "gateRegions": [
+      "low_back",
+      "buttock",
+      "posterior_thigh",
+      "anterior_thigh",
+      "lateral_thigh",
+      "medial_thigh",
+      "groin",
+      "perineum",
+      "shin_anterior",
+      "calf",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ]
+  },
+  {
+    "id": "h_hip_first_steps",
+    "kind": "history",
+    "prompt": "Is the pain worst on your first few steps after sitting or lying down for a while?",
+    "gateRegions": [
+      "groin",
+      "anterior_thigh",
+      "medial_thigh",
+      "buttock",
+      "lateral_thigh"
+    ],
+    "summary": {
+      "yes": "pain on the first steps after rest",
+      "no": "no first-steps pain"
+    },
+    "evidence": [
+      {
+        "hypothesis": "hip_oa",
+        "sens": 0.92,
+        "spec": 0.26,
+        "sensCI": [
+          0.74,
+          0.99
+        ],
+        "specCI": [
+          0.2,
+          0.32
+        ],
+        "sourceId": "metcalfe2019",
+        "locator": "Table 1, 'Pain on initial steps after rest'",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "Patients with hip or groin pain, mainly primary care; reference = radiographic hip OA"
+      }
+    ]
+  },
+  {
+    "id": "h_limp",
+    "kind": "history",
+    "prompt": "Do you limp when you walk (or have others noticed you limping)?",
+    "gateRegions": [
+      "groin",
+      "anterior_thigh",
+      "medial_thigh",
+      "buttock",
+      "lateral_thigh"
+    ],
+    "summary": {
+      "yes": "limps when walking",
+      "no": "no limp"
+    },
+    "evidence": [
+      {
+        "hypothesis": "hip_oa",
+        "sens": 0.85,
+        "spec": 0.43,
+        "sensCI": [
+          0.76,
+          0.92
+        ],
+        "specCI": [
+          0.31,
+          0.55
+        ],
+        "sourceId": "metcalfe2019",
+        "locator": "Table 2, 'Limp' (observed by examiner in the study)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "Patients with hip or groin pain, mainly primary care; reference = radiographic hip OA"
+      }
+    ]
+  },
+  {
+    "id": "h_family_oa",
+    "kind": "history",
+    "prompt": "Does anyone in your close family have osteoarthritis (wear-and-tear arthritis)?",
+    "gateRegions": [
+      "groin",
+      "anterior_thigh",
+      "medial_thigh",
+      "buttock",
+      "lateral_thigh"
+    ],
+    "summary": {
+      "yes": "family history of osteoarthritis",
+      "no": "no family history of osteoarthritis"
+    },
+    "evidence": [
+      {
+        "hypothesis": "hip_oa",
+        "sens": 0.34,
+        "spec": 0.84,
+        "sensCI": [
+          0.25,
+          0.44
+        ],
+        "specCI": [
+          0.74,
+          0.91
+        ],
+        "sourceId": "metcalfe2019",
+        "locator": "Table 1, 'Family history of osteoarthritis'",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "Patients with hip or groin pain, mainly primary care; reference = radiographic hip OA"
+      }
+    ]
+  },
+  {
+    "kind": "selftest",
+    "id": "st_shoulder_abduction_relief",
+    "prompt": "With the hand of your painful arm resting on top of your head, did your arm symptoms ease?",
+    "help": "Only an easing of the pain, numbness or tingling in your arm counts.",
+    "instructions": [
+      "Sit upright.",
+      "Lift the hand of your painful arm and rest your palm on top of your head.",
+      "Keep it there for up to a minute and notice whether the pain or tingling in your arm eases."
+    ],
+    "safety": "Stop if lifting your arm is too painful; answer \"unsure\".",
+    "gateRegions": [
+      "neck",
+      "scapula",
+      "shoulder",
+      "upper_arm_lateral",
+      "upper_arm_medial",
+      "elbow_lateral",
+      "elbow_medial",
+      "forearm_lateral",
+      "forearm_medial",
+      "forearm_anterior",
+      "hand_median",
+      "hand_ulnar",
+      "hand_dorsal_radial",
+      "wrist_radial",
+      "wrist_ulnar",
+      "forearm_dorsal"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "root_cervical",
+        "sens": 0.49,
+        "spec": 0.76,
+        "sensCI": [
+          0.39,
+          0.6
+        ],
+        "specCI": [
+          0.66,
+          0.84
+        ],
+        "sourceId": "thoomes2026",
+        "locator": "Table 4, shoulder abduction test (pooled, 2 studies)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "Patients suspected of cervical radiculopathy (2 studies); very low certainty, heterogeneous"
+      }
+    ],
+    "summary": {
+      "yes": "resting your hand on your head eased your arm symptoms",
+      "no": "resting your hand on your head didn't ease your arm symptoms"
+    }
+  },
+  {
+    "kind": "selftest",
+    "id": "st_spurling_self",
+    "prompt": "Did tilting your head toward the painful side and looking slightly up bring on your usual arm pain or tingling?",
+    "help": "Only your usual pain or tingling spreading into the shoulder blade, arm or hand counts. Pain only in the neck does not.",
+    "instructions": [
+      "Sit upright and relax your shoulders.",
+      "Slowly tilt your head toward your painful side, ear toward shoulder.",
+      "Keeping it tilted, look up a little, and hold for a few seconds.",
+      "Notice whether your usual arm symptoms appear, then return your head to the middle."
+    ],
+    "safety": "Don't do this after a recent neck injury, or if moving your neck makes you dizzy or affects your vision. Move slowly and stop if the pain becomes severe.",
+    "gateRegions": [
+      "neck",
+      "scapula",
+      "shoulder",
+      "upper_arm_lateral",
+      "upper_arm_medial",
+      "elbow_lateral",
+      "elbow_medial",
+      "forearm_lateral",
+      "forearm_medial",
+      "forearm_anterior",
+      "hand_median",
+      "hand_ulnar",
+      "hand_dorsal_radial",
+      "wrist_radial",
+      "wrist_ulnar",
+      "forearm_dorsal"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "root_cervical",
+        "sens": 0.53,
+        "spec": 0.92,
+        "sensCI": [
+          0.29,
+          0.78
+        ],
+        "specCI": [
+          0.88,
+          0.96
+        ],
+        "sourceId": "lin2025",
+        "locator": "Abstract, Results (pooled, 8 studies)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "Patients with suspected subacute or chronic cervical radiculopathy; clinician version adds downward pressure on the head"
+      }
+    ],
+    "summary": {
+      "yes": "tilting and extending your neck brought on your arm symptoms (Spurling-type test)",
+      "no": "tilting and extending your neck didn't bring on arm symptoms"
+    }
+  },
+  {
+    "kind": "selftest",
+    "id": "st_arm_squeeze",
+    "prompt": "Did squeezing the middle of your upper arm hurt at least 3 points more (on a 0 to 10 scale) than pressing on either spot on your shoulder?",
+    "help": "Compare the scores for the three spots. Answer \"yes\" only if the upper-arm squeeze scored at least 3 more than both shoulder spots.",
+    "needsHelper": true,
+    "instructions": [
+      "Sit with your painful arm relaxed by your side.",
+      "Your helper squeezes the middle third of your upper arm firmly, thumb at the front and fingers at the back. Score the pain from 0 to 10.",
+      "Your helper then presses firmly on the bony bump at the outer end of your collarbone, on top of the shoulder. Score it.",
+      "Finally your helper presses on the front-outer part of your shoulder, just below the bony edge. Score it."
+    ],
+    "safety": "Ask your helper to press firmly but not with full force.",
+    "gateRegions": [
+      "neck",
+      "scapula",
+      "shoulder",
+      "upper_arm_lateral",
+      "upper_arm_medial"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "root_cervical",
+        "sens": 0.967,
+        "spec": 0.966,
+        "sensCI": [
+          0.941,
+          0.982
+        ],
+        "specCI": [
+          0.954,
+          0.975
+        ],
+        "sourceId": "gumina2013",
+        "locator": "Abstract, Methods and Results (295/305 root compression; 43/1,262 shoulder disease positive)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "Shoulder-pain patients: 305 with C5-T1 root compression vs 1,262 with shoulder disease; diagnosis made before the test"
+      }
+    ],
+    "summary": {
+      "yes": "squeezing your upper arm hurt clearly more than pressing your shoulder (arm squeeze test)",
+      "no": "squeezing your upper arm didn't hurt more than pressing your shoulder"
+    }
+  },
+  {
+    "kind": "selftest",
+    "id": "st_phalen_self",
+    "prompt": "Did holding your wrists fully bent bring on numbness or tingling in your thumb, index, middle or ring finger?",
+    "help": "Only numbness or tingling in the fingers counts. Wrist ache alone does not.",
+    "instructions": [
+      "Sit with your elbows resting on a table and your forearms upright.",
+      "Let your wrists drop forward and press the backs of your hands together, fingers pointing down, so both wrists are fully bent.",
+      "Hold for up to a minute and notice any numbness or tingling in your fingers."
+    ],
+    "gateRegions": [
+      "hand_median",
+      "hand_ulnar",
+      "forearm_anterior",
+      "forearm_lateral",
+      "wrist_radial",
+      "wrist_ulnar"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "cts",
+        "sens": 0.57,
+        "spec": 0.67,
+        "sensCI": [
+          0.44,
+          0.68
+        ],
+        "specCI": [
+          0.52,
+          0.79
+        ],
+        "sourceId": "dabbagh2023",
+        "locator": "Abstract, Results (Phalen test pooled, 7 studies, 604 patients)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "Patients assessed for carpal tunnel syndrome (7 pooled studies)"
+      }
+    ],
+    "summary": {
+      "yes": "bending your wrists brought on finger tingling (Phalen's test)",
+      "no": "bending your wrists didn't bring on finger tingling"
+    }
+  },
+  {
+    "kind": "selftest",
+    "id": "st_tinel_wrist_self",
+    "prompt": "Did tapping on the front of your wrist send tingling into your thumb, index or middle finger?",
+    "help": "Only tingling shooting into the fingers counts. Tenderness where you tap does not.",
+    "instructions": [
+      "Turn your painful hand palm up and rest it on a table.",
+      "Find the middle of the crease where your wrist meets your palm.",
+      "With two fingertips of your other hand, tap firmly on that spot about ten times."
+    ],
+    "gateRegions": [
+      "hand_median",
+      "hand_ulnar",
+      "forearm_anterior",
+      "forearm_lateral",
+      "wrist_radial",
+      "wrist_ulnar"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "cts",
+        "sens": 0.4,
+        "spec": 0.861,
+        "sensCI": [
+          0.309,
+          0.498
+        ],
+        "specCI": [
+          0.708,
+          0.94
+        ],
+        "sourceId": "hill2026",
+        "locator": "Abstract, Results (fingertip percussion pooled, 8 studies, 1,196 participants)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "Patients assessed for carpal tunnel syndrome; fingertip percussion studies"
+      }
+    ],
+    "summary": {
+      "yes": "tapping your wrist sent tingling into your fingers (Tinel's sign)",
+      "no": "tapping your wrist didn't send tingling into your fingers"
+    }
+  },
+  {
+    "kind": "selftest",
+    "id": "st_tinel_elbow_self",
+    "prompt": "Did tapping behind your inner elbow bone send tingling into your ring or little finger?",
+    "help": "Only tingling shooting into the forearm or ring and little fingers counts. The usual 'funny bone' tingle from a hard knock counts only if it is like your usual symptoms.",
+    "instructions": [
+      "Bend your painful elbow to about a right angle.",
+      "Find the groove between the bony bump on the inner side of your elbow and the point of the elbow.",
+      "With two fingertips of your other hand, tap firmly in that groove about ten times."
+    ],
+    "gateRegions": [
+      "elbow_medial",
+      "forearm_medial",
+      "hand_ulnar"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "cubital",
+        "sens": 0.62,
+        "spec": 0.527,
+        "sensCI": [
+          0.537,
+          0.697
+        ],
+        "specCI": [
+          0.398,
+          0.653
+        ],
+        "sourceId": "beekman2009",
+        "locator": "Abstract, Results (Tinel's test 62%/53%; 85/137 and 29/55 derived)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "192 consecutive patients suspected of ulnar neuropathy at the elbow (137 confirmed)"
+      }
+    ],
+    "summary": {
+      "yes": "tapping behind your inner elbow sent tingling into your little finger",
+      "no": "tapping behind your inner elbow didn't send tingling into your fingers"
+    }
+  },
+  {
+    "kind": "selftest",
+    "id": "st_siref_self",
+    "prompt": "In the arm-up, elbow-bent, arm-turned-in position, did your usual ring or little finger symptoms come on within 5 seconds?",
+    "help": "Any of your usual cubital tunnel symptoms counts: tingling, numbness or pain on the little-finger side of the forearm or hand.",
+    "instructions": [
+      "Stand or sit upright. Raise your painful arm out to the side to shoulder height, then bring it slightly forward.",
+      "Bend your elbow fully, keeping your wrist straight and your fingers straight.",
+      "Keeping your upper arm at shoulder height, turn the arm so your forearm and hand rotate down and back as far as is comfortable.",
+      "Hold for 5 seconds and notice any symptoms in your ring and little fingers."
+    ],
+    "safety": "Stop if your shoulder hurts; answer \"unsure\".",
+    "gateRegions": [
+      "elbow_medial",
+      "forearm_medial",
+      "hand_ulnar"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "cubital",
+        "sens": 0.87,
+        "spec": 0.98,
+        "sensCI": [
+          0.76,
+          0.937
+        ],
+        "specCI": [
+          0.943,
+          0.996
+        ],
+        "sourceId": "ochi2012",
+        "locator": "Abstract, Methods and Results (shoulder internal rotation elbow flexion test, 87%/98%; 48/55 and 121/123 derived)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "55 cubital tunnel syndrome nerves vs 123 control nerves (case-control)"
+      }
+    ],
+    "summary": {
+      "yes": "the arm-up, elbow-bent position brought on little-finger symptoms",
+      "no": "the arm-up, elbow-bent position didn't bring on little-finger symptoms"
+    }
+  },
+  {
+    "kind": "selftest",
+    "id": "st_painful_arc_self",
+    "prompt": "While raising your arm out to the side, did your shoulder hurt in the middle part of the movement and ease again near the top?",
+    "help": "A 'painful arc' is pain that starts somewhere between shoulder height and partway above it, and eases above or below that range.",
+    "instructions": [
+      "Stand with your painful arm by your side, thumb pointing forward.",
+      "Slowly raise the arm out to the side and up as far as it will go, then slowly lower it.",
+      "Notice where in the movement your shoulder hurts."
+    ],
+    "safety": "Move slowly and stop if the pain is severe; answer \"unsure\".",
+    "gateRegions": [
+      "shoulder",
+      "upper_arm_lateral",
+      "scapula"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "rotator_cuff",
+        "lrPos": 3.7,
+        "lrNeg": 0.36,
+        "sourceId": "hermans2013",
+        "locator": "Abstract, Results (painful arc: LR+ 3.7 [1.9-7.0], LR- 0.36 [0.23-0.54])",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "Referred shoulder-pain patients examined by specialists"
+      }
+    ],
+    "summary": {
+      "yes": "raising your arm caused a painful arc in the shoulder",
+      "no": "raising your arm didn't cause a painful arc"
+    }
+  },
+  {
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "id": "h_arm_numbness",
+    "prompt": "Do you have numbness or pins and needles (tingling, buzzing) in your arm or hand?",
+    "gateRegions": [
+      "neck",
+      "scapula",
+      "shoulder",
+      "upper_arm_lateral",
+      "upper_arm_medial",
+      "elbow_lateral",
+      "elbow_medial",
+      "forearm_lateral",
+      "forearm_medial",
+      "forearm_anterior",
+      "hand_median",
+      "hand_ulnar",
+      "hand_dorsal_radial",
+      "wrist_radial",
+      "wrist_ulnar",
+      "forearm_dorsal"
+    ],
+    "summary": {
+      "yes": "numbness or pins and needles in the arm or hand",
+      "no": "no numbness or pins and needles in the arm or hand"
+    }
+  },
+  {
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "id": "h_grip_lateral_elbow",
+    "prompt": "Does gripping or lifting with your palm facing down (for example a kettle or a bag) bring on pain at the outer elbow?",
+    "gateRegions": [
+      "elbow_lateral",
+      "forearm_lateral",
+      "forearm_dorsal"
+    ],
+    "summary": {
+      "yes": "gripping or lifting brings on outer elbow pain",
+      "no": "gripping or lifting doesn't bring on outer elbow pain"
+    }
+  },
+  {
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "id": "h_grip_medial_elbow",
+    "prompt": "Does gripping, or bending your wrist forward against resistance, bring on pain at the inner elbow?",
+    "gateRegions": [
+      "elbow_medial",
+      "forearm_medial"
+    ],
+    "summary": {
+      "yes": "gripping or wrist bending brings on inner elbow pain",
+      "no": "gripping or wrist bending doesn't bring on inner elbow pain"
+    }
+  },
+  {
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "id": "h_shoulder_stiff",
+    "prompt": "Is your shoulder stiff, so you can't move it fully in several directions even when someone else moves it for you (for example reaching behind your back or turning the arm outward)?",
+    "gateRegions": [
+      "shoulder",
+      "upper_arm_lateral",
+      "scapula"
+    ],
+    "summary": {
+      "yes": "shoulder stiff in several directions",
+      "no": "shoulder not stiff in several directions"
+    }
+  },
+  {
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "id": "h_front_shoulder_pain",
+    "prompt": "Is your pain mainly at the front of the shoulder, and worse lifting or carrying with the elbow bent?",
+    "gateRegions": [
+      "shoulder",
+      "upper_arm_lateral",
+      "upper_arm_medial"
+    ],
+    "summary": {
+      "yes": "pain mainly at the front of the shoulder with lifting",
+      "no": "pain not mainly at the front of the shoulder"
+    }
+  },
+  {
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "id": "h_wrist_thumb_motion",
+    "prompt": "Is your pain at the thumb side of the wrist, brought on by moving your thumb (for example lifting a child or wringing out a cloth)?",
+    "gateRegions": [
+      "forearm_lateral",
+      "hand_dorsal_radial",
+      "hand_median",
+      "wrist_radial"
+    ],
+    "summary": {
+      "yes": "thumb-side wrist pain on moving the thumb",
+      "no": "no thumb-side wrist pain on moving the thumb"
+    }
+  },
+  {
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "id": "h_thumb_base_pinch",
+    "prompt": "Is your pain mainly at the base of the thumb, brought on by pinching or gripping (for example opening jars or turning a key)?",
+    "gateRegions": [
+      "hand_median",
+      "hand_dorsal_radial",
+      "wrist_radial"
+    ],
+    "summary": {
+      "yes": "thumb-base pain on pinching or gripping",
+      "no": "no thumb-base pain on pinching or gripping"
+    }
+  },
+  {
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "id": "h_finger_catching",
+    "prompt": "Does a finger or your thumb catch, click or lock when you bend or straighten it?",
+    "gateRegions": [
+      "hand_median",
+      "hand_ulnar"
+    ],
+    "summary": {
+      "yes": "a finger catches or locks",
+      "no": "no finger catching or locking"
+    }
+  },
+  {
+    "id": "st_hawkins_helper",
+    "kind": "selftest",
+    "prompt": "When your helper turned your raised arm inward, did it bring on your usual shoulder pain?",
+    "help": "Only your usual pain at the top or outside of the shoulder counts.",
+    "needsHelper": true,
+    "instructions": [
+      "Stand with your arms relaxed.",
+      "Your helper lifts your painful arm forward to shoulder height and bends your elbow to a right angle, supporting the arm.",
+      "Your helper then gently turns your forearm downward, so your hand moves toward the floor, as far as is comfortable."
+    ],
+    "safety": "Your helper should move slowly and stop if the pain becomes severe.",
+    "gateRegions": [
+      "shoulder",
+      "upper_arm_lateral",
+      "scapula"
+    ],
+    "dependenceGroup": "subacromial_provocation",
+    "evidence": [
+      {
+        "hypothesis": "rotator_cuff",
+        "sens": 0.79,
+        "spec": 0.59,
+        "sourceId": "hegedus2012",
+        "locator": "Abstract, Results (Hawkins-Kennedy test, pooled, subacromial impingement)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "Shoulder-complaint patients in pooled studies; target subacromial impingement"
+      }
+    ],
+    "summary": {
+      "yes": "turning the raised arm inward brought on shoulder pain (Hawkins test)",
+      "no": "turning the raised arm inward didn't bring on shoulder pain"
+    }
+  },
+  {
+    "id": "st_neer_helper",
+    "kind": "selftest",
+    "prompt": "When your helper lifted your straight arm forward and up, did it bring on your usual shoulder pain?",
+    "help": "Only your usual pain at the top or outside of the shoulder counts.",
+    "needsHelper": true,
+    "instructions": [
+      "Stand with your painful arm straight by your side, palm turned so your thumb points backward.",
+      "Your helper steadies your shoulder blade with one hand and, with the other, slowly lifts your straight arm forward and up as far as it will go."
+    ],
+    "safety": "Your helper should move slowly and stop if the pain becomes severe.",
+    "gateRegions": [
+      "shoulder",
+      "upper_arm_lateral",
+      "scapula"
+    ],
+    "dependenceGroup": "subacromial_provocation",
+    "evidence": [
+      {
+        "hypothesis": "rotator_cuff",
+        "sens": 0.72,
+        "spec": 0.6,
+        "sourceId": "hegedus2012",
+        "locator": "Abstract, Results (Neer test, pooled, subacromial impingement)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "Shoulder-complaint patients in pooled studies; target subacromial impingement"
+      }
+    ],
+    "summary": {
+      "yes": "lifting the straight arm up brought on shoulder pain (Neer test)",
+      "no": "lifting the straight arm up didn't bring on shoulder pain"
+    }
+  },
+  {
+    "id": "st_what_self",
+    "kind": "selftest",
+    "prompt": "With your wrist bent fully down, did pushing your thumb outward against resistance bring on pain at the thumb side of the wrist?",
+    "help": "Only pain over the bony bump at the thumb side of the wrist counts.",
+    "instructions": [
+      "Rest your forearm on a table, thumb side up, with your hand over the edge.",
+      "Bend your wrist fully down (palm toward you).",
+      "Hold your thumb out to the side, and push it outward against the fingers of your other hand for a few seconds."
+    ],
+    "gateRegions": [
+      "forearm_lateral",
+      "hand_dorsal_radial",
+      "hand_median",
+      "wrist_radial"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "de_quervain",
+        "sens": 0.99,
+        "spec": 0.29,
+        "sourceId": "goubau2014",
+        "locator": "Abstract (WHAT test sensitivity 0.99, specificity 0.29)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "100 patients with pain over the radial styloid; ultrasound reference"
+      }
+    ],
+    "summary": {
+      "yes": "wrist bent, thumb pushed outward brought on thumb-side wrist pain (WHAT test)",
+      "no": "wrist bent, thumb pushed outward didn't bring on wrist pain"
+    }
+  },
+  {
+    "id": "st_grind_helper",
+    "kind": "selftest",
+    "prompt": "When your helper pressed your thumb into its base joint and rotated it, did it bring on pain at the base of your thumb?",
+    "help": "Only pain or grinding pain at the base of the thumb, near the wrist, counts.",
+    "needsHelper": true,
+    "instructions": [
+      "Rest your hand on a table.",
+      "Your helper holds your wrist steady with one hand and, with the other, grips your thumb just below its middle joint.",
+      "Your helper gently pushes the thumb down toward the wrist and rotates it a little each way."
+    ],
+    "safety": "Your helper should press gently and stop if the pain is sharp.",
+    "gateRegions": [
+      "hand_median",
+      "hand_dorsal_radial",
+      "wrist_radial"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "thumb_cmc_oa",
+        "sens": 0.53,
+        "spec": 0.8,
+        "sourceId": "merritt2010",
+        "locator": "Abstract, Results (tester with LR+ 2.65: sensitivity 53%, specificity 80%)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "70 thumbs of 54 people with various hand disorders; radiograph reference"
+      }
+    ],
+    "summary": {
+      "yes": "pressing and rotating the thumb hurt at its base (grind test)",
+      "no": "pressing and rotating the thumb didn't hurt at its base"
+    }
+  },
+  {
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "id": "h_groin_deep_flexion",
+    "prompt": "Is your groin pain brought on by bending your hip deeply, for example squatting, sitting in a low seat or getting in and out of a car?",
+    "gateRegions": [
+      "groin",
+      "anterior_thigh"
+    ],
+    "summary": {
+      "yes": "groin pain on deep hip bending",
+      "no": "no groin pain on deep hip bending"
+    }
+  },
+  {
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "id": "h_groin_adductor",
+    "prompt": "Is your groin or inner-thigh pain brought on by squeezing your knees together, kicking or sprinting?",
+    "gateRegions": [
+      "groin",
+      "medial_thigh"
+    ],
+    "summary": {
+      "yes": "groin pain on squeezing the knees, kicking or sprinting",
+      "no": "no groin pain on squeezing the knees, kicking or sprinting"
+    }
+  },
+  {
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "id": "h_ac_point",
+    "prompt": "Can you point with one finger to your pain, on the bony bump on top of your shoulder where the collarbone ends?",
+    "gateRegions": [
+      "shoulder"
+    ],
+    "summary": {
+      "yes": "pain pinpointed at the top-of-shoulder bump (AC joint)",
+      "no": "pain not pinpointed at the top-of-shoulder bump"
+    }
+  },
+  {
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "id": "h_neck_movement_pain",
+    "prompt": "Is your pain mainly in your neck itself, and worse when you turn or tilt your head?",
+    "gateRegions": [
+      "neck",
+      "scapula",
+      "shoulder"
+    ],
+    "summary": {
+      "yes": "neck pain that changes with head movement",
+      "no": "pain not mainly in the neck or not changed by head movement"
+    }
+  },
+  {
+    "id": "st_resisted_knee_flex",
+    "kind": "selftest",
+    "prompt": "Did trying to bend your slightly bent knee against your helper's hand bring on your usual pain at the sit bone or back of the thigh?",
+    "help": "Only your usual pain near the sit bone or upper back of the thigh counts. Cramp in the muscle does not.",
+    "needsHelper": true,
+    "instructions": [
+      "Lie face down with your legs straight.",
+      "Bend your painful knee a little, about a third of the way (roughly 30 degrees).",
+      "Your helper holds the back of your ankle while you try to bend the knee further, pulling your heel toward your buttock, for a few seconds."
+    ],
+    "safety": "Push gradually, not with a sudden jerk, and stop if the pain is sharp. Don't do this soon after a sudden injury with bruising at the back of the thigh; see a clinician instead.",
+    "gateRegions": [
+      "buttock",
+      "posterior_thigh"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "proximal_hamstring",
+        "sens": 0.73,
+        "spec": 0.97,
+        "sourceId": "martin2018",
+        "locator": "Abstract, Results (active hamstring test at 30 degrees knee flexion)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "42 posterior hip pain patients (27 hamstring tears, 15 without); retrospective"
+      }
+    ],
+    "summary": {
+      "yes": "resisted knee bending brought on sit-bone pain (active hamstring test)",
+      "no": "resisted knee bending didn't bring on sit-bone pain"
+    }
+  },
+  {
+    "id": "st_centralisation_self",
+    "kind": "selftest",
+    "prompt": "After the repeated press-ups, did your pain move out of your buttock or leg toward the middle of your lower back?",
+    "help": "\"Yes\" means the pain farthest from your spine eased or retreated toward the middle of your back. Back pain getting a little stronger while that happens still counts as yes.",
+    "instructions": [
+      "Note how far down from your spine your pain reaches right now.",
+      "Lie face down with your hands under your shoulders.",
+      "Keeping your hips on the floor, push your upper body up as far as is comfortable, then lower it. Repeat 10 times.",
+      "Stand up and check again how far down your pain reaches."
+    ],
+    "safety": "Stop if your leg pain spreads further down, or numbness or weakness increase, and answer \"no\".",
+    "gateRegions": [
+      "buttock",
+      "posterior_thigh",
+      "lateral_thigh",
+      "anterior_thigh",
+      "calf"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "disc_pain",
+        "sens": 0.4,
+        "spec": 0.94,
+        "sourceId": "laslett2005disc",
+        "locator": "Abstract, Results (centralization 40%, 94%, LR+ 6.9)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "69 specialist-referred chronic low back pain patients; provocation discography reference"
+      }
+    ],
+    "summary": {
+      "yes": "repeated press-ups moved the pain toward the middle of the back (centralisation)",
+      "no": "repeated press-ups didn't move the pain toward the middle of the back"
+    }
+  },
+  {
+    "id": "st_fovea_self",
+    "kind": "selftest",
+    "prompt": "Did pressing into the soft spot on the little-finger side of your wrist bring on your usual wrist pain, clearly more than on the other wrist?",
+    "help": "Compare with the same spot on your other wrist. Only marked tenderness that matches your usual pain counts.",
+    "instructions": [
+      "Turn your painful hand palm up.",
+      "Find the bony knob on the little-finger side of your wrist, and the firm tendon running just in front of it toward the palm.",
+      "With the thumb of your other hand, press firmly into the soft gap between the bony knob and that tendon.",
+      "Repeat on your other wrist and compare."
+    ],
+    "gateRegions": [
+      "wrist_ulnar",
+      "hand_ulnar",
+      "forearm_medial"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "tfcc",
+        "sens": 0.89,
+        "spec": 0.48,
+        "sourceId": "ouyang2021",
+        "locator": "Abstract, Results (ulnar foveal sign for TFCC injuries)",
+        "performedBy": "clinician",
+        "adapted": true,
+        "population": "110 patients with ulnar-sided wrist pain; prospective"
+      }
+    ],
+    "summary": {
+      "yes": "pressing the little-finger side of the wrist reproduced your pain (fovea sign)",
+      "no": "pressing the little-finger side of the wrist didn't reproduce your pain"
+    }
+  },
+  {
+    "id": "h_forearm_creak",
+    "kind": "history",
+    "alwaysAsk": true,
+    "prompt": "Is there swelling, or a creaking or squeaking feeling, on the back of your forearm a few finger-widths above the wrist on the thumb side when you move your wrist?",
+    "gateRegions": [
+      "forearm_dorsal",
+      "forearm_lateral",
+      "wrist_radial"
+    ],
+    "evidence": [],
+    "summary": {
+      "yes": "swelling or creaking above the wrist on moving it",
+      "no": "no swelling or creaking above the wrist"
+    }
+  },
+  {
+    "id": "h_repetitive_use",
+    "kind": "history",
+    "alwaysAsk": true,
+    "prompt": "Did your pain start or get worse with repetitive hand or arm work (for example keyboard and mouse, assembly line or tools), and does it ease on days off?",
+    "gateRegions": [
+      "forearm_dorsal",
+      "forearm_anterior",
+      "forearm_lateral",
+      "forearm_medial",
+      "wrist_radial",
+      "wrist_ulnar",
+      "hand_median",
+      "hand_ulnar",
+      "hand_dorsal_radial",
+      "elbow_lateral",
+      "elbow_medial"
+    ],
+    "evidence": [],
+    "summary": {
+      "yes": "pain linked to repetitive hand or arm work",
+      "no": "pain not linked to repetitive hand or arm work"
+    }
+  },
+  {
+    "id": "h_outer_elbow_main",
+    "kind": "history",
+    "alwaysAsk": true,
+    "prompt": "Is your pain mainly at the outer elbow, on or just below the bony bump on the outside?",
+    "gateRegions": [
+      "elbow_lateral",
+      "forearm_lateral",
+      "forearm_dorsal"
+    ],
+    "evidence": [],
+    "summary": {
+      "yes": "pain mainly at the outer elbow",
+      "no": "pain not mainly at the outer elbow"
+    }
+  },
+  {
+    "id": "st_epicondyle_tender_self",
+    "kind": "selftest",
+    "alwaysAsk": true,
+    "prompt": "Was pressing on or just below the bony bump on the outside of your elbow tender, bringing on your usual pain?",
+    "help": "Compare with the same spot on your other elbow.",
+    "instructions": [
+      "Bend your painful elbow to a right angle, palm facing down.",
+      "Find the bony bump on the outside of the elbow.",
+      "Press firmly with the fingertips of your other hand on the bump and just below it, toward the forearm."
+    ],
+    "gateRegions": [
+      "elbow_lateral",
+      "forearm_lateral",
+      "forearm_dorsal"
+    ],
+    "evidence": [],
+    "summary": {
+      "yes": "tender at the outer elbow bone",
+      "no": "not tender at the outer elbow bone"
+    }
+  },
+  {
+    "id": "st_resisted_wrist_ext_self",
+    "kind": "selftest",
+    "alwaysAsk": true,
+    "prompt": "Did lifting the back of your hand up against resistance bring on pain at the outer elbow or top of the forearm?",
+    "help": "Only pain at the outer elbow or along the top of the forearm counts.",
+    "instructions": [
+      "Rest your painful forearm on a table, palm down, with your hand over the edge.",
+      "Make a fist.",
+      "Place your other hand on the back of your fist and hold it down while you try to lift the fist up (bend the wrist back) for a few seconds."
+    ],
+    "gateRegions": [
+      "elbow_lateral",
+      "forearm_lateral",
+      "forearm_dorsal"
+    ],
+    "evidence": [],
+    "summary": {
+      "yes": "resisted wrist lift brought on outer elbow or forearm pain (Cozen-type test)",
+      "no": "resisted wrist lift didn't bring on outer elbow or forearm pain"
+    }
+  },
+  {
+    "id": "st_adductor_tender_self",
+    "kind": "selftest",
+    "alwaysAsk": true,
+    "prompt": "Was pressing on the tendon at the top of your inner thigh, next to the pubic bone, tender and like your usual groin pain?",
+    "help": "Only tenderness you recognise as your usual pain counts.",
+    "instructions": [
+      "Lie on your back with the knee of your painful side bent and let it fall outward.",
+      "Feel the firm tendon that stands out at the very top of the inner thigh, where it meets the pubic bone.",
+      "Press firmly along it with your fingertips."
+    ],
+    "gateRegions": [
+      "groin",
+      "medial_thigh"
+    ],
+    "evidence": [],
+    "summary": {
+      "yes": "inner-thigh tendon tender near the pubic bone",
+      "no": "inner-thigh tendon not tender"
+    }
+  },
+  {
+    "id": "st_adductor_squeeze_self",
+    "kind": "selftest",
+    "alwaysAsk": true,
+    "prompt": "Did squeezing your knees together against your fist bring on your usual pain in the inner thigh or groin tendons?",
+    "help": "Pain felt higher up in the lower belly or groin crease, rather than in the inner-thigh tendons, does not count as yes.",
+    "instructions": [
+      "Lie on your back with both knees bent and feet flat.",
+      "Place your fist between your knees.",
+      "Squeeze your knees together against the fist as hard as is comfortable for a few seconds."
+    ],
+    "safety": "Build up the squeeze gradually and stop if the pain is sharp.",
+    "gateRegions": [
+      "groin",
+      "medial_thigh"
+    ],
+    "evidence": [],
+    "summary": {
+      "yes": "squeezing the knees together reproduced inner-thigh pain",
+      "no": "squeezing the knees together didn't reproduce inner-thigh pain"
+    }
+  },
+  {
+    "id": "h_sudden_severe_arm_pain",
+    "kind": "history",
+    "alwaysAsk": true,
+    "prompt": "Did your neck, shoulder or arm pain start suddenly, reaching its worst within hours, and was it more severe than any pain you've had before?",
+    "gateRegions": [
+      "neck",
+      "scapula",
+      "shoulder",
+      "upper_arm_lateral",
+      "upper_arm_medial"
+    ],
+    "evidence": [],
+    "summary": {
+      "yes": "sudden, unusually severe onset of shoulder or arm pain",
+      "no": "pain didn't start suddenly and severely"
+    }
+  },
+  {
+    "id": "h_scapula_winging",
+    "kind": "history",
+    "alwaysAsk": true,
+    "prompt": "Does the inner edge of your shoulder blade stick out at the back, especially when you push against a wall or lift your arm forward? (Ask someone to look if you can.)",
+    "gateRegions": [
+      "scapula",
+      "shoulder"
+    ],
+    "summary": {
+      "yes": "shoulder blade sticks out (winging)",
+      "no": "no shoulder-blade winging"
+    },
+    "evidence": []
+  },
+  {
+    "id": "p_burning",
+    "kind": "profile",
+    "profileGroup": "sensation",
+    "prompt": "Burning, like a scald on or under the skin",
+    "summary": {
+      "yes": "burning",
+      "no": "no burning"
+    }
+  },
+  {
+    "id": "p_tingling",
+    "kind": "profile",
+    "profileGroup": "sensation",
+    "prompt": "Tingling or pins and needles",
+    "summary": {
+      "yes": "tingling or pins and needles",
+      "no": "no tingling"
+    }
+  },
+  {
+    "id": "p_buzzing",
+    "kind": "profile",
+    "profileGroup": "sensation",
+    "prompt": "Buzzing or vibrating",
+    "summary": {
+      "yes": "buzzing or vibrating",
+      "no": "no buzzing"
+    }
+  },
+  {
+    "id": "p_numb",
+    "kind": "profile",
+    "profileGroup": "sensation",
+    "prompt": "Numb: the skin feels dead, thick or less sensitive to touch",
+    "summary": {
+      "yes": "numbness",
+      "no": "no numbness"
+    }
+  },
+  {
+    "id": "p_dull_ache",
+    "kind": "profile",
+    "profileGroup": "sensation",
+    "prompt": "Dull or aching",
+    "summary": {
+      "yes": "dull, aching pain",
+      "no": "no dull ache"
+    }
+  },
+  {
+    "id": "p_throbbing",
+    "kind": "profile",
+    "profileGroup": "sensation",
+    "prompt": "Throbbing or pulsing",
+    "summary": {
+      "yes": "throbbing",
+      "no": "no throbbing"
+    }
+  },
+  {
+    "id": "p_tight",
+    "kind": "profile",
+    "profileGroup": "sensation",
+    "prompt": "Tight, cramping or gripping",
+    "summary": {
+      "yes": "tightness or cramping",
+      "no": "no tightness"
+    }
+  },
+  {
+    "id": "p_shooting",
+    "kind": "profile",
+    "profileGroup": "sensation",
+    "prompt": "Shooting or electric shocks that flash along a line",
+    "summary": {
+      "yes": "shooting, electric pain",
+      "no": "no shooting pain"
+    }
+  },
+  {
+    "id": "p_stabbing",
+    "kind": "profile",
+    "profileGroup": "sensation",
+    "prompt": "Stabbing or sharp, in one spot",
+    "summary": {
+      "yes": "sharp, stabbing pain",
+      "no": "no stabbing pain"
+    }
+  },
+  {
+    "id": "p_heavy_weak",
+    "kind": "profile",
+    "profileGroup": "sensation",
+    "prompt": "Heavy, tired or weak",
+    "summary": {
+      "yes": "heaviness or weakness",
+      "no": "no heaviness or weakness"
+    }
+  },
+  {
+    "id": "p_position",
+    "kind": "profile",
+    "profileGroup": "pattern",
+    "prompt": "Does holding one position bring it on, such as sitting, kneeling, keeping your elbow bent, or sleeping with your wrists bent?",
+    "summary": {
+      "yes": "brought on by holding a position",
+      "no": "not brought on by holding a position"
+    }
+  },
+  {
+    "id": "p_stretch",
+    "kind": "profile",
+    "profileGroup": "pattern",
+    "prompt": "Does stretching the limb bring it on, such as bending forward with your knee straight, tilting your head away, or reaching up or behind you?",
+    "summary": {
+      "yes": "brought on by stretching the limb",
+      "no": "not brought on by stretching"
+    }
+  },
+  {
+    "id": "p_activity_rest",
+    "kind": "profile",
+    "profileGroup": "pattern",
+    "prompt": "Does it build up as you keep going (walking, or working with your arms raised) and settle within minutes once you stop or change position?",
+    "summary": {
+      "yes": "builds with activity, settles within minutes of rest",
+      "no": "doesn't build with activity and settle with rest"
+    }
+  },
+  {
+    "id": "p_repetitive",
+    "kind": "profile",
+    "profileGroup": "pattern",
+    "prompt": "Is it brought on by repeating the same movement many times, such as gripping, typing, running or climbing?",
+    "summary": {
+      "yes": "brought on by repeated movement",
+      "no": "not brought on by repeated movement"
+    }
+  },
+  {
+    "id": "p_one_spot",
+    "kind": "profile",
+    "profileGroup": "pattern",
+    "prompt": "Can you press one spot that sets off your usual pain, or does it hurt mainly when you load one joint, tendon or muscle?",
+    "summary": {
+      "yes": "pressing or loading one spot sets it off",
+      "no": "no one spot or structure sets it off"
+    }
+  },
+  {
+    "id": "p_night_rest",
+    "kind": "profile",
+    "profileGroup": "pattern",
+    "prompt": "Is it there even when you rest completely still, or does it wake you at night?",
+    "summary": {
+      "yes": "present at rest or at night",
+      "no": "not present at rest or at night"
+    }
+  },
+  {
+    "id": "p_light_touch",
+    "kind": "profile",
+    "profileGroup": "pattern",
+    "prompt": "Does light touch hurt, such as clothing, bedsheets or a gentle brush on the skin?",
+    "summary": {
+      "yes": "light touch hurts",
+      "no": "light touch doesn't hurt"
+    }
+  },
+  {
+    "id": "p_spreading",
+    "kind": "profile",
+    "profileGroup": "pattern",
+    "prompt": "Has the painful area spread well beyond where it started?",
+    "summary": {
+      "yes": "pain has spread beyond where it started",
+      "no": "pain hasn't spread"
+    }
+  },
+  {
+    "id": "p_injury",
+    "kind": "profile",
+    "profileGroup": "pattern",
+    "prompt": "Did it start at or soon after an injury, fall, blow, cut or operation in that area?",
+    "summary": {
+      "yes": "started after an injury or operation",
+      "no": "didn't start after an injury or operation"
+    }
+  },
+  {
+    "id": "p_sudden_severe",
+    "kind": "profile",
+    "profileGroup": "pattern",
+    "prompt": "Did it start suddenly, with severe pain building over hours, without any injury?",
+    "summary": {
+      "yes": "sudden, severe start without injury",
+      "no": "didn't start suddenly and severely"
+    }
+  },
+  {
+    "id": "p_heat_eases",
+    "kind": "profile",
+    "profileGroup": "behaviour",
+    "prompt": "Does warmth ease it, such as a hot bath, a shower or a heat pack?",
+    "summary": {
+      "yes": "eased by warmth",
+      "no": "not eased by warmth"
+    }
+  },
+  {
+    "id": "p_movement_eases",
+    "kind": "profile",
+    "profileGroup": "behaviour",
+    "prompt": "Is it stiff and sore after keeping still (for example first thing in the morning), then easier once you get moving?",
+    "summary": {
+      "yes": "stiff after rest, easier once moving",
+      "no": "not eased by getting moving"
+    }
+  },
+  {
+    "id": "p_flexion_worse",
+    "kind": "profile",
+    "profileGroup": "behaviour",
+    "gateRegions": [
+      "low_back",
+      "buttock",
+      "posterior_thigh",
+      "anterior_thigh",
+      "lateral_thigh",
+      "medial_thigh",
+      "groin",
+      "perineum",
+      "shin_anterior",
+      "calf",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ],
+    "prompt": "Does bending forward make it worse, such as putting on socks or shoes, or sitting slumped?",
+    "summary": {
+      "yes": "worse bending forward",
+      "no": "not worse bending forward"
+    }
+  },
+  {
+    "kind": "selftest",
+    "id": "st_chest_press_self",
+    "prompt": "Did pressing on your chest bring on your usual pain?",
+    "help": "Count it only if pressing reproduces the pain you are worried about, not just the ordinary soreness of pressing hard.",
+    "instructions": [
+      "Sit or lie comfortably.",
+      "With two or three fingertips, press firmly on the place where your chest hurts, then on the ribs, rib cartilage and muscles around it.",
+      "Hold each spot for a few seconds."
+    ],
+    "safety": "If you have chest pain now that is severe, crushing or pressing, or comes with breathlessness, sweating, feeling sick or faint, don't do this test: call emergency services.",
+    "gateRegions": [
+      "chest_front",
+      "chest_side"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "chest_wall",
+        "sens": 0.621,
+        "spec": 0.702,
+        "sensCI": [
+          0.581,
+          0.66
+        ],
+        "specCI": [
+          0.665,
+          0.736
+        ],
+        "sourceId": "wertli2013",
+        "population": "1,212 consecutive primary-care patients aged 35 or over with chest pain (Bösner 2010); 565 chest wall syndrome by an interdisciplinary reference panel",
+        "locator": "Table 7, Bösner et al. row \"Pain reproducible by palpation\" (TP 351, FP 193, FN 214, TN 454)",
+        "performedBy": "clinician",
+        "adapted": true
+      }
+    ],
+    "summary": {
+      "yes": "pressing on your chest brought on your usual pain",
+      "no": "pressing on your chest didn't bring on your pain"
+    }
+  },
+  {
+    "kind": "history",
+    "id": "h_chest_movement",
+    "prompt": "Is your chest pain made worse by moving your upper body (turning, bending, reaching or lifting)?",
+    "gateRegions": [
+      "chest_front",
+      "chest_side"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "chest_wall",
+        "sens": 0.391,
+        "spec": 0.816,
+        "sensCI": [
+          0.352,
+          0.432
+        ],
+        "specCI": [
+          0.784,
+          0.844
+        ],
+        "sourceId": "wertli2013",
+        "population": "1,212 consecutive primary-care patients aged 35 or over with chest pain (Bösner 2010); 565 chest wall syndrome by an interdisciplinary reference panel",
+        "locator": "Table 7, Bösner et al. row \"Pain worse with movement\" (TP 221, FP 119, FN 344, TN 528)",
+        "performedBy": "patient",
+        "adapted": false
+      }
+    ],
+    "summary": {
+      "yes": "chest pain worse when moving the upper body",
+      "no": "chest pain not changed by moving the upper body"
+    }
+  },
+  {
+    "kind": "history",
+    "id": "h_chest_stinging",
+    "prompt": "Would you describe your chest pain as stinging or stabbing?",
+    "help": "Answer no if it is mainly pressing, squeezing, heavy or burning.",
+    "gateRegions": [
+      "chest_front",
+      "chest_side"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "chest_wall",
+        "sens": 0.529,
+        "spec": 0.716,
+        "sensCI": [
+          0.488,
+          0.57
+        ],
+        "specCI": [
+          0.68,
+          0.749
+        ],
+        "sourceId": "wertli2013",
+        "population": "1,212 consecutive primary-care patients aged 35 or over with chest pain (Bösner 2010); 565 chest wall syndrome by an interdisciplinary reference panel",
+        "locator": "Table 7, Bösner et al. row \"Stinging pain\" (TP 299, FP 184, FN 266, TN 463)",
+        "performedBy": "patient",
+        "adapted": false
+      }
+    ],
+    "summary": {
+      "yes": "stinging or stabbing chest pain",
+      "no": "chest pain not stinging or stabbing"
+    }
+  },
+  {
+    "kind": "history",
+    "id": "h_cough_now",
+    "prompt": "Do you have a cough at the moment?",
+    "gateRegions": [
+      "chest_front",
+      "chest_side"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "chest_wall",
+        "sens": 0.055,
+        "spec": 0.801,
+        "sensCI": [
+          0.039,
+          0.077
+        ],
+        "specCI": [
+          0.768,
+          0.83
+        ],
+        "sourceId": "wertli2013",
+        "population": "1,212 consecutive primary-care patients aged 35 or over with chest pain (Bösner 2010); 565 chest wall syndrome by an interdisciplinary reference panel",
+        "locator": "Table 7, Bösner et al. row \"Cough\" (TP 31, FP 129, FN 534, TN 518)",
+        "performedBy": "patient",
+        "adapted": false
+      }
+    ],
+    "summary": {
+      "yes": "a cough at the moment",
+      "no": "no cough"
+    }
+  },
+  {
+    "kind": "history",
+    "id": "h_chest_breathing",
+    "prompt": "Is your chest pain worse when you breathe in deeply?",
+    "gateRegions": [
+      "chest_front",
+      "chest_side"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "chest_wall",
+        "sens": 0.244,
+        "spec": 0.81,
+        "sensCI": [
+          0.211,
+          0.281
+        ],
+        "specCI": [
+          0.778,
+          0.838
+        ],
+        "sourceId": "wertli2013",
+        "population": "1,212 consecutive primary-care patients aged 35 or over with chest pain (Bösner 2010); 565 chest wall syndrome by an interdisciplinary reference panel",
+        "locator": "Table 7, Bösner et al. row \"Pain worse with breathing\" (TP 138, FP 123, FN 427, TN 524)",
+        "performedBy": "patient",
+        "adapted": false
+      }
+    ],
+    "summary": {
+      "yes": "chest pain worse on breathing in deeply",
+      "no": "chest pain not worse on breathing in"
+    }
+  },
+  {
+    "kind": "history",
+    "id": "h_known_heart_disease",
+    "prompt": "Has a doctor ever told you that you have heart disease from narrowed heart arteries (angina, a heart attack, a stent or a bypass)?",
+    "gateRegions": [
+      "chest_front",
+      "chest_side"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "chest_wall",
+        "sens": 0.099,
+        "spec": 0.811,
+        "sensCI": [
+          0.077,
+          0.127
+        ],
+        "specCI": [
+          0.779,
+          0.84
+        ],
+        "sourceId": "wertli2013",
+        "population": "1,212 consecutive primary-care patients aged 35 or over with chest pain (Bösner 2010); 565 chest wall syndrome by an interdisciplinary reference panel",
+        "locator": "Table 7, Bösner et al. row \"Known IHD\" (TP 56, FP 122, FN 509, TN 525)",
+        "performedBy": "patient",
+        "adapted": false
+      }
+    ],
+    "summary": {
+      "yes": "known heart disease (narrowed heart arteries)",
+      "no": "no known heart disease"
+    }
+  },
+  {
+    "kind": "history",
+    "id": "h_back_sudden_onset",
+    "prompt": "Did this back pain start with a sudden attack of pain much worse than usual, either on its own or after a minor strain or fall?",
+    "gateRegions": [
+      "upper_back",
+      "mid_back"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "vertebral_fracture",
+        "sens": 0.542,
+        "spec": 0.76,
+        "sensCI": [
+          0.46,
+          0.622
+        ],
+        "specCI": [
+          0.692,
+          0.816
+        ],
+        "sourceId": "sawicki2021",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "334 women with postmenopausal osteoporosis and back pain (150 with vertebral fracture on densitometric assessment; retrospective)",
+        "locator": "Table 3 (sudden, more severe than usual episode: 77/142 vs 43/179)"
+      }
+    ],
+    "summary": {
+      "yes": "the back pain began with a sudden severe attack",
+      "no": "the back pain didn't begin with a sudden severe attack"
+    }
+  },
+  {
+    "kind": "history",
+    "id": "h_back_limits_activity",
+    "prompt": "Does your back pain make you stop ordinary household activities during the day, even briefly?",
+    "gateRegions": [
+      "upper_back",
+      "mid_back"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "vertebral_fracture",
+        "sens": 0.792,
+        "spec": 0.552,
+        "sensCI": [
+          0.72,
+          0.849
+        ],
+        "specCI": [
+          0.48,
+          0.622
+        ],
+        "sourceId": "sawicki2021",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "334 women with postmenopausal osteoporosis and back pain (150 with vertebral fracture on densitometric assessment; retrospective)",
+        "locator": "Table 3 (pain limits daily activity: 118/149 vs 82/183)"
+      }
+    ],
+    "summary": {
+      "yes": "back pain stops ordinary activities",
+      "no": "back pain doesn't stop ordinary activities"
+    }
+  },
+  {
+    "kind": "history",
+    "id": "h_trunk_band",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Does the pain run along a strip on one side of your body, following the line of a rib (from the spine round your side toward the front, or along part of that path)?",
+    "gateRegions": [
+      "chest_front",
+      "chest_side",
+      "upper_back",
+      "mid_back"
+    ],
+    "summary": {
+      "yes": "pain runs along a strip on one side, following a rib",
+      "no": "pain doesn't follow a strip along a rib"
+    }
+  },
+  {
+    "kind": "history",
+    "id": "h_band_rash",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "In the last few weeks, have you had a rash of small blisters or red spots on the painful side, in a strip or patch where the pain is?",
+    "gateRegions": [
+      "chest_front",
+      "chest_side",
+      "upper_back",
+      "mid_back"
+    ],
+    "summary": {
+      "yes": "a blistering rash where the pain is",
+      "no": "no rash where the pain is"
+    }
+  },
+  {
+    "kind": "history",
+    "id": "h_trunk_numbness",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Do you have numbness, pins and needles or a burning feeling in the skin of your chest, side or back?",
+    "gateRegions": [
+      "chest_front",
+      "chest_side",
+      "upper_back",
+      "mid_back"
+    ],
+    "summary": {
+      "yes": "numbness, pins and needles or burning skin on the chest or back",
+      "no": "no numbness, pins and needles or burning skin on the chest or back"
+    }
+  },
+  {
+    "kind": "history",
+    "id": "h_back_itch",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Is the main problem an itch (sometimes with burning or tingling) in a patch of skin beside or just below one shoulder blade?",
+    "gateRegions": [
+      "upper_back",
+      "scapula"
+    ],
+    "summary": {
+      "yes": "an itchy patch beside the shoulder blade",
+      "no": "no itchy patch beside the shoulder blade"
+    }
+  },
+  {
+    "kind": "history",
+    "id": "h_back_movement",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Does your back pain change with posture or movement (twisting, bending, sitting slumped, or changing position)?",
+    "gateRegions": [
+      "upper_back",
+      "mid_back"
+    ],
+    "summary": {
+      "yes": "back pain changes with posture or movement",
+      "no": "back pain doesn't change with posture or movement"
+    }
+  },
+  {
+    "kind": "history",
+    "id": "h_chest_surgery_injury",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Did the pain start after an operation on your chest, lung or breast, a chest drain, or a broken or badly bruised rib?",
+    "gateRegions": [
+      "chest_front",
+      "chest_side"
+    ],
+    "summary": {
+      "yes": "pain started after chest or breast surgery or a rib injury",
+      "no": "no chest surgery or rib injury before the pain"
+    }
+  },
+  {
+    "kind": "history",
+    "id": "h_rib_click",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Do you feel a click, pop or slipping at the lower edge of your ribs, along with the pain?",
+    "gateRegions": [
+      "chest_front",
+      "chest_side"
+    ],
+    "summary": {
+      "yes": "a painful click or slip at the lower ribs",
+      "no": "no click or slip at the lower ribs"
+    }
+  },
+  {
+    "kind": "selftest",
+    "id": "st_sc_protraction_self",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Did pushing your shoulders forward hurt at the joint where your collarbone meets your breastbone?",
+    "instructions": [
+      "Sit or stand upright with your arms relaxed.",
+      "Find the bump where the inner end of your collarbone meets the top of your breastbone, on the painful side.",
+      "Round your shoulders: push both shoulders forward as far as you can, hold for a second, then relax."
+    ],
+    "gateRegions": [
+      "chest_front"
+    ],
+    "summary": {
+      "yes": "pushing the shoulders forward hurt at the collarbone–breastbone joint",
+      "no": "pushing the shoulders forward didn't hurt at the collarbone–breastbone joint"
+    }
+  },
+  {
+    "id": "h_ff_click",
+    "kind": "history",
+    "prompt": "Do you notice a clicking feeling in the ball of your foot?",
+    "gateRegions": [
+      "forefoot"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "morton",
+        "sens": 0.57,
+        "spec": 0.96,
+        "sensCI": [
+          0.18,
+          0.9
+        ],
+        "specCI": [
+          0.78,
+          1.0
+        ],
+        "sourceId": "pitcher2024",
+        "locator": "Table 3, 'Clicking', Dando row (primary study: Dando 2018 thesis)",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "30 adults with forefoot pain (rearfoot and midfoot pain excluded), podiatry assessment, UK; 7 with a neuroma on ultrasound (Dando 2018)"
+      }
+    ],
+    "summary": {
+      "yes": "clicking in the ball of the foot",
+      "no": "no clicking in the ball of the foot"
+    }
+  },
+  {
+    "id": "h_ff_tight_shoes",
+    "kind": "history",
+    "prompt": "Do tight or narrow shoes bring on or worsen the pain in the ball of your foot?",
+    "gateRegions": [
+      "forefoot"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "morton",
+        "sens": 0.86,
+        "spec": 0.57,
+        "sensCI": [
+          0.42,
+          1.0
+        ],
+        "specCI": [
+          0.35,
+          0.77
+        ],
+        "sourceId": "pitcher2024",
+        "locator": "Table 3, 'Pain agg. by tight shoes', Dando row (primary study: Dando 2018 thesis)",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "30 adults with forefoot pain (rearfoot and midfoot pain excluded), podiatry assessment, UK; 7 with a neuroma on ultrasound (Dando 2018)"
+      }
+    ],
+    "summary": {
+      "yes": "worse in tight or narrow shoes",
+      "no": "not worse in tight or narrow shoes"
+    }
+  },
+  {
+    "id": "h_ff_im_space",
+    "kind": "history",
+    "prompt": "Is the pain centred in the gap between two of the long foot bones just behind the toes: between the 2nd and 3rd toes, or between the 3rd and 4th toes?",
+    "help": "Count the big toe as the 1st toe.",
+    "gateRegions": [
+      "forefoot"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "morton",
+        "sens": 0.86,
+        "spec": 0.48,
+        "sensCI": [
+          0.49,
+          0.97
+        ],
+        "specCI": [
+          0.29,
+          0.67
+        ],
+        "sourceId": "pitcher2024",
+        "locator": "Table 3, 'Pain in second/third IM space', Dando row (primary study: Dando 2018 thesis)",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "30 adults with forefoot pain (rearfoot and midfoot pain excluded), podiatry assessment, UK; 7 with a neuroma on ultrasound (Dando 2018)"
+      }
+    ],
+    "summary": {
+      "yes": "pain in the gap behind the 2nd-3rd or 3rd-4th toes",
+      "no": "pain not in the gap behind the 2nd-3rd or 3rd-4th toes"
+    }
+  },
+  {
+    "id": "h_ff_pins_needles",
+    "kind": "history",
+    "prompt": "Do you get pins and needles in your forefoot or toes?",
+    "gateRegions": [
+      "forefoot"
+    ],
+    "impliedBy": [
+      {
+        "finding": "h_leg_numbness",
+        "answer": "no",
+        "implies": "no"
+      }
+    ],
+    "evidence": [
+      {
+        "hypothesis": "morton",
+        "sens": 0.86,
+        "spec": 0.43,
+        "sensCI": [
+          0.42,
+          1.0
+        ],
+        "specCI": [
+          0.23,
+          0.64
+        ],
+        "sourceId": "pitcher2024",
+        "locator": "Table 3, 'Pins and needles (location unspecified)', Dando row (primary study: Dando 2018 thesis, Table 14)",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "30 adults with forefoot pain (rearfoot and midfoot pain excluded), podiatry assessment, UK; 7 with a neuroma on ultrasound (Dando 2018)"
+      }
+    ],
+    "summary": {
+      "yes": "pins and needles in the forefoot or toes",
+      "no": "no pins and needles in the forefoot or toes"
+    }
+  },
+  {
+    "id": "h_ff_met_spread",
+    "kind": "history",
+    "prompt": "Have pads, a metatarsal dome or insoles that spread apart the bones at the ball of the foot eased the pain?",
+    "help": "Answer 'not sure' if you haven't tried any.",
+    "gateRegions": [
+      "forefoot"
+    ],
+    "evidence": [
+      {
+        "hypothesis": "morton",
+        "sens": 0.86,
+        "spec": 0.7,
+        "sensCI": [
+          0.49,
+          0.97
+        ],
+        "specCI": [
+          0.49,
+          0.84
+        ],
+        "sourceId": "dando2018",
+        "locator": "Table 14, 'Separating metatarsal heads: met dome, padding, off the shelf devices eases symptoms' (86% / 70%; counts 6/7 and 16/23 derived; Wilson CIs)",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "30 adults with forefoot pain (rearfoot and midfoot pain excluded), NHS podiatry, UK; 7 with a neuroma on ultrasound"
+      }
+    ],
+    "summary": {
+      "yes": "pads or insoles that spread the forefoot bones ease it",
+      "no": "pads or insoles that spread the forefoot bones don't ease it"
+    }
+  },
+  {
+    "id": "h_ff_shoes_off_eases",
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Does taking your shoes off ease the pain in the ball of your foot?",
+    "gateRegions": [
+      "forefoot"
+    ],
+    "summary": {
+      "yes": "taking shoes off eases it",
+      "no": "taking shoes off doesn't ease it"
+    }
+  },
+  {
+    "id": "st_ff_squeeze_self",
+    "kind": "selftest",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Did pinching the gap between two of the long foot bones, with your thumb under the ball of the foot and your index finger on top, bring on your usual pain?",
+    "help": "Count it only if it brings on your usual pain, not just a feeling of pressure.",
+    "instructions": [
+      "Sit and rest the painful foot across your other knee.",
+      "Put your thumb on the sole just behind the gap between two toes and your index finger on the top of the foot in the same gap.",
+      "Pinch firmly into the gap. Try the gap behind the 2nd and 3rd toes and the gap behind the 3rd and 4th toes, then compare with the other foot."
+    ],
+    "safety": "Press firmly but stop if it is sharply painful.",
+    "gateRegions": [
+      "forefoot"
+    ],
+    "summary": {
+      "yes": "pinching between the bones brought on the usual pain",
+      "no": "pinching between the bones didn't bring on the usual pain"
+    }
+  },
+  {
+    "id": "h_ff_gradual_onset",
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Did the pain in the ball of your foot come on gradually, over weeks or months?",
+    "gateRegions": [
+      "forefoot"
+    ],
+    "summary": {
+      "yes": "came on gradually",
+      "no": "didn't come on gradually"
+    }
+  },
+  {
+    "id": "h_ff_2nd_head",
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Is the pain mainly under the ball of the foot, right beneath the joint at the base of your 2nd toe?",
+    "gateRegions": [
+      "forefoot"
+    ],
+    "help": "Count the big toe as the 1st toe.",
+    "summary": {
+      "yes": "pain under the base of the 2nd toe",
+      "no": "pain not under the base of the 2nd toe"
+    }
+  },
+  {
+    "id": "h_ff_swelling",
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Is there swelling on the ball of the foot around the base of your 2nd toe?",
+    "gateRegions": [
+      "forefoot"
+    ],
+    "summary": {
+      "yes": "swelling around the base of the 2nd toe",
+      "no": "no swelling around the base of the 2nd toe"
+    }
+  },
+  {
+    "id": "h_ff_toe_drift",
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Has one of your smaller toes started to drift sideways, lift up or cross over its neighbour?",
+    "gateRegions": [
+      "forefoot"
+    ],
+    "summary": {
+      "yes": "a small toe is drifting or crossing over",
+      "no": "no small toe drifting or crossing over"
+    }
+  },
+  {
+    "id": "h_ff_load_increase",
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Did the pain start after a recent rise in walking, running, marching or standing, or a change to harder shoes or surfaces?",
+    "gateRegions": [
+      "forefoot",
+      "foot_dorsum"
+    ],
+    "summary": {
+      "yes": "started after a rise in walking, running or standing",
+      "no": "didn't start after a rise in activity"
+    }
+  },
+  {
+    "id": "h_ff_bone_point",
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Is there one spot on one of the long bones on the top of your forefoot that is sharply tender when you press it?",
+    "gateRegions": [
+      "forefoot",
+      "foot_dorsum"
+    ],
+    "summary": {
+      "yes": "one sharply tender spot on a forefoot bone",
+      "no": "no sharply tender spot on a forefoot bone"
+    }
+  },
+  {
+    "id": "h_big_toe_tender",
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Is the joint at the base of your big toe tender when you press on it?",
+    "gateRegions": [
+      "foot_dorsum",
+      "forefoot"
+    ],
+    "summary": {
+      "yes": "big toe joint tender to press",
+      "no": "big toe joint not tender to press"
+    }
+  },
+  {
+    "id": "h_big_toe_bump",
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Can you feel a hard, bony lump on top of the joint at the base of your big toe?",
+    "gateRegions": [
+      "foot_dorsum",
+      "forefoot"
+    ],
+    "summary": {
+      "yes": "bony lump on top of the big toe joint",
+      "no": "no bony lump on the big toe joint"
+    }
+  },
+  {
+    "id": "h_big_toe_bend",
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Does bending your big toe up or down hurt at the joint at its base?",
+    "gateRegions": [
+      "foot_dorsum",
+      "forefoot"
+    ],
+    "summary": {
+      "yes": "bending the big toe hurts at its base",
+      "no": "bending the big toe doesn't hurt"
+    }
+  },
+  {
+    "id": "h_sole_wide",
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Are your symptoms (burning, tingling, numbness or pain) spread across the sole and several toes, rather than in one spot or one gap between two toes?",
+    "gateRegions": [
+      "forefoot"
+    ],
+    "summary": {
+      "yes": "symptoms spread across the sole and several toes",
+      "no": "symptoms in one spot or one gap"
+    }
+  },
+  {
+    "id": "h_obt_exercise",
+    "kind": "history",
+    "prompt": "Is your groin or inner-thigh pain brought on by exercise?",
+    "gateRegions": [
+      "medial_thigh",
+      "groin"
+    ],
+    "evidence": [],
+    "summary": {
+      "yes": "groin or inner-thigh pain brought on by exercise",
+      "no": "groin or inner-thigh pain not brought on by exercise"
+    }
+  },
+  {
+    "id": "h_obt_origin",
+    "kind": "history",
+    "prompt": "Does the pain start high on the inner thigh, near the groin crease where the inner-thigh muscles attach?",
+    "gateRegions": [
+      "medial_thigh",
+      "groin"
+    ],
+    "evidence": [],
+    "summary": {
+      "yes": "pain starts high on the inner thigh near the groin crease",
+      "no": "pain doesn't start high on the inner thigh"
+    }
+  },
+  {
+    "id": "h_obt_radiate",
+    "kind": "history",
+    "prompt": "Does the pain spread down along the inner thigh?",
+    "gateRegions": [
+      "medial_thigh",
+      "groin"
+    ],
+    "evidence": [],
+    "summary": {
+      "yes": "pain spreads down the inner thigh",
+      "no": "pain doesn't spread down the inner thigh"
+    }
+  },
+  {
+    "id": "st_obt_stretch_self",
+    "kind": "selftest",
+    "prompt": "Did the stretch bring on your usual groin or inner-thigh pain?",
+    "help": "A self-version of a test clinicians do straight after exercise. If you haven't just exercised, you can still try it.",
+    "instructions": [
+      "Straight after exercise if you can, kneel on the knee of the painful side with the other foot forward.",
+      "Let the kneeling knee drift slightly out to the side.",
+      "Gently push your hips forward to stretch the top of the inner thigh."
+    ],
+    "safety": "Stop if it is sharp.",
+    "gateRegions": [
+      "medial_thigh",
+      "groin"
+    ],
+    "evidence": [],
+    "summary": {
+      "yes": "kneeling inner-thigh stretch brings on the usual pain",
+      "no": "kneeling inner-thigh stretch doesn't bring on the pain"
+    }
+  },
+  {
+    "id": "st_obt_skin_self",
+    "kind": "selftest",
+    "prompt": "Does the skin of the inner thigh on the painful side feel clearly duller or numb?",
+    "instructions": [
+      "Lightly stroke the skin of the inner thigh with your fingertips, from the groin down to just above the knee.",
+      "Do the same on the other side and compare."
+    ],
+    "gateRegions": [
+      "medial_thigh",
+      "groin"
+    ],
+    "evidence": [],
+    "summary": {
+      "yes": "inner-thigh skin duller or numb on the painful side",
+      "no": "inner-thigh skin feels the same on both sides"
+    }
+  },
+  {
+    "id": "h_pn_territory",
+    "kind": "history",
+    "prompt": "Is the pain in the area between the anus and the penis or clitoris (genitals, perineum, around the anus)?",
+    "gateRegions": [
+      "perineum"
+    ],
+    "evidence": [],
+    "summary": {
+      "yes": "pain between the anus and the genitals",
+      "no": "pain not between the anus and the genitals"
+    }
+  },
+  {
+    "id": "h_pn_excl_only",
+    "kind": "history",
+    "prompt": "Is the pain ONLY in the tailbone, buttock, pubic bone or lower belly, and nowhere between the anus and genitals?",
+    "gateRegions": [
+      "perineum"
+    ],
+    "evidence": [],
+    "summary": {
+      "yes": "pain only in the tailbone, buttock, pubic bone or lower belly",
+      "no": "pain not only in the tailbone, buttock, pubic bone or lower belly"
+    }
+  },
+  {
+    "id": "h_pn_night",
+    "kind": "history",
+    "prompt": "Does the pain wake you up at night?",
+    "gateRegions": [
+      "perineum"
+    ],
+    "evidence": [],
+    "summary": {
+      "yes": "pelvic pain wakes them at night",
+      "no": "pelvic pain doesn't wake them at night"
+    }
+  },
+  {
+    "id": "h_pn_excl_itch",
+    "kind": "history",
+    "prompt": "Is the main sensation itching?",
+    "gateRegions": [
+      "perineum"
+    ],
+    "evidence": [],
+    "summary": {
+      "yes": "main sensation is itching",
+      "no": "main sensation is not itching"
+    }
+  },
+  {
+    "id": "h_pn_excl_attacks",
+    "kind": "history",
+    "prompt": "Does the pain come ONLY in sudden short attacks, with nothing in between?",
+    "gateRegions": [
+      "perineum"
+    ],
+    "evidence": [],
+    "summary": {
+      "yes": "pain only in sudden short attacks",
+      "no": "pain not only in sudden short attacks"
+    }
+  },
+  {
+    "id": "st_scn_tender_self",
+    "kind": "selftest",
+    "prompt": "Was the most tender spot about a hand-width (about 7 cm) out from your spine?",
+    "instructions": [
+      "Find the top of the back of your pelvic bone: the rim you rest your hands on at the back.",
+      "Press firmly along it, from beside the spine outward.",
+      "Note where it is most tender."
+    ],
+    "gateRegions": [
+      "low_back",
+      "buttock"
+    ],
+    "evidence": [],
+    "summary": {
+      "yes": "most tender spot on the back pelvic rim about 7 cm from the spine",
+      "no": "most tender spot on the back pelvic rim not about 7 cm from the spine"
+    }
+  },
+  {
+    "id": "st_scn_reproduce_self",
+    "kind": "selftest",
+    "prompt": "Does pressing that most tender spot reproduce your main pain?",
+    "instructions": [
+      "Press the most tender spot on the back rim of your pelvis again, firmly, for a few seconds."
+    ],
+    "gateRegions": [
+      "low_back",
+      "buttock"
+    ],
+    "evidence": [],
+    "summary": {
+      "yes": "pressing the back pelvic rim reproduces the main pain",
+      "no": "pressing the back pelvic rim doesn't reproduce the main pain"
+    }
+  },
+  {
+    "id": "h_ii_pain",
+    "kind": "history",
+    "prompt": "Is the pain a muscular-type ache low on one side of the belly, just above the groin, spreading from there in a consistent way?",
+    "gateRegions": [
+      "groin"
+    ],
+    "evidence": [],
+    "summary": {
+      "yes": "muscular-type ache low on one side of the belly above the groin",
+      "no": "no ache low on the belly above the groin"
+    }
+  },
+  {
+    "id": "h_ii_sensory",
+    "kind": "history",
+    "prompt": "Does the skin of your groin on that side (toward the upper inner thigh or genitals) feel different: numb, tingling or oversensitive?",
+    "gateRegions": [
+      "groin"
+    ],
+    "evidence": [],
+    "summary": {
+      "yes": "groin skin numb, tingling or oversensitive",
+      "no": "groin skin feels normal"
+    }
+  },
+  {
+    "id": "st_ii_trigger_self",
+    "kind": "selftest",
+    "prompt": "Was there one small, clearly tender spot that set off your pain when pressed?",
+    "instructions": [
+      "Find the bony point at the front of your hip on the painful side.",
+      "Press firmly with your fingertips just inside and below it, moving a little at a time."
+    ],
+    "gateRegions": [
+      "groin"
+    ],
+    "evidence": [],
+    "summary": {
+      "yes": "one tender spot inside and below the front hip bone sets off the pain",
+      "no": "no tender spot inside and below the front hip bone"
+    }
+  }
+]
