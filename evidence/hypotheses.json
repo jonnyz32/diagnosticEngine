@@ -1158,6 +1158,16 @@
         "finding": "h_symptoms_above_hand",
         "type": "usual",
         "reason": "Compression at the thoracic outlet usually causes symptoms through the arm, often with neck or shoulder pain, rather than in the hand alone."
+      },
+      {
+        "finding": "h_arm_overhead_symptoms",
+        "type": "usual",
+        "reason": "Raising the arms narrows the space between the collarbone and the first rib, so symptoms that come on with the arms up and settle when they are lowered are the typical pattern."
+      },
+      {
+        "finding": "h_hand_colour_change",
+        "type": "supports",
+        "reason": "When the artery or vein to the arm is squeezed in the same space, the hand can go pale, cold, blue or puffy; most people with this problem have only the nerve form, so a 'no' says nothing."
       }
     ]
   },

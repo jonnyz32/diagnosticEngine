@@ -6688,10 +6688,10 @@
   {
     "id": "h_age_growing",
     "kind": "history",
-    "prompt": "Are you aged 16 or younger (still growing)?",
+    "prompt": "Are you still growing: a child or teenager who is still getting taller, or who has had a growth spurt in the last year?",
     "summary": {
-      "yes": "aged 16 or younger",
-      "no": "older than 16"
+      "yes": "still growing",
+      "no": "no longer growing"
     },
     "gateRegions": [
       "knee_front",
@@ -7814,6 +7814,42 @@
       "yes": "symptoms also higher up the arm or in the neck",
       "no": "symptoms only in the hand or wrist"
     }
+  },
+  {
+    "id": "h_arm_overhead_symptoms",
+    "kind": "history",
+    "prompt": "Do your arm or hand symptoms come on when you hold or work with your arms raised above your shoulders (for example reaching up to a ceiling or shelf, or blow-drying your hair), and ease within minutes of lowering them?",
+    "summary": {
+      "yes": "arm symptoms with the arms raised, easing when lowered",
+      "no": "arm symptoms not brought on by raising the arms"
+    },
+    "gateRegions": [
+      "neck",
+      "shoulder",
+      "scapula",
+      "upper_arm_medial",
+      "forearm_medial",
+      "hand_ulnar"
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_hand_colour_change",
+    "kind": "history",
+    "prompt": "After using your arm, especially with it raised, does that hand turn pale, bluish or blotchy, feel colder than the other hand, or look puffy?",
+    "summary": {
+      "yes": "hand pale, cold or puffy after use",
+      "no": "no colour, temperature or swelling change in the hand"
+    },
+    "gateRegions": [
+      "neck",
+      "shoulder",
+      "scapula",
+      "upper_arm_medial",
+      "forearm_medial",
+      "hand_ulnar"
+    ],
+    "evidence": []
   },
   {
     "id": "h_hand_flick",

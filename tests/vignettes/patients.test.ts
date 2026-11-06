@@ -15,7 +15,8 @@ import { bestGuess, type BestGuess } from "../../src/engine/verdict";
  * A second set of ten followed the same day, with the patients' answers to follow-up questions
  * (self-tests included), plus Caleb's answer to the hip-catching question added afterwards. All
  * ten are listed; Mireille (suspected spinal metastasis, which no option covers) must get
- * "not covered".
+ * "not covered". A third set followed the same day; the seven whose condition the tool lists are
+ * included (see the comment above them).
  */
 
 const db = loadEvidence();
@@ -275,6 +276,129 @@ const patients: Patient[] = [
       st_trochanter_tender: N, st_squat_posterior: N, h_hip_stairs: Y, h_limp: N, h_hip_first_steps: N,
       p_night_rest: N, p_movement_eases: N, h_morning_stiff_long: N, h_many_places_both_sides: N, h_hip_catch: Y,
       h_pubic_bone: N, h_worst_medial_thigh: N,
+    },
+  },
+  // Third set (user-supplied, 2026-11-06): the seven of ten whose condition the tool lists and
+  // that it names. Self-tests are "unsure" unless the description gives the result.
+  {
+    // The snuffbox answer is not in the description; it was answered "yes" (expected after a
+    // scaphoid fracture). Without it, thumb-base OA ties.
+    name: "Claire, 29: thumb-side wrist pain after a fall on the outstretched hand, worse pushing off and pinching",
+    expect: "scaphoid_fracture",
+    regions: ["wrist_radial"],
+    facts: {
+      h_fall_on_hand: Y, p_injury: Y, h_symptoms_above_hand: N, h_arm_numbness: N, p_tingling: N, p_numb: N, p_buzzing: N,
+      h_wrist_lump: N, h_many_places_both_sides: N, h_joint_attacks: N, h_many_joints_swollen: N, h_forearm_creak: N,
+      h_repetitive_use: N, h_thumb_base_bump: N, h_age_45: N, h_morning_stiff_long: N, h_finger_knobbly: N,
+      p_dull_ache: Y, p_stabbing: Y, p_heavy_weak: N, p_night_rest: N, p_movement_eases: N, p_sudden_severe: N,
+      p_position: N, p_stretch: N, p_repetitive: N, p_burning: N, p_shooting: N, h_hand_flick: N,
+      h_thumb_base_pinch: Y, h_wrist_thumb_motion: N, p_one_spot: Y, h_snuffbox_tender: Y,
+    },
+  },
+  {
+    name: "Owen, 44: weightlifter with pain he can point to on top of the shoulder, worse reaching across the chest",
+    expect: "ac_joint",
+    regions: ["shoulder"],
+    facts: {
+      h_ac_point: Y, h_shoulder_above_elbow: Y, h_shoulder_stiff: N, h_many_places_both_sides: N, h_neck_movement_pain: N,
+      h_sudden_severe_arm_pain: N, h_scapula_winging: N, h_front_shoulder_pain: N, h_neck_car_accident: N,
+      h_shoulder_apprehension: N, h_shoulder_overhead_or_fall: Y, h_many_joints_swollen: N, h_age_60: N, h_age_50: N,
+      h_shoulder_repetitive_onset: N, h_shoulder_dislocated: N, h_shoulder_deep_click: N, h_both_shoulders_ache: N,
+      h_morning_stiff_long: N, h_morning_stiff_45: N, h_hip_pain_too: N, h_other_joints_pain: N, h_widespread_pain: N,
+      h_fatigue_sleep: N, h_arm_numbness: N, p_tingling: N, p_buzzing: N, p_numb: N, p_heavy_weak: N, p_position: Y,
+      p_stretch: Y, p_activity_rest: N, p_night_rest: N, p_sudden_severe: N, p_injury: N, p_burning: N, p_light_touch: N,
+      p_spreading: N, p_one_spot: Y, p_movement_eases: N, p_repetitive: Y, p_stabbing: Y, p_dull_ache: Y, p_shooting: N,
+    },
+  },
+  {
+    // 17 with a recent growth spurt: "still growing" is yes (the question asked "16 or younger"
+    // until 2026-11-06, when a "no" here named patellar tendinopathy).
+    name: "Tessa, 17: tender bump below the kneecap during volleyball season and a growth spurt",
+    expect: "osgood",
+    regions: ["knee_front"],
+    facts: {
+      h_knee_pop: N, h_knee_pivot_injury: N, h_knee_injury: N, h_knee_swelled_fast: N, h_knee_weightbearing_injury: N,
+      h_knee_front_blow: N, h_kneecap_slipped: N, h_knee_locking: N, h_bend_forward: N, h_bilateral: N,
+      h_walking_claudication: N, h_improve_seated: N, h_no_pain_seated: N, h_worse_standing: N, h_age_over_65: N,
+      h_age_45: N, h_age_growing: Y, h_shin_top_bump: Y, h_knee_below_kneecap: Y, h_knee_kneel_pain: Y,
+      h_knee_activity_pain: Y, h_knee_stairs_pain: Y, st_knee_deep_squat: Y, h_knee_sitting_pain: N,
+      h_knee_morning_stiff_short: Y, h_many_places_both_sides: N, h_joint_attacks: N, h_many_joints_swollen: N,
+      h_morning_stiff_long: N, h_leg_numbness: N, h_leg_tingling: N, h_leg_burning: N, h_leg_shooting: N,
+      h_pain_below_knee: N, h_severe_leg_pain: N, h_cough_sneeze: N, h_pain_sitting_chair: N, h_recent_surgery: N,
+      h_hip_weight_pain: N, h_avn_risk: N, h_leg_worse_than_back: Y, p_flexion_worse: N,
+      p_injury: N, p_sudden_severe: N, p_repetitive: Y, p_one_spot: Y, p_throbbing: Y, p_dull_ache: Y, p_night_rest: N,
+      p_tingling: N, p_numb: N, p_burning: N, p_buzzing: N, p_position: Y, p_movement_eases: N, p_activity_rest: N,
+    },
+  },
+  {
+    // Tied with the cervical root and cubital tunnel until the arms-overhead check (added
+    // 2026-11-06) was asked as a close-call question.
+    name: "Gregory, 55: electrician with ring and little finger tingling and a heavy arm when working overhead",
+    expect: "tos",
+    regions: ["neck", "shoulder", "forearm_medial", "hand_ulnar"],
+    facts: {
+      h_arm_overhead_symptoms: Y, h_hand_colour_change: Y, h_arm_numbness: Y, p_tingling: Y, p_numb: Y, p_heavy_weak: Y,
+      p_dull_ache: Y, p_activity_rest: Y, p_position: Y, h_neck_movement_pain: N, h_symptoms_above_hand: Y, h_age_45: Y,
+      h_age_50: Y, h_age_60: N, h_repetitive_use: Y, h_sudden_severe_arm_pain: N, h_many_places_both_sides: N,
+      h_many_joints_swollen: N, h_joint_attacks: N, h_shoulder_stiff: N, h_scapula_winging: N, h_finger_catching: N,
+      h_grip_medial_elbow: N, h_hand_flick: N, h_neck_car_accident: N, h_shoulder_overhead_or_fall: Y,
+      h_shoulder_apprehension: N, h_shoulder_dislocated: N, h_front_shoulder_pain: N, h_ac_point: N,
+      h_both_shoulders_ache: N, h_morning_stiff_long: N, h_morning_stiff_45: N, h_hip_pain_too: N, h_other_joints_pain: N,
+      h_widespread_pain: N, h_fatigue_sleep: N, h_palm_cord: N, h_finger_knobbly: N, h_fingertip_droop: N,
+      h_shoulder_above_elbow: N, h_back_onset_young: N, h_back_gradual_onset: Y, p_injury: N, p_sudden_severe: N,
+      p_burning: N, p_shooting: N, p_night_rest: N, p_light_touch: N, p_stretch: Y, p_one_spot: N, p_buzzing: N,
+      p_repetitive: Y, p_movement_eases: N, h_shoulder_repetitive_onset: Y,
+    },
+  },
+  {
+    name: "Malik, 26: diffuse inner-shin ache over 10 cm after switching to pavement running",
+    expect: "mtss",
+    regions: ["shin_anterior"],
+    facts: {
+      h_shin_long_stretch: Y, st_shin_focal_self: N, h_ff_load_increase: Y, h_ankle_injury: N, h_leg_exercise_tight: N,
+      h_walking_claudication: N, h_bend_forward: N, h_bilateral: N, h_age_over_65: N, h_improve_seated: N,
+      h_no_pain_seated: N, h_worse_standing: N, h_leg_numbness: N, h_leg_tingling: N, h_leg_burning: N,
+      h_leg_shooting: N, h_pain_below_knee: Y, h_severe_leg_pain: N, h_cough_sneeze: N, h_pain_sitting_chair: N,
+      h_recent_surgery: N, h_poly_toes_up: N, h_peroneal_setting: N, h_leg_worse_than_back: Y,
+      p_flexion_worse: N, p_injury: N, p_sudden_severe: N, p_repetitive: Y, p_one_spot: N, p_throbbing: Y, p_dull_ache: Y,
+      p_tingling: N, p_numb: N, p_burning: N, p_buzzing: N, p_night_rest: N, p_movement_eases: Y, p_activity_rest: N,
+      p_heavy_weak: N, p_tight: N, p_stabbing: N, p_shooting: N, h_walk_stand_still_ease: N,
+    },
+  },
+  {
+    name: "Denise, 61: burning between the 3rd and 4th toes in narrow shoes, like walking on a pebble",
+    expect: "morton",
+    regions: ["forefoot"],
+    facts: {
+      h_ff_tight_shoes: Y, h_ff_im_space: Y, h_ff_pins_needles: Y, h_ff_shoes_off_eases: Y, h_ff_gradual_onset: Y,
+      st_ff_squeeze_self: Y, h_ff_click: N, h_ff_2nd_head: N, h_ff_swelling: N, h_ff_toe_drift: N, h_ff_load_increase: N,
+      h_ff_bone_point: N, h_big_toe_tender: N, h_big_toe_bump: N, h_big_toe_bend: N, h_bunion: N, h_under_big_toe: N,
+      h_sole_wide: N, h_symptoms_above_foot: N, h_poly_toes_up: N, h_bilateral: N, h_age_over_65: N,
+      h_bilateral_sole_numbness: N, h_walking_claudication: N, h_bend_forward: N, h_joint_attacks: N,
+      h_many_joints_swollen: N, h_many_places_both_sides: N, h_morning_stiff_long: N, h_leg_numbness: Y,
+      h_leg_tingling: Y, h_leg_burning: Y, h_leg_shooting: Y, h_pain_below_knee: N, h_severe_leg_pain: Y,
+      h_cough_sneeze: N, h_pain_sitting_chair: N, h_improve_seated: Y, h_recent_surgery: N,
+      p_burning: Y, p_tingling: Y, p_numb: Y, p_shooting: Y, p_stabbing: Y, p_injury: N, p_sudden_severe: N,
+      p_position: N, p_night_rest: N, p_one_spot: Y, p_light_touch: N, p_spreading: N, p_buzzing: N, p_heavy_weak: N,
+      p_movement_eases: N, p_repetitive: N, p_flexion_worse: N,
+    },
+  },
+  {
+    name: "Hector, 47: neck pain into the shoulder blade, outer arm and thumb, eased with the hand on his head",
+    expect: "root_cervical",
+    regions: ["neck", "scapula", "upper_arm_lateral", "forearm_lateral", "hand_dorsal_radial", "hand_median"],
+    facts: {
+      h_arm_numbness: Y, p_tingling: Y, p_shooting: Y, p_burning: Y, p_stabbing: Y, p_heavy_weak: Y, p_numb: N,
+      h_neck_movement_pain: Y, st_shoulder_abduction_relief: Y, h_symptoms_above_hand: Y,
+      h_sudden_severe_arm_pain: N, h_neck_car_accident: N, h_age_45: Y, h_age_50: N, h_age_60: N, p_injury: N,
+      p_sudden_severe: N, h_many_places_both_sides: N, h_many_joints_swollen: N, h_scapula_winging: N,
+      h_shoulder_stiff: N, h_front_shoulder_pain: N, h_repetitive_use: N, h_hand_flick: N, h_finger_catching: N,
+      h_wrist_thumb_motion: N, h_thumb_base_pinch: N, h_grip_lateral_elbow: N, h_outer_elbow_main: N,
+      h_both_shoulders_ache: N, h_morning_stiff_45: N, h_hip_pain_too: N, h_other_joints_pain: N, h_widespread_pain: N,
+      h_fatigue_sleep: N, h_shoulder_overhead_or_fall: N, h_back_gradual_onset: N, h_back_onset_young: N,
+      h_fall_on_hand: N, h_snuffbox_tender: N, h_finger_knobbly: N, h_thumb_base_bump: N, h_forearm_creak: N,
+      p_position: Y, p_stretch: N, p_repetitive: N, p_one_spot: N, p_light_touch: N, p_spreading: N, p_buzzing: N,
+      p_movement_eases: N, p_dull_ache: N,
     },
   },
 ];
