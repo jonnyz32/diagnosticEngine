@@ -3,6 +3,7 @@ import { OTHER, posterior, restrictToRegions, scorableHypotheses } from "./bayes
 import { logicalFit } from "./logic";
 import { RegionSchema, type Answer, type EvidenceDb, type Region } from "./schema";
 import { isEligible, nextFinding, withImplied } from "./selection";
+import { judgementRanking } from "./verdict";
 
 /**
  * Accuracy check against published case reports (cases/cases.json). Each case holds only the
@@ -97,6 +98,9 @@ export interface CaseResult {
   questionsAsked: number;
   // Rank in the logical fit (covers options without accuracy data).
   logicRank?: number;
+  // Rank in the overall ranking behind the best guess (probability and logical fit combined),
+  // after the simulated interview; 1 means the best guess names it.
+  combinedRank?: number;
 }
 
 const rankOf = (ids: string[], id: string) => {
@@ -147,6 +151,9 @@ export function evaluateCase(db: EvidenceDb, c: Case, budget?: number): CaseResu
     pInterview: scorable ? postInt.find((e) => e.id === c.diagnosis)?.p : undefined,
     questionsAsked: asked,
     logicRank: inTerritory ? rankOf(fits.map((f) => f.id), c.diagnosis) : undefined,
+    combinedRank: inTerritory
+      ? rankOf(judgementRanking(postInt, logicalFit(view, regions, interview)).map((o) => o.id), c.diagnosis)
+      : undefined,
   };
 }
 
@@ -164,6 +171,9 @@ export interface Summary {
   otherAhead: number;
   // Logical-fit top 3, over every case inside the territory.
   logicTop3: number;
+  // Overall-ranking top 1 and top 3 after the interview, over every case inside the territory.
+  combinedTop1: number;
+  combinedTop3: number;
   inTerritory: number;
 }
 
@@ -187,6 +197,8 @@ export function summarise(db: EvidenceDb, cases: Case[], results: CaseResult[]):
     meanPAll: s.length ? s.reduce((t, r) => t + (r.pAll ?? 0), 0) / s.length : 0,
     otherAhead,
     logicTop3: results.filter((r) => within(3, r.logicRank)).length,
+    combinedTop1: results.filter((r) => within(1, r.combinedRank)).length,
+    combinedTop3: results.filter((r) => within(3, r.combinedRank)).length,
     inTerritory: results.filter((r) => r.inTerritory).length,
   };
 }

@@ -1,4 +1,4 @@
 {
   "note": "Dev-split floor for tests/cases/cases.test.ts. Raise it when a change improves dev results; never lower it to make a change pass. Holdout results are not stored here.",
-  "dev": { "top1All": 13, "top3All": 19, "top3Interview": 18, "logicTop3": 32, "outOfTerritory": 3 }
+  "dev": { "top1All": 14, "top3All": 19, "top3Interview": 19, "logicTop3": 32, "combinedTop1": 28, "combinedTop3": 35, "outOfTerritory": 3 }
 }

@@ -27,7 +27,7 @@ const holdoutResults = holdout.map((c) => evaluateCase(db, c, budget));
 const fmt = (r?: number) => (r === undefined ? "-" : String(r));
 const pct = (p?: number) => (p === undefined ? "-" : `${Math.round(p * 100)}%`);
 console.log("DEV CASES");
-console.log("case        diagnosis               conf  territory  rank(all) p(all)  rank(interview) asked  logic-rank");
+console.log("case        diagnosis               conf  territory  rank(all) p(all)  rank(interview) asked  logic-rank  combined");
 for (const r of devResults) {
   console.log(
     [
@@ -39,7 +39,8 @@ for (const r of devResults) {
       pct(r.pAll).padEnd(7),
       fmt(r.rankInterview).padEnd(15),
       String(r.questionsAsked).padEnd(6),
-      fmt(r.logicRank),
+      fmt(r.logicRank).padEnd(10),
+      fmt(r.combinedRank),
     ].join(" "),
   );
 }
@@ -48,7 +49,7 @@ const line = (name: string, s: Summary) =>
   `${name}: ${s.cases} cases · out of territory ${s.outOfTerritory} · scored ${s.scorable} · ` +
   `top-1 ${s.top1All}/${s.scorable} · top-3 ${s.top3All}/${s.scorable} · ` +
   `interview top-3 ${s.top3Interview}/${s.scorable} · mean p ${pct(s.meanPAll)} · "other" ahead ${s.otherAhead} · ` +
-  `logical-fit top-3 ${s.logicTop3}/${s.inTerritory}`;
+  `logical-fit top-3 ${s.logicTop3}/${s.inTerritory} · combined top-1 ${s.combinedTop1}/${s.inTerritory}, top-3 ${s.combinedTop3}/${s.inTerritory}`;
 const devSummary = line("dev", summarise(db, dev, devResults));
 const asked = devResults.map((r) => r.questionsAsked);
 console.log(`\n${devSummary}\ndev interview length: mean ${(asked.reduce((a, b) => a + b, 0) / asked.length).toFixed(1)}, max ${Math.max(...asked)} questions`);

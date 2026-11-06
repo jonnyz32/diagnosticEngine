@@ -10,12 +10,12 @@ import {
   unscorableHypotheses,
 } from "../engine/bayes";
 import type { Answer, ConfirmatoryTest, EvidenceDb, Hypothesis, Region } from "../engine/schema";
-import { logicalFit, type LogicCheck, type LogicFit } from "../engine/logic";
-import type { Implied } from "../engine/selection";
+import { checklistStatus, logicalFit, type LogicCheck, type LogicFit } from "../engine/logic";
+import { FROM_BODY_MAP, type Implied } from "../engine/selection";
 import { evidenceSummary, unexplainedWeakness } from "../engine/summary";
 import { stressesFor, stressPatterns, type StressPattern } from "../engine/stress";
 import { posteriorIntervals } from "../engine/uncertainty";
-import { bestGuess, type BestGuess } from "../engine/verdict";
+import { bestGuess, judgementRanking, type BestGuess, type RankedOption } from "../engine/verdict";
 import { REGION_LABELS } from "./regions";
 import { isThesis, SourceLink } from "./SourceLink";
 import { ChestNotice, touchesChest } from "./ChestNotice";
@@ -26,7 +26,12 @@ const pct = (p: number) => (p < 0.01 ? "<1%" : `${Math.round(p * 100)}%`);
 const ANSWER_LABEL: Record<Answer, string> = { yes: "Yes", no: "No", unsure: "Not sure / skipped" };
 // Confirmatory tests are suggested for any nerve at or above this probability (display rule, not clinical).
 const CHECKLIST_THRESHOLD = 0.05;
-const SUGGEST_THRESHOLD = 0.1;
+// Condensed results (display rules, not clinical): only options at or above this probability are
+// listed, and only the top few logical fits whose checks fit more than count against them.
+const SHOW_THRESHOLD = 0.3;
+const MAX_FITS = 3;
+// Overall ranking (display rule): the condensed view shows the top band and the next, up to this many.
+const MAX_RANKED = 6;
 const promptOf = (db: EvidenceDb, id: string) => db.findings.find((f) => f.id === id)?.prompt ?? id;
 // Every pain signal travels along nerves; this badge marks options where the problem starts in other tissue.
 const TISSUE_LABEL = "Tendon, joint or muscle (nerves only carry the signal)";
@@ -55,8 +60,14 @@ export function Results({ db, regions, given, implied, doneReason, onBack, onRes
   const unscorable = unscorableHypotheses(view);
   // Pain description grouped first.
   const asked = [...db.findings.filter((f) => f.id in answers)].sort((a, b) => +(b.kind === "profile") - +(a.kind === "profile"));
-  const suggested = post.filter((e) => e.id !== OTHER && e.p >= SUGGEST_THRESHOLD).map((e) => e.id);
+  const [showAll, setShowAll] = useState(false);
+  const shownPost = showAll ? post : post.filter((e) => e.p >= SHOW_THRESHOLD);
+  const suggested = post.filter((e) => e.id !== OTHER && e.p >= SHOW_THRESHOLD).map((e) => e.id);
+  const topFits = fits.filter((f) => f.fit > f.against).slice(0, MAX_FITS);
+  const shownFits = showAll ? fits : topFits;
+  const shownUnscorable = showAll ? unscorable : unscorable.filter((h) => topFits.some((f) => f.id === h.id));
   const scorableCount = post.length - 1;
+  const hiddenCount = post.length - shownPost.length + fits.length - shownFits.length;
 
   return (
     <div className="results">
@@ -74,17 +85,36 @@ export function Results({ db, regions, given, implied, doneReason, onBack, onRes
 
       <BestGuessCard guess={bestGuess(post, fits)} name={(id) => hyp(id)?.name ?? id} />
 
+      <RankingCard
+        ranking={judgementRanking(post, fits)}
+        other={post.find((e) => e.id === OTHER)?.p ?? 0}
+        showAll={showAll}
+        name={(id) => hyp(id)?.name ?? id}
+      />
+
+      {(hiddenCount > 0 || showAll) && (
+        <p className="no-print center">
+          <button className="link small" onClick={() => setShowAll(!showAll)} aria-expanded={showAll}>
+            {showAll ? "Show only the leading options" : `Show all options (${hiddenCount} more)`}
+          </button>
+        </p>
+      )}
+
       {scorableCount > 0 && (
         <section className="card">
           <h2>Most likely sources</h2>
           <p className="muted">
-            Starting point: no study reports how common these conditions are relative to each other in a single group of
-            patients, so each option started at an equal {pct(startingPoint)}. That means a rare condition started level
-            with a common one, so a rare cause near the top deserves more caution. The bars show where your answers moved
-            them. The thin line is a 95% uncertainty range that reflects how precise the source studies were.
+            {showAll ? "All options with study data." : `Options above ${pct(SHOW_THRESHOLD)} probability.`} Each started
+            at an equal {pct(startingPoint)} (no study reports how common they are relative to each other), so a rare cause
+            near the top deserves more caution. The thin line is a 95% uncertainty range.
           </p>
+          {shownPost.length === 0 && (
+            <p className="note small">
+              No option reached {pct(SHOW_THRESHOLD)}: your answers don't single out one source with study data.
+            </p>
+          )}
           <ol className="dist">
-            {post.map((e) => (
+            {shownPost.map((e) => (
               <DistRow
                 key={e.id}
                 db={db}
@@ -105,7 +135,8 @@ export function Results({ db, regions, given, implied, doneReason, onBack, onRes
         <StressSection
           db={db}
           answers={answers}
-          leading={(suggested.length > 0 ? suggested : fits.slice(0, MAX_LISTED).map((f) => f.id)).map((id) => hyp(id)!)}
+          showAll={showAll}
+          leading={[...new Set([...suggested, ...topFits.map((f) => f.id)])].map((id) => hyp(id)!)}
         />
       )}
 
@@ -113,30 +144,30 @@ export function Results({ db, regions, given, implied, doneReason, onBack, onRes
         <section className="card">
           <h2>Logical fit</h2>
           <p className="muted">
-            A second, separate view, and not a probability. Each option is checked against your answers: did you answer
-            the way this condition usually shows up? Symptoms an option can't explain are noted but don't count against
-            it, because more than one problem can be present. It includes options with no study data. Checks marked "reasoning" are clinical reasoning with no published
-            source. Options are ranked by checks that fit minus checks against. The probability from the section above is
-            shown alongside for comparison.
+            A second, separate view, and not a probability: does each option match the way that condition usually shows
+            up? {showAll ? "All options, ranked" : `The ${MAX_FITS} best matches, ranked`} by checks that fit minus checks
+            against; it includes options with no study data. Checks marked "reasoning" have no published source.
           </p>
+          {shownFits.length === 0 && (
+            <p className="note small">No option has more checks that fit your answers than count against it.</p>
+          )}
           <ol className="dist">
-            {fits.map((f) => (
+            {shownFits.map((f) => (
               <LogicRow key={f.id} db={db} fit={f} hypothesis={hyp(f.id)!} p={post.find((e) => e.id === f.id)?.p} answers={answers} />
             ))}
           </ol>
         </section>
       )}
 
-      {unscorable.length > 0 && (
+      {shownUnscorable.length > 0 && (
         <section className="card">
           <h2>Also possible: no probability available</h2>
           <p className="muted">
-            These nerves supply areas you marked. Calculating a probability needs a study comparing people with the
-            condition against people with other causes, and none exists for these nerves. Where published diagnostic
-            criteria exist, you can check yourself against them below. That shows how well you match; it is not a
-            probability.
+            {showAll ? "These options cover areas you marked" : "These leading logical fits"} but have no study comparing
+            people with the condition against people with other causes, so no probability can be calculated. Where
+            published diagnostic criteria exist, you can check yourself against them below (a match, not a probability).
           </p>
-          {unscorable.map((h) => (
+          {shownUnscorable.map((h) => (
             <div key={h.id} className="unscorable">
               <h3>{h.name}</h3>
               <p>{h.description}</p>
@@ -173,7 +204,16 @@ export function Results({ db, regions, given, implied, doneReason, onBack, onRes
                 <td>{f.prompt}</td>
                 <td>
                   {ANSWER_LABEL[answers[f.id]]}
-                  {implied[f.id] && <span className="muted"> (not asked: follows from your answer to "{promptOf(db, implied[f.id].from)}")</span>}
+                  {implied[f.id] && (
+                    <span className="muted">
+                      {" "}
+                      (not asked:{" "}
+                      {implied[f.id].from === FROM_BODY_MAP
+                        ? "follows from the areas you marked"
+                        : `follows from your answer to "${promptOf(db, implied[f.id].from)}"`}
+                      )
+                    </span>
+                  )}
                 </td>
               </tr>
             ))}
@@ -200,12 +240,91 @@ export function Results({ db, regions, given, implied, doneReason, onBack, onRes
   );
 }
 
+function RankingCard({
+  ranking,
+  other,
+  showAll,
+  name,
+}: {
+  ranking: RankedOption[];
+  other: number;
+  showAll: boolean;
+  name: (id: string) => string;
+}) {
+  if (ranking.length < 2) return null;
+  // Condensed: the first two bands, at most MAX_RANKED options.
+  const shown = showAll ? ranking : ranking.filter((o) => o.band <= 2).slice(0, MAX_RANKED);
+  const bandLabel = (band: number) => {
+    const members = ranking.filter((o) => o.band === band);
+    if (members.length === 1) return band === 1 ? "Clearly ahead, both views taken together" : "Next";
+    return band === 1 ? "Too close to separate: ordered by logical fit" : "Next, too close to separate: ordered by logical fit";
+  };
+  return (
+    <section className="card">
+      <h2>Overall ranking</h2>
+      <p className="muted">
+        Our judgement across both views, by the same rule as the best guess. Each option starts at its probability; one
+        with no study data starts where "something this tool doesn't cover" does. Each reasoning or checklist check in
+        the logical fit that matches your answers then doubles that, and each one against halves it (checks from studies
+        are already in the probability). Options within a factor of two of each other are grouped, and the logical fit
+        orders each group. This is an order, not a new probability.
+      </p>
+      <table className="ranking">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Option</th>
+            <th scope="col">Probability</th>
+            <th scope="col">Logical fit</th>
+          </tr>
+        </thead>
+        {[...new Set(shown.map((o) => o.band))].map((band) => (
+          <tbody key={band}>
+            <tr className="band">
+              <th colSpan={4} scope="colgroup">
+                {bandLabel(band)}
+              </th>
+            </tr>
+            {shown
+              .filter((o) => o.band === band)
+              .map((o) => (
+                <tr key={o.id} className={o.ruledOut ? "ruled-out" : undefined}>
+                  <td>{ranking.indexOf(o) + 1}</td>
+                  <td>
+                    {name(o.id)}
+                    {o.ruledOut && <span className="badge warn small">more against than fit</span>}
+                  </td>
+                  <td>{o.p === undefined ? <span className="muted">none</span> : pct(o.p)}</td>
+                  <td>
+                    +{o.fit} / −{o.against}
+                  </td>
+                </tr>
+              ))}
+          </tbody>
+        ))}
+      </table>
+      {!showAll && shown.length < ranking.length && (
+        <p className="muted small">{ranking.length - shown.length} more options lower down ("Show all options" lists them).</p>
+      )}
+      {other > 0 && (
+        <p className="muted small">Something this tool doesn't cover: {pct(other)} (shown with the probabilities below).</p>
+      )}
+    </section>
+  );
+}
+
 function BestGuessCard({ guess, name }: { guess: BestGuess; name: (id: string) => string }) {
   const list = (ids: string[]) => ids.map(name).join(ids.length > 2 ? ", " : " or ").replace(/, ([^,]*)$/, " or $1");
   const disagreeNote = (
     <p className="muted small">
       The logical fit below doesn't agree: more of your answers count against this than fit it. Read both before you
       decide what to ask your clinician.
+    </p>
+  );
+  const setAsideNote = (ids: string[]) => (
+    <p className="muted small">
+      Set aside: {list(ids)}. Close to these with both views taken together, but more of your answers count against{" "}
+      {ids.length > 1 ? "them" : "it"} than fit in the logical fit below.
     </p>
   );
   let body;
@@ -215,7 +334,12 @@ function BestGuessCard({ guess, name }: { guess: BestGuess; name: (id: string) =
         <>
           <p className="guess-name">{name(guess.id)}</p>
           <p className="muted small">
-            At {pct(guess.p)}, it is at least twice as likely as any other option in this tool, given your answers.
+            {guess.p !== undefined ? (
+              <>Its probability ({pct(guess.p)}) and the logical fit below, taken together, put it</>
+            ) : (
+              <>No study gives this option a probability, but it matches clearly more of your answers than the others. Taking both views together puts it</>
+            )}{" "}
+            at least twice as far ahead as any other option in this tool, and ahead of something the tool doesn't cover.
           </p>
           {guess.logicDisagrees && disagreeNote}
         </>
@@ -226,10 +350,22 @@ function BestGuessCard({ guess, name }: { guess: BestGuess; name: (id: string) =
         <>
           <p className="guess-name">{list(guess.ids)}</p>
           <p className="muted small">
-            These are close: none is twice as likely as the others, so your answers can't separate them. The tests further
-            down could.
+            These are close: taking probability and logical fit together, none is twice as far ahead as the others, and
+            none matches clearly more of your answers, so your answers can't separate them. The tests further down could.
           </p>
-          {guess.logicDisagrees && disagreeNote}
+          {guess.setAside.length > 0 && setAsideNote(guess.setAside)}
+        </>
+      );
+      break;
+    case "logic-lead":
+      body = (
+        <>
+          <p className="guess-name">{name(guess.id)}</p>
+          <p className="muted small">
+            {!guess.scored && <>No study gives this option a probability. </>}
+            Taking probability and logical fit together it is level with {list(guess.rivals)}, but in the logical fit below
+            it matches clearly more of your answers than {guess.rivals.length > 1 ? "any of them" : "that one"}.
+          </p>
         </>
       );
       break;
@@ -238,20 +374,10 @@ function BestGuessCard({ guess, name }: { guess: BestGuess; name: (id: string) =
         <>
           <p className="guess-name">Probably something this tool doesn't cover</p>
           <p className="muted small">
-            "Something not covered" ({pct(guess.p)}) came out ahead of every listed option
-            {guess.bestListed && <>; the closest listed one is {name(guess.bestListed)}</>}. A clinician's examination is
+            No listed option comes out clearly ahead of "something not covered" ({pct(guess.p)}), even counting the logical
+            fit
+            {guess.bestListed && <>; the closest listed one your answers don't count against is {name(guess.bestListed)}</>}. A clinician's examination is
             the better next step.
-          </p>
-        </>
-      );
-      break;
-    case "logic-only":
-      body = (
-        <>
-          <p className="guess-name">{name(guess.id)}</p>
-          <p className="muted small">
-            No study lets us put a probability on the options for your areas, so this rests only on the logical fit: it
-            matches more of your answers than any other option.
           </p>
         </>
       );
@@ -511,36 +637,35 @@ const NOT_ASSESSED = [
   "blocked arteries in the leg or arm, which cause pain on walking or use much like reduced blood supply to a nerve",
 ];
 
-function StressSection({ db, answers, leading }: { db: EvidenceDb; answers: Record<string, Answer>; leading: Hypothesis[] }) {
+function StressSection({
+  db,
+  answers,
+  leading,
+  showAll,
+}: {
+  db: EvidenceDb;
+  answers: Record<string, Answer>;
+  leading: Hypothesis[];
+  showAll: boolean;
+}) {
   const patterns = useMemo(() => stressPatterns(db, answers), [db, answers]);
   const byId = new Map(patterns.map((p) => [p.type.id, p]));
   const anyAnswered = patterns.some((p) => p.fit + p.against > 0);
+  const shown = showAll ? patterns : patterns.filter((p) => p.matches);
   return (
     <section className="card">
       <h2>What kind of stress fits your pain?</h2>
       <p className="muted">
-        Every pain signal travels along nerves, but what irritates them differs: pressure, stretch, rubbing, a poor blood
-        supply, chemical irritation, an immune attack, an injury, an over-sensitive nervous system, or, when the nerve is
-        healthy, an overloaded tendon, joint or muscle whose pain it simply carries. This view matches how you described
-        your pain against the usual pattern of each. It is clinical reasoning, mostly without a published source, and not a
-        probability: descriptions overlap, and most problems involve more than one kind of stress at once. It never changes
-        the percentages above.
+        {showAll ? "Every type of stress" : "The types of stress"} that match how you described your pain (pressure,
+        stretch, poor blood supply, inflammation, an overloaded tendon, joint or muscle...). Clinical reasoning, mostly
+        uncited, and not a probability: it never changes the percentages above.
       </p>
-      <ul className="bullets small muted">
-        <li>
-          Pain words are weak clues on their own. In one study, a burning quality and pain on light touch were not typical
-          of a trapped nerve root in the back. <SourceLink db={db} sourceId="scholz2009" locator="Results (Table 2)" /> In
-          another, 16% of people whose back pain didn't spread down the leg still described marked burning.{" "}
-          <SourceLink db={db} sourceId="forster2013" locator="Table 2 (burning)" />
-        </li>
-        <li>
-          A condition doesn't fix the mechanism: the same pain mechanism can occur in different conditions, and different
-          mechanisms in the same condition. <SourceLink db={db} sourceId="scholz2009" locator="Discussion" />
-        </li>
-      </ul>
-      {!anyAnswered &&<p className="note small">You didn't describe your pain, so no pattern can be matched yet.</p>}
+      {!anyAnswered && <p className="note small">You didn't describe your pain, so no pattern can be matched yet.</p>}
+      {anyAnswered && shown.length === 0 && (
+        <p className="note small">No single type of stress clearly matches how you described your pain.</p>
+      )}
       <ol className="dist">
-        {patterns.map((p) => (
+        {shown.map((p) => (
           <StressRow key={p.type.id} db={db} p={p} answers={answers} />
         ))}
       </ol>
@@ -549,12 +674,14 @@ function StressSection({ db, answers, leading }: { db: EvidenceDb; answers: Reco
           <h3>Stresses your leading options usually involve</h3>
           <ul className="stress-leading">
             {leading.map((h) => {
-              const linked = stressesFor(db, h.id);
+              const linked = stressesFor(db, h.id).filter(({ type }) => showAll || byId.get(type.id)?.matches);
               return (
                 <li key={h.id}>
                   <strong>{h.name}:</strong>{" "}
                   {linked.length === 0
-                    ? "not yet described in this tool."
+                    ? showAll
+                      ? "not yet described in this tool."
+                      : "none of its usual stresses matches how you described your pain."
                     : linked.map(({ type, condition }) => (
                         <span key={type.id} className={byId.get(type.id)?.matches ? "chip match" : "chip"}>
                           {type.name}
@@ -573,13 +700,27 @@ function StressSection({ db, answers, leading }: { db: EvidenceDb; answers: Reco
             })}
           </ul>
           <p className="muted small">
-            ✓ marks a stress that also fits how you described your pain (its defining feature included, where it has
-            one). When the two agree, the explanation hangs together; when they don't, it's worth raising with a
-            clinician. Hover "(reasoning)" for the reason behind an uncited link.
+            ✓ marks a stress that also fits how you described your pain. When the two agree, the explanation hangs
+            together. Hover "(reasoning)" for the reason behind an uncited link.
           </p>
         </>
       )}
-      <p className="muted small">Not assessed by this tool: {NOT_ASSESSED.join("; ")}.</p>
+      <details className="small muted">
+        <summary>Limits of this view</summary>
+      <ul className="bullets small muted">
+        <li>
+          Pain words are weak clues on their own. In one study, a burning quality and pain on light touch were not typical
+          of a trapped nerve root in the back. <SourceLink db={db} sourceId="scholz2009" locator="Results (Table 2)" /> In
+          another, 16% of people whose back pain didn't spread down the leg still described marked burning.{" "}
+          <SourceLink db={db} sourceId="forster2013" locator="Table 2 (burning)" />
+        </li>
+        <li>
+          A condition doesn't fix the mechanism: the same pain mechanism can occur in different conditions, and different
+          mechanisms in the same condition. <SourceLink db={db} sourceId="scholz2009" locator="Discussion" />
+        </li>
+        <li>Not assessed by this tool: {NOT_ASSESSED.join("; ")}.</li>
+      </ul>
+      </details>
     </section>
   );
 }
@@ -702,6 +843,13 @@ function CriteriaChecklist({
   });
   const answered = criteria.items.filter((i) => ans[i.id]);
   const matched = answered.filter((i) => ans[i.id] === i.matchIf);
+  const status = checklistStatus(criteria, (i) => (!ans[i.id] ? "unknown" : ans[i.id] === i.matchIf ? "fit" : "against"));
+  const statusText = {
+    met: "By the source's rule, the checklist is met as far as you can check it.",
+    impossible: "By the source's rule, your answers mean the checklist can't be met.",
+    open: "By the source's rule, it isn't settled yet: it depends on items still to answer.",
+    pattern: "",
+  }[status];
   return (
     <div className="criteria">
       <p className="small">
@@ -738,6 +886,7 @@ function CriteriaChecklist({
         <p className="note small">
           You match {matched.length} of the {answered.length} criteria you've answered
           {answered.length < criteria.items.length ? ` (${criteria.items.length - answered.length} still to answer)` : ""}.
+          {statusText && <> {statusText}</>}
           {criteria.clinicianOnly.length > 0 && <> Only a clinician can check: {criteria.clinicianOnly.join("; ")}.</>}
         </p>
       )}

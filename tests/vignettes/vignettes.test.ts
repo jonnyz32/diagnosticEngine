@@ -6,11 +6,16 @@ import { hasDiagram } from "../../src/ui/TestDiagram";
 import type { Answer, Finding, Region } from "../../src/engine/schema";
 import { initialSession, reduce } from "../../src/engine/session";
 import { evidenceSummary, unexplainedWeakness } from "../../src/engine/summary";
+import { bestGuess } from "../../src/engine/verdict";
 import {
-  expectedInformationGain,
+  expectedEliminated,
+  FROM_BODY_MAP,
+  impliedAnswers,
   isEligible,
+  isRuledOut,
   MIN_INFORMATION_GAIN_BITS,
   nextFinding,
+  ruledOutOptions,
   withImplied,
 } from "../../src/engine/selection";
 
@@ -209,17 +214,18 @@ describe("non-nerve mimics", () => {
 });
 
 describe("sitting question and deep-buttock causes", () => {
-  it("always-ask questions (sitting; numbness/pins and needles for leg symptoms) come before any others", () => {
+  it("the first question is the one expected to eliminate the most possibilities", () => {
     for (const regions of [["calf"], ["lateral_thigh"], ["low_back"]] as Region[][]) {
-      const core = db.findings.filter((f) => f.alwaysAsk && isEligible(f, regions)).map((f) => f.id);
-      expect(core).toContain("h_pain_sitting_chair");
-      const answers: Record<string, Answer> = {};
-      for (let i = 0; i < core.length; i++) {
-        const next = nextFinding(db, answers, regions);
-        if (next.done) break;
-        expect(core).toContain(next.finding.id);
-        answers[next.finding.id] = "no";
-      }
+      const next = nextFinding(db, {}, regions);
+      if (next.done) throw new Error("expected a question");
+      const view = restrictToRegions(db, regions);
+      const best = Math.max(
+        ...view.findings
+          .filter((f) => isEligible(f, regions) && !f.askIf && !f.followUp)
+          .map((f) => expectedEliminated(view, {}, regions, f)),
+      );
+      expect(next.gain).toBeCloseTo(best, 9);
+      expect(next.gain).toBeGreaterThan(MIN_INFORMATION_GAIN_BITS);
     }
   });
 
@@ -264,17 +270,12 @@ describe("posterior femoral cutaneous nerve follow-up questions", () => {
   const pfcnQs = ["h_pfcn_location", "h_pfcn_avoid_sitting", "h_hamstring_injury", "st_pfcn_skin"];
 
   it("are asked once the nerve reaches 10%, and don't change any probability", () => {
-    const answers: Record<string, Answer> = {};
-    // answer the always-ask questions so that sitting pain pushes the nerve to ~19%
-    for (let i = 0; i < 3; i++) {
-      const n = nextFinding(db, answers, regions);
-      if (n.done || !n.finding.alwaysAsk) break;
-      answers[n.finding.id] = n.finding.id === "h_pain_sitting_chair" ? "yes" : "no";
-    }
+    // sitting pain pushes the nerve to ~19%
+    const answers: Record<string, Answer> = { h_pain_sitting_chair: "yes", h_leg_numbness: "no" };
     const before = top(regions, answers);
-    // other options' follow-ups may be interleaved; "unsure" takes them out of the queue without scoring
+    // other questions may be interleaved; "unsure" takes them out of the queue without scoring
     const asked: string[] = [];
-    for (let i = 0; i < 10 && asked.length < pfcnQs.length; i++) {
+    for (let i = 0; i < 60 && asked.length < pfcnQs.length; i++) {
       const n = nextFinding(db, answers, regions);
       if (n.done) break;
       const isPfcn = pfcnQs.includes(n.finding.id);
@@ -317,7 +318,13 @@ describe("ruling out an option by logical fit", () => {
   it("keeps a question that also checks another open option", () => {
     // Resisted wrist extension is also a usual feature of intersection syndrome (forearm only).
     expect(interview("no")).not.toContain("st_resisted_wrist_ext_self");
-    expect(interview("no", ["forearm_dorsal"])).toContain("st_resisted_wrist_ext_self");
+    const f = db.findings.find((x) => x.id === "st_resisted_wrist_ext_self")!;
+    const ruledOutIn = (regions: Region[]) => {
+      const view = restrictToRegions(db, regions);
+      return isRuledOut(view, f, ruledOutOptions(view, { h_grip_lateral_elbow: "no" }, regions));
+    };
+    expect(ruledOutIn(["elbow_lateral"])).toBe(true);
+    expect(ruledOutIn(["forearm_dorsal"])).toBe(false);
   });
 });
 
@@ -557,7 +564,10 @@ describe("checks for options without accuracy data", () => {
         if (n.done) break;
         answers[n.finding.id] = answer;
       }
-      expect(answers.h_worst_medial_thigh).toBe(answer);
+      // All "yes" makes hip OA lead (93%, with the cited groin question, Khan 2004) before the
+      // studied inner-thigh question comes up; the obturator checklist is still asked.
+      if (answer === "no") expect(answers.h_worst_medial_thigh).toBe(answer);
+      else expect(answers.h_obt_origin).toBe(answer);
       const obturator = logicalFit(restrictToRegions(db, regions), regions, withImplied(db, answers, regions)).find((f) => f.id === "obturator")!;
       expect(obturator.fit + obturator.against).toBeGreaterThan(0);
     }
@@ -570,7 +580,7 @@ describe("meralgia follow-up questions (tight clothing, pregnancy, diabetes)", (
     const answers: Record<string, Answer> = { h_pain_sitting_chair: "no", st_pelvic_compression: "yes" };
     const before = top(regions, answers);
     const asked: string[] = [];
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 80; i++) {
       const n = nextFinding(db, answers, regions);
       if (n.done) break;
       if (n.finding.followUp?.hypothesis === "lfcn") asked.push(n.finding.id);
@@ -587,7 +597,7 @@ describe("surgery history", () => {
   const run = (surgery: Answer) => {
     const answers: Record<string, Answer> = {};
     const asked: string[] = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 80; i++) {
       const n = nextFinding(db, answers, ["lateral_thigh"]);
       if (n.done) break;
       asked.push(n.finding.id);
@@ -798,16 +808,19 @@ describe("top-of-forearm pain from repetitive work (RSI)", () => {
   const fitOf = (answers: Record<string, Answer>, id: string) =>
     logicalFit(restrictToRegions(db, regions), regions, answers).find((f) => f.id === id)!;
 
-  it("asks the repetitive-use, creaking, grip and numbness questions", () => {
+  it("asks the repetitive-use, creaking, grip and numbness questions unless an earlier 'no' ruled out what they check", () => {
     const answers: Record<string, Answer> = {};
     for (let i = 0; i < 40; i++) {
       const next = nextFinding(db, answers, regions);
       if (next.done) break;
       answers[next.finding.id] = "no";
     }
-    expect(Object.keys(answers)).toEqual(
-      expect.arrayContaining(["h_repetitive_use", "h_forearm_creak", "h_grip_lateral_elbow", "h_arm_numbness"]),
-    );
+    expect(Object.keys(answers)).toEqual(expect.arrayContaining(["h_repetitive_use", "h_arm_numbness"]));
+    const view = restrictToRegions(db, regions);
+    const ruledOut = ruledOutOptions(view, withImplied(db, answers, regions), regions);
+    for (const id of ["h_forearm_creak", "h_grip_lateral_elbow"]) {
+      if (!(id in answers)) expect(isRuledOut(view, db.findings.find((f) => f.id === id)!, ruledOut)).toBe(true);
+    }
   });
 
   it("repetitive work, no creaking or numbness: work-related arm pain fits, intersection syndrome counts against", () => {
@@ -960,26 +973,20 @@ describe("chest and upper back", () => {
 });
 
 describe("interview", () => {
-  it("only picks a self-test when no history question is informative, and terminates", () => {
+  it("asks questions in order of how many possibilities they eliminate, and terminates", () => {
     let s = reduce(db, initialSession, { type: "start" });
     s = reduce(db, s, { type: "regions", regions: ["buttock", "posterior_thigh", "calf"] });
-    const view = restrictToRegions(db, s.regions);
-    for (let i = 0; i < 40 && s.phase === "interview"; i++) {
+    const gains: number[] = [];
+    for (let i = 0; i < 80 && s.phase === "interview"; i++) {
       const next = nextFinding(db, s.answers, s.regions);
       if (next.done) break;
       expect(next.finding.id in withImplied(db, s.answers, s.regions)).toBe(false);
-      if (next.finding.kind === "selftest" && !next.finding.followUp && !next.finding.alwaysAsk) {
-        const known = withImplied(db, s.answers, s.regions);
-        const openHistory = db.findings.filter(
-          (f) => f.kind === "history" && !(f.id in known) && isEligible(f, s.regions),
-        );
-        for (const f of openHistory) {
-          expect(expectedInformationGain(view, known, f)).toBeLessThan(MIN_INFORMATION_GAIN_BITS);
-        }
-      }
+      if (next.gain > 0) gains.push(next.gain);
       s = reduce(db, s, { type: "answer", id: next.finding.id, answer: "no" });
     }
     expect(s.phase).toBe("results");
+    expect(gains.length).toBeGreaterThan(3);
+    expect(gains.every((g) => g >= MIN_INFORMATION_GAIN_BITS)).toBe(true);
   });
 
   it("does not ask a question whose answer follows from an earlier one", () => {
@@ -1033,14 +1040,12 @@ describe("pain description", () => {
     expect(reduce(db, s, { type: "back" }).phase).toBe("regions");
   });
 
-  it("is asked only after the scored questions, and only some of it", () => {
+  it("is asked within the interview like any other question, and only some of it", () => {
     for (const answer of ["no", "unsure"] as Answer[]) {
       const kinds = run(answer).map((f) => f.kind);
-      const first = kinds.indexOf("profile");
-      expect(first).toBeGreaterThan(0);
-      expect(kinds.slice(first).every((k) => k === "profile")).toBe(true);
+      expect(kinds[0]).not.toBe("profile");
       const eligible = db.findings.filter((f) => f.kind === "profile" && isEligible(f, regions)).length;
-      expect(kinds.length - first).toBeLessThan(eligible);
+      expect(kinds.filter((k) => k === "profile").length).toBeLessThan(eligible);
     }
   });
 
@@ -1136,5 +1141,74 @@ describe("coverage pass: options without accuracy data (logical fit only)", () =
       const scored = db.findings.some((f) => f.evidence.some((e) => e.hypothesis === h.id));
       expect(scored || checks > 0, h.id).toBe(true);
     }
+  });
+});
+
+describe("body-map screen: symptoms higher up than the foot or hand", () => {
+  const interview = (regions: Region[], screen: Answer) => {
+    const answers: Record<string, Answer> = {};
+    const asked: string[] = [];
+    for (let i = 0; i < 80; i++) {
+      const n = nextFinding(db, answers, regions);
+      if (n.done) break;
+      asked.push(n.finding.id);
+      answers[n.finding.id] = n.finding.id.startsWith("h_symptoms_above_") ? screen : "unsure";
+    }
+    return asked;
+  };
+  // Questions about the back-and-leg pattern of a lower-back root or stenosis.
+  const BACK = ["h_bend_forward", "h_walking_claudication", "h_bilateral", "st_slr_helper", "h_worse_standing", "h_improve_seated", "h_pain_below_knee", "h_leg_worse_than_back", "h_no_pain_seated", "h_walk_stand_still_ease", "h_age_over_65"];
+  const spineQuestions = (asked: string[]) => asked.filter((id) => BACK.includes(id));
+
+  it("is asked first when only the foot is marked, and a 'no' drops every back and leg question", () => {
+    for (const regions of [["forefoot", "foot_dorsum"], ["heel"]] as Region[][]) {
+      const no = interview(regions, "no");
+      expect(no[0]).toBe("h_symptoms_above_foot");
+      expect(spineQuestions(no)).toEqual([]);
+      expect(spineQuestions(interview(regions, "yes")).length).toBeGreaterThan(0);
+    }
+  });
+
+  it("is filled in from the body map, not asked, when an area higher up is marked", () => {
+    const regions: Region[] = ["forefoot", "calf"];
+    expect(impliedAnswers(db, {}, regions).h_symptoms_above_foot).toEqual({ answer: "yes", from: FROM_BODY_MAP });
+    expect(interview(regions, "no")).not.toContain("h_symptoms_above_foot");
+  });
+
+  it("a 'no' for the hand drops the neck tests", () => {
+    expect(interview(["hand_median"], "no")).not.toContain("st_spurling_self");
+    expect(interview(["hand_median"], "yes")).toContain("st_spurling_self");
+  });
+
+  it("never changes a probability", () => {
+    for (const [regions, id] of [[["heel"], "h_symptoms_above_foot"], [["hand_median"], "h_symptoms_above_hand"]] as [Region[], string][]) {
+      expect(top(regions, { [id]: "no" })).toEqual(top(regions, {}));
+    }
+  });
+});
+
+describe("heel pain answered the plantar-fasciitis way", () => {
+  const regions: Region[] = ["heel"];
+  const run = (windlass: Answer) => {
+    const pf: Record<string, Answer> = { h_symptoms_above_foot: "no", h_heel_first_steps: "yes", h_leg_numbness: "no", st_windlass_helper: windlass };
+    const answers: Record<string, Answer> = {};
+    for (let i = 0; i < 60; i++) {
+      const n = nextFinding(db, answers, regions);
+      if (n.done) break;
+      answers[n.finding.id] = pf[n.finding.id] ?? "no";
+    }
+    const view = restrictToRegions(db, regions);
+    const all = withImplied(db, answers, regions);
+    return { answers, guess: bestGuess(posterior(view, all), logicalFit(view, regions, all)) };
+  };
+
+  it("asks the windlass test, the only studied sign of plantar fasciitis", () => {
+    expect(run("yes").answers.st_windlass_helper).toBe("yes");
+  });
+
+  it("never names stenosis or a back root as the best guess", () => {
+    expect(run("yes").guess).toMatchObject({ kind: "leading", id: "plantar_fasciitis" });
+    expect(run("unsure").guess).toMatchObject({ kind: "leading", id: "plantar_fasciitis" });
+    expect(run("no").guess).toMatchObject({ kind: "other", bestListed: "plantar_fasciitis" });
   });
 });

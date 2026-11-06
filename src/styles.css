@@ -624,3 +624,37 @@ details summary {
   background: var(--accent-soft);
   border-color: var(--accent);
 }
+
+.center {
+  text-align: center;
+}
+.ranking {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.ranking th,
+.ranking td {
+  text-align: left;
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.ranking td:first-child,
+.ranking th:first-child {
+  width: 2em;
+  color: var(--muted);
+}
+.ranking td:nth-child(3),
+.ranking td:nth-child(4) {
+  white-space: nowrap;
+}
+.ranking tr.band th {
+  background: var(--accent-soft);
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+.ranking tr.ruled-out td {
+  color: var(--muted);
+}

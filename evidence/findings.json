@@ -186,7 +186,7 @@
     "id": "h_no_pain_seated",
     "kind": "history",
     "prompt": "When you sit down, is your leg or buttock pain completely gone?",
-    "dependenceGroup": "posture_sitting",
+    "dependenceGroup": "flexion_walking",
     "impliedBy": [
       {
         "finding": "h_improve_seated",
@@ -251,7 +251,7 @@
     "id": "h_improve_seated",
     "kind": "history",
     "prompt": "Do your leg or buttock symptoms get better when you sit?",
-    "dependenceGroup": "posture_sitting",
+    "dependenceGroup": "flexion_walking",
     "impliedBy": [
       {
         "finding": "h_no_pain_seated",
@@ -311,7 +311,7 @@
     "id": "h_worse_standing",
     "kind": "history",
     "prompt": "Do your leg symptoms get worse when you stand up and stay standing?",
-    "dependenceGroup": "posture_sitting",
+    "dependenceGroup": "flexion_walking",
     "evidence": [
       {
         "hypothesis": "stenosis",
@@ -6051,6 +6051,7 @@
       "finding": "h_ankle_injury",
       "answer": "yes"
     },
+    "alwaysAsk": true,
     "summary": {
       "yes": "the foot rolled inward",
       "no": "the foot didn't roll inward"
@@ -7013,6 +7014,22 @@
     "evidence": []
   },
   {
+    "id": "h_hip_catch",
+    "kind": "history",
+    "prompt": "Do you get a painful catch, click or brief locking deep inside the hip joint, for example as you get up from a low chair or pivot on that leg?",
+    "summary": {
+      "yes": "painful catching or clicking deep in the hip",
+      "no": "no catching deep in the hip"
+    },
+    "gateRegions": [
+      "groin",
+      "anterior_thigh",
+      "lateral_thigh",
+      "buttock"
+    ],
+    "evidence": []
+  },
+  {
     "id": "h_hip_flexor_lift",
     "kind": "history",
     "prompt": "Is the pain at the front of the hip brought on by lifting your knee toward your chest, for example getting into a car, climbing stairs or putting on socks?",
@@ -7428,10 +7445,10 @@
   {
     "id": "h_many_places_both_sides",
     "kind": "history",
-    "prompt": "Apart from the areas you marked, do you also have pain, stiffness or swelling in several other places on both sides of your body?",
+    "prompt": "Do you have pain, stiffness or swelling in several places on both sides of your body, for example both hands, both shoulders or both hips? Count the areas you marked.",
     "summary": {
       "yes": "pain or stiffness in many places on both sides",
-      "no": "no pain in many other places"
+      "no": "not in many places on both sides"
     },
     "gateRegions": [
       "hand_median",
@@ -7527,6 +7544,7 @@
       "finding": "h_many_joints_swollen",
       "answer": "yes"
     },
+    "alwaysAsk": true,
     "evidence": []
   },
   {
@@ -7555,10 +7573,7 @@
       "elbow_medial",
       "shoulder"
     ],
-    "askIf": {
-      "finding": "h_many_places_both_sides",
-      "answer": "yes"
-    },
+    "alwaysAsk": true,
     "evidence": []
   },
   {
@@ -7727,5 +7742,194 @@
       "answer": "yes"
     },
     "evidence": []
+  },
+  {
+    "id": "h_symptoms_above_foot",
+    "kind": "history",
+    "prompt": "Besides your foot or ankle, do you also have pain, numbness or tingling anywhere higher up, in your lower back, buttock, thigh, knee or lower leg, even if it's milder?",
+    "help": "Answer yes even if it's only now and then, or much milder than the foot.",
+    "gateRegions": [
+      "heel",
+      "foot_sole_lateral",
+      "foot_dorsum",
+      "forefoot",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles"
+    ],
+    "impliedByRegions": {
+      "regions": [
+        "low_back",
+        "buttock",
+        "posterior_thigh",
+        "anterior_thigh",
+        "lateral_thigh",
+        "medial_thigh",
+        "knee_front",
+        "knee_medial",
+        "knee_lateral",
+        "knee_back",
+        "calf",
+        "shin_anterior"
+      ],
+      "implies": "yes"
+    },
+    "evidence": [],
+    "summary": {
+      "yes": "symptoms also higher up the leg or in the back",
+      "no": "symptoms only in the foot or ankle"
+    }
+  },
+  {
+    "id": "h_symptoms_above_hand",
+    "kind": "history",
+    "prompt": "Besides your hand or wrist, do you also have pain, numbness or tingling anywhere higher up, in your neck, shoulder blade, shoulder, upper arm, elbow or forearm, even if it's milder?",
+    "help": "Answer yes even if it's only now and then, or much milder than the hand.",
+    "gateRegions": [
+      "hand_median",
+      "hand_ulnar",
+      "hand_dorsal_radial",
+      "wrist_radial",
+      "wrist_ulnar"
+    ],
+    "impliedByRegions": {
+      "regions": [
+        "neck",
+        "scapula",
+        "shoulder",
+        "upper_arm_lateral",
+        "upper_arm_medial",
+        "elbow_lateral",
+        "elbow_medial",
+        "forearm_lateral",
+        "forearm_medial",
+        "forearm_anterior",
+        "forearm_dorsal",
+        "upper_back"
+      ],
+      "implies": "yes"
+    },
+    "evidence": [],
+    "summary": {
+      "yes": "symptoms also higher up the arm or in the neck",
+      "no": "symptoms only in the hand or wrist"
+    }
+  },
+  {
+    "id": "h_hand_flick",
+    "kind": "history",
+    "prompt": "When your hand goes numb or tingly, does shaking or flicking it ease the feeling?",
+    "summary": {
+      "yes": "shaking or flicking the hand eases the numbness",
+      "no": "shaking the hand doesn't ease the numbness"
+    },
+    "gateRegions": [
+      "hand_median",
+      "hand_ulnar",
+      "hand_dorsal_radial",
+      "wrist_radial",
+      "wrist_ulnar",
+      "forearm_anterior"
+    ],
+    "askIf": {
+      "finding": "h_arm_numbness",
+      "answer": "yes"
+    },
+    "alwaysAsk": true,
+    "evidence": []
+  },
+  {
+    "id": "h_thumb_base_bump",
+    "kind": "history",
+    "prompt": "Is there a hard, bony bump at the base of your thumb, so it looks squared off, or does that joint grind when you move it?",
+    "summary": {
+      "yes": "bony bump or grinding at the base of the thumb",
+      "no": "no bony bump or grinding at the base of the thumb"
+    },
+    "gateRegions": [
+      "hand_median",
+      "hand_dorsal_radial",
+      "wrist_radial"
+    ],
+    "askIf": {
+      "finding": "h_thumb_base_pinch",
+      "answer": "yes"
+    },
+    "alwaysAsk": true,
+    "evidence": []
+  },
+  {
+    "id": "h_age_60",
+    "kind": "history",
+    "prompt": "Are you 60 or older?",
+    "summary": {
+      "yes": "aged 60 or older",
+      "no": "under 60"
+    },
+    "gateRegions": [
+      "shoulder",
+      "upper_arm_lateral"
+    ],
+    "impliedBy": [
+      {
+        "finding": "h_age_over_65",
+        "answer": "yes",
+        "implies": "yes"
+      },
+      {
+        "finding": "h_age_50",
+        "answer": "no",
+        "implies": "no"
+      },
+      {
+        "finding": "h_age_45",
+        "answer": "no",
+        "implies": "no"
+      }
+    ],
+    "alwaysAsk": true,
+    "evidence": []
+  },
+  {
+    "id": "h_groin_pain",
+    "kind": "history",
+    "prompt": "Is any of your pain in the groin, the crease where the front of your thigh meets your body?",
+    "summary": {
+      "yes": "pain in the groin",
+      "no": "no pain in the groin"
+    },
+    "gateRegions": [
+      "groin",
+      "anterior_thigh",
+      "medial_thigh",
+      "buttock",
+      "lateral_thigh"
+    ],
+    "impliedByRegions": {
+      "regions": [
+        "groin"
+      ],
+      "implies": "yes"
+    },
+    "evidence": [
+      {
+        "hypothesis": "hip_oa",
+        "sens": 0.843,
+        "spec": 0.703,
+        "sensCI": [
+          0.72,
+          0.918
+        ],
+        "specCI": [
+          0.572,
+          0.809
+        ],
+        "sourceId": "khan2004",
+        "locator": "Table 1, 'Groin pain'; Results ('differentiating hip osteoarthritis from spinal stenosis')",
+        "performedBy": "patient",
+        "adapted": false,
+        "population": "51 patients awaiting hip replacement for osteoarthritis vs 54 operated for lumbar spinal stenosis (pain maps), UK"
+      }
+    ]
   }
 ]

@@ -29,6 +29,8 @@ describe("case reports", () => {
     expect(s.top3All).toBeGreaterThanOrEqual(baseline.top3All);
     expect(s.top3Interview).toBeGreaterThanOrEqual(baseline.top3Interview);
     expect(s.logicTop3).toBeGreaterThanOrEqual(baseline.logicTop3);
+    expect(s.combinedTop1).toBeGreaterThanOrEqual(baseline.combinedTop1);
+    expect(s.combinedTop3).toBeGreaterThanOrEqual(baseline.combinedTop3);
     expect(s.outOfTerritory).toBeLessThanOrEqual(baseline.outOfTerritory);
   });
 });

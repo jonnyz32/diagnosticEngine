@@ -40,6 +40,23 @@ export interface LogicFit {
   // "Yes" answers this option doesn't explain: `logic` items of type "unexplained", and
   // studied findings whose "yes" is more common in other conditions.
   unexplained: Unexplained[];
+  // The published checklist judged as a whole by its rule (absent when the option has none).
+  checklist?: ChecklistResult;
+}
+
+/**
+ * A published checklist judged by its rule (`criteria.rule`): "met" (every rule the patient
+ * can check holds), "impossible" (an answer already rules it out), "open", or "pattern" (no
+ * rule: a pattern or list of risk factors). `counted` is what the best guess counts (verdict.ts):
+ * -1 if impossible; otherwise its met items, leaving out prerequisites until the checklist is
+ * met (so "aged 50 or older" alone counts for nothing) and items whose finding has study data
+ * for this option (already in the probability). A display rule, never a probability.
+ */
+export interface ChecklistResult {
+  status: "met" | "impossible" | "open" | "pattern";
+  met: number;
+  unmet: number;
+  counted: number;
 }
 
 interface Unexplained {
@@ -126,6 +143,50 @@ function collapseGroups(checks: LogicCheck[], applied: Set<string>): LogicCheck[
   return out;
 }
 
+type Criteria = NonNullable<Hypothesis["criteria"]>;
+type CriteriaItem = Criteria["items"][number];
+
+/** A checklist's status under its rule, given each item's verdict (also used by the results page). */
+export function checklistStatus(c: Criteria, verdict: (i: CriteriaItem) => Verdict): ChecklistResult["status"] {
+  const rule = c.rule;
+  if (!rule) return "pattern";
+  if (c.items.some((i) => i.required && verdict(i) === "against")) return "impossible";
+  const scoring = c.items.filter((i) => !i.required);
+  const requiredMet = c.items.filter((i) => i.required).every((i) => verdict(i) === "fit");
+  let reached: boolean;
+  let reachable: boolean;
+  if (rule.type === "all") {
+    reached = scoring.every((i) => verdict(i) === "fit");
+    reachable = !scoring.some((i) => verdict(i) === "against");
+  } else if (rule.type === "any") {
+    reached = scoring.some((i) => verdict(i) === "fit");
+    reachable = !scoring.every((i) => verdict(i) === "against");
+  } else if (rule.type === "atLeast") {
+    const pool = rule.of ? scoring.filter((i) => rule.of!.includes(i.id)) : scoring;
+    const yes = pool.filter((i) => verdict(i) === "fit").length;
+    reached = yes >= rule.n;
+    reachable = yes + pool.filter((i) => verdict(i) === "unknown").length >= rule.n;
+  } else {
+    const pts = (v: Verdict) => scoring.filter((i) => verdict(i) === v).reduce((t, i) => t + (i.points ?? 0), 0);
+    reached = pts("fit") >= rule.threshold;
+    reachable = pts("fit") + pts("unknown") + rule.clinicianPoints >= rule.threshold;
+  }
+  return !reachable ? "impossible" : reached && requiredMet ? "met" : "open";
+}
+
+export function checklistResult(db: EvidenceDb, h: Hypothesis, answers: Record<string, Answer>): ChecklistResult | undefined {
+  const c = h.criteria;
+  if (!c) return undefined;
+  const verdict = (i: CriteriaItem): Verdict => (i.linkedFinding ? verdictOf(answers[i.linkedFinding], i.matchIf) : "unknown");
+  const met = c.items.filter((i) => verdict(i) === "fit");
+  const unmet = c.items.filter((i) => verdict(i) === "against");
+  const status = checklistStatus(c, verdict);
+  const studied = (i: CriteriaItem) => i.linkedFinding !== undefined && db.findings.some((f) => f.id === i.linkedFinding && ownEvidence(f, h.id).length > 0);
+  const counted =
+    status === "impossible" ? -1 : met.filter((i) => !studied(i) && (status === "met" || status === "pattern" || !i.required)).length;
+  return { status, met: met.length, unmet: unmet.length, counted };
+}
+
 export function logicalFit(db: EvidenceDb, regions: Region[], answers: Record<string, Answer>): LogicFit[] {
   const applied = new Set(appliedFindings(db, answers).applied.map((f) => f.id));
   return db.hypotheses
@@ -142,6 +203,7 @@ export function logicalFit(db: EvidenceDb, regions: Region[], answers: Record<st
         uncovered: regions.filter((r) => !h.regions.includes(r)),
         unexplainedWeakness: unexplainedWeakness(db, answers, h.id),
         unexplained: notes,
+        checklist: checklistResult(db, h, answers),
       };
     })
     .sort((a, b) => b.fit - b.against - (a.fit - a.against) || a.against - b.against || b.fit - a.fit);

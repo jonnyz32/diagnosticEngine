@@ -51,6 +51,17 @@ export function checkIntegrity(db: EvidenceDb): { errors: string[]; warnings: st
     }
     for (const item of h.criteria?.items ?? []) if (item.sourceId) ref(`hypothesis ${h.id} criteria item ${item.id}`, item.sourceId);
     const findingIds = new Set(db.findings.map((f) => f.id));
+    const rule = h.criteria?.rule;
+    const itemIds = new Set((h.criteria?.items ?? []).map((i) => i.id));
+    if (rule?.type === "atLeast") {
+      for (const id of rule.of ?? []) if (!itemIds.has(id)) errors.push(`hypothesis ${h.id} criteria rule: unknown item "${id}"`);
+      if (rule.n > (rule.of?.length ?? itemIds.size)) errors.push(`hypothesis ${h.id} criteria rule: needs ${rule.n} of fewer items`);
+    }
+    if (rule?.type === "points") {
+      for (const i of h.criteria!.items) if (!i.required && i.points === undefined) errors.push(`hypothesis ${h.id} criteria item ${i.id}: a points rule needs points or required`);
+    } else {
+      for (const i of h.criteria?.items ?? []) if (i.points !== undefined) errors.push(`hypothesis ${h.id} criteria item ${i.id}: points without a points rule`);
+    }
     for (const item of h.criteria?.items ?? []) {
       if (item.linkedFinding && !findingIds.has(item.linkedFinding)) {
         errors.push(`hypothesis ${h.id} criteria item ${item.id}: unknown linkedFinding "${item.linkedFinding}"`);

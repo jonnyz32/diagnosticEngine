@@ -135,10 +135,28 @@ export const HypothesisSchema = z.object({
             // Item-level citation when it comes from a different source than the checklist as a whole.
             sourceId: z.string().optional(),
             locator: z.string().optional(),
+            // A prerequisite: the checklist can't be met without it, and on its own it counts for
+            // nothing in the best guess (PMR's "aged 50 or older").
+            required: z.boolean().optional(),
+            // Its points, for a `points` rule.
+            points: z.number().int().positive().optional(),
           }),
         )
         .min(1),
       clinicianOnly: z.array(z.string()).default([]),
+      // How the source says the checklist is met, taken from the cited source (verdict.ts and
+      // logic.ts `checklistResult`; display and best guess only, never a probability). Absent: a
+      // pattern or list of risk factors with no rule, so an unmet item says nothing.
+      // `atLeast.of`: the item ids the count is over (default: all). `points.clinicianPoints`:
+      // points only a clinician can add (e.g. blood tests), so the checklist stays open for them.
+      rule: z
+        .discriminatedUnion("type", [
+          z.object({ type: z.literal("all") }),
+          z.object({ type: z.literal("any") }),
+          z.object({ type: z.literal("atLeast"), n: z.number().int().positive(), of: z.array(z.string()).optional() }),
+          z.object({ type: z.literal("points"), threshold: z.number().int().positive(), clinicianPoints: z.number().int().nonnegative().default(0) }),
+        ])
+        .optional(),
     })
     .optional(),
   // Reasoning for the logical-fit view (src/engine/logic.ts), which sits beside the
@@ -224,20 +242,25 @@ export const FindingSchema = z.object({
   // "positive": a "no" answer is ignored like "unsure". Used when only the sensitivity is
   // unreliable (e.g. likely incorporation bias), so a negative result can't rule anything out.
   scoreOn: z.enum(["both", "positive"]).default("both"),
-  // Asked early whenever eligible, even if it won't move the probabilities much
-  // (e.g. it feeds checklists or the clinician summary).
+  // Eligible whenever its regions are marked. It no longer jumps the queue: like every question it
+  // is asked when it eliminates the most possibilities. One that feeds nothing scored or checked
+  // (context for the clinician summary, e.g. recent surgery) is asked at the end.
   alwaysAsk: z.boolean().default(false),
   // A positive answer means muscle weakness (used by the sensory-only nerve rule).
   motor: z.boolean().default(false),
-  // Asked once this hypothesis reaches `minP`, to gather the specific signs for it.
+  // Eligible only once this hypothesis reaches `minP` (a gate, not a place in the queue).
   followUp: z.object({ hypothesis: z.string(), minP: z.number().min(0).max(1) }).optional(),
-  // Asked straight after another finding received this answer (e.g. "which operation?").
+  // Eligible only after another finding received this answer. A context-only one ("which
+  // operation?") is asked straight after it; others compete by possibilities eliminated.
   askIf: z.object({ finding: z.string(), answer: z.enum(["yes", "no"]) }).optional(),
   // Logical implications only (not clinical associations): when `finding` got `answer`, this
   // question's answer is already known to be `implies`, so it is filled in instead of asked.
   impliedBy: z
     .array(z.object({ finding: z.string(), answer: z.enum(["yes", "no"]), implies: z.enum(["yes", "no"]) }))
     .default([]),
+  // Answered from the body map instead of asked: when any of these regions is marked, the answer
+  // is `implies` (e.g. "symptoms higher up than the foot?" is yes once the calf is marked).
+  impliedByRegions: z.object({ regions: z.array(RegionSchema).min(1), implies: z.enum(["yes", "no"]) }).optional(),
   // Empty evidence = information-only: the answer feeds checklists, the logical fit and the
   // clinician summary but never changes a probability. Such a finding must be a followUp, askIf,
   // alwaysAsk or profile question, or a check that a criteria or logic item links to (db.ts).

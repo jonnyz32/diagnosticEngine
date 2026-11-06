@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
-import { computePriors, evidenceTrail, OTHER, posterior, toSensSpec, unscorableHypotheses } from "../../src/engine/bayes";
+import { computePriors, evidenceTrail, OTHER, posterior, restrictToRegions, toSensSpec, unscorableHypotheses } from "../../src/engine/bayes";
 import { initialSession, reduce } from "../../src/engine/session";
-import { expectedInformationGain, impliedAnswers, nextFinding } from "../../src/engine/selection";
+import { expectedEliminated, expectedInformationGain, impliedAnswers, nextFinding } from "../../src/engine/selection";
 import { evidenceSummary } from "../../src/engine/summary";
 import { posteriorIntervals } from "../../src/engine/uncertainty";
 import { fixture } from "./fixture";
@@ -116,9 +116,16 @@ describe("selection", () => {
     if (!next.done) expect(["f2", "f3"]).not.toContain(next.finding.id);
   });
 
-  it("asks history questions before self-tests", () => {
-    const next = nextFinding(fixture, {}, ["buttock", "calf", "groin"]);
-    if (!next.done) expect(next.finding.kind).toBe("history");
+  it("asks the question expected to eliminate the most possibilities, whatever its kind", () => {
+    const regions = ["buttock", "calf", "groin"] as const;
+    const next = nextFinding(fixture, {}, [...regions]);
+    expect(next.done).toBe(false);
+    if (next.done) return;
+    const view = restrictToRegions(fixture, [...regions]);
+    const gains = view.findings
+      .filter((f) => f.gateRegions.length === 0 || f.gateRegions.some((r) => (regions as readonly string[]).includes(r)))
+      .map((f) => expectedEliminated(view, {}, [...regions], f));
+    expect(next.gain).toBeCloseTo(Math.max(...gains), 9);
   });
 });
 

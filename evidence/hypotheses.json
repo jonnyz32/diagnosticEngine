@@ -83,6 +83,11 @@
         "finding": "p_flexion_worse",
         "type": "supports",
         "reason": "Bending forward raises the pressure in the disc and pulls on the lower roots (the same stretch as the straight-leg raise), so a root pressed by a disc is often worse with it."
+      },
+      {
+        "finding": "h_symptoms_above_foot",
+        "type": "usual",
+        "reason": "Pain from a pressed lower-back nerve root usually runs down from the back or buttock along the leg; symptoms in the foot alone, with nothing higher up, would be unusual."
       }
     ]
   },
@@ -117,7 +122,13 @@
       "sourceId": "suri2010",
       "locator": "Abstract; Table 1"
     },
-    "logic": []
+    "logic": [
+      {
+        "finding": "h_symptoms_above_foot",
+        "type": "usual",
+        "reason": "A narrowed spinal canal usually brings on symptoms in the buttocks, thighs or whole legs on walking or standing; symptoms in the foot alone don't fit that pattern."
+      }
+    ]
   },
   {
     "id": "deep_gluteal",
@@ -379,7 +390,10 @@
         "No objective numbness on examination",
         "Pain relief after a diagnostic pudendal nerve block",
         "No imaging abnormality that explains the pain"
-      ]
+      ],
+      "rule": {
+        "type": "all"
+      }
     },
     "mechanism": {
       "text": "The nerve is trapped along its course through the pelvis: below the piriformis, between the sacrospinous and sacrotuberous ligaments, in Alcock's canal, or at its end branches.",
@@ -958,6 +972,13 @@
         "sourceId": "lin2025",
         "locator": "Abstract, Conclusions"
       }
+    ],
+    "logic": [
+      {
+        "finding": "h_symptoms_above_hand",
+        "type": "usual",
+        "reason": "A pressed neck nerve root usually causes pain in the neck, shoulder blade or arm as well; symptoms in the hand alone, with nothing higher up, would be unusual."
+      }
     ]
   },
   {
@@ -978,6 +999,16 @@
       }
     ],
     "logic": [
+      {
+        "finding": "h_hand_flick",
+        "type": "supports",
+        "reason": "Shaking or flicking the hand moves the wrist out of the bent position that squeezes the nerve and restores blood flow to it, so the numbness eases (the 'flick sign')."
+      },
+      {
+        "finding": "p_night_rest",
+        "type": "supports",
+        "reason": "Wrists curl up during sleep, which raises the pressure in the carpal tunnel, so the hand often wakes the person numb or tingling. Other causes can wake people too, so a 'yes' fits without counting against anything else."
+      },
       {
         "finding": "h_arm_numbness",
         "type": "usual",
@@ -1121,6 +1152,13 @@
         "sourceId": "li2021",
         "locator": "Epidemiology"
       }
+    ],
+    "logic": [
+      {
+        "finding": "h_symptoms_above_hand",
+        "type": "usual",
+        "reason": "Compression at the thoracic outlet usually causes symptoms through the arm, often with neck or shoulder pain, rather than in the hand alone."
+      }
     ]
   },
   {
@@ -1238,6 +1276,11 @@
         "reason": "Winging of the shoulder blade is the tell-tale sign for most physicians, present in about two-thirds of patients.",
         "sourceId": "vanalfen2007",
         "locator": "Introduction"
+      },
+      {
+        "finding": "h_symptoms_above_hand",
+        "type": "usual",
+        "reason": "It typically begins with severe pain around the shoulder and upper arm, so symptoms in the hand alone don't fit."
       }
     ]
   },
@@ -1327,7 +1370,10 @@
       "clinicianOnly": [
         "Mill's test (clinician stretches the wrist extensors with the elbow straight)",
         "Resisted middle-finger extension"
-      ]
+      ],
+      "rule": {
+        "type": "all"
+      }
     }
   },
   {
@@ -1468,6 +1514,11 @@
         "finding": "h_thumb_base_pinch",
         "type": "usual",
         "reason": "Pinching and gripping load the worn joint at the base of the thumb."
+      },
+      {
+        "finding": "h_thumb_base_bump",
+        "type": "supports",
+        "reason": "Bone spurs and a partly slipped joint enlarge the thumb base (the 'squared-off' look), and worn joint surfaces grind. Early arthritis may show neither, so a 'no' doesn't count against it."
       },
       {
         "finding": "h_arm_numbness",
@@ -1650,6 +1701,11 @@
         "reason": "Deep hip bending brings the ball and socket rim into contact, which is the typical trigger."
       },
       {
+        "finding": "h_hip_catch",
+        "type": "supports",
+        "reason": "A torn or pinched cartilage rim (labrum) inside the joint can catch as the ball turns in the socket, giving a painful click or brief lock. A snapping tendon at the front of the hip is a different, usually painless clunk."
+      },
+      {
         "finding": "h_leg_numbness",
         "type": "unexplained",
         "reason": "A tendon, joint or disc problem without a trapped nerve causes pain, not numbness or pins and needles; those point to a nerve."
@@ -1697,7 +1753,10 @@
           "linkedFinding": "st_adductor_squeeze_self"
         }
       ],
-      "clinicianOnly": []
+      "clinicianOnly": [],
+      "rule": {
+        "type": "all"
+      }
     },
     "context": [
       {
@@ -1753,6 +1812,11 @@
         "finding": "h_shoulder_stiff",
         "type": "usual",
         "reason": "A worn joint loses movement in several directions, even when someone else moves the arm."
+      },
+      {
+        "finding": "h_age_60",
+        "type": "usual",
+        "reason": "Wear of the main shoulder joint builds up over decades, so it mostly affects people over 60; a stiff shoulder in someone younger is more often a frozen shoulder."
       },
       {
         "finding": "h_arm_numbness",
@@ -2736,7 +2800,10 @@
           "linkedFinding": "h_knee_morning_stiff_short"
         }
       ],
-      "clinicianOnly": []
+      "clinicianOnly": [],
+      "rule": {
+        "type": "all"
+      }
     },
     "logic": [
       {
@@ -3093,7 +3160,10 @@
           "linkedFinding": "st_ottawa_bone_self"
         }
       ],
-      "clinicianOnly": []
+      "clinicianOnly": [],
+      "rule": {
+        "type": "any"
+      }
     },
     "logic": [
       {
@@ -3404,7 +3474,10 @@
       ],
       "clinicianOnly": [
         "Not better accounted for by another diagnosis (examination and usually an MRI)"
-      ]
+      ],
+      "rule": {
+        "type": "all"
+      }
     }
   },
   {
@@ -3456,7 +3529,16 @@
       "clinicianOnly": [
         "Pain eased temporarily by a local anaesthetic block of the nerve",
         "Not better accounted for by another diagnosis"
-      ]
+      ],
+      "rule": {
+        "type": "atLeast",
+        "n": 2,
+        "of": [
+          "on_brief",
+          "on_severe",
+          "on_quality"
+        ]
+      }
     }
   },
   {
@@ -3505,7 +3587,11 @@
       "clinicianOnly": [
         "Clinical or imaging evidence of a neck disorder known to cause headache",
         "Headache abolished by a diagnostic block of a neck structure or its nerve"
-      ]
+      ],
+      "rule": {
+        "type": "atLeast",
+        "n": 2
+      }
     }
   },
   {
@@ -4533,37 +4619,47 @@
           "id": "pmr_age",
           "prompt": "Aged 50 or older (required)",
           "matchIf": "yes",
-          "linkedFinding": "h_age_50"
+          "linkedFinding": "h_age_50",
+          "required": true
         },
         {
           "id": "pmr_shoulders",
           "prompt": "Aching in both shoulders (required)",
           "matchIf": "yes",
-          "linkedFinding": "h_both_shoulders_ache"
+          "linkedFinding": "h_both_shoulders_ache",
+          "required": true
         },
         {
           "id": "pmr_stiffness",
           "prompt": "Morning stiffness lasting more than 45 minutes (2 points)",
           "matchIf": "yes",
-          "linkedFinding": "h_morning_stiff_45"
+          "linkedFinding": "h_morning_stiff_45",
+          "points": 2
         },
         {
           "id": "pmr_hip",
           "prompt": "Hip pain or limited hip movement (1 point)",
           "matchIf": "yes",
-          "linkedFinding": "h_hip_pain_too"
+          "linkedFinding": "h_hip_pain_too",
+          "points": 1
         },
         {
           "id": "pmr_no_other_joints",
           "prompt": "No pain in other joints (1 point)",
           "matchIf": "no",
-          "linkedFinding": "h_other_joints_pain"
+          "linkedFinding": "h_other_joints_pain",
+          "points": 1
         }
       ],
       "clinicianOnly": [
         "Raised CRP and/or ESR (blood tests; required)",
         "Rheumatoid factor and ACPA both negative (blood tests; 2 points)"
-      ]
+      ],
+      "rule": {
+        "type": "points",
+        "threshold": 4,
+        "clinicianPoints": 2
+      }
     },
     "logic": [
       {

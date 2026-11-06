@@ -1796,5 +1796,16 @@
     "population": "73 patients with fibromyalgia (Montreal, Canada)",
     "notes": "Abstract (Background) describes the content of the patient-administered survey criteria. Reliability only: no comparison group, so nothing is used for a probability.",
     "verifiedOn": "2026-11-04"
+  },
+  {
+    "id": "khan2004",
+    "citation": "Khan AM, McLoughlin E, Giannakas K, Hutchinson C, Andrew JG. Hip osteoarthritis: where is the pain? Ann R Coll Surg Engl. 2004;86(2):119-121.",
+    "pmid": "15005931",
+    "doi": "10.1308/003588404322827518",
+    "design": "Audit: two separately selected groups (two-gate), patient-drawn pain maps",
+    "population": "51 patients on a waiting list for primary hip replacement for osteoarthritis (questionnaire responders of 60 randomly selected) vs patients who had undergone decompression for confirmed lumbar spinal stenosis (pain maps from clinical records), Salford, UK",
+    "referenceStandard": "Listed for hip arthroplasty for osteoarthritis, or operated for confirmed spinal stenosis",
+    "notes": "Full text PDF supplied by the user (PMC1964166, PDF only). Table 1 percentages fit 51 hip and 54 stenosis patients with truncation (groin 43/51, 38/54), though the text says all 60 stenosis patients responded; the posterior-thigh row fits neither and was not used. Other reporting slips: 32 women + 29 men among 51; Kellgren-Lawrence mean 12.4 on an unstated scale. Two-gate design with surgical candidates and a retrospective comparison group, so accuracy is probably overstated: low certainty. Only the groin row is used: the authors conclude groin pain is the only location that separates the two (Discussion), and buttock or calf rows would apply a stenosis-only comparison rate to every other condition in those areas.",
+    "verifiedOn": "2026-11-06"
   }
 ]

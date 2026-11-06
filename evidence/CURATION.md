@@ -19,8 +19,7 @@ Rule: **cite or exclude.** Every number in this folder has to trace to a PubMed-
   - Studies with non-overlapping CIs get a validator warning and a "studies disagree" badge in the UI.
   - Pool only studies that ask the same question in a comparable population. A study with a very different comparison group (e.g. Konno 2007's much younger disc patients) belongs in the log, not the pool.
 - **Dependence groups.** Only the strongest answered finding in each group counts:
-  - `posture_sitting`: no pain sitting / better sitting / worse standing
-  - `flexion_walking`: claudication / bending forward
+  - `flexion_walking`: claudication / bending forward / easing on standing still / no pain sitting / better sitting / worse standing (the posture items were a separate `posture_sitting` group until 2026-11-06; merged, see "Stenosis posture items merged")
   - `lfcn_provocation`: pelvic compression / Tinel
 - **Territory gate.** A hypothesis is considered only if the patient marked one of its `regions`. This is anatomical, deterministic, and never a probability.
 - **Red flags.** Removed from the app on 2026-11-03 (user decision): no emergency screen and no stop. The data in `redflags.json` is kept and validated, unused. When it was in use it was a deterministic stop, never scored; Dionne 2019 found pooled sensitivity of only 0.19–0.43.
@@ -1027,3 +1026,147 @@ Everything else is uncited reasoning (`usual`/`supports` with a `reason`), label
 **Worth getting:** Rudwaleit 2006, Perrot 2010 (FiRST), Janssens 2010 (Netherlands gout rule), Vandeputte 2025 full text (open), Walsworth 2008 (labral tear history and exam).
 
 **DOI audit.** `npm run audit-sources`: all 175 DOIs match their PMIDs.
+
+
+## Question order: eliminate the most possibilities (user request, 2026-11-06)
+
+The user asked that every next question be the one that eliminates the most possibilities, as "is it a man?" halves the field in Guess Who. No evidence value changed; this is engineering in `selection.ts` only, and it never feeds a probability.
+
+- **Before:** `alwaysAsk`/`askIf` questions first in file order, then `followUp`s, then the highest information gain over the probabilities only (history before self-tests), then logic and criteria checks for unscored options and pain descriptions in file order.
+- **Now:** one score for every question, `expectedEliminated`: the expected drop in the entropy (bits) of the possibilities still in play. Scored options keep their probability; "other" is split between the unscored options and a residual "not covered" share; options the logical fit has ruled out are dropped; each share is weighted ×2 per criteria or reasoning check that fits and ÷2 per one against (studied findings already moved the probability). For a question without study data, the chance of "yes" comes from the options in play (0.8 where a check expects "yes", 0.2 where it expects "no", 0.5 otherwise). `askIf`/`followUp` became gates, a context-only `askIf` detail follows its trigger, and context-only `alwaysAsk` questions (recent surgery) come at the end. All are engineering constants.
+- **First attempt rejected:** counting possibilities directly (effective number of scored options plus a head-count of unscored ones). It mixed units, could rise after an answer, and stopped too early (dev interview top-3 fell 18 → 17).
+- **Results** (`eval-cases`; holdout aggregate only, run once on the final version): dev interview top-3 18 → 19 of 23 (now equal to all-facts top-3); dev mean interview length 39.7 → 27.1 questions (max 70 → 42); holdout interview top-3 8/12 before and after. Logical-fit top-3 from interview answers only (not a reported metric) 30 → 29 of 46. `cases/baseline.json` top3Interview raised to 19. The logicTop3 floor (32) was already failing at 31 before this change and is untouched.
+- Tests that pinned the old order (always-ask first, history before self-tests, pain description last) now check the new rule instead.
+
+
+## Body-map screens: symptoms higher up than the foot or hand (user request, 2026-11-06)
+
+The user reported that marking only the foot brought many unrelated leg questions. Cause: with uniform priors, the lower-back root (`root_low`) and stenosis started level with the foot options, so the picker spent about half the interview on back and leg questions (bending forward, walking, both legs, straight-leg raise). No evidence value changed.
+
+- **New information-only questions,** gated to the foot/ankle or hand/wrist: `h_symptoms_above_foot` ("Besides your foot or ankle, do you also have pain, numbness or tingling anywhere higher up...?") and `h_symptoms_above_hand`. New schema field `impliedByRegions`: the answer is filled in as "yes" (shown as "follows from the areas you marked") when a higher area is marked, so only patients who marked just the foot or hand are asked.
+- **New uncited `usual` logic items** (reasoning, labelled as such): `root_low` and `stenosis` on `h_symptoms_above_foot`; `root_cervical`, `tos` and `neuralgic_amyotrophy` on `h_symptoms_above_hand`. A "no" counts against them in the logical fit; it never changes a probability.
+- **Selection:** a body-map follow-up is asked before any clinical question (it completes where the symptoms are; on information alone it tied with the stenosis questions). `isRuledOut` now also covers studied questions: a question is skipped once every option it bears on (logical-fit checks plus the options its studies measured) is ruled out, like not asking about an eliminated suspect in Guess Who.
+- **Effect:** forefoot-only patient answering "no": back/leg questions 11 → 0, scored questions 21 → 10. Heel-only: 6 questions. Hand-only: the neck tests drop out.
+- **Results** (`eval-cases`; holdout aggregate only, run once on the final version): dev interview top-3 19/23 unchanged, logical-fit top-3 31 → 32 of 46 (back at the baseline floor); holdout interview top-3 8/12 unchanged, logical-fit top-3 15 → 16 of 21. Dev mean interview length 27.1.
+- **Note:** the probability shown for `root_low`/`stenosis` isn't lowered by a "no" (that would need a cited number). Their logical fit shows the "against", and their questions are no longer asked.
+
+
+## Plantar fasciitis lost to stenosis on heel pain (user report, 2026-11-06)
+
+The user answered every question the plantar-fasciitis way and still got lumbar spinal stenosis as the best guess. No evidence value changed.
+
+- **Cause 1, the only studied sign wasn't asked.** For heel pain, plantar fasciitis has one scored finding, the windlass test (sens 0.318, spec 1). After the body-map screen ruled out the spine options, its expected entropy drop came out negative (−0.04): the possibilities dropped ruled-out options while their probability stayed, so a likely "no" looked like it added uncertainty. **Fix:** a question's value is now the expected KL divergence of the possibilities after the answer from now, which is never negative and equals the entropy drop for a consistent update (Guess Who halving still scores 1 bit). Ruled-out options now keep 5% of their share instead of vanishing, so an answer that brings one back is a finite change.
+- **Cause 2, the best guess ignored the logical fit.** With only "worst on first steps" (logic) and the screen (logic) in favour, stenosis, the back root and plantar fasciitis sat at about 26% each, and the headline named all three, stenosis first. **Fix in `verdict.ts`** (display only, no probability changes): when the top options are within the 2× ratio, options the logical fit rules out are set aside; if one is left it is named (`tiebreak`) with a note on why the others were set aside. "Closest listed option" under "not covered" skips ruled-out options. A clear probability leader is unchanged and keeps the "logical fit disagrees" note.
+- **Checklist questions restored.** The KL change left some obturator checklist questions below the cut-off once the option looked settled. Per the 2026-11-04 user decision, remaining published-checklist questions for an unscored option in play are asked once nothing else eliminates enough.
+- **Outcome on the user's scenario** (heel, screen "no", first steps "yes", numbness "no"): windlass yes → plantar fasciitis leading at 96%; windlass unsure → plantar fasciitis named, stenosis and back root set aside; windlass no → "not covered" (32%) ahead, with plantar fasciitis as the closest listed option. That last one is what the data supports: a negative windlass lowers it and no other question has study data for it.
+- **Results** (`eval-cases`; holdout aggregate only, run once on the final version): dev interview top-3 19/23 and logical-fit 32/46, both unchanged; holdout 8/12 and 16/21, unchanged. Dev mean interview length 27.1 → 30.2 (max 55), mostly from the restored checklist questions.
+- **Known gap:** plantar fasciitis needs more studied signs (first-step pain, tenderness at the inner heel). Worth a `mine-literature` pass.
+
+## Ten described patients (user request, 2026-11-06)
+
+The user supplied ten plain-language patient descriptions (sciatica, frozen shoulder, kneecap pain, tennis elbow, hip OA, carpal tunnel, ankle sprain, plantar fasciitis, rheumatoid-pattern arthritis, thumb-base OA). They are in `tests/vignettes/patients.test.ts`: full interview, answers only from what the description states, "unsure" otherwise. Before the changes, 2 of 10 best guesses named the expected option. After them, 9 of 10 do. No accuracy value changed.
+
+- **`alwaysAsk` was ignored for logical-fit checks.** The end-of-interview rescue only took context-only questions, so tennis elbow's gripping question (`h_grip_lateral_elbow`, cited `usual` item, ihm2008) was never asked: one unscored option among many never clears 0.03 bits. **Fix:** `alwaysAsk` questions without study data come at the end, checks included.
+- **Rheumatoid-pattern questions were unreachable.** `h_many_joints_swollen` waited for "yes" to `h_many_places_both_sides` ("apart from the areas you marked…"), which was never asked, and which a patient with the same joints affected on both hands would answer "no". **Fix:** `h_many_joints_swollen` is now `alwaysAsk` with no `askIf`, and `h_morning_stiff_long` (still after a "yes" to it) is `alwaysAsk`. `h_ankle_rolled_in` (sprain `usual` item) is `alwaysAsk` after an ankle injury.
+- **The best guess ignored options without study data.** Tennis elbow, ankle sprain and inflammatory arthritis have no probability, so the headline named the scored options (neck root, stenosis, De Quervain's...) at their uniform starting value. **Fix in `verdict.ts`** (display only): when probability can't separate the options (close, or "other" ahead), the option with strictly more net logical fit than every other is named (`logic-lead`), whether it is a close scored option or one without study data. A clear (×2) probability lead stands; a scored option far behind isn't promoted; a logical-fit tie names nobody. The existing `tiebreak` keeps precedence unless the leader is unscored.
+- **Thin logical fit, so ties.** Frozen shoulder vs shoulder OA, carpal tunnel vs non-specific arm pain, and thumb-base OA vs non-specific arm pain each had one check apiece. Added uncited reasoning (labelled as such in the UI; no probability):
+  - `cts`: `supports` `h_hand_flick` (new: shaking/flicking eases the numbness, asked after `h_arm_numbness` yes) and `supports` `p_night_rest`.
+  - `thumb_cmc_oa`: `supports` `h_thumb_base_bump` (new: squared-off bony bump or grinding at the thumb base, asked after `h_thumb_base_pinch` yes).
+  - `shoulder_oa`: `usual` `h_age_60` (new, shoulder regions; implied by `h_age_over_65` yes, `h_age_50` no, `h_age_45` no).
+- **Not fixed, Arthur (hip OA → stenosis 63%).** Age over 65, worse standing and walking eased by sitting are cited stenosis findings (Suri 2010). His hip clues (groin pain, socks and low car seats, morning stiffness under 30 minutes) have no accuracy data. Checked and rejected: Metcalfe 2019 Tables 1–2 (no matching row), and Brown 2004 (PMID 15021166, "seven times more likely" for limp/groin pain, no CIs or sens/spec). Kept as an `it.fails` test. A hip-vs-spine study reporting sens/spec for groin pain or pain putting on socks would close it.
+- **Results** (`eval-cases`; holdout aggregate only, run once on the final version): dev interview top-3 19/23 and logical-fit 32/46, unchanged; holdout 8/12 and 16/21, unchanged. Dev mean interview length 30.2 → 33.0 (max 58), from the end-of-interview checks.
+
+## Groin pain separates hip OA from spinal stenosis: Khan 2004 (user-supplied PDF, 2026-11-06)
+
+Follow-up to the Arthur gap above. Searched Europe PMC for hip-vs-spine accuracy data. Full text supplied by the user (`hip-osteoarthritis.pdf`; PMC holds it as PDF only, which can't be fetched automatically).
+
+- **Added `khan2004`** (PMID 15005931): 51 patients awaiting hip replacement for OA vs patients operated for confirmed lumbar spinal stenosis, patient-drawn pain maps. **`h_groin_pain`** scored for `hip_oa`: sens 0.843 (43/51), spec 0.703 (38/54), Wilson CIs from the counts. Table 1; Results.
+- **Counts reconstructed.** Table 1 fits 51 hip and 54 stenosis patients with truncated percentages, though the text says all 60 stenosis patients responded. The posterior-thigh row fits neither (not used). Other slips: 32 + 29 = 61 hip patients; Kellgren-Lawrence mean 12.4. Two-gate audit of surgical candidates with a retrospective comparison group: **low certainty, probably overstated.**
+- **Only the groin row.** The authors conclude groin pain is the only location that separates the two (Discussion). Buttock and calf were also significant, but as findings they would apply this study's stenosis-only comparison rate to every other buttock or calf condition (deep gluteal, SIJ, calf strain...), where the rate is unrelated.
+- **Body map.** Filled in "yes" when the groin is marked (`impliedByRegions`); otherwise asked, gated to the hip OA regions. **Selection change:** only body-map screens without study data jump the queue; a studied location question competes by possibilities eliminated like any other.
+- **Checked and rejected:** Kim 2015 BMJ (PMID 26631296; groin pain vs radiographic OA in community cohorts, not people presenting with pain, so the comparison group doesn't match); Metcalfe 2019 "morning stiffness <60 min" (range across two studies, no pooled CI); Sutlive 2008 (paywalled, mostly examiner tests); Birrell 2001 (range of movement, examiner); Lesher 2008 (frequency only); Brown 2004 (no CIs or sens/spec); the 2026 "Athena sign" review (PMID 42650919; narrative, no accuracy data, examiner-only).
+- **Effect on Arthur:** hip OA 8% → 21%, stenosis 63% → 55%; still a clear stenosis lead, so the test stays `it.fails`. The remaining lever is a modelling choice, not evidence: the stenosis posture items (worse standing, better/no pain seated) are scored as independent of walking claudication.
+- **Tests:** the obturator vignette (all answers "yes") now reaches hip OA at 93% before the inner-thigh question; it asserts the obturator checklist is asked instead.
+- **Results** (`eval-cases`; holdout aggregate only, run once): dev top-1 13 → 14/23 (baseline raised), top-3 19/23, interview top-3 19/23, logical-fit 32/46; holdout 6/12, 8/12, 8/12, 16/21, unchanged. Dev mean interview length 33.0 → 33.4.
+
+## Stenosis posture items merged into one dependence group (user decision, 2026-11-06)
+
+- **Change:** `h_worse_standing`, `h_improve_seated` and `h_no_pain_seated` move from `posture_sitting` into `flexion_walking` with claudication, bending forward and easing on standing still. Only the strongest answered item now counts.
+- **Why:** they describe the same mechanism (extension narrows the canal, flexion and sitting open it), so a patient with neurogenic claudication will usually say yes to all of them. Counting walking claudication and the posture items separately treated one observation as two pieces of evidence (Suri 2010 reports each item alone, not jointly).
+- **Effect on Arthur:** stenosis 55% → 35%, hip OA 21% → 30%. That's within the 2× ratio, and the logical fit (hip OA +2/−0 vs stenosis +2/−1) names hip OA, so his test passes and is no longer `it.fails`.
+- **Results** (`eval-cases`; holdout aggregate only, run once): dev top-1 14/23, top-3 19/23, interview top-3 19/23, logical-fit 32/46; holdout 6/12, 8/12, 8/12, 16/21. All unchanged.
+
+## Overall ranking: one judgement across probability and logical fit (user request, 2026-11-06)
+
+Display only: no probability, logical fit or evidence value changes.
+
+- **Rule (`judgementRanking`, verdict.ts):** options in probability bands, a new band wherever the next option is less than half as likely as the band's top. A clear leader (×2, and ahead of "not covered") stands alone. Within a band the logical fit (fit − against) orders them, then options with a probability, then probability. Options without study data join the first band probability can't settle if they fit more than count against them; the rest come last, ordered by logical fit.
+- **Consistency with the best guess.** A property test (2000 random cases) checks that the ranking's first entry is always the option the best guess names. It found two disagreements, both fixed in `bestGuess`:
+  - the logical-fit leader is now chosen only among the options probability can't separate (close scored options and options without study data), so a scored option far behind can neither be promoted nor block one;
+  - the tie-break (only one close option not ruled out) no longer applies when an option without study data fits better; a "close" verdict now lists the top of the ranking, which can include such options.
+- **UI:** an "Overall ranking" card under the best guess (top two bands, at most 6 options; all with "Show all options"), each band labelled with why it is ordered as it is. It is described as an order, not a probability.
+- **Results:** the ten described patients and the case-report metrics are unchanged (dev 14/23 top-1, 19/23 top-3; holdout unchanged).
+
+
+## Second set of ten described patients (user request, 2026-11-06)
+
+Ten more plain-language descriptions (stenosis, De Quervain's, axial SpA, outer hip tendon, hip impingement, cubital tunnel, Achilles tendinopathy, PMR, MCL sprain, and a suspected spinal metastasis that no option covers), run as before, then rerun with the patients' answers to follow-up questions, self-tests included. Before the changes 3 of the 9 coverable patients were named; with the follow-up answers 5; after the changes 6 (Victor, Hannah, Devon, Grace, Nora, Trevor, now in `tests/vignettes/patients.test.ts`). No accuracy value changed.
+
+- **Options without study data were never asked about.** In the steering view they share the single "other" slot, so among the 25 low-back/buttock options a check on one of them scores well under 0.03 bits (axial SpA's four questions, 0.001–0.006). **Fix (user decision):** once no question clears the threshold, and while the question budget lasts, the `usual`/`supports` logical-fit checks of unscored options still in play are asked, most possibilities eliminated first, after the published checklists and before stress clues (`nextAfterScored`). Tried and rejected: giving each unscored option a full "other" share in `possibilities` (gained the MCL case, lost Arthur and Chloe, and still didn't reach axial SpA).
+- **A gated checklist was unreachable past the budget.** PMR's checklist opens on `h_many_places_both_sides`, which counted against the budget. The question that opens an unanswered checklist item of an in-play unscored option now counts as part of the checklist.
+- **`h_many_places_both_sides` reworded.** "Apart from the areas you marked, do you also have pain… in several other places on both sides?" made a patient who had marked every painful area answer "no", which ruled out PMR, inflammatory arthritis and fibromyalgia (all `usual` items) and closed their questions. Now: "Do you have pain, stiffness or swelling in several places on both sides of your body, for example both hands, both shoulders or both hips? Count the areas you marked." Chloe's answer in the first set changes to "yes" to match.
+- **Not fixed:**
+  - *Evelyn (PMR).* The checklist is now asked and fully met (+6 fit, 0 against), but hip OA leads on probability (12% vs 6%) from groin pain filled in by the body map, and a ×2 lead stands. Needs accuracy data for PMR, or a change to the verdict rule.
+  - *Justin (MCL).* Meniscus leads (43%) on weight-bearing injury, squat and stairs; the collateral ligament has no study data. "Knee forced sideways" is now asked and fits (+2 fit, 0 against, level with meniscus), but the ×2 probability lead stands.
+  - *Caleb (hip impingement).* Close call: sacroiliac joint / hip impingement / pubic bone stress. Missing: an age finding for hip OA, a hip clicking/catching question.
+  - *Mireille (suspected metastasis).* Named a neck nerve root by tiebreak with no check fitting, "other" level with it. No safety notice for the mid-back.
+- **Literature (targeted Europe PMC searches, same day).**
+  - *MCL, worth getting:* Kastelein 2008 (PMID 18954845, 10.1016/j.amjmed.2008.05.041, paywalled). 134 adults with a traumatic knee injury in Dutch general practice, MRI reference, 35 MCL lesions. "Trauma by external force to leg" and "rotational trauma" were associated with MCL lesions; the abstract is cut off before the values. It comes from the same cohort as Wagemakers 2008 (meniscus, PMID 18185035, already listed above), so both could be scored in one population.
+  - *PMR, nothing new:* hits are imaging, laboratory markers, GCA and EORA-versus-PMR (Hysa 2026, PMID 42858918: discriminating values need serology or ultrasound). Nielsen 2023 (PMID 37639896, systematic review of referral strategies) found no clinical strategy with consistently high accuracy. Dasgupta 2012 stays a checklist: its score requires CRP/ESR.
+- **Results** (`eval-cases`; holdout aggregate only, run once on the final version): dev top-3 19/23 and logical-fit 32/46, unchanged; holdout 8/12 and 16/21, unchanged. Dev mean interview length 33.4 → 37.9 (max 61), from the extra checks.
+
+## Best guess combines probability and logical fit (user decision, 2026-11-06)
+
+Display only: no probability, logical fit or evidence value changes, and nothing feeds `bayes.ts`.
+
+- **Rule (`verdict.ts`).** Combined score = probability × 2 per uncited/criteria logical-fit check that fits, ÷ 2 per one against. Studied checks are left out because they already moved the probability. An option without study data starts at the probability of "other": in `bayes.ts` every finding gives it the background rate, as for "other", so that is its probability if it were listed on its own. "Not covered" also starts there, with no checks. Options within ×2 of a band's best share a band, ordered by net logical fit. Best guess: "not covered" when it is within ×2 of the best listed option; otherwise the top-band option if it stands alone or fits strictly more than the rest; otherwise a close call. The `tiebreak` and `logic-only` verdicts are gone (both are special cases of this rule).
+- **Choices.** On the twenty described patients, splitting "other" between the options without data (as the question picker does) named the right option in 11–15 of 20; starting each at "other" named it in 18. Factors 2, 3 and 4 gave the same result; 2 matches the question picker's `CHECK_WEIGHT`.
+- **Results.** Described patients: 19 of 20 (Evelyn, Justin and Mireille now right; Caleb a close call with hip impingement first), against 16 under the previous rule. New `eval-cases` metric: overall-ranking top-1/top-3 after the interview, over cases in territory. Dev: 26/46 and 35/46, against 21 and 33 under the previous rule (recomputed in a scratch script); now in `cases/baseline.json`. Dev cases that fell: two LFCN cases (1 → 3, 6 → 13) and one deep gluteal case (11 → 23). Holdout aggregate, reported once: 10/21 and 13/21 (no earlier value for this metric). Probability and logical-fit metrics unchanged.
+
+### Unmet checklist items don't count against in the best guess (same day)
+
+Traced the three dev cases that fell under the combined rule (dev only).
+- **Both LFCN cases.** "No" to tight clothing, an item on meralgia's checklist (a list of risk factors, "not scored"), counted against and halved meralgia's score. In one case that took it from a 43% probability lead to third, behind stenosis and behind PMR (doubled by its "aged 50 or older" prerequisite alone). Checklists differ: all items required (tennis elbow, adductor, knee OA), any one (Ottawa), at least k (ICHD-3 headaches), point scores (Michel, PMR), risk-factor lists (meralgia). Only the title says which. **Fix (`verdict.ts` only):** an unmet checklist item doesn't count against in the combined score, the ordering within a band or the set-aside rule; a met item still counts. The logical-fit view still shows the item as unmet. LFCN cases: 3 → 1 and 13 → 2.
+- **Deep gluteal (11 → 23), not changed.** The positive straight-leg raise lowers its probability to 4%, below the untested options' starting value; the old rank came from band ordering, not from evidence.
+- **Known weaknesses.** All-required checklists lose their "against" too; encoding each checklist's rule (all / any / at least k / points) and scoring it as a unit would fix both directions. Generic `supports` clues (e.g. "one spot sets off the pain" for back muscles) double a score like any other check.
+- **Results.** Twenty described patients unchanged (19 of 20). Dev combined top-1 26 → 27 of 46, top-3 35 (baseline raised). Holdout aggregate, once: combined top-1 10/21, top-3 13/21, unchanged.
+
+### Checklist rules: each published checklist judged as a whole (user request, same day)
+
+New optional `criteria.rule` (`all` / `any` / `atLeast` n [of items] / `points` threshold [+ clinician-only points]) and item fields `required` and `points`, validated in `db.ts`. Display and best guess only, never a probability. Each rule comes from what the checklist's cited source already says (title, item wording or locator); nothing was added from memory.
+
+| Option | Rule | Basis (already cited) |
+|---|---|---|
+| `lateral_epicondylalgia` | all | ihm2008: "all three should be present" |
+| `adductor_groin` | all | weir2015 (Doha): "both required" |
+| `knee_oa` | all | king2025 (NICE): "all three" |
+| `pudendal` | all | labat2008 (Nantes): essential criteria and exclusion criteria, each must hold |
+| `trigeminal` | all | ICHD-3 13.1, criteria A–C, each required |
+| `ankle_fracture` | any | makiev2025 (Ottawa): "X-ray advised if any one applies" |
+| `occipital_neuralgia` | at least 2 of brief / severe / quality | ICHD-3 13.4: "at least two of the first three" |
+| `cervicogenic_headache` | at least 2 | ICHD-3 11.2.1: "at least two" |
+| `pmr` | age and both shoulders required; then 4 points (stiffness 2, hip 1, no other joints 1) with 2 more only a clinician can add (RF/ACPA) | dasgupta2012 Table 6, as extracted on 2026-11-04 |
+
+Left without a rule (unmet items say nothing): `lfcn` (risk factors, "not scored"), `morton` ("no cut-off defined"), `obturator`, `ilio_genito`, `pfcn` (case-series patterns), `cluneal` (the record doesn't state how many Kuniya criteria are needed) and `deep_gluteal` (Michel's per-item points aren't recorded; worth extracting from Michel 2013 Table 2).
+
+- **Best guess (`verdict.ts`).** A checklist counts once against if an answer rules it out; otherwise its met items count, prerequisites only once it is met, and items whose finding has study data for that option are left out (already in the probability). This restores the "against" of all-required checklists, and PMR's "aged 50 or older" alone no longer counts.
+- **Results page.** The checklist card now says whether, by the source's rule, it is met, can't be met, or is still open.
+- **Results.** Described patients: 19 of 20, unchanged (Caleb: close call, hip impingement first). Dev combined top-1 27/46, top-3 35/46, unchanged. Holdout aggregate unchanged.
+
+### Close calls get a clarifying question; hip catching question (user request, same day)
+
+Caleb (hip impingement) ended on a three-way close call with pubic bone stress and the obturator nerve, after the 30-question limit. The questions that separate them existed but were never reached.
+- **Close-call step (`selection.ts` `closeCallQuestion`, steering only).** When the interview would end on a close call, the open question bearing on the tied options (studied for one of them, or one of their logical-fit checks) that eliminates the most possibilities is asked, past the budget by up to `CLOSE_CALL_EXTRA` = 5 questions (an engineering constant). For Caleb it asks "Is the pain right over the pubic bone?" (`h_pubic_bone`, pubic bone stress `usual`); his "no" drops pubic bone stress.
+- **New finding `h_hip_catch`** ("a painful catch, click or brief locking deep inside the hip joint, for example as you get up from a low chair or pivot on that leg"), a `supports` check for `hip_fai`. **Uncited reasoning**, labelled so in the UI, no probability: a torn or pinched labrum can catch as the ball turns in the socket. It is distinct from `h_hip_snap` (iliopsoas: a usually painless tendon clunk at the front of the hip). Gated to hip impingement's regions. Caleb reported it ("occasional painful clicking or catching deep inside the hip joint when transitioning from sitting to standing").
+- **Not changed:** the obturator nerve's usual check ("worst pain on the inner thigh?") is gated to the inner thigh, which Caleb didn't mark, and its case-series pattern has no rule, so his two "no" answers to its pattern items don't count against it in the best guess.
+- **Results.** Caleb: hip impingement, clear leader; all twenty described patients now named correctly (Mireille: "not covered"), and Caleb is in `patients.test.ts`. Dev combined top-1 27 → 28 of 46 (baseline raised), top-3 35; mean interview 37.9 → 38.8 questions. Holdout aggregate unchanged.

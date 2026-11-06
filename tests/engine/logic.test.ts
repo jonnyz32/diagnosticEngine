@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { logicalFit } from "../../src/engine/logic";
-import { FindingSchema } from "../../src/engine/schema";
+import { checklistResult, logicalFit } from "../../src/engine/logic";
+import { FindingSchema, type Hypothesis } from "../../src/engine/schema";
 import { fixture } from "./fixture";
 
 const answers = { f1: "no", f2: "yes", f5: "yes", f6: "no" } as const;
@@ -87,5 +87,49 @@ describe("logical fit", () => {
     expect(of("C")).toMatchObject({ fit: 1, against: 0, unknown: 1 });
     expect(of("A")).toMatchObject({ fit: 0, against: 1, unknown: 1 });
     expect(fits.map((f) => f.id)).toEqual(["C", "B", "D", "A"]);
+  });
+});
+
+describe("published checklist judged by its rule", () => {
+  // a: met (f2 yes), b: not met (f1 no), c: unanswered (f4), d: met (f5 yes). Option Z has no
+  // study data, so every met item counts.
+  const items = [
+    { id: "a", prompt: "a", matchIf: "yes", linkedFinding: "f2" },
+    { id: "b", prompt: "b", matchIf: "yes", linkedFinding: "f1" },
+    { id: "c", prompt: "c", matchIf: "yes", linkedFinding: "f4" },
+    { id: "d", prompt: "d", matchIf: "yes", linkedFinding: "f5" },
+  ];
+  const result = (rule: unknown, extra: Record<string, object> = {}) =>
+    checklistResult(
+      fixture,
+      { id: "Z", criteria: { title: "t", sourceId: "s1", locator: "Table 1", clinicianOnly: [], rule, items: items.map((i) => ({ ...i, ...extra[i.id] })) } } as unknown as Hypothesis,
+      answers,
+    );
+
+  it("all: one unmet item rules it out, counted once against", () => {
+    expect(result({ type: "all" })).toEqual({ status: "impossible", met: 2, unmet: 1, counted: -1 });
+  });
+
+  it("any: one met item meets it", () => {
+    expect(result({ type: "any" })).toMatchObject({ status: "met", counted: 2 });
+  });
+
+  it("at least n: open while unanswered items could still reach n", () => {
+    expect(result({ type: "atLeast", n: 2 })).toMatchObject({ status: "met", counted: 2 });
+    expect(result({ type: "atLeast", n: 3 })).toMatchObject({ status: "open", counted: 2 });
+    expect(result({ type: "atLeast", n: 3, of: ["a", "b", "c"] })).toMatchObject({ status: "impossible", counted: -1 });
+  });
+
+  it("points: a prerequisite counts only once the checklist is met; clinician points keep it open", () => {
+    const pts = { a: { required: true }, b: { points: 1 }, c: { points: 2 }, d: { points: 2 } };
+    expect(result({ type: "points", threshold: 4, clinicianPoints: 0 }, pts)).toMatchObject({ status: "open", counted: 1 });
+    expect(result({ type: "points", threshold: 2, clinicianPoints: 0 }, pts)).toMatchObject({ status: "met", counted: 2 });
+    expect(result({ type: "points", threshold: 5, clinicianPoints: 0 }, pts)).toMatchObject({ status: "impossible", counted: -1 });
+    expect(result({ type: "points", threshold: 5, clinicianPoints: 2 }, pts)).toMatchObject({ status: "open" });
+    expect(result({ type: "points", threshold: 2, clinicianPoints: 0 }, { ...pts, a: { points: 1 }, b: { required: true } })).toMatchObject({ status: "impossible" });
+  });
+
+  it("no rule (a pattern or risk factors): met items count, unmet ones say nothing", () => {
+    expect(result(undefined)).toEqual({ status: "pattern", met: 2, unmet: 1, counted: 2 });
   });
 });
