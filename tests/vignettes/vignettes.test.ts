@@ -7,6 +7,7 @@ import type { Answer, Finding, Region } from "../../src/engine/schema";
 import { initialSession, reduce } from "../../src/engine/session";
 import { evidenceSummary, unexplainedWeakness } from "../../src/engine/summary";
 import { bestGuess } from "../../src/engine/verdict";
+import { sensitisedLayer } from "../../src/ui/SensitisationNote";
 import {
   expectedEliminated,
   FROM_BODY_MAP,
@@ -133,7 +134,7 @@ describe("forefoot: the alternatives to Morton's neuroma", () => {
   it("lists the tissue and nerve alternatives, unscored", () => {
     const view = restrictToRegions(db, ["forefoot"]);
     expect(unscorableHypotheses(view).map((h) => h.id).sort()).toEqual(
-      ["gout", "hallux_rigidus", "hallux_valgus", "inflammatory_arthritis", "mt_stress_fracture", "plantar_plate", "polyneuropathy", "reactive_arthritis", "septic_arthritis", "sesamoiditis", "tarsal_tunnel", "turf_toe"],
+      ["crps", "gout", "hallux_rigidus", "hallux_valgus", "inflammatory_arthritis", "mt_stress_fracture", "nociplastic", "plantar_plate", "polyneuropathy", "reactive_arthritis", "septic_arthritis", "sesamoiditis", "tarsal_tunnel", "turf_toe"],
     );
     expect(scorableHypotheses(view).map((h) => h.id).sort()).toEqual(["morton", "root_low", "stenosis"]);
   });
@@ -1258,5 +1259,91 @@ describe("heel pain answered the plantar-fasciitis way", () => {
     expect(run("yes").guess).toMatchObject({ kind: "leading", id: "plantar_fasciitis" });
     expect(run("unsure").guess).toMatchObject({ kind: "leading", id: "plantar_fasciitis" });
     expect(run("no").guess).toMatchObject({ kind: "other", bestListed: "plantar_fasciitis" });
+  });
+});
+
+describe("sensitised pain system (nociplastic) and CRPS (user request, 2026-11-06)", () => {
+  const interview = (regions: Region[], facts: Record<string, Answer>) => {
+    const answers: Record<string, Answer> = {};
+    for (let i = 0; i < 100; i++) {
+      const n = nextFinding(db, answers, regions);
+      if (n.done) break;
+      answers[n.finding.id] = facts[n.finding.id] ?? "unsure";
+    }
+    const view = restrictToRegions(db, regions);
+    const all = withImplied(db, answers, regions);
+    const fits = logicalFit(view, regions, all);
+    return { answers, fits, guess: bestGuess(posterior(view, all), fits) };
+  };
+  const Y = "yes";
+  const N = "no";
+
+  it("is an option in every region, never scored", () => {
+    const h = db.hypotheses.find((x) => x.id === "nociplastic")!;
+    expect(new Set(h.regions).size).toBe(46);
+    expect(scorableHypotheses(db).some((x) => x.id === "nociplastic" || x.id === "crps")).toBe(false);
+    expect(hasDiagram("st_brush_self")).toBe(true);
+  });
+
+  it("names it when the pain is long-lasting, regional and touch-sensitive and nothing structural fits", () => {
+    const { guess, fits } = interview(["low_back", "buttock", "posterior_thigh"], {
+      h_pain_3_months: Y, h_pain_regional: Y, st_brush_self: Y, p_light_touch: Y, h_sens_comorbid: Y, p_spreading: Y,
+      p_one_spot: N, h_leg_numbness: N, h_leg_tingling: N, p_numb: N, p_tingling: N, h_cough_sneeze: N, p_injury: N,
+      h_walking_claudication: N, h_bend_forward: N, p_burning: N, p_shooting: N, h_many_places_both_sides: N,
+    });
+    expect(guess).toMatchObject({ kind: "leading", id: "nociplastic" });
+    expect(fits.find((f) => f.id === "nociplastic")!.checklist!.status).toBe("met");
+    expect(sensitisedLayer(db, fits, guess)).toBe(false); // already the headline
+  });
+
+  it("one 'no' to the 3-month question rules it out and its other questions aren't asked", () => {
+    const { answers, fits } = interview(["low_back"], { h_pain_3_months: N, p_one_spot: Y });
+    expect(answers.h_pain_3_months).toBe("no");
+    for (const id of ["h_pain_regional", "st_brush_self", "h_hypersens_history", "h_sens_comorbid", "h_central_syndromes", "h_onset_stress", "h_pain_inconsistent", "h_pain_harmless_trigger"]) expect(answers[id]).toBeUndefined();
+    expect(fits.find((f) => f.id === "nociplastic")!.checklist!.status).toBe("impossible");
+  });
+
+  it("counts the pain reprocessing trial's rule-in signs as cited checks that a 'no' only drops (2026-11-07)", () => {
+    const h = db.hypotheses.find((x) => x.id === "nociplastic")!;
+    expect(h.mechanism?.sourceId).toBe("ashar2022");
+    expect(h.logic!.every((l) => l.type === "supports" && l.sourceId === "ashar2022")).toBe(true);
+    const base = { h_pain_3_months: Y, h_pain_regional: Y, st_brush_self: Y } as const;
+    const rest = ["h_central_syndromes", "h_onset_stress", "h_pain_inconsistent", "h_pain_harmless_trigger"];
+    const fit = (a: Record<string, Answer>) => logicalFit(restrictToRegions(db, ["low_back"]), ["low_back"], a).find((f) => f.id === "nociplastic")!;
+    const yes = fit({ ...base, ...Object.fromEntries(rest.map((id) => [id, Y])) });
+    for (const id of rest) expect(yes.checks.find((c) => c.finding.id === id)).toMatchObject({ verdict: "fit", sourceId: "ashar2022" });
+    const no = fit({ ...base, ...Object.fromEntries(rest.map((id) => [id, N])) });
+    for (const id of rest) expect(no.checks.find((c) => c.finding.id === id)).toBeUndefined();
+  });
+
+  it("widespread pain for 3 months implies the 3-month answer", () => {
+    expect(impliedAnswers(db, { h_widespread_pain: "yes" }, ["low_back"]).h_pain_3_months?.answer).toBe("yes");
+  });
+
+  it("shows the layer note when a nerve root leads but the sensitised checklist is met", () => {
+    const fits = logicalFit(restrictToRegions(db, ["low_back"]), ["low_back"], {
+      h_pain_3_months: Y, h_pain_regional: Y, st_brush_self: Y,
+    });
+    expect(sensitisedLayer(db, fits, { kind: "leading", id: "root_low", p: 0.7, logicDisagrees: false })).toBe(true);
+    expect(sensitisedLayer(db, fits, { kind: "leading", id: "fibromyalgia", logicDisagrees: false })).toBe(false);
+    const open = logicalFit(restrictToRegions(db, ["low_back"]), ["low_back"], { h_pain_3_months: Y, h_pain_regional: Y });
+    expect(sensitisedLayer(db, open, { kind: "leading", id: "root_low", p: 0.7, logicDisagrees: false })).toBe(false);
+  });
+
+  it("names CRPS for wrist pain out of proportion after a fall, with colour, swelling and stiffness changes", () => {
+    const { guess, fits } = interview(["wrist_radial", "hand_median", "forearm_anterior"], {
+      p_injury: Y, h_fall_on_hand: Y, h_pain_disproportionate: Y, p_light_touch: Y, h_limb_temp_colour: Y,
+      h_limb_swelling_sweat: Y, h_limb_motor_trophic: Y, p_burning: Y, h_pain_3_months: Y, h_pain_regional: Y, st_brush_self: Y,
+    });
+    expect(guess).toMatchObject({ kind: "leading", id: "crps" });
+    expect(fits.find((f) => f.id === "crps")!.checklist!.status).toBe("met");
+    expect(sensitisedLayer(db, fits, guess)).toBe(false);
+  });
+
+  it("CRPS's symptom questions are asked only after pain out of proportion, and only for the limbs", () => {
+    const { answers } = interview(["knee_front"], { h_pain_disproportionate: N });
+    expect(answers.h_pain_disproportionate).toBe("no");
+    for (const id of ["h_limb_temp_colour", "h_limb_swelling_sweat", "h_limb_motor_trophic"]) expect(answers[id]).toBeUndefined();
+    expect(isEligible(db.findings.find((f) => f.id === "h_pain_disproportionate")!, ["low_back"])).toBe(false);
   });
 });

@@ -589,11 +589,12 @@
   {
     "id": "sensitisation",
     "name": "Sensitised nervous system (sensitisation)",
-    "description": "When pain goes on for a long time, the nerves and spinal cord can become more sensitive and turn up the volume of every signal. Light touch can then hurt, and the pain can spread beyond the original area. This can come on top of any long-lasting problem, so it isn't linked to one condition.",
+    "description": "When pain goes on for a long time, the nerves, spinal cord and brain can become more sensitive and keep the volume of every signal turned up. Light touch can then hurt, and the pain can spread beyond the original area. This can happen on its own or on top of any long-lasting problem.",
     "clues": [
       {
         "anyOf": [
-          "p_light_touch"
+          "p_light_touch",
+          "st_brush_self"
         ],
         "answer": "yes",
         "type": "supports",
@@ -621,6 +622,12 @@
     "conditions": [
       {
         "hypothesis": "fibromyalgia"
+      },
+      {
+        "hypothesis": "nociplastic"
+      },
+      {
+        "hypothesis": "crps"
       }
     ]
   },
@@ -970,6 +977,11 @@
       },
       {
         "hypothesis": "scfe"
+      },
+      {
+        "hypothesis": "ankle_impingement",
+        "sourceId": "chen2023",
+        "locator": "Introduction"
       }
     ]
   },

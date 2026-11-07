@@ -21,6 +21,7 @@ import { isThesis, SourceLink } from "./SourceLink";
 import { ChestNotice, touchesChest } from "./ChestNotice";
 import { HeadNotice, touchesHead } from "./HeadNotice";
 import { AbdomenNotice, touchesAbdomen } from "./AbdomenNotice";
+import { SensitisationNote } from "./SensitisationNote";
 import { UrgentJointNotice } from "./UrgentJointNotice";
 
 const pct = (p: number) => (p < 0.01 ? "<1%" : `${Math.round(p * 100)}%`);
@@ -86,6 +87,7 @@ export function Results({ db, regions, given, implied, doneReason, onBack, onRes
       </section>
 
       <BestGuessCard guess={bestGuess(post, fits)} name={(id) => hyp(id)?.name ?? id} />
+      <SensitisationNote db={db} fits={fits} guess={bestGuess(post, fits)} />
 
       <RankingCard
         ranking={judgementRanking(post, fits)}

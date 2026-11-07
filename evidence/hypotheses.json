@@ -32,7 +32,14 @@
       "text": "Compression of an L2–L4 nerve root as it leaves the spine, most often by a disc herniation or narrowing of the exit canal (foraminal stenosis), rarely a tumour.",
       "sourceId": "mostofi2018",
       "locator": "Material and methods (causes of root compression)"
-    }
+    },
+    "logic": [
+      {
+        "finding": "h_symptoms_above_foot",
+        "type": "usual",
+        "reason": "Pain from a pressed mid-lumbar nerve root usually runs from the back, groin or thigh down the front of the leg; symptoms at the ankle or foot alone, with nothing higher up, would be unusual."
+      }
+    ]
   },
   {
     "id": "root_low",
@@ -142,7 +149,7 @@
     ],
     "prior": null,
     "criteria": {
-      "title": "Michel clinical score for piriformis syndrome (12 points; 8 or more = probable). You can check 6 points here, plus the Beatty self-test in the questions; the other 5 need a clinician.",
+      "title": "Michel clinical score for piriformis syndrome (12 points; 8 or more = probable). You can check 7 points here (pressing over the piriformis yourself, adapted from the clinician's check), plus the Beatty self-test in the questions; the other 4 need a clinician.",
       "sourceId": "michel2013",
       "locator": "Table 2",
       "items": [
@@ -177,12 +184,17 @@
           "prompt": "Did the helper straight-leg raise reproduce your leg pain?",
           "matchIf": "no",
           "linkedFinding": "st_slr_helper"
+        },
+        {
+          "id": "pms_piriformis_press",
+          "prompt": "Does pressing over the piriformis muscle, deep in the middle of the buttock, bring on your buttock pain?",
+          "matchIf": "yes",
+          "linkedFinding": "st_piriformis_press_self"
         }
       ],
       "clinicianOnly": [
         "Painless pressure along the spine (L2-S1)",
         "Buttock pain reproduced by piriformis stretches (FAIR, Freiberg, heel-to-opposite-knee)",
-        "Buttock pain reproduced by palpation over the piriformis",
         "Sciatic pain reproduced by sustained stretching",
         "Sciatic pain reproduced by sustained resisted contraction"
       ]
@@ -219,6 +231,11 @@
         "finding": "h_cough_sneeze",
         "type": "unexplained",
         "reason": "Coughing or straining raises pressure inside the spine; a nerve trapped outside the spine isn't affected by it."
+      },
+      {
+        "finding": "h_pain_below_knee",
+        "type": "supports",
+        "reason": "The sciatic nerve supplies the leg below the knee, so when it is irritated in the buttock the pain often runs down the back of the leg into the calf or foot. Buttock muscles, joints and the smaller skin nerves there usually give pain that stays above the knee."
       }
     ]
   },
@@ -743,6 +760,11 @@
         "finding": "h_cough_sneeze",
         "type": "unexplained",
         "reason": "Coughing or sneezing doesn't load the hip joint."
+      },
+      {
+        "finding": "st_hip_rotation_self",
+        "type": "usual",
+        "reason": "Turning the hip inward is usually the first movement that hip arthritis stiffens and makes painful, so a hip that turns inward freely and without pain makes arthritis less likely to be the source."
       }
     ]
   },
@@ -1015,6 +1037,11 @@
         "reason": "Carpal tunnel syndrome initially shows as pins and needles, numbness or tingling of the fingers.",
         "sourceId": "zaki2022",
         "locator": "Abstract"
+      },
+      {
+        "finding": "h_palm_numb",
+        "type": "unexplained",
+        "reason": "The branch that supplies the palm at the base of the thumb leaves the median nerve above the wrist and passes over the carpal tunnel, not through it, so carpal tunnel syndrome usually spares the palm; numbness there points higher up the nerve."
       }
     ]
   },
@@ -1039,6 +1066,18 @@
         "text": "Pronator syndrome is most often misdiagnosed as carpal tunnel syndrome; it causes vague pain in the upper forearm with pins and needles in the median nerve fingers, worse with activity.",
         "sourceId": "balcerzak2022",
         "locator": "Introduction"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_palm_numb",
+        "type": "supports",
+        "reason": "The branch that gives feeling to the palm at the base of the thumb leaves the median nerve above the wrist, so a nerve squeezed in the forearm can numb the palm as well as the fingers."
+      },
+      {
+        "finding": "h_forearm_grip_ache",
+        "type": "usual",
+        "reason": "In the forearm the median nerve passes between the two heads of the muscle that turns the palm down (pronator teres), so gripping and turning against resistance squeeze it and usually bring on an ache there."
       }
     ]
   },
@@ -1120,6 +1159,18 @@
         "text": "Radial tunnel syndrome is often misdiagnosed as the more common tennis elbow.",
         "sourceId": "engin2023",
         "locator": "Abstract"
+      }
+    ],
+    "logic": [
+      {
+        "finding": "h_forearm_below_elbow",
+        "type": "usual",
+        "reason": "The radial nerve is squeezed where it dives into the supinator muscle, a few finger-widths below the outer elbow bump, so the pain and tenderness usually sit there rather than on the bump, where tennis elbow hurts."
+      },
+      {
+        "finding": "h_supination_pain",
+        "type": "supports",
+        "reason": "Turning the palm up against resistance tightens the supinator muscle around the nerve passing through it."
       }
     ]
   },
@@ -2174,6 +2225,21 @@
         "reason": "The virus affects one nerve root's strip of skin on one side, so the pain follows that strip.",
         "sourceId": "jeon2015",
         "locator": "Clinical manifestations and diagnosis (unilateral, affected dermatome)"
+      },
+      {
+        "finding": "h_unwell_before",
+        "type": "supports",
+        "reason": "As the virus wakes up in the nerve, some people feel tired, achy or feverish for a day or two before the pain and rash start."
+      },
+      {
+        "finding": "p_light_touch",
+        "type": "supports",
+        "reason": "The virus inflames the nerve and its skin, so even clothing brushing the strip of skin can hurt, often before any rash appears."
+      },
+      {
+        "finding": "h_age_50",
+        "type": "supports",
+        "reason": "Shingles becomes much more common after 50 as the immune control of the dormant chickenpox virus weakens."
       }
     ]
   },
@@ -2633,6 +2699,16 @@
         "finding": "h_sole_wide",
         "type": "usual",
         "reason": "Its branches supply most of the sole and the toes, so symptoms usually spread across the sole rather than staying in one gap between two toes."
+      },
+      {
+        "finding": "st_tinel_ankle_self",
+        "type": "supports",
+        "reason": "The tibial nerve runs in the hollow behind the inner ankle bone; tapping an irritated nerve there can make it fire, felt as tingling in the sole it supplies. A trapped nerve doesn't always respond, so a negative tap says little."
+      },
+      {
+        "finding": "h_foot_standing_shoes",
+        "type": "supports",
+        "reason": "Standing, walking and a tight boot all raise the pressure inside the tunnel behind the inner ankle, so a squeezed nerve there gives burning or tingling in the sole that eases once the foot is rested and the shoe is off."
       }
     ]
   },
@@ -4020,6 +4096,11 @@
         "finding": "h_leg_numbness",
         "type": "unexplained",
         "reason": "A joint, tendon, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      },
+      {
+        "finding": "h_hip_extension_stretch",
+        "type": "supports",
+        "reason": "Taking the thigh backward stretches the hip flexor tendon across the front of the hip, so an irritated tendon hurts there."
       }
     ]
   },
@@ -4073,6 +4154,16 @@
         "finding": "h_arm_numbness",
         "type": "unexplained",
         "reason": "A joint, tendon, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      },
+      {
+        "finding": "h_shoulder_shock_seizure",
+        "type": "supports",
+        "reason": "A seizure or an electric shock makes the strong muscles that turn the arm inward clench all at once, which can force the ball of the shoulder out of the back of the socket, where it can stay locked."
+      },
+      {
+        "finding": "h_shoulder_shape",
+        "type": "supports",
+        "reason": "While the ball of the shoulder is out of its socket, the shoulder loses its round outline: flat where the ball should be, with a bump where it now sits."
       }
     ]
   },
@@ -5009,6 +5100,342 @@
         "reason": "The same criteria score tiredness, unrefreshing sleep and thinking problems alongside the pain.",
         "sourceId": "fitzcharles2012",
         "locator": "Abstract (Background)"
+      }
+    ]
+  },
+  {
+    "id": "nociplastic",
+    "name": "Sensitised pain system (nociplastic pain)",
+    "shortName": "Sensitised pain system",
+    "description": "The pain system itself has become oversensitive and stays turned up: the nervous system amplifies signals, so ordinary touch, movement or pressure can hurt although no tissue is being damaged and no nerve is trapped. It can follow an injury that has healed, come on gradually, or sit on top of another painful problem, and it can affect one region or many (fibromyalgia is the best-known widespread form). The pain is real. There is no scan or blood test for it: it is recognised by its pattern.",
+    "category": "mimic",
+    "regions": [
+      "low_back",
+      "buttock",
+      "posterior_thigh",
+      "anterior_thigh",
+      "lateral_thigh",
+      "medial_thigh",
+      "groin",
+      "perineum",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "shin_anterior",
+      "calf",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot",
+      "abdomen",
+      "head_back",
+      "temple",
+      "face",
+      "jaw",
+      "neck",
+      "scapula",
+      "shoulder",
+      "upper_arm_lateral",
+      "upper_arm_medial",
+      "elbow_lateral",
+      "elbow_medial",
+      "forearm_lateral",
+      "forearm_medial",
+      "forearm_anterior",
+      "forearm_dorsal",
+      "wrist_radial",
+      "wrist_ulnar",
+      "hand_median",
+      "hand_ulnar",
+      "hand_dorsal_radial",
+      "chest_front",
+      "chest_side",
+      "upper_back",
+      "mid_back"
+    ],
+    "prior": null,
+    "context": [
+      {
+        "text": "Under the IASP criteria, pain from damaged tissue or a nerve problem doesn't rule out an oversensitive pain system: more than one type of pain can be present at the same time.",
+        "sourceId": "nijs2021",
+        "locator": "Section 3 (The Present; Comparing the IASP Clinical Criteria)"
+      },
+      {
+        "text": "The criteria were published in 2021 and have not yet been tested for accuracy; the review's authors call such studies urgently needed.",
+        "sourceId": "nijs2021",
+        "locator": "Abstract; Section 5 (Conclusions)"
+      }
+    ],
+    "criteria": {
+      "title": "IASP clinical criteria for nociplastic pain (2021): 'possible' needs the first three items and a clinician's judgement; 'probable' needs all five",
+      "sourceId": "nijs2021",
+      "locator": "Section 3 (The Present), Figure 1",
+      "items": [
+        {
+          "id": "noc_duration",
+          "prompt": "Pain for at least 3 months (required)",
+          "matchIf": "yes",
+          "linkedFinding": "h_pain_3_months",
+          "required": true
+        },
+        {
+          "id": "noc_regional",
+          "prompt": "Pain spread over a region rather than one discrete spot (required)",
+          "matchIf": "yes",
+          "linkedFinding": "h_pain_regional",
+          "required": true
+        },
+        {
+          "id": "noc_sign",
+          "prompt": "Signs of pain hypersensitivity in the painful area, such as pain from a light brush (a clinician examines this; the home stroke test stands in for it)",
+          "matchIf": "yes",
+          "linkedFinding": "st_brush_self"
+        },
+        {
+          "id": "noc_history",
+          "prompt": "Sensitivity to touch, movement, pressure or heat/cold in the painful area (for 'probable')",
+          "matchIf": "yes",
+          "linkedFinding": "h_hypersens_history"
+        },
+        {
+          "id": "noc_comorbid",
+          "prompt": "At least one of: sensitivity to sound, light or smells; sleep with frequent waking; tiredness or thinking problems (for 'probable')",
+          "matchIf": "yes",
+          "linkedFinding": "h_sens_comorbid"
+        }
+      ],
+      "clinicianOnly": [
+        "Pain that tissue damage or a nerve problem can't entirely explain (required). The app only approximates this: the option comes first only when no tissue or nerve option explains your answers better.",
+        "Signs of pain hypersensitivity on examination (required for 'possible')"
+      ],
+      "rule": {
+        "type": "atLeast",
+        "n": 1,
+        "of": [
+          "noc_sign"
+        ]
+      }
+    },
+    "logic": [
+      {
+        "finding": "h_central_syndromes",
+        "type": "supports",
+        "reason": "A history of other conditions linked to central sensitisation (irritable bowel, fibromyalgia, tension headaches, anxiety, depression, chronic fatigue) is one of the signs a trial physician used to recognise centralised pain.",
+        "sourceId": "ashar2022",
+        "locator": "Supplement 2, eAppendix 1 (rule-in factor 1)"
+      },
+      {
+        "finding": "h_widespread_pain",
+        "type": "supports",
+        "reason": "Pain in many body regions is one of the signs a trial physician used to recognise centralised pain.",
+        "sourceId": "ashar2022",
+        "locator": "Supplement 2, eAppendix 1 (rule-in factor 2)"
+      },
+      {
+        "finding": "h_onset_stress",
+        "type": "supports",
+        "reason": "Pain that began around particularly stressful life events is one of the signs a trial physician used to recognise centralised pain.",
+        "sourceId": "ashar2022",
+        "locator": "Supplement 2, eAppendix 1 (rule-in factor 3)"
+      },
+      {
+        "finding": "p_spreading",
+        "type": "supports",
+        "reason": "Pain that spreads to different areas over time is one of the signs a trial physician used to recognise centralised pain.",
+        "sourceId": "ashar2022",
+        "locator": "Supplement 2, eAppendix 1 (rule-in factor 4)"
+      },
+      {
+        "finding": "h_pain_inconsistent",
+        "type": "supports",
+        "reason": "Pain that behaves inconsistently (shifting around, varying a lot through the day, easing with distraction, flaring only after an activity) is one of the signs a trial physician used to recognise centralised pain.",
+        "sourceId": "ashar2022",
+        "locator": "Supplement 2, eAppendix 1 (rule-in factor 5)"
+      },
+      {
+        "finding": "h_pain_harmless_trigger",
+        "type": "supports",
+        "reason": "Pain set off by things that can't harm tissue (sounds, lights, smells, screens, anticipated stress, imagined movement) is one of the signs a trial physician used to recognise centralised pain.",
+        "sourceId": "ashar2022",
+        "locator": "Supplement 2, eAppendix 1 (rule-in factor 6)"
+      }
+    ],
+    "mechanism": {
+      "text": "One model of how the pain system gets stuck: expecting damage makes harmless signals from the body feel painful, the pain then feels threatening, and that threat turns the pain up further, a loop that can keep pain going after an injury has healed.",
+      "sourceId": "ashar2022",
+      "locator": "Introduction, paragraph 2"
+    }
+  },
+  {
+    "id": "crps",
+    "name": "Complex regional pain syndrome (CRPS)",
+    "shortName": "CRPS",
+    "description": "Continuing pain in an arm or leg, usually after an injury, fracture or operation, that is far worse or lasts far longer than the injury explains. The nervous system and the blood vessels and skin of the limb react abnormally, so the limb can also change colour or temperature, swell, sweat differently, stiffen, or grow hair and nails differently. It is diagnosed by a clinician from symptoms and examination signs once other causes are excluded; early treatment matters.",
+    "category": "mimic",
+    "regions": [
+      "elbow_lateral",
+      "elbow_medial",
+      "forearm_lateral",
+      "forearm_medial",
+      "forearm_anterior",
+      "forearm_dorsal",
+      "wrist_radial",
+      "wrist_ulnar",
+      "hand_median",
+      "hand_ulnar",
+      "hand_dorsal_radial",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "shin_anterior",
+      "calf",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ],
+    "prior": null,
+    "context": [
+      {
+        "text": "Applied by clinicians with an examination, the Budapest criteria picked out 99% of people with CRPS and correctly excluded 68% of people with other nerve pain.",
+        "sourceId": "harden2010",
+        "locator": "Abstract; Results 3.2 (Table 3)"
+      }
+    ],
+    "criteria": {
+      "title": "Budapest clinical criteria for CRPS: pain out of proportion, plus symptoms in at least three of the four groups (and examination signs a clinician checks)",
+      "sourceId": "harden2010",
+      "locator": "Appendix II",
+      "items": [
+        {
+          "id": "crps_pain",
+          "prompt": "Continuing pain out of proportion to any event that set it off (required)",
+          "matchIf": "yes",
+          "linkedFinding": "h_pain_disproportionate",
+          "required": true
+        },
+        {
+          "id": "crps_sensory",
+          "prompt": "Sensory: increased sensitivity, or pain from light touch",
+          "matchIf": "yes",
+          "linkedFinding": "p_light_touch"
+        },
+        {
+          "id": "crps_vasomotor",
+          "prompt": "Vasomotor: temperature difference, or skin colour change or difference",
+          "matchIf": "yes",
+          "linkedFinding": "h_limb_temp_colour"
+        },
+        {
+          "id": "crps_sudomotor",
+          "prompt": "Sudomotor/oedema: swelling, or sweating change or difference",
+          "matchIf": "yes",
+          "linkedFinding": "h_limb_swelling_sweat"
+        },
+        {
+          "id": "crps_motor",
+          "prompt": "Motor/trophic: less movement, weakness, tremor or abnormal postures, or hair, nail or skin changes",
+          "matchIf": "yes",
+          "linkedFinding": "h_limb_motor_trophic"
+        }
+      ],
+      "clinicianOnly": [
+        "At least one examination sign in two or more of the four groups (required)",
+        "No other diagnosis better explains the signs and symptoms (required)"
+      ],
+      "rule": {
+        "type": "atLeast",
+        "n": 3,
+        "of": [
+          "crps_sensory",
+          "crps_vasomotor",
+          "crps_sudomotor",
+          "crps_motor"
+        ]
+      }
+    },
+    "logic": [
+      {
+        "finding": "p_injury",
+        "type": "supports",
+        "reason": "It usually starts after an injury, a fracture or an operation on the limb, though it can follow a minor one."
+      }
+    ]
+  },
+  {
+    "id": "ankle_impingement",
+    "name": "Ankle impingement (tissue pinched at the front or back of the ankle joint)",
+    "shortName": "Ankle impingement",
+    "description": "Thickened scar tissue, a bony spur or a small extra bone (os trigonum) gets pinched between the ankle bones at the end of the ankle's movement: at the front or front-outer side when the foot bends fully up, often after a sprain, or at the back when the foot points hard down, as in dancers and downhill runners.",
+    "category": "mimic",
+    "regions": [
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "foot_dorsum"
+    ],
+    "prior": null,
+    "context": [
+      {
+        "text": "Front and front-outer impingement often follow ankle sprains; the typical story is chronic pain at the front of the ankle, worse when the foot bends up, with tenderness at the front of the ankle.",
+        "sourceId": "chen2023",
+        "locator": "Clinical manifestations of AIS"
+      },
+      {
+        "text": "Back-of-ankle impingement is deep pain at the back of the ankle brought on by pointing the foot down, most common in ballet dancers, footballers and downhill runners; the exact spot is often hard to point to. No study has reported how accurate the pointing-down test is.",
+        "sourceId": "yasui2016",
+        "locator": "Clinical presentation and diagnosis"
+      }
+    ],
+    "mechanism": {
+      "text": "Soft tissue (scarred or thickened joint lining or ligament) or bone (spurs, an os trigonum or a long back process of the talus) is squeezed between the shin bone and the talus at the end of the ankle's movement: at the front when the foot bends up, at the back when it points down. Fractures, sprains and long-term overuse start it.",
+      "sourceId": "chen2023",
+      "locator": "Introduction; Clinical manifestations of AIS"
+    },
+    "logic": [
+      {
+        "finding": "h_ankle_end_range",
+        "type": "usual",
+        "reason": "The tissue is pinched only when the joint closes at the end of its movement, so pain at the front when the foot bends up, or at the back when it points down, is the defining feature.",
+        "sourceId": "chen2023",
+        "locator": "Clinical manifestations of AIS (ankle impingement test)"
+      },
+      {
+        "finding": "h_ankle_injury",
+        "type": "supports",
+        "reason": "Fractures and sprains are common starting points: scar tissue and thickened lining left after the injury get caught in the joint.",
+        "sourceId": "chen2023",
+        "locator": "Introduction"
+      },
+      {
+        "finding": "p_repetitive",
+        "type": "supports",
+        "reason": "Back-of-ankle impingement often builds up from repeatedly pointing the foot down hard, as in dancing, football or downhill running.",
+        "sourceId": "yasui2016",
+        "locator": "Clinical presentation and diagnosis"
+      },
+      {
+        "finding": "h_ankle_lingering",
+        "type": "supports",
+        "reason": "A sprain that should have settled but keeps hurting at the front of the ankle, often once sport restarts, is a common way front impingement shows itself."
+      },
+      {
+        "finding": "h_ankle_catching",
+        "type": "supports",
+        "reason": "Tissue caught between the bones can give a pinching or catching feeling inside the joint."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A joint, ligament or bone problem without a trapped nerve causes pain, not numbness or pins and needles; those point to a nerve."
       }
     ]
   }

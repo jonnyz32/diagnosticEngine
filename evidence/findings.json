@@ -7101,6 +7101,7 @@
   {
     "id": "h_hip_catch",
     "kind": "history",
+    "alwaysAsk": true,
     "prompt": "Do you get a painful catch, click or brief locking deep inside the hip joint, for example as you get up from a low chair or pivot on that leg?",
     "summary": {
       "yes": "painful catching or clicking deep in the hip",
@@ -7117,6 +7118,7 @@
   {
     "id": "h_hip_flexor_lift",
     "kind": "history",
+    "alwaysAsk": true,
     "prompt": "Is the pain at the front of the hip brought on by lifting your knee toward your chest, for example getting into a car, climbing stairs or putting on socks?",
     "summary": {
       "yes": "front-of-hip pain lifting the knee",
@@ -8357,5 +8359,569 @@
         "population": "51 patients awaiting hip replacement for osteoarthritis vs 54 operated for lumbar spinal stenosis (pain maps), UK"
       }
     ]
+  },
+  {
+    "id": "h_pain_3_months",
+    "kind": "profile",
+    "profileGroup": "pattern",
+    "prompt": "Have you had this pain for 3 months or more?",
+    "summary": {
+      "yes": "pain for 3 months or more",
+      "no": "pain for less than 3 months"
+    },
+    "impliedBy": [
+      {
+        "finding": "h_widespread_pain",
+        "answer": "yes",
+        "implies": "yes"
+      }
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_pain_regional",
+    "kind": "profile",
+    "profileGroup": "pattern",
+    "prompt": "Does your pain cover a wider region, such as a large part of your back, most of an arm or leg, or several areas, rather than staying in one joint, one tendon or one small patch?",
+    "help": "Pain that has spread beyond one structure is one of the published features of an oversensitive pain system. Pain that stays in one joint or tendon is more typical of a problem in that structure.",
+    "summary": {
+      "yes": "pain covers a wider region",
+      "no": "pain stays in one joint, tendon or small patch"
+    },
+    "askIf": {
+      "finding": "h_pain_3_months",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "st_brush_self",
+    "kind": "selftest",
+    "prompt": "When you lightly stroked the skin over your painful area with a tissue, did the stroke itself hurt, unlike the same stroke on the other side?",
+    "help": "A clinician checks this with a soft brush: pain from a light brush is called allodynia, a sign of an oversensitive pain system. This is a home version of that check and has not been tested for accuracy.",
+    "instructions": [
+      "Use a soft tissue, a cotton-wool ball or a soft make-up brush.",
+      "Stroke it slowly across the skin of the painful area, about a hand's width, three times, as lightly as if you were dusting.",
+      "Do the same on the matching area of the other side, or on skin that doesn't hurt.",
+      "Answer yes only if the light stroke itself hurt. Feeling different, tickly or numb is a no."
+    ],
+    "summary": {
+      "yes": "a light stroke on the painful skin hurt",
+      "no": "a light stroke on the painful skin didn't hurt"
+    },
+    "askIf": {
+      "finding": "h_pain_regional",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_hypersens_history",
+    "kind": "history",
+    "prompt": "In the painful area, are you unusually sensitive to touch, pressure, movement, or heat or cold, so that things that wouldn't normally hurt do?",
+    "summary": {
+      "yes": "painful area oversensitive to touch, pressure, movement or temperature",
+      "no": "painful area not oversensitive"
+    },
+    "askIf": {
+      "finding": "h_pain_regional",
+      "answer": "yes"
+    },
+    "impliedBy": [
+      {
+        "finding": "p_light_touch",
+        "answer": "yes",
+        "implies": "yes"
+      }
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_sens_comorbid",
+    "kind": "history",
+    "prompt": "Along with the pain, do you have any of these: ordinary sounds, bright light or smells bothering you much more than they used to; sleep broken by waking often in the night; or marked tiredness, or trouble concentrating or remembering?",
+    "summary": {
+      "yes": "sensitive to sound, light or smells, broken sleep, or tiredness or poor concentration",
+      "no": "no sensitivity to sound, light or smells, broken sleep or marked tiredness"
+    },
+    "askIf": {
+      "finding": "h_pain_regional",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_central_syndromes",
+    "kind": "history",
+    "prompt": "Have you had any of these, now or in the past: irritable bowel syndrome, fibromyalgia, tension headaches, chronic fatigue, anxiety or depression?",
+    "help": "These conditions often go together with an oversensitive pain system. Having one doesn't mean your pain is 'in your head': the pain is real either way.",
+    "summary": {
+      "yes": "has had irritable bowel, fibromyalgia, tension headaches, chronic fatigue, anxiety or depression",
+      "no": "none of irritable bowel, fibromyalgia, tension headaches, chronic fatigue, anxiety or depression"
+    },
+    "askIf": {
+      "finding": "h_pain_regional",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_onset_stress",
+    "kind": "history",
+    "prompt": "Did the pain begin, or first get much worse, during or soon after a particularly stressful time in your life?",
+    "summary": {
+      "yes": "began or worsened during a stressful time",
+      "no": "not linked to a stressful time"
+    },
+    "askIf": {
+      "finding": "h_pain_regional",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_pain_inconsistent",
+    "kind": "history",
+    "prompt": "Does your pain behave inconsistently? For example: it moves to different places, changes a lot at different times of day, fades for a while when you're absorbed in something enjoyable or distracting, or flares only after an activity that didn't hurt while you were doing it.",
+    "summary": {
+      "yes": "pain behaves inconsistently",
+      "no": "pain behaves consistently"
+    },
+    "askIf": {
+      "finding": "h_pain_regional",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_pain_harmless_trigger",
+    "kind": "history",
+    "prompt": "Can your pain be set off or made worse by things that can't harm your body, such as certain sounds, lights, smells or screens, the approach of a stressful event or an anniversary, or just imagining a movement?",
+    "summary": {
+      "yes": "pain set off by harmless triggers",
+      "no": "pain not set off by harmless triggers"
+    },
+    "askIf": {
+      "finding": "h_pain_regional",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_pain_disproportionate",
+    "kind": "history",
+    "prompt": "Is the pain far stronger, or has it lasted far longer, than you would expect from the injury, fracture or operation that started it?",
+    "summary": {
+      "yes": "pain out of proportion to what started it",
+      "no": "pain in proportion to what started it"
+    },
+    "gateRegions": [
+      "elbow_lateral",
+      "elbow_medial",
+      "forearm_lateral",
+      "forearm_medial",
+      "forearm_anterior",
+      "forearm_dorsal",
+      "wrist_radial",
+      "wrist_ulnar",
+      "hand_median",
+      "hand_ulnar",
+      "hand_dorsal_radial",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "shin_anterior",
+      "calf",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_limb_temp_colour",
+    "kind": "history",
+    "prompt": "Compared with the other side, does the painful hand, arm, foot or leg often feel warmer or colder, or look a different colour (red, purple, blue, blotchy or pale)?",
+    "summary": {
+      "yes": "painful limb warmer, colder or a different colour",
+      "no": "no temperature or colour difference"
+    },
+    "gateRegions": [
+      "elbow_lateral",
+      "elbow_medial",
+      "forearm_lateral",
+      "forearm_medial",
+      "forearm_anterior",
+      "forearm_dorsal",
+      "wrist_radial",
+      "wrist_ulnar",
+      "hand_median",
+      "hand_ulnar",
+      "hand_dorsal_radial",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "shin_anterior",
+      "calf",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ],
+    "askIf": {
+      "finding": "h_pain_disproportionate",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_limb_swelling_sweat",
+    "kind": "history",
+    "prompt": "Does the painful hand, arm, foot or leg swell, or sweat more or less than the other side?",
+    "summary": {
+      "yes": "painful limb swells or sweats differently",
+      "no": "no swelling or sweating difference"
+    },
+    "gateRegions": [
+      "elbow_lateral",
+      "elbow_medial",
+      "forearm_lateral",
+      "forearm_medial",
+      "forearm_anterior",
+      "forearm_dorsal",
+      "wrist_radial",
+      "wrist_ulnar",
+      "hand_median",
+      "hand_ulnar",
+      "hand_dorsal_radial",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "shin_anterior",
+      "calf",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ],
+    "askIf": {
+      "finding": "h_pain_disproportionate",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "h_limb_motor_trophic",
+    "kind": "history",
+    "prompt": "Since the pain began, has the painful limb become stiff, weak, shaky or hard to move the way you want, or have the hair, nails or skin there changed (growing faster or slower, or the skin thin and shiny)?",
+    "summary": {
+      "yes": "stiffness, weakness, tremor, or hair, nail or skin changes in the painful limb",
+      "no": "no stiffness, weakness or hair, nail or skin changes"
+    },
+    "gateRegions": [
+      "elbow_lateral",
+      "elbow_medial",
+      "forearm_lateral",
+      "forearm_medial",
+      "forearm_anterior",
+      "forearm_dorsal",
+      "wrist_radial",
+      "wrist_ulnar",
+      "hand_median",
+      "hand_ulnar",
+      "hand_dorsal_radial",
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "shin_anterior",
+      "calf",
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "heel",
+      "foot_dorsum",
+      "foot_sole_lateral",
+      "forefoot"
+    ],
+    "askIf": {
+      "finding": "h_pain_disproportionate",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
+    "id": "st_tinel_ankle_self",
+    "kind": "selftest",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Did tapping just behind and below your inner ankle bone send tingling or an electric feeling into your heel, arch or sole?",
+    "help": "Only tingling or an electric feeling shooting into the heel, arch, sole or toes counts, not just soreness where you tapped.",
+    "instructions": [
+      "Sit and rest the ankle of your painful foot across your other knee, so the inner side faces up.",
+      "Find the hollow just behind and below the bony bump on the inner side of your ankle.",
+      "With two fingertips of your other hand, tap firmly in that hollow about ten times, then do the same on the other foot."
+    ],
+    "gateRegions": [
+      "ankle_medial",
+      "heel",
+      "foot_sole_lateral",
+      "forefoot"
+    ],
+    "summary": {
+      "yes": "tapping behind the inner ankle sent tingling into the sole",
+      "no": "tapping behind the inner ankle didn't send tingling into the sole"
+    }
+  },
+  {
+    "id": "h_foot_standing_shoes",
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Does standing or walking for a long time, or wearing tight boots or shoes, bring on burning, tingling or shooting pain in your sole or heel, which eases when you take your shoes off and rest the foot?",
+    "gateRegions": [
+      "heel",
+      "foot_sole_lateral",
+      "ankle_medial",
+      "forefoot"
+    ],
+    "summary": {
+      "yes": "long standing or tight footwear brings on burning or tingling in the sole",
+      "no": "standing and footwear don't bring on burning or tingling in the sole"
+    }
+  },
+  {
+    "id": "st_piriformis_press_self",
+    "kind": "selftest",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Did pressing firmly into the middle of your buttock on the painful side bring on your usual deep buttock pain, or the pain down your leg?",
+    "help": "Count it only if it brings on your usual pain, not just soreness under your fingers. Compare with the other side.",
+    "instructions": [
+      "Lie on your side with the painful side up and your knees bent.",
+      "Find the bony point at the side of your hip and the bottom of your spine (the sacrum, just above the cleft between the buttocks).",
+      "Halfway between them, press firmly and deeply into the buttock with your fingertips for about 10 seconds, then try the same spot on the other side."
+    ],
+    "safety": "Press firmly but stop if it is sharply painful.",
+    "gateRegions": [
+      "buttock"
+    ],
+    "summary": {
+      "yes": "pressing into the middle of the buttock brought on the usual pain",
+      "no": "pressing into the middle of the buttock didn't bring on the usual pain"
+    }
+  },
+  {
+    "id": "h_unwell_before",
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "In the few days before this pain began, did you feel generally unwell: unusually tired, achy, feverish or with a headache?",
+    "gateRegions": [
+      "chest_front",
+      "chest_side",
+      "upper_back",
+      "mid_back",
+      "abdomen"
+    ],
+    "summary": {
+      "yes": "felt unwell for a few days before the pain",
+      "no": "didn't feel unwell before the pain"
+    }
+  },
+  {
+    "id": "h_palm_numb",
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Is the palm itself numb or tingling, on the fleshy pad at the base of your thumb, not just your fingers?",
+    "gateRegions": [
+      "hand_median"
+    ],
+    "summary": {
+      "yes": "numbness in the palm at the base of the thumb",
+      "no": "no numbness in the palm itself"
+    }
+  },
+  {
+    "id": "h_forearm_grip_ache",
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Do long spells of gripping, or turning your palm down against resistance (like undoing a tight screw or turning a key to the left), bring on an ache in the upper front of your forearm, just below the elbow crease?",
+    "gateRegions": [
+      "forearm_anterior",
+      "elbow_medial"
+    ],
+    "summary": {
+      "yes": "gripping or turning the palm down brings on an ache in the upper front forearm",
+      "no": "gripping and turning the palm down don't bring on a forearm ache"
+    }
+  },
+  {
+    "id": "h_shoulder_shock_seizure",
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Did the shoulder problem start during a seizure (fit) or an electric shock, when the muscles suddenly clench hard?",
+    "gateRegions": [
+      "shoulder"
+    ],
+    "summary": {
+      "yes": "started during a seizure or an electric shock",
+      "no": "didn't start with a seizure or an electric shock"
+    }
+  },
+  {
+    "id": "h_shoulder_shape",
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Since it started, does the painful shoulder look a different shape from the other one: flatter at the front or side, or with a new bump at the back or front (not the bony bump on top)?",
+    "gateRegions": [
+      "shoulder"
+    ],
+    "summary": {
+      "yes": "the shoulder looks a different shape",
+      "no": "the shoulder looks the same shape as the other"
+    }
+  },
+  {
+    "id": "st_hip_rotation_self",
+    "kind": "selftest",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Sitting on a chair, when you let your painful-side foot swing outward (which turns the hip inward), was it clearly stiffer than the other side, or painful in the groin?",
+    "help": "Compare with the other side. Count it only if the movement is clearly shorter or brings on your groin pain.",
+    "instructions": [
+      "Sit upright on a firm chair, knees together and bent to a right angle.",
+      "Keeping your knees together, swing the foot of your painful side outward as far as it comfortably goes. This turns the hip inward.",
+      "Do the same with the other foot and compare how far each foot goes and whether the groin hurts."
+    ],
+    "gateRegions": [
+      "groin",
+      "anterior_thigh",
+      "buttock",
+      "lateral_thigh",
+      "medial_thigh"
+    ],
+    "summary": {
+      "yes": "turning the hip inward was stiff or painful",
+      "no": "turning the hip inward was free and painless"
+    }
+  },
+  {
+    "id": "h_hip_extension_stretch",
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Does stretching your thigh backward, as in a long stride or a lunge stretch with the back leg straight, bring on the pain at the front of your hip or groin?",
+    "gateRegions": [
+      "groin",
+      "anterior_thigh"
+    ],
+    "summary": {
+      "yes": "stretching the thigh backward brings on the front hip pain",
+      "no": "stretching the thigh backward doesn't bring on the pain"
+    }
+  },
+  {
+    "id": "h_forearm_below_elbow",
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Is the sorest spot in the muscle on the top, outer side of your forearm, about three or four finger-widths below the bony bump on the outside of your elbow, rather than on the bump itself?",
+    "gateRegions": [
+      "elbow_lateral",
+      "forearm_lateral",
+      "forearm_dorsal"
+    ],
+    "summary": {
+      "yes": "sorest spot a few finger-widths below the outer elbow bump",
+      "no": "sorest spot not below the outer elbow bump"
+    }
+  },
+  {
+    "id": "h_supination_pain",
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Does turning your forearm palm-up against resistance, like driving in a screw with a screwdriver or turning a stiff door handle, bring on the pain in your forearm?",
+    "gateRegions": [
+      "elbow_lateral",
+      "forearm_lateral",
+      "forearm_dorsal"
+    ],
+    "summary": {
+      "yes": "turning the palm up against resistance brings on the pain",
+      "no": "turning the palm up against resistance doesn't bring on the pain"
+    }
+  },
+  {
+    "id": "h_ankle_end_range",
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Is the pain brought on when your ankle is pushed to the end of its movement: pointing your foot hard down (tiptoe, running downhill, pressing a pedal) or bending it fully up (a deep squat, or lunging forward over the foot)?",
+    "gateRegions": [
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "foot_dorsum"
+    ],
+    "summary": {
+      "yes": "pushing the ankle to the end of its movement brings on the pain",
+      "no": "pushing the ankle to the end of its movement doesn't bring on the pain"
+    }
+  },
+  {
+    "id": "h_ankle_catching",
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Do you feel a catching, pinching or snapping deep inside the ankle joint with certain movements, such as squatting, pivoting or pointing the foot?",
+    "gateRegions": [
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "foot_dorsum"
+    ],
+    "summary": {
+      "yes": "a catching or pinching deep in the ankle",
+      "no": "no catching or pinching in the ankle"
+    }
+  },
+  {
+    "id": "h_ankle_lingering",
+    "kind": "history",
+    "evidence": [],
+    "askIf": {
+      "finding": "h_ankle_injury",
+      "answer": "yes"
+    },
+    "prompt": "Has the pain from that injury lasted more than 6 weeks, or come back once you went back to sport, even though the bruising and swelling settled?",
+    "gateRegions": [
+      "ankle_lateral",
+      "ankle_medial",
+      "achilles",
+      "foot_dorsum"
+    ],
+    "summary": {
+      "yes": "pain lingering beyond 6 weeks after the injury",
+      "no": "pain settling within 6 weeks of the injury"
+    }
   }
 ]

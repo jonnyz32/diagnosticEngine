@@ -1899,5 +1899,56 @@
     "population": "Children and adolescents with slipped capital femoral epiphysis",
     "notes": "Read in Europe PMC full text (PMC10217581): Introduction, Misleading Symptoms, Discussion.",
     "verifiedOn": "2026-11-06"
+  },
+  {
+    "id": "nijs2021",
+    "citation": "Nijs J, Lahousse A, Kapreli E, Bilika P, Saraçoğlu İ, Malfliet A, Coppieters I, De Baets L, Leysen L, Roose E, Clark J, Voogt L, Huysmans E. Nociplastic Pain Criteria or Recognition of Central Sensitization? Pain Phenotyping in the Past, Present and Future. J Clin Med. 2021;10(15):3203.",
+    "pmid": "34361986",
+    "doi": "10.3390/jcm10153203",
+    "design": "Narrative review",
+    "population": "People with chronic musculoskeletal pain (review of clinical criteria)",
+    "notes": "Full text read (PMC8347369). Section 3 sets out the IASP clinical criteria and grading system for nociplastic pain of the musculoskeletal system (Kosek et al., Pain 2021, PMID 33974577, paywalled and not read here): pain for at least 3 months, regional rather than discrete distribution, not entirely explained by nociceptive or neuropathic mechanisms, and clinical signs of pain hypersensitivity in the region give 'possible'; adding a history of hypersensitivity in the region and at least one comorbidity (sensitivity to sound, light or odours; sleep with frequent waking; fatigue or cognitive problems) gives 'probable'. No accuracy data: the authors call validation studies urgently needed.",
+    "verifiedOn": "2026-11-06"
+  },
+  {
+    "id": "harden2010",
+    "citation": "Harden NR, Bruehl S, Perez RSGM, Birklein F, Marinus J, Maihofner C, Lubenow T, Buvanendran A, Mackey S, Graciosa J, Mogilevski M, Ramsden C, Chont M, Vatine JJ. Validation of proposed diagnostic criteria (the \"Budapest Criteria\") for Complex Regional Pain Syndrome. Pain. 2010;150(2):268-274.",
+    "pmid": "20493633",
+    "doi": "10.1016/j.pain.2010.04.030",
+    "design": "Diagnostic validation study (structured examination at specialist centres)",
+    "population": "113 patients with CRPS type I and 47 with non-CRPS neuropathic pain",
+    "referenceStandard": "Clinical diagnosis of CRPS-I versus other neuropathic pain at specialist centres",
+    "notes": "Full text read (PMC2914601). Criteria wording from Appendix II. Budapest clinical criteria 0.99 sensitivity / 0.68 specificity (Abstract; Results 3.2, Table 3); they need examination signs, so the values are context only, not a probability for patient answers.",
+    "verifiedOn": "2026-11-06"
+  },
+  {
+    "id": "ashar2022",
+    "citation": "Ashar YK, Gordon A, Schubiner H, Uipi C, Knight K, Anderson Z, Carlisle J, Polisky L, Geuter S, Flood TF, Kragel PA, Dimidjian S, Lumley MA, Wager TD. Effect of Pain Reprocessing Therapy vs Placebo and Usual Care for Patients With Chronic Back Pain: A Randomized Clinical Trial. JAMA Psychiatry. 2022;79(1):13-23.",
+    "pmid": "34586357",
+    "doi": "10.1001/jamapsychiatry.2021.2669",
+    "design": "Randomised clinical trial (treatment, not diagnostic accuracy)",
+    "population": "151 community adults with primary chronic back pain (no identifiable tissue cause; leg pain worse than back pain excluded), Boulder, Colorado",
+    "notes": "Full text and Supplement 2 read (PMC8482298). Used only for display: the introduction's pain-threat feedback loop (mechanism text) and the six factors the trial physician used to 'rule in' centralised pain (eAppendix 1), entered as cited logical-fit checks. The factors are an expert assessment protocol with no threshold and no accuracy data, so nothing here feeds a probability. Treatment results (66% of the therapy group pain-free or nearly at 4 weeks vs 20% placebo, 10% usual care) are not used: treatment is deferred. Several authors have financial ties to the therapy (conflict of interest statement).",
+    "verifiedOn": "2026-11-07"
+  },
+  {
+    "id": "chen2023",
+    "citation": "Chen X, Huang HQ, Duan XJ. Arthroscopic treatment of ankle impingement syndrome. Chin J Traumatol. 2023;26(6):311-316.",
+    "pmid": "37852876",
+    "doi": "10.1016/j.cjtee.2023.09.006",
+    "design": "Narrative review",
+    "population": "Patients with anterior, anterolateral, anteromedial and posterior ankle impingement syndrome",
+    "notes": "Full text read in Europe PMC (PMC10755808): Introduction and 'Clinical manifestations of AIS'. No accuracy data; used for the mechanism text, context and cited reasoning only.",
+    "verifiedOn": "2026-11-07"
+  },
+  {
+    "id": "yasui2016",
+    "citation": "Yasui Y, Hannon CP, Hurley E, Kennedy JG. Posterior ankle impingement syndrome: A systematic four-stage approach. World J Orthop. 2016;7(10):657-663.",
+    "pmid": "27795947",
+    "doi": "10.5312/wjo.v7.i10.657",
+    "design": "Narrative review",
+    "population": "Patients with posterior ankle impingement syndrome",
+    "notes": "Full text read in Europe PMC (PMC5065672): 'Clinical presentation and diagnosis'. States that no study has reported the sensitivity or specificity of the plantar flexion test; used for context and cited reasoning only.",
+    "verifiedOn": "2026-11-07"
   }
 ]

@@ -1245,3 +1245,99 @@ Noah, Damon and Peyton had no matching option and got a wrong named one (hip OA 
   - new vignettes for the hot-joint follow-ups, the infection and reactive arthritis fit, and the SCFE fit and gating;
   - Noah, Damon and Peyton added to `patients.test.ts` (39 described patients, all named correctly), plus a notice check per patient.
 - **Results:** dev combined top-1 28/46, top-3 35/46, unchanged; mean interview 39.7 → 40.3 questions (max 64), from the always-asked hot joint and still-growing questions. Holdout aggregate unchanged.
+
+## Sensitised pain system (nociplastic pain) and CRPS (user request, 2026-11-06)
+
+The user pointed out that an oversensitive pain system ("the volume dial stuck at 11") isn't only fibromyalgia: it can follow a healed injury, affect one region, and sit on top of a tissue or nerve problem. Before this, the idea existed only as the "sensitisation" stress type, linked to fibromyalgia alone, so a regional case ended on a structural option or "not covered".
+
+**Search.** Europe PMC (nociplastic criteria and validation; chronic primary pain; Central Sensitization Inventory; mechanisms-based classification; pain reprocessing therapy) and web. Nothing entered from memory.
+
+**Sources (new):**
+- `nijs2021` (Nijs 2021, J Clin Med, PMID 34361986, full text PMC8347369). Sets out the IASP clinical criteria and grading for nociplastic pain of the musculoskeletal system (Kosek 2021, Pain, PMID 33974577: paywalled, not read, so not cited directly). Section 3: "possible" = pain ≥ 3 months, regional rather than discrete, not entirely explained by nociceptive or neuropathic mechanisms, and clinical signs of hypersensitivity in the region; "probable" adds a history of hypersensitivity in the region and at least one comorbidity (sound/light/odour sensitivity; sleep with frequent waking; fatigue or cognitive problems). Also: "the presence of nociceptive or neuropathic pain does not exclude the possibility of concurrence of nociplastic pain". No accuracy data; validation called "urgently needed" (Abstract; Section 5).
+- `harden2010` (Harden 2010, Pain, PMID 20493633, full text PMC2914601). Budapest clinical criteria for CRPS, wording from Appendix II. Sens 0.99, spec 0.68 against 47 people with other neuropathic pain (Abstract; Results 3.2, Table 3). Those values need examination signs, so they are context only.
+- `audit-sources`: both DOIs match their PMIDs (the `beatty1994` mismatch noted earlier is still the only one).
+
+**Options (both tier 3: checklist and reasoning, no probability):**
+- `nociplastic`, "Sensitised pain system (nociplastic pain)", in **every region**. Checklist (`nijs2021`, Section 3, Figure 1). Pain ≥ 3 months (`h_pain_3_months`, required) and pain over a region rather than one joint, tendon or small patch (`h_pain_regional`, required). Then the rule: at least 1 of [hypersensitivity sign], answered by the new adapted home test `st_brush_self` (a light stroke with a tissue; a clinician uses a soft brush). History of sensitivity (`h_hypersens_history`, implied "yes" by `p_light_touch`) and a comorbidity (`h_sens_comorbid`) are the "probable" items: outside the rule, so a "no" says nothing and a "yes" adds to the count. Clinician-only: "not entirely explained by tissue damage or a nerve problem" and the examination sign itself. Context: coexistence, and no accuracy testing yet. One uncited `supports` check: `p_spreading`.
+- `crps`, limbs from the elbow and the knee down (territory is **uncited reasoning**: CRPS is described in the limbs). Budapest checklist: pain out of proportion (`h_pain_disproportionate`, required), then at least 3 of 4 symptom groups: sensory (`p_light_touch`), vasomotor (`h_limb_temp_colour`), sudomotor/oedema (`h_limb_swelling_sweat`), motor/trophic (`h_limb_motor_trophic`). Clinician-only: signs in ≥ 2 groups and no better explanation. One uncited `supports` check: `p_injury`.
+
+**Criterion 3 proxy (user decision, 2026-11-06; uncited reasoning).** "Not entirely explained by tissue or nerve damage" is a clinician's call. The app approximates it through the ranking: the option comes first only when no tissue or nerve option scores better. This is said in the checklist's clinician-only line.
+
+**Coexistence (user decision, 2026-11-06).** The option competes in the ranking like any other, *and* `src/ui/SensitisationNote.tsx` shows a note under the best guess when its checklist is met but another option is named ("your answers also fit an oversensitive pain system ... more than one type of pain can be present at once"). The note is not shown when the named option is itself in the sensitisation stress type (`nociplastic`, `fibromyalgia`, `crps`). It is a display rule: it reads the checklist and the best guess and never feeds a probability or the ranking.
+
+**Question structure.** `h_pain_3_months` and `h_pain_regional` are pain-description (`profile`, pattern) questions, so they don't count toward the question budget. As history questions, the 3-month question took Caleb's last slot, and he ended on a hip impingement / obturator close call. Everything else for `nociplastic` is `askIf` `h_pain_regional` "yes"; a "no" to the 3-month question makes the checklist impossible and rules the option out. CRPS's three symptom questions are `askIf` `h_pain_disproportionate` "yes". `h_widespread_pain` "yes" implies `h_pain_3_months` "yes".
+
+**Stress view.** The sensitisation description now says it can happen on its own or on top of another problem. The light-touch clue also accepts `st_brush_self` (Scholz 2009's dynamic tactile allodynia is a brush stimulus). `nociplastic` and `crps` are linked to it.
+
+**Read, not used for a probability:**
+- Smart 2012 (PMID 22534654): back-pain sensitisation cluster, 91.8/97.7. The reference standard is the same clinicians' judgement, and the items (pain disproportionate, maladaptive psychosocial factors, diffuse non-anatomical tenderness) need a clinician. Declined as a checklist by the user for now.
+- Neblett 2013 (PMID 23490634): Central Sensitization Inventory ≥ 40, 81/75, against a non-patient comparison group (spectrum bias); a later sample gave specificity 55%. 25 items. Not added.
+- Nicholas 2019 (PMID 30586068): ICD-11 chronic primary pain (> 3 months, distress or disability, not better explained by another condition). No accuracy data; not added (user choice).
+- Ashar 2022 (PMID 34586357): pain reprocessing therapy, 66% pain-free or nearly so vs placebo and usual care. Treatment is deferred. Abstract only at this point; read in full the next day (below).
+
+**Tests.** New vignettes: the option is in every region and never scored; long-lasting, regional, touch-sensitive pain with nothing structural fitting names it; a "no" to 3 months rules it out and skips its questions; the 3-month implication; the layer note (shown under a nerve root, not under fibromyalgia, not when the checklist is only open); CRPS named after a wrist fracture with colour, swelling and stiffness changes; CRPS questions limb-only and gated. The forefoot list of unscored options now includes `crps` and `nociplastic`. All 39 described patients unchanged.
+
+**Results** (`eval-cases`). Dev summary unchanged: top-1 14/23, top-3 19/23, interview top-3 19/23, logical-fit 32/46, combined top-1 30/46, top-3 36/46. Per case: three ranks slipped by one, two logical-fit and one combined (superficial radial, combined 2 → 3). Mean interview 40.2 → 42.1 questions (max 62 → 63). Holdout aggregate unchanged. (The previous commit already reached combined 30/36; `cases/baseline.json` still says 28/35 and was not raised here, because this change didn't move it.)
+
+**Worth getting:** Kosek 2021 full text (exact wording and Figure 1); any accuracy study of the IASP nociplastic criteria; a patient-reported regional CRPS screen.
+
+### Pain reprocessing trial: mechanism text and rule-in signs (user request, 2026-11-07)
+
+**Source.** Ashar 2022, *JAMA Psychiatry* (`ashar2022`, PMID 34586357, DOI 10.1001/jamapsychiatry.2021.2669; `audit-sources` passes). Full text and Supplement 2 read (PMC8482298, CC-BY). This is a randomised treatment trial with no diagnostic accuracy data, so it feeds no probability. The checks fall in the review/consensus tier (cited `logic` items).
+
+**Mechanism.** `nociplastic.mechanism` now gives the trial's account of a stuck pain system (Introduction, paragraph 2): expecting damage makes harmless input painful, and the pain feels threatening, which turns it up further. That loop can keep pain going after an injury has healed. Display only.
+
+**Rule-in signs.** In the trial, a physician assessed each therapy patient for "centralized" pain using six factors (Supplement 2, eAppendix 1, "rule in"). The protocol gives no threshold and no accuracy data, so each factor became a cited `supports` item on `nociplastic`. A "yes" fits; a "no" drops the check, because the signs are not validated and other conditions share them.
+1. History of central sensitisation syndromes (irritable bowel, fibromyalgia, tension headaches, anxiety, depression, chronic fatigue): new `h_central_syndromes`.
+2. Pain in a variety of body regions (body map): existing `h_widespread_pain`.
+3. Onset linked to particularly stressful life events: new `h_onset_stress`.
+4. "Functional" pain characteristics. Only one is entered: pain that spreads to different areas over time, using the existing `p_spreading` (its uncited reason is replaced by this citation). The others are left out. "Large region" is already the IASP `noc_regional` item; "radiating outside nerve root distributions" would need the patient to know dermatomes; "persisted after an injury would have healed" overlaps the CRPS-gated `h_pain_disproportionate`.
+5. Inconsistent pain (shifting around, varying a lot through the day, resolving temporarily with distraction or pleasant activity, flaring only after activity): new `h_pain_inconsistent`. Pain easing after likely placebos is left out.
+6. Pain triggered by innocuous stimuli (smells, sounds, lights, screens, anticipated stress, anniversaries, imagined movement): new `h_pain_harmless_trigger`. Light touch is left out because the IASP checklist already counts it (`noc_sign`, `noc_history`).
+
+The four new questions are information-only and are asked only after `h_pain_regional` is yes, which itself needs pain for 3 months or more. People with short-lived or pinpoint pain therefore never see them.
+
+**Caveats recorded in the source note.**
+- A single trial of back pain only (leg pain worse than back pain excluded).
+- Mild to moderate pain in a mostly well-educated, active, white community sample.
+- Expert therapists who developed the method.
+- Several authors have financial ties to the therapy.
+- The six factors were the assessment protocol, not a tested instrument.
+- All 20 therapy patients with spine imaging had at least one anomaly (median 4), judged not to be causing the pain (Supplement 2, eResults). This is not used in the app.
+
+**Tests.** The nociplastic block gains one test: the mechanism and every logic item cite `ashar2022` and are `supports`; "yes" answers to the four new questions show as fitting checks; "no" answers drop them. The 3-month test also checks the four new questions are not asked. All 259 tests pass.
+
+**Results** (`eval-cases`). Unchanged: dev combined top-1 30/46, top-3 36/46, mean interview 42.1 (max 63); holdout aggregate unchanged.
+
+## Fifth set of ten described patients (user request, 2026-11-07)
+
+Ten plain-language patients, run through the full interview as before (answers only from what the description states; self-tests "unsure" unless the description gives the result). As written, 1 of 10 was named: Naomi (double crush), whose neck root led with carpal tunnel second. The others: Raymond (tarsal tunnel) got the L2–L4 root; Sophia (piriformis) the posterior femoral cutaneous nerve; Dennis (shingles before the rash) the thoracic root; Maren (pronator syndrome) a close call between the cervical root and carpal tunnel; Curtis (posterior ankle impingement) the peroneal tendon; Brenda (locked posterior shoulder dislocation after an electric shock) a close call between frozen shoulder and calcific tendinitis; Tariq (anterolateral ankle impingement) an ankle sprain; Valerie (hip flexor tendon) hip OA (60%); Lukas (radial tunnel) non-specific arm pain.
+
+**New option `ankle_impingement`** (mimic; outer ankle, inner ankle, Achilles, top of the foot). No option covered pinching at the front or back of the ankle joint. No accuracy data: Yasui 2016 states that no study has reported the accuracy of the pointing-down test.
+- Sources: Chen 2023 (`chen2023`, PMID 37852876, DOI 10.1016/j.cjtee.2023.09.006; full text PMC10755808, Introduction and "Clinical manifestations of AIS") and Yasui 2016 (`yasui2016`, PMID 27795947, DOI 10.5312/wjo.v7.i10.657; full text PMC5065672, "Clinical presentation and diagnosis"). Both narrative reviews; `audit-sources` passes for both.
+- Mechanism and two context items cited. Cited checks: new `h_ankle_end_range` (pain when the ankle is pushed to the end of its movement) `usual` (chen2023); `h_ankle_injury` `supports` (chen2023: sprains and fractures start it); `p_repetitive` `supports` (yasui2016: repeated forceful pointing). Uncited checks: new `h_ankle_lingering` (asked only after an injury: pain beyond 6 weeks, or back on returning to sport) and new `h_ankle_catching`, both `supports`; numbness `unexplained`. Stress link: tissue (chen2023).
+
+**Uncited reasoning added** (labelled so in the UI, no probability, nothing feeds `bayes.ts`):
+
+| Option | Added |
+|---|---|
+| `root_mid` | `h_symptoms_above_foot` `usual` (as `root_low` already had): a mid-lumbar root rarely gives ankle or foot symptoms alone |
+| `tarsal_tunnel` | new self-test `st_tinel_ankle_self` (tapping behind the inner ankle) and new `h_foot_standing_shoes` (long standing or tight footwear brings on sole burning), both `supports` |
+| `deep_gluteal` | `h_pain_below_knee` `supports` (the sciatic nerve supplies below the knee) |
+| `zoster` | new `h_unwell_before` (prodrome), `p_light_touch`, `h_age_50`, all `supports` |
+| `median_proximal` | new `h_palm_numb` `supports` (the palmar branch leaves above the wrist); new `h_forearm_grip_ache` `usual` (pronator teres) |
+| `cts` | `h_palm_numb` `unexplained` (note only) |
+| `shoulder_instability` | new `h_shoulder_shock_seizure` and `h_shoulder_shape`, both `supports` (posterior dislocation) |
+| `hip_oa` | new self-test `st_hip_rotation_self` (seated inward rotation stiff or painful) `usual` |
+| `iliopsoas` | new `h_hip_extension_stretch` `supports` |
+| `radial_tunnel` | new `h_forearm_below_elbow` `usual` and `h_supination_pain` `supports` (it had no checks before) |
+
+**Michel checklist (`deep_gluteal`).** "Buttock pain reproduced by palpation over the piriformis" moved from clinician-only to a patient item linked to the new self-test `st_piriformis_press_self` (adapted from the clinician's check; item from michel2013 Table 2 as already recorded). Title updated: 7 points checkable here, 4 clinician-only.
+
+**Question order.** `h_hip_flexor_lift` (iliopsoas's `usual` check) and `h_hip_catch` (hip impingement's `supports` check) are now `alwaysAsk`, like the newer information-only checks. Without it, they could only be asked within the 30-question budget or as a close-call question: Valerie's knee-lift question was never reached, and the new hip-rotation self-test took the budget slot Caleb's catching question had used.
+
+**Diagrams** for the three new self-tests in `TestDiagram.tsx`.
+
+**Results.** All ten in `patients.test.ts` and named correctly; Naomi, a double crush, has a new `second` assertion (the overall ranking puts carpal tunnel second behind the neck root, which leads on probability from the neck-tilt and hand-on-head tests). The tool names one option; a coexistence note for two nerve problems was not added.
+
+**Case reports** (`eval-cases`). Dev combined top-1 30/46, top-3 36/46, unchanged; mean interview 42.1 → 44.1 questions (max 63 → 68) from the new always-asked checks. Holdout aggregate unchanged (combined top-1 10/21, top-3 13/21).

@@ -724,6 +724,49 @@ const D: Record<string, [() => ReactNode, string]> = {
   ),
     "From behind: press two finger-widths out from the middle, just below the skull, on each side",
   ],
+  st_brush_self: [
+    () => (
+    <ForearmFlat>
+      <ellipse cx={62} cy={58} rx={9} ry={6} className="dg-helper" />
+      <Arrow d="M48 46 L104 46" />
+      <Spot at={[80, 70]} />
+    </ForearmFlat>
+  ),
+    "Stroke the painful skin as lightly as dusting with a tissue, then the same spot on the other side",
+  ],
+  st_tinel_ankle_self: [
+    () => (
+    <>
+      <Seg a={[30, 48]} b={[180, 58]} w={16} />
+      <Seg a={[172, 66]} b={[226, 74]} w={10} />
+      <circle cx={186} cy={60} r={5} className="dg-hand" />
+      <Spot at={[176, 70]} />
+      <Arrow d="M 150 96 Q 196 104 218 84" />
+    </>
+  ),
+    "Inner side of the ankle: tap the hollow behind and below the ankle bone ×10",
+  ],
+  st_piriformis_press_self: [
+    () => (
+    <>
+      <Bed />
+      <Fig {...SIDE_LYING} leg={[[132, 64], [168, 86]]} arm={[[86, 72], [104, 80]]} />
+      <Spot at={[106, 82]} />
+    </>
+  ),
+    "Lying on your good side: press deep into the middle of the buttock, halfway between the hip bone and the base of the spine",
+  ],
+  st_hip_rotation_self: [
+    () => (
+    <>
+      <ellipse cx={120} cy={40} rx={30} ry={16} className="dg-hand" />
+      <Seg a={[106, 44]} b={[106, 120]} w={14} />
+      <Seg a={[134, 44]} b={[170, 116]} w={14} />
+      <Arrow d="M 140 124 Q 158 132 176 124" />
+    </>
+  ),
+    "Seen from the front, knees together: swing the foot outward (turns the hip inward), then compare sides",
+  ],
 };
 
 export function hasDiagram(findingId: string): boolean {

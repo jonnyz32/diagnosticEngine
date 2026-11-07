@@ -4,7 +4,7 @@ import { loadEvidence } from "../../src/engine/db";
 import { logicalFit } from "../../src/engine/logic";
 import type { Answer, Region } from "../../src/engine/schema";
 import { nextFinding, withImplied } from "../../src/engine/selection";
-import { bestGuess, type BestGuess } from "../../src/engine/verdict";
+import { bestGuess, judgementRanking, type BestGuess } from "../../src/engine/verdict";
 import { childWithLimp, hotJointWithFever } from "../../src/ui/UrgentJointNotice";
 
 /**
@@ -18,7 +18,7 @@ import { childWithLimp, hotJointWithFever } from "../../src/ui/UrgentJointNotice
  * ten are listed; Mireille (suspected spinal metastasis, which no option covers) must get
  * "not covered". A third set followed the same day; the seven whose condition the tool lists are
  * included (see the comment above them). A fourth set followed the same day (see the comment
- * above it).
+ * above it), and a fifth on 2026-11-07.
  */
 
 const db = loadEvidence();
@@ -32,6 +32,8 @@ interface Patient {
   facts: Record<string, "yes" | "no">;
   // A close call that includes `expect` also passes (see the patient's comment).
   closeOk?: boolean;
+  // Two problems at once (Naomi): the overall ranking must put this option second.
+  second?: string;
 }
 
 const patients: Patient[] = [
@@ -651,6 +653,215 @@ const patients: Patient[] = [
       h_fever: Y, h_pain_moves: Y, h_skin_spots: Y,
     },
   },
+  // Fifth set (user-supplied, 2026-11-07), all ten. Self-tests are "unsure" unless the description
+  // gives the result (tapping or pressing a spot, the straight-leg raise, neck tilt, wrist bending).
+  {
+    // An L2-L4 nerve root, then a close call with both lumbar roots, until the mid-lumbar root got the
+    // foot-only check and tarsal tunnel got the ankle tapping and footwear checks (2026-11-07).
+    name: "Raymond, 51: burning under the inner heel and arch after long shifts on concrete, worse as the day goes on, tapping behind the inner ankle zings into the sole",
+    expect: "tarsal_tunnel",
+    regions: ["heel", "foot_sole_lateral", "ankle_medial"],
+    facts: {
+      h_symptoms_above_foot: N, h_walking_claudication: N, h_ankle_injury: N, h_heel_first_steps: N,
+      h_bend_forward: N, h_bilateral: N, h_age_over_65: N, h_age_45: Y, h_age_50: Y, h_age_60: N,
+      h_leg_worse_than_back: Y, h_pain_below_knee: Y, h_leg_numbness: Y, h_worse_standing: Y, p_flexion_worse: N,
+      h_severe_leg_pain: N, h_pain_3_months: Y, h_pain_disproportionate: N, h_joint_hot_swollen: N,
+      h_bilateral_sole_numbness: N, h_leg_burning: Y, h_leg_tingling: Y, h_leg_shooting: Y,
+      h_many_places_both_sides: N, h_joint_attacks: N, h_many_joints_swollen: N, h_poly_toes_up: N,
+      h_ankle_behind_outer: N, h_age_growing: N, p_tingling: Y, p_heavy_weak: N, p_position: Y, p_activity_rest: N,
+      p_night_rest: N, p_injury: N, p_burning: Y, p_shooting: Y, p_spreading: N, p_one_spot: Y,
+      p_movement_eases: N, h_recent_surgery: N, h_sole_wide: Y, p_dull_ache: Y, h_diabetes: N,
+      h_cough_sneeze: N, p_sudden_severe: N, h_widespread_pain: N, h_fatigue_sleep: N, h_pregnancy: N,
+      h_pain_regional: N, h_heel_back_bump: N, h_ankle_stiff_ache: N, st_tinel_ankle_self: Y,
+      h_foot_standing_shoes: Y,
+    },
+  },
+  {
+    // The posterior femoral cutaneous nerve until pressing over the piriformis (a Michel item, adapted)
+    // and pain below the knee were added for deep gluteal syndrome (2026-11-07).
+    name: "Sophia, 32: low back pain shooting to the ankle on sitting and bending, painless straight-leg raise, a buttock knot reproduces it",
+    expect: "deep_gluteal",
+    regions: ["low_back", "buttock", "posterior_thigh", "calf"],
+    facts: {
+      h_pain_sitting_chair: Y, h_walk_stand_still_ease: N, h_bend_forward: N, h_walking_claudication: N,
+      h_ankle_injury: N, h_groin_pain: N, h_no_pain_seated: N, h_bilateral: N, st_slr_helper: N, h_age_over_65: N,
+      h_age_45: N, h_age_50: N, h_pain_below_knee: Y, h_many_places_both_sides: N, h_pain_3_months: N,
+      h_pain_disproportionate: N, h_leg_numbness: N, h_bone_health: N, h_leg_tingling: N, h_leg_burning: N,
+      h_leg_shooting: Y, p_tingling: N, p_buzzing: N, p_numb: N, p_heavy_weak: N, p_position: Y, p_stretch: Y,
+      p_repetitive: N, p_activity_rest: N, p_night_rest: N, p_injury: N, p_burning: N, p_spreading: N,
+      p_one_spot: Y, p_movement_eases: N, h_recent_surgery: N, h_cough_sneeze: N, p_flexion_worse: Y,
+      p_shooting: Y, p_sudden_severe: N, h_back_movement: Y, h_pregnancy: N, h_widespread_pain: N,
+      h_fatigue_sleep: N, h_severe_leg_pain: Y, h_improve_seated: N, h_worse_standing: N, h_diabetes: N,
+      p_light_touch: N, h_hip_stairs: N, h_limp: N, h_back_night_wakes: N, h_morning_stiff_long: N,
+      h_back_onset_young: N, h_back_exercise_better: N, h_pfcn_location: Y, h_pfcn_avoid_sitting: N,
+      h_hamstring_injury: N, st_pfcn_skin: N, h_hip_weight_pain: N, st_scn_tender_self: N,
+      st_scn_reproduce_self: Y, st_piriformis_press_self: Y,
+    },
+  },
+  {
+    // Pre-eruptive shingles: no rash yet, so the rash check counts against. The thoracic root until
+    // shingles got checks for feeling unwell beforehand, painful light touch and age 50 or over (2026-11-07).
+    name: "Dennis, 63: burning band round the right ribs for 4 days, clothing touch unbearable, no rash yet, unwell beforehand",
+    expect: "zoster",
+    regions: ["mid_back", "chest_side", "abdomen"],
+    facts: {
+      h_trunk_band: Y, h_bone_health: N, h_pain_3_months: N, h_chest_surgery_injury: N, h_rib_click: N,
+      h_abd_bulge: N, h_back_gradual_onset: N, h_pubic_bone: N, h_many_places_both_sides: N, h_band_rash: N,
+      h_back_movement: N, h_groin_adductor: N, p_spreading: N, p_buzzing: N, p_numb: N, p_heavy_weak: N,
+      p_position: N, p_injury: N, p_burning: Y, p_light_touch: Y, p_one_spot: N, p_movement_eases: N,
+      h_trunk_numbness: Y, h_age_45: Y, h_age_50: Y, h_age_60: Y, h_age_over_65: N, p_sudden_severe: Y,
+      p_stretch: N, p_activity_rest: N, p_repetitive: N, p_dull_ache: Y, h_back_sudden_onset: Y,
+      h_neck_movement_pain: N, h_widespread_pain: N, h_fatigue_sleep: N, h_back_itch: N, h_recent_surgery: N,
+      h_pain_disproportionate: N, h_scapula_winging: N, h_chest_stinging: N, p_tingling: N,
+      h_acnes_questionnaire: N, h_unwell_before: Y,
+    },
+  },
+  {
+    // A close call (cervical root, carpal tunnel, neuralgic amyotrophy) until the forearm median nerve got
+    // checks for palm numbness and a forearm ache on gripping and turning the palm down (2026-11-07).
+    name: "Maren, 29: dental hygienist with an ache in the upper front forearm, thumb-side tingling including the palm, no night waking",
+    expect: "median_proximal",
+    regions: ["forearm_anterior", "hand_median"],
+    facts: {
+      h_arm_numbness: Y, h_thumb_base_pinch: N, p_night_rest: N, p_light_touch: N, h_pain_3_months: Y,
+      h_pain_disproportionate: N, h_joint_hot_swollen: N, h_finger_catching: N, h_repetitive_use: Y, h_age_45: N,
+      h_age_50: N, h_age_60: N, h_age_over_65: N, h_finger_knobbly: N, h_fingertip_droop: N, h_palm_cord: N,
+      h_many_places_both_sides: N, h_joint_attacks: N, h_many_joints_swollen: N, p_spreading: N, p_injury: N,
+      p_tingling: Y, p_buzzing: N, p_numb: Y, p_heavy_weak: Y, p_sudden_severe: N, p_burning: N,
+      p_movement_eases: N, h_wrist_thumb_motion: N, h_hand_flick: N, h_symptoms_above_hand: Y, p_dull_ache: Y,
+      p_repetitive: Y, h_sudden_severe_arm_pain: N, h_fall_on_hand: N, h_wrist_lump: N, h_widespread_pain: N,
+      h_fatigue_sleep: N, h_pregnancy: N, h_neck_movement_pain: N, h_shoulder_stiff: N, h_grip_lateral_elbow: N,
+      h_outer_elbow_main: N, h_thumb_base_bump: N, h_snuffbox_tender: N, h_forearm_creak: N,
+      h_arm_overhead_symptoms: N, h_hand_colour_change: N, h_pain_regional: N, h_palm_numb: Y,
+      h_forearm_grip_ache: Y,
+    },
+  },
+  {
+    // Posterior ankle impingement. Not covered (peroneal tendon named) until ankle impingement was added
+    // (2026-11-07).
+    name: "Curtis, 42: deep back-of-ankle pain pointing the toes after more downhill trail running, Achilles tendon itself painless",
+    expect: "ankle_impingement",
+    regions: ["achilles", "ankle_lateral"],
+    facts: {
+      h_symptoms_above_foot: N, h_ankle_injury: N, h_walking_claudication: N, h_bend_forward: N, h_bilateral: N,
+      h_age_over_65: N, h_age_45: N, h_age_50: N, h_worse_standing: N, h_leg_worse_than_back: Y,
+      h_pain_below_knee: Y, h_leg_numbness: N, p_flexion_worse: N, p_light_touch: N, h_pain_3_months: Y,
+      h_pain_disproportionate: N, h_joint_hot_swollen: N, h_bilateral_sole_numbness: N, h_poly_toes_up: N,
+      h_ankle_behind_outer: Y, h_age_growing: N, h_ankle_stiff_ache: N, h_heel_back_bump: N,
+      h_many_places_both_sides: N, h_joint_attacks: N, h_many_joints_swollen: N, h_leg_burning: N,
+      h_peroneal_setting: N, h_achilles_spot: N, p_tingling: N, p_buzzing: N, p_numb: N, p_heavy_weak: N,
+      p_position: N, p_activity_rest: N, p_night_rest: N, p_injury: N, p_burning: N, p_spreading: N, p_one_spot: Y,
+      p_movement_eases: N, h_recent_surgery: N, p_repetitive: Y, p_throbbing: Y, p_dull_ache: Y,
+      p_sudden_severe: N, h_leg_tingling: N, h_leg_shooting: N, h_cough_sneeze: N, h_diabetes: N,
+      h_vascular_risk: N, h_leg_cool: N, h_ff_load_increase: Y, h_hip_load_increase: Y, h_severe_leg_pain: N,
+      h_widespread_pain: N, h_fatigue_sleep: N, h_achilles_morning: N, h_ankle_end_range: Y,
+    },
+  },
+  {
+    // Locked posterior dislocation. A close call (frozen shoulder, calcific tendinitis) until instability got
+    // checks for a seizure or electric shock and a changed shoulder shape (2026-11-07).
+    name: "Brenda, 58: shoulder blocked since an electric shock 6 weeks ago, flattened at the front with a bump at the back",
+    expect: "shoulder_instability",
+    regions: ["shoulder"],
+    facts: {
+      h_shoulder_stiff: Y, h_ac_point: N, st_ac_swelling_self: N, h_shoulder_overhead_or_fall: N,
+      h_shoulder_above_elbow: Y, st_shoulder_abduction_relief: N, h_many_places_both_sides: N, h_pain_3_months: N,
+      h_neck_movement_pain: N, h_sudden_severe_arm_pain: Y, h_joint_hot_swollen: N, h_scapula_winging: N,
+      h_arm_overhead_symptoms: N, h_front_shoulder_pain: N, h_neck_car_accident: N, h_many_joints_swollen: N,
+      h_age_45: Y, h_age_50: Y, h_age_60: N, h_age_over_65: N, p_spreading: N, p_tingling: N, p_buzzing: N,
+      p_numb: N, p_heavy_weak: N, p_position: N, p_activity_rest: N, p_injury: Y, p_sudden_severe: N, p_burning: N,
+      p_light_touch: N, p_one_spot: N, p_movement_eases: N, h_arm_numbness: N, p_dull_ache: Y, p_heat_eases: N,
+      h_both_shoulders_ache: N, h_shoulder_repetitive_onset: N, h_repetitive_use: N, h_widespread_pain: N,
+      h_fatigue_sleep: N, h_joint_attacks: N, h_pain_disproportionate: N, h_fall_on_hand: N,
+      h_shoulder_shock_seizure: Y, h_shoulder_shape: Y,
+    },
+  },
+  {
+    // Anterolateral ankle impingement. Not covered (ankle sprain named) until ankle impingement was added
+    // (2026-11-07).
+    name: "Tariq, 24: catching pain in front of the outer ankle bone 6 weeks after a sprain, worse squatting and pivoting",
+    expect: "ankle_impingement",
+    regions: ["ankle_lateral"],
+    facts: {
+      h_symptoms_above_foot: N, h_ankle_injury: Y, h_ankle_rolled_in: Y, h_ankle_cant_weight: N,
+      h_walking_claudication: N, h_bend_forward: N, h_bilateral: N, h_age_over_65: N, h_age_45: N, h_age_50: N,
+      h_worse_standing: N, h_leg_worse_than_back: Y, h_pain_below_knee: Y, h_leg_numbness: N, p_flexion_worse: N,
+      h_joint_hot_swollen: N, p_light_touch: N, h_pain_3_months: N, h_pain_disproportionate: N,
+      st_sens_lateral_foot: N, h_bilateral_sole_numbness: N, h_ankle_behind_outer: N, h_ankle_stiff_ache: N,
+      h_many_places_both_sides: N, h_joint_attacks: N, h_many_joints_swollen: N, h_poly_toes_up: N,
+      h_leg_burning: N, p_spreading: N, p_injury: Y, h_peroneal_setting: N, p_tingling: N, p_buzzing: N, p_numb: N,
+      p_heavy_weak: N, p_position: N, p_activity_rest: N, p_night_rest: N, p_burning: N, p_one_spot: Y,
+      p_movement_eases: N, h_recent_surgery: N, p_stabbing: Y, h_age_growing: N, p_sudden_severe: N,
+      h_leg_tingling: N, h_leg_shooting: N, h_cough_sneeze: N, h_severe_leg_pain: N, h_widespread_pain: N,
+      h_fatigue_sleep: N, h_diabetes: N, h_vascular_risk: N, h_leg_cool: N, p_repetitive: N, h_achilles_spot: N,
+      h_heel_back_bump: N, h_ankle_end_range: Y, h_ankle_catching: Y, h_ankle_lingering: Y,
+    },
+  },
+  {
+    // Hip OA (60%) until the hip-rotation self-test (usual for hip OA), the backward-stretch check and an
+    // always-asked knee-lift question were added for the hip flexor tendon (2026-11-07).
+    name: "Valerie, 67: front hip and groin ache on stairs and lifting the knee, hip turns inward freely and painlessly",
+    expect: "iliopsoas",
+    regions: ["groin", "anterior_thigh"],
+    facts: {
+      st_tinel_asis: N, h_walk_stand_still_ease: N, h_leg_burning: N, h_bend_forward: N, h_leg_numbness: N,
+      h_walking_claudication: N, h_pregnancy: N, h_tight_clothing: N, h_diabetes: N, h_improve_seated: Y,
+      h_bilateral: N, h_hip_stairs: Y, h_age_over_65: Y, h_age_45: Y, h_age_50: Y, h_age_60: Y,
+      st_squat_posterior: N, st_psis_tender: N, h_leg_worse_than_back: Y, h_pain_below_knee: N,
+      st_adductor_tender_self: N, st_adductor_squeeze_self: N, h_obt_exercise: Y, h_obt_radiate: N,
+      st_obt_skin_self: N, h_ii_pain: N, h_ii_sensory: N, st_ii_trigger_self: N, h_many_places_both_sides: N,
+      h_pain_3_months: Y, p_tingling: N, p_buzzing: N, p_numb: N, p_heavy_weak: N, p_position: N, p_stretch: Y,
+      p_night_rest: N, p_injury: N, p_burning: N, p_light_touch: N, p_spreading: N, p_one_spot: Y,
+      p_movement_eases: N, h_recent_surgery: N, h_groin_deep_flexion: Y, h_groin_adductor: N, h_age_growing: N,
+      h_bone_health: N, h_joint_hot_swollen: N, h_hip_flexor_lift: Y, h_hip_weight_pain: N,
+      h_morning_stiff_long: N, h_groin_pain: Y, p_dull_ache: Y, h_hip_catch: N, p_sudden_severe: N,
+      h_leg_tingling: N, h_leg_shooting: N, h_cough_sneeze: N, h_widespread_pain: N, h_fatigue_sleep: N,
+      h_back_gradual_onset: N, h_pubic_bone: N, h_avn_risk: N, h_hip_load_increase: N, h_thigh_sudden_pull: N,
+      h_vascular_risk: N, h_leg_cool: N, h_pain_sitting_chair: N, h_severe_leg_pain: N, p_repetitive: N,
+      st_hip_rotation_self: N, h_hip_extension_stretch: Y,
+    },
+  },
+  {
+    // Non-specific arm pain until the radial tunnel got checks for the spot below the elbow bump and
+    // turning the palm up against resistance (2026-11-07).
+    name: "Lukas, 36: mechanic with an ache below the outer elbow, the bony bump not tender, worse turning the palm up",
+    expect: "radial_tunnel",
+    regions: ["elbow_lateral", "forearm_lateral", "forearm_dorsal"],
+    facts: {
+      h_wrist_thumb_motion: N, h_arm_numbness: N, h_many_places_both_sides: N, h_outer_elbow_main: N,
+      st_epicondyle_tender_self: N, p_light_touch: N, h_pain_3_months: Y, h_pain_disproportionate: N,
+      h_joint_hot_swollen: N, h_wrist_lump: N, h_joint_attacks: N, h_many_joints_swollen: N, h_forearm_creak: N,
+      h_repetitive_use: Y, h_elbow_point_swelling: N, h_fall_on_hand: N, p_spreading: N, p_injury: N,
+      p_tingling: N, p_buzzing: N, p_numb: N, p_heavy_weak: N, p_position: N, p_burning: N, p_one_spot: Y,
+      p_movement_eases: N, p_dull_ache: Y, p_repetitive: Y, h_age_45: N, h_age_50: N, h_age_60: N,
+      h_age_over_65: N, h_sudden_severe_arm_pain: N, p_sudden_severe: N, h_widespread_pain: N, h_fatigue_sleep: N,
+      h_neck_movement_pain: N, h_symptoms_above_hand: Y, h_forearm_below_elbow: Y, h_supination_pain: Y,
+    },
+  },
+  {
+    // Double crush: a neck root and carpal tunnel together. The best guess names one; the ranking must
+    // put the other second (the root leads on probability from the neck-tilt and hand-on-head tests).
+    name: "Naomi, 48: neck and arm pain eased with the hand on the head, plus night-time thumb-to-middle-finger tingling eased by shaking",
+    expect: "root_cervical",
+    second: "cts",
+    regions: ["neck", "shoulder", "upper_arm_lateral", "hand_median"],
+    facts: {
+      st_spurling_self: Y, h_arm_numbness: Y, h_shoulder_stiff: N, h_thumb_base_pinch: N, h_ac_point: N,
+      st_ac_swelling_self: N, st_shoulder_abduction_relief: Y, h_shoulder_overhead_or_fall: N, st_phalen_self: Y,
+      p_light_touch: N, h_many_places_both_sides: N, h_pain_3_months: Y, h_pain_disproportionate: N, h_age_45: Y,
+      h_age_50: N, h_age_60: N, h_age_over_65: N, h_joint_hot_swollen: N, h_neck_movement_pain: Y,
+      h_finger_knobbly: N, h_fingertip_droop: N, h_palm_cord: N, h_joint_attacks: N, h_neck_car_accident: N,
+      h_shoulder_apprehension: N, h_many_joints_swollen: N, h_finger_catching: N, p_tingling: Y, p_buzzing: N,
+      p_numb: Y, p_heavy_weak: N, p_position: Y, p_activity_rest: N, p_night_rest: Y, p_sudden_severe: N,
+      p_injury: N, p_burning: N, p_spreading: N, p_one_spot: N, p_movement_eases: N, h_sudden_severe_arm_pain: N,
+      h_scapula_winging: N, h_arm_overhead_symptoms: N, h_front_shoulder_pain: N, h_wrist_thumb_motion: N,
+      h_hand_flick: Y, h_symptoms_above_hand: Y, p_dull_ache: Y, h_pregnancy: N, h_widespread_pain: N,
+      h_fatigue_sleep: N, h_back_gradual_onset: Y, h_hand_colour_change: N, h_both_shoulders_ache: N,
+      h_fall_on_hand: N, h_wrist_lump: N, h_thumb_base_bump: N, h_shoulder_dislocated: N,
+      h_shoulder_repetitive_onset: N, h_back_onset_young: N, h_back_exercise_better: N, h_back_night_wakes: N,
+      h_repetitive_use: N, h_pain_regional: N,
+    },
+  },
 ];
 
 // The answers after a full interview: asked questions answered from the facts, "unsure"
@@ -665,10 +876,12 @@ function answersAfter(p: Patient): Record<string, Answer> {
   return withImplied(db, answers, p.regions);
 }
 
-function interview(p: Patient): BestGuess {
+function interview(p: Patient): { guess: BestGuess; ranking: string[] } {
   const view = restrictToRegions(db, p.regions);
   const full = answersAfter(p);
-  return bestGuess(posterior(view, full), logicalFit(view, p.regions, full));
+  const post = posterior(view, full);
+  const fits = logicalFit(view, p.regions, full);
+  return { guess: bestGuess(post, fits), ranking: judgementRanking(post, fits).map((o) => o.id) };
 }
 
 // "other": no listed option comes out ahead of "not covered by this tool".
@@ -681,9 +894,10 @@ describe("described patients: the best guess after a full interview", () => {
   for (const p of patients) {
     it(p.name, () => {
       for (const f of Object.keys(p.facts)) expect(db.findings.some((x) => x.id === f), f).toBe(true);
-      const g = interview(p);
+      const { guess: g, ranking } = interview(p);
       if (p.closeOk && g.kind === "close") expect(g.ids).toContain(p.expect);
       else expect(named(g)).toBe(p.expect);
+      if (p.second) expect(ranking[1]).toBe(p.second);
     });
   }
 });
