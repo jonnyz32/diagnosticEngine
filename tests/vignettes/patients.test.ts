@@ -5,6 +5,7 @@ import { logicalFit } from "../../src/engine/logic";
 import type { Answer, Region } from "../../src/engine/schema";
 import { nextFinding, withImplied } from "../../src/engine/selection";
 import { bestGuess, type BestGuess } from "../../src/engine/verdict";
+import { childWithLimp, hotJointWithFever } from "../../src/ui/UrgentJointNotice";
 
 /**
  * Ten textbook patients described in plain language (added 2026-11-06). Each is run through
@@ -16,7 +17,8 @@ import { bestGuess, type BestGuess } from "../../src/engine/verdict";
  * (self-tests included), plus Caleb's answer to the hip-catching question added afterwards. All
  * ten are listed; Mireille (suspected spinal metastasis, which no option covers) must get
  * "not covered". A third set followed the same day; the seven whose condition the tool lists are
- * included (see the comment above them).
+ * included (see the comment above them). A fourth set followed the same day (see the comment
+ * above it).
  */
 
 const db = loadEvidence();
@@ -28,6 +30,8 @@ interface Patient {
   expect: string;
   regions: Region[];
   facts: Record<string, "yes" | "no">;
+  // A close call that includes `expect` also passes (see the patient's comment).
+  closeOk?: boolean;
 }
 
 const patients: Patient[] = [
@@ -278,11 +282,35 @@ const patients: Patient[] = [
       h_pubic_bone: N, h_worst_medial_thigh: N,
     },
   },
-  // Third set (user-supplied, 2026-11-06): the seven of ten whose condition the tool lists and
-  // that it names. Self-tests are "unsure" unless the description gives the result.
+  // Third set (user-supplied, 2026-11-06): nine of ten (Walter has cauda equina, not covered). Self-
+  // tests are "unsure" unless the description or a follow-up answer (Sanjay, Claire) gives them.
   {
-    // The snuffbox answer is not in the description; it was answered "yes" (expected after a
-    // scaphoid fracture). Without it, thumb-base OA ties.
+    // Ended on a close call (deep gluteal first, posterior femoral cutaneous nerve, SIJ) until his
+    // answers to the self-tests were supplied.
+    name: "Sanjay, 38: deep mid-buttock ache into the back of the thigh, worse sitting on hard surfaces, no back pain",
+    expect: "deep_gluteal",
+    regions: ["buttock", "posterior_thigh"],
+    facts: {
+      h_pain_sitting_chair: Y, h_improve_seated: N, h_no_pain_seated: N, h_walking_claudication: N, h_bend_forward: N,
+      h_walk_stand_still_ease: N, h_worse_standing: N, h_bilateral: N, h_groin_pain: N, h_age_over_65: N, h_age_50: N,
+      h_pain_below_knee: N, h_leg_numbness: Y, h_leg_tingling: Y, h_leg_burning: Y, h_leg_shooting: N, h_cough_sneeze: N,
+      h_leg_worse_than_back: Y, h_hip_stairs: Y, h_limp: N, h_hip_first_steps: N, h_many_places_both_sides: N,
+      h_pregnancy: N, h_recent_surgery: N, p_tingling: Y, p_burning: Y, p_dull_ache: Y, p_position: Y, p_repetitive: Y,
+      p_injury: N, p_sudden_severe: N, p_night_rest: N, p_light_touch: N, p_spreading: N, p_numb: N, p_buzzing: N,
+      p_heavy_weak: N, p_flexion_worse: N, h_pfcn_location: N, h_pfcn_avoid_sitting: N, h_hamstring_injury: N,
+      h_hip_load_increase: Y, h_hip_weight_pain: N, h_tailbone_point: N, h_back_onset_young: N, h_back_gradual_onset: N,
+      h_thigh_sudden_pull: N, h_widespread_pain: N, h_fatigue_sleep: N, h_buttock_burning_walking: N, h_hip_catch: N,
+      h_back_extension_pain: N, h_pelvis_walk_turn: N, p_one_spot: N, p_movement_eases: N, p_heat_eases: N,
+      h_severe_leg_pain: N, h_bone_health: N, h_avn_risk: N, h_back_exercise_better: N, h_back_night_wakes: N,
+      h_tailbone_sitting: N, h_back_arching_sport: N, p_stretch: N, p_activity_rest: N, st_seated_piriformis: Y,
+      st_beatty_home: Y, st_active_piriformis: Y, st_slr_helper: N, st_pfcn_skin: N, st_psis_tender: N,
+      st_one_finger_psis: N, st_resisted_knee_flex: N, st_long_stride_walk: N, st_ifi_helper: N, st_single_leg_stance: N,
+      st_trochanter_tender: N, st_centralisation_self: N, st_scn_tender_self: N, st_scn_reproduce_self: N,
+    },
+  },
+  {
+    // Snuffbox tenderness and the grind test from her answers to follow-up questions. Without the
+    // snuffbox answer, thumb-base OA ties.
     name: "Claire, 29: thumb-side wrist pain after a fall on the outstretched hand, worse pushing off and pinching",
     expect: "scaphoid_fracture",
     regions: ["wrist_radial"],
@@ -292,7 +320,7 @@ const patients: Patient[] = [
       h_repetitive_use: N, h_thumb_base_bump: N, h_age_45: N, h_morning_stiff_long: N, h_finger_knobbly: N,
       p_dull_ache: Y, p_stabbing: Y, p_heavy_weak: N, p_night_rest: N, p_movement_eases: N, p_sudden_severe: N,
       p_position: N, p_stretch: N, p_repetitive: N, p_burning: N, p_shooting: N, h_hand_flick: N,
-      h_thumb_base_pinch: Y, h_wrist_thumb_motion: N, p_one_spot: Y, h_snuffbox_tender: Y,
+      h_thumb_base_pinch: Y, h_wrist_thumb_motion: N, p_one_spot: Y, h_snuffbox_tender: Y, st_grind_helper: N,
     },
   },
   {
@@ -384,6 +412,26 @@ const patients: Patient[] = [
     },
   },
   {
+    // No option covered turf toe until it was added (2026-11-06); before that, a close call
+    // between sesamoiditis and hallux rigidus.
+    name: "Simone, 33: big toe forced upward pivoting on turf, pain and bruising under the big toe joint",
+    expect: "turf_toe",
+    regions: ["forefoot"],
+    facts: {
+      p_injury: Y, h_big_toe_forced_up: Y, h_big_toe_swelling: Y, h_under_big_toe: Y, h_big_toe_tender: Y,
+      h_big_toe_bend: Y, h_big_toe_bump: N, h_bunion: N, h_ff_gradual_onset: N, h_ff_tight_shoes: N, h_ff_im_space: N,
+      h_ff_pins_needles: N, h_ff_click: N, h_ff_2nd_head: N, h_ff_swelling: N, h_ff_toe_drift: N, h_ff_load_increase: N,
+      h_ff_bone_point: N, h_sole_wide: N, h_ff_shoes_off_eases: N, h_symptoms_above_foot: N, h_joint_attacks: N,
+      h_many_joints_swollen: N, h_many_places_both_sides: N, h_morning_stiff_long: N, h_poly_toes_up: N, h_bilateral: N,
+      h_age_over_65: N, h_bilateral_sole_numbness: N, h_walking_claudication: N, h_bend_forward: N, h_leg_numbness: N,
+      h_leg_tingling: N, h_leg_burning: N, h_leg_shooting: N, h_pain_below_knee: N, h_severe_leg_pain: Y,
+      h_cough_sneeze: N, h_pain_sitting_chair: N, h_recent_surgery: N, h_improve_seated: Y, p_stabbing: Y,
+      p_throbbing: Y, p_tingling: N, p_numb: N, p_burning: N, p_buzzing: N, p_shooting: N, p_sudden_severe: N,
+      p_one_spot: Y, p_night_rest: N, p_repetitive: N, p_position: N, p_light_touch: N, p_spreading: N,
+      p_movement_eases: N, p_heavy_weak: N, p_flexion_worse: N,
+    },
+  },
+  {
     name: "Hector, 47: neck pain into the shoulder blade, outer arm and thumb, eased with the hand on his head",
     expect: "root_cervical",
     regions: ["neck", "scapula", "upper_arm_lateral", "forearm_lateral", "hand_dorsal_radial", "hand_median"],
@@ -401,17 +449,225 @@ const patients: Patient[] = [
       p_movement_eases: N, p_dull_ache: N,
     },
   },
+  // Fourth set (user-supplied, 2026-11-06): the five whose condition the tool lists, plus two it
+  // doesn't cover (Camille: gallbladder; Toby: osteoid osteoma), which must get "not covered".
+  // Noah (SCFE), Damon (reactive arthritis) and Peyton (gonococcal arthritis) follow, added once
+  // their conditions were listed. Self-tests are "unsure".
+  {
+    // Named a low back nerve root (L5/S1, 53%) until compartment syndrome got checks for pins and needles, weakness and settling with rest.
+    name: "Amina, 28: runner, bursting tightness in the front of both shins at 12 minutes, foot slapping, gone within 20 minutes of stopping",
+    expect: "cecs",
+    regions: ["shin_anterior", "foot_dorsum"],
+    facts: {
+      h_bilateral: Y, p_activity_rest: Y, h_leg_exercise_tight: Y, h_walking_claudication: N,
+      h_walk_stand_still_ease: N, h_bend_forward: N, p_heavy_weak: Y, p_tingling: Y, h_leg_tingling: Y,
+      h_leg_numbness: Y, p_night_rest: N, p_injury: N, p_sudden_severe: N, p_one_spot: N, h_age_over_65: N,
+      h_age_45: N, h_age_50: N, h_age_growing: N, p_numb: N, p_buzzing: N, p_burning: Y, h_leg_burning: Y,
+      p_shooting: N, h_leg_shooting: N, p_light_touch: N, p_spreading: N, p_position: N, p_stretch: N,
+      p_movement_eases: N, p_repetitive: Y, h_cough_sneeze: N, h_pain_below_knee: Y, h_improve_seated: N,
+      h_no_pain_seated: N, h_worse_standing: N, h_pain_sitting_chair: N, h_diabetes: N, h_recent_surgery: N,
+      h_ff_load_increase: N, h_symptoms_above_foot: Y, h_severe_leg_pain: Y, p_dull_ache: Y, p_stabbing: N,
+      h_bilateral_sole_numbness: N, h_leg_worse_than_back: Y, h_ankle_injury: N, p_flexion_worse: N, st_heel_walk: N,
+      h_shin_long_stretch: N, h_many_places_both_sides: N, h_many_joints_swollen: N, h_big_toe_tender: N,
+      h_big_toe_bump: N, h_big_toe_bend: N, h_ankle_stiff_ache: N, h_bunion: N, h_joint_attacks: N,
+      h_poly_toes_up: N, st_slr_helper: N, st_prone_knee_bend: N, st_sit_to_stand: N, st_sens_medial_ankle: N,
+      st_sens_medial_knee: N, h_leg_cool: N, h_vascular_risk: N, h_peroneal_setting: N,
+    },
+  },
+  {
+    // Named spinal stenosis until leg arteries got checks for cool skin and vascular risk factors.
+    name: "Gerald, 74: buttock and calf cramp after 1.5 blocks, eased standing still, smoker, cool feet",
+    expect: "pad",
+    regions: ["buttock", "calf"],
+    facts: {
+      h_age_over_65: Y, h_age_45: Y, h_age_50: Y, h_age_60: Y, h_bilateral: Y, h_walking_claudication: Y,
+      h_walk_stand_still_ease: Y, h_bend_forward: N, h_worse_standing: N, h_improve_seated: N, p_activity_rest: Y,
+      h_leg_numbness: N, h_leg_tingling: N, h_leg_burning: N, h_leg_shooting: N, p_tingling: N, p_numb: N,
+      p_buzzing: N, p_burning: N, p_shooting: N, p_night_rest: N, p_injury: N, p_sudden_severe: N, h_cough_sneeze: N,
+      h_pain_below_knee: Y, h_pain_sitting_chair: N, p_position: N, p_stretch: N, p_light_touch: N, p_spreading: N,
+      p_one_spot: N, p_movement_eases: N, p_heavy_weak: N, h_leg_worse_than_back: Y, h_diabetes: N,
+      h_recent_surgery: N, h_leg_exercise_tight: Y, p_dull_ache: Y, h_hip_stairs: Y, h_pregnancy: N,
+      h_many_places_both_sides: N, h_back_gradual_onset: N, h_tailbone_point: N, h_tailbone_sitting: N,
+      h_widespread_pain: N, h_fatigue_sleep: N, h_groin_pain: N, h_ankle_injury: N, h_hip_weight_pain: Y,
+      h_calf_muscle_spot: N, h_poly_toes_up: N, h_achilles_morning: N, h_back_extension_pain: N, h_hip_catch: N,
+      h_achilles_spot: N, h_leg_cool: Y, h_vascular_risk: Y, h_bilateral_sole_numbness: N, h_hip_load_increase: N,
+      h_bone_health: N, h_avn_risk: N,
+    },
+  },
+  {
+    // Named a labral tear until the rotator cuff got checks for an arm that can't be lifted or held out, and the fall.
+    name: "Leonard, 59: can't lift the arm out to the side after a fall on the outstretched arm, night pain, drop-arm sign",
+    expect: "rotator_cuff",
+    regions: ["shoulder"],
+    facts: {
+      p_injury: Y, h_shoulder_overhead_or_fall: Y, h_fall_on_hand: Y, h_age_45: Y, h_age_50: Y, h_age_60: N,
+      h_age_over_65: N, p_night_rest: Y, h_shoulder_stiff: N, p_heavy_weak: Y, h_shoulder_dislocated: N,
+      h_arm_numbness: N, p_tingling: N, p_numb: N, p_buzzing: N, p_burning: N, p_shooting: N, p_dull_ache: Y,
+      p_sudden_severe: N, h_both_shoulders_ache: N, h_neck_movement_pain: N, h_sudden_severe_arm_pain: N,
+      h_many_places_both_sides: N, h_many_joints_swollen: N, h_morning_stiff_long: N, h_shoulder_repetitive_onset: N,
+      p_movement_eases: N, p_light_touch: N, p_spreading: N, p_stretch: Y, p_position: Y, p_repetitive: N,
+      p_activity_rest: N, h_scapula_winging: N, h_front_shoulder_pain: N, h_ac_point: N, h_neck_car_accident: N,
+      h_symptoms_above_hand: N, h_hand_colour_change: N, h_arm_overhead_symptoms: N, h_morning_stiff_45: N,
+      h_hip_pain_too: N, h_other_joints_pain: N, h_shoulder_apprehension: N, h_shoulder_deep_click: N,
+      h_arm_lift_weak: Y,
+    },
+  },
+  {
+    // A close call (cubital tunnel, non-specific arm pain) until Guyon's canal got checks for palm pressure and numbness.
+    name: "Kieran, 35: cyclist with heel-of-palm ache, ring and little finger tingling, weak pinch, elbow normal",
+    expect: "guyon",
+    regions: ["wrist_ulnar", "hand_ulnar"],
+    facts: {
+      h_arm_numbness: Y, p_tingling: Y, p_heavy_weak: Y, p_position: Y, p_repetitive: Y, h_repetitive_use: Y,
+      p_injury: N, p_sudden_severe: N, h_age_45: N, h_age_50: N, h_age_60: N, h_age_over_65: N,
+      h_symptoms_above_hand: N, h_neck_movement_pain: N, h_sudden_severe_arm_pain: N, p_numb: N, p_burning: N,
+      p_shooting: N, p_buzzing: N, p_dull_ache: Y, p_night_rest: N, p_light_touch: N, p_spreading: N, p_stretch: N,
+      p_movement_eases: N, h_many_places_both_sides: N, h_many_joints_swollen: N, h_morning_stiff_long: N,
+      h_fall_on_hand: N, h_finger_catching: N, h_finger_knobbly: N, h_hand_flick: N, h_arm_overhead_symptoms: N,
+      h_hand_colour_change: N, h_scapula_winging: N, h_neck_car_accident: N, h_widespread_pain: N,
+      h_fatigue_sleep: N, p_activity_rest: N, p_one_spot: Y, h_joint_attacks: N, h_wrist_lump: N,
+      h_fingertip_droop: N, h_palm_cord: N, h_palm_pressure: Y,
+    },
+  },
+  {
+    // A close call (muscle, sacroiliac joint) until the compression fracture's territory included the lower back.
+    name: "Beatrice, 62: sudden midline low back pain bending for a light basket, daily prednisone, height loss",
+    expect: "vertebral_fracture",
+    regions: ["low_back"],
+    facts: {
+      h_back_sudden_onset: Y, h_back_limits_activity: Y, h_bone_health: Y, h_age_over_65: N, h_age_45: Y,
+      h_age_50: Y, h_age_60: Y, h_leg_numbness: N, h_leg_tingling: N, h_leg_burning: N, h_leg_shooting: N,
+      h_pain_below_knee: N, h_bilateral: N, h_cough_sneeze: Y, h_pain_sitting_chair: Y, h_improve_seated: N,
+      h_no_pain_seated: N, h_worse_standing: Y, h_walking_claudication: N, h_bend_forward: N, p_injury: Y,
+      p_sudden_severe: Y, p_stabbing: Y, p_one_spot: Y, p_tingling: N, p_numb: N, p_buzzing: N, p_burning: N,
+      p_shooting: N, p_light_touch: N, p_spreading: N, p_heavy_weak: N, p_movement_eases: N, p_night_rest: N,
+      p_position: Y, p_stretch: N, p_repetitive: N, h_back_gradual_onset: N, h_back_onset_young: N,
+      h_back_movement: Y, h_back_exercise_better: N, h_back_night_wakes: N, h_leg_worse_than_back: N,
+      h_recent_surgery: N, h_pregnancy: N, h_many_places_both_sides: N, h_widespread_pain: N, h_fatigue_sleep: N,
+      h_tailbone_point: N, h_tailbone_sitting: N, h_back_arching_sport: N, h_back_extension_pain: N,
+      p_flexion_worse: Y, h_morning_stiff_45: N, h_avn_risk: Y, h_hip_weight_pain: N, p_tight: N, p_activity_rest: N,
+    },
+  },
+  {
+    name: "Camille, 45: deep ache under the right shoulder blade after fatty meals, unchanged by moving or massage (gallbladder, not covered)",
+    expect: "other",
+    regions: ["scapula", "upper_back"],
+    facts: {
+      h_back_sudden_onset: N, h_scapula_winging: N, h_trunk_band: N, h_neck_movement_pain: N,
+      h_sudden_severe_arm_pain: N, h_band_rash: N, h_back_itch: N, h_back_movement: N, h_neck_car_accident: N,
+      h_many_places_both_sides: N, h_arm_overhead_symptoms: N, h_hand_colour_change: N, p_tingling: N, p_buzzing: N,
+      p_numb: N, p_heavy_weak: N, p_position: N, p_stretch: N, p_activity_rest: N, p_night_rest: Y,
+      p_sudden_severe: N, p_burning: N, p_light_touch: N, p_spreading: N, p_one_spot: N, p_movement_eases: N,
+      h_arm_numbness: N, h_shoulder_stiff: N, h_trunk_numbness: N, p_dull_ache: Y, p_injury: N, h_age_45: Y,
+      h_age_50: N, h_age_60: N, h_age_over_65: N, p_shooting: N, p_stabbing: N, h_symptoms_above_hand: N,
+      h_repetitive_use: N, h_chest_surgery_injury: N, h_rib_click: N,
+    },
+  },
+  {
+    name: "Toby, 21: deep night-time shin ache relieved by one aspirin, not by rest or activity (osteoid osteoma, not covered)",
+    expect: "other",
+    regions: ["shin_anterior", "anterior_thigh"],
+    facts: {
+      p_night_rest: Y, p_injury: N, p_sudden_severe: N, p_activity_rest: N, p_repetitive: N, h_leg_exercise_tight: N,
+      h_ff_load_increase: N, h_hip_load_increase: N, p_one_spot: Y, p_dull_ache: Y, p_movement_eases: N,
+      h_age_over_65: N, h_age_45: N, h_age_50: N, h_age_growing: N, h_leg_numbness: N, h_leg_tingling: N,
+      h_leg_burning: N, h_leg_shooting: N, p_tingling: N, p_numb: N, p_buzzing: N, p_burning: N, p_shooting: N,
+      p_light_touch: N, p_spreading: N, p_heavy_weak: N, p_position: N, p_stretch: N, h_bilateral: N,
+      h_walking_claudication: N, h_walk_stand_still_ease: N, h_bend_forward: N, h_worse_standing: N,
+      h_improve_seated: N, h_no_pain_seated: N, h_pain_sitting_chair: N, h_cough_sneeze: N, h_pain_below_knee: Y,
+      h_diabetes: N, h_recent_surgery: N, h_tight_clothing: N, h_pregnancy: N, h_hip_stairs: N, h_limp: N,
+      h_groin_pain: N, h_many_places_both_sides: N, h_widespread_pain: N, h_fatigue_sleep: N, h_bone_health: N,
+      h_avn_risk: N, h_thigh_sudden_pull: N, h_severe_leg_pain: Y, h_hip_weight_pain: N, h_hip_first_steps: N,
+      h_morning_stiff_long: N, st_heel_walk: N, st_sens_medial_knee: N, st_sens_anterior_thigh: N,
+      h_shin_long_stretch: N, h_groin_deep_flexion: N, h_poly_toes_up: N, h_ankle_injury: N, h_hip_flexor_lift: N,
+      h_peroneal_setting: N, h_hip_catch: N, h_vascular_risk: N, h_leg_cool: N,
+    },
+  },
+  {
+    // Hip OA (65%), then obturator nerve, until SCFE was added (2026-11-06).
+    name: "Noah, 13: overweight boy, groin and inner-thigh ache toward the knee for 4 weeks, limping, foot turned out",
+    expect: "scfe",
+    regions: ["groin", "medial_thigh", "anterior_thigh"],
+    facts: {
+      h_age_over_65: N, h_age_45: N, h_age_50: N, h_age_growing: Y, h_bend_forward: N, h_leg_numbness: N,
+      h_bilateral: N, h_walking_claudication: Y, h_improve_seated: Y, h_worse_standing: Y, h_leg_burning: N,
+      h_pain_below_knee: N, h_pregnancy: N, h_tight_clothing: N, h_diabetes: N, h_leg_worse_than_back: Y,
+      h_hip_stairs: Y, h_pain_sitting_chair: N, h_limp: Y, h_obt_exercise: Y, h_obt_radiate: Y, h_ii_pain: N,
+      h_ii_sensory: N, h_many_places_both_sides: N, p_tingling: N, p_buzzing: N, p_numb: N, p_heavy_weak: N,
+      p_position: N, p_stretch: N, p_activity_rest: Y, p_night_rest: N, p_injury: N, p_burning: N, p_light_touch: N,
+      p_spreading: N, p_one_spot: Y, p_movement_eases: N, h_recent_surgery: N, h_groin_adductor: N, p_dull_ache: Y,
+      p_sudden_severe: N, h_hip_weight_pain: Y, h_hip_load_increase: N, h_groin_pain: Y, p_stabbing: N,
+      p_throbbing: N, p_shooting: N, h_leg_tingling: N, h_leg_shooting: N, h_cough_sneeze: N, h_bone_health: N,
+      h_avn_risk: N, h_widespread_pain: N, h_fatigue_sleep: N, h_thigh_sudden_pull: N, h_back_gradual_onset: N,
+      h_morning_stiff_long: N, h_pubic_bone: N, h_vascular_risk: N, h_leg_cool: N, h_hip_first_steps: N,
+      h_leg_turns_out: Y, h_joint_hot_swollen: N,
+    },
+  },
+  {
+    // L5/S1 root until reactive arthritis and the hot swollen joint question were added (2026-11-06).
+    // A close call with the L5/S1 root since studied "against" answers stopped ruling a scored
+    // option out of the questioning (2026-11-06): "is your leg pain 7 or more?" is now asked, and
+    // his "yes" (with pain below the knee, worse than in the back) fits a nerve root as well.
+    // Accepted by the user (2026-11-06).
+    closeOk: true,
+    name: "Damon, 31: hot swollen knee and Achilles insertion pain 2 weeks after food poisoning, burning urine, red eyes",
+    expect: "reactive_arthritis",
+    regions: ["knee_front", "knee_medial", "knee_lateral", "achilles"],
+    facts: {
+      p_injury: N, p_sudden_severe: Y, h_bilateral: Y, p_throbbing: Y, p_movement_eases: N, p_night_rest: Y,
+      h_age_over_65: N, h_age_45: N, h_age_50: N, h_age_growing: N, h_leg_numbness: N, h_leg_tingling: N,
+      h_leg_burning: N, h_leg_shooting: N, p_tingling: N, p_numb: N, p_buzzing: N, p_burning: N, p_shooting: N,
+      p_light_touch: N, p_spreading: N, p_heavy_weak: N, h_walking_claudication: N, h_bend_forward: N,
+      h_cough_sneeze: N, h_pain_below_knee: Y, h_joint_attacks: N, h_morning_stiff_long: Y, h_many_joints_swollen: N,
+      h_many_places_both_sides: Y, p_repetitive: N, p_position: N, p_stretch: N, p_activity_rest: N,
+      h_recent_surgery: N, h_ff_load_increase: N, h_hip_load_increase: N, h_heel_back_bump: N, h_achilles_spot: Y,
+      p_one_spot: Y, p_dull_ache: N, p_stabbing: N, h_widespread_pain: N, h_fatigue_sleep: N, h_back_onset_young: N,
+      h_improve_seated: N, h_no_pain_seated: N, h_worse_standing: Y, h_knee_injury: N, h_knee_pop: N,
+      h_knee_pivot_injury: N, h_leg_worse_than_back: Y, h_ankle_injury: N, h_knee_stairs_pain: Y,
+      h_knee_kneel_pain: Y, h_severe_leg_pain: Y, p_flexion_worse: N, h_poly_toes_up: N, h_knee_below_kneecap: N,
+      h_knee_outer_running: N, h_knee_inner_below_joint: N, h_leg_cool: N, h_vascular_risk: N, h_arm_lift_weak: N,
+      h_knee_sitting_pain: N, h_achilles_morning: Y, h_joint_hot_swollen: Y, h_preceding_infection: Y, h_eyes_red: Y,
+      h_pain_moves: N,
+    },
+  },
+  {
+    // L5/S1 root until joint infection and the hot swollen joint question were added (2026-11-06).
+    name: "Peyton, 25: migrating wrist, finger and ankle pain with fever, tender tendons on the back of the hand, a few pustules",
+    expect: "septic_arthritis",
+    regions: ["wrist_radial", "wrist_ulnar", "hand_median", "hand_dorsal_radial", "ankle_lateral", "ankle_medial"],
+    facts: {
+      p_injury: N, p_sudden_severe: N, h_many_joints_swollen: Y, h_many_places_both_sides: Y, h_joint_attacks: N,
+      h_morning_stiff_long: N, p_stabbing: Y, p_movement_eases: N, p_night_rest: N, h_age_45: N, h_age_50: N,
+      h_age_60: N, h_age_over_65: N, p_tingling: N, p_numb: N, p_buzzing: N, p_burning: N, p_shooting: N,
+      h_arm_numbness: N, h_leg_numbness: N, h_leg_tingling: N, h_repetitive_use: N, p_repetitive: N,
+      h_fall_on_hand: N, h_ankle_rolled_in: N, p_spreading: Y, p_light_touch: N, p_heavy_weak: N, p_position: N,
+      p_stretch: N, p_activity_rest: N, h_finger_knobbly: N, h_thumb_base_bump: N, h_hand_flick: N,
+      h_finger_catching: N, h_snuffbox_tender: N, p_dull_ache: N, h_bilateral: N, h_age_growing: N,
+      h_widespread_pain: N, h_fatigue_sleep: N, h_symptoms_above_hand: N, h_symptoms_above_foot: Y,
+      h_bend_forward: N, h_ankle_injury: N, h_leg_burning: N, h_wrist_thumb_motion: N, h_thumb_base_pinch: N,
+      h_poly_toes_up: N, h_arch_flattening: N, h_ankle_behind_outer: N, h_palm_cord: N, h_ankle_stiff_ache: N,
+      h_wrist_lump: N, h_fingertip_droop: N, h_forearm_creak: N, h_walking_claudication: N, h_leg_worse_than_back: Y,
+      h_pain_below_knee: Y, h_severe_leg_pain: Y, h_cough_sneeze: N, h_leg_shooting: N, h_joint_hot_swollen: Y,
+      h_fever: Y, h_pain_moves: Y, h_skin_spots: Y,
+    },
+  },
 ];
 
-function interview(p: Patient): BestGuess {
+// The answers after a full interview: asked questions answered from the facts, "unsure"
+// otherwise, plus what follows from them.
+function answersAfter(p: Patient): Record<string, Answer> {
   const answers: Record<string, Answer> = {};
   for (let i = 0; i < 100; i++) {
     const next = nextFinding(db, answers, p.regions);
     if (next.done) break;
     answers[next.finding.id] = p.facts[next.finding.id] ?? "unsure";
   }
+  return withImplied(db, answers, p.regions);
+}
+
+function interview(p: Patient): BestGuess {
   const view = restrictToRegions(db, p.regions);
-  const full = withImplied(db, answers, p.regions);
+  const full = answersAfter(p);
   return bestGuess(posterior(view, full), logicalFit(view, p.regions, full));
 }
 
@@ -425,7 +681,22 @@ describe("described patients: the best guess after a full interview", () => {
   for (const p of patients) {
     it(p.name, () => {
       for (const f of Object.keys(p.facts)) expect(db.findings.some((x) => x.id === f), f).toBe(true);
-      expect(named(interview(p))).toBe(p.expect);
+      const g = interview(p);
+      if (p.closeOk && g.kind === "close") expect(g.ids).toContain(p.expect);
+      else expect(named(g)).toBe(p.expect);
+    });
+  }
+});
+
+// The same-day notice (display only): fever with a hot swollen joint (Peyton), or a still-growing
+// child limping with hip, thigh or knee pain (Noah). No other described patient triggers it.
+describe("described patients: the same-day joint notice", () => {
+  for (const p of patients) {
+    const expected = p.name.startsWith("Peyton") ? "hot" : p.name.startsWith("Noah") ? "child" : "none";
+    it(`${p.name.split(":")[0]}: ${expected}`, () => {
+      const a = answersAfter(p);
+      const shown = hotJointWithFever(a) ? "hot" : childWithLimp(a, p.regions) ? "child" : "none";
+      expect(shown).toBe(expected);
     });
   }
 });

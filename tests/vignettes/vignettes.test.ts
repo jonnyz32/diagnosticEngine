@@ -133,7 +133,7 @@ describe("forefoot: the alternatives to Morton's neuroma", () => {
   it("lists the tissue and nerve alternatives, unscored", () => {
     const view = restrictToRegions(db, ["forefoot"]);
     expect(unscorableHypotheses(view).map((h) => h.id).sort()).toEqual(
-      ["gout", "hallux_rigidus", "hallux_valgus", "inflammatory_arthritis", "mt_stress_fracture", "plantar_plate", "polyneuropathy", "sesamoiditis", "tarsal_tunnel"],
+      ["gout", "hallux_rigidus", "hallux_valgus", "inflammatory_arthritis", "mt_stress_fracture", "plantar_plate", "polyneuropathy", "reactive_arthritis", "septic_arthritis", "sesamoiditis", "tarsal_tunnel", "turf_toe"],
     );
     expect(scorableHypotheses(view).map((h) => h.id).sort()).toEqual(["morton", "root_low", "stenosis"]);
   });
@@ -958,6 +958,28 @@ describe("chest and upper back", () => {
     expect(r[0].id).toBe("chest_wall");
   });
 
+  // User report (2026-11-06): costochondritis that doesn't feel stabbing. "Stinging or stabbing"
+  // (52.9% of chest wall pain) answered "no" first used to rule chest wall pain out of the
+  // questioning, so the pressing test and the movement question were never asked.
+  it("a 'no' to stinging or stabbing still leads to the pressing test and the movement question", () => {
+    const chest: Region[] = ["chest_front"];
+    const facts: Record<string, Answer> = {
+      h_chest_stinging: "no", st_chest_press_self: "yes", h_chest_movement: "yes", h_trunk_band: "no",
+      h_rib_click: "no", h_trunk_numbness: "no", h_many_places_both_sides: "no",
+    };
+    const answers: Record<string, Answer> = { h_chest_stinging: "no" };
+    for (let i = 0; i < 40; i++) {
+      const next = nextFinding(db, answers, chest);
+      if (next.done) break;
+      answers[next.finding.id] = facts[next.finding.id] ?? "unsure";
+    }
+    expect(answers).toHaveProperty("st_chest_press_self");
+    expect(answers).toHaveProperty("h_chest_movement");
+    const view = restrictToRegions(db, chest);
+    const guess = bestGuess(posterior(view, answers), logicalFit(view, chest, answers));
+    expect("id" in guess && guess.id).toBe("chest_wall");
+  });
+
   it("a sudden severe start that stops daily activity favours a compression fracture in the upper back", () => {
     const r = top(["upper_back"], { h_back_sudden_onset: "yes", h_back_limits_activity: "yes" });
     expect(r[0].id).toBe("vertebral_fracture");
@@ -1132,6 +1154,32 @@ describe("coverage pass: options without accuracy data (logical fit only)", () =
 
   it("a fall on the hand with a tender hollow at the base of the thumb fits a scaphoid fracture", () => {
     expect(fitOf(["wrist_radial"], { h_fall_on_hand: "yes", h_snuffbox_tender: "yes" }, "scaphoid_fracture")).toMatchObject({ fit: 2, against: 0 });
+  });
+
+  it("a big toe forced upward, then swollen, fits turf toe; no injury fills in 'not forced upward'", () => {
+    expect(fitOf(["forefoot"], { h_big_toe_forced_up: "yes", h_big_toe_swelling: "yes", h_under_big_toe: "yes" }, "turf_toe")).toMatchObject({ fit: 3, against: 0 });
+    expect(withImplied(db, { p_injury: "no" }, ["forefoot"]).h_big_toe_forced_up).toBe("no");
+  });
+
+  it("a hot swollen joint opens the infection and reactive arthritis questions; nothing else does", () => {
+    const opened = ["h_fever", "h_septic_risk", "h_pain_moves", "h_skin_spots", "h_preceding_infection", "h_eyes_red"];
+    const yes = interview(["knee_front"], { h_joint_hot_swollen: "yes" });
+    for (const id of opened) expect(yes).toContain(id);
+    const no = interview(["knee_front"], {});
+    expect(no).toContain("h_joint_hot_swollen");
+    for (const id of opened) expect(no).not.toContain(id);
+  });
+
+  it("fever with a hot swollen joint and skin spots fits a joint infection; diarrhoea and red eyes fit reactive arthritis", () => {
+    expect(fitOf(["wrist_radial"], { h_joint_hot_swollen: "yes", h_fever: "yes", h_skin_spots: "yes" }, "septic_arthritis")).toMatchObject({ fit: 3, against: 0 });
+    expect(fitOf(["knee_front"], { h_joint_hot_swollen: "yes", h_preceding_infection: "yes", h_eyes_red: "yes" }, "reactive_arthritis")).toMatchObject({ fit: 3, against: 0 });
+    expect(fitOf(["knee_front"], { h_joint_hot_swollen: "yes", h_preceding_infection: "no" }, "reactive_arthritis").against).toBe(1);
+  });
+
+  it("a still-growing child with a limp and a foot turning out fits SCFE; an adult is not asked about growing", () => {
+    expect(fitOf(["groin"], { h_age_growing: "yes", h_limp: "yes", h_leg_turns_out: "yes" }, "scfe")).toMatchObject({ fit: 3, against: 0 });
+    expect(withImplied(db, { h_age_50: "yes" }, ["groin"]).h_age_growing).toBe("no");
+    expect(interview(["groin"], { h_age_growing: "no" })).not.toContain("h_leg_turns_out");
   });
 
   it("every option added in this pass has at least one check", () => {

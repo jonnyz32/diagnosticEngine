@@ -1302,6 +1302,36 @@
     "verifiedOn": "2026-11-04"
   },
   {
+    "id": "najefi2018",
+    "citation": "Najefi AA, Jeyaseelan L, Welck M. Turf toe: a clinical update. EFORT Open Rev. 2018;3(9):501-506.",
+    "pmid": "30305934",
+    "doi": "10.1302/2058-5241.3.180012",
+    "design": "Narrative review",
+    "population": "Turf toe injuries (hyperextension injury of the big toe joint), mostly in athletes",
+    "notes": "Open access (PMC6174855), read in full. No accuracy data; used for cited reasoning, mechanism and clinician tests only.",
+    "verifiedOn": "2026-11-06"
+  },
+  {
+    "id": "mccormick2010",
+    "citation": "McCormick JJ, Anderson RB. Turf toe: anatomy, diagnosis, and treatment. Sports Health. 2010;2(6):487-494.",
+    "pmid": "23015979",
+    "doi": "10.1177/1941738110386681",
+    "design": "Narrative review with a grading table",
+    "population": "Turf toe injuries in athletes",
+    "notes": "Open access (PMC3438874), read in full. No accuracy data; used for cited reasoning, mechanism and clinician tests only.",
+    "verifiedOn": "2026-11-06"
+  },
+  {
+    "id": "rodeo1990",
+    "citation": "Rodeo SA, O'Brien S, Warren RF, Barnes R, Wickiewicz TL, Dillingham MF. Turf-toe: an analysis of metatarsophalangeal joint sprains in professional football players. Am J Sports Med. 1990;18(3):280-285.",
+    "pmid": "2372079",
+    "doi": "10.1177/036354659001800311",
+    "design": "Survey and examination of a team-based sample (case series)",
+    "population": "80 active professional American football players",
+    "notes": "Abstract only. Used for the frequency of the hyperextension mechanism (cited reasoning, no probability).",
+    "verifiedOn": "2026-11-06"
+  },
+  {
     "id": "albright2022",
     "citation": "Albright RH, Brooks BM, Chingre M, Klein EE, Weil LS, Fleischer AE. Diagnostic accuracy of magnetic resonance imaging (MRI) versus dynamic ultrasound for plantar plate injuries: a systematic review and meta-analysis. Eur J Radiol. 2022;152:110315.",
     "pmid": "35533558",
@@ -1806,6 +1836,68 @@
     "population": "51 patients on a waiting list for primary hip replacement for osteoarthritis (questionnaire responders of 60 randomly selected) vs patients who had undergone decompression for confirmed lumbar spinal stenosis (pain maps from clinical records), Salford, UK",
     "referenceStandard": "Listed for hip arthroplasty for osteoarthritis, or operated for confirmed spinal stenosis",
     "notes": "Full text PDF supplied by the user (PMC1964166, PDF only). Table 1 percentages fit 51 hip and 54 stenosis patients with truncation (groin 43/51, 38/54), though the text says all 60 stenosis patients responded; the posterior-thigh row fits neither and was not used. Other reporting slips: 32 women + 29 men among 51; Kellgren-Lawrence mean 12.4 on an unstated scale. Two-gate design with surgical candidates and a retrospective comparison group, so accuracy is probably overstated: low certainty. Only the groin row is used: the authors conclude groin pain is the only location that separates the two (Discussion), and buttock or calf rows would apply a stenosis-only comparison rate to every other condition in those areas.",
+    "verifiedOn": "2026-11-06"
+  },
+  {
+    "id": "capitani2002",
+    "citation": "Capitani D, Beer S. Handlebar palsy: a compression syndrome of the deep terminal (motor) branch of the ulnar nerve in biking. J Neurol. 2002;249(10):1441-1445.",
+    "pmid": "12382163",
+    "doi": "10.1007/s00415-002-0864-4",
+    "design": "Case series with literature review",
+    "population": "3 cyclists with ulnar nerve palsy at Guyon's canal after riding",
+    "notes": "Abstract read (Europe PMC).",
+    "verifiedOn": "2026-11-06"
+  },
+  {
+    "id": "khan2006",
+    "citation": "Khan NA, Rahim SA, Anand SS, Simel DL, Panju A. Does the clinical examination predict lower extremity peripheral arterial disease? JAMA. 2006;295(5):536-546.",
+    "pmid": "16449619",
+    "doi": "10.1001/jama.295.5.536",
+    "design": "Systematic review (Rational Clinical Examination)",
+    "population": "17 studies comparing history or examination with ankle-brachial index, duplex ultrasound or angiography",
+    "referenceStandard": "Ankle-brachial index, duplex sonography or angiogram",
+    "notes": "Abstract read (Europe PMC); full text paywalled. LRs from the abstract are not entered as numbers (examiner findings, no sens/spec).",
+    "verifiedOn": "2026-11-06"
+  },
+  {
+    "id": "margaretten2007",
+    "citation": "Margaretten ME, Kohlwes J, Moore D, Bent S. Does this adult patient have septic arthritis? JAMA. 2007;297(13):1478-1488.",
+    "pmid": "17405973",
+    "doi": "10.1001/jama.297.13.1478",
+    "design": "Systematic review (Rational Clinical Examination)",
+    "population": "14 studies, 6242 adults with an acutely painful, swollen joint; 653 with nongonococcal septic arthritis",
+    "referenceStandard": "Synovial fluid culture or clinical diagnosis per study",
+    "notes": "Abstract read (Europe PMC); full text paywalled. Sensitivities from the abstract are frequencies in septic arthritis only (no comparison group), so they feed logic items, not probabilities.",
+    "verifiedOn": "2026-11-06"
+  },
+  {
+    "id": "bentaleb2020",
+    "citation": "Bentaleb I, Abdelghani KB, Rostom S, Amine B, Laatar A, Bahiri R. Reactive arthritis: update. Curr Clin Microbiol Rep. 2020;7(4):124-132.",
+    "pmid": "33014690",
+    "doi": "10.1007/s40588-020-00152-6",
+    "design": "Narrative review",
+    "population": "Reactive arthritis",
+    "notes": "Read in Europe PMC full text (PMC7519381): Introduction, Osteoarticular and Extra-articular manifestations, Table 2 (Berlin 1999 criteria).",
+    "verifiedOn": "2026-11-06"
+  },
+  {
+    "id": "haroun2025",
+    "citation": "Haroun M, Siraw BB, Salimova D, Gebrecherkos Y, Aloyan T. Disseminated gonococcal infection presenting as an isolated rash in a young patient: a case report and review of atypical presentations. Cureus. 2025;17(2):e79598.",
+    "pmid": "40151733",
+    "doi": "10.7759/cureus.79598",
+    "design": "Case report with literature review",
+    "population": "Disseminated gonococcal infection",
+    "notes": "Read in Europe PMC full text (PMC11947511), Introduction and Discussion.",
+    "verifiedOn": "2026-11-06"
+  },
+  {
+    "id": "pavone2023",
+    "citation": "Pavone V, Testa G, Torrisi P, McCracken KL, Caldaci A, Vescio A, Sapienza M. Diagnosis of slipped capital femoral epiphysis: how to stay out of trouble? Children (Basel). 2023;10(5):778.",
+    "pmid": "37238326",
+    "doi": "10.3390/children10050778",
+    "design": "Systematic review (22 articles)",
+    "population": "Children and adolescents with slipped capital femoral epiphysis",
+    "notes": "Read in Europe PMC full text (PMC10217581): Introduction, Misleading Symptoms, Discussion.",
     "verifiedOn": "2026-11-06"
   }
 ]

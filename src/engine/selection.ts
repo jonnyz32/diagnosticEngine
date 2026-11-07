@@ -92,11 +92,25 @@ function checkedOptions(db: EvidenceDb, f: Finding): string[] {
 
 /**
  * Options whose logical fit already has more "against" than "fit". Their information-only
- * questions are skipped: the answer could only add to the case against them. This only
- * steers which question comes next and never touches a probability.
+ * questions are skipped: the answer could only add to the case against them. For a scored option,
+ * an "against" from a studied finding is not counted here: its probability already weighs that
+ * answer, and one "no" to a finding only half its patients report (chest wall pain and "stinging
+ * or stabbing", 52.9%) otherwise ruled the option out and skipped its strongest questions, such as
+ * pressing on the chest (user report, 2026-11-06). This only steers which question comes next and
+ * never touches a probability.
  */
 export function ruledOutOptions(db: EvidenceDb, answers: Record<string, Answer>, regions: Region[]): Set<string> {
-  return new Set(logicalFit(db, regions, answers).filter((l) => l.against > l.fit).map((l) => l.id));
+  const scorable = new Set(scorableHypotheses(db).map((h) => h.id));
+  return new Set(
+    logicalFit(db, regions, answers)
+      .filter((l) => {
+        const against = scorable.has(l.id)
+          ? l.checks.filter((c) => c.verdict === "against" && c.basis !== "evidence").length
+          : l.against;
+        return against > l.fit;
+      })
+      .map((l) => l.id),
+  );
 }
 
 /**
@@ -156,11 +170,12 @@ const RULED_OUT_WEIGHT = 0.05;
  */
 export function possibilities(db: EvidenceDb, answers: Record<string, Answer>, regions: Region[]): Possibilities {
   const fits = logicalFit(db, regions, answers);
+  const ruledOut = ruledOutOptions(db, answers, regions);
   const weight = new Map(
     fits.map((l) => {
       const own = l.checks.filter((c) => c.basis !== "evidence");
       const net = own.filter((c) => c.verdict === "fit").length - own.filter((c) => c.verdict === "against").length;
-      return [l.id, CHECK_WEIGHT ** net * (l.against > l.fit ? RULED_OUT_WEIGHT : 1)];
+      return [l.id, CHECK_WEIGHT ** net * (ruledOut.has(l.id) ? RULED_OUT_WEIGHT : 1)];
     }),
   );
   const scorable = new Set(scorableHypotheses(db).map((h) => h.id));

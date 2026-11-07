@@ -183,6 +183,40 @@
     ]
   },
   {
+    "id": "h_leg_cool",
+    "kind": "history",
+    "prompt": "Does the foot or lower leg on the painful side feel cool to the touch, cooler than the other leg or than the rest of you?",
+    "summary": {
+      "yes": "foot or lower leg cool to the touch",
+      "no": "foot and lower leg not cool"
+    },
+    "gateRegions": [
+      "buttock",
+      "posterior_thigh",
+      "anterior_thigh",
+      "lateral_thigh",
+      "calf"
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_vascular_risk",
+    "kind": "history",
+    "prompt": "Do you smoke or did you smoke for years, or do you have diabetes, high blood pressure or high cholesterol?",
+    "summary": {
+      "yes": "smoking, diabetes, high blood pressure or high cholesterol",
+      "no": "no smoking, diabetes, high blood pressure or high cholesterol"
+    },
+    "gateRegions": [
+      "buttock",
+      "posterior_thigh",
+      "anterior_thigh",
+      "lateral_thigh",
+      "calf"
+    ],
+    "evidence": []
+  },
+  {
     "id": "h_no_pain_seated",
     "kind": "history",
     "prompt": "When you sit down, is your leg or buttock pain completely gone?",
@@ -3499,6 +3533,20 @@
     }
   },
   {
+    "id": "h_palm_pressure",
+    "kind": "history",
+    "prompt": "Did it start or get worse with pressure on the heel of your hand on the little-finger side, for example long rides leaning on bicycle handlebars, or a tool, crutch or desk edge pressing into the palm?",
+    "summary": {
+      "yes": "pressure on the little-finger side of the palm",
+      "no": "no pressure on the palm"
+    },
+    "gateRegions": [
+      "hand_ulnar",
+      "wrist_ulnar"
+    ],
+    "evidence": []
+  },
+  {
     "kind": "history",
     "alwaysAsk": true,
     "evidence": [],
@@ -4693,7 +4741,8 @@
     "prompt": "Did this back pain start with a sudden attack of pain much worse than usual, either on its own or after a minor strain or fall?",
     "gateRegions": [
       "upper_back",
-      "mid_back"
+      "mid_back",
+      "low_back"
     ],
     "evidence": [
       {
@@ -4718,6 +4767,10 @@
     "summary": {
       "yes": "the back pain began with a sudden severe attack",
       "no": "the back pain didn't begin with a sudden severe attack"
+    },
+    "askIf": {
+      "finding": "h_bone_health",
+      "answer": "yes"
     }
   },
   {
@@ -4726,7 +4779,8 @@
     "prompt": "Does your back pain make you stop ordinary household activities during the day, even briefly?",
     "gateRegions": [
       "upper_back",
-      "mid_back"
+      "mid_back",
+      "low_back"
     ],
     "evidence": [
       {
@@ -4751,6 +4805,10 @@
     "summary": {
       "yes": "back pain stops ordinary activities",
       "no": "back pain doesn't stop ordinary activities"
+    },
+    "askIf": {
+      "finding": "h_bone_health",
+      "answer": "yes"
     }
   },
   {
@@ -6699,7 +6757,11 @@
       "knee_lateral",
       "knee_back",
       "heel",
-      "achilles"
+      "achilles",
+      "groin",
+      "anterior_thigh",
+      "medial_thigh",
+      "lateral_thigh"
     ],
     "impliedBy": [
       {
@@ -6718,6 +6780,30 @@
         "implies": "no"
       }
     ],
+    "evidence": [],
+    "alwaysAsk": true
+  },
+  {
+    "id": "h_leg_turns_out",
+    "kind": "history",
+    "prompt": "When walking or lying down, does the foot on the painful side turn outward, or does the thigh swing out to the side when the hip is bent up toward the chest?",
+    "summary": {
+      "yes": "foot turns out or thigh swings out on bending the hip",
+      "no": "foot and thigh stay straight"
+    },
+    "gateRegions": [
+      "groin",
+      "anterior_thigh",
+      "medial_thigh",
+      "lateral_thigh",
+      "knee_front",
+      "knee_medial"
+    ],
+    "askIf": {
+      "finding": "h_age_growing",
+      "answer": "yes"
+    },
+    "alwaysAsk": true,
     "evidence": []
   },
   {
@@ -6958,7 +7044,7 @@
   {
     "id": "h_bone_health",
     "kind": "history",
-    "prompt": "Have you been told your bones are thin (osteoporosis or low bone density), or have your periods stopped or become irregular for months while training hard or eating little?",
+    "prompt": "Have you been told your bones are thin (osteoporosis or low bone density), have you taken steroid tablets such as prednisone for months, or have your periods stopped or become irregular for months while training hard or eating little?",
     "summary": {
       "yes": "thin bones or missed periods",
       "no": "no thin bones or missed periods"
@@ -6967,13 +7053,12 @@
       "groin",
       "anterior_thigh",
       "buttock",
-      "low_back"
+      "low_back",
+      "upper_back",
+      "mid_back"
     ],
-    "askIf": {
-      "finding": "h_hip_weight_pain",
-      "answer": "yes"
-    },
-    "evidence": []
+    "evidence": [],
+    "alwaysAsk": true
   },
   {
     "id": "h_avn_risk",
@@ -7114,6 +7199,20 @@
     "summary": {
       "yes": "started with overhead activity, a fall or a sudden pull",
       "no": "no overhead activity, fall or pull at the start"
+    },
+    "gateRegions": [
+      "shoulder",
+      "upper_arm_lateral"
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_arm_lift_weak",
+    "kind": "history",
+    "prompt": "Since it started, are you unable to lift your arm out to the side on your own, or does it drop down when you try to hold it out, even though someone else can lift it for you?",
+    "summary": {
+      "yes": "can't lift or hold the arm out without help",
+      "no": "can lift and hold the arm out"
     },
     "gateRegions": [
       "shoulder",
@@ -7411,6 +7510,43 @@
     "evidence": []
   },
   {
+    "id": "h_big_toe_forced_up",
+    "kind": "history",
+    "prompt": "Did the pain start when your big toe was forced sharply upward, for example with your foot planted and heel raised while weight came down on it, or the toe catching on the ground as you pushed off?",
+    "summary": {
+      "yes": "started when the big toe was forced upward",
+      "no": "didn't start with the big toe forced upward"
+    },
+    "gateRegions": [
+      "forefoot"
+    ],
+    "impliedBy": [
+      {
+        "finding": "p_injury",
+        "answer": "no",
+        "implies": "no"
+      }
+    ],
+    "evidence": []
+  },
+  {
+    "id": "h_big_toe_swelling",
+    "kind": "history",
+    "prompt": "Since the injury, has the big toe joint been swollen, or bruised underneath?",
+    "summary": {
+      "yes": "big toe joint swollen or bruised",
+      "no": "no swelling or bruising at the big toe joint"
+    },
+    "gateRegions": [
+      "forefoot"
+    ],
+    "askIf": {
+      "finding": "h_big_toe_forced_up",
+      "answer": "yes"
+    },
+    "evidence": []
+  },
+  {
     "id": "h_heel_back_bump",
     "kind": "history",
     "prompt": "Is the pain at the back of the heel where the tendon attaches, with a bump there that rubs on the back of your shoes?",
@@ -7512,6 +7648,254 @@
       "heel",
       "achilles"
     ],
+    "evidence": []
+  },
+  {
+    "id": "h_joint_hot_swollen",
+    "kind": "history",
+    "prompt": "Since this started, has a joint become visibly swollen, and warm or red?",
+    "summary": {
+      "yes": "a joint swollen and warm or red",
+      "no": "no swollen, warm or red joint"
+    },
+    "gateRegions": [
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "forefoot",
+      "foot_dorsum",
+      "heel",
+      "achilles",
+      "wrist_radial",
+      "wrist_ulnar",
+      "hand_median",
+      "hand_ulnar",
+      "hand_dorsal_radial",
+      "elbow_lateral",
+      "elbow_medial",
+      "shoulder",
+      "groin"
+    ],
+    "alwaysAsk": true,
+    "evidence": []
+  },
+  {
+    "id": "h_fever",
+    "kind": "history",
+    "prompt": "Since the joint trouble started, have you had a fever, chills or sweats, or felt hot and shivery?",
+    "summary": {
+      "yes": "fever, chills or sweats",
+      "no": "no fever"
+    },
+    "gateRegions": [
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "forefoot",
+      "foot_dorsum",
+      "heel",
+      "achilles",
+      "wrist_radial",
+      "wrist_ulnar",
+      "hand_median",
+      "hand_ulnar",
+      "hand_dorsal_radial",
+      "elbow_lateral",
+      "elbow_medial",
+      "shoulder",
+      "groin"
+    ],
+    "askIf": {
+      "finding": "h_joint_hot_swollen",
+      "answer": "yes"
+    },
+    "alwaysAsk": true,
+    "evidence": []
+  },
+  {
+    "id": "h_septic_risk",
+    "kind": "history",
+    "prompt": "Do you have diabetes, rheumatoid arthritis, HIV or a joint replacement, or have you had an operation on that joint or a skin infection near it?",
+    "summary": {
+      "yes": "a risk factor for joint infection",
+      "no": "no risk factor for joint infection"
+    },
+    "gateRegions": [
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "forefoot",
+      "foot_dorsum",
+      "heel",
+      "achilles",
+      "wrist_radial",
+      "wrist_ulnar",
+      "hand_median",
+      "hand_ulnar",
+      "hand_dorsal_radial",
+      "elbow_lateral",
+      "elbow_medial",
+      "shoulder",
+      "groin"
+    ],
+    "askIf": {
+      "finding": "h_joint_hot_swollen",
+      "answer": "yes"
+    },
+    "alwaysAsk": true,
+    "evidence": []
+  },
+  {
+    "id": "h_pain_moves",
+    "kind": "history",
+    "prompt": "Has the pain moved from joint to joint, one settling as the next one flared up?",
+    "summary": {
+      "yes": "pain moving from joint to joint",
+      "no": "pain not moving between joints"
+    },
+    "gateRegions": [
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "forefoot",
+      "foot_dorsum",
+      "heel",
+      "achilles",
+      "wrist_radial",
+      "wrist_ulnar",
+      "hand_median",
+      "hand_ulnar",
+      "hand_dorsal_radial",
+      "elbow_lateral",
+      "elbow_medial",
+      "shoulder",
+      "groin"
+    ],
+    "askIf": {
+      "finding": "h_joint_hot_swollen",
+      "answer": "yes"
+    },
+    "alwaysAsk": true,
+    "evidence": []
+  },
+  {
+    "id": "h_skin_spots",
+    "kind": "history",
+    "prompt": "Since the joint trouble started, have a few small spots, blisters or pus-filled spots on a red base appeared on your arms, legs, hands or feet?",
+    "summary": {
+      "yes": "new small spots or pustules on the limbs",
+      "no": "no new spots on the skin"
+    },
+    "gateRegions": [
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "forefoot",
+      "foot_dorsum",
+      "heel",
+      "achilles",
+      "wrist_radial",
+      "wrist_ulnar",
+      "hand_median",
+      "hand_ulnar",
+      "hand_dorsal_radial",
+      "elbow_lateral",
+      "elbow_medial",
+      "shoulder",
+      "groin"
+    ],
+    "askIf": {
+      "finding": "h_joint_hot_swollen",
+      "answer": "yes"
+    },
+    "alwaysAsk": true,
+    "evidence": []
+  },
+  {
+    "id": "h_preceding_infection",
+    "kind": "history",
+    "prompt": "In the few days to 6 weeks before the joint trouble started, did you have diarrhoea (for example food poisoning), or burning or a discharge when passing urine?",
+    "summary": {
+      "yes": "diarrhoea or urinary burning or discharge in the weeks before",
+      "no": "no diarrhoea or urinary symptoms before"
+    },
+    "gateRegions": [
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "forefoot",
+      "foot_dorsum",
+      "heel",
+      "achilles",
+      "wrist_radial",
+      "wrist_ulnar",
+      "hand_median",
+      "hand_ulnar",
+      "hand_dorsal_radial",
+      "elbow_lateral",
+      "elbow_medial",
+      "shoulder",
+      "groin"
+    ],
+    "askIf": {
+      "finding": "h_joint_hot_swollen",
+      "answer": "yes"
+    },
+    "alwaysAsk": true,
+    "evidence": []
+  },
+  {
+    "id": "h_eyes_red",
+    "kind": "history",
+    "prompt": "Around the time the joints flared, did your eyes become red, sore or watery?",
+    "summary": {
+      "yes": "red, sore or watery eyes",
+      "no": "eyes not red or sore"
+    },
+    "gateRegions": [
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "forefoot",
+      "foot_dorsum",
+      "heel",
+      "achilles",
+      "wrist_radial",
+      "wrist_ulnar",
+      "hand_median",
+      "hand_ulnar",
+      "hand_dorsal_radial",
+      "elbow_lateral",
+      "elbow_medial",
+      "shoulder",
+      "groin"
+    ],
+    "askIf": {
+      "finding": "h_joint_hot_swollen",
+      "answer": "yes"
+    },
+    "alwaysAsk": true,
     "evidence": []
   },
   {
@@ -7831,7 +8215,8 @@
       "forearm_medial",
       "hand_ulnar"
     ],
-    "evidence": []
+    "evidence": [],
+    "alwaysAsk": true
   },
   {
     "id": "h_hand_colour_change",
@@ -7849,7 +8234,12 @@
       "forearm_medial",
       "hand_ulnar"
     ],
-    "evidence": []
+    "evidence": [],
+    "alwaysAsk": true,
+    "askIf": {
+      "finding": "h_arm_overhead_symptoms",
+      "answer": "yes"
+    }
   },
   {
     "id": "h_hand_flick",

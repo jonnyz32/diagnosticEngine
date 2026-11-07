@@ -21,6 +21,7 @@ import { isThesis, SourceLink } from "./SourceLink";
 import { ChestNotice, touchesChest } from "./ChestNotice";
 import { HeadNotice, touchesHead } from "./HeadNotice";
 import { AbdomenNotice, touchesAbdomen } from "./AbdomenNotice";
+import { UrgentJointNotice } from "./UrgentJointNotice";
 
 const pct = (p: number) => (p < 0.01 ? "<1%" : `${Math.round(p * 100)}%`);
 const ANSWER_LABEL: Record<Answer, string> = { yes: "Yes", no: "No", unsure: "Not sure / skipped" };
@@ -77,6 +78,7 @@ export function Results({ db, regions, given, implied, doneReason, onBack, onRes
         {touchesChest(regions) && <ChestNotice db={db} />}
         {touchesHead(regions) && <HeadNotice />}
         {touchesAbdomen(regions) && <AbdomenNotice />}
+        <UrgentJointNotice db={db} answers={answers} regions={regions} />
         <p className="note">
           These are estimates from published studies, adjusted for your answers. They are not a diagnosis. Many of the
           tests were studied when performed by clinicians, so treat these numbers as a rough guide to discuss with one.

@@ -960,17 +960,23 @@
         "hypothesis": "sesamoiditis"
       },
       {
+        "hypothesis": "turf_toe"
+      },
+      {
         "hypothesis": "insertional_achilles"
       },
       {
         "hypothesis": "sever"
+      },
+      {
+        "hypothesis": "scfe"
       }
     ]
   },
   {
     "id": "joint_inflammation",
     "name": "Inflamed joints or tendons (inflammatory disease)",
-    "description": "Here the body's own inflammation, from an immune disease or from crystals, attacks the lining of joints, tendon attachments or the spine. Unlike wear or overload, the pain is often worst after rest, with long morning stiffness, swelling, warmth or redness, and it can affect several places at once.",
+    "description": "Here the body's own inflammation, from an immune disease, crystals or an infection, attacks the lining of joints, tendon attachments or the spine. Unlike wear or overload, the pain is often worst after rest, with long morning stiffness, swelling, warmth or redness, and it can affect several places at once.",
     "clues": [
       {
         "anyOf": [
@@ -984,7 +990,8 @@
       {
         "anyOf": [
           "h_joint_attacks",
-          "h_many_joints_swollen"
+          "h_many_joints_swollen",
+          "h_joint_hot_swollen"
         ],
         "answer": "yes",
         "type": "supports",
@@ -1020,6 +1027,12 @@
       },
       {
         "hypothesis": "pmr"
+      },
+      {
+        "hypothesis": "septic_arthritis"
+      },
+      {
+        "hypothesis": "reactive_arthritis"
       }
     ]
   }

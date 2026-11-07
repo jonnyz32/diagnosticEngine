@@ -1179,3 +1179,69 @@ Ten more plain-language patients were run through the full interview, answering 
 - **Not changed:** Sanjay (piriformis) ends on a close call (deep gluteal first, posterior femoral cutaneous nerve, SIJ) because his description gives no self-test results. Simone (turf toe, which no option covers) gives a close call between sesamoiditis and hallux rigidus. Walter (cauda equina, which no option covers) gets pudendal neuralgia as a clear leader because his perineal pain and pain on sitting meet the Nantes checklist; the user declined a safety notice for the perineum for now.
 - **Tests.** Claire (snuffbox answered "yes"), Owen, Tessa (still growing "yes"), Gregory, Malik, Denise and Hector added to `patients.test.ts`: 27 described patients, all named correctly.
 - **Results.** Dev combined top-1 28/46, top-3 35/46, unchanged; mean interview 38.8 → 39.1 questions. Holdout aggregate unchanged.
+
+### Follow-up answers for Sanjay and Claire (same day)
+
+The user asked both patients the questions their descriptions didn't answer. Claire: snuffbox tender, grind test negative → scaphoid fracture, clear leader (thumb-base OA now counts against). Sanjay: seated piriformis, Beatty and active piriformis tests positive; straight-leg raise, PSIS, one-finger, hamstring, hip-extension, outer-hip, press-up and cluneal tests negative; the skin check ("mostly normal, maybe a faint tingling when flaring") taken as "no" → deep gluteal syndrome, clear leader at 68%. Both added to `patients.test.ts` (28 described patients, all named correctly). No evidence or reasoning changed.
+
+### Turf toe added (user request, same day)
+
+Simone (big toe forced upward while pivoting on turf) had no matching option. Europe PMC search (titles: turf toe, first MTP sprain, hallux plantar plate; 67 hits); no accuracy study found, so `turf_toe` is an option without study data (tier 3: cited reasoning, no probability).
+- **Sources (new):** `najefi2018` (Najefi 2018, EFORT Open Rev, PMC6174855, read in full), `mccormick2010` (McCormick & Anderson 2010, Sports Health, PMC3438874, read in full), `rodeo1990` (Rodeo 1990, Am J Sports Med, abstract only). Citation metadata from Europe PMC; `audit-sources` passes for all three.
+- **New findings:** `h_big_toe_forced_up` (pain started with the big toe forced sharply upward; filled in as "no" when `p_injury` is "no") and `h_big_toe_swelling` (joint swollen or bruised since the injury; asked only after a "yes" to the first). Both forefoot-gated, information-only.
+- **Checks:** forced upward `usual` (rodeo1990 Abstract: hyperextension mechanism in 85% of 80 players); swollen or bruised `usual` (mccormick2010 Table 1: swelling at every grade); pain under the big toe joint on push-off `usual` (najefi2018 Abstract; Clinical presentation); bending the toe hurts `usual` and joint tender `supports` (**uncited reasoning**); gradual onset and numbness `unexplained` notes (atraumatic cases are reported, so gradual onset is a note, not against). Mechanism text from mccormick2010 "Mechanism of Injury".
+- **Clinician tests (no accuracy data):** big toe stability/drawer test and flexion strength (najefi2018, Clinical presentation); weight-bearing X-rays of both feet, sesamoid retraction of 3 mm or more (najefi2018, Investigations); MRI (mccormick2010, Imaging).
+- **Stress view:** linked to "tissue" beside sesamoiditis.
+- **Tests.** Forefoot vignette's unscored list now includes `turf_toe`; a new vignette checks its fit and the `p_injury` implication. Simone added to `patients.test.ts`: turf toe, clear leader (net fit 5; sesamoiditis and hallux rigidus 1). 29 described patients, all named correctly.
+- **Results.** Dev combined top-1 28/46, top-3 35/46, unchanged; mean interview 39.1 questions, unchanged. Holdout aggregate unchanged.
+- **Found in passing:** `audit-sources` reports a pre-existing DOI mismatch for `beatty1994` (file 10.1227/…, PubMed 10.1097/00006123-199403000-00018). Not changed here.
+
+## Fourth set of ten described patients (user request, 2026-11-06)
+
+Ten more plain-language patients (SCFE, gallbladder pain under the shoulder blade, reactive arthritis, anterior compartment syndrome, PAD, gonococcal arthritis, traumatic rotator cuff tear, Guyon's canal in a cyclist, osteoporotic compression fracture, osteoid osteoma), run through the full interview, answering only from the description and "unsure" otherwise (no self-tests). Before the changes, 2 of 10 got the right result (Camille and Toby, "not covered"). After them, 7 of 10 do. No accuracy value changed.
+
+- **Beatrice (compression fracture in the lower back): territory.** `vertebral_fracture` was limited to the upper and mid back, though Sawicki 2021's patients mostly had lumbar pain (flagged "revisit if wanted" in the chest section). `low_back` is now part of its territory, and `h_back_sudden_onset`/`h_back_limits_activity` are gated to it too.
+  - **Asked only after thin bones.** Sawicki studied women already known to have osteoporosis, so both questions are now asked only after a "yes" to `h_bone_health`, in every back region. Without this they took the last budget slots in a dev case (L1–L2 disc, combined rank 1 → 3) and pushed out its anterior-thigh sensory test.
+  - **`h_bone_health`:** now `alwaysAsk`, without its old `askIf` (weight-bearing hip pain, so it never opened for back pain), and gated to the upper and mid back as well. The prompt now includes steroid tablets for months.
+  - **New check:** `supports` `h_bone_health` for the fracture (**uncited reasoning**).
+- **Kieran (Guyon's canal): no checks at all before.** Two new checks: `supports` `h_palm_pressure` (new: pressure on the little-finger side of the palm, such as handlebars; Capitani 2002, Abstract: most such lesions come from chronic outside pressure on the ulnar palm, as in cyclists), and `supports` `h_arm_numbness` (McGurk 2023: numbness, weakness or both). Cubital tunnel already had numbness as `usual`.
+  - **Checked and not used:** sparing of the back of the hand as a Guyon sign. McGurk 2023 notes that the dorsal cutaneous fascicles are often spared at the elbow too, so it doesn't separate the two.
+- **Leonard (rotator cuff tear): only a numbness note before.** Two new checks: `supports` `h_arm_lift_weak` (new: can't lift the arm out to the side, or it drops, though someone else can lift it; Hermans 2013 Abstract: a positive drop-arm test might help identify cuff disease). Its LR (3.3, 1.0–11) isn't entered: examiner test, no sens/spec. Also `supports` `h_shoulder_overhead_or_fall` (**uncited reasoning**: a fall or sudden pull can tear the cuff after about 40). Before: labral tear led on the fall alone.
+- **Amina (compartment syndrome): root_low led at 53%** on numbness, tingling and pain below the knee. Three new checks for `cecs`: `supports` `h_leg_tingling` and `supports` `p_heavy_weak` (Tarabishi 2023 Abstract: paresthesia and muscle weakness are part of the presentation), and `supports` `p_activity_rest` (**uncited reasoning**: pressure builds with exercise and falls within minutes of stopping). Now a logic-lead over root_low (net fit 5 vs 4).
+- **Gerald (PAD): stenosis led** on age and the claudication question. Two new questions and checks for `pad`: `supports` `h_leg_cool` (Khan 2006 Abstract: cool skin is among the most useful findings in people with leg symptoms; LR 5.9 not entered, examiner finding) and `supports` `h_vascular_risk` (smoking, diabetes, high blood pressure or cholesterol; **uncited reasoning**). Now a clear leader.
+- **Regression fixed, Gregory (thoracic outlet).** The new rotator cuff question took his last budget slot, so the thoracic outlet checks were never reached. `h_arm_overhead_symptoms` is now `alwaysAsk`, and `h_hand_colour_change` is `alwaysAsk` after a "yes" to it.
+- **Tried and dropped:** hip OA `usual` "45 or older" (as knee OA has). It made every patient over 45 fit hip OA, dropped the L1–L2 disc dev case, and didn't help Noah (obturator nerve named instead of hip OA).
+- **New sources:** `capitani2002` (PMID 12382163) and `khan2006` (PMID 16449619), abstracts read in Europe PMC; `audit-sources` passes for both.
+- **Not covered, not fixed:**
+  - *Noah (SCFE, 13).* Obturator nerve / hip OA close call. No option for slipped epiphysis or any childhood hip condition.
+  - *Damon (reactive arthritis).* L5/S1 root named on "pain below the knee", "severe" and "leg worse than back". `inflammatory_arthritis` counts against itself (only one swollen joint), and no question asks about a hot swollen joint, the eyes or urination.
+  - *Peyton (disseminated gonococcal arthritis).* L5/S1 root named after the ankle opened the leg questions; inflammatory arthritis is third. There is no infection option, and fever isn't asked.
+  - *Camille (gallbladder) and Toby (osteoid osteoma)* correctly get "not covered".
+- **Tests.** Amina, Gerald, Leonard, Kieran, Beatrice, Camille and Toby added to `patients.test.ts`: 36 described patients, all named correctly.
+- **Results** (`eval-cases`; holdout aggregate only, run on the final version and the previous evidence): dev combined top-1 28/46, top-3 35/46, interview top-3 19/23, logical-fit 32/46, all unchanged; mean interview 39.1 → 39.7 questions (max 62). Holdout unchanged (combined top-1 10/21, top-3 13/21).
+
+### Joint infection, reactive arthritis and SCFE added (user request, same day)
+
+Noah, Damon and Peyton had no matching option and got a wrong named one (hip OA or obturator nerve; the L5/S1 root twice). Follow-up answers didn't help: with negative nerve self-tests the root stayed ahead, because nothing counted a hot, swollen joint for or against anything. Three options without study data (tier 3: cited reasoning, no probability), plus a same-day notice.
+
+- **Sources (new):** `margaretten2007` (JAMA Rational Clinical Examination, septic arthritis; abstract), `bentaleb2020` (reactive arthritis review; full text PMC7519381), `haroun2025` (disseminated gonococcal infection, case and review; full text PMC11947511), `pavone2023` (SCFE systematic review; full text PMC10217581). `audit-sources` passes for all four. The sensitivities in Margaretten are frequencies in septic arthritis only, with no comparison group, so they feed logic items, not probabilities.
+- **New questions** (information only):
+  - `h_joint_hot_swollen` (a joint visibly swollen and warm or red; `alwaysAsk`, joint regions incl. groin).
+  - After a "yes" to it (`askIf`, `alwaysAsk`): `h_fever`, `h_septic_risk` (diabetes, RA, HIV, joint replacement, joint surgery, nearby skin infection), `h_pain_moves`, `h_skin_spots`, `h_preceding_infection` (diarrhoea, or urinary burning or discharge, 3 days to 6 weeks before), `h_eyes_red`.
+  - `h_leg_turns_out` (foot turns out, or the thigh swings out on bending the hip; after `h_age_growing` "yes"). `h_age_growing` now also covers the groin and thigh regions, and is `alwaysAsk` (filled in as "no" by any adult age answer).
+- **`septic_arthritis`** (joint infection, including spread gonorrhoea; all joint regions): `usual` hot swollen joint (Margaretten: swelling 78%); `supports` fever (57%) and risk factors (Margaretten Abstract); `supports` pain moving between joints and skin spots (Haroun: the triad of migratory polyarthritis, skin lesions and tenosynovitis).
+- **`reactive_arthritis`** (leg joints, heel, Achilles): `usual` preceding infection (Bentaleb Table 2, Berlin 1999 major criterion); `usual` hot swollen joint (oligoarthritis); `supports` red eyes (conjunctivitis 51%); `unexplained` many swollen joints on both sides (**uncited reasoning**).
+- **`scfe`** (groin, thighs, front and inner knee): `usual` still growing (Pavone: ages 9 to 16); `supports` foot turning out / Drehmann's sign and `supports` limp (Pavone Introduction).
+- **Existing options:** `gout` and `inflammatory_arthritis` get `supports` hot swollen joint (**uncited reasoning**).
+- **Clinician tests (no accuracy data):**
+  - joint aspiration (septic arthritis, gout; Margaretten Conclusions);
+  - urine, swab or stool tests for the trigger (Bentaleb);
+  - X-rays of both hips (Pavone).
+- **Stress view:** joint infection and reactive arthritis are linked to "inflamed joints" (description now mentions infection; hot swollen joint added to its swelling clue). SCFE is linked to "tissue".
+- **Same-day notice** (`src/ui/UrgentJointNotice.tsx`, results page): shown for fever with a hot swollen joint, or a still-growing child who limps with hip, thigh or knee pain. Like the chest notice it asks nothing and stops nothing, and it never feeds a probability. It is not a red-flag check (those stay removed); it reacts to answers already given.
+- **Outcome:** Noah → SCFE (clear leader), Damon → reactive arthritis (clear leader), Peyton → joint infection (clear leader). The notice shows for Noah and Peyton only, among the 39 described patients.
+- **Tests:**
+  - forefoot vignette list updated (two new joint options);
+  - new vignettes for the hot-joint follow-ups, the infection and reactive arthritis fit, and the SCFE fit and gating;
+  - Noah, Damon and Peyton added to `patients.test.ts` (39 described patients, all named correctly), plus a notice check per patient.
+- **Results:** dev combined top-1 28/46, top-3 35/46, unchanged; mean interview 39.7 → 40.3 questions (max 64), from the always-asked hot joint and still-growing questions. Holdout aggregate unchanged.

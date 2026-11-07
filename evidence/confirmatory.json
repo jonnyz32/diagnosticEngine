@@ -1278,6 +1278,45 @@
     ]
   },
   {
+    "id": "drawer_big_toe",
+    "name": "Stability test of the big toe joint (clinician)",
+    "hypotheses": [
+      "turf_toe"
+    ],
+    "description": "The clinician holds the foot bone and moves the toe up and down (vertical Lachman or drawer test) and side to side; looseness compared with the other foot suggests a tear. Weakness bending the toe down against resistance also points to a tear.",
+    "recommendation": {
+      "sourceId": "najefi2018",
+      "locator": "Clinical presentation"
+    },
+    "accuracy": []
+  },
+  {
+    "id": "xray_big_toe",
+    "name": "Weight-bearing X-rays of both feet (big toe)",
+    "hypotheses": [
+      "turf_toe"
+    ],
+    "description": "Usually normal, but a small flake of bone or sesamoids sitting further back than on the other foot (3 mm or more) points to a significant tear; a view with the toe bent up shows whether the sesamoids move with it.",
+    "recommendation": {
+      "sourceId": "najefi2018",
+      "locator": "Investigations"
+    },
+    "accuracy": []
+  },
+  {
+    "id": "mri_big_toe",
+    "name": "MRI of the big toe joint",
+    "hypotheses": [
+      "turf_toe"
+    ],
+    "description": "Commonly used in athletes and in moderate or severe injuries, to show tears of the tissue under the joint or damage to the joint surface.",
+    "recommendation": {
+      "sourceId": "mccormick2010",
+      "locator": "Imaging"
+    },
+    "accuracy": []
+  },
+  {
     "id": "tcst",
     "name": "Triple compression stress test (clinician)",
     "hypotheses": [
@@ -1635,5 +1674,45 @@
       "sourceId": "ichd3",
       "locator": "11.2.1 Cervicogenic headache, criterion C4"
     }
+  },
+  {
+    "id": "joint_aspiration",
+    "name": "Drawing fluid from the joint (joint aspiration)",
+    "hypotheses": [
+      "septic_arthritis",
+      "gout"
+    ],
+    "description": "A needle draws fluid from the swollen joint. A very high white cell count with mostly neutrophils points to infection, before the culture result is back; crystals in the fluid show gout.",
+    "recommendation": {
+      "sourceId": "margaretten2007",
+      "locator": "Abstract, Conclusions"
+    },
+    "accuracy": []
+  },
+  {
+    "id": "reactive_infection_tests",
+    "name": "Tests for the triggering infection (urine, swab or stool)",
+    "hypotheses": [
+      "reactive_arthritis"
+    ],
+    "description": "A urine test or swab for chlamydia, or a stool test for the gut bacteria (Campylobacter, Salmonella, Shigella, Yersinia), looks for the infection that set off the arthritis.",
+    "recommendation": {
+      "sourceId": "bentaleb2020",
+      "locator": "Laboratory Testing Confirmation of Triggering Infection"
+    },
+    "accuracy": []
+  },
+  {
+    "id": "xray_hips_child",
+    "name": "X-rays of both hips, front and frog-leg side views",
+    "hypotheses": [
+      "scfe"
+    ],
+    "description": "Two views of the hips confirm and grade the slip; MRI can show the earliest changes when X-rays look normal.",
+    "recommendation": {
+      "sourceId": "pavone2023",
+      "locator": "Introduction"
+    },
+    "accuracy": []
   }
 ]

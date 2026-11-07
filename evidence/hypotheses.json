@@ -1080,7 +1080,22 @@
       "hand_ulnar",
       "wrist_ulnar"
     ],
-    "logic": [],
+    "logic": [
+      {
+        "finding": "h_palm_pressure",
+        "type": "supports",
+        "reason": "Most of these nerve lesions at the wrist come from repeated outside pressure on the little-finger side of the palm, as in long bicycle rides with weight on the handlebars.",
+        "sourceId": "capitani2002",
+        "locator": "Abstract"
+      },
+      {
+        "finding": "h_arm_numbness",
+        "type": "supports",
+        "reason": "Pressure in the canal can cause numbness, weakness of the small hand muscles, or both, depending on which branch is pressed, so numbness fits but its absence doesn't count against.",
+        "sourceId": "mcgurk2023",
+        "locator": "Cubital Tunnel and Ulnar Tunnel Syndrome"
+      }
+    ],
     "context": [
       {
         "text": "Compression in Guyon's canal can cause weakness only, numbness only, or both, depending on where in the canal the nerve is pressed.",
@@ -1310,6 +1325,18 @@
         "finding": "h_arm_numbness",
         "type": "unexplained",
         "reason": "A tendon or joint problem causes pain, not numbness or pins and needles; those point to a nerve."
+      },
+      {
+        "finding": "h_arm_lift_weak",
+        "type": "supports",
+        "reason": "An arm that drops when lowered from the side (the drop-arm test) may point to rotator cuff disease, and weakness with movement others can make normally points to a torn tendon rather than a stiff joint.",
+        "sourceId": "hermans2013",
+        "locator": "Abstract, Results (drop arm test)"
+      },
+      {
+        "finding": "h_shoulder_overhead_or_fall",
+        "type": "supports",
+        "reason": "A fall on the outstretched arm or a sudden pull can tear a rotator cuff tendon, especially after about 40, when the tendons are weaker."
       }
     ]
   },
@@ -2262,7 +2289,8 @@
     "category": "mimic",
     "regions": [
       "upper_back",
-      "mid_back"
+      "mid_back",
+      "low_back"
     ],
     "prior": null,
     "name": "Spinal compression fracture (often from thin bones, osteoporosis)",
@@ -2285,6 +2313,11 @@
         "finding": "h_trunk_numbness",
         "type": "unexplained",
         "reason": "A joint, bone or muscle problem causes pain, not numbness, pins and needles or burning skin; those point to a nerve."
+      },
+      {
+        "finding": "h_bone_health",
+        "type": "supports",
+        "reason": "Thin bones let a vertebra collapse with little or no force; strong bones make that unlikely, but a fracture can still happen."
       }
     ]
   },
@@ -2639,6 +2672,18 @@
         "finding": "st_slr_helper",
         "type": "unexplained",
         "reason": "The straight-leg raise stretches the sciatic nerve roots, not the arteries."
+      },
+      {
+        "finding": "h_leg_cool",
+        "type": "supports",
+        "reason": "In people with leg symptoms, cool skin was one of the most useful examination findings for narrowed leg arteries; other causes can make the feet cool too.",
+        "sourceId": "khan2006",
+        "locator": "Abstract, Data synthesis (symptomatic patients: cool skin)"
+      },
+      {
+        "finding": "h_vascular_risk",
+        "type": "supports",
+        "reason": "Smoking, diabetes, high blood pressure and high cholesterol damage and narrow the arteries; many people without them have other causes of leg pain."
       }
     ]
   },
@@ -3361,6 +3406,25 @@
         "reason": "Symptoms in both legs were an independent predictor of compartment syndrome among 1411 people referred with exercise-induced leg pain.",
         "sourceId": "debruijn2018",
         "locator": "Abstract"
+      },
+      {
+        "finding": "h_leg_tingling",
+        "type": "supports",
+        "reason": "Pins and needles are part of the picture: the swollen compartment presses on the nerve running through it (in the front compartment, the nerve to the skin between the big and second toes).",
+        "sourceId": "tarabishi2023",
+        "locator": "Abstract"
+      },
+      {
+        "finding": "p_heavy_weak",
+        "type": "supports",
+        "reason": "Muscle weakness during exercise is part of the picture, such as the foot slapping down when the front compartment is affected.",
+        "sourceId": "tarabishi2023",
+        "locator": "Abstract"
+      },
+      {
+        "finding": "p_activity_rest",
+        "type": "supports",
+        "reason": "The pressure builds as the muscles swell during exercise and falls within minutes of stopping, so symptoms that build up and settle with rest fit."
       }
     ]
   },
@@ -3888,6 +3952,45 @@
         "finding": "h_leg_numbness",
         "type": "unexplained",
         "reason": "A joint, tendon, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
+    "id": "scfe",
+    "name": "Slipped capital femoral epiphysis (SCFE): the ball of the hip slips at the growth plate",
+    "shortName": "Slipped hip growth plate",
+    "description": "In a child or teenager who is still growing, the ball at the top of the thigh bone slips on its growth plate. It causes hip, groin, thigh or only knee pain and a limp, and the leg turns outward. It is easily missed, and the slip can get worse, so a child with these symptoms needs a hip X-ray the same day.",
+    "category": "mimic",
+    "regions": [
+      "groin",
+      "anterior_thigh",
+      "medial_thigh",
+      "lateral_thigh",
+      "knee_front",
+      "knee_medial"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_age_growing",
+        "type": "usual",
+        "reason": "It is the most common hip disorder of children and teenagers aged 9 to 16; it happens while the growth plate is still open.",
+        "sourceId": "pavone2023",
+        "locator": "Introduction"
+      },
+      {
+        "finding": "h_leg_turns_out",
+        "type": "supports",
+        "reason": "The hip turns outward more and inward less, and bending it makes the thigh swing out and turn out (Drehmann's sign).",
+        "sourceId": "pavone2023",
+        "locator": "Introduction"
+      },
+      {
+        "finding": "h_limp",
+        "type": "supports",
+        "reason": "Examination may show a poor gait and a difference in leg length.",
+        "sourceId": "pavone2023",
+        "locator": "Introduction"
       }
     ]
   },
@@ -4456,6 +4559,65 @@
     ]
   },
   {
+    "id": "turf_toe",
+    "name": "Turf toe: sprain of the big toe joint from forcing it upward",
+    "shortName": "Turf toe",
+    "description": "A sprain or tear of the strong tissue under the big toe joint (the plantar plate and the tendons holding the two small sesamoid bones), when the toe is bent sharply upward, usually in sport with the foot planted and the heel raised. The joint is painful, swollen and stiff, and pushing off hurts.",
+    "category": "mimic",
+    "regions": [
+      "forefoot"
+    ],
+    "prior": null,
+    "mechanism": {
+      "text": "A load comes down on the foot while the ankle points down and the big toe is bent up, driving the toe joint into hyperextension; this stretches or tears the capsule and ligaments under the joint, from a mild sprain to a complete tear or dislocation.",
+      "sourceId": "mccormick2010",
+      "locator": "Mechanism of Injury"
+    },
+    "logic": [
+      {
+        "finding": "h_big_toe_forced_up",
+        "type": "usual",
+        "reason": "The mechanism was hyperextension of the big toe joint in 85% of professional football players with turf toe.",
+        "sourceId": "rodeo1990",
+        "locator": "Abstract"
+      },
+      {
+        "finding": "h_big_toe_swelling",
+        "type": "usual",
+        "reason": "Swelling is listed at every grade, from localized swelling in a sprain to significant swelling and bruising in a complete tear.",
+        "sourceId": "mccormick2010",
+        "locator": "Table 1"
+      },
+      {
+        "finding": "h_under_big_toe",
+        "type": "usual",
+        "reason": "The injury is to the tissue under the big toe joint, and patients may describe weakness in push-off.",
+        "sourceId": "najefi2018",
+        "locator": "Abstract; Clinical presentation"
+      },
+      {
+        "finding": "h_big_toe_bend",
+        "type": "usual",
+        "reason": "Bending the toe up stretches the injured tissue under the joint, and the joint is painful and stiff."
+      },
+      {
+        "finding": "h_big_toe_tender",
+        "type": "supports",
+        "reason": "The sprained joint is usually tender to press, though other big toe problems are too."
+      },
+      {
+        "finding": "h_ff_gradual_onset",
+        "type": "unexplained",
+        "reason": "Turf toe is an injury from a single event; pain that crept up over weeks or months needs another explanation (rare cases without an injury are reported)."
+      },
+      {
+        "finding": "h_leg_numbness",
+        "type": "unexplained",
+        "reason": "A joint, ligament or bone problem without a trapped nerve causes pain, not numbness or pins and needles; those point to a nerve."
+      }
+    ]
+  },
+  {
     "id": "insertional_achilles",
     "name": "Back of heel pain: insertional Achilles tendinopathy, heel bursitis or Haglund's bump",
     "shortName": "Back of heel",
@@ -4550,6 +4712,11 @@
         "finding": "h_joint_attacks",
         "type": "usual",
         "reason": "Gout comes in attacks of a hot, red, swollen joint that build quickly and then settle."
+      },
+      {
+        "finding": "h_joint_hot_swollen",
+        "type": "supports",
+        "reason": "A gout attack makes the joint swollen, hot and red within a day."
       }
     ]
   },
@@ -4593,6 +4760,125 @@
         "finding": "h_many_joints_swollen",
         "type": "usual",
         "reason": "Inflamed joint linings make the joints swell."
+      },
+      {
+        "finding": "h_joint_hot_swollen",
+        "type": "supports",
+        "reason": "Inflamed joints swell and can feel warm."
+      }
+    ]
+  },
+  {
+    "id": "septic_arthritis",
+    "name": "Joint infection (septic arthritis), including spread of gonorrhoea to the joints",
+    "shortName": "Joint infection",
+    "description": "Bacteria get into a joint, usually through the blood, and quickly make it hot, swollen and very painful, often with fever. Gonorrhoea can spread through the blood to several joints and tendon sheaths at once, with a few spots on the skin. An infected joint can be damaged within days, so get seen the same day.",
+    "category": "mimic",
+    "regions": [
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "forefoot",
+      "foot_dorsum",
+      "heel",
+      "achilles",
+      "wrist_radial",
+      "wrist_ulnar",
+      "hand_median",
+      "hand_ulnar",
+      "hand_dorsal_radial",
+      "elbow_lateral",
+      "elbow_medial",
+      "shoulder",
+      "groin"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_joint_hot_swollen",
+        "type": "usual",
+        "reason": "Joint pain and a history of joint swelling are the only findings present in most adults with a bacterial joint infection (swelling in 78%).",
+        "sourceId": "margaretten2007",
+        "locator": "Abstract, Data synthesis"
+      },
+      {
+        "finding": "h_fever",
+        "type": "supports",
+        "reason": "Fever was present in 57%, so it fits but its absence doesn't rule an infection out.",
+        "sourceId": "margaretten2007",
+        "locator": "Abstract, Data synthesis"
+      },
+      {
+        "finding": "h_septic_risk",
+        "type": "supports",
+        "reason": "Diabetes, rheumatoid arthritis, joint surgery, a hip or knee replacement, skin infection and HIV each made a joint infection more likely.",
+        "sourceId": "margaretten2007",
+        "locator": "Abstract, Data synthesis"
+      },
+      {
+        "finding": "h_pain_moves",
+        "type": "supports",
+        "reason": "The common form of spread gonorrhoea is a triad of joint pain moving between joints, skin spots and inflamed tendon sheaths.",
+        "sourceId": "haroun2025",
+        "locator": "Introduction"
+      },
+      {
+        "finding": "h_skin_spots",
+        "type": "supports",
+        "reason": "Skin spots are part of the triad of spread gonorrhoea.",
+        "sourceId": "haroun2025",
+        "locator": "Introduction"
+      }
+    ]
+  },
+  {
+    "id": "reactive_arthritis",
+    "name": "Reactive arthritis: joint inflammation after a gut or urinary infection",
+    "shortName": "Reactive arthritis",
+    "description": "Days to weeks after a bout of diarrhoea or a urinary or genital infection, the immune system inflames a few joints, usually in the legs and on one side more than the other, and often the heel or the tendon attachments. The eyes may be red and the urine may burn. A doctor can test for the infection and treat the inflammation.",
+    "category": "mimic",
+    "regions": [
+      "knee_front",
+      "knee_medial",
+      "knee_lateral",
+      "knee_back",
+      "ankle_lateral",
+      "ankle_medial",
+      "forefoot",
+      "foot_dorsum",
+      "heel",
+      "achilles"
+    ],
+    "prior": null,
+    "logic": [
+      {
+        "finding": "h_preceding_infection",
+        "type": "usual",
+        "reason": "A preceding infection is a main criterion: diarrhoea, or burning or discharge when passing urine, from 3 days to 6 weeks before the arthritis.",
+        "sourceId": "bentaleb2020",
+        "locator": "Table 2 (Berlin 1999 criteria)"
+      },
+      {
+        "finding": "h_joint_hot_swollen",
+        "type": "usual",
+        "reason": "It is an arthritis, usually of one to a few joints, so swelling is expected.",
+        "sourceId": "bentaleb2020",
+        "locator": "Osteoarticular Manifestations"
+      },
+      {
+        "finding": "h_eyes_red",
+        "type": "supports",
+        "reason": "Conjunctivitis was reported in 51% of patients, mostly in the acute form.",
+        "sourceId": "bentaleb2020",
+        "locator": "Extra-Articular manifestations, Ocular symptoms"
+      },
+      {
+        "finding": "h_many_joints_swollen",
+        "type": "unexplained",
+        "reason": "It usually affects one to a few joints on one side more than the other; many swollen joints on both sides point to another kind of arthritis."
       }
     ]
   },
