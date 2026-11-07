@@ -18,7 +18,7 @@ import { childWithLimp, hotJointWithFever } from "../../src/ui/UrgentJointNotice
  * ten are listed; Mireille (suspected spinal metastasis, which no option covers) must get
  * "not covered". A third set followed the same day; the seven whose condition the tool lists are
  * included (see the comment above them). A fourth set followed the same day (see the comment
- * above it), and a fifth on 2026-11-07.
+ * above it), a fifth on 2026-11-07, and a sixth the same day (eight of ten; see the comment above them).
  */
 
 const db = loadEvidence();
@@ -860,6 +860,149 @@ const patients: Patient[] = [
       h_fall_on_hand: N, h_wrist_lump: N, h_thumb_base_bump: N, h_shoulder_dislocated: N,
       h_shoulder_repetitive_onset: N, h_back_onset_young: N, h_back_exercise_better: N, h_back_night_wakes: N,
       h_repetitive_use: N, h_pain_regional: N,
+    },
+  },
+  // Sixth set (user-supplied, 2026-11-07), answered from the descriptions only. Marisol (Pancoast tumour)
+  // and Claire (subclavian artery or Takayasu arteritis) are left out: no option covers them.
+  {
+    // Knee OA, the part the tool covers. The emergency in this story, black tarry stools after leftover naproxen
+    // (an upper GI bleed), is outside the tool.
+    name: "Gavin, 46: inner knee ache on twisting and ladders, short morning stiffness, years after a knee scope (also black stools after naproxen, which the tool doesn't ask about)",
+    expect: "knee_oa",
+    regions: ["knee_medial"],
+    facts: {
+      h_pain_regional: N, h_age_45: Y, h_age_50: N, h_age_60: N, h_age_over_65: N, p_night_rest: Y, p_throbbing: Y,
+      h_knee_locking: N, h_knee_swelled_fast: N, h_morning_stiff_long: N, h_fatigue_sleep: Y, h_recent_surgery: N,
+      p_injury: N, p_sudden_severe: N, h_knee_pivot_injury: N, h_knee_injury: N, h_walking_claudication: N,
+      h_bend_forward: N, h_bilateral: N, h_leg_worse_than_back: Y, h_pain_below_knee: N, h_leg_numbness: N,
+      h_knee_activity_pain: Y, h_knee_morning_stiff_short: Y, h_pain_3_months: Y, h_pain_disproportionate: N,
+      h_joint_hot_swollen: N, h_knee_inner_below_joint: N, h_many_places_both_sides: N, h_joint_attacks: N,
+      h_many_joints_swollen: N, h_kneecap_slipped: N, p_spreading: N, p_tingling: N, p_buzzing: N, p_numb: N,
+      p_heavy_weak: N, p_burning: N, p_one_spot: Y, p_light_touch: N, st_sens_medial_knee: N, p_dull_ache: Y,
+      p_repetitive: Y, p_position: N, p_stretch: N, p_activity_rest: N,
+    },
+  },
+  {
+    // Iliac artery narrowing. Spinal stenosis (35%) until PAD's checks could be asked: pale foot after walking and
+    // the same walking distance each time (2026-11-07). PAD wins on the logical fit, not on probability.
+    name: "Harlan, 68: one-sided buttock and thigh cramping after half a block, no back pain, foot pale after walking",
+    expect: "pad",
+    regions: ["buttock", "posterior_thigh"],
+    facts: {
+      h_foot_pale_walking: Y, h_claud_same_distance: Y, h_pain_regional: N, h_age_over_65: Y, h_age_45: Y,
+      h_age_50: Y, h_age_60: Y, h_walking_claudication: Y, h_bilateral: N, h_improve_seated: Y, h_leg_burning: Y,
+      p_burning: Y, p_injury: Y, h_pain_below_knee: N, h_pain_sitting_chair: N, h_groin_pain: N,
+      h_many_places_both_sides: N, h_pain_3_months: Y, h_hip_weight_pain: N, h_pregnancy: N, p_one_spot: N,
+      h_tailbone_point: N, h_back_extension_pain: N, h_thigh_sudden_pull: N, p_tight: Y, p_movement_eases: N,
+      h_hip_catch: N, h_bone_health: N, p_spreading: N, p_activity_rest: Y, p_tingling: N, p_buzzing: N, p_numb: N,
+      p_position: N, p_stretch: N, p_repetitive: N, p_night_rest: N, h_recent_surgery: N, h_leg_worse_than_back: Y,
+      h_worse_standing: N, h_leg_numbness: N, h_leg_tingling: N, h_cough_sneeze: N, h_widespread_pain: N,
+      p_dull_ache: N,
+    },
+  },
+  {
+    // Anterior interosseous nerve. A close call (neck root, median nerve, neuralgic amyotrophy) until the
+    // flat-pinch question was added and the sudden-onset question was opened to the forearm and hand (2026-11-07).
+    name: "Talia, 24: climber with a weak flat thumb-and-index pinch, no numbness, after a forearm ache",
+    expect: "median_proximal",
+    regions: ["forearm_anterior", "hand_median"],
+    facts: {
+      h_tip_pinch_flat: Y, h_age_45: N, h_age_50: N, h_age_60: N, h_age_over_65: N, h_arm_numbness: N, p_tingling: N,
+      p_numb: N, p_heavy_weak: Y, h_repetitive_use: Y, h_symptoms_above_hand: Y, h_thumb_base_pinch: N,
+      p_light_touch: N, h_pain_3_months: N, h_pain_disproportionate: N, h_joint_hot_swollen: N, h_finger_catching: N,
+      h_fingertip_droop: N, h_palm_cord: N, h_many_places_both_sides: N, h_joint_attacks: N, h_many_joints_swollen: N,
+      h_forearm_grip_ache: Y, p_spreading: N, p_injury: N, h_palm_numb: N, p_one_spot: N, p_buzzing: N,
+      p_activity_rest: N, p_sudden_severe: N, p_stretch: N, p_burning: N, p_movement_eases: N,
+      h_wrist_thumb_motion: N, p_repetitive: Y, h_neck_movement_pain: N, h_hand_flick: N, h_sudden_severe_arm_pain: N,
+      p_night_rest: N, p_position: N, h_wrist_lump: N, h_fall_on_hand: N, h_widespread_pain: N,
+    },
+  },
+  {
+    // L3-L4 disc with an L4 root. Named as written.
+    name: "Derrick, 53: front-of-thigh burning and numbness, knee giving way, absent knee jerk, straight-leg raise painless",
+    expect: "root_mid",
+    regions: ["low_back", "anterior_thigh"],
+    facts: {
+      h_age_45: Y, h_age_50: Y, h_age_60: N, h_age_over_65: N, h_cough_sneeze: N, h_leg_numbness: Y, h_leg_burning: Y,
+      p_burning: Y, p_numb: Y, p_heavy_weak: Y, h_leg_worse_than_back: Y, h_pain_below_knee: N, p_injury: Y,
+      h_back_gradual_onset: N, h_walking_claudication: N, h_bend_forward: N, st_slr_helper: N, h_groin_pain: N,
+      h_bilateral: N, h_many_places_both_sides: N, h_pain_3_months: N, h_pregnancy: N, h_bone_health: N,
+      st_sens_anterior_thigh: Y, st_sit_to_stand: Y, h_hip_weight_pain: N, h_age_growing: N, p_activity_rest: N,
+      p_one_spot: N, p_movement_eases: N, h_recent_surgery: N, h_hip_catch: N, h_hip_flexor_lift: N,
+      h_leg_shooting: N, p_sudden_severe: N, h_widespread_pain: N, h_severe_leg_pain: N,
+    },
+  },
+  {
+    // Postpartum rheumatoid arthritis. Named as written.
+    name: "Nadia, 34: thumb-base pain getting worse despite a splint, warm and puffy, a trigger finger on the other hand, 90 minutes of morning stiffness in both wrists",
+    expect: "inflammatory_arthritis",
+    regions: ["wrist_radial", "hand_dorsal_radial", "hand_ulnar"],
+    facts: {
+      h_pain_regional: Y, h_repetitive_use: N, h_age_45: N, h_age_50: N, h_age_60: N, h_age_over_65: N,
+      h_morning_stiff_long: Y, h_finger_catching: Y, h_wrist_thumb_motion: Y, h_thumb_base_pinch: Y,
+      h_joint_hot_swollen: Y, h_pregnancy: Y, p_injury: N, h_fall_on_hand: N, h_symptoms_above_hand: N,
+      h_arm_numbness: N, h_thumb_base_bump: N, p_light_touch: N, h_pain_3_months: Y, h_pain_disproportionate: N,
+      h_preceding_infection: N, h_eyes_red: N, h_forearm_creak: N, h_palm_cord: N, h_wrist_lump: N,
+      h_fingertip_droop: N, h_arm_overhead_symptoms: N, h_many_places_both_sides: Y, h_joint_attacks: N, h_fever: N,
+      h_septic_risk: N, h_pain_moves: N, h_skin_spots: N, h_palm_pressure: N, p_tingling: N, p_buzzing: N, p_numb: N,
+      p_heavy_weak: N, p_repetitive: Y, p_activity_rest: N, p_burning: N, p_one_spot: Y, p_movement_eases: Y,
+      p_sudden_severe: N, h_sudden_severe_arm_pain: N, h_widespread_pain: N,
+    },
+  },
+  {
+    // Common peroneal nerve at the fibular head. A close call with the lumbar roots until the outer-knee tapping
+    // and leg-crossing questions were added and peroneal counted tingling (2026-11-07).
+    name: "Kenji, 41: runner with a constant outer-shin ache, top-of-foot tingling when crossing his legs, a zing below the outer knee",
+    expect: "peroneal",
+    regions: ["shin_anterior", "foot_dorsum"],
+    facts: {
+      h_leg_cross_tingle: Y, h_fibular_head_tingle: Y, h_age_45: N, h_age_50: N, h_age_60: N, h_age_over_65: N,
+      p_tingling: Y, p_numb: Y, h_leg_numbness: Y, h_leg_tingling: Y, p_position: Y, p_activity_rest: N,
+      p_night_rest: Y, p_repetitive: N, p_injury: N, h_peroneal_setting: Y, h_walking_claudication: N,
+      h_bend_forward: N, h_no_pain_seated: N, h_bilateral: N, h_leg_worse_than_back: Y, h_ankle_injury: N,
+      h_ff_load_increase: Y, h_pain_below_knee: Y, p_flexion_worse: N, h_severe_leg_pain: N, p_light_touch: N,
+      h_pain_3_months: N, h_pain_disproportionate: N, h_leg_burning: N, h_joint_hot_swollen: N,
+      h_bilateral_sole_numbness: N, h_shin_long_stretch: N, h_ff_bone_point: N, h_big_toe_tender: N,
+      h_big_toe_bump: N, h_big_toe_bend: N, h_poly_toes_up: N, h_leg_exercise_tight: N, h_ankle_end_range: N,
+      h_ankle_stiff_ache: N, h_many_places_both_sides: N, p_stretch: N, p_burning: N, p_spreading: N, p_one_spot: Y,
+      h_cough_sneeze: N, h_recent_surgery: N, h_many_joints_swollen: N, h_ankle_catching: N, p_dull_ache: Y,
+      h_diabetes: N, h_leg_shooting: N, p_sudden_severe: N, h_widespread_pain: N, p_heavy_weak: Y,
+    },
+  },
+  {
+    // Pelvic insufficiency fracture. Named as written, on the logical fit (stenosis leads on probability).
+    name: "Ruth, 76: groin and thigh pain on standing, osteoporosis, pelvic radiation, hip turning painless",
+    expect: "hip_stress_fracture",
+    regions: ["groin", "anterior_thigh"],
+    facts: {
+      h_age_over_65: Y, h_age_45: Y, h_age_50: Y, h_age_60: Y, h_hip_weight_pain: Y, h_limp: Y, h_bone_health: Y,
+      p_injury: N, h_leg_numbness: N, st_hip_rotation_self: N, h_groin_pain: Y, p_dull_ache: Y, h_leg_burning: N,
+      h_bend_forward: N, h_pregnancy: N, h_walking_claudication: Y, h_bilateral: N, h_worse_standing: Y,
+      h_improve_seated: Y, h_obt_radiate: N, h_ii_pain: N, h_ii_sensory: N, h_many_places_both_sides: N,
+      h_pain_3_months: N, p_tingling: N, p_buzzing: N, p_numb: N, p_heavy_weak: N, p_position: N, p_stretch: N,
+      p_burning: N, p_light_touch: N, p_spreading: N, p_one_spot: Y, p_movement_eases: N, h_knee_oa_history: N,
+      h_recent_surgery: N, h_groin_deep_flexion: N, h_groin_adductor: N, h_hip_catch: N, h_hip_flexor_lift: N,
+      h_joint_hot_swollen: N, h_hip_load_increase: N, h_leg_tingling: N, h_leg_shooting: N, h_cough_sneeze: N,
+      p_sudden_severe: N, h_morning_stiff_long: N, h_widespread_pain: N, h_tight_clothing: N, h_diabetes: N,
+      h_obt_exercise: N, h_thigh_sudden_pull: N, h_age_growing: N,
+    },
+  },
+  {
+    // Suprascapular nerve at the spinoglenoid notch. SLAP tear until the suprascapular nerve got its first checks:
+    // weak turning outward and a hollow shoulder blade (2026-11-07).
+    name: "Omar, 29: tennis player with a deep ache behind the shoulder, weak turning outward, hollow shoulder blade",
+    expect: "suprascapular",
+    regions: ["shoulder", "scapula"],
+    facts: {
+      h_shoulder_er_weak: Y, h_shoulder_blade_hollow: Y, h_pain_regional: N, h_age_45: N, h_age_50: N, h_age_60: N,
+      h_age_over_65: N, p_dull_ache: Y, p_heavy_weak: Y, h_shoulder_overhead_or_fall: Y, p_injury: N,
+      h_shoulder_stiff: N, h_ac_point: N, h_arm_lift_weak: N, h_shoulder_above_elbow: Y, h_many_places_both_sides: N,
+      h_pain_3_months: Y, h_scapula_winging: N, h_neck_movement_pain: N, h_joint_hot_swollen: N,
+      h_sudden_severe_arm_pain: N, h_many_joints_swollen: N, h_front_shoulder_pain: N, h_back_itch: N,
+      h_neck_car_accident: N, h_shoulder_apprehension: N, p_spreading: N, h_shoulder_shock_seizure: N, p_tingling: N,
+      p_buzzing: N, p_numb: N, p_sudden_severe: N, p_stretch: Y, p_night_rest: N, p_burning: N, p_light_touch: N,
+      p_one_spot: N, p_movement_eases: N, h_arm_numbness: N, p_repetitive: Y, h_shoulder_repetitive_onset: Y,
+      h_shoulder_dislocated: N, h_widespread_pain: N, st_painful_arc_self: N,
     },
   },
 ];

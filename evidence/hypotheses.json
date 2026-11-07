@@ -38,6 +38,16 @@
         "finding": "h_symptoms_above_foot",
         "type": "usual",
         "reason": "Pain from a pressed mid-lumbar nerve root usually runs from the back, groin or thigh down the front of the leg; symptoms at the ankle or foot alone, with nothing higher up, would be unusual."
+      },
+      {
+        "finding": "h_fibular_head_tingle",
+        "type": "unexplained",
+        "reason": "A nerve root sits by the spine; pressing at the knee doesn't reach it."
+      },
+      {
+        "finding": "h_leg_cross_tingle",
+        "type": "unexplained",
+        "reason": "Crossing the legs or kneeling presses on the nerve at the knee, not on a root by the spine."
       }
     ]
   },
@@ -95,6 +105,16 @@
         "finding": "h_symptoms_above_foot",
         "type": "usual",
         "reason": "Pain from a pressed lower-back nerve root usually runs down from the back or buttock along the leg; symptoms in the foot alone, with nothing higher up, would be unusual."
+      },
+      {
+        "finding": "h_fibular_head_tingle",
+        "type": "unexplained",
+        "reason": "A nerve root sits by the spine; pressing at the knee doesn't reach it."
+      },
+      {
+        "finding": "h_leg_cross_tingle",
+        "type": "unexplained",
+        "reason": "Crossing the legs or kneeling presses on the nerve at the knee, not on a root by the spine."
       }
     ]
   },
@@ -134,6 +154,11 @@
         "finding": "h_symptoms_above_foot",
         "type": "usual",
         "reason": "A narrowed spinal canal usually brings on symptoms in the buttocks, thighs or whole legs on walking or standing; symptoms in the foot alone don't fit that pattern."
+      },
+      {
+        "finding": "h_foot_pale_walking",
+        "type": "unexplained",
+        "reason": "Narrowing of the spinal canal squeezes nerve roots; it doesn't change blood flow to the skin of the foot."
       }
     ]
   },
@@ -1042,6 +1067,11 @@
         "finding": "h_palm_numb",
         "type": "unexplained",
         "reason": "The branch that supplies the palm at the base of the thumb leaves the median nerve above the wrist and passes over the carpal tunnel, not through it, so carpal tunnel syndrome usually spares the palm; numbness there points higher up the nerve."
+      },
+      {
+        "finding": "h_tip_pinch_flat",
+        "type": "unexplained",
+        "reason": "The muscles that bend the thumb and index fingertips are supplied in the forearm, above the carpal tunnel."
       }
     ]
   },
@@ -1078,6 +1108,11 @@
         "finding": "h_forearm_grip_ache",
         "type": "usual",
         "reason": "In the forearm the median nerve passes between the two heads of the muscle that turns the palm down (pronator teres), so gripping and turning against resistance squeeze it and usually bring on an ache there."
+      },
+      {
+        "finding": "h_tip_pinch_flat",
+        "type": "supports",
+        "reason": "The anterior interosseous branch powers bending of the thumb tip and the index fingertip; when it is affected the pinch collapses flat, usually without numbness."
       }
     ]
   },
@@ -1253,6 +1288,23 @@
         "sourceId": "kostretzis2017",
         "locator": "Anatomy"
       }
+    ],
+    "logic": [
+      {
+        "finding": "h_shoulder_er_weak",
+        "type": "usual",
+        "reason": "The nerve supplies the infraspinatus, the main muscle that turns the arm outward, whether it is trapped at the top of the shoulder blade or further back at the spinoglenoid notch."
+      },
+      {
+        "finding": "h_shoulder_blade_hollow",
+        "type": "supports",
+        "reason": "The infraspinatus and supraspinatus lie in the hollows of the shoulder blade, so when their nerve is trapped they can waste and the blade looks hollow; a torn tendon or labrum alone rarely does this."
+      },
+      {
+        "finding": "h_arm_numbness",
+        "type": "unexplained",
+        "reason": "The suprascapular nerve has almost no branch to the skin, so it doesn't cause numbness or tingling in the arm or hand."
+      }
     ]
   },
   {
@@ -1357,6 +1409,16 @@
         "finding": "h_symptoms_above_hand",
         "type": "usual",
         "reason": "It typically begins with severe pain around the shoulder and upper arm, so symptoms in the hand alone don't fit."
+      },
+      {
+        "finding": "h_shoulder_blade_hollow",
+        "type": "supports",
+        "reason": "The nerves affected most often supply the shoulder blade muscles, which can waste visibly after the pain settles."
+      },
+      {
+        "finding": "h_tip_pinch_flat",
+        "type": "supports",
+        "reason": "Weakness of the thumb and index fingertip bending (the anterior interosseous nerve) is one of the common patterns after the pain settles."
       }
     ]
   },
@@ -2760,6 +2822,16 @@
         "finding": "h_vascular_risk",
         "type": "supports",
         "reason": "Smoking, diabetes, high blood pressure and high cholesterol damage and narrow the arteries; many people without them have other causes of leg pain."
+      },
+      {
+        "finding": "h_foot_pale_walking",
+        "type": "supports",
+        "reason": "Walking sends the little blood a narrowed artery can carry to the working muscles, so the skin of the foot can blanch; a nerve root or the spinal canal doesn't change skin colour."
+      },
+      {
+        "finding": "h_claud_same_distance",
+        "type": "supports",
+        "reason": "A narrowed artery limits blood flow by a fixed amount, so the muscles run short after a fairly predictable distance; spinal canal narrowing varies more with posture."
       }
     ]
   },
@@ -2828,6 +2900,21 @@
         "finding": "h_cough_sneeze",
         "type": "unexplained",
         "reason": "Coughing or straining raises pressure inside the spine; a nerve trapped at the knee isn't affected by it."
+      },
+      {
+        "finding": "h_fibular_head_tingle",
+        "type": "supports",
+        "reason": "The nerve runs just under the skin around the neck of the fibula, so pressure there sets off tingling where it supplies (Tinel's sign)."
+      },
+      {
+        "finding": "h_leg_tingling",
+        "type": "supports",
+        "reason": "A squeezed peroneal nerve gives pins and needles where it supplies the skin, the outer shin and the top of the foot."
+      },
+      {
+        "finding": "h_leg_cross_tingle",
+        "type": "supports",
+        "reason": "Crossing the legs, squatting and kneeling press on the nerve where it winds around the outer knee."
       }
     ]
   },
@@ -4193,6 +4280,11 @@
         "finding": "h_arm_numbness",
         "type": "unexplained",
         "reason": "A joint, tendon, bone or muscle problem causes pain, not numbness or pins and needles; those point to a nerve."
+      },
+      {
+        "finding": "h_shoulder_blade_hollow",
+        "type": "unexplained",
+        "reason": "A labral tear doesn't waste the shoulder blade muscles, unless a cyst from it presses on the suprascapular nerve."
       }
     ]
   },

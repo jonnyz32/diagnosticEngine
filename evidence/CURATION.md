@@ -1341,3 +1341,30 @@ Ten plain-language patients, run through the full interview as before (answers o
 **Results.** All ten in `patients.test.ts` and named correctly; Naomi, a double crush, has a new `second` assertion (the overall ranking puts carpal tunnel second behind the neck root, which leads on probability from the neck-tilt and hand-on-head tests). The tool names one option; a coexistence note for two nerve problems was not added.
 
 **Case reports** (`eval-cases`). Dev combined top-1 30/46, top-3 36/46, unchanged; mean interview 42.1 → 44.1 questions (max 63 → 68) from the new always-asked checks. Holdout aggregate unchanged (combined top-1 10/21, top-3 13/21).
+
+## Sixth set of ten described patients (user request, 2026-11-07)
+
+Ten plain-language patients, each with a "decoy" explanation in the story, run through the full interview as before (answers only from what the description states; self-tests "unsure"). The user's answer key: Gavin, upper GI bleed from naproxen plus knee OA or degenerative meniscus; Marisol, Pancoast tumour with Horner's; Harlan, iliac/femoral artery occlusion; Talia, anterior interosseous nerve; Derrick, L3–L4 disc with an L4 root; Nadia, postpartum rheumatoid arthritis; Kenji, common peroneal nerve at the fibular head; Ruth, pelvic or femoral neck insufficiency fracture; Omar, suprascapular nerve at the spinoglenoid notch; Claire, Takayasu arteritis or subclavian stenosis.
+
+As written: knee OA (Gavin), the L2–L4 root (Derrick), inflammatory arthritis (Nadia) and hip/pelvis stress fracture (Ruth) were named. Harlan got spinal stenosis (35%; PAD 7% with no checks answered); Talia a close call between the neck root, the median nerve at the forearm and neuralgic amyotrophy; Kenji a close call between the two lumbar roots and the peroneal nerve; Omar a SLAP tear (suprascapular 4th, with no checks at all). Marisol got a close call (cubital, rotator cuff, Guyon) and Claire neurogenic thoracic outlet: no option covers a lung tumour or an arm artery, and nothing asked about the eyelid, breathing pain or the missing pulse. Gavin's GI bleed is outside the tool (red flags removed, user decision 2026-11-03).
+
+**Uncited reasoning added** (labelled so in the UI, no probability, nothing feeds `bayes.ts`). All new questions are `alwaysAsk` information-only checks, like the fifth set's, so the question budget can't starve them.
+
+| Option | Added |
+|---|---|
+| `pad` | new `h_foot_pale_walking` (the foot looks paler after walking) and new `h_claud_same_distance` (asked after a "yes" to walking claudication: pain after about the same distance each time), both `supports`. Before this, PAD's checks (`h_leg_cool`, `h_vascular_risk`) were never asked: PAD is scored, so its checks only compete on information gain (0.02 bits, below the 0.03 threshold), and the end-of-interview logical-fit pass covers only options without study data |
+| `stenosis` | `h_foot_pale_walking` `unexplained` (note only) |
+| `suprascapular` | its first checks: new `h_shoulder_er_weak` (weak turning the arm outward, elbow at the side) `usual`; new `h_shoulder_blade_hollow` (the back of the shoulder blade flat or hollow) `supports`; `h_arm_numbness` `unexplained` |
+| `neuralgic_amyotrophy` | `h_shoulder_blade_hollow` and new `h_tip_pinch_flat` (thumb and index tips stay straight in an "O" pinch), both `supports` |
+| `median_proximal` | `h_tip_pinch_flat` `supports` (anterior interosseous branch) |
+| `cts`, `slap_tear` | `h_tip_pinch_flat` and `h_shoulder_blade_hollow` respectively `unexplained` (notes only) |
+| `peroneal` | new `h_fibular_head_tingle` (pressing below the outer knee bump sends tingling down the leg) and new `h_leg_cross_tingle` (crossing the legs, squatting or kneeling brings on shin or foot tingling), and `h_leg_tingling`, all `supports` |
+| `root_low`, `root_mid` | `h_fibular_head_tingle` and `h_leg_cross_tingle` `unexplained` (notes only) |
+
+**Gate widened.** `h_sudden_severe_arm_pain` (neuralgic amyotrophy's `usual` onset check) now also opens for `forearm_anterior` and `hand_median`, two of the option's own regions. Before, with only the forearm and hand marked, the defining onset question was never asked and neuralgic amyotrophy tied with the median nerve.
+
+**Tried and dropped.** `h_pain_below_knee` as a `usual` peroneal check: with only the foot marked and "no" to symptoms higher up, it kept the below-knee question alive (the body-map test) and changed Amina's and Toby's results. The peroneal nerve only supplies below the knee, so the check said nothing a body map doesn't.
+
+**Results.** The eight patients with a covered condition are in `patients.test.ts` and named correctly (Gavin as knee OA, the part the tool covers). Harlan's PAD wins on the logical fit (3 fits, 0 against) over stenosis, which still leads on probability (35% vs 7%); Ruth likewise. Marisol and Claire are left out until the user decides how "not covered" and red-flag clues should work.
+
+**Case reports** (`eval-cases`). Dev combined top-1 30/46, top-3 36/46, unchanged; mean interview 44.1 → 45.0 questions (max 68 → 69). Holdout aggregate unchanged (combined top-1 10/21, top-3 13/21).

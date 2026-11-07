@@ -4253,7 +4253,9 @@
       "scapula",
       "shoulder",
       "upper_arm_lateral",
-      "upper_arm_medial"
+      "upper_arm_medial",
+      "forearm_anterior",
+      "hand_median"
     ],
     "evidence": [],
     "summary": {
@@ -8922,6 +8924,125 @@
     "summary": {
       "yes": "pain lingering beyond 6 weeks after the injury",
       "no": "pain settling within 6 weeks of the injury"
+    }
+  },
+  {
+    "id": "h_foot_pale_walking",
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "After walking, does the foot on the painful side look paler than the other foot (you or someone else may notice it when you take your socks off)?",
+    "gateRegions": [
+      "buttock",
+      "posterior_thigh",
+      "anterior_thigh",
+      "lateral_thigh",
+      "calf"
+    ],
+    "summary": {
+      "yes": "the foot looks paler than the other after walking",
+      "no": "the foot doesn't look paler after walking"
+    }
+  },
+  {
+    "id": "h_claud_same_distance",
+    "kind": "history",
+    "alwaysAsk": true,
+    "askIf": {
+      "finding": "h_walking_claudication",
+      "answer": "yes"
+    },
+    "evidence": [],
+    "prompt": "Does the walking pain come on after about the same distance each time (for example always after about half a block), rather than varying a lot from day to day or with how upright you stand?",
+    "gateRegions": [
+      "buttock",
+      "posterior_thigh",
+      "anterior_thigh",
+      "lateral_thigh",
+      "calf"
+    ],
+    "summary": {
+      "yes": "walking pain comes on after about the same distance each time",
+      "no": "the walking distance varies"
+    }
+  },
+  {
+    "id": "h_shoulder_er_weak",
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "With your elbow tucked in at your side, is that arm clearly weaker than the other at turning outward, for example pushing the back of your hand out against a door frame?",
+    "gateRegions": [
+      "shoulder",
+      "scapula"
+    ],
+    "summary": {
+      "yes": "weak turning the arm outward",
+      "no": "turning the arm outward not weak"
+    }
+  },
+  {
+    "id": "h_shoulder_blade_hollow",
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Looking in a mirror (or asking someone to look), is the back of the shoulder blade on the painful side, above or below the bony ridge that runs across it, flatter or more hollow than on the other side?",
+    "gateRegions": [
+      "shoulder",
+      "scapula"
+    ],
+    "summary": {
+      "yes": "the back of the shoulder blade looks hollow or flat",
+      "no": "the back of the shoulder blade looks the same as the other side"
+    }
+  },
+  {
+    "id": "h_tip_pinch_flat",
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "When you pinch the tips of your thumb and index finger together to make a round 'O', do their last joints stay straight, so they meet flat, pad to pad, instead of bending at the tips?",
+    "gateRegions": [
+      "forearm_anterior",
+      "hand_median"
+    ],
+    "summary": {
+      "yes": "can't bend the thumb and index fingertips to make a round 'O'",
+      "no": "can bend the thumb and index fingertips to make a round 'O'"
+    }
+  },
+  {
+    "id": "h_fibular_head_tingle",
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Does pressing or tapping just below the bony bump on the outer side of your knee send tingling or a zing down the outer shin or into the top of the foot?",
+    "gateRegions": [
+      "shin_anterior",
+      "foot_dorsum",
+      "knee_lateral",
+      "ankle_lateral"
+    ],
+    "summary": {
+      "yes": "pressing below the bump on the outer knee sends tingling down the leg",
+      "no": "pressing below the bump on the outer knee does nothing"
+    }
+  },
+  {
+    "id": "h_leg_cross_tingle",
+    "kind": "history",
+    "alwaysAsk": true,
+    "evidence": [],
+    "prompt": "Does sitting with your legs crossed, squatting or kneeling bring on tingling or numbness in your outer shin or the top of your foot?",
+    "gateRegions": [
+      "shin_anterior",
+      "foot_dorsum",
+      "knee_lateral",
+      "ankle_lateral"
+    ],
+    "summary": {
+      "yes": "crossing the legs, squatting or kneeling brings on shin or foot tingling",
+      "no": "crossing the legs, squatting or kneeling doesn't bring on tingling"
     }
   }
 ]
